@@ -3,8 +3,11 @@ using System.io.*;
 
 class Hello {
 
+
+	string text = "";
 	private static string GetText(){
-		return "Hi";
+		text="Hi";
+		return text;
 	}
 
 	public static void doSomething(){
