@@ -4,7 +4,10 @@ using System.io.*;
 class Hello {
 
 
-	string text = "";
+	private string text = "";
+	private string Text{ get; }
+	
+
 	private static string GetText(){
 		text="Hi";
 		return text;
