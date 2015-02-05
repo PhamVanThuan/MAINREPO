@@ -1,6 +1,7 @@
 using System;
 using System.io.*;
 
+//Demo program written in Notepad just to wrap my head around merges
 class Hello {
 
 
@@ -14,7 +15,7 @@ class Hello {
 	}
 
 	public static void doSomething(){
-		Console.WriteLine("Something");
+		Console.WriteLine("Something silly");
 	}
 
 	public static void Main(){
