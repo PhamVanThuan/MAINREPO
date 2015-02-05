@@ -16,6 +16,7 @@ class Hello {
 
 	public static void doSomething(){
 		Console.WriteLine("Something silly");
+		Console.WriteLine();
 	}
 
 	public static void Main(){
