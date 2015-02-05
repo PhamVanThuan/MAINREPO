@@ -21,7 +21,6 @@ class Hello {
 
 	public static void Main(){
 		Console.WriteLine("Vishav");
-		Console.WriteLine(GetText()+" ");
 		doSomething();
 	}
 }
