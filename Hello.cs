@@ -3,6 +3,7 @@ using System;
 //Demo program written in Notepad just to wrap my head around merges
 class Hello {
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
 	private string text = "";
@@ -28,5 +29,11 @@ class Hello {
 	public static void Main(){
 		Console.WriteLine("Hi");
 >>>>>>> Stashed changes
+=======
+	const string DISPLAYTEXT = "HELLO WORLD!!!!"
+
+	public static void Main(){
+		Console.WriteLine(DISPLAYTEXT);
+>>>>>>> branch3
 	}
 }
