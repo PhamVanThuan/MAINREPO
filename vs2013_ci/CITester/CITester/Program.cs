@@ -6,15 +6,21 @@ using System.Threading.Tasks;
 
 namespace CITester
 {
-    class Program
+    public class Program
     {
         
-        public int sum(ref int a, ref int b)
+        public int sum(ref int a, ref int b)    //receives addresses (like pointers)
         {
             return a + b;
         }
 
-        static void Main(string[] args)
+        public int sum(int a, int b)
+        {
+            return a + b;
+        }
+        
+
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello CI");
             Program obj = new Program();
@@ -23,7 +29,9 @@ namespace CITester
 
             int one = 1;
             int two = 2;
-            obj.sum(ref one,ref two);       //same as obj.sum(&one,&two) in C++
+            Console.WriteLine(obj.sum(ref one,ref two));       //same as obj.sum(&one,&two) in C++
+
+
         }
     }
 }
