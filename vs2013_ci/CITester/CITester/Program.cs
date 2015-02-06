@@ -17,7 +17,6 @@ namespace CITester
         static void Main(string[] args)
         {
             Console.WriteLine("Hello CI");
-
             Program obj = new Program();
             string testString = "Created on VS_2013";
             Console.WriteLine(testString);
