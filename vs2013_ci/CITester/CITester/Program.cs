@@ -30,7 +30,7 @@ namespace CITester
             int one = 1;
             int two = 2;
             Console.WriteLine(obj.sum(ref one,ref two));       //same as obj.sum(&one,&two) in C++
-
+            
 
         }
     }
