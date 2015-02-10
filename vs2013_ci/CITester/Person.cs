@@ -1,31 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Person
+
+namespace CITester
 {
-    private string name;
-    public string Name
-    {
-        get { return name; }
-        set { name = value; }
-    }
 
-    private int age;
-    public int Age
+    public class Person
     {
-        get { return age; }
-        set { age = value; } 
-    }
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
-	public Person(string name, int age)
-	{
-        this.name = name;
-        this.age = age;
-	}
+        private int age;
+        public int Age
+        {
+            get { return age; }
+            set { age = value; }
+        }
 
-    public void display()
-    {
-        Console.WriteLine("Person details: ");
-        Console.WriteLine("Name: "+this.name);
-        Console.WriteLine("Age: "+this.age);
+        public Person(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        public void display()
+        {
+            Console.WriteLine("Person details: ");
+            Console.WriteLine("Name: " + this.name);
+            Console.WriteLine("Age: " + this.age);
+        }
     }
 }

@@ -23,15 +23,18 @@ namespace CITester
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello CI");
-            Program obj = new Program();
-            string testString = "Created on VS_2013";
+            const  string testString = "Created on VS_2013";
             Console.WriteLine(testString);
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Enter name to search for ");
+            string n = Console.ReadLine();
 
-            int one = 1;
-            int two = 2;
-            Console.WriteLine(obj.sum(ref one,ref two));       //same as obj.sum(&one,&two) in C++
-            
 
+            Person p1 = new Person("Vishav Premlall", 22,5);
+            p1.SayHi();
+            p1.Display();
         }
     }
 }
