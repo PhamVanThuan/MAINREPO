@@ -33,7 +33,7 @@ namespace FirstAppwithTesting
 
         private It _shouldReturnFirstOpAddedToSecondOp = () =>
         {
-            actualResult.ShouldEqual(expectedAddition);
+            actualResult.ShouldEqual(5);
         };
     }
 
@@ -56,7 +56,7 @@ namespace FirstAppwithTesting
 
         private Because of = () =>
         {
-            actualResult = obj.Add(First, Second);
+            actualResult = obj.Subtract(First, Second);
         };
 
         private It _shouldReturnFirstOpMinusSecondOp = () =>
