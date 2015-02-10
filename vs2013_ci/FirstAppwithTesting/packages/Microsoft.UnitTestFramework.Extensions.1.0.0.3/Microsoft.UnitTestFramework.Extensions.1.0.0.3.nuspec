@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.UnitTestFramework.Extensions</id>
+    <version>1.0.0.3</version>
+    <title>Microsoft Visual Studio Unit Test Framework Extensions</title>
+    <authors>Chris Martinez</authors>
+    <owners>Chris Martinez</owners>
+    <projectUrl>https://mstestex.codeplex.com/</projectUrl>
+    <iconUrl>https://www.codeplex.com/Download?ProjectName=mstestex&amp;DownloadId=412063</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package contains extensions to the Microsoft Visual Studio Team Test unit testing framework. Features include alternatives to ExpectedExceptionAttribute and a fully extensible assertion application programming interface.</description>
+    <summary>Provides extensions to the Microsoft Visual Studio Team Test unit testing tools.</summary>
+    <releaseNotes>The initial public release.</releaseNotes>
+    <copyright />
+    <tags>MS Microsoft Visual Studio VS MSTest Unit Test Testing</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="Microsoft.VisualStudio.QualityTools.UnitTestFramework" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="Microsoft.VisualStudio.QualityTools.UnitTestFramework" targetFramework=".NETFramework4.0" />
+      <frameworkAssembly assemblyName="System" targetFramework="Silverlight4.0" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="Silverlight4.0" />
+      <frameworkAssembly assemblyName="System.Windows" targetFramework="Silverlight4.0" />
+      <frameworkAssembly assemblyName="Microsoft.Silverlight.Testing" targetFramework="Silverlight4.0" />
+      <frameworkAssembly assemblyName="Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight" targetFramework="Silverlight4.0" />
+      <frameworkAssembly assemblyName="System" targetFramework="Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="Silverlight5.0" />
+      <frameworkAssembly assemblyName="System.Windows" targetFramework="Silverlight5.0" />
+      <frameworkAssembly assemblyName="Microsoft.Silverlight.Testing" targetFramework="Silverlight5.0" />
+      <frameworkAssembly assemblyName="Microsoft.VisualStudio.QualityTools.UnitTesting.Silverlight" targetFramework="Silverlight5.0" />
+    </frameworkAssemblies>
+    <references>
+      <reference file="Microsoft.UnitTestFramework.Extensions.dll" />
+    </references>
+  </metadata>
+</package>

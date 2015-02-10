@@ -31,8 +31,7 @@ namespace CITester
             Console.WriteLine("Enter name to search for ");
             string n = Console.ReadLine();
 
-
-            Person p1 = new Person("Vishav Premlall", 22,5);
+            Person p1 = new Person();
             p1.SayHi();
             p1.Display();
         }

@@ -23,7 +23,7 @@ namespace CITester
             this.age = 0;
         }
 
-        public Person(string name, int age, int n)
+        public Person(int n)
         {
             array = new Person[n];
             for (int i = 0; i < array.Length; i++ )
