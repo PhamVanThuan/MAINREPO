@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>TestBase</id>
+    <version>3.0.2.0</version>
+    <title>TestBase</title>
+    <authors>Chris F Carroll</authors>
+    <owners>Chris F Carroll</owners>
+    <projectUrl>http://github.com/chrisfcarroll/TestBase</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>*TestBase* gets you off to a flying start when unit testing projects with dependencies.
+It offers a rich extensible set of fluent assertions and a set of verifiable Fake Ado.Net components, with easy setup and verification.
+
+TestBase.Shoulds
+------------------
+Chainable fluent assertions drill down to the point concisely.
+UnitUnderTest.Action().ShouldNotBeNullOrEmpty().ShouldContain(x=&gt;x.ExpectedField == expected);
+* Lots of Shoulds: ShouldBe(),ShouldSatisfy(),ShouldHave(),ShouldBeTrue(),ShouldBeGreaterThan(),ShouldBeLessThan(),ShouldBeGreaterThanOrEqual(),ShouldBeAssignableTo(),ShouldBeBetween(),ShouldBeNullOrEmpty(),...
+* Enumerable Assertions: ShouldBeEmpty(),ShouldContain(),ShouldContainEachItemOf(),ShouldBeIn(),ShouldHave(),ShouldAll(),...
+* Lots of Nots: ShouldNotBe(),ShouldNotBeNullOrEmpty(),ShouldNotContain(),...
+* String &amp; Regex Assertions:ShouldContain(),ShouldEqualIgnoringCase(),ShouldMatch(),ShouldNotBeNullOrEmptyOrWhitespace(),...
+* StreamAssertions:ShouldContain(stream),ShouldContain(byte[]),ShouldEqualByValue(stream)
+* ShouldEqualByValue() compares all kinds of objects and collections field-by-field, by value, basis
+new{f1=1,f2="2"}ShouldEqualByValue(new{f1=1,f2="2"});
+new[]{1,2}.ShouldEqualByValue(new List&lt;int&gt;{1,2});
+
+TestBase.FakeDb
+------------------
+Works with Ado.Net and technologies on top of it, including Dapper.
+* fakeDbConnection.SetupForQuery(fakeData, new[] {"FieldName1", FieldName2"})
+* fakeDbConnection.SetupForExecuteNonQuery(rowsAffected)
+* fakeDbConnection.Verify(x=&gt;x.CommandText.Matches("Insert MyTable") &amp;&amp; x.Parameters["id"].Value==1)
+
+TestBase.TestBase&lt;T&gt; AutoMocksAndFakes
+--------------------------------
+is in development and currently works non-recursively. It auto-constructs the UnitUnderTest.
+It identifies constructor dependencies by name and type, looking in the following places:
+1) Fields in the TestFixture class 
+2) Entries in the Mocks[] or Fake[] dictionaries
+3) Finally it creates a Mock (if it's a mockable type) or a default instance (if its sealed, or value type) for anything that's missing
+
+See also: TestBase-Mvc for Asp.Net MVC assertions such as ControllerUnderTest.Action().ShouldBeViewResult().ShouldHaveModelOfType&lt;T&gt;().Field1.ShouldEqual(expected);
+
+ChangeLog
+---------
+3.0.2.0 Added ShouldBeLessThan,ShouldBeIn
+2.0.5.0 Adds some intellisense and FakeDbConnection.Verify(..., message,args) overload</description>
+    <summary>*TestBase* for a flying start to unit testing. A rich extensible set of fluent assertions such as ShouldNotBeEmpty().ShouldEqualByValue() etc, and a set of Fake Ado.Net components, with 1 line setup and verification.</summary>
+    <releaseNotes>Version 1. Unpolished but in use for over a year</releaseNotes>
+    <copyright>Copyright Chris F Carroll, 2013</copyright>
+    <tags>nunit tdd fluent assertions mock ado.net</tags>
+    <dependencies>
+      <dependency id="Moq" version="4.0.10827" />
+      <dependency id="NUnit" version="2.6.3" />
+    </dependencies>
+  </metadata>
+</package>

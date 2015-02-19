@@ -87,10 +87,31 @@ namespace ConsoleApplication1
                 +weight);
         }
 
-        public double addFractions(double one, double two)
+        public double addFractions(double one, double two,double three,double four)
         {
-            return one+two;
+            return (one/two)+(three/four);
         }
+
+        public double minusFractions(double one, double two, double three, double four)
+        {
+            return (one / two) - (three / four);
+        }
+
+        public double divideFractions(double one, double two, double three, double four)
+        {
+            return (one / two) / (three / four);
+        }
+
+        public double multiplyFractions(double one, double two, double three, double four)
+        {
+            if((three != 0)||(four != 0))
+            {
+                return (one / two) * (three / four);
+            }
+           else throw new Exception("Can't divide by 0");
+        }
+
+
 
         // Entry point
         public static void Main(string[] args)
@@ -101,11 +122,16 @@ namespace ConsoleApplication1
             double height = 1.54;
             double first = 1.1;
             double second = 2.2;
+            double third = 3.3;
+            double fourth = 4.4;
+
 
             Program p = new Program(name,age,weight,height);
-            Console.WriteLine(p.addFractions(first,second));
+            
             Console.Write(p.Display());
-
+            Console.WriteLine();
+            Console.WriteLine(p.addFractions(first, second, third, fourth));
+            Console.WriteLine(p.divideFractions(1,2,1,0));
         }
     }
 }
