@@ -12,7 +12,7 @@ namespace ConsoleApplication1
 {
     //testing accessors
     [TestFixture]
-    public class VariousTests 
+    public class when_displaying_a_string 
     {
         private static Program p;
         private static int Age;
@@ -40,26 +40,14 @@ namespace ConsoleApplication1
             Weight = 65;
             displayString = "";
             p = new Program(Name,Age,Height,Weight);
-            first =1;
-            second = 2;
-            third = 3;
-            fourth = 4;
-            answerAdd= 1.25;
-            answerMinus = -0.25;
-            answerMultiply = 0.375;
-            answerDivide = 0.666666666666667;
             
             //mock out the divide function
-            divEx = Catch.Exception (()=> p.WhenToldTo(x => x.divideFractions(1,2,0,0)).Return(null));
+          
         };
 
         private Because of = () => //'because clauses' are usually one line, focuses on specific aspects that are tested
         {
             displayString = p.Display();
-            answerAdd = p.addFractions(first,second,third,fourth);
-            answerMinus = p.minusFractions(first, second, third, fourth);
-            answerMultiply = p.multiplyFractions(first, second, third, fourth);
-            answerDivide = p.divideFractions(first, second, third, fourth);
         };
 
         
@@ -117,7 +105,7 @@ namespace ConsoleApplication1
         
         private It should_be_friday = () =>  // :P
         {
-            Assert.IsTrue(DateTime.Now.DayOfWeek.ToString().Equals("Friday")==true);
+            Assert.IsTrue(DateTime.Now.DayOfWeek.ToString().Equals("Friday")==false);
         };
 
        

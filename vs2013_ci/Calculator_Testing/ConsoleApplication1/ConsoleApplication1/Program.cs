@@ -60,14 +60,23 @@ namespace ConsoleApplication1
             }
         }
         private double weight;
-        public double Weight { 
-            get{
+        public double Weight
+        {
+            get
+            {
                 return weight;
-               }
-            set{
+            }
+            set
+            {
                 weight = value;
-               }
-          }
+            }
+        }
+
+        public string displayedString
+        {
+             get;
+             set;
+        }
 
         public Program(string name,int age,double height,double weight)
         {
@@ -75,16 +84,17 @@ namespace ConsoleApplication1
             this.age = age;
             this.height = height;
             this.weight = weight;
+            displayedString = "";
         }
 
 
         public string Display()
         {
-            
-                return (name +", "
-                +age +", "
-                +height +", "
-                +weight);
+            displayedString = name + ", "
+                + age + ", "
+                + height + ", "
+                + weight;
+            return displayedString;
         }
 
         public double addFractions(double one, double two,double three,double four)
