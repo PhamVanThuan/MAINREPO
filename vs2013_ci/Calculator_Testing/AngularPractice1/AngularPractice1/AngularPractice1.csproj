@@ -912,6 +912,7 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\MyNewScript.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\services.js" />
     <Content Include="Scripts\services.spec.js">
@@ -1274,6 +1275,7 @@
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\_PageStart.cshtml" />
     <Content Include="Views\About.cshtml" />
+    <Content Include="Views\Contacts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1295,6 +1297,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
+    <Folder Include="Spec\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

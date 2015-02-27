@@ -28,10 +28,10 @@ namespace Calculator
 
         private Because of = () => calc.multiply(operand1, operand2);
 
-        private It should_return_correct_product = () =>
+        private It should_return_correct_dividend = () =>
         {
-            Assert.AreEqual(calculatedDividend, dividend);  //or 
-            Assert.That(dividend.Equals(calculatedDividend));
+            Assert.AreEqual(calculatedDividend, dividend);
+            //or Assert.That(dividend.Equals(calculatedDividend));
         };
     }
 }
