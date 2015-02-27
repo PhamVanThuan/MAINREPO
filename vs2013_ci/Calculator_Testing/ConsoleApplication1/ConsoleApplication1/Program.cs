@@ -90,14 +90,14 @@ namespace ConsoleApplication1
 
         public string Display()
         {
-            displayedString = name + ", "
+            return name + ", "
                 + age + ", "
                 + height + ", "
-                + weight;
-            return displayedString;
+                + weight;          
         }
 
-        public double addFractions(double one, double two,double three,double four)
+
+       /* public double addFractions(double one, double two,double three,double four)
         {
             return (one/two)+(three/four);
         }
@@ -119,7 +119,7 @@ namespace ConsoleApplication1
                 return (one / two) * (three / four);
             }
            else throw new Exception("Can't divide by 0");
-        }
+        }*/
 
 
 
@@ -140,8 +140,8 @@ namespace ConsoleApplication1
             
             Console.Write(p.Display());
             Console.WriteLine();
-            Console.WriteLine(p.addFractions(first, second, third, fourth));
-            Console.WriteLine(p.divideFractions(1,2,1,0));
+           /* Console.WriteLine(p.addFractions(first, second, third, fourth));
+            Console.WriteLine(p.divideFractions(1,2,1,0));*/
         }
     }
 }

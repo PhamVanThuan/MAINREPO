@@ -21,16 +21,6 @@ namespace ConsoleApplication1
         private static double Weight;
         public static string displayString;
 
-        //testing numbers for fun =)
-        private static double first;
-        private static double second;
-        private static double third;
-        private static double fourth;
-        private static double answerAdd;
-        private static double answerMinus;
-        private static double answerMultiply;
-        private static double answerDivide;
-        private static Exception divEx;
 
         private Establish context = () =>
         {
@@ -40,26 +30,12 @@ namespace ConsoleApplication1
             Weight = 65;
             displayString = "";
             p = new Program(Name,Age,Height,Weight);
-            first =1;
-            second = 2;
-            third = 3;
-            fourth = 4;
-            answerAdd= 1.25;
-            answerMinus = -0.25;
-            answerMultiply = 0.375;
-            answerDivide = 0.666666666666667;
-            
-            //mock out the divide function
-            divEx = Catch.Exception (()=> p.WhenToldTo(x => x.divideFractions(1,2,0,0)).Return(null));
-        };
+           
+            };
 
         private Because of = () => //'because clauses' are usually one line, focuses on specific aspects that are tested
         {
-            displayString = p.Display();
-            answerAdd = p.addFractions(first,second,third,fourth);
-            answerMinus = p.minusFractions(first, second, third, fourth);
-            answerMultiply = p.multiplyFractions(first, second, third, fourth);
-            answerDivide = p.divideFractions(first, second, third, fourth);
+            displayString = p.Display();      
         };
 
         
@@ -89,19 +65,7 @@ namespace ConsoleApplication1
             Assert.IsTrue(displayString.Contains(Height.ToString()));
         };
 
-        
-        private It should_add_correctly = () =>
-         {
-             Assert.That(answerAdd, Is.EqualTo(p.addFractions(first,second,third,fourth)).Within(5));
-         };
-
-      
-        private It should_subtract_correctly = () =>
-        {
-            Assert.That(answerMinus, Is.EqualTo(-0.25));
-        };
-
-   
+         
         private It should_be_kind_with_weight = () =>
         {
             Assert.GreaterOrEqual(p.Weight,65);
@@ -124,7 +88,7 @@ namespace ConsoleApplication1
         private It should_handle_exception_when_dividing_by_0 = () =>
         {
             //Assert.That(ex.Message.Equals("Can't divide by 0")); 
-           //divEx.Message.ShouldEqual("Can't divide by 0");
+          // divEx.Message.ShouldEqual("Can't divide by 0");
            
         };
      }
