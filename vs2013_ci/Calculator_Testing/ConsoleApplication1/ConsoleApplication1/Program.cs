@@ -130,10 +130,10 @@ namespace ConsoleApplication1
             int age = 22;
             double weight = 65;
             double height = 1.54;
-            double first = 1.1;
-            double second = 2.2;
-            double third = 3.3;
-            double fourth = 4.4;
+            //double first = 1.1;
+            //double second = 2.2;
+            //double third = 3.3;
+            //double fourth = 4.4;
 
 
             Program p = new Program(name,age,weight,height);

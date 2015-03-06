@@ -19,21 +19,9 @@ namespace CITester
             return a + b;
         }
         
-
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello CI");
-            const  string testString = "Created on VS_2013";
-            Console.WriteLine(testString);
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("Enter name to search for ");
-            string n = Console.ReadLine();
-
-            Person p1 = new Person();
-            p1.SayHi();
-            p1.Display();
+            
         }
     }
 }

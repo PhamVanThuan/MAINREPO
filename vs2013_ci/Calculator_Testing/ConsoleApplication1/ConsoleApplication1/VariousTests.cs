@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Machine.Specifications;
 using NUnit.Framework;
 using Machine.Fakes;
+using NSubstitute;
+using NSubstitute.Core.Arguments;
 
 
 namespace ConsoleApplication1
