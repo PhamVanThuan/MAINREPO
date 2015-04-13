@@ -1,0 +1,16 @@
+﻿{
+    "additionalInfo": "LinkedIn",
+    "description": "To follow us on LinkedIn follow the instructions below",
+    "id": "item3",
+    "name": "LinkedIn",
+    "sentence1": "1. Go to www.linkedin.com",
+    "sentence2": "2. Navigate to the search bar",
+    "sentence3": "3. Enter 'SA Home Loans' ",
+    "sentence4": "4. Click Search!",
+    "images": [
+        "images/linkedin.jpg",
+        "images/linkedin.jpg"
+    ],
+    "navUrl": "Or go to https://www.linkedin.com/company/sa-home-loans",
+    "flag":false 
+}

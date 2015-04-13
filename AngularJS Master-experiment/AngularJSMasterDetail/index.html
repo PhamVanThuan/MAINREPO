@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html ng-app="angularApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Advertiser and Calculator</title>
+
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/overrides.css" rel="stylesheet" />
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <!-- angularapp references -->
+    <script src="scripts/frameworks/angular.min.js"></script>
+    <script src="scripts/frameworks/angular-resource.min.js"></script>
+    <script src="scripts/frameworks/angular-route.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+</head>
+<body>
+
+    <div id="MyCalculator" ng-app="" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;">
+        <h1><strong>What can I spend?</strong></h1>
+        Monthly income before tax: 
+        <br />      R <input type="number" required ng-model="monthlyIncome" step="500" min="1000" value="1000"/><br />
+        2nd Monthly Income: 
+        <br />      R <input type="number" required ng-model="secondMonthlyIncome" step="500" min="0"/><br />
+        Profit:
+        <br />      R <input type="number" required ng-model="profit" step="500" min="0"/><br />
+        Other contributions: 
+        <br />      R <input type="number" required ng-model="other" min="0" step="100"/><br />
+        <br />
+        <p align="right">
+            <input type="button" onclick="" value="Calculate!" class="calculate" /><br />
+            <!--//make get cost method code on view or link to service-->
+            <strong></strong>
+           
+        </p>
+        <br />
+        
+        <h1><strong>Loan Details</strong><br /></h1>
+        Monthly installments:  <br /> R <input type="number" ng-model="monthlyInstallments" step="500" min="0"/> <br />
+        Total of Loan(months): <br /> R <input type="number" ng-model="LoanTotal" value=240 step="6" min="12"><br />
+        Interest Rate(%):      <br /> R <input type="number" ng-model="interest"  value=10  step="0.1" min="10"/>
+        <br />
+        <br />
+    </div>
+    <div>
+        <h1><strong>Can I afford my dream home?</strong></h1>
+
+        Purchase price:
+        <br />      R <input type="number" required ng-model="price" step="500" min="0" /><br />
+        Cash Deposit:
+        <br />      R <input type="number" required ng-model="deposit" step="500" min="0" /><br />
+        I am:
+        <br />        <input type="radio" required ng-model="salaried" /> Employed<br />
+                      <input type="radio" required ng-model="salaried" /> Unemployed<br />
+        Gross Income:
+        <br />      R <input type="number" required ng-model="other" min="0" step="1000" /><br />
+        Term of Loan(months):
+        <br />      R <input type="number" required ng-model="loanYears" min="12" /><br />
+
+        <br />
+        <p align="right">
+            <input type="button" onclick="" value="Calculate" class="calculate"/><br />
+        </p>
+
+        <br />
+    </div>
+    <!-- Validate the UI input -->
+    <script>
+    angular.module('angularApp').
+    directive('onlyDigits', function () {
+
+    return {
+        restrict: 'A',
+        require: '?ngModel',
+            link: function (scope, element, attrs, ngModel) {
+
+                if (!ngModel) return;
+                     ngModel.$parsers.unshift(function (inputValue) {
+                     var digits = inputValue.split('').filter(function (s) { return (!isNaN(s) && s != ' '); }).join('');
+                     ngModel.$viewValue = digits;
+                     ngModel.$render();
+
+                     return digits;
+                });
+               }
+             };
+           });
+    </script>
+
+    <div id="timerDiv">
+        <p id="timer"> </p>
+        <script>
+            var myVar = setInterval(function () { myTimer() }, 1000);
+
+        function myTimer() {
+                var d = new Date();
+                var t = d.toLocaleTimeString(); // converts time from date object to string
+        document.getElementById("timer").innerHTML = t;
+    }
+    </script>
+   </div>
+
+    <div ng-controller="ListCtrl" class="container-list">
+        <div class="header">
+            
+            <div id="searchTitle">Search:</div><input id="search" ng-model="query" /><br />
+        </div>
+        <div class="container">
+            <div class="main-list">
+
+                <button ng-repeat="item in data | filter:query | orderBy:orderProp" ng-click="go('/data/'+item.id)">
+                    <span>{{item.name}}</span>
+                </button>
+            </div>
+
+            <div id ="eachTabContent" ng-view ></div>
+        </div>
+    </div>
+
+    <div ng-controller="DateCtrl">
+        {{date | date:'yyyy-MM-dd'}}
+    </div>
+
+    <script>
+
+        function DateCtrl($scope) {
+            $scope.date = new Date();
+        }
+    </script>
+
+    <script src="scripts/vhsupport.js"></script>
+    <script src="scripts/index.js"></script>
+    
+</body>
+</html>

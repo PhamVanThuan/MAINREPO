@@ -1,0 +1,11 @@
+﻿{
+    "additionalInfo": "",
+    "description": "",
+    "id": "item3",
+    "name": "Hide Adverts",
+    "images": [
+        "images/hide.png",
+        "images/hide.png"
+    ],
+    "flag":true 
+}

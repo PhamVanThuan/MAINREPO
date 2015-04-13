@@ -1,0 +1,18 @@
+﻿{
+    "additionalInfo": "Twitter",
+    "description": "To follow us on Twitter, follow the instructions below",
+    "id": "item2",
+    "name": "Twitter",
+    "sentence1": "1. Go to www.twitter.com",
+    "sentence2": "2. Navigate to the search bar",
+    "sentence3": "3. Enter 'SA Home Loans' ",
+    "sentence4": "4. Click Search!",
+    
+
+    "images": [
+        "images/twitter.png",
+        "images/twitter.png"
+    ],
+    "navUrl": "Or go to https://www.twitter.com/sahomeloans",
+    "flag":false 
+}

@@ -1,0 +1,33 @@
+﻿[
+    {
+        "model": 233, 
+        "id": "item1",
+        "imageUrl": "images/image1-50x25.png", 
+        "name":  "Facebook",
+        "background-image":"url(images/Facebook.png)",
+        "desc": "Navigate to Facebook page"
+        
+    }, 
+    {
+        "model": 234, 
+        "id": "item2", 
+        "imageUrl": "images/image1-50x25.png", 
+        "name": "Twitter", 
+        "desc": "Navigate to our Twitter page"
+    },
+    {
+        "model": 235,
+        "id": "item3",
+        "imageUrl": "images/image1-50x25.png",
+        "name": "LinkedIn",
+        "desc": "Follow us on LinkedIn"
+    },
+    {
+        "model": 235,
+        "id": "item4",
+        "imageUrl": "images/hide.png",
+        "name": "Hide Adverts"
+       
+    }
+]
+

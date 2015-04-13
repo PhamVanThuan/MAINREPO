@@ -1,0 +1,17 @@
+﻿{
+    "additionalInfo": "https://www.facebook.com/sahomeloans",
+    "description": "To get to our Facebook page follow the instructions below",
+    "id": "item1",
+    "name": "FaceBook",
+    "sentence1":"1. Go to www.facebook.com",
+    "sentence2":"2. Navigate to the search bar",
+    "sentence3":"3. Enter 'SA Home Loans' ",
+    "sentence4":"4. Click Search!", 
+
+    "images": [
+        "images/facebook.png",
+        "images/facebook.png"
+    ],
+    "navUrl": "Or go to https://www.facebook.com/sahomeloans",
+    "flag": false 
+}
