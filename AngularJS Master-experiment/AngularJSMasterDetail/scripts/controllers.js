@@ -14,7 +14,6 @@
               // $scope.$apply(function () { $location.path(route); });
               $location.path(route);
           }
-
       }]);
 
     angularControllers.controller('DetailCtrl', ['$scope', '$routeParams', '$http',

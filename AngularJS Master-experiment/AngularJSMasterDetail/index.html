@@ -21,45 +21,52 @@
 
     <div id="MyCalculator" ng-app="" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;">
         <h1><strong>What can I spend?</strong></h1>
-        Monthly income before tax: 
-        <br />      R <input type="number" required ng-model="monthlyIncome" step="500" min="8000" value="8000"/><br />
-        2nd Monthly Income: 
-        <br />      R <input type="number" required ng-model="secondMonthlyIncome" step="500" min="0"/><br />
+        Monthly income before tax:
+        <br />      R <input type="number" required ng-model="monthlyIncome" step="500" min="8000" value="8000" /><br />
+        2nd Monthly Income:
+        <br />      R <input type="number" required ng-model="secondMonthlyIncome" step="500" min="0" /><br />
         Profit:
-        <br />      R <input type="number" required ng-model="profit" step="500" min="0"/><br />
-        Other contributions: 
-        <br />      R <input type="number" required ng-model="other" min="0" step="100"/><br />
+        <br />      R <input type="number" required ng-model="profit" step="500" min="0" /><br />
+        Other contributions:
+        <br />      R <input type="number" required ng-model="other" min="0" step="100" /><br />
         <br />
-           
+
         <strong>What am I spending? R {{(monthlyIncome + secondMonthlyIncome + profit + other) /2.5}} </strong>
         <br />
-        
+
         <h1><strong>Loan Details</strong><br /></h1>
-        Monthly installments:  
-        <br /> R <input type="number" ng-model="monthlyInstallments" step="500" min="0"/> <br />
-        <!--Total of Loan(months): 
-        <br /> R <input type="number" ng-model="numberOfMonthsTotal" value=240 step="" min="240"><br />--> 
+        Monthly installments:
+        <br /> R <input type="number" ng-model="monthlyInstallments" step="500" min="0" /> <br />
+        <!--Total of Loan(months):
+        <br /> R <input type="number" ng-model="numberOfMonthsTotal" value=240 step="" min="240"><br />-->
         <br />
         Term of Loan(years)
         <br />
-        <input type="radio" ng-model="LoanTerm" value="20"/>20
+        <input type="radio" ng-model="LoanTerm" value="20" />20
         <br />
-        <input type="radio" ng-model="LoanTerm" value="23"/>23
+        <input type="radio" ng-model="LoanTerm" value="23" />23
         <br />
-        <input type="radio" ng-model="LoanTerm" value="30"/>30
+        <input type="radio" ng-model="LoanTerm" value="30" />30
         <br />
-        
-        Interest Rate(%):      
-        <br /> R <input type="number" ng-model="interest"  value=10  step="0.1" min="10"/><br />
+
+        Interest Rate(%):
+        <br /> R <input type="number" ng-model="interest" value=10 step="0.1" min="10" /><br />
         <br />
-        
-            <ul>
-                <li><b>What would my loan repayment be? 
-                    <br /> R {{monthlyInstallments}}.00 </b></li>
-                <li><b>What would my total repayment be? 
-                    <br /> R {{monthlyInstallments * LoanTerm * (interest * 1+interest) / (1+interest) - 1}} </b></li>  
-            </ul>
-        
+
+        <ul>
+            <li>
+                <b>
+                    What would my loan repayment be?
+                    <br /> R {{monthlyInstallments}}
+                </b>
+            </li>
+            <li>
+                <b>
+                    What would my total repayment be?
+                    <br /> R {{monthlyInstallments * LoanTerm * (interest * 1+interest) / (1+interest) - 1}}
+                </b>
+            </li>
+        </ul>
     </div>
     <div>
         <h1><strong>Can I afford my dream home?</strong></h1>
@@ -70,7 +77,7 @@
         <br />      R <input type="number" required ng-model="deposit" step="500" min="0" /><br />
         I am:
         <br />        <input type="radio" required ng-model="salaried" /> Employed<br />
-                      <input type="radio" required ng-model="salaried" /> Unemployed<br />
+        <input type="radio" required ng-model="salaried" /> Unemployed<br />
         Gross Income:
         <br />      R <input type="number" required ng-model="other" min="0" step="1000" /><br />
         Term of Loan(months):
@@ -80,27 +87,27 @@
 
         <br />
     </div>
-    <!-- Validate the UI input with unit tests-->
+    
     <script>
-    angular.module('angularApp').
-    directive('onlyDigits', function () {
+        angular.module('angularApp').
+        directive('onlyDigits', function () {
 
-    return {
-        restrict: 'A',
-        require: '?ngModel',
-            link: function (scope, element, attrs, ngModel) {
+            return {
+                restrict: 'A',
+                require: '?ngModel',
+                link: function (scope, element, attrs, ngModel) {
 
-                if (!ngModel) return;
-                     ngModel.$parsers.unshift(function (inputValue) {
-                     var digits = inputValue.split('').filter(function (s) { return (!isNaN(s) && s != ' '); }).join('');
-                     ngModel.$viewValue = digits;
-                     ngModel.$render();
+                    if (!ngModel) return;
+                    ngModel.$parsers.unshift(function (inputValue) {
+                        var digits = inputValue.split('').filter(function (s) { return (!isNaN(s) && s != ' '); }).join('');
+                        ngModel.$viewValue = digits;
+                        ngModel.$render();
 
-                     return digits;
-                });
-               }
-             };
-           });
+                        return digits;
+                    });
+                }
+            };
+        });
     </script>
 
     <div id="timerDiv">
@@ -108,17 +115,17 @@
         <script>
             var myVar = setInterval(function () { myTimer() }, 1000);
 
-        function myTimer() {
+            function myTimer() {
                 var d = new Date();
                 var t = d.toLocaleTimeString(); // converts time from date object to string
-        document.getElementById("timer").innerHTML = t;
-    }
-    </script>
-   </div>
+                document.getElementById("timer").innerHTML = t;
+            }
+        </script>
+    </div>
 
     <div ng-controller="ListCtrl" class="container-list">
         <div class="header">
-            
+
             <div id="searchTitle">Search:</div><input id="search" ng-model="query" /><br />
         </div>
         <div class="container">
@@ -129,7 +136,7 @@
                 </button>
             </div>
 
-            <div id ="eachTabContent" ng-view ></div>
+            <div id="eachTabContent" ng-view></div>
         </div>
     </div>
 
@@ -146,6 +153,5 @@
 
     <script src="scripts/vhsupport.js"></script>
     <script src="scripts/index.js"></script>
-    
 </body>
 </html>
