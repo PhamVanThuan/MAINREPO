@@ -1,4 +1,4 @@
-﻿describe("automatically getting the correct cost", function () {
+﻿describe("loan calculator", function () {
     it('calculates the divisor of the function using exponents', function (divisor) {
         var expectedAnswer = (Math.pow(divisor));
         expect(divisor).toEqual([Math.pow(divisor)]);
