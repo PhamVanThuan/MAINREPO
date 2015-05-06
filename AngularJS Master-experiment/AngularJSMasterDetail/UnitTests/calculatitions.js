@@ -25,6 +25,11 @@
 
     it('does not use negative or zero valued parameters for calculations ', function (monthlyIncome, secondMonthlyIncome, profit, other,i,p,n) {
         expect(monthlyIncome).GreaterThan(0);
+        expect(secondMonthlyIncome).GreaterThan(0);
+        expect(profit).GreaterThan(0);
+        expect(i).GreaterThan(0);
+        expect(p).GreaterThan(0);
+        expect(n).GreaterThan(12);
     });
 
    
