@@ -23,8 +23,8 @@
         expect(sum).toEqual(7200);
     });
 
-    it('does not use negative or zero valued parameters for calculations ', function () {
-      
+    it('does not use negative or zero valued parameters for calculations ', function (monthlyIncome, secondMonthlyIncome, profit, other,i,p,n) {
+        expect(monthlyIncome).GreaterThan(0);
     });
 
    
