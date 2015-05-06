@@ -23,6 +23,10 @@
         expect(sum).toEqual(7200);
     });
 
+    it('does not use negative or zero valued parameters for calculations ', function () {
+      
+    });
+
    
             
 });
