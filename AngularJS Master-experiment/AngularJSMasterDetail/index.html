@@ -56,14 +56,14 @@
         <ul>
             <li>
                 <b>
-                    What would my loan repayment be?
+                    What would my monthly loan repayment be?
                     <br /> R {{monthlyInstallments}}
                 </b>
             </li>
             <li>
                 <b>
                     What would my total repayment be?
-                    <br /> R {{monthlyInstallments * LoanTerm * (interest * 1+interest) / (1+interest) - 1}}
+                    <br /> R {{monthlyInstallments * (1 + (interest / LoanTerm * 12))}}
                 </b>
             </li>
         </ul>
@@ -87,7 +87,7 @@
 
         <br />
     </div>
-    
+
     <script>
         angular.module('angularApp').
         directive('onlyDigits', function () {
@@ -117,7 +117,7 @@
 
             function myTimer() {
                 var d = new Date();
-                var t = d.toLocaleTimeString(); // converts time from date object to string
+                var t = d.toLocaleTimeString();
                 document.getElementById("timer").innerHTML = t;
             }
         </script>
