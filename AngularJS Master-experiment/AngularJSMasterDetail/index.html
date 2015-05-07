@@ -31,14 +31,12 @@
         <br />      R <input type="number" required ng-model="other" min="0" step="100" /><br />
         <br />
 
-        <strong>What am I spending? R {{(monthlyIncome + secondMonthlyIncome + profit + other) /2.5}} </strong>
+        <strong>What am I expected to be spending? R {{(monthlyIncome + secondMonthlyIncome + profit + other) /2.5}} </strong>
         <br />
 
         <h1><strong>Loan Details</strong><br /></h1>
         Monthly installments:
         <br /> R <input type="number" ng-model="monthlyInstallments" step="500" min="1000" /> <br />
-        <!--Total of Loan(months):
-        <br /> R <input type="number" ng-model="numberOfMonthsTotal" value=240 step="" min="240"><br />-->
         <br />
         Term of Loan(years)
         <br />
@@ -48,7 +46,7 @@
         <br />
         <input type="radio" ng-model="LoanTerm" value="30" />30
         <br />
-
+        LoanTerm
         Interest Rate(%):
         <br /> R <input type="number" ng-model="interest" value=10 step="0.1" min="10" /><br />
         <br />

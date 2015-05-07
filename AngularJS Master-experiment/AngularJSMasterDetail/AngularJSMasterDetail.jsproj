@@ -143,7 +143,7 @@
     <Content Include="merges\android\scripts\platformOverrides.js" />
     <Content Include="merges\windows\scripts\platformOverrides.js" />
     <Content Include="merges\windows\scripts\winstore-jscompat.js" />
-    <Content Include="UnitTests\calculatitions.js" />
+    <Content Include="UnitTests\calculations.js" />
     <Folder Include="res\icons\android\" />
     <Folder Include="res\icons\ios\" />
     <Folder Include="res\icons\wp8\" />
