@@ -74,14 +74,12 @@
         Cash Deposit:
         <br />      R <input type="number" required ng-model="deposit" step="500" min="0" /><br />
         I am:
-        <br />        <input type="radio" required ng-model="salaried" /> Employed<br />
-        <input type="radio" required ng-model="salaried" /> Unemployed<br />
+        <br />        <input type="radio" ng-model="salaried" /> Employed<br />
+                      <input type="radio" ng-model="salaried" /> Unemployed<br />
         Gross Income:
-        <br />      R <input type="number" required ng-model="other" min="0" step="1000" /><br />
+        <br />      R <input type="number" ng-model="other" min="0" step="1000" /><br />
         Term of Loan(months):
-        <br />      R <input type="number" required ng-model="loanYears" min="12" /><br />
-
-        <br />
+        <br />      R <input type="number" required ng-model="loanYears" min="240" /><br />
 
         <br />
     </div>

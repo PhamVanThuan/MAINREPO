@@ -11,7 +11,7 @@
           $scope.orderProp = 'model';
 
           $scope.go = function (route) {
-              // $scope.$apply(function () { $location.path(route); });
+              $scope.$apply(function () { $location.path(route); });
               $location.path(route);
           }
       }]);
