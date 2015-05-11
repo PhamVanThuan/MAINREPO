@@ -1,4 +1,6 @@
-﻿describe("loan calculator", function () {
+﻿'use-strict'
+
+describe("loan calculator", function () {
     it('calculates the divisor of the function using exponents', function (divisor) {
         var expectedAnswer = (Math.pow(divisor));
         expect(divisor).toEqual([Math.pow(divisor)]);
@@ -17,12 +19,13 @@
         var monthlyIncome = 10000;
         var secondMonthlyIncome = 5000;
         var profit = 2000;
-        var other = 1000;
+        var other = 100;
         var sum = (monthlyIncome + secondMonthlyIncome + profit + other) / 2.5;
 
         expect(sum).toEqual(7200);
     });
 
+    //validation
     it('does not use negative or zero valued parameters for calculations ', function (monthlyIncome, secondMonthlyIncome, profit, other, i, p, n) {
         expect(monthlyIncome).GreaterThan(0);
         expect(secondMonthlyIncome).GreaterThan(0);
