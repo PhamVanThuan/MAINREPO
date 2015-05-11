@@ -134,7 +134,6 @@
     <Content Include="merges\wp8\css\overrides.css" />
     <Content Include="partials\details.html" />
     <Content Include="res\native\windows\CordovaApp_TemporaryKey.pfx" />
-    <Content Include="scripts\directives.js" />
     <Content Include="scripts\frameworks\angular-resource.min.js" />
     <Content Include="scripts\frameworks\angular-route.min.js" />
     <Content Include="scripts\frameworks\angular.min.js" />
@@ -144,6 +143,7 @@
     <Content Include="merges\windows\scripts\platformOverrides.js" />
     <Content Include="merges\windows\scripts\winstore-jscompat.js" />
     <Content Include="UnitTests\calculations.js" />
+    <Content Include="UnitTests\indexInfoScriptTest.js" />
     <Folder Include="res\icons\android\" />
     <Folder Include="res\icons\ios\" />
     <Folder Include="res\icons\wp8\" />
