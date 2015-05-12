@@ -145,6 +145,7 @@
     <Content Include="merges\windows\scripts\winstore-jscompat.js" />
     <Content Include="UnitTests\calculations.js" />
     <Content Include="UnitTests\indexInfoScriptTest.js" />
+    <Content Include="UnitTests\validation.js" />
     <Folder Include="res\icons\android\" />
     <Folder Include="res\icons\ios\" />
     <Folder Include="res\icons\wp8\" />

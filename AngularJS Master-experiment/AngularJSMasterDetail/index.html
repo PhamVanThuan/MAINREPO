@@ -19,7 +19,8 @@
 </head>
 <body>
 
-    <div id="MyCalculator" ng-app="" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;">
+    <form id="MyCalculator">
+    <div id="" ng-model="MyCalc" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;">
         <h1><strong>What can I spend?</strong></h1>
         Monthly income before tax:
         <br />      R <input type="number" required ng-model="monthlyIncome" step="500" min="8000" value="8000" /><br />
@@ -31,7 +32,6 @@
         <br />      R <input type="number" required ng-model="other" min="0" step="100" /><br />
         <br />
 
-        <!--<strong>What am I expected to be spending? R {{(monthlyIncome + secondMonthlyIncome + profit + other) /2.5}} </strong>-->
         <br />
 
         <h1><strong>Loan Details</strong><br /></h1>
@@ -83,6 +83,7 @@
 
         <br />
     </div>
+       </form>
 
     <div id="timerDiv">
         <p id="timer"> </p>

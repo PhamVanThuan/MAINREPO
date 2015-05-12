@@ -2,7 +2,6 @@
     config.set({
         basePath: '../..',
         frameworks: ['jasmine'],
-        //...
         files: [
              '../../root/scripts/UnitTests/angular/angular.js',
             //'angular/angular-mocks.js',
