@@ -130,7 +130,7 @@
     <Content Include="images\Orange_Striped_Wallpaper_by_Orchid_Onyx.jpg" />
     <Content Include="images\pause.png" />
     <Content Include="images\twitter.png" />
-    <Content Include="karma.unit.conf.js" />
+    <Content Include="karma.conf.js" />
     <Content Include="merges\ios\scripts\vhsupport.js" />
     <Content Include="merges\wp8\css\overrides.css" />
     <Content Include="partials\details.html" />
@@ -143,9 +143,9 @@
     <Content Include="merges\android\scripts\platformOverrides.js" />
     <Content Include="merges\windows\scripts\platformOverrides.js" />
     <Content Include="merges\windows\scripts\winstore-jscompat.js" />
-    <Content Include="UnitTests\calculations.js" />
-    <Content Include="UnitTests\indexInfoScriptTest.js" />
-    <Content Include="UnitTests\validation.js" />
+    <Content Include="specs\calculations.spec.js" />
+    <Content Include="specs\indexInfoScriptTest.spec.js" />
+    <Content Include="specs\validation.spec.js" />
     <Folder Include="res\icons\android\" />
     <Folder Include="res\icons\ios\" />
     <Folder Include="res\icons\wp8\" />
