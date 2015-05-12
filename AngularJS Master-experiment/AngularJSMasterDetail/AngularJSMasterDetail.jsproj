@@ -130,6 +130,7 @@
     <Content Include="images\Orange_Striped_Wallpaper_by_Orchid_Onyx.jpg" />
     <Content Include="images\pause.png" />
     <Content Include="images\twitter.png" />
+    <Content Include="karma.unit.conf.js" />
     <Content Include="merges\ios\scripts\vhsupport.js" />
     <Content Include="merges\wp8\css\overrides.css" />
     <Content Include="partials\details.html" />

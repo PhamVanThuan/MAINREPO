@@ -10,7 +10,7 @@
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
 
-    <!-- angularapp references -->
+    <!-- angularApp references references -->
     <script src="scripts/frameworks/angular.min.js"></script>
     <script src="scripts/frameworks/angular-resource.min.js"></script>
     <script src="scripts/frameworks/angular-route.min.js"></script>
@@ -75,7 +75,7 @@
         <br />      R <input type="number" ng-model="deposit" step="500" min="0" /><br />
         I am:
         <br />        <input type="radio" name="salaried" /> Employed   <br />
-                      <input type="radio" name="salaried" /> Unemployed <br />
+        <input type="radio" name="salaried" /> Unemployed <br />
         Gross Income:
         <br />      R <input type="number" ng-model="other" min="0" step="1000" /><br />
         Term of Loan(months):
@@ -83,8 +83,6 @@
 
         <br />
     </div>
-
- 
 
     <div id="timerDiv">
         <p id="timer"> </p>
@@ -102,7 +100,9 @@
     <div ng-controller="ListCtrl" class="container-list">
         <div class="header">
 
-            <div id="searchTitle">Search:</div><input id="search" ng-model="query" /><br />
+            <div id="searchTitle">
+                Search:
+            </div><input id="search" ng-model="query" /><br />
         </div>
         <div class="container">
             <div class="main-list">
@@ -111,7 +111,6 @@
                     <span>{{item.name}}</span>
                 </button>
             </div>
-
 
             <div id="eachTabContent" ng-view></div>
         </div>
