@@ -29,7 +29,14 @@ describe("loan calculator", function ($scope) {
 
     //validation
     it('does not use negative or zero valued parameters for calculations ', function (monthlyIncome, secondMonthlyIncome, profit, other, i, p, n) {
-        expect((monthlyIncome)>(0));
+        monthlyIncome = 1;
+        secondMonthlyIncome = 1;
+        profit = 1;
+        i = 0.10;
+        p = 1000;
+        n = 12;
+
+        expect((monthlyIncome) > (0));
         expect((secondMonthlyIncome)>(0));
         expect((profit)>(0));
         expect((i)>(0));
