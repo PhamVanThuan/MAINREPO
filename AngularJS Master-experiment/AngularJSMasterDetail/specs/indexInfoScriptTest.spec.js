@@ -1,4 +1,6 @@
-﻿describe('Controller: angularControllers', function () {
+﻿'use strict'
+
+describe('Controller: angularControllers', function () {
 
     // load the controller's module
     beforeEach(module('angularApp'));

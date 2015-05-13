@@ -22,16 +22,16 @@ describe("loan calculator", function () {
         var other = 100;
         var sum = (monthlyIncome + secondMonthlyIncome + profit + other) / 2.5;
 
-        expect(sum).toEqual(7200);
+        expect(sum).toEqual(6840);
     });
 
     //validation
     it('does not use negative or zero valued parameters for calculations ', function (monthlyIncome, secondMonthlyIncome, profit, other, i, p, n) {
-        expect(monthlyIncome).GreaterThan(0);
-        expect(secondMonthlyIncome).GreaterThan(0);
-        expect(profit).GreaterThan(0);
-        expect(i).GreaterThan(0);
-        expect(p).GreaterThan(0);
-        expect(n).GreaterThan(0);
+        expect(monthlyIncome)>(0);
+        expect(secondMonthlyIncome)>(0);
+        expect(profit)>(0);
+        expect(i)>(0);
+        expect(p)>(0);
+        expect(n)>(0);
     });
 });
