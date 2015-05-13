@@ -20,82 +20,74 @@
 <body>
 
     <form id="MyCalculator">
-    <div id="" ng-model="MyCalc" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;">
-        <h1><strong>What can I spend?</strong></h1>
-        Monthly income before tax:
-        <br />      R <input type="number" required ng-model="monthlyIncome" step="500" min="8000" value="8000" /><br />
-        2nd Monthly Income:
-        <br />      R <input type="number" required ng-model="secondMonthlyIncome" step="500" min="0" /><br />
-        Profit:
-        <br />      R <input type="number" required ng-model="profit" step="500" min="0" /><br />
-        Other contributions:
-        <br />      R <input type="number" required ng-model="other" min="0" step="100" /><br />
-        <br />
+        <div id="" ng-model="MyCalc" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;">
+            <h1><strong>What can I spend?</strong></h1>
+            Monthly income before tax:
+            <br />      R <input type="number" required ng-model="monthlyIncome" step="500" min="8000" value="8000" /><br />
+            2nd Monthly Income:
+            <br />      R <input type="number" required ng-model="secondMonthlyIncome" step="500" min="0" /><br />
+            Profit:
+            <br />      R <input type="number" required ng-model="profit" step="500" min="0" /><br />
+            Other contributions:
+            <br />      R <input type="number" required ng-model="other" min="0" step="100" /><br />
+            <br />
 
-        <br />
+            <br />
 
-        <h1><strong>Loan Details</strong><br /></h1>
-        Monthly installments:
-        <br /> R <input type="number" ng-model="monthlyInstallments" step="500" min="1000" /> <br />
-        <br />
-        Term of Loan(years)
-        <br />
-        <input type="radio" ng-model="LoanTerm" value="20" />20
-        <br />
-        <input type="radio" ng-model="LoanTerm" value="23" />23
-        <br />
-        <input type="radio" ng-model="LoanTerm" value="30" />30
-        <br />
-        LoanTerm
-        Interest Rate(%):
-        <br /> R <input type="number" ng-model="interest" value=10 step="0.1" min="10" /><br />
-        <br />
+            <h1><strong>Loan Details</strong><br /></h1>
+            Monthly installments:
+            <br /> R <input type="number" ng-model="monthlyInstallments" step="500" min="1000" /> <br />
+            <br />
+            Term of Loan(years)
+            <br />
+            <input type="radio" ng-model="LoanTerm" value="20" />20
+            <br />
+            <input type="radio" ng-model="LoanTerm" value="23" />23
+            <br />
+            <input type="radio" ng-model="LoanTerm" value="30" />30
+            <br />
+            LoanTerm
+            Interest Rate(%):
+            <br /> R <input type="number" ng-model="interest" value=10 step="0.1" min="10" /><br />
+            <br />
 
-        <ul>
-            <li>
-                <b>
-                    What would my monthly loan repayment be?
-                    <br /> R {{monthlyInstallments}}
-                </b>
-            </li>
-            <li>
-                <b>
-                    What would my total repayment be?
-                    <br /> R {{monthlyInstallments * (1 + (interest / LoanTerm * 12))}}
-                </b>
-            </li>
-        </ul>
-    </div>
-    <div>
-        <h1><strong>Can I afford my dream home?</strong></h1>
+            <ul>
+                <li>
+                    <b>
+                        What would my monthly loan repayment be?
+                        <br /> R {{monthlyInstallments}}
+                    </b>
+                </li>
+                <li>
+                    <b>
+                        What would my total repayment be?
+                        <br /> R {{monthlyInstallments * (1 + (interest / 100 * 12))}}
+                    </b>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h1><strong>Can I afford my dream home? </strong></h1>
 
-        Purchase price:
-        <br />      R <input type="number" ng-model="price" step="500" min="0" /><br />
-        Cash Deposit:
-        <br />      R <input type="number" ng-model="deposit" step="500" min="0" /><br />
-        I am:
-        <br />        <input type="radio" name="salaried" /> Employed   <br />
-        <input type="radio" name="salaried" /> Unemployed <br />
-        Gross Income:
-        <br />      R <input type="number" ng-model="other" min="0" step="1000" /><br />
-        Term of Loan(months):
-        <br />      R <input type="number" ng-model="loanYears" min="240" /><br />
+            Purchase price:
+            <br />      R <input type="number" ng-model="price" step="500" min="0" /><br />
+            Cash Deposit:
+            <br />      R <input type="number" ng-model="deposit" step="500" min="0" /><br />
+            I am:
+            <br />        <input type="radio" name="salaried" /> Employed   <br />
+            <input type="radio" name="salaried" /> Unemployed <br />
+            Approximated Gross Income:
+            <br />      R <input type="number" min="0" step="1000" readonly value="{{monthlyIncome + secondMonthlyIncome + profit}}"/><br />
+            Term of Loan(months):
+            <br />      R <input type="number" ng-model="LoanTerm" min="240" /><br />
+            <div id="affordAnswer" ng-click="{{affordability(monthlyIncome+ secondMonthlyIncome + profit, deposit(1 + interest * LoanTerm) )}}" ></div>
 
-        <br />
-    </div>
-       </form>
+            <br />
+        </div>
+    </form>
 
     <div id="timerDiv">
         <p id="timer"> </p>
-        <script>
-            var myVar = setInterval(function () { myTimer() }, 1000);
-
-            function myTimer() {
-                var d = new Date();
-                var t = d.toLocaleTimeString();
-                document.getElementById("timer").innerHTML = t;
-            }
-        </script>
     </div>
 
     <div ng-controller="ListCtrl" class="container-list">
@@ -117,7 +109,7 @@
         </div>
     </div>
 
-    <div ng-controller="DateCtrl">
+    <div ng-controller="DateController">
         {{date | date:'yyyy-MM-dd'}}
     </div>
 
@@ -142,9 +134,27 @@
            };
        });
 
-        function DateCtrl($scope) {
+        function DateController($scope) {
             $scope.date = new Date();
         }
+
+        var myVar = setInterval(function () { myTimer() }, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("timer").innerHTML = t;
+        }
+
+        function afforadibility($evaluation, $expenses)
+        {
+            if ($expenses > $evaluation) {
+                document.getElementById("affordAnswer").innerHTML = "Yes you can afford your dream home! Apply now!";
+            }
+            else {
+                document.getElementById("affordAnswer").innerHTML = "No you can't afford your dream home, Sorry...";
+            }
+       }
     </script>
 
     <script src="scripts/vhsupport.js"></script>
