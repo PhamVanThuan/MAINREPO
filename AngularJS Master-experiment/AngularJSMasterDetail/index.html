@@ -20,7 +20,7 @@
 <body>
 
     <form id="MyCalculator">
-        <div id="" ng-model="MyCalc" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;">
+        <div id="" ng-model="MyCalc" ng-init="monthlyIncome=0;secondMonthlyIncome=0;profit=0;other=0;LoanTotal=240;interest=0;deposit=0;LoanTerm=0;">
             <h1><strong>What can I spend?</strong></h1>
             Monthly income before tax:
             <br />      R <input type="number" required ng-model="monthlyIncome" step="500" min="8000" value="8000" /><br />
@@ -30,8 +30,6 @@
             <br />      R <input type="number" required ng-model="profit" step="500" min="0" /><br />
             Other contributions:
             <br />      R <input type="number" required ng-model="other" min="0" step="100" /><br />
-            <br />
-
             <br />
 
             <h1><strong>Loan Details</strong><br /></h1>
@@ -58,12 +56,6 @@
                         <br /> R {{monthlyInstallments}}
                     </b>
                 </li>
-                <li>
-                    <b>
-                        What would my total repayment be?
-                        <br /> R {{monthlyInstallments * (1 + (interest / 100 * 12))}}
-                    </b>
-                </li>
             </ul>
         </div>
         <div>
@@ -77,11 +69,18 @@
             <br />        <input type="radio" name="salaried" /> Employed   <br />
             <input type="radio" name="salaried" /> Unemployed <br />
             Approximated Gross Income:
-            <br />      R <input type="number" min="0" step="1000" readonly value="{{monthlyIncome + secondMonthlyIncome + profit}}"/><br />
+            <br />      R <input type="number" min="0" step="1000" readonly value="{{monthlyIncome + secondMonthlyIncome + profit}}" /><br />
             Term of Loan(months):
             <br />      R <input type="number" ng-model="LoanTerm" min="240" /><br />
-            <div id="affordAnswer" ng-click="{{affordability(monthlyIncome+ secondMonthlyIncome + profit, deposit(1 + interest * LoanTerm) )}}" ></div>
-
+            <div id="affordAnswer" ><button ng-click="affordability(monthlyIncome+ secondMonthlyIncome + profit, deposit(1 + interest * LoanTerm)">/......../ </button></div>
+            <ul>
+                <li>
+                    <b>
+                        What would my total repayment be?
+                        <br /> R {{deposit * (1 + (interest / 100 * LoanTerm))}}
+                    </b>
+                </li>
+            </ul>
             <br />
         </div>
     </form>
@@ -146,15 +145,14 @@
             document.getElementById("timer").innerHTML = t;
         }
 
-        function afforadibility($evaluation, $expenses)
-        {
+        function afforadibility($evaluation, $expenses) {
             if ($expenses > $evaluation) {
                 document.getElementById("affordAnswer").innerHTML = "Yes you can afford your dream home! Apply now!";
             }
             else {
                 document.getElementById("affordAnswer").innerHTML = "No you can't afford your dream home, Sorry...";
             }
-       }
+        }
     </script>
 
     <script src="scripts/vhsupport.js"></script>
