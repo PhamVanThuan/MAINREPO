@@ -98,7 +98,10 @@
             <br />      R
             <input type="number" ng-model="LoanTerm" min="240" />
             <br />
-            <div id="affordAnswer"><button ng-click="affordability(monthlyIncome + secondMonthlyIncome + profit, deposit(1 + interest * LoanTerm)">/......../ </button></div>
+            <div id="affordAnswer"><button ng-click="affordability(monthlyIncome + secondMonthlyIncome + profit, deposit(1 + interest * LoanTerm)">Validate Input</button></div>
+            <p>
+
+            </p>
             <ul>
                 <li>
                     <b>
@@ -109,7 +112,7 @@
             </ul>
             <br />
         </div>
-        <input type="button" value=" Validate Entries" ng-click="validateForm()" />
+        
     </form>
 
     <div id="timerDiv">

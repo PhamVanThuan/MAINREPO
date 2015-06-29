@@ -27,7 +27,7 @@
 
     function onResume() {
         document.addEventListener('resume', onResume.bind(this), false);
-        alert("Welcome back...");
+        alert("Welcome back");
     };
 
     function resizeListIOS() {

@@ -134,7 +134,6 @@
     <Content Include="merges\ios\scripts\vhsupport.js" />
     <Content Include="merges\wp8\css\overrides.css" />
     <Content Include="partials\details.html" />
-    <Content Include="res\native\windows\CordovaApp_TemporaryKey.pfx" />
     <Content Include="scripts\frameworks\angular-resource.min.js" />
     <Content Include="scripts\frameworks\angular-route.min.js" />
     <Content Include="scripts\frameworks\angular.min.js" />
