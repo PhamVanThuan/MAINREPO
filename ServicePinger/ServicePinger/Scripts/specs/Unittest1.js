@@ -5,8 +5,8 @@ describe('app.controllers', function () {
     beforeEach(function() {
       
         });
-    });
 
     it('should ', function () {
         expect(0===0);
     });
+});
