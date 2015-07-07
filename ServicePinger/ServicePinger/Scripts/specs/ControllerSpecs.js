@@ -1,6 +1,6 @@
 ﻿'use strict'
 describe("Controller : All controllers", function () {
-    beforeEach(module('app'));
+ 
     beforeEach(module('app.controllers'));
     var $controller;
 

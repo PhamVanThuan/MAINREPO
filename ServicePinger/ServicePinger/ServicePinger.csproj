@@ -150,6 +150,8 @@
     <Content Include="Scripts\services.spec.js">
       <DependentUpon>services.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\specs\ControllerSpecs.js" />
+    <Content Include="Scripts\specs\Unittest1.js" />
     <Content Include="Scripts\vendor\angular-csp.css" />
     <Content Include="Scripts\vendor\angular-ui-router.js" />
     <Content Include="Scripts\vendor\angular-ui-router.min.js" />
