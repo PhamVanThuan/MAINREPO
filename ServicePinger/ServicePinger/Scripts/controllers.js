@@ -40,4 +40,11 @@ angular.module('app.controllers', [])
         $scope.$on('$viewContentLoaded', function () {
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
+    }])
+
+    .controller('HomeCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+        $scope.$root.title = 'Service Spy';
+        $scope.$on('$viewContentLoaded', function () {
+            $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+        });
     }]);

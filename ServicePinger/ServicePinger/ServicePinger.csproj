@@ -138,6 +138,7 @@
     <Content Include="Scripts\controllers.spec.js">
       <DependentUpon>controllers.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\DataController.js" />
     <Content Include="Scripts\directives.js" />
     <Content Include="Scripts\directives.spec.js">
       <DependentUpon>directives.js</DependentUpon>
@@ -488,6 +489,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="robots.txt" />
+    <Content Include="Views\SSHome.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

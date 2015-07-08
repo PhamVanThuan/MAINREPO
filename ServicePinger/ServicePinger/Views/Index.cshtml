@@ -1,5 +1,67 @@
 ﻿@{
     PageData["title"] = "AngularJS SPA Template for Visual Studio";
 }
-<h2>Welcome!</h2>
-<p>This is just a demo page.</p>
+<!DOCTYPE html>
+<html ng-app="ServiceI">
+
+    <head>
+        <title>
+            <strong>Service Spy</strong>
+        </title>
+        <script data-ng-required="angular.js" data-semver="1.4.0-beta.4" src="https://code.angularjs.org/1.4.0-beta.4/angular.js"></script>
+        <script src="~/Scripts/DataController.js"></script>
+
+</head>
+<body ng-controller="DataController">
+  <h1>{{message}}</h1>
+
+  <div>{{error}}</div>
+  <div>{{repo_Error}}</div>
+  <div ng-model="MainController">
+    <h2> {{user.name}}</h2>
+    <form name="searchUser">
+      <input type="search" required placeholder="Username to find" ng-model="username" value="VishavP" />
+      <input type="Submit" value="Search" ng-click="search(username)" />
+      <!-- username as a parameter not necessary !-->
+    </form>
+  </div>
+
+  @*<p ng-controller="MainController">
+    <br>
+    <table border=3>
+      <tr>
+        <td>Name</td>
+        <td>Company</td>
+        <td>Email</td>
+        <td>Location</td>
+        <td>Stargazers</td>
+        <td>Type</td>
+      </tr>
+
+      <tr>
+        <td>{{user.name}}</td>
+        <td>{{user.company}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.location}}</td>
+        <td>{{user.stargazers_count}}</td>
+        <td>{{user.type}}</td>
+      </tr>
+    </table>*@
+    <br>
+    @*<img ng-src="{{user.avatar_url}}" title="GitHub profile picture" />
+
+    <img align="LEFT" ng-src="http://www.gravatar.com/avatar/{{user.gravatar_id}}" title="{{user.name}}'s gravatar profile picture">
+    <br>
+    <br>
+    <div>
+      <h2>Repositories</h2>
+      <ul ng-repeat="repo in repos | filter:language | orderBy:'name'">
+        <li>{{repo.name}}</li>
+        <li>{{repo.language}}</li>
+        <li>{{repo.stargazers_count}}</li>
+      </ul>
+    </div>*@
+
+</body>
+
+</html>
