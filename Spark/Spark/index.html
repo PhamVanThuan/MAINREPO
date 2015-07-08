@@ -1,19 +1,26 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
     <meta charset="utf-8" />
     <title>Spark</title>
-
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/GadgetsScript.js"></script>
+    <!-- Cordova reference, this is added to your app when it's built. -->
     <!-- Spark references -->
     <link href="css/index.css" rel="stylesheet" />
 </head>
 <body>
-    <p>Hello, your application is ready!</p>
+    <p>Spark</p>
+    <img src="images/4cb4LKkcg.png" width="500" height="500" />
+    
+    <ng-model>
+        Enter your Suburb:
+        <input type="text" size="30" name="suburb"/><br />
+        Enter the date for the schedule you wish to view:
+        <input type="date" ng-model="date" name="dateView"/><br>
+    </ng-model> 
 
-    <!-- Cordova reference, this is added to your app when it's built. -->
-    <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
-
-    <script src="scripts/index.js"></script>
 </body>
 </html>
