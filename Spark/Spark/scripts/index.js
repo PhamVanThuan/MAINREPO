@@ -16,15 +16,14 @@
         // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
     };
 
+
     function onBatteryCritical(info) {
         // Handle the battery critical event
         alert("Battery Level Critical " + info.level + "%\nRecharge Soon!");
-        onPause(" Due to a low battery.");
     };
 
     function onPause() {
         // TODO: This application has been suspended. Save application state here. Handle the on pause event
-        alert("Application has been paused "+onPause());
         setTimeout(function () {
             // TODO: do your thing!
         }, 0);

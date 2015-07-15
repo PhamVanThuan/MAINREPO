@@ -50,20 +50,20 @@ table {
 body {
   font: 14px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #404040;
-  background:yellow;
+  background: #eece1c;
 }
 
 .register-title {
   width: 270px;
   line-height: 43px;
   margin: 50px auto 20px;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 500;
   color: white;
   color: rgba(255, 255, 255, 0.95);
   text-align: center;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  background: #d7604b;
+  background: #a5ee1c;
   border-radius: 3px;
   background-image: -webkit-linear-gradient(top, #dc745e, #d45742);
   background-image: -moz-linear-gradient(top, #dc745e, #d45742);
@@ -129,12 +129,6 @@ input {
   -webkit-box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
 }
-
-.homeIcon {
-    background-image: url(images/house-lightning-256.png);
-}
-
-
 .register-button:active {
   background: #eee;
   border-color: #c3c3c3 #d1d1d1 #d8d8d8;
@@ -215,4 +209,3 @@ input {
   border: 0;
   padding: 0;
 }
-

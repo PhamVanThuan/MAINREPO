@@ -22,7 +22,7 @@
                 <div class="panel-heading">
                     <p>
                         Current Date (Y-M-D): {{date | date:'yyyy-MM-dd'}}
-                    <br>Current Time (H-M-S): {{date | date: 'HH-mm-ss'}}
+                        <br>Current Time (H-M-S): {{date | date: 'HH-mm-ss'}}
                     </p>
                 </div>
             </div>
@@ -30,7 +30,7 @@
     </div>
     <br /><br />
 
-    <div id="AppNavigation" border="1">     
+    <div id="AppNavigation" border="1">
         <button id="Home" onclick="window.location = 'index.html';">Log out</button><br />
         <button id="Register" onclick="window.location = 'RegisterPage.html';">Register</button>
     </div>
@@ -38,13 +38,12 @@
     <script>
         (function () {
             var app = angular.module("app", []);
-            var MainController = function(name, $scope)
-            {
+            var MainController = function (name, $scope) {
                 $scope.name = name; //username
                 alert("Welcome " + name);
             }
-            
-            app.controller("MainController",  MainController);
+
+            app.controller("MainController", MainController);
 
             var DateController = function ($scope) {
 
