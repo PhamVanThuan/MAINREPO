@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
     <title>SparkLite</title>
     <link href="css/index.css" rel="stylesheet" />
+    <script data-require="angular.js@1.3.4" data-semver="1.3.4" src="https://code.angularjs.org/1.3.4/angular.js"></script>
 </head>
 <body>
     <img src="images/house-lightning-256.png" width="100" height="100" />
@@ -15,6 +16,17 @@
         Enter the date for the schedule you wish to view:
         <br />
         <input type="date" ng-model="date" name="dateView" />
+        <br />
+        <div ng-controller="DateController">
+            <div class="panel panel-primary" ng-controller="DateController">
+                <div class="panel-heading">
+                    <p>
+                        Current Date (Y-M-D): {{date | date:'yyyy-MM-dd'}}
+                    <br>Current Time (H-M-S): {{date | date: 'HH-mm-ss'}}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
     <br /><br />
 
@@ -22,5 +34,26 @@
         <button id="Home" onclick="window.location = 'index.html';">Log out</button><br />
         <button id="Register" onclick="window.location = 'RegisterPage.html';">Register</button>
     </div>
+
+    <script>
+        (function () {
+            var app = angular.module("app", []);
+            var MainController = function(name, $scope)
+            {
+                $scope.name = name; //username
+                alert("Welcome " + name);
+            }
+            
+            app.controller("MainController",  MainController);
+
+            var DateController = function ($scope) {
+
+                $scope.date = new Date();
+            };
+
+            app.controller("DateController", DateController);
+
+        })();
+    </script>
 </body>
 </html>
