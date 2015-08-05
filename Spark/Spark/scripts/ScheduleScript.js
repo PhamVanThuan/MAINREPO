@@ -1,7 +1,4 @@
 ﻿(function () {
-    var app = angular.module("app", ['smart-table']);
-
-    
     var MainController = function (name, $scope) {
         $scope.firstName = "Vishav";
         $scope.name = name; //username
