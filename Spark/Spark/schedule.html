@@ -4,9 +4,7 @@
     <title>SparkLite</title>
     <link href="css/stylesheet.css" rel="stylesheet" />
     <script data-require="angular.js@1.3.4" data-semver="1.3.4" src="https://code.angularjs.org/1.3.4/angular.js"></script>
-    <script src="scripts/ScheduleScript.js"></script>
-    <script src="scripts/DataScript.js"></script>
-
+    <script src="scripts/NonLibScripts/ScheduleScript.js"></script>
 </head>
 <body>
     <img src="images/house-lightning-256.png" width="100" height="100" />
@@ -16,37 +14,34 @@
         <br />
         <input type="text" name="suburb" />
         <br />
-        Choose a date for the load shedding schedule you wish to view:
+        Choose a date for the schedule you wish to view:
         <br />
         <input type="date" ng-model="date" name="dateView" />
         <br />
         <div ng-controller="DateController">
-            <div class="panel panel-primary" ng-controller="DateController">
-                <div class="panel-heading">
-                    <p>
-                        {{date | date:'yyyy-MM-dd'}}
-                        <br>{{date | date: 'HH-mm-ss'}}
-                    </p>
-                </div>
-            </div>
+            <table border=1>
+                
+                <tr>
+                    <td>Area</td>
+                    <td>Time</td>
+                </tr>
+
+                <tr ng-repeat="row in rowCollection">
+                    <td>{{row.area}}</td>
+                    <td>{{row.time}}</td>
+                </tr>
+            </table>
         </div>
-    </div>
+           
+
+        </div>
     <br /><br />
 
-    <!--<table st-table="rowCollection" class="table table-striped">
-        <thead>
-            <tr>
-                <th>Area</th>
-                <th>Date/Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="row in rowCollection">
-                <td>{{row.area}}</td>
-                <td>{{row.time}}</td>
-            </tr>
-        </tbody>
-    </table>-->
+    <div id="AppNavigation" border="1">
+        <button id="Home" onclick="window.location = 'index.html';" >Log Out</button>
+        <button id="Register" onclick="window.location = 'RegisterPage.html';">Register</button>
+        <button id="submit" onclick="">Submit</button>
 
-    </body>
+    </div>
+</body>
 </html>

@@ -12,20 +12,6 @@
 <body>
     <h1 class="register-title">Spark</h1>
     <br />
-    <form class="register">
-        <input type="email" class="register-input" placeholder="Email address"/>
-        <input type="password" class="register-input" placeholder="Password"/>
-        <!--<input type="submit" value="Login" class="register-button" onclick="window.navigate = 'schedule.html';"/>-->
-        <button type="button" value="Login" class="register-button"><a href="schedule.html" style="text-decoration:none; color: inherit;">Login</a></button>
-        <button type="button" value="Register" class="register-button"><a href="RegisterPage.html" style="text-decoration:none; color: inherit;">Register</a></button>
-    </form>
-        
-    <script src="lib/*.js"></script>
-    <script src="scripts/app.js"></script>
-    <script src="scripts/DataScript.js"></script>
-    <script src="scripts/ScheduleScript.js"></script>
-
-    <!--framework-->
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
     <script src="scripts/index.js"></script>
@@ -33,6 +19,16 @@
     <script src="scripts/angular.js"></script>
     <script src="scripts/angular-touch.js"></script>
     <script src="scripts/swipe.js"></script>
-    <script src="node_modules/angular-smart-table/dist/smart-table.min.js"></script>
+
+        <form class="register">
+            <input type="email" class="register-input" placeholder="Email address"/>
+            <input type="password" class="register-input" placeholder="Password"/>
+            <!--<input type="submit" value="Login" class="register-button" onclick="window.navigate = 'schedule.html';"/>-->
+            <button type="button" value="Login" class="register-button"><a href="schedule.html" style="text-decoration:none; color: inherit;">Login</a></button>
+            <button type="button" value="Register" class="register-button"><a href="RegisterPage.html" style="text-decoration:none; color: inherit;">Register</a></button>
+         </form>
+        <script>//js code goes here</script>
+  
+
 </body>
 </html>
