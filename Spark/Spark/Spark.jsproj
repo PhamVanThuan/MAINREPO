@@ -122,6 +122,7 @@
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\angular.min.js.map" />
+    <Content Include="scripts\NonLibScripts\login.js" />
     <Content Include="scripts\NonLibScripts\ScheduleScript.js" />
     <Content Include="scripts\swipe.js" />
     <Content Include="scripts\swipeGestures.js" />

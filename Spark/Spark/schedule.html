@@ -12,36 +12,35 @@
     <div>
         Enter your Suburb:
         <br />
-        <input type="text" name="suburb" />
-        <br />
-        Choose a date for the schedule you wish to view:
-        <br />
-        <input type="date" ng-model="date" name="dateView" />
-        <br />
+       
         <div ng-controller="DateController">
-            <table border=1>
+            <input type="text" ng-model="area" value="Avoca Hills" />
+            <br />
+            <table>
                 
+
                 <tr>
                     <td>Area</td>
-                    <td>Time</td>
+                    <td>Start Time</td>
+                    <td>End Time</td>
                 </tr>
 
-                <tr ng-repeat="row in rowCollection">
+                <tr ng-repeat="row in rowCollection | filter:area">
                     <td>{{row.area}}</td>
                     <td>{{row.time}}</td>
+                    <td>{{row.etime}}</td>
                 </tr>
             </table>
-        </div>
-           
-
+        
+            </div>
         </div>
     <br /><br />
 
-    <div id="AppNavigation" border="1">
+    <div id="AppNavigation" >
         <button id="Home" onclick="window.location = 'index.html';" >Log Out</button>
         <button id="Register" onclick="window.location = 'RegisterPage.html';">Register</button>
-        <button id="submit" onclick="">Submit</button>
 
     </div>
+
 </body>
 </html>
