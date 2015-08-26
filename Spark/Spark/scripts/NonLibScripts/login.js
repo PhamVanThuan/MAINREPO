@@ -5,8 +5,14 @@ function login(form) {
     {
         window.open('schedule.html?enableripple=cordova-3.0.0-NexusGalaxy') /*opens the target page while Id & password matches*/
     }
-    else {
+    else
+    {
         /*alert("The Password or Username Does Not Match!!!")displays error message*/
-        document.getElementById('loginerror').innerHTML = "The Password or Username Do Not Match!!!";
+        document.getElementById('loginerror').innerHTML = "The Password or Username are invalid.";
     }
+    
+}
+
+function closeWin(form) {
+
 }
