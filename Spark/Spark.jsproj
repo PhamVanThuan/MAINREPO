@@ -111,16 +111,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="css\stylesheet.css" />
-    <Content Include="images\0532f84689f4cc96898672fc388a402a1f135bdc6a124192b37e4c57a7c6a212.jpg" />
-    <Content Include="images\0fe1cb1d440ddeacb1c63c589560b647.450x320x1.jpg" />
-    <Content Include="images\10852790_315045682040025_1795604282_n.jpg" />
-    <Content Include="images\Home-Loans-South-Africa.jpg" />
     <Content Include="images\house-lightning-256.png" />
-    <Content Include="images\OneToOneTutor-300x227.png" />
-    <Content Include="images\original.jpg" />
-    <Content Include="images\SAHL-logo.png" />
-    <Content Include="images\spark1.jpg" />
-    <Content Include="images\tips.png" />
     <Content Include="merges\android\scripts\android2.3-jscompat.js" />
     <Content Include="merges\android\scripts\platformOverrides.js" />
     <Content Include="packages.config" />
@@ -133,10 +124,8 @@
     <Content Include="scripts\angular.min.js.map" />
     <Content Include="scripts\NonLibScripts\login.js" />
     <Content Include="scripts\NonLibScripts\ScheduleScript.js" />
-    <Content Include="scripts\NonLibScripts\tips.js" />
     <Content Include="scripts\swipe.js" />
     <Content Include="scripts\swipeGestures.js" />
-    <Content Include="Tips.html" />
     <Folder Include="merges\ios\" />
     <Content Include="merges\windows\scripts\platformOverrides.js" />
     <Content Include="merges\windows\scripts\winstore-jscompat.js" />

@@ -11,8 +11,8 @@
     <form class="register">
         <div>
             <div ng-controller="DateController">
-                Enter your suburb:
-                <br />
+                <b>Enter your suburb:</b>
+                <br/>
                 <input type="text" ng-model="area" value="Avoca Hills" ng-init="area='`'" />
                 <br /><br />
                 <table class="CSSTableGenerator">
@@ -22,7 +22,6 @@
                         <td>Start</td>
                         <td>Finish</td>
                     </tr>
-
 
                     <tr ng-repeat="row in rowCollection | filter:area">
                         <td>{{row.date}}</td>
@@ -37,7 +36,7 @@
 
         <div id="AppNavigation">
             <button id="Home" class="register-button" onclick="window.location = 'index.html';">Log Out</button>
-            <p align="center"><button id="Tips" onclick="window.location = 'Tips.html';"><img src="images/tips.png" /></button></p>
+            <button id="Register" class="register-button" onclick="window.location = 'RegisterPage.html';">Tips</button>
         </div>
         </form>
 </body>

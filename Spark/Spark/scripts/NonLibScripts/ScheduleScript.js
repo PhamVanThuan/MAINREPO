@@ -116,9 +116,6 @@
                                 { date: '2015-09-07', area: 'New Germany', time: '18:00', etime: '20:00' }
 
         ];
-
-        $scope.search = function (area) { //call this function from ng click on submit button
-        };//controller
     };
         app.controller("DateController", DateController);
 

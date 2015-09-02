@@ -13,9 +13,7 @@
 
 </head>
 <body>
-    <h1 class="register-title">Spark 
-    <img src="images/house-lightning-256.png"150" height="100" />
-</h1>
+    <h1 class="register-title">Spark</h1>
     <br />
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
@@ -25,20 +23,13 @@
     <script src="scripts/angular-touch.js"></script>
     <script src="scripts/swipe.js"></script>
 
-    
     <form class="register">
-        <input type="text" class="register-input" name="username" placeholder="Username" autofocus=""/>
-        <input type="password" class="register-input" name="password" placeholder="Password" />
+        <input type="text" class="register-input" name="username" placeholder="Username" />
+        <input type="password" class="register-input" name="password" placeholder=" password" />
         <button type="button" value="Login" class="register-button" onclick="login(this.form)">Login</button>
         <br />
         <font color="red"><label id="loginerror"></label></font>
     </form>
-    <br />
-
-    <div id="AppNavigation">
-        <p align="center"><button id="Tips" onclick="window.location = 'Tips.html';"><img src="images/tips.png" /></button></p>
-    </div>
-   
 
 </body>
 </html>
