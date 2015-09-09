@@ -2,7 +2,7 @@
     var app = angular.module("app", []);
 
 
-    var DateController = function ($scope) {
+    var DateController = function ($scope)  {
         $scope.rowCollection = [{ date: '2015-09-01', area: '  Asherville', time: '18:00', etime: '20:00' },
                                 { date: '2015-09-01', area: 'Atholl Heights', time: '20:00', etime: '22:00' },
                                 { date: '2015-09-01', area: 'Avoca Hills', time: '08:00', etime: '10:00' },
@@ -116,6 +116,7 @@
                                 { date: '2015-09-07', area: 'New Germany', time: '18:00', etime: '20:00' }
 
         ];
+            
     };
         app.controller("DateController", DateController);
 

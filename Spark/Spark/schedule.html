@@ -7,13 +7,14 @@
     <script src="scripts/NonLibScripts/ScheduleScript.js"></script>
 </head>
 <body>
-    <img src="images/house-lightning-256.png" width="100" height="100" />
+    <p align="center"><img src="images/house-lightning-256.png" width="100" height="100" /></p>
+    <br><br />
     <form class="register">
         <div>
             <div ng-controller="DateController">
                 Enter your suburb:
                 <br />
-                <input type="text" ng-model="area" value="Avoca Hills" ng-init="area='`'" />
+                <input type="text" ng-model="area" ng-init="area='`'" />
                 <br /><br />
                 <table class="CSSTableGenerator">
                     <tr>
@@ -37,7 +38,7 @@
 
         <div id="AppNavigation">
             <button id="Home" class="register-button" onclick="window.location = 'index.html';">Log Out</button><br/>
-            <p align="center"><button id="Tips" onclick="window.location = 'Tips.html';"><img src="images/tips.png" /></button></p>
+            
         </div>
         </form>
 </body>

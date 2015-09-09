@@ -120,6 +120,14 @@
     <Content Include="res\icons\android\icon-48-mdpi.png" />
     <Content Include="res\icons\android\icon-72-hdpi.png" />
     <Content Include="res\icons\android\icon-96-xhdpi.png" />
+    <Content Include="res\screens\android\screen-xhdpi-portrait.png" />
+    <Content Include="res\screens\android\screen-xhdpi-landscape.png" />
+    <Content Include="res\screens\android\screen-mdpi-landscape.png" />
+    <Content Include="res\screens\android\screen-mdpi-portrait.png" />
+    <Content Include="res\screens\android\screen-ldpi-portrait.png" />
+    <Content Include="res\screens\android\screen-ldpi-landscape.png" />
+    <Content Include="res\screens\android\screen-hdpi-portrait.png" />
+    <Content Include="res\screens\android\screen-hdpi-landscape.png" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular-touch.js" />
     <Content Include="scripts\angular-touch.min.js" />
@@ -141,7 +149,6 @@
     <Folder Include="res\icons\ios\" />
     <Folder Include="res\icons\wp8\" />
     <Folder Include="res\icons\windows\" />
-    <Folder Include="res\screens\android\" />
     <Folder Include="res\screens\ios\" />
     <Folder Include="res\screens\windows\" />
     <Folder Include="res\screens\wp8\" />
@@ -184,14 +191,6 @@
     <Content Include="res\icons\wp8\ApplicationIcon.png" />
     <Content Include="res\icons\wp8\Background.png" />
     <Content Include="res\native\android\ant.properties" />
-    <Content Include="res\screens\android\screen-hdpi-landscape.png" />
-    <Content Include="res\screens\android\screen-hdpi-portrait.png" />
-    <Content Include="res\screens\android\screen-ldpi-landscape.png" />
-    <Content Include="res\screens\android\screen-ldpi-portrait.png" />
-    <Content Include="res\screens\android\screen-mdpi-landscape.png" />
-    <Content Include="res\screens\android\screen-mdpi-portrait.png" />
-    <Content Include="res\screens\android\screen-xhdpi-landscape.png" />
-    <Content Include="res\screens\android\screen-xhdpi-portrait.png" />
     <Content Include="res\screens\ios\screen-ipad-landscape.png" />
     <Content Include="res\screens\ios\screen-ipad-landscape-2x.png" />
     <Content Include="res\screens\ios\screen-ipad-portrait.png" />
