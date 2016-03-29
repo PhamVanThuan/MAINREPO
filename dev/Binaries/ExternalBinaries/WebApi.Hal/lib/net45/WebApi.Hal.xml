@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi.Hal</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi.Hal.IHypermediaResolver.ResolveRel(WebApi.Hal.Interfaces.IResource)">
+            <summary>
+            Resolves the link relation for the given resource
+            </summary>
+            <param name="resource">Resource to determine the link relation for</param>
+            <returns>The configured link relation</returns>
+        </member>
+        <member name="M:WebApi.Hal.IHypermediaResolver.ResolveSelf(WebApi.Hal.Interfaces.IResource)">
+            <summary>
+            Resolves the self link for the given resource
+            </summary>
+            <param name="resource">Resource to determine the self link for</param>
+            <returns>The configured self link</returns>
+        </member>
+        <member name="M:WebApi.Hal.IHypermediaResolver.ResolveLinks(WebApi.Hal.Interfaces.IResource)">
+            <summary>
+            Resolves all non-self and non-CURIES links for the given resource
+            </summary>
+            <param name="resource">Resource to determine the links for</param>
+            <returns>The configured links</returns>
+        </member>
+        <member name="M:WebApi.Hal.IHypermediaResolver.ResolveAppender``1(``0)">
+            <summary>
+            Resolves the hypermedia appenders for the given resource
+            </summary>
+            <typeparam name="T">Type of the resource to find the appender for</typeparam>
+            <param name="resource">Resource to find the appender for</param>
+            <returns>Configured appender</returns>
+        </member>
+        <member name="M:WebApi.Hal.Link.CreateLink(System.String,System.Object[])">
+            <summary>
+            If this link is templated, you can use this method to make a non templated copy
+            </summary>
+            <param name="newRel">A different rel</param>
+            <param name="parameters">The parameters, i.e 'new {id = "1"}'</param>
+            <returns>A non templated link</returns>
+        </member>
+        <member name="M:WebApi.Hal.Link.CreateLink(System.Object[])">
+            <summary>
+            If this link is templated, you can use this method to make a non templated copy
+            </summary>
+            <param name="parameters">The parameters, i.e 'new {id = "1"}'</param>
+            <returns>A non templated link</returns>
+        </member>
+        <member name="M:WebApi.Hal.Link.Clone">
+            <summary>
+            Performs a shallow clone of the instance
+            </summary>
+            <returns>Cloned instance</returns>
+        </member>
+        <member name="M:WebApi.Hal.RepresentationList`1.Add(`0)">
+            <summary>
+            This method was added solely for the purpose of supporting XMLSerializer. 
+            Exception thrown - To be XML serializable, types which inherit from IEnumerable must have an implementation of Add(System.Object) 
+            </summary>
+            <param name="item">Object to be added</param>
+        </member>
+        <member name="T:WebApi.Hal.UriTemplate">
+            <summary>
+            this is https://github.com/tavis-software/UriTemplates
+            an RFC6570-compliant level-4 UriTemplate handler
+            </summary>
+        </member>
+        <member name="M:WebApi.Hal.XmlHalMediaTypeFormatter.ReadHalResource(System.Type,System.Xml.Linq.XElement)">
+            <summary>
+            ReadHalResource will
+            </summary>
+            <param name="type">Type of resource - Must be of type ApiResource</param>
+            <param name="xml">xelement for the type</param>
+            <returns>returns deserialized object</returns>
+        </member>
+    </members>
+</doc>

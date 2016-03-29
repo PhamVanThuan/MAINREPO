@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <AssemblyName>SAHL.UI.Core</AssemblyName>
+    <Name>SAHL.UI.Core</Name>
+    <RootNamespace>SAHL.UI.Core</RootNamespace>
+    <ProjectGuid>{9825916c-4df0-4295-add2-b6235c9d4586}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="assets" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="less\colours.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\fonts.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\icons.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\metroui.listview.component.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\metroui.listview.outlook.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\mixins.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\reset.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\structure.less">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="less\text.less">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SAHomeloans\SAHL.VS.WebJS.targets" />
+</Project>

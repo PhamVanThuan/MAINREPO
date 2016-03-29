@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="ac7f4406-3389-459f-8845-85f148fc5bc0" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="TranslatableItem" schema="dbo" table="TranslatableItem">
+      <properties>
+        <modelProperty Id="61eb7ef1-6e1e-49a3-b500-c243db7c4ca6" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="fb8946f5-6c37-4e9f-856b-b002df1e6ef9" name="TranslatableItemKey" column="TranslatableItemKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="TranslatedText" schema="dbo" table="TranslatedText">
+      <targets>
+        <manyToOneRelation Id="4445a271-dec5-483d-888a-557457d6a19f" targetColumnKey="TranslatableItemKey" targetTable="TranslatedText" targetPropertyName="TranslatedTexts" sourceColumn="TranslatableItemKey">
+          <modelClassMoniker name="/ac7f4406-3389-459f-8845-85f148fc5bc0/TranslatableItem" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="d6d25d49-96e8-4c01-9b32-c70f69fffe0e" targetColumnKey="LanguageKey" targetTable="TranslatedText" targetPropertyName="TranslatedTexts" sourceColumn="LanguageKey">
+          <modelClassMoniker name="/ac7f4406-3389-459f-8845-85f148fc5bc0/Language" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="94220098-ab3b-4c59-b5ce-0fd53ab5624c" name="TranslatedText" column="TranslatedText" length="0" />
+        <modelProperty Id="b29c7c65-157a-46e9-99d3-e00d3bd52c31" name="TranslatedTextKey" column="TranslatedTextKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Language" schema="dbo" table="Language">
+      <properties>
+        <modelProperty Id="0f17441f-2645-4852-9466-293ac8309062" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="d46d5c1e-e7df-4522-ad7d-ea8ff2837c7a" name="Translatable" column="Translatable" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="c72ecec0-4192-45d5-bc68-0e7ab27aee51" name="LanguageKey" column="LanguageKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

@@ -1,0 +1,29 @@
+.dropdownlist_dropdown
+{
+	background-color : White;
+	border: solid 1px gray;
+	visibility: hidden;
+	position: absolute;
+}
+
+A.dropdownlist_link_normal
+{
+	background-color: white;
+	color: black;
+	text-decoration: none;
+	font-size: x-small;
+}
+
+A.dropdownlist_link_normal:hover, A.dropdownlist_link_current:link, A.dropdownlist_link_current:active, A.dropdownlist_link_current:visited
+{
+	background-color: navy;
+	color: white;
+	text-decoration: none;
+	font-size: x-small;
+}
+
+.suburbcity
+{
+	color:Blue;
+	font-size:xx-small;
+}

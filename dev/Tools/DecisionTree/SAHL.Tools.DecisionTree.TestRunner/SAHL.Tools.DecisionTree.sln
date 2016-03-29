@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Tools.DecisionTree.TestRunner", "SAHL.Tools.DecisionTree.TestRunner\SAHL.Tools.DecisionTree.TestRunner.csproj", "{025769EE-BD0E-495C-B296-FB3DB0C6C16D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Tools.DecisionTree.TestRunner.Lib", "SAHL.Tools.DecisionTree.TestRunner.Lib\SAHL.Tools.DecisionTree.TestRunner.Lib.csproj", "{FABFA099-D85A-4735-B728-3B9672E52327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Tools.DecisionTree.TestRunner.Lib.Specs", "SAHL.Tools.DecisionTree.TestRunner.Lib.Specs\SAHL.Tools.DecisionTree.TestRunner.Lib.Specs.csproj", "{B0B459DF-D2F6-4A1E-A19B-30019DE6A8B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Tools.DecisionTree.TestRunner.Interfaces", "SAHL.Tools.DecisionTree.TestRunner.Interfaces\SAHL.Tools.DecisionTree.TestRunner.Interfaces.csproj", "{C3166139-EC8D-418B-97A3-D4EDFC52728C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Tools.DecisionTree.Coverage.Lib", "SAHL.Tools.DecisionTree.Coverage.Lib\SAHL.Tools.DecisionTree.Coverage.Lib.csproj", "{54F772A8-B317-4984-9625-58BD883BD001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Tools.DecisionTree.Coverage.Specs", "SAHL.Tools.DecisionTree.Coverage.Specs\SAHL.Tools.DecisionTree.Coverage.Specs.csproj", "{131F8F5B-D005-46EF-8BA4-7B6EF1B3C9DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{025769EE-BD0E-495C-B296-FB3DB0C6C16D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025769EE-BD0E-495C-B296-FB3DB0C6C16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025769EE-BD0E-495C-B296-FB3DB0C6C16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025769EE-BD0E-495C-B296-FB3DB0C6C16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABFA099-D85A-4735-B728-3B9672E52327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABFA099-D85A-4735-B728-3B9672E52327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABFA099-D85A-4735-B728-3B9672E52327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABFA099-D85A-4735-B728-3B9672E52327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0B459DF-D2F6-4A1E-A19B-30019DE6A8B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0B459DF-D2F6-4A1E-A19B-30019DE6A8B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0B459DF-D2F6-4A1E-A19B-30019DE6A8B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0B459DF-D2F6-4A1E-A19B-30019DE6A8B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3166139-EC8D-418B-97A3-D4EDFC52728C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3166139-EC8D-418B-97A3-D4EDFC52728C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3166139-EC8D-418B-97A3-D4EDFC52728C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3166139-EC8D-418B-97A3-D4EDFC52728C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54F772A8-B317-4984-9625-58BD883BD001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54F772A8-B317-4984-9625-58BD883BD001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54F772A8-B317-4984-9625-58BD883BD001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54F772A8-B317-4984-9625-58BD883BD001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{131F8F5B-D005-46EF-8BA4-7B6EF1B3C9DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131F8F5B-D005-46EF-8BA4-7B6EF1B3C9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131F8F5B-D005-46EF-8BA4-7B6EF1B3C9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131F8F5B-D005-46EF-8BA4-7B6EF1B3C9DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

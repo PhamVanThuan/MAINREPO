@@ -1,0 +1,116 @@
+{
+  "name": "offerdebitorder",
+  "plural": "offerdebitorder",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "mssql": {
+    "schema": "dbo",
+    "table": "OfferDebitOrder"
+  },
+  "properties": {
+    "offerdebitorderkey": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OfferDebitOrderKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "percentage": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 53,
+      "scale": null,
+      "mssql": {
+        "columnName": "Percentage",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": null,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "debitorderday": {
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "DebitOrderDay",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "bankaccountkey": {
+      "type": "Number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "BankAccountKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "financialservicepaymenttypekey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "FinancialServicePaymentTypeKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "offerkey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OfferKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

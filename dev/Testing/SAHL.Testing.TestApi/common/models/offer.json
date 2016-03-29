@@ -1,0 +1,216 @@
+{
+  "name": "offer",
+  "plural": "offer",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "mssql": {
+    "schema": "dbo",
+    "table": "Offer"
+  },
+  "properties": {
+    "offerkey": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OfferKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "offerstartdate": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "OfferStartDate",
+        "dataType": "datetime",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "offerenddate": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "OfferEndDate",
+        "dataType": "datetime",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "reference": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "Reference",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "estimatenumberapplicants": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "EstimateNumberApplicants",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "accountkey": {
+      "type": "Number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AccountKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "offercampaignkey": {
+      "type": "Number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OfferCampaignKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "offersourcekey": {
+      "type": "Number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OfferSourceKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "offerstatuskey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OfferStatusKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "offertypekey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OfferTypeKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "originationsourcekey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "OriginationSourceKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "reservedaccountkey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "ReservedAccountKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

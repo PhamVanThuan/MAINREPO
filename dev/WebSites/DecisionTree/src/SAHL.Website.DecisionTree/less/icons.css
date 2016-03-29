@@ -1,0 +1,199 @@
+/********************************************/
+/* Rounded Corners                          */
+/********************************************/
+/********************************************/
+/* Width                                    */
+/********************************************/
+/********************************************/
+/* Height                                   */
+/********************************************/
+/********************************************/
+/* Margins                                  */
+/********************************************/
+/********************************************/
+/* Padding                                  */
+/********************************************/
+/********************************************/
+/* Borders                                  */
+/********************************************/
+/********************************************/
+/* Backgrounds                              */
+/********************************************/
+/********************************************/
+/* Overflow                                 */
+/********************************************/
+/********************************************/
+/* Floats                                   */
+/********************************************/
+/********************************************/
+/* Buttons                                  */
+/********************************************/
+/********************************************/
+/* Animation                                */
+/********************************************/
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@-moz-keyframes shake {
+  0% {
+    -moz-transform: translate(3px, 0);
+  }
+  50% {
+    -moz-transform: translate(-3px, 0);
+  }
+  100% {
+    -moz-transform: translate(0, 0);
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(3px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}
+.icon-decision-operation {
+  background: url(../assets/img/decision-operation_30x30.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-decision-branch {
+  background: url(../assets/img/decision-branch_30x30.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-decision-terminate {
+  background: url(../assets/img/decision-terminate_30x30.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-decision-connector {
+  background: url(../assets/img/decision-connector_30x30.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-debug-stop {
+  background: url(../assets/img/tree-debug-stop_28x28.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-debug-start {
+  background: url(../assets/img/tree-debug-run_28x28.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-debug-restart {
+  background: url(../assets/img/tree-debug-restart_28x28.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-debug-step-over {
+  background: url(../assets/img/tree-debug-step-over_28x28.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-tree-thumbnail {
+  background: url(../assets/img/noimage.png) no-repeat;
+  -moz-background-size: 100px;
+  -o-background-size: 100px;
+  -webkit-background-size: 100px;
+  background-size: 100px;
+  background-position: center;
+}
+.icon-view-variables {
+  background: url(../assets/img/view-variables_30x30.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-view-code {
+  background: url(../assets/img/view-code_30x30.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-recent-trees {
+  background: url(../assets/img/recent-trees_28x28.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-export-pdf {
+  background: url(../assets/img/export-image-pdf.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-export-png {
+  background: url(../assets/img/export-image-png.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-export-svg {
+  background: url(../assets/img/export-image-svg.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-close-button {
+  background: url(../assets/img/close-button.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-sahl-logo {
+  background: url(../assets/img/logo-sahl_16x16.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+.icon-vertical-pin {
+  background: url(../assets/img/vertical-pin.png) no-repeat;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+/*.common-icon() {
+    .menu-item-icon-repeat();
+    background-position-x:10px;
+    background-position-y:23px;
+    border:none;
+}*/

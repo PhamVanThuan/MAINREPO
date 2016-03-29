@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="X2Process">
+  <modelMoniker Id="3598597a-0f89-4285-9fc0-18397290a890" />
+  <nestedChildShapes>
+    <classShape Id="01085e14-ece5-4334-9e88-1a116776f5b2" absoluteBounds="0.5, 0.5, 1.5, 1.6209212239583333">
+      <modelClassMoniker name="/3598597a-0f89-4285-9fc0-18397290a890/Process" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7060288-6038-481d-9a94-187cbb02b227" absoluteBounds="0.515, 0.91000000000000014, 1.4700000000000002, 1.110921223958333" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(1.03192307692308 : 2.12092122395833); (1.03192307692308 : 2.37092122395833); (1.47846153846154 : 2.37092122395833); (1.47846153846154 : 2.12092122395833)]" manuallyRouted="false" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <manyToOneRelationMoniker Id="5d4b3e35-ac51-4acb-93f4-28f4cd19d9c3" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="01085e14-ece5-4334-9e88-1a116776f5b2" />
+        <classShapeMoniker Id="01085e14-ece5-4334-9e88-1a116776f5b2" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProcessName Name="CloneWakeUpParent" ProductVersion="0.3" MapVersion="" Retrieved="false" Legacy="true">
+  <WorkFlows>
+    <WorkFlow WorkFlowName="CloneWakeUpParent" LocationX="20" LocationY="70" GenericKeyTypeKey="2">
+      <CustomVariables>
+        <CustomVariable Name="ApplicationKey" Length="0" Type="integer" />
+      </CustomVariables>
+      <ExternalActivities>
+        <ExternalActivity Name="EXTActivateOnParent" Description="" />
+      </ExternalActivities>
+      <CustomForms />
+      <InvisibleAnchorNode LocationX="63.39582" LocationY="99.77341" />
+      <Clapperboard LocationX="78.39581" LocationY="114.7734" LimitAccessTo="" Subject="" KeyVariable="ApplicationKey" />
+      <States>
+        <State LocationX="232.3958" LocationY="199.6823" X2ID="67c51602-8c60-470a-b42f-88b280c18f1d" Type="SAHL.X2Designer.Items.UserState" StateName="Created">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Created(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Created(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+          <CustomForms />
+        </State>
+        <State LocationX="385.3958" LocationY="85.68228" X2ID="3fb423cd-c296-41dc-9523-27e72bc06024" Type="SAHL.X2Designer.Items.HoldState" StateName="Clone Hold">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Clone_Hold(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Clone_Hold(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+          <CustomForms />
+        </State>
+        <State LocationX="601.6042" LocationY="85.09114" X2ID="bcd42127-d81d-4a23-8e85-a0a8f917a732" Type="SAHL.X2Designer.Items.ArchiveState" StateName="ExpectedEndStateChild" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_ExpectedEndStateChild(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_ExpectedEndStateChild(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_ExpectedEndStateChild(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+        <State LocationX="380.3229" LocationY="323.5" X2ID="f8d1fb18-993f-4640-ac74-d5928346b820" Type="SAHL.X2Designer.Items.UserState" StateName="ExpectedEndState">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_ExpectedEndState(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_ExpectedEndState(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+          <CustomForms />
+        </State>
+        <State LocationX="20" LocationY="323.5" X2ID="01807d22-5080-4903-a2af-b25c2ed6a964" Type="SAHL.X2Designer.Items.CommonState" StateName="Common External Activate Parent">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_External_Activate_Parent(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_External_Activate_Parent(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Created" />
+          </AppliesTo>
+        </State>
+      </States>
+      <Activities>
+        <Activity LocationX="126.0624" LocationY="112.5" Type="SAHL.X2Designer.Items.UserActivity" Id="1" Name="Create Instance" X2ID="cf510330-b2e6-4f8f-b14f-69f921010f5d" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="" LinkedActivity="" UseLinkedActivity="False" FromNode="ClapperBoard" ToNode="Created">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_Instance(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_Instance(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Create_Instance(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="300.4531" LocationY="145.5" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="2" Name="Create Clone" X2ID="fb139bf1-a5cd-47ed-beb2-d3e36efb3d20" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="True" FromNode="Created" ToNode="Clone Hold">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_Clone(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_Clone(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Create_Clone(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="478.1406" LocationY="88.5" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="5 Second Timer" X2ID="0496469b-149d-4443-af98-93ce94457874" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="EXTActivateOnParent" SplitWorkFlow="False" FromNode="Clone Hold" ToNode="ExpectedEndStateChild">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_5_Second_Timer(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_5_Second_Timer(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime GetActivityTime_5_Second_Timer(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return DateTime.Now.AddSeconds(5);&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="232.6094" LocationY="330.5" Type="SAHL.X2Designer.Items.ExternalActivity" Id="4" Name="ExternalActivateParent" X2ID="020ead18-6920-49fe-8327-9328969bc819" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" ExternalActivityRaiseFolder="Child Instance" InvokedBy="EXTActivateOnParent" FromNode="Common External Activate Parent" ToNode="ExpectedEndState">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_ExternalActivateParent(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_ExternalActivateParent(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_ExternalActivateParent(InstanceDataModel instance, IX2CloneWakeUpParent_Data CloneWakeUpParent_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+      </Activities>
+      <Comments />
+    </WorkFlow>
+  </WorkFlows>
+  <Roles />
+  <UsingStatements>
+    <UsingStatement Statement="System" />
+    <UsingStatement Statement="System.Data" />
+    <UsingStatement Statement="System.Xml" />
+    <UsingStatement Statement="System.Linq" />
+    <UsingStatement Statement="SAHL.Core" />
+    <UsingStatement Statement="SAHL.Core.Data" />
+    <UsingStatement Statement="SAHL.Core.Data.Context.Configuration" />
+    <UsingStatement Statement="SAHL.Core.Data.Models.X2" />
+    <UsingStatement Statement="SAHL.Core.Logging" />
+    <UsingStatement Statement="SAHL.Core.SystemMessages" />
+    <UsingStatement Statement="SAHL.Core.X2" />
+    <UsingStatement Statement="SAHL.Core.X2.Providers" />
+    <UsingStatement Statement="SAHL.Core.Attributes" />
+    <UsingStatement Statement="Newtonsoft.Json" />
+    <UsingStatement Statement="DomainService2.IOC" />
+    <UsingStatement Statement="X2DomainService.Interface.Common" />
+    <UsingStatement Statement="X2DomainService.Interface.Cap2" />
+    <UsingStatement Statement="X2DomainService.Interface.WorkflowAssignment" />
+    <UsingStatement Statement="SAHL.Common.Collections.Interfaces" />
+    <UsingStatement Statement="SAHL.Common.Exceptions" />
+    <UsingStatement Statement="SAHL.X2.Framework" />
+  </UsingStatements>
+  <NugetPackages>
+    <NugetPackage PackageName="SAHL.Config.Legacy.X2.Maps" Version="0.0.0.0" />
+    <NugetPackage PackageName="SAHL.DomainService.Binaries" Version="0.0.0.0" />
+  </NugetPackages>
+  <References>
+    <Reference FullName="ActiproSoftware.Shared.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.Shared.Net20.dll" Name="ActiproSoftware.Shared.Net20.dll" Version="1.0.104.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Addons.Web.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.WinUICore.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.WinUICore.Net20.dll" Name="ActiproSoftware.WinUICore.Net20.dll" Version="1.0.104.0" />
+    <Reference FullName="AdcheckObjectLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\AdcheckObjectLibrary.dll" Name="AdcheckObjectLibrary.dll" Version="1.0.0.0" />
+    <Reference FullName="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" Path="SAHL.External.Binaries.0.0.0.0\lib\AjaxControlToolkit.dll" Name="AjaxControlToolkit.dll" Version="3.5.40412.0" />
+    <Reference FullName="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7" Path="SAHL.External.Binaries.0.0.0.0\lib\Antlr3.Runtime.dll" Name="Antlr3.Runtime.dll" Version="3.1.3.42154" />
+    <Reference FullName="BdsSoft.DirectoryServices.Linq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c382851731f5762e" Path="SAHL.External.Binaries.0.0.0.0\lib\BdsSoft.DirectoryServices.Linq.dll" Name="BdsSoft.DirectoryServices.Linq.dll" Version="1.0.0.0" />
+    <Reference FullName="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.dll" Name="Castle.ActiveRecord.dll" Version="3.0.0.0" />
+    <Reference FullName="Castle.ActiveRecord.Linq, Version=1.9.101.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.Linq.dll" Name="Castle.ActiveRecord.Linq.dll" Version="1.9.101.0" />
+    <Reference FullName="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.Web.dll" Name="Castle.ActiveRecord.Web.dll" Version="0.0.0.0" />
+    <Reference FullName="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.Components.Validator.dll" Name="Castle.Components.Validator.dll" Version="2.5.0.0" />
+    <Reference FullName="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.Core.dll" Name="Castle.Core.dll" Version="2.5.1.0" />
+    <Reference FullName="CommandLine, Version=1.8.0.7, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\CommandLine.dll" Name="CommandLine.dll" Version="1.8.0.7" />
+    <Reference FullName="Dapper, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Dapper.dll" Name="Dapper.dll" Version="1.12.0.0" />
+    <Reference FullName="DevExpress.Charts.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Charts.v10.2.Core.dll" Name="DevExpress.Charts.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Data.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Data.v10.2.dll" Name="DevExpress.Data.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.PivotGrid.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.PivotGrid.v10.2.Core.dll" Name="DevExpress.PivotGrid.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.SpellChecker.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.SpellChecker.v10.2.Core.dll" Name="DevExpress.SpellChecker.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Utils.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Utils.v10.2.dll" Name="DevExpress.Utils.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxEditors.v10.2.dll" Name="DevExpress.Web.ASPxEditors.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxGridView.v10.2.dll" Name="DevExpress.Web.ASPxGridView.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxHtmlEditor.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxHtmlEditor.v10.2.dll" Name="DevExpress.Web.ASPxHtmlEditor.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxPivotGrid.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxPivotGrid.v10.2.dll" Name="DevExpress.Web.ASPxPivotGrid.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxSpellChecker.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxSpellChecker.v10.2.dll" Name="DevExpress.Web.ASPxSpellChecker.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxThemes.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxThemes.v10.2.dll" Name="DevExpress.Web.ASPxThemes.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxTreeList.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxTreeList.v10.2.dll" Name="DevExpress.Web.ASPxTreeList.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.Mvc.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.Mvc.v10.2.dll" Name="DevExpress.Web.Mvc.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.v10.2.dll" Name="DevExpress.Web.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.dll" Name="DevExpress.XtraCharts.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2.UI, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.UI.dll" Name="DevExpress.XtraCharts.v10.2.UI.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2.Web, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.Web.dll" Name="DevExpress.XtraCharts.v10.2.Web.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraEditors.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraEditors.v10.2.dll" Name="DevExpress.XtraEditors.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DomainService2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.dll" Name="DomainService2.dll" Version="0.0.0.0" />
+    <Reference FullName="DomainService2.IOC, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.IOC.dll" Name="DomainService2.IOC.dll" Version="0.0.0.0" />
+    <Reference FullName="DomainService2.V3.Client, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.V3.Client.dll" Name="DomainService2.V3.Client.dll" Version="0.0.0.0" />
+    <Reference FullName="EasyNetQ, Version=0.50.1.392, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\EasyNetQ.dll" Name="EasyNetQ.dll" Version="0.50.1.392" />
+    <Reference FullName="EWorkConnector, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\EWorkConnector.dll" Name="EWorkConnector.dll" Version="0.0.0.0" />
+    <Reference FullName="ICSharpCode.SharpZipLib, Version=0.85.2.329, Culture=neutral, PublicKeyToken=1b03e6acf1164f73" Path="SAHL.External.Binaries.0.0.0.0\lib\ICSharpCode.SharpZipLib.dll" Name="ICSharpCode.SharpZipLib.dll" Version="0.85.2.329" />
+    <Reference FullName="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\Iesi.Collections.dll" Name="Iesi.Collections.dll" Version="1.0.1.0" />
+    <Reference FullName="Interop.ActiveDs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Interop.ActiveDs.dll" Name="Interop.ActiveDs.dll" Version="1.0.0.0" />
+    <Reference FullName="itextsharp, Version=5.3.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Path="SAHL.External.Binaries.0.0.0.0\lib\itextsharp.dll" Name="itextsharp.dll" Version="5.3.3.0" />
+    <Reference FullName="Lucene.Net, Version=2.9.2.2, Culture=neutral, PublicKeyToken=f5940d1699e37ff1" Path="SAHL.External.Binaries.0.0.0.0\lib\Lucene.Net.dll" Name="Lucene.Net.dll" Version="2.9.2.2" />
+    <Reference FullName="Machine.Fakes, Version=0.3.5.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Fakes.dll" Name="Machine.Fakes.dll" Version="0.3.5.0" />
+    <Reference FullName="Machine.Fakes.Adapters.Rhinomocks, Version=0.3.5.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Fakes.Adapters.RhinoMocks.dll" Name="Machine.Fakes.Adapters.Rhinomocks.dll" Version="0.3.5.0" />
+    <Reference FullName="Machine.Specifications, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.dll" Name="Machine.Specifications.dll" Version="0.5.6.0" />
+    <Reference FullName="Machine.Specifications.Clr4, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.Clr4.dll" Name="Machine.Specifications.Clr4.dll" Version="0.5.6.0" />
+    <Reference FullName="Machine.Specifications.TDNetRunner, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.TDNetRunner.dll" Name="Machine.Specifications.TDNetRunner.dll" Version="0.5.6.0" />
+    <Reference FullName="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ApplicationBlocks.Data.dll" Name="Microsoft.ApplicationBlocks.Data.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.ApplicationBlocks.UIProcess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ApplicationBlocks.UIProcess.dll" Name="Microsoft.ApplicationBlocks.UIProcess.dll" Version="1.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" Name="Microsoft.Practices.EnterpriseLibrary.Common.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" Name="Microsoft.Practices.EnterpriseLibrary.Data.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Name="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" Name="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll" Name="Microsoft.Practices.EnterpriseLibrary.Logging.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.ObjectBuilder.dll" Name="Microsoft.Practices.ObjectBuilder.dll" Version="1.0.51205.0" />
+    <Reference FullName="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.Common.dll" Name="Microsoft.ReportViewer.Common.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.DataVisualization.DLL" Name="Microsoft.ReportViewer.DataVisualization.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.Design.DLL" Name="Microsoft.ReportViewer.Design.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll" Name="Microsoft.ReportViewer.ProcessingObjectModel.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WebDesign.DLL" Name="Microsoft.ReportViewer.WebDesign.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WebForms.dll" Name="Microsoft.ReportViewer.WebForms.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WinForms.dll" Name="Microsoft.ReportViewer.WinForms.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.ConnectionInfo.dll" Name="Microsoft.SqlServer.ConnectionInfo.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.DtsMsg, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.DtsMsg.dll" Name="Microsoft.SqlServer.DtsMsg.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.DTSPipelineWrap, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.DTSPipelineWrap.dll" Name="Microsoft.SqlServer.DTSPipelineWrap.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.DTSRuntimeWrap, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.DTSRuntimeWrap.dll" Name="Microsoft.SqlServer.DTSRuntimeWrap.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.ManagedDTS, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.ManagedDTS.dll" Name="Microsoft.SqlServer.ManagedDTS.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll" Name="Microsoft.SqlServer.Management.Sdk.Sfc.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.msxml6_interop, Version=6.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.msxml6_interop.dll" Name="Microsoft.SqlServer.msxml6_interop.dll" Version="6.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.PipelineHost, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.PipelineHost.dll" Name="Microsoft.SqlServer.PipelineHost.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.Smo.dll" Name="Microsoft.SqlServer.Smo.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.SqlClrProvider, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.SqlClrProvider.dll" Name="Microsoft.SqlServer.SqlClrProvider.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.SqlEnum, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.SqlEnum.dll" Name="Microsoft.SqlServer.SqlEnum.dll" Version="11.0.0.0" />
+    <Reference FullName="NCover.Framework, Version=1.5.8.0, Culture=neutral, PublicKeyToken=f4018786f4b01bc6" Path="SAHL.External.Binaries.0.0.0.0\lib\NCover.Framework.dll" Name="NCover.Framework.dll" Version="1.5.8.0" />
+    <Reference FullName="NDbUnit.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\NDbUnit.Core.dll" Name="NDbUnit.Core.dll" Version="1.1.0.0" />
+    <Reference FullName="NDbUnit.Test, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\NDbUnit.Test.dll" Name="NDbUnit.Test.dll" Version="1.1.0.0" />
+    <Reference FullName="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Version="6.0.0.0" />
+    <Reference FullName="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.dll" Name="NHibernate.dll" Version="3.1.0.4000" />
+    <Reference FullName="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.ByteCode.Castle.dll" Name="NHibernate.ByteCode.Castle.dll" Version="3.1.0.4000" />
+    <Reference FullName="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.Search.dll" Name="NHibernate.Search.dll" Version="0.0.0.0" />
+    <Reference FullName="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7" Path="SAHL.External.Binaries.0.0.0.0\lib\Ninject.dll" Name="Ninject.dll" Version="3.0.0.0" />
+    <Reference FullName="Northwoods.Go, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.dll" Name="Northwoods.Go.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Draw, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Draw.dll" Name="Northwoods.Go.Draw.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Instruments, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Instruments.dll" Name="Northwoods.Go.Instruments.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Layout, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Layout.dll" Name="Northwoods.Go.Layout.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Svg, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Svg.dll" Name="Northwoods.Go.Svg.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Xml, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Xml.dll" Name="Northwoods.Go.Xml.dll" Version="4.1.0.4" />
+    <Reference FullName="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" Path="SAHL.External.Binaries.0.0.0.0\lib\nunit.framework.dll" Name="nunit.framework.dll" Version="2.6.0.12051" />
+    <Reference FullName="Omu.ValueInjecter, Version=2.3.3.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Omu.ValueInjecter.dll" Name="Omu.ValueInjecter.dll" Version="2.3.3.0" />
+    <Reference FullName="PDFDocumentWriter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\PDFDocumentWriter.dll" Name="PDFDocumentWriter.dll" Version="0.0.0.0" />
+    <Reference FullName="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7" Path="SAHL.External.Binaries.0.0.0.0\lib\PostSharp.dll" Name="PostSharp.dll" Version="2.1.0.0" />
+    <Reference FullName="RabbitMQ.Client, Version=3.5.3.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\RabbitMQ.Client.dll" Name="RabbitMQ.Client.dll" Version="3.5.3.0" />
+    <Reference FullName="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea" Path="SAHL.External.Binaries.0.0.0.0\lib\Remotion.Data.Linq.dll" Name="Remotion.Data.Linq.dll" Version="1.13.41.2" />
+    <Reference FullName="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f" Path="SAHL.External.Binaries.0.0.0.0\lib\Rhino.Mocks.dll" Name="Rhino.Mocks.dll" Version="3.6.0.0" />
+    <Reference FullName="SAHL.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.dll" Name="SAHL.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.dll" Name="SAHL.Common.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel.DAO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.DAO.dll" Name="SAHL.Common.BusinessModel.DAO.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.Interfaces.dll" Name="SAHL.Common.BusinessModel.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Logging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Logging.dll" Name="SAHL.Common.Logging.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Service, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Service.dll" Name="SAHL.Common.Service.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Service.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Service.Interfaces.dll" Name="SAHL.Common.Service.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.UI.dll" Name="SAHL.Common.UI.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Web.dll" Name="SAHL.Common.Web.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Web.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Web.UI.dll" Name="SAHL.Common.Web.UI.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.WebServices, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.WebServices.dll" Name="SAHL.Common.WebServices.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.dll" Name="SAHL.Common.X2.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel.DAO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.DAO.dll" Name="SAHL.Common.X2.BusinessModel.DAO.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.Interfaces.dll" Name="SAHL.Common.X2.BusinessModel.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Communication, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Communication.dll" Name="SAHL.Communication.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Config.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Config.Core.dll" Name="SAHL.Config.Core.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Config.Legacy, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Config.Legacy.dll" Name="SAHL.Config.Legacy.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.dll" Name="SAHL.Core.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.BusinessModel.dll" Name="SAHL.Core.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.dll" Name="SAHL.Core.Data.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Dapper, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Dapper.dll" Name="SAHL.Core.Data.Dapper.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.2AM.dll" Name="SAHL.Core.Data.Models.2AM.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.Capitec, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.Capitec.dll" Name="SAHL.Core.Data.Models.Capitec.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.Cuttlefish.dll" Name="SAHL.Core.Data.Models.Cuttlefish.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.DecisionTree, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.DecisionTree.dll" Name="SAHL.Core.Data.Models.DecisionTree.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.X2.dll" Name="SAHL.Core.Data.Models.X2.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Events, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Events.dll" Name="SAHL.Core.Events.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Logging.Loggers.Database, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Logging.Loggers.Database.dll" Name="SAHL.Core.Logging.Loggers.Database.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.dll" Name="SAHL.Core.Messaging.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging.EasyNetQ, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.EasyNetQ.dll" Name="SAHL.Core.Messaging.EasyNetQ.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.Shared.dll" Name="SAHL.Core.Messaging.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Metrics.dll" Name="SAHL.Core.Metrics.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.X2.dll" Name="SAHL.Core.X2.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.X2.Shared.dll" Name="SAHL.Core.X2.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Services.Capitec.Models.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Services.Capitec.Models.Shared.dll" Name="SAHL.Services.Capitec.Models.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Shared.dll" Name="SAHL.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Test, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Test.dll" Name="SAHL.Test.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.X2.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.X2.Common.dll" Name="SAHL.X2.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.X2.Framework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.X2.Framework.dll" Name="SAHL.X2.Framework.dll" Version="0.0.0.0" />
+    <Reference FullName="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\StructureMap.dll" Name="StructureMap.dll" Version="2.6.4.0" />
+    <Reference FullName="System.Threading.Tasks.Dataflow, Version=4.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\System.Threading.Tasks.Dataflow.dll" Name="System.Threading.Tasks.Dataflow.dll" Version="4.5.11.0" />
+    <Reference FullName="X2DomainService.Interface.Cap2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Cap2.dll" Name="X2DomainService.Interface.Cap2.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Common.dll" Name="X2DomainService.Interface.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.DebtCounselling, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.DebtCounselling.dll" Name="X2DomainService.Interface.DebtCounselling.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.HelpDesk, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.HelpDesk.dll" Name="X2DomainService.Interface.HelpDesk.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Life, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Life.dll" Name="X2DomainService.Interface.Life.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.LoanAdjustments, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.LoanAdjustments.dll" Name="X2DomainService.Interface.LoanAdjustments.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Origination, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Origination.dll" Name="X2DomainService.Interface.Origination.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.PersonalLoan, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.PersonalLoan.dll" Name="X2DomainService.Interface.PersonalLoan.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.ScenarioMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.ScenarioMaps.dll" Name="X2DomainService.Interface.ScenarioMaps.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.WorkflowAssignment, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.WorkflowAssignment.dll" Name="X2DomainService.Interface.WorkflowAssignment.dll" Version="0.0.0.0" />
+  </References>
+</ProcessName>

@@ -1,0 +1,19 @@
+﻿<div id="commonEntity">
+    <div class="left">
+        <div class="back">
+            <i class="icon-arrow-left-3" ng-click="cancel()"></i>
+        </div>
+        <div class="progressTracker" ng-if="wizardConfiguration">
+            <ul>
+                <li ng-repeat="page in wizardConfiguration.wizardPages.$values" ng-class="{active:$index == index}">
+                    <div>{{page.name}}</div><i ng-class="{'icon-checkmark fg-green':$index < index}"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div ui-view ng-class="{'right narrower':wizardConfiguration!=null,'right':wizardConfiguration==null}">
+    </div>
+</div>
+
+
+

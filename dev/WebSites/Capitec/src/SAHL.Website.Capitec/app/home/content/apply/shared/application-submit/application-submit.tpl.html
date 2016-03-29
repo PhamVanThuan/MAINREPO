@@ -1,0 +1,39 @@
+﻿<div ui-view>
+    <form id="applicationSubmitForm" class="pagedTableContainer" spin-loader="submittingApplication">
+        <div class="applyPages">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Applicant</th>
+                        <th class="text-centered">Signed</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="applicant in applicants" ng-class-even="'even'">
+                        <td id="{{ applicant.identityNumber }}_applicant">
+                        {{applicant.firstName}} {{applicant.surname}}, {{applicant.identityNumber}}
+                        </td>
+                        <td class="text-centered">
+                            <label name="{{applicant.identityNumber}}_hasSigned" custom-checkbox ng-model="applicant.hasSigned" id="chk_{{applicant.identityNumber}}"/>
+                        </td>
+                        <td>
+                            <button type="button" class="textButton" ng-click="printForApplicant(applicant)" id="print_{{applicant.identityNumber}}">Reprint</button>
+                        </td>
+                    </tr>
+                    <tr ng-show="applicants.length > 1">
+                        <td colspan="2"></td>
+                        <td>
+                            <button id="reprintAllButton" type="button" class="textButton" ng-click="printAllApplicants()">Reprint All</button>
+                        </td>
+                    </tr>  
+                </tbody>
+            </table>
+            
+        </div>
+        <fieldset class="submitContainer">
+            <button id="backButton" type="button" ng-click="goBack()">Back</button>
+            <button id="submitAppButton" type="submit" spin-click="SubmitApplication()" class="pull-right" ng-disabled="allApplicantsSigned()==false">Submit Application</button>
+        </fieldset>
+    </form>
+</div>

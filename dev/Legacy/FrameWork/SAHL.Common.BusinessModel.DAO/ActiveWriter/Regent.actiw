@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="7a5603d7-ac87-4cad-90fe-e20612c4c868" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="RegentStatus" schema="dbo" table="RegentStatus">
+      <properties>
+        <modelProperty Id="a71d9067-64dc-4758-bd4a-98f771fffbec" name="RegentStatusDescription" column="RegentStatusDescription" length="0" />
+        <modelProperty Id="539a1c1a-268c-44ef-b46e-35eb7f401467" name="RegentStatusID" column="RegentStatusID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Regent" schema="dbo" table="Regent">
+      <properties>
+        <modelProperty Id="2d40e364-8252-412b-a027-bdf5fe6a5f2b" name="RegentClientSalutation" column="RegentClientSalutation" length="0" />
+        <modelProperty Id="4d0e2179-25a4-49ff-ae58-1f8b727e3b6d" name="RegentClientSurname" column="RegentClientSurname" length="0" />
+        <modelProperty Id="d180f29e-c177-4f3e-a3a5-7d7ebde4b12a" name="RegentClientFirstNames" column="RegentClientFirstNames" length="0" />
+        <modelProperty Id="37dff26f-343e-4609-8c83-786c8d8b4658" name="RegentClientIDNumber" column="RegentClientIDNumber" columnType="Decimal" length="0" />
+        <modelProperty Id="a74a374e-ae6e-4dbe-97c4-87ae733c4442" name="RegentClientGender" column="RegentClientGender" columnType="Int16" length="0" />
+        <modelProperty Id="127d5534-1a7a-4a99-a086-e067c2ba5e39" name="RegentClientDateBirth" column="RegentClientDateBirth" columnType="Timestamp" length="0" />
+        <modelProperty Id="cdef6deb-4ebb-4302-9ab3-6965cb21c86c" name="RegentPolicyStatus" column="RegentPolicyStatus" columnType="Int32" length="0" />
+        <modelProperty Id="d6ea0f7b-6f32-4c87-a3f3-f13c12b731fd" name="RegentApplicationDate" column="RegentApplicationDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="bafafcbe-45c8-4162-9407-7e0587eda81e" name="RegentInceptionDate" column="RegentInceptionDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="400419df-d249-4cd8-bf6a-297a1572bf6b" name="RegentExpiryDate" column="RegentExpiryDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="d09e3179-fd4b-44b9-ab8e-90fba3672ab3" name="RegentLoanTerm" column="RegentLoanTerm" columnType="Decimal" length="0" />
+        <modelProperty Id="17fc5628-3d78-4685-8d59-4f78dc66678b" name="RegentSumInsured" column="RegentSumInsured" columnType="Double" length="0" />
+        <modelProperty Id="895911c6-70b8-4361-b40a-480f30ca5527" name="RegentPremium" column="RegentPremium" columnType="Double" length="0" />
+        <modelProperty Id="730c9b10-5a33-4fbe-9d00-cb03e75fe483" name="RegentClientSecSalutation" column="RegentClientSecSalutation" length="0" />
+        <modelProperty Id="a02b45d8-a6b2-4322-b55f-8d0cdf85f8ff" name="RegentClientSecSurname" column="RegentClientSecSurname" length="0" />
+        <modelProperty Id="df337f9d-2adf-4ee6-9303-a3544b4516a9" name="RegentClientSecFirstNames" column="RegentClientSecFirstNames" length="0" />
+        <modelProperty Id="c5ca7395-629c-4acf-9ec9-73c12bc79941" name="RegentClientSecIDNumber" column="RegentClientSecIDNumber" columnType="Decimal" length="0" />
+        <modelProperty Id="dd33b051-5c38-4223-866f-cad3843fd900" name="RegentClientSecGender" column="RegentClientSecGender" columnType="Int16" length="0" />
+        <modelProperty Id="5fa45826-85fe-43fd-acc3-2d9928cb63c3" name="RegentClientSecDateBirth" column="RegentClientSecDateBirth" columnType="Timestamp" length="0" />
+        <modelProperty Id="5eb32fd1-76c9-494a-9b03-efc2884a1154" name="RegentJointIndicator" column="RegentJointIndicator" columnType="Int16" length="0" />
+        <modelProperty Id="bcc474d4-8660-4f3f-9a99-903d456c51e6" name="RegentReinstateDate" column="RegentReinstateDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="6396625c-a92f-43ac-8244-f0b21186e32e" name="RegentLastUpdateDate" column="RegentLastUpdateDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="0ace0806-7257-49c2-9bdb-910bd65eea15" name="RegentCommision" column="RegentCommision" columnType="Double" length="0" />
+        <modelProperty Id="fdcdbc76-3bf8-4a5a-81e5-dda6ec6ce5ec" name="RegentUnderwritingFirst" column="RegentUnderwritingFirst" columnType="Int32" length="0" />
+        <modelProperty Id="0c3f49a9-3cbb-48cc-b0bf-dd6d264fc6ea" name="RegentUnderwritingSecond" column="RegentUnderwritingSecond" columnType="Int32" length="0" />
+        <modelProperty Id="a37b02c6-0f72-450d-aa8a-6b5d0d3403ce" name="SAHLEmployeeNumber" column="SAHLEmployeeNumber" columnType="Decimal" length="0" />
+        <modelProperty Id="af607324-dd33-40fe-aecc-bee79a919151" name="RegentUpdatedStatus" column="RegentUpdatedStatus" columnType="Int16" length="0" />
+        <modelProperty Id="668b74a1-2884-4101-a240-9cadfc9dd37f" name="RegentClientOccupation" column="RegentClientOccupation" columnType="Int16" length="0" />
+        <modelProperty Id="315386f2-d45e-4773-bb9b-108f2a6e9974" name="RegentClientAge" column="RegentClientAge" columnType="Int16" length="0" />
+        <modelProperty Id="662146fd-e990-43a3-a7e4-b7aabd72d48b" name="ReplacementPolicy" column="ReplacementPolicy" columnType="AnsiChar" length="0" />
+        <modelProperty Id="6617add8-79bb-4d4a-bc73-c7513d582cf2" name="AdviceRequired" column="AdviceRequired" columnType="AnsiChar" length="0" />
+        <modelProperty Id="620c0016-66ca-49b0-8783-c413e7a23d13" name="LifeAssuredName" column="LifeAssuredName" length="0" />
+        <modelProperty Id="80dc75a0-0e2e-4c29-9190-2afc32e38a04" name="OldInsurer" column="OldInsurer" length="0" />
+        <modelProperty Id="d30016ed-2836-455b-8c68-b96aab91e699" name="OldPolicyNo" column="OldPolicyNo" length="0" />
+        <modelProperty Id="5f091690-12a9-48c0-ab26-604a8fee72d3" name="RegentNewBusinessDate" column="RegentNewBusinessDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="0de9060a-b7e7-4a8a-84fd-0a834f711ea0" name="CapitalizedMonthlyBalance" column="CapitalizedMonthlyBalance" columnType="Double" length="0" />
+        <modelProperty Id="5cc73192-6e00-4c34-aea4-c76c20fd42c3" name="LoanNumber" column="LoanNumber" columnType="Decimal" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

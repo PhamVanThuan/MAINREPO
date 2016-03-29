@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0232E64-BAD0-4F65-88E4-68B8317E6D43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Interfaces.PersonalLoanDomain.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.Interfaces.PersonalLoanDomain.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.Interfaces.PersonalLoanDomain\SAHL.Services.Interfaces.PersonalLoanDomain.csproj">
+      <Project>{8caaeb04-0e74-4674-b409-5a57e90cf19d}</Project>
+      <Name>SAHL.Services.Interfaces.PersonalLoanDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

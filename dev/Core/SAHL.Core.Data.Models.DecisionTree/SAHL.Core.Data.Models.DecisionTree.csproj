@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D4F4193-1CEF-449B-B2EE-CBE5CE5495D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Data.Models.DecisionTree</RootNamespace>
+    <AssemblyName>SAHL.Core.Data.Models.DecisionTree</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Statements\DoesEnumerationSetExistQuery.cs" />
+    <Compile Include="Statements\DoesVariableSetExistQuery.cs" />
+    <Compile Include="Statements\GetLatestEnumerationSetQuery.cs" />
+    <Compile Include="Statements\IsVariableSetVersionPublishedQuery.cs" />
+    <Compile Include="Statements\IsEnumerationSetVersionPublishedQuery.cs" />
+    <Compile Include="Statements\UpdateVariableSetQuery.cs" />
+    <Compile Include="Statements\UpdateEnumerationSetQuery.cs" />
+    <Compile Include="CurrentlyOpenDecisionTree.cs" />
+    <Compile Include="CurrentlyOpenDocument.cs" />
+    <Compile Include="DecisionTree.cs" />
+    <Compile Include="DecisionTreeHistory.cs" />
+    <Compile Include="DecisionTreeVersion.cs" />
+    <Compile Include="DocumentTypeEnum.cs" />
+    <Compile Include="EnumerationSet.cs" />
+    <Compile Include="MessageSet.cs" />
+    <Compile Include="PublishedDecisionTree.cs" />
+    <Compile Include="PublishedEnumerationSet.cs" />
+    <Compile Include="PublishedMessageSet.cs" />
+    <Compile Include="PublishedVariableSet.cs" />
+    <Compile Include="PublishStatusEnum.cs" />
+    <Compile Include="UIStatements.cs" />
+    <Compile Include="UIStatements_dbo.cs" />
+    <Compile Include="UserMRUDecisionTree.cs" />
+    <Compile Include="VariableSet.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

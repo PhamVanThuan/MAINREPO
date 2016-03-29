@@ -1,0 +1,30 @@
+﻿<div class="settings-body">
+    <div class="settings-header">
+        <h2>My Settings</h2>
+    </div>
+    <hr />
+    <div class="settings-item">
+        <form>
+            <legend>Set My Default Role</legend>
+            <div class="setting">
+                <div ng-repeat="role in user.orgRoles">
+                    <div class="heading">
+                        {{role.RoleName}}
+                        <div class="right">
+                            <a href="#" ng-click="selectRole(role.UserOrganisationStructureKey)" ng-if="role.UserOrganisationStructureKey!=defaultRole">Set as Default</a>
+                            <i ng-if="role.UserOrganisationStructureKey==defaultRole" class="selected icon-checkmark fg-orange"></i>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <b>Capabilities</b> :
+                        <ul>
+                            <li ng-repeat="capability in getRoleCapabilities(role.UserOrganisationStructureKey)">{{capability}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <button ng-click="save()">Save</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@if (Request.IsAuthenticated && Session != null && Session.Contents.Count > 2)
+{
+    <script type="text/javascript">
+        $(document).ready(timeIt());
+    </script>
+    <ul id="menu">
+
+        <li>
+            @Html.ActionLink("Loan Statement", "LoanStatement", "Report")
+        </li>
+        <li>
+            @Html.ActionLink("Tax Certificate", "TaxCertificate", "Report")
+        </li>
+         
+        <li>
+            @Html.ActionLink("Change Password", "ChangePassword", "Account")
+        </li>
+
+        <li>
+            @Html.ActionLink("Request Additional Funds", "RequestFunds", "Service")
+        </li>
+        
+        @if (Session[SAHL.Web.ClientSecure.Controllers.SessionConstants.SubsidyAccountKey] != null)
+        {
+            <li>
+                @Html.ActionLink("Z299", "Z299", "Report")
+            </li>
+        }
+
+        <li>
+            @Html.ActionLink("Logoff", "Logoff", "Account")
+        </li>
+    </ul>
+}
+@*else
+{
+        <ul id="menu">
+        <li>
+            @Html.ActionLink("Login", "Login", "Account")
+        </li>
+    </ul>
+}*@

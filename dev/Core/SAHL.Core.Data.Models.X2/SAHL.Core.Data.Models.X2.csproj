@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3271FE6C-90A1-4423-87A7-1760FFC4EEB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Data.Models.X2</RootNamespace>
+    <AssemblyName>SAHL.Core.Data.Models.X2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ActiveExternalActivity.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="ActivitySecurity.cs" />
+    <Compile Include="ActivityType.cs" />
+    <Compile Include="Application_Capture.cs" />
+    <Compile Include="Application_Management.cs" />
+    <Compile Include="Assignment.cs" />
+    <Compile Include="CAP2_Offers.cs" />
+    <Compile Include="Credit.cs" />
+    <Compile Include="Debt_Counselling.cs" />
+    <Compile Include="Delete_Debit_Order.cs" />
+    <Compile Include="Disability_Claim.cs" />
+    <Compile Include="ExternalActivity.cs" />
+    <Compile Include="ExternalActivityTarget.cs" />
+    <Compile Include="Form.cs" />
+    <Compile Include="Help_Desk.cs" />
+    <Compile Include="Instance.cs" />
+    <Compile Include="InstanceActivitySecurity.cs" />
+    <Compile Include="InstanceArchive.cs" />
+    <Compile Include="InstanceLog.cs" />
+    <Compile Include="InterestOnlySMS.cs" />
+    <Compile Include="IT.cs" />
+    <Compile Include="LifeOrigination.cs" />
+    <Compile Include="Loan_Adjustments.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Personal_Loans.cs" />
+    <Compile Include="Process.cs" />
+    <Compile Include="ProcessAssembly.cs" />
+    <Compile Include="ProcessAssemblyNugetInfo.cs" />
+    <Compile Include="PublishedStateMapping.cs" />
+    <Compile Include="Quick_Cash.cs" />
+    <Compile Include="RCS.cs" />
+    <Compile Include="Readvance_Payments.cs" />
+    <Compile Include="Release_And_Variations.cs" />
+    <Compile Include="Request.cs" />
+    <Compile Include="ScheduledActivity.cs" />
+    <Compile Include="ScheduledActivityBakup.cs" />
+    <Compile Include="scheduledActivityLife.cs" />
+    <Compile Include="SecurityGroup.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="StageActivity.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="StateForm.cs" />
+    <Compile Include="StateTrackList.cs" />
+    <Compile Include="StateType.cs" />
+    <Compile Include="StateWorkList.cs" />
+    <Compile Include="StuckCases.cs" />
+    <Compile Include="Third_Party_Invoices.cs" />
+    <Compile Include="TrackList.cs" />
+    <Compile Include="UIStatements.cs" />
+    <Compile Include="UIStatements_Recalc.cs" />
+    <Compile Include="UIStatements_X2.cs" />
+    <Compile Include="UIStatements_X2Data.cs" />
+    <Compile Include="UnassignedCases.cs" />
+    <Compile Include="Valuations.cs" />
+    <Compile Include="WorkFlow.cs" />
+    <Compile Include="WorkFlowActivity.cs" />
+    <Compile Include="WorkflowAssignment.cs" />
+    <Compile Include="WorkFlowHistory.cs" />
+    <Compile Include="WorkFlowIcon.cs" />
+    <Compile Include="WorkFlowProviderInstances.cs" />
+    <Compile Include="WorkflowRoleAssignment.cs" />
+    <Compile Include="WorkFlowSecurity.cs" />
+    <Compile Include="WorkList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.2AM\SAHL.Core.Data.Models.2AM.csproj">
+      <Project>{5ae349cf-67f9-47bd-9aa0-48cda3bbac51}</Project>
+      <Name>SAHL.Core.Data.Models.2AM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

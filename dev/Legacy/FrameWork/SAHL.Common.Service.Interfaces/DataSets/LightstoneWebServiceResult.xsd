@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LightstoneWebServiceResult" targetNamespace="http://tempuri.org/LightstoneWebServiceResult.xsd" xmlns:mstns="http://tempuri.org/LightstoneWebServiceResult.xsd" xmlns="http://tempuri.org/LightstoneWebServiceResult.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LightstoneWebServiceResult" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LightstoneWebServiceResult" msprop:Generator_UserDSName="LightstoneWebServiceResult">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Results" msprop:Generator_TableClassName="ResultsDataTable" msprop:Generator_TableVarName="tableResults" msprop:Generator_TablePropName="Results" msprop:Generator_RowDeletingName="ResultsRowDeleting" msprop:Generator_UserTableName="Results" msprop:Generator_RowChangingName="ResultsRowChanging" msprop:Generator_RowEvHandlerName="ResultsRowChangeEventHandler" msprop:Generator_RowDeletedName="ResultsRowDeleted" msprop:Generator_RowEvArgName="ResultsRowChangeEvent" msprop:Generator_RowChangedName="ResultsRowChanged" msprop:Generator_RowClassName="ResultsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UniqueID" msprop:Generator_ColumnVarNameInTable="columnUniqueID" msprop:Generator_ColumnPropNameInRow="UniqueID" msprop:Generator_ColumnPropNameInTable="UniqueIDColumn" msprop:Generator_UserColumnName="UniqueID" type="xs:string" />
+              <xs:element name="Successful" msprop:Generator_ColumnVarNameInTable="columnSuccessful" msprop:Generator_ColumnPropNameInRow="Successful" msprop:Generator_ColumnPropNameInTable="SuccessfulColumn" msprop:Generator_UserColumnName="Successful" type="xs:string" default="True" />
+              <xs:element name="ErrorMessage" msprop:Generator_ColumnVarNameInTable="columnErrorMessage" msprop:Generator_ColumnPropNameInRow="ErrorMessage" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInTable="ErrorMessageColumn" msprop:Generator_UserColumnName="ErrorMessage" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

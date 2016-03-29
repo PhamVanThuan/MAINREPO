@@ -1,0 +1,9 @@
+﻿<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Server was unable to read request. ---> There is an error in XML document (17, 16). ---> Instance validation error: '' is not a valid value for Sex.</faultstring>
+      <detail/>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>

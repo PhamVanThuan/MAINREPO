@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<!--framework, domain service, client, application, workflow maps should then compile, deploy/start domain service, ensure engine running, publish maps - start app and voila HALO on X2 on steriods-->
+	<PropertyGroup>
+		<!-- The root directory containing the build file -->	
+		<RootPath>$(MSBuildProjectDirectory)\..</RootPath>
+		<LocalPath>$(MSBuildProjectDirectory)</LocalPath>
+		
+		<!-- The workflowmaps directory -->
+		<DomainServicePath>$(RootPath)\WorkFlowMaps</DomainServicePath>
+		
+		
+		<!-- External Bins Path -->
+		<ExternalBinsPath>$(RootPath)\External Binaries</ExternalBinsPath>
+		
+		<!-- Internal Bins Path -->
+		<InternalBinsPath>$(RootPath)\Internal Binaries</InternalBinsPath>
+		
+		<!-- NuGet Bins Path -->
+		<NuGetPath>$(ExternalBinsPath)\NuGet</NuGetPath>
+		
+		<!-- MSpec -->
+		<!-- The tools path for MSpec -->
+		<MSpecPath>$(NuGetPath)\Machine.Specifications.0.5.6.0\tools</MSpecPath>
+		<MSpecExecutable>mspec-clr4.exe</MSpecExecutable>
+		
+		<!-- OpenCover -->
+		<!-- The tools path for OpenCover -->
+		<OpenCoverPath>$(NuGetPath)\OpenCover.4.0.301</OpenCoverPath>
+		<OpenCoverReportGenPath>$(NuGetPath)\ReportGenerator.1.3.0.0</OpenCoverReportGenPath>
+		
+		<ReportsPath>$(LocalPath)\Reports</ReportsPath>
+		<ReportsCoveragePath>$(ReportsPath)\Coverage</ReportsCoveragePath>
+		<ReportsMSpecPath>$(ReportsPath)\MSpec</ReportsMSpecPath>
+		<MSpecReportOutputFile>$(ReportsMSpecPath)\index.html</MSpecReportOutputFile>
+		
+		<!-- OpenCover report name and location -->
+		<OpenCoverOuputFileForWorkflowMaps>$(ReportsCoveragePath)\domainservice-coverage-output.xml</OpenCoverOuputFileForWorkflowMaps>
+		<OpenCoverTmpOuputFileForWorkflowMaps>$(ReportsCoveragePath)\domainservice-coverage-tmp-output.xml</OpenCoverTmpOuputFileForWorkflowMaps>		
+		
+	</PropertyGroup>
+
+	<Target Name="CodeCoverage" >
+		<PropertyGroup>
+			<MAP>$(LocalPath)\DomainService2.Specs\bin\Debug\DomainService2.Specs.dll</MAP>
+		</PropertyGroup>
+		<MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" /> 
+		<MakeDir Directories = "$(ReportsCoveragePath)" Condition = "!Exists('$(ReportsCoveragePath)')" /> 
+		<MakeDir Directories = "$(ReportsMSpecPath)" Condition = "!Exists('$(ReportsMSpecPath)')" /> 
+		
+		<!-- Execute opencover -->
+		<Exec Command="&quot;$(OpenCoverPath)\OpenCover.Console.exe&quot; -register:user -output:&quot;$(OpenCoverTmpOuputFileForWorkflowMaps)&quot; -target:&quot;$(MSpecPath)\$(MSpecExecutable)&quot; -returntargetcode -filter:&quot;-[*.Specs]* +[DomainService2*]DomainService2.* -[DomainService2]DomainService2.Hosts.* -[DomainService2]DomainService2.Strings -[DomainService2]DomainService2.Settings -[DomainService2]DomainService2.SharedServices.WorkflowAssignment*&quot; -excludebyattribute:*.CoverageExcludeAttribute* -targetargs:&quot;\&quot;$(MAP)\&quot; --html \&quot;$(MSpecReportOutputFile)&quot;" />
+			<!-- Use ReportGenerator Tool to build an xml Summary -->
+		<Exec Command="&quot;$(OpenCoverReportGenPath)\ReportGenerator.exe&quot; &quot;$(OpenCoverTmpOuputFileForWorkflowMaps)&quot; &quot;$(ReportsCoveragePath)&quot;"/>
+
+		<Delete Files="$(OpenCoverTmpOuputFileForWorkflowMaps)" />
+
+	</Target>
+</Project>

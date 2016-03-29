@@ -1,0 +1,23 @@
+<div>{{item.tileData.HOCInsurer}}</div>
+<div class="tile-data-bottom">
+	<div class="labels">
+		<div>Policy Number:</div>
+		<div ng-if="item.tileData.IsSAHLHOC">Premium:</div>
+		<div>Sum Insured:</div>
+		<div>Valuation Date:</div>
+		<div>Valuation:</div>
+		<div>Commencement:</div>
+		<div>Anniversary:</div>
+		<div>Ceded:</div>
+	</div>
+	<div class="values">
+		<div>{{ item.tileData.IsSAHLHOC ? item.tileData.PolicyNumber : item.tileData.HOCPolicyNumber}}</div>
+		<div ng-if="item.tileData.IsSAHLHOC">{{item.tileData.CurrentTotalMonthlyHOCPaymentExposureToSAHL | currencyFilter:0}}</div>
+		<div>{{item.tileData.SumInsured | currencyFilter:0}}</div>
+		<div>{{item.tileData.ValuationDate | dateViewFilter}}</div>
+		<div>{{item.tileData.ActiveValuationHOCValue | currencyFilter:0}}</div>
+		<div>{{item.tileData.CommencementDate | dateViewFilter}}</div>
+		<div>{{item.tileData.AnniversaryDate | dateViewFilter}}</div>
+		<div>{{item.tileData.Ceded?'Yes':'No'}}</div>
+	</div>
+</div>

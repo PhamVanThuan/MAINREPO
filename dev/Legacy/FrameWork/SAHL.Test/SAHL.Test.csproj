@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{976B41A4-82A2-4873-B472-7BF08D1A393C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Test</RootNamespace>
+    <AssemblyName>SAHL.Test</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SAHL.Test.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BdsSoft.DirectoryServices.Linq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c382851731f5762e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\BdsSoft.DirectoryServices.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.ActiveDs">
+      <HintPath>..\..\External Binaries\Interop.ActiveDs.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.UIProcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.ApplicationBlocks.UIProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\PostSharp.2.1.7.11\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO2AM.cs" />
+    <Compile Include="DAOHelpers\ACBBankHelper.cs" />
+    <Compile Include="DAOHelpers\ACBBranchHelper.cs" />
+    <Compile Include="DAOHelpers\AddressHelper.cs" />
+    <Compile Include="DAOHelpers\BaseHelper.cs" />
+    <Compile Include="DAOHelpers\CallbackHelper.cs" />
+    <Compile Include="DAOHelpers\EmploymentHelper.cs" />
+    <Compile Include="DAOHelpers\HOCHelper.cs" />
+    <Compile Include="DAOHelpers\BatchLoanTransactionHelper.cs" />
+    <Compile Include="DAOHelpers\BatchTransactionHelper.cs" />
+    <Compile Include="DAOHelpers\BulkBatchHelper.cs" />
+    <Compile Include="DAOHelpers\BulkBatchLogHelper.cs" />
+    <Compile Include="DAOHelpers\BulkBatchParameterHelper.cs" />
+    <Compile Include="DAOHelpers\LifeInsurableInterestHelper.cs" />
+    <Compile Include="DAOHelpers\LifePolicyAccountHelper.cs" />
+    <Compile Include="DAOHelpers\LifePolicyHelper.cs" />
+    <Compile Include="DAOHelpers\StageTransitionHelper.cs" />
+    <Compile Include="DAOHelpers\TranslatedTextHelper.cs" />
+    <Compile Include="DAOHelpers\UIStatementHelper.cs" />
+    <Compile Include="DAOHelpers\UIStatementTypeHelper.cs" />
+    <Compile Include="DAOHelpers\UserOrganisationStructureHelper.cs" />
+    <Compile Include="DAOHelpers\UserProfileHelper.cs" />
+    <Compile Include="DAOHelpers\UserProfileSettingsHelper.cs" />
+    <Compile Include="Exceptions\NoDataException.cs" />
+    <Compile Include="GenericDAOHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RequiresPostSharp.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Strategies\MockStratergy.cs" />
+    <Compile Include="TestBase.cs" />
+    <Compile Include="TestConstants.cs" />
+    <Compile Include="DAOX2.cs" />
+    <Compile Include="X2DAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.DAO\SAHL.Common.BusinessModel.DAO.csproj">
+      <Project>{609A7113-A7DD-4E72-98FD-2B07D13550B8}</Project>
+      <Name>SAHL.Common.BusinessModel.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.Interfaces\SAHL.Common.BusinessModel.Interfaces.csproj">
+      <Project>{73DA2A37-4A25-4FE9-98F2-60ED1B2D1CAB}</Project>
+      <Name>SAHL.Common.BusinessModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel\SAHL.Common.BusinessModel.csproj">
+      <Project>{A516D7D1-4CF0-4A5B-82CF-1CFB099E8363}</Project>
+      <Name>SAHL.Common.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Logging\SAHL.Common.Logging.csproj">
+      <Project>{B73E4F52-B7F1-4001-9762-02DB2DF14A23}</Project>
+      <Name>SAHL.Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service.Interfaces\SAHL.Common.Service.Interfaces.csproj">
+      <Project>{7180E406-6B7C-44B9-BD02-D3FCCCC617BC}</Project>
+      <Name>SAHL.Common.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service\SAHL.Common.Service.csproj">
+      <Project>{7155FE63-0A2E-4022-972E-B703CF223297}</Project>
+      <Name>SAHL.Common.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.UI\SAHL.Common.UI.csproj">
+      <Project>{BC717D03-F100-45B5-B189-2DE47D5577E5}</Project>
+      <Name>SAHL.Common.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Web.UI\SAHL.Common.Web.UI.csproj">
+      <Project>{0BEE4C43-1EB7-4BA2-A2F8-A243F892440A}</Project>
+      <Name>SAHL.Common.Web.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.WebServices\SAHL.Common.WebServices.csproj">
+      <Project>{2EC7D5F7-4BB1-4168-B85F-A18F44A0A06E}</Project>
+      <Name>SAHL.Common.WebServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Web\SAHL.Common.Web.csproj">
+      <Project>{77C73619-3CAD-49BA-B485-EFD733E1199E}</Project>
+      <Name>SAHL.Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.X2.BusinessModel.DAO\SAHL.Common.X2.BusinessModel.DAO.csproj">
+      <Project>{4137592E-3649-45D3-AB00-615DD1436626}</Project>
+      <Name>SAHL.Common.X2.BusinessModel.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.X2.BusinessModel.Interfaces\SAHL.Common.X2.BusinessModel.Interfaces.csproj">
+      <Project>{E677295F-5757-4D28-AD66-B82078859E47}</Project>
+      <Name>SAHL.Common.X2.BusinessModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.X2.BusinessModel\SAHL.Common.X2.BusinessModel.csproj">
+      <Project>{F93A1D32-04AF-433F-B3A4-893D96764B6C}</Project>
+      <Name>SAHL.Common.X2.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common\SAHL.Common.csproj">
+      <Project>{C8E9A1AA-1B28-4310-92BD-12A52EC3A996}</Project>
+      <Name>SAHL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0C1B7B75-8887-4169-A41D-0AACDDFF3D49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>robocopy "$(ProjectDir)\bin\$(ConfigurationName)" "$(SolutionDir)..\Internal Binaries" $(ProjectName).dll $(ProjectName).pdb /XO /NJH /NP
+if %25errorlevel%25 GEQ 2 goto BuildEventFailed
+if %25errorlevel%25 LEQ 1 goto end
+  :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+  exit 1
+  :end echo FILECOPY for $(ProjectName) COMPLETED OK
+  exit 0</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets" Condition="Exists('..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets')" />
+</Project>

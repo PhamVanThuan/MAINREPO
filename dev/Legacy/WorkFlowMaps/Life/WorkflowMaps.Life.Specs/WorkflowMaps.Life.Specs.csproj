@@ -1,0 +1,735 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01C2AA11-C221-4497-9715-7F643636E3F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkflowMaps.Life.Specs</RootNamespace>
+    <AssemblyName>WorkflowMaps.Life.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DomainService2">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2.IOC">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="Life">
+      <HintPath>..\Binaries\Life.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.0.3.5\lib\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.0.3.5\lib\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common">
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework">
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2Engine2.Factories, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.X2Engine2.Factories.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\External Binaries\NuGet\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="X2DomainService.Interface.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.Life">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Life.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.WorkflowAssignment">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.WorkflowAssignment.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\45 Day Timeout\OnComplete\when_45_day_timeout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\45 Day Timeout\OnGetActivityTime\when_45_day_timeout.cs" />
+    <Compile Include="Activities\45 Day Timeout\OnStart\when_45_day_timeout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Benefits\OnComplete\when_accept_benefits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Benefits\OnGetActivityMessage\when_accept_benefits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Benefits\OnGetStageTransition\when_accept_benefits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Benefits\OnStart\when_accept_benefits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Declaration\OnComplete\when_accept_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Declaration\OnGetActivityMessage\when_accept_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Declaration\OnGetStageTransition\when_accept_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Declaration\OnStart\when_accept_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Exclusions\OnComplete\when_accept_exclusions.cs" />
+    <Compile Include="Activities\Accept Exclusions\OnGetActivityMessage\when_accept_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Exclusions\OnGetStageTransition\when_accept_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Exclusions\OnStart\when_accept_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept FAIS\OnComplete\when_accept_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept FAIS\OnGetActivityMessage\when_accept_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept FAIS\OnGetStageTransition\when_accept_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept FAIS\OnStart\when_accept_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Quote\OnComplete\when_accept_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Quote\OnGetActivityMessage\when_accept_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Quote\OnGetStageTransition\when_accept_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept Quote\OnStart\when_accept_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept RPAR\OnComplete\when_policy_is_not_to_be_replaced.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept RPAR\OnComplete\when_policy_is_to_be_replaced.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept RPAR\OnGetActivityMessage\when_accept_rpar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Accept RPAR\OnStart\when_accept_rpar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Archive NTU\OnComplete\when_archive_ntu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Archive NTU\OnGetActivityTime\when_getting_activity_time.cs" />
+    <Compile Include="Activities\Archive NTU\OnStart\when_archive_ntu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Awaiting Confirmation Timout\OnComplete\when_at_callback_hold_state.cs" />
+    <Compile Include="Activities\Awaiting Confirmation Timout\OnComplete\when_at_ready_to_callback_state.cs" />
+    <Compile Include="Activities\Awaiting Confirmation Timout\OnComplete\when_not_at_callback_hold_or_ready_to_callback_states.cs" />
+    <Compile Include="Activities\Awaiting Confirmation Timout\OnGetActivityTime\when_getting_activity_time.cs" />
+    <Compile Include="Activities\Awaiting Confirmation Timout\OnStart\when_awaiting_confirmation_timout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Change Policy Type\OnComplete\when_change_policy_type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Change Policy Type\OnGetActivityMessage\when_change_policy_type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Change Policy Type\OnStart\when_change_policy_type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Clear Cache\OnComplete\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnGetActivityMessage\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnStart\when_clear_cache.cs" />
+    <Compile Include="Activities\Close Child Instance\OnComplete\when_close_child_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Close Child Instance\OnStart\when_close_child_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Close Instance\OnComplete\when_close_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Close Instance\OnStart\when_close_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Declaration\OnComplete\when_confirm_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Declaration\OnGetActivityMessage\when_confirm_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Declaration\OnGetStageTransition\when_confirm_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Declaration\OnStart\when_confirm_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Details\OnComplete\when_confirm_details.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Details\OnGetActivityMessage\when_confirm_details.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Details\OnGetStageTransition\when_confirm_details.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Details\OnStart\when_confirm_details.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Exclusions\OnComplete\when_confirm_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Exclusions\OnGetActivityMessage\when_confirm_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Exclusions\OnGetStageTransition\when_confirm_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Exclusions\OnStart\when_confirm_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm FAIS\OnComplete\when_confirm_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm FAIS\OnGetActivityMessage\when_confirm_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm FAIS\OnGetStageTransition\when_confirm_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm FAIS\OnStart\when_confirm_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm LOA\OnComplete\when_confirm_loa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm LOA\OnGetActivityMessage\when_confirm_loa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm LOA\OnGetStageTransition\when_confirm_loa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm LOA\OnStart\when_confirm_loa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Quote\OnComplete\when_confirm_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Quote\OnGetActivityMessage\when_confirm_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Quote\OnGetStageTransition\when_confirm_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Quote\OnStart\when_confirm_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirmation Not Required\OnComplete\when_confirmation_not_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirmation Not Required\OnStart\when_confirmation_not_required.cs" />
+    <Compile Include="Activities\Confirmation Required\OnComplete\when_confirmation_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirmation Required\OnGetStageTransition\when_confirmation_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirmation Required\OnStart\when_confirmation_not_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirmation Required\OnStart\when_confirmation_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue Sale\OnComplete\when_can_not_continue_sale.cs" />
+    <Compile Include="Activities\Continue Sale\OnComplete\when_continuing_sale.cs" />
+    <Compile Include="Activities\Continue Sale\OnGetActivityMessage\when_continue_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue Sale\OnGetStageTransition\when_continue_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue Sale\OnStart\when_continue_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnComplete\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnGetActivityMessage\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnGetStageTransition\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnStart\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Callback\OnComplete\when_in_callback_hold_state.cs" />
+    <Compile Include="Activities\Create Callback\OnComplete\when_in_ready_to_callback_state.cs" />
+    <Compile Include="Activities\Create Callback\OnComplete\when_not_in_callback_hold_or_ready_to_callback_states.cs" />
+    <Compile Include="Activities\Create Callback\OnGetActivityMessage\when_create_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Callback\OnStart\when_create_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Clone\OnComplete\when_create_clone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Clone\OnGetActivityTime\when_create_clone.cs" />
+    <Compile Include="Activities\Create Clone\OnStart\when_create_clone.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Instance Ext\OnComplete\when_create_instance_life_ext_and_application_key_not_returned.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Instance Ext\OnComplete\when_create_instance_life_ext_and_application_key_returned.cs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Instance Ext\OnGetActivityMessage\when_create_instance_ext.cs" />
+    <Compile Include="Activities\Create Instance Ext\OnGetStageTransition\when_create_instance_ext.cs" />
+    <Compile Include="Activities\Create Instance Ext\OnStart\when_create_instance_ext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Instance\OnComplete\when_create_instance_life_and_application_key_not_returned.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Instance\OnComplete\when_create_instance_life_and_application_key_returned.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Instance\OnGetActivityMessage\when_create_instance.cs" />
+    <Compile Include="Activities\Create Instance\OnGetStageTransition\when_create_instance.cs" />
+    <Compile Include="Activities\Create Instance\OnStart\when_create_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Decline Quote\OnComplete\when_decline_quote.cs" />
+    <Compile Include="Activities\Decline Quote\OnGetActivityMessage\when_decline_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Decline Quote\OnStart\when_decline_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\isAccidentalCover\OnComplete\when_isaccidentalcover.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\isAccidentalCover\OnGetStageTransition\when_isaccidentalcover.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\isAccidentalCover\OnStart\when_is_accidental_cover.cs" />
+    <Compile Include="Activities\isAccidentalCover\OnStart\when_is_not_accidental_cover.cs" />
+    <Compile Include="Activities\isStandardCover\OnComplete\when_isstandardcover.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\isStandardCover\OnGetStageTransition\when_isstandardcover.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\isStandardCover\OnStart\when_is_not_standard_cover.cs" />
+    <Compile Include="Activities\isStandardCover\OnStart\when_is_standard_cover.cs" />
+    <Compile Include="Activities\NTU Policy\OnComplete\when_ntu_policy.cs" />
+    <Compile Include="Activities\NTU Policy\OnGetActivityMessage\when_ntu_policy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU Policy\OnStart\when_ntu_policy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Reactivate NTUd Policy\OnComplete\when_reactivate_ntud_policy.cs" />
+    <Compile Include="Activities\Reactivate NTUd Policy\OnGetActivityMessage\when_reactivate_ntud_policy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Reactivate NTUd Policy\OnGetStageTransition\when_reactivate_ntud_policy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Reactivate NTUd Policy\OnStart\when_reactivate_ntud_policy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send Policy Document\OnComplete\when_send_policy_document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send Policy Document\OnGetActivityMessage\when_send_policy_document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send Policy Document\OnGetStageTransition\when_send_policy_document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send Policy Document\OnStart\when_send_policy_document.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send Quote\OnComplete\when_in_callback_hold_state.cs" />
+    <Compile Include="Activities\Send Quote\OnComplete\when_in_ready_to_callback_state.cs" />
+    <Compile Include="Activities\Send Quote\OnComplete\when_not_in_callback_hold_or_ready_to_callback_states.cs" />
+    <Compile Include="Activities\Send Quote\OnGetActivityMessage\when_send_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send Quote\OnGetStageTransition\when_send_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send Quote\OnStart\when_send_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Wait for Callback\OnComplete\when_wait_for_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Wait for Callback\OnGetActivityTime\when_getting_activity_time.cs" />
+    <Compile Include="Activities\Wait for Callback\OnStart\when_wait_for_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\when_getting_dynamic_role_default.cs" />
+    <Compile Include="Roles\when_getting_dynamic_role_internal.cs" />
+    <Compile Include="Roles\when_getting_life_origination_current_consulant.cs" />
+    <Compile Include="States\Awaiting Confirmation\OnEnter\when_awaiting_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Awaiting Confirmation\OnExit\when_awaiting_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Awaiting Timeout\OnEnter\when_awaiting_timeout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Awaiting Timeout\OnExit\when_awaiting_timeout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Benefits\OnEnter\when_benefits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Benefits\OnExit\when_benefits.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Cache Archive\OnEnter\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnExit\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnReturn\when_cache_archive.cs" />
+    <Compile Include="States\Callback Hold\OnEnter\when_callback_hold.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Callback Hold\OnExit\when_callback_hold.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Change Policy Type\OnEnter\when_change_policy_type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Change Policy Type\OnExit\when_change_policy_type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Child Closed\OnEnter\when_child_closed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Child Closed\OnExit\when_child_closed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Child Closed\OnReturn\when_child_closed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Callback\OnEnter\when_common_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Callback\OnExit\when_common_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Close Child\OnEnter\when_common_close_child.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Close Child\OnExit\when_common_close_child.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Close Instance\OnEnter\when_common_close_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Close Instance\OnExit\when_common_close_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common NTU\OnEnter\when_common_ntu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common NTU\OnExit\when_common_ntu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Send Quote\OnEnter\when_common_send_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Send Quote\OnExit\when_common_send_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Contact Client\OnEnter\when_contact_client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Contact Client\OnExit\when_contact_client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Declaration Confirmation\OnEnter\when_declaration_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Declaration Confirmation\OnExit\when_declaration_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Declaration\OnEnter\when_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Declaration\OnExit\when_declaration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Exclusions Confirmation\OnEnter\when_exclusions_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Exclusions Confirmation\OnExit\when_exclusions_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Exclusions\OnEnter\when_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Exclusions\OnExit\when_exclusions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\FAIS Confirmation Check\OnEnter\when_fais_confirmation_check.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\FAIS Confirmation Check\OnExit\when_fais_confirmation_check.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\FAIS Confirmation\OnEnter\when_fais_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\FAIS Confirmation\OnExit\when_fais_confirmation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\FAIS\OnEnter\when_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\FAIS\OnExit\when_fais.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Forward to correct State\OnEnter\when_forward_to_correct_state.cs" />
+    <Compile Include="States\Forward to correct State\OnExit\when_forward_to_correct_state.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Forward to last State\OnAutoForward\when_auto_forwarding.cs" />
+    <Compile Include="States\Forward to last State\OnEnter\when_forward_to_last_state.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Forward to last State\OnExit\when_forward_to_last_state.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\LOA\OnEnter\when_loa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\LOA\OnExit\when_loa.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\NTU Hold\OnEnter\when_ntu_hold.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\NTU Hold\OnExit\when_ntu_hold.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\NTU Reactivated\OnAutoForward\when_ntu_reactivated.cs" />
+    <Compile Include="States\NTU Reactivated\OnEnter\when_ntu_reactivated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\NTU Reactivated\OnExit\when_ntu_reactivated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Older than 45 Days\OnEnter\when_older_than_45_days.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Older than 45 Days\OnExit\when_older_than_45_days.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Older than 45 Days\OnReturn\when_older_than_45_days.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Parent Closed\OnEnter\when_parent_closed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Parent Closed\OnExit\when_parent_closed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Parent Closed\OnReturn\when_parent_closed.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Policy Activated\OnEnter\when_policy_activated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Policy Activated\OnExit\when_policy_activated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Policy Activated\OnReturn\when_policy_activated.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Policy NTUd\OnEnter\when_policy_ntud.cs" />
+    <Compile Include="States\Policy NTUd\OnExit\when_policy_ntud.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Policy NTUd\OnReturn\when_policy_ntud.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Quote\OnEnter\when_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Quote\OnExit\when_quote.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Ready to Callback\OnEnter\when_entering_ready_to_callback.cs" />
+    <Compile Include="States\Ready to Callback\OnExit\when_ready_to_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Ready to Send\OnEnter\when_ready_to_send.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Ready to Send\OnExit\when_ready_to_send.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\RPAR\OnEnter\when_rpar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\RPAR\OnExit\when_rpar.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkflowSpecLife.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Activities\45 Day Timeout\OnGetStageTransition\" />
+    <Folder Include="Activities\Accept RPAR\OnGetStageTransition\" />
+    <Folder Include="Activities\Archive NTU\OnGetStageTransition\" />
+    <Folder Include="Activities\Awaiting Confirmation Timout\OnGetStageTransition\" />
+    <Folder Include="Activities\Change Policy Type\OnGetStageTransition\" />
+    <Folder Include="Activities\Clear Cache\OnGetStageTransition\" />
+    <Folder Include="Activities\Close Child Instance\OnGetStageTransition\" />
+    <Folder Include="Activities\Close Instance\OnGetStageTransition\" />
+    <Folder Include="Activities\Confirmation Not Required\OnGetStageTransition\" />
+    <Folder Include="Activities\Create Callback\OnGetStageTransition\" />
+    <Folder Include="Activities\Create Clone\OnGetStageTransition\" />
+    <Folder Include="Activities\Decline Quote\OnGetStageTransition\" />
+    <Folder Include="Activities\NTU Policy\OnGetStageTransition\" />
+    <Folder Include="Activities\Wait for Callback\OnGetStageTransition\" />
+    <Folder Include="States\Awaiting Timeout\OnAutoForward\" />
+    <Folder Include="States\FAIS Confirmation Check\OnAutoForward\" />
+    <Folder Include="States\Forward to correct State\OnAutoForward\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WorkflowMaps.Specs.Common\WorkflowMaps.Specs.Common.csproj">
+      <Project>{AE22CAB1-D3AB-43EC-A840-B23B4050F880}</Project>
+      <Name>WorkflowMaps.Specs.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

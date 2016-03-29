@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C13DFDF-EBF8-4F96-BE3A-79DE5AC4A56F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkflowMaps.PersonalLoan.Specs</RootNamespace>
+    <AssemblyName>WorkflowMaps.PersonalLoan.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DomainService2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2.IOC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.0.3.5\lib\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.0.3.5\lib\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PersonalLoan">
+      <HintPath>..\Binaries\PersonalLoan.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework, Version=1.0.8.107, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2Engine2.Factories, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.X2Engine2.Factories.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\External Binaries\NuGet\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="X2DomainService.Interface.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Common.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.PersonalLoan">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.PersonalLoan.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.WorkflowAssignment">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.WorkflowAssignment.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\Admin Decline\OnComplete\when_admin_decline.cs" />
+    <Compile Include="Activities\Admin Decline\OnGetActivityMessage\when_admin_decline.cs" />
+    <Compile Include="Activities\Admin Decline\OnGetStageTransition\when_admin_decline.cs" />
+    <Compile Include="Activities\Admin Decline\OnStart\when_admin_decline.cs" />
+    <Compile Include="Activities\Altered Approval\OnComplete\when_altered_approval.cs" />
+    <Compile Include="Activities\Altered Approval\OnGetActivityMessage\when_altered_approval.cs" />
+    <Compile Include="Activities\Altered Approval\OnGetStageTransition\when_altered_approval.cs" />
+    <Compile Include="Activities\Altered Approval\OnStart\when_altered_approval.cs" />
+    <Compile Include="Activities\Application in Order\OnComplete\when_cannot_submit_to_credit_client.cs" />
+    <Compile Include="Activities\Application in Order\OnComplete\when_cannot_submit_to_credit.cs" />
+    <Compile Include="Activities\Application in Order\OnComplete\when_can_submit_to_credit.cs" />
+    <Compile Include="Activities\Application in Order\OnGetActivityMessage\when_application_in_order.cs" />
+    <Compile Include="Activities\Application in Order\OnGetStageTransition\when_application_in_order.cs" />
+    <Compile Include="Activities\Application in Order\OnStart\when_application_in_order.cs" />
+    <Compile Include="Activities\Approve\OnComplete\when_approving_application.cs" />
+    <Compile Include="Activities\Approve\OnGetActivityMessage\when_approve.cs" />
+    <Compile Include="Activities\Approve\OnGetStageTransition\when_approve.cs" />
+    <Compile Include="Activities\Approve\OnStart\when_approve.cs" />
+    <Compile Include="Activities\Batch Create PL Lead\OnComplete\when_batch_create_personal_loan_lead.cs" />
+    <Compile Include="Activities\Batch Create PL Lead\OnStart\when_batch_create_pl_lead.cs" />
+    <Compile Include="Activities\Calculate Application\OnComplete\when_calculate_application.cs" />
+    <Compile Include="Activities\Calculate Application\OnGetActivityMessage\when_calculate_application.cs" />
+    <Compile Include="Activities\Calculate Application\OnGetStageTransition\when_calculate_application.cs" />
+    <Compile Include="Activities\Calculate Application\OnStart\when_calculate_application.cs" />
+    <Compile Include="Activities\Clear Cache\OnComplete\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnGetActivityMessage\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnStart\when_clear_cache.cs" />
+    <Compile Include="Activities\Create Personal Loan Lead\OnActivityMessage\when_create_personal_loan_lead.cs" />
+    <Compile Include="Activities\Create Personal Loan Lead\OnComplete\when_create_personal_loan_lead.cs" />
+    <Compile Include="Activities\Create Personal Loan Lead\OnGetStageTransition\when_create_personal_loan_lead.cs" />
+    <Compile Include="Activities\Create Personal Loan Lead\OnStart\when_create_personal_loan_lead.cs" />
+    <Compile Include="Activities\Decline Finalised\OnComplete\when_declined_finalised.cs" />
+    <Compile Include="Activities\Decline Finalised\OnGetActivityMessage\when_decline_finalised.cs" />
+    <Compile Include="Activities\Decline Finalised\OnGetStageTransition\when_decline_finalised.cs" />
+    <Compile Include="Activities\Decline Finalised\OnStart\when_decline_finalised.cs" />
+    <Compile Include="Activities\Decline\OnComplete\when_declining_an_application.cs" />
+    <Compile Include="Activities\Decline\OnGetActivityMessage\when_decline.cs" />
+    <Compile Include="Activities\Decline\OnGetStageTransition\when_decline.cs" />
+    <Compile Include="Activities\Decline\OnStart\when_decline.cs" />
+    <Compile Include="Activities\Disburse Funds\OnComplete\when_disbursing_funds.cs" />
+    <Compile Include="Activities\Disburse Funds\OnStart\when_disbursing_funds_before_cut_off_time_with_no_life_policy.cs" />
+    <Compile Include="Activities\Disburse Funds\OnStart\when_disbursing_funds_with_unceded_external_life.cs" />
+    <Compile Include="Activities\Disburse Funds\OnStart\when_disbursing_funds_before_cut_off_time_with_ceded_external_life.cs" />
+    <Compile Include="Activities\Disburse Funds\OnStart\when_disbursing_funds_with_sahl_life.cs" />
+    <Compile Include="Activities\Disburse Funds\OnGetActivityMessage\when_disburse_funds.cs" />
+    <Compile Include="Activities\Disburse Funds\OnGetStageTransition\when_disburse_funds.cs" />
+    <Compile Include="Activities\Disburse Funds\OnStart\when_disbursing_funds_after_cut_off_time.cs" />
+    <Compile Include="Activities\Disbursed Timer\OnComplete\when_disbursed_timer_fires.cs" />
+    <Compile Include="Activities\Disbursed Timer\OnGetActivityTime\when_getting_activity_time.cs" />
+    <Compile Include="Activities\Disbursed Timer\OnGetStageTransition\when_disbursed_timer.cs" />
+    <Compile Include="Activities\Disbursed Timer\OnStart\when_disbursed_timer.cs" />
+    <Compile Include="Activities\Document Check\OnComplete\when_document_check_completed.cs" />
+    <Compile Include="Activities\Document Check\OnGetActivityMessage\when_getting_activity_time.cs" />
+    <Compile Include="Activities\Document Check\OnGetStageTransition\when_document_check.cs" />
+    <Compile Include="Activities\Document Check\OnStart\when_document_check_activated.cs" />
+    <Compile Include="Activities\Documents Verified\OnComplete\when_documents_verified.cs" />
+    <Compile Include="Activities\Documents Verified\OnGetActivityMessage\when_documents_verified.cs" />
+    <Compile Include="Activities\Documents Verified\OnGetStageTransition\when_documents_verified.cs" />
+    <Compile Include="Activities\Documents Verified\OnStart\when_documents_verified.cs" />
+    <Compile Include="Activities\Email Disbursed Letter Failed\OnComplete\when_failed_to_email_disbursed_letter.cs" />
+    <Compile Include="Activities\Email Disbursed Letter Failed\OnGetStageTransition\when_email_disbursed_letter_failed.cs" />
+    <Compile Include="Activities\Email Disbursed Letter Failed\OnStart\when_email_disbursed_letter_failed.cs" />
+    <Compile Include="Activities\Email Disbursed Letter\OnComplete\when_email_disbursed_letter.cs" />
+    <Compile Include="Activities\Email Disbursed Letter\OnGetStageTransition\when_email_disbursed_letter.cs" />
+    <Compile Include="Activities\Email Disbursed Letter\OnStart\when_cannot_email_disbursed_letter.cs" />
+    <Compile Include="Activities\Email Disbursed Letter\OnStart\when_can_email_disbursed_letter.cs" />
+    <Compile Include="Activities\Escalate to Exceptions Manager\OnComplete\when_escalate_to_exceptions_manager.cs" />
+    <Compile Include="Activities\Escalate to Exceptions Manager\OnGetActivityMessage\when_escalate_to_exceptions_manager.cs" />
+    <Compile Include="Activities\Escalate to Exceptions Manager\OnGetStageTransition\when_escalate_to_exceptions_manager.cs" />
+    <Compile Include="Activities\Escalate to Exceptions Manager\OnStart\when_escalate_to_exceptions_manager.cs" />
+    <Compile Include="Activities\EXT_NTU\OnComplete\when_ext_ntu.cs" />
+    <Compile Include="Activities\EXT_NTU\OnGetStageTransition\when_ext_ntu.cs" />
+    <Compile Include="Activities\EXT_NTU\OnStart\when_ext_ntu.cs" />
+    <Compile Include="Activities\NTU Finalised\OnComplete\when_ntu_finalised.cs" />
+    <Compile Include="Activities\NTU Finalised\OnGetActivityMessage\when_ntu_finalised.cs" />
+    <Compile Include="Activities\NTU Finalised\OnGetStageTransition\when_ntu_finalised.cs" />
+    <Compile Include="Activities\NTU Finalised\OnStart\when_ntu_finalised.cs" />
+    <Compile Include="Activities\NTU Lead\OnComplete\when_ntu_lead.cs" />
+    <Compile Include="Activities\NTU Lead\OnGetActivityMessage\when_ntu_lead.cs" />
+    <Compile Include="Activities\NTU Lead\OnGetStageTransition\when_ntu_lead.cs" />
+    <Compile Include="Activities\NTU Lead\OnStart\when_ntu_lead.cs" />
+    <Compile Include="Activities\NTU Timer\OnComplete\when_ntu_timer_fires.cs" />
+    <Compile Include="Activities\NTU Timer\OnGetActivityTime\when_getting_activity_time.cs" />
+    <Compile Include="Activities\NTU Timer\OnGetStageTransition\when_ntu_timer.cs" />
+    <Compile Include="Activities\NTU Timer\OnStart\when_ntu_timer.cs" />
+    <Compile Include="Activities\NTU\OnComplete\when_NTU.cs" />
+    <Compile Include="Activities\NTU\OnGetStageTransition\when_NTU.cs" />
+    <Compile Include="Activities\NTU\OnStart\when_NTU.cs" />
+    <Compile Include="Activities\NTU\OnGetActivityMessage\when_NTU.cs" />
+    <Compile Include="Activities\Reinstate NTU\OnComplete\when_reinstate_ntu.cs" />
+    <Compile Include="Activities\Reinstate NTU\OnGetActivityMessage\when_reinstate_ntu.cs" />
+    <Compile Include="Activities\Reinstate NTU\OnGetStageTransition\when_reinstate_ntu.cs" />
+    <Compile Include="Activities\Reinstate NTU\OnStart\when_reinstate_ntu_and_not_under_debt_counselling.cs" />
+    <Compile Include="Activities\Reinstate NTU\OnStart\when_reinstate_ntu_and_under_debt_counselling.cs" />
+    <Compile Include="Activities\Return to Legal Agreements\OnComplete\when_return_to_legal_agreements.cs" />
+    <Compile Include="Activities\Return to Legal Agreements\OnGetActivityMessage\when_return_to_legal_agreements.cs" />
+    <Compile Include="Activities\Return to Legal Agreements\OnGetStageTransition\when_return_to_legal_agreements.cs" />
+    <Compile Include="Activities\Return to Legal Agreements\OnStart\when_return_to_legal_agreements.cs" />
+    <Compile Include="Activities\Confirm Affordability\OnComplete\when_confirm_affordability.cs" />
+    <Compile Include="Activities\Confirm Affordability\OnGetActivityMessage\when_confirm_affordability.cs" />
+    <Compile Include="Activities\Confirm Affordability\OnGetStageTransition\when_confirm_affordability.cs" />
+    <Compile Include="Activities\Confirm Affordability\OnStart\when_confirm_affordability.cs" />
+    <Compile Include="Activities\Return to Manage Application\OnComplete\when_returned_to_manage_application.cs" />
+    <Compile Include="Activities\Return to Manage Application\OnGetActivityMessage\when_return_to_manage_application.cs" />
+    <Compile Include="Activities\Return to Manage Application\OnGetStageTransition\when_return_to_manage_application.cs" />
+    <Compile Include="Activities\Return to Manage Application\OnStart\when_return_to_manage_application.cs" />
+    <Compile Include="Activities\Rework Application\OnComplete\when_rework_application.cs" />
+    <Compile Include="Activities\Rework Application\OnGetActivityMessage\when_rework_application.cs" />
+    <Compile Include="Activities\Rework Application\OnGetStageTransition\when_rework_application.cs" />
+    <Compile Include="Activities\Rework Application\OnStart\when_rework_application.cs" />
+    <Compile Include="Activities\Rollback Disbursement\OnComplete\when_rollback_disbursement.cs" />
+    <Compile Include="Activities\Rollback Disbursement\OnGetActivityMessage\when_rollback_disbursement.cs" />
+    <Compile Include="Activities\Rollback Disbursement\OnGetStageTransition\when_rollback_disbursement.cs" />
+    <Compile Include="Activities\Rollback Disbursement\OnStart\when_rollback_disbursement_after_cut_off_time.cs" />
+    <Compile Include="Activities\Rollback Disbursement\OnStart\when_rollback_disbursement_before_cut_off_time.cs" />
+    <Compile Include="Activities\Send Disbursement Letter\OnComplete\when_send_disbursement_letter.cs" />
+    <Compile Include="Activities\Send Disbursement Letter\OnGetActivityMessage\when_send_disbursement_letter.cs" />
+    <Compile Include="Activities\Send Disbursement Letter\OnGetStageTransition\when_send_disbursement_letter.cs" />
+    <Compile Include="Activities\Send Disbursement Letter\OnStart\when_send_disbursement_letter.cs" />
+    <Compile Include="Activities\Send Documents\OnComplete\when_send_documents.cs" />
+    <Compile Include="Activities\Send Documents\OnGetActivityMessage\when_send_documents.cs" />
+    <Compile Include="Activities\Send Documents\OnGetStageTransition\when_send_documents.cs" />
+    <Compile Include="Activities\Send Documents\OnStart\when_send_documents.cs" />
+    <Compile Include="Activities\Send Offer\OnComplete\when_send_offer.cs" />
+    <Compile Include="Activities\Send Offer\OnGetActivityMessage\when_send_offer.cs" />
+    <Compile Include="Activities\Send Offer\OnGetStageTransition\when_send_offer.cs" />
+    <Compile Include="Activities\Send Offer\OnStart\when_cannot_send_offer.cs" />
+    <Compile Include="Activities\Send Offer\OnStart\when_can_send_offer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Archive Disbursed\OnEnter\when_entering.cs" />
+    <Compile Include="States\Archive Disbursed\OnExit\when_archive_disbursed.cs" />
+    <Compile Include="States\Archive Disbursed\OnReturn\when_archive_disbursed.cs" />
+    <Compile Include="States\Archive NTU Declines\OnEnter\when_archive_ntu_declines.cs" />
+    <Compile Include="States\Archive NTU Declines\OnExit\when_archive_ntu_declines.cs" />
+    <Compile Include="States\Archive NTU Declines\OnReturn\when_archive_ntu_declines.cs" />
+    <Compile Include="States\Archive NTU Lead\OnEnter\when_archive_ntu_lead.cs" />
+    <Compile Include="States\Archive NTU Lead\OnExit\when_archive_ntu_lead.cs" />
+    <Compile Include="States\Archive NTU Lead\OnReturn\when_archive_ntu_lead.cs" />
+    <Compile Include="States\Cache Archive\OnEnter\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnExit\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnReturn\when_cache_archive.cs" />
+    <Compile Include="States\Can Email Disbursed Letter\OnEnter\when_can_email_disbursed_letter.cs" />
+    <Compile Include="States\Can Email Disbursed Letter\OnExit\when_can_email_disbursed_letter.cs" />
+    <Compile Include="States\Common Admin Decline\OnEnter\when_common_admin_decline.cs" />
+    <Compile Include="States\Common Admin Decline\OnExit\when_common_admin_decline.cs" />
+    <Compile Include="States\Common External NTU\OnEnter\when_common_external_ntu.cs" />
+    <Compile Include="States\Common External NTU\OnExit\when_common_external_ntu.cs" />
+    <Compile Include="States\Common NTU\OnEnter\when_common_ntu.cs" />
+    <Compile Include="States\Common NTU\OnExit\when_common_ntu.cs" />
+    <Compile Include="States\Common Return\OnEnter\when_common_return.cs" />
+    <Compile Include="States\Common Return\OnExit\when_common_return.cs" />
+    <Compile Include="States\Common Rework\OnEnter\when_common_rework.cs" />
+    <Compile Include="States\Common Rework\OnExit\when_common_rework.cs" />
+    <Compile Include="States\Credit\OnEnter\when_credit.cs" />
+    <Compile Include="States\Credit\OnExit\when_credit.cs" />
+    <Compile Include="States\Declined by Credit\OnEnter\when_declined_by_credit.cs" />
+    <Compile Include="States\Declined by Credit\OnExit\when_declined_by_credit.cs" />
+    <Compile Include="States\Disbursed\OnEnter\when_disbursed.cs" />
+    <Compile Include="States\Disbursed\OnExit\when_disbursed.cs" />
+    <Compile Include="States\Disbursement\OnEnter\when_disbursement.cs" />
+    <Compile Include="States\Disbursement\OnExit\when_disbursement.cs" />
+    <Compile Include="States\Document Check\OnEnter\when_document_check.cs" />
+    <Compile Include="States\Document Check\OnExit\when_document_check.cs" />
+    <Compile Include="States\Legal Agreements\OnEnter\when_legal_agreements.cs" />
+    <Compile Include="States\Legal Agreements\OnExit\when_legal_agreements.cs" />
+    <Compile Include="States\Manage Application\OnEnter\when_manage_application.cs" />
+    <Compile Include="States\Manage Application\OnExit\when_manage_application.cs" />
+    <Compile Include="States\Manage Lead\OnEnter\when_manage_lead.cs" />
+    <Compile Include="States\Manage Lead\OnExit\when_manage_lead.cs" />
+    <Compile Include="States\NTU\OnEnter\when_NTU.cs" />
+    <Compile Include="States\NTU\OnExit\when_NTU.cs" />
+    <Compile Include="States\Return to State\OnAutoForward\when_auto_forwarding_to_credit.cs" />
+    <Compile Include="States\Return to State\OnAutoForward\when_auto_forwarding_to_legal_agreements.cs" />
+    <Compile Include="States\Return to State\OnAutoForward\when_auto_forwarding_to_disbursement.cs" />
+    <Compile Include="States\Return to State\OnAutoForward\when_auto_forwarding_to_manage_application.cs" />
+    <Compile Include="States\Return to State\OnEnter\when_return_to_state.cs" />
+    <Compile Include="States\Return to State\OnExit\when_return_to_state.cs" />
+    <Compile Include="States\Send Disbursement Letter\OnEnter\when_send_disbursement_letter.cs" />
+    <Compile Include="States\Send Disbursement Letter\OnExit\when_send_disbursement_letter.cs" />
+    <Compile Include="States\Verify Documents\OnEnter\when_verify_documents.cs" />
+    <Compile Include="States\Verify Documents\OnExit\when_verify_documents.cs" />
+    <Compile Include="WorkflowSpecPersonalLoan.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WorkflowMaps.Specs.Common\WorkflowMaps.Specs.Common.csproj">
+      <Project>{AE22CAB1-D3AB-43EC-A840-B23B4050F880}</Project>
+      <Name>WorkflowMaps.Specs.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Activities\Batch Create PL Lead\OnGetStageTransition\" />
+    <Folder Include="Activities\Clear Cache\OnGetStageTransition\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

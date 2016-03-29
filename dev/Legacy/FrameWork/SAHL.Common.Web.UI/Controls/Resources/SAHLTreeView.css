@@ -1,0 +1,29 @@
+.SAHLTreeView table, .SAHLTreeView td
+{
+	border-collapse: collapse;
+}
+.SAHLTreeView td
+{
+	padding:0px;
+	vertical-align:middle;
+	white-space:nowrap;
+}
+
+.SAHLTreeView .Action 
+{
+	cursor: pointer
+}
+.SAHLTreeView a.SelectedNode 
+{
+	border: #EAE8B5 1px solid; 
+	color: black; 
+	background-color: #EFEEC7;
+}
+.SAHLTreeView .TreeText 
+{
+	padding-left: 4px; 
+}
+.SAHLTreeView .TreeCheckBox input
+{
+	height: 16px;
+}

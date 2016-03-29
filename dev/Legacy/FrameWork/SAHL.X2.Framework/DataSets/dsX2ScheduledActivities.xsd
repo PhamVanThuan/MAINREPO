@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsX2ScheduledActivities" targetNamespace="http://tempuri.org/dsX2ScheduledActivities.xsd" xmlns:mstns="http://tempuri.org/dsX2ScheduledActivities.xsd" xmlns="http://tempuri.org/dsX2ScheduledActivities.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="X2ConnectionString1" IsAppSettingsProperty="True" Modifier="Assembly" Name="X2ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.X2ConnectionString1" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsX2ScheduledActivities" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsX2ScheduledActivities" msprop:Generator_DataSetName="dsX2ScheduledActivities">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ScheduledActivity" msprop:Generator_UserTableName="ScheduledActivity" msprop:Generator_RowDeletedName="ScheduledActivityRowDeleted" msprop:Generator_RowChangedName="ScheduledActivityRowChanged" msprop:Generator_RowClassName="ScheduledActivityRow" msprop:Generator_RowChangingName="ScheduledActivityRowChanging" msprop:Generator_RowEvArgName="ScheduledActivityRowChangeEvent" msprop:Generator_RowEvHandlerName="ScheduledActivityRowChangeEventHandler" msprop:Generator_TableClassName="ScheduledActivityDataTable" msprop:Generator_TableVarName="tableScheduledActivity" msprop:Generator_RowDeletingName="ScheduledActivityRowDeleting" msprop:Generator_TablePropName="ScheduledActivity">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InstanceID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="InstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" type="xs:long" />
+              <xs:element name="Time" msprop:Generator_UserColumnName="Time" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInTable="TimeColumn" type="xs:dateTime" />
+              <xs:element name="ActivityID" msprop:Generator_UserColumnName="ActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" type="xs:int" />
+              <xs:element name="Priority" msprop:Generator_UserColumnName="Priority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" type="xs:int" />
+              <xs:element name="WorkFlowProviderName" msprop:Generator_UserColumnName="WorkFlowProviderName" msprop:Generator_ColumnPropNameInRow="WorkFlowProviderName" msprop:Generator_ColumnVarNameInTable="columnWorkFlowProviderName" msprop:Generator_ColumnPropNameInTable="WorkFlowProviderNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActivityName" msprop:Generator_UserColumnName="ActivityName" msprop:Generator_ColumnVarNameInTable="columnActivityName" msprop:Generator_ColumnPropNameInRow="ActivityName" msprop:Generator_ColumnPropNameInTable="ActivityNameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ScheduledActivity" />
+      <xs:field xpath="mstns:InstanceID" />
+      <xs:field xpath="mstns:Time" />
+      <xs:field xpath="mstns:ActivityID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

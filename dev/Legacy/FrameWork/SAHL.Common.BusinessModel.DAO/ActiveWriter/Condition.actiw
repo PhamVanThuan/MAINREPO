@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="7c450026-54d3-47b8-a318-6698f5eca1b1" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="GenericKeyType" lazy="true" schema="dbo" table="GenericKeyType">
+      <properties>
+        <modelProperty Id="07e0aa5e-1a2a-457f-b55a-f99f55faea83" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="24763cc0-792e-4e58-b93b-d56a6f30ebc0" name="TableName" column="TableName" length="0" />
+        <modelProperty Id="6d3b44aa-1090-42e3-b258-ff3a999c22a6" name="PrimaryKeyColumn" column="PrimaryKeyColumn" length="0" />
+        <modelProperty Id="a91046aa-9825-45fe-bcfa-07c01f665c1c" name="CBOGenericKey" column="CBOGenericKey" columnType="Int32" length="0" />
+        <modelProperty Id="3d0f04e6-90ec-4d55-b7d9-26010a2a16b4" name="GenericKeyTypeKey" column="GenericKeyTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="GenericColumnDefinition" lazy="true" schema="dbo" table="GenericColumnDefinition">
+      <properties>
+        <modelProperty Id="4a4e5105-6ebc-4f09-ac8b-82e9a240d869" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="24116a72-fc6b-40d6-a04b-4ed868948b62" name="TableName" column="TableName" length="0" notNull="true" />
+        <modelProperty Id="d74e075c-bc76-4996-867c-7812b38f0da4" name="ColumnName" column="ColumnName" length="0" notNull="true" />
+        <modelProperty Id="ca32ca55-e15f-4630-bd98-7e94acdd74b3" name="GenericColumnDefinitionKey" column="GenericColumnDefinitionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ConditionConfiguration" lazy="true" schema="dbo" table="ConditionConfiguration">
+      <targets>
+        <manyToOneRelation Id="39270338-185e-4d57-9513-ebb7ff143d3e" targetColumnKey="GenericKeyTypeKey" targetLazy="true" targetTable="ConditionConfiguration" targetPropertyName="ConditionConfigurations" sourceColumn="GenericKeyTypeKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/GenericKeyType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="98641d77-1e20-41bb-bf77-675121d11245" targetColumnKey="GenericColumnDefinitionKey" targetLazy="true" targetTable="ConditionConfiguration" targetPropertyName="ConditionConfigurations" sourceColumn="GenericColumnDefinitionKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/GenericColumnDefinition" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="85d6e64b-3434-4bef-992e-2de743a06df6" name="GenericColumnDefinitionValue" column="GenericColumnDefinitionValue" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="65f7421f-482e-40d8-a588-d1ba60324ca0" name="ConditionConfigurationKey" column="ConditionConfigurationKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ConditionSet" lazy="true" schema="dbo" table="ConditionSet">
+      <properties>
+        <modelProperty Id="feacddcd-d146-4ef4-86f9-37baad35d47e" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="4aa1ca4f-b1b1-4026-994c-3a70a6655de5" name="ConditionSetKey" column="ConditionSetKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+      <manyToManyTargets>
+        <manyToManyRelation Id="58d2fa6a-5ef9-4e6f-9329-a16456e5b46d" sourceColumn="ConditionSetKey" sourceLazy="true" schema="dbo" table="ConditionConfigurationConditionSet" targetColumn="ConditionConfigurationKey" targetLazy="true">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/ConditionConfiguration" />
+        </manyToManyRelation>
+      </manyToManyTargets>
+    </modelClass>
+    <modelClass name="ConditionSetCondition" lazy="true" schema="dbo" table="ConditionSetCondition">
+      <targets>
+        <manyToOneRelation Id="07d94eed-b23d-41da-9918-7d02baa6a8b0" targetColumnKey="ConditionSetKey" targetLazy="true" targetTable="ConditionSetCondition" targetPropertyName="ConditionSetConditions" sourceColumn="ConditionSetKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/ConditionSet" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="7c5416ef-c605-4390-807b-b0da495ae99c" targetColumnKey="ConditionKey" targetLazy="true" targetTable="ConditionSetCondition" targetPropertyName="ConditionSetConditions" sourceColumn="ConditionKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/Condition" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="e4af5eb3-e87f-4cc6-b5cf-30438d837b64" name="RequiredCondition" column="RequiredCondition" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="60a00596-6c80-450d-a474-18c34fe19b63" name="ConditionSetConditionKey" column="ConditionSetConditionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Condition" lazy="true" schema="dbo" table="Condition">
+      <targets>
+        <manyToOneRelation Id="3a1532da-b858-4aac-912c-cd5009d148bd" targetColumnKey="ConditionTypeKey" targetLazy="true" targetTable="Condition" targetPropertyName="Conditions" sourceColumn="ConditionTypeKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/ConditionType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="0bfa0d29-e85d-4423-beeb-d2ff6d4ded66" name="ConditionPhrase" column="ConditionPhrase" length="0" />
+        <modelProperty Id="ab17c58b-b616-42a4-af24-92856e3392f0" name="TokenDescriptions" column="TokenDescriptions" length="0" />
+        <modelProperty Id="d84b8366-d2b9-41fa-897a-ef3e0545948c" name="TranslatableItemKey" column="TranslatableItemKey" columnType="Int32" length="0" />
+        <modelProperty Id="866fc9d5-81ce-4c37-bae5-de2de779d226" name="ConditionName" column="ConditionName" length="0" />
+        <modelProperty Id="9b49f6ff-7f5c-4289-a736-e247500f605c" name="ConditionKey" column="ConditionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ConditionType" lazy="true" schema="dbo" table="ConditionType">
+      <properties>
+        <modelProperty Id="7aba061a-33d3-4cb0-9365-27943beae063" name="Description" column="Description" length="0" />
+        <modelProperty Id="95e7d9c6-402f-4fad-9fb3-608822241d67" name="ConditionTypeKey" column="ConditionTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ConditionToken" lazy="true" schema="dbo" table="ConditionToken">
+      <targets>
+        <manyToOneRelation Id="78ca5b95-62b7-49e7-9737-1be7677f7c36" targetColumnKey="ConditionKey" targetLazy="true" targetTable="ConditionToken" targetPropertyName="ConditionTokens" sourceColumn="ConditionKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/Condition" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="f308f57a-3f7e-419a-8800-5f50d3bb8ded" targetColumnKey="TokenKey" targetLazy="true" targetTable="ConditionToken" targetPropertyName="ConditionTokens" sourceColumn="TokenKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/Token" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="7498ccba-6005-48a0-b326-80a9c9260f58" name="ConditionTokenKey" column="ConditionTokenKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ParameterType" lazy="true" schema="dbo" table="ParameterType">
+      <properties>
+        <modelProperty Id="afdf2a8d-5e73-46ec-8bb8-97e5817ec98a" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="54faaf0c-3956-419a-8a24-118f475037b5" name="SQLDataType" column="SQLDataType" length="0" notNull="true" />
+        <modelProperty Id="b4826829-fda9-4069-8c5a-20e13f3887bc" name="CSharpDataType" column="CSharpDataType" length="0" />
+        <modelProperty Id="25c8e23e-c766-4fce-96a9-cfc142593820" name="ParameterTypeKey" column="ParameterTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="StatementDefinition" lazy="true" schema="dbo" table="StatementDefinition">
+      <properties>
+        <modelProperty Id="5f4b1068-2e71-4e9d-ad2f-ee3cf0ae05e2" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="b14ec938-904e-41fa-ba2e-86abd7a26e32" name="ApplicationName" column="ApplicationName" length="0" notNull="true" />
+        <modelProperty Id="2afb1cb2-0e39-4185-86d5-d4e0a181188e" name="StatementName" column="StatementName" length="0" notNull="true" />
+        <modelProperty Id="b3e77436-e198-4bb3-bbee-c88c0e5ad491" name="StatementDefinitionKey" column="StatementDefinitionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="StatementParameter" lazy="true" schema="dbo" table="StatementParameter">
+      <targets>
+        <manyToOneRelation Id="1913b803-5c4b-4da9-8061-faaa0c7ce994" targetColumnKey="ParameterTypeKey" targetLazy="true" targetTable="StatementParameter" targetPropertyName="StatementParameters" sourceColumn="ParameterTypeKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/ParameterType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="6c6d19b5-bbe3-42b9-bf72-87727660f586" targetColumnKey="PopulationStatementDefinitionKey" targetLazy="true" targetTable="StatementParameter" targetPropertyName="StatementParameters" sourceColumn="PopulationStatementDefinitionKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/StatementDefinition" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="b552d2c2-eae4-4133-8ba8-f4e51412a58d" targetColumnKey="StatementDefinitionKey" targetLazy="true" targetTable="StatementParameter" targetPropertyName="StatementParameters" sourceColumn="StatementDefinitionKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/StatementDefinition" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="eacaad2b-f6d1-46e3-ba6d-e49bac42228c" name="ParameterName" column="ParameterName" length="0" notNull="true" />
+        <modelProperty Id="4639a6d3-52e8-4e27-8360-70af240dc732" name="ParameterLength" column="ParameterLength" columnType="Int32" length="0" />
+        <modelProperty Id="75ea340c-abc8-4cd0-8dc3-a02799f22b74" name="DisplayName" column="DisplayName" length="0" />
+        <modelProperty Id="74d40e71-87aa-4ee9-bc83-cb3da171a0d7" name="Required" column="Required" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="a5b08855-617b-4b96-9042-a73db20a34a0" name="StatementParameterKey" column="StatementParameterKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Token" lazy="true" schema="dbo" table="Token">
+      <targets>
+        <manyToOneRelation Id="b4411584-1a1b-466b-9e99-c5cc32783a66" targetColumnKey="ParameterTypeKey" targetLazy="true" targetTable="Token" targetPropertyName="Tokens" sourceColumn="ParameterTypeKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/ParameterType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="702eced6-3ab2-40b5-8f39-da7ad9b148f1" targetColumnKey="StatementDefinitionKey" targetLazy="true" targetTable="Token" targetPropertyName="Tokens" sourceColumn="StatementDefinitionKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/StatementDefinition" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="895862a0-076d-4d05-98b3-4d2dbc80513c" targetColumnKey="TokenTypeKey" targetLazy="true" targetTable="Token" targetPropertyName="Tokens" sourceColumn="TokenTypeKey">
+          <modelClassMoniker name="/7c450026-54d3-47b8-a318-6698f5eca1b1/TokenType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="5fb427fe-cdea-46c0-9481-f89dd5374bc3" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="31794d42-335a-485e-a71c-f68553f7a8ff" name="MustTranslate" column="MustTranslate" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="eaeb676b-5041-401e-a91d-8b456d58a4db" name="TokenKey" column="TokenKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="TokenType" lazy="true" schema="dbo" table="TokenType">
+      <properties>
+        <modelProperty Id="078bbc60-214d-46cc-bbf4-edf394b2d006" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="c8024cf3-3a62-41b9-a2d1-8385b9149aea" name="UserID" column="UserID" length="0" notNull="true" />
+        <modelProperty Id="9964835f-2779-4948-aa22-f7c09c83eaa4" name="RunStatement" column="RunStatement" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="eccd9ac5-b3ae-4213-b970-8151de315eea" name="TokenTypeKey" column="TokenTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

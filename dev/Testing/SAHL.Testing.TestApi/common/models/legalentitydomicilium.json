@@ -1,0 +1,100 @@
+{
+  "name": "legalentitydomicilium",
+  "plural": "legalentitydomicilium",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "mssql": {
+    "schema": "dbo",
+    "table": "LegalEntityDomicilium"
+  },
+  "properties": {
+    "legalentitydomiciliumkey": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "LegalEntityDomiciliumKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "changedate": {
+      "type": "Date",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "ChangeDate",
+        "dataType": "datetime",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "aduserkey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "ADUserKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "legalentityaddresskey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "LegalEntityAddressKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "generalstatuskey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "GeneralStatusKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

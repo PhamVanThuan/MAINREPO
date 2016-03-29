@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsX2ActivatedExternalActivities" targetNamespace="http://tempuri.org/dsX2ActivatedExternalActivities.xsd" xmlns:mstns="http://tempuri.org/dsX2ActivatedExternalActivities.xsd" xmlns="http://tempuri.org/dsX2ActivatedExternalActivities.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="X2ConnectionString2" IsAppSettingsProperty="True" Modifier="Assembly" Name="X2ConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.X2ConnectionString2" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsX2ActivatedExternalActivities" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsX2ActivatedExternalActivities" msprop:Generator_DataSetName="dsX2ActivatedExternalActivities">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ExternalActivityTarget" msprop:Generator_UserTableName="ExternalActivityTarget" msprop:Generator_RowDeletedName="ExternalActivityTargetRowDeleted" msprop:Generator_RowChangedName="ExternalActivityTargetRowChanged" msprop:Generator_RowClassName="ExternalActivityTargetRow" msprop:Generator_RowChangingName="ExternalActivityTargetRowChanging" msprop:Generator_RowEvArgName="ExternalActivityTargetRowChangeEvent" msprop:Generator_RowEvHandlerName="ExternalActivityTargetRowChangeEventHandler" msprop:Generator_TableClassName="ExternalActivityTargetDataTable" msprop:Generator_TableVarName="tableExternalActivityTarget" msprop:Generator_RowDeletingName="ExternalActivityTargetRowDeleting" msprop:Generator_TablePropName="ExternalActivityTarget">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Activity" msprop:Generator_UserTableName="Activity" msprop:Generator_RowDeletedName="ActivityRowDeleted" msprop:Generator_RowChangedName="ActivityRowChanged" msprop:Generator_RowClassName="ActivityRow" msprop:Generator_RowChangingName="ActivityRowChanging" msprop:Generator_RowEvArgName="ActivityRowChangeEvent" msprop:Generator_RowEvHandlerName="ActivityRowChangeEventHandler" msprop:Generator_TableClassName="ActivityDataTable" msprop:Generator_TableVarName="tableActivity" msprop:Generator_RowDeletingName="ActivityRowDeleting" msprop:Generator_TablePropName="Activity">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InstanceID" msprop:Generator_UserColumnName="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="ParentInstanceID" msprop:Generator_UserColumnName="ParentInstanceID" msprop:Generator_ColumnPropNameInRow="ParentInstanceID" msprop:Generator_ColumnVarNameInTable="columnParentInstanceID" msprop:Generator_ColumnPropNameInTable="ParentInstanceIDColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_UserColumnName="WorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" type="xs:int" />
+              <xs:element name="StateID" msprop:Generator_UserColumnName="StateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="NextStateID" msprop:Generator_UserColumnName="NextStateID" msprop:Generator_ColumnPropNameInRow="NextStateID" msprop:Generator_ColumnVarNameInTable="columnNextStateID" msprop:Generator_ColumnPropNameInTable="NextStateIDColumn" type="xs:int" />
+              <xs:element name="SplitWorkFlow" msprop:Generator_UserColumnName="SplitWorkFlow" msprop:Generator_ColumnPropNameInRow="SplitWorkFlow" msprop:Generator_ColumnVarNameInTable="columnSplitWorkFlow" msprop:Generator_ColumnPropNameInTable="SplitWorkFlowColumn" type="xs:boolean" />
+              <xs:element name="Priority" msprop:Generator_UserColumnName="Priority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" type="xs:int" />
+              <xs:element name="FormID" msprop:Generator_UserColumnName="FormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ActivityMessage" msprop:Generator_UserColumnName="ActivityMessage" msprop:Generator_ColumnPropNameInRow="ActivityMessage" msprop:Generator_ColumnVarNameInTable="columnActivityMessage" msprop:Generator_ColumnPropNameInTable="ActivityMessageColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RaiseExternalActivity" msprop:Generator_UserColumnName="RaiseExternalActivity" msprop:Generator_ColumnPropNameInRow="RaiseExternalActivity" msprop:Generator_ColumnVarNameInTable="columnRaiseExternalActivity" msprop:Generator_ColumnPropNameInTable="RaiseExternalActivityColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ExternalActivityTarget" msprop:Generator_UserColumnName="ExternalActivityTarget" msprop:Generator_ColumnPropNameInRow="ExternalActivityTarget" msprop:Generator_ColumnVarNameInTable="columnExternalActivityTarget" msprop:Generator_ColumnPropNameInTable="ExternalActivityTargetColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ActivatedByExternalActivity" msprop:Generator_UserColumnName="ActivatedByExternalActivity" msprop:Generator_ColumnPropNameInRow="ActivatedByExternalActivity" msprop:Generator_ColumnVarNameInTable="columnActivatedByExternalActivity" msprop:Generator_ColumnPropNameInTable="ActivatedByExternalActivityColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ChainedActivityName" msprop:Generator_UserColumnName="ChainedActivityName" msprop:Generator_ColumnPropNameInRow="ChainedActivityName" msprop:Generator_ColumnVarNameInTable="columnChainedActivityName" msprop:Generator_ColumnPropNameInTable="ChainedActivityNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SourceInstanceID" msprop:Generator_UserColumnName="SourceInstanceID" msprop:Generator_ColumnPropNameInRow="SourceInstanceID" msprop:Generator_ColumnVarNameInTable="columnSourceInstanceID" msprop:Generator_ColumnPropNameInTable="SourceInstanceIDColumn" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ExternalActivityTarget" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Activity_ExternalActivityTarget" msdata:parent="ExternalActivityTarget" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="ExternalActivityTarget" msprop:Generator_UserRelationName="FK_Activity_ExternalActivityTarget" msprop:Generator_RelationVarName="relationFK_Activity_ExternalActivityTarget" msprop:Generator_UserChildTable="Activity" msprop:Generator_UserParentTable="ExternalActivityTarget" msprop:Generator_ParentPropName="ExternalActivityTargetRow" msprop:Generator_ChildPropName="GetActivityRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

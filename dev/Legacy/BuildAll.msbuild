@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!--framework, domain service, client, application, workflow maps should then compile, deploy/start domain service, ensure engine running, publish maps - start app and voila HALO on X2 on steriods-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+
+    <!-- The root directory containing the build file -->
+    <RootPath>$(MSBuildProjectDirectory)</RootPath>
+    <!-- The tools path for the MSBuild targets -->
+    <MSBuildPath>$(RootPath)\MSBuild</MSBuildPath>
+    <MSBuildExtensionsPath>$(MSBuildPath)\MSBuildExtensionPack</MSBuildExtensionsPath>
+    <MSBuildSlowCheetahPath>$(MSBuildPath)\SlowCheetah\v1</MSBuildSlowCheetahPath>
+    <!-- The tools path for the MSBuild targets -->
+
+    <!-- The workflowmaps directory -->
+    <WorkflowMapsPath>$(RootPath)\WorkFlowMaps</WorkflowMapsPath>
+    <BuildWorkingMapsScript>$(WorkflowMapsPath)\BuildWorkingMaps.ps1</BuildWorkingMapsScript>
+    <UpdateMapVersionScript>$(WorkflowMapsPath)\UpdateMapVersion.ps1</UpdateMapVersionScript>
+
+    <!-- The workflow compiler tool path -->
+    <WorkflowMapsBuildToolPath>$(WorkflowMapsPath)\BuildTools\SAHL.Tools.Workflow.Builder.exe</WorkflowMapsBuildToolPath>
+    <WorkflowMapsVersionToolPath>$(WorkflowMapsPath)\BuildTools\SAHL.Tools.Workflow.MapVersionUpdater.exe</WorkflowMapsVersionToolPath>
+    <SAHLNugetServerURL>&quot;http://sahldeploy/sahldevnugetgallery/api/v2 &quot;</SAHLNugetServerURL>
+    <NugetServerURL>&quot;https://nuget.org/api/v2/ &quot;</NugetServerURL>
+    <!-- Build Tools -->
+    <BuildToolsPath>$(RootPath)\Tools\Tool Binaries</BuildToolsPath>
+    <BuildServerMode>true</BuildServerMode>  
+    <!-- External Bins Path -->
+    <ExternalBinsPath>$(RootPath)\External Binaries</ExternalBinsPath>
+
+    <!-- Internal Bins Path -->
+    <InternalBinsPath>$(RootPath)\Internal Binaries</InternalBinsPath>  
+    <!-- Internal NuGet Bins Path -->	  
+    <NuGet_InternalPackagesPath>$(InternalBinsPath)\NuGet</NuGet_InternalPackagesPath>			
+    <!-- NuGet Bins Path -->
+    <NuGetPath>$(ExternalBinsPath)\NuGet</NuGetPath>
+    <NugetExePath>$(NuGetPath)\NuGet.CommandLine.2.7.0\tools\NuGet.exe</NugetExePath> 
+
+    <!-- BuildOutput Path -->
+    <BuildOutputPath>$(RootPath)\BuildOutput</BuildOutputPath>
+
+    <!-- MSpec -->
+    <!-- The tools path for MSpec -->
+    <MSpecPath>$(NuGetPath)\Machine.Specifications.0.5.12\tools</MSpecPath>
+    <MSpecExecutable>mspec-clr4.exe</MSpecExecutable>
+
+    <MSpecPathOutputFile>$(BuildOutputPath)\specs-output.html</MSpecPathOutputFile>
+    <MSpecPathOutputFileTC>$(BuildOutputPath)\domainservice-specs-output.xml</MSpecPathOutputFileTC>
+    <MSpecSettings></MSpecSettings>
+
+    <!-- NUnit -->
+    <!-- The tools path for NUnit -->
+    <NUnitPath>$(NuGetPath)\NUnit.Runners.2.6.0.12051\tools</NUnitPath>
+    <NUnitExecutable>nunit-console.exe</NUnitExecutable>
+
+    <!-- FxCop -->
+    <FXCOPPATH>C:\Program Files (x86)\Microsoft Fxcop 10.0</FXCOPPATH>
+
+    <ReportsPath>$(BuildOutputPath)\Reports</ReportsPath>
+
+    <NUnitPathOutputFile1>$(BuildOutputPath)\nunit-output_inmemory.xml</NUnitPathOutputFile1>
+    <NUnitPathOutputFile2>$(BuildOutputPath)\nunit-output_other.xml</NUnitPathOutputFile2>
+    <NUnitPathOutputFile2_1>$(BuildOutputPath)\nunit-output_other_1.xml</NUnitPathOutputFile2_1>
+    <NUnitPathOutputFile2_2>$(BuildOutputPath)\nunit-output_other_2.xml</NUnitPathOutputFile2_2>
+    <NUnitPathOutputFile2_3>$(BuildOutputPath)\nunit-output_other_3.xml</NUnitPathOutputFile2_3>
+    <NUnitPathOutputFile3>$(BuildOutputPath)\nunit-output_dao.xml</NUnitPathOutputFile3>
+    <NUnitPathOutputFile4>$(BuildOutputPath)\nunit-output_domainservice.xml</NUnitPathOutputFile4>
+
+    <NUnitPathOutputFile5>$(ReportsPath)\nunit-dbproducts.xml</NUnitPathOutputFile5>
+
+    <!-- OpenCover -->
+    <!-- The tools path for OpenCover -->
+    <OpenCoverPath>$(NuGetPath)\OpenCover.4.0.301</OpenCoverPath>
+    <OpenCoverReportGenPath>$(NuGetPath)\ReportGenerator.1.3.0.0</OpenCoverReportGenPath>
+
+    <!-- OpenCover report name and location -->
+    <OpenCoverOuputFileForWorkflowMaps>$(ReportsPath)\workflowmaps-coverage-output.xml</OpenCoverOuputFileForWorkflowMaps>
+    <OpenCoverTmpOuputFileForWorkflowMaps>$(ReportsPath)\workflowmaps-coverage-tmp-output.xml</OpenCoverTmpOuputFileForWorkflowMaps>
+
+    <!-- Assembly Versioning -->
+    <BUILD_NUMBER Condition="'$(BUILD_NUMBER)' == '' ">0.0.0.0</BUILD_NUMBER>
+    <AssemblyVersion>$(BUILD_NUMBER)</AssemblyVersion>
+
+    <DEPLOY_ENV>DEVA</DEPLOY_ENV>
+
+    <PowerShellExecutable>powershell.exe</PowerShellExecutable>
+
+    <StartSqlJob>$(RootPath)\Database.Tests\StartJob.ps1</StartSqlJob>
+	
+  </PropertyGroup>
+
+
+  <!--****************-->
+  <!-- Imported Tasks -->
+  <!--****************-->
+  <Import Project="./BuildPackage.targets"/>
+
+  <!-- Include the MSBuild Extension Pack AssemblyInfo Task -->
+  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Framework.AssemblyInfo"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuildTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.Subversion.SvnExport"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuildTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.Move"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuildTasks\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.FxCop"/>
+  <UsingTask AssemblyFile="$(MSBuildSlowCheetahPath)\SlowCheetah.Tasks.dll" TaskName="SlowCheetah.Tasks.TransformXml"/>
+  <UsingTask AssemblyFile="$(MSBuildExtensionsPath)\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Framework.Parallel"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuild.Mercurial\MSBuild.Mercurial.dll" TaskName="MSBuild.Mercurial.HgAdd"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuild.Mercurial\MSBuild.Mercurial.dll" TaskName="MSBuild.Mercurial.HgCommit"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuild.Mercurial\MSBuild.Mercurial.dll" TaskName="MSBuild.Mercurial.HgUpdate"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuild.Mercurial\MSBuild.Mercurial.dll" TaskName="MSBuild.Mercurial.HgMerge"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuild.Mercurial\MSBuild.Mercurial.dll" TaskName="MSBuild.Mercurial.HgPull"/>
+  <UsingTask AssemblyFile="$(MSBuildPath)\MSBuild.Mercurial\MSBuild.Mercurial.dll" TaskName="MSBuild.Mercurial.HgPush"/>
+
+
+  <Target Name="Clean">
+    <ItemGroup>
+      <InternalBinsToDelete Include=".\Internal Binaries\*.*"/>
+      <DomainServiceBinsToDelete Include=".\DomainService\DomainServiceBinaries\*.*"/>
+      <ToolBinsToDelete Include=".\Tools\SAHL.Tools\Tool Binaries\*.*"/>
+      <ToolBinsToDelete Include=".\Tools\SAHL.Tools\Tool Binaries\*.*"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectFiles Include="**\*.csproj" Exclude="**\LightHouse.csproj"/>
+    </ItemGroup>
+
+    <!-- Clean out Internal Binaries and Domain Service Binaries -->
+    <Delete Files="@(InternalBinsToDelete)"/>
+    <Delete Files="@(DomainServiceBinsToDelete)"/>
+    <Delete Files="@(ToolBinsToDelete)"/>
+    <!-- Clean up the reports directory if it exists -->
+    <RemoveDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+
+    <!-- Clean all projects -->
+    <MSBuild Projects="@(ProjectFiles)" targets="Clean" Properties="Configuration=$(Configuration)"/>
+  </Target>
+
+  <Target Name="clean-all-folders">
+    <MSBuild Projects="@(ProjectFiles)" targets="Clean" Properties="Configuration=$(Configuration)"/>
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="Clean;BuildFrameworkProjects;GenerateWorkflowMaps;BuildTools;BuildApplications;BuildWebProjects;BuildTestProjects">
+  </Target>
+
+  <Target Name="BuildLocal" DependsOnTargets="DisplayMessages;Label;Clean;BuildFrameworkProjects;BuildTools;BuildApplications;BuildWebProjects">
+  </Target>
+
+   <Target Name="DisplayMessages">
+        <Message Text="BUILD_NUMBER = $(BUILD_NUMBER)" />
+        <Message Text="Configuration = $(Configuration)" />
+    </Target>
+
+  <Target Name="BuildCI" DependsOnTargets="Label;Clean;BuildFrameworkProjects;BuildTools;BuildApplications;BuildWebProjects;BuildTestProjects;CopyInternalBinaries">
+  </Target>
+
+  <Target Name="BuildFrameworks" DependsOnTargets="Clean;BuildFrameworkProjects">
+  </Target>
+
+    <Target Name="CopyInternalBinaries">
+    <ItemGroup>
+	  <InternalBinsTargetToDelete Include="$(RootPath)\..\Binaries\LegacyBinaries\*.dll;$(RootPath)\..\Binaries\LegacyBinaries\*.pdb" Exclude=".\Internal Binaries\*.txt"/>
+      <InternalBinsToCopy Include=".\Internal Binaries\*.*"/>
+	  <InternalBinsTarget Include="$(RootPath)\..\Binaries\LegacyBinaries\"/>
+    </ItemGroup>
+	
+	<Delete Files="@(InternalBinsTargetToDelete)"/>
+	<Copy SourceFiles="@(InternalBinsToCopy)" DestinationFolder="@(InternalBinsTarget)"></Copy>
+  </Target>
+
+  <Target Name="BuildFrameworkProjects">
+    <MSBuild Projects="./Framework/Framework.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+    <!--<MSBuild Projects="./X2Engine/SAHL.X2.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>-->
+    <MSBuild Projects="./DomainService/DomainService.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildApplications" DependsOnTargets="BuildApplications_App;BuildApplications_Batches;BuildServicesProjects_BatchService">
+    <!--<MSBuild.ExtensionPack.Framework.Parallel TaskAction="BuildTargetsInParallel" Targets="BuildApplications_App;BuildApplications_Batches;BuildServicesProjects_BatchService"/>-->
+  </Target>
+
+  <Target Name="BuildApplications_App">
+    <MSBuild Projects="./Application/Application.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildApplications_Batches">
+    <MSBuild Projects="./Application/ApplicationBatches.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildWebProjects">
+    <MSBuild.ExtensionPack.Framework.Parallel TaskAction="BuildTargetsInParallel" Targets="BuildWebProjects_SAHLWebServices;BuildWebProjects_SAHLCommonWebServices;BuildWebProjects_SAHLWebPublic;BuildWebProjects_SAHLClientSecure;BuildWebProjects_SAHLWebServicesPublic;BuildWebProjects_SAHLWebServicesInternal;"/>
+  </Target>
+
+  <Target Name="BuildWebProjects_SAHLWebServices">
+    <MSBuild Projects="./Application/SAHL.Web.Services/SAHL.Web.Services.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildWebProjects_SAHLCommonWebServices">
+    <MSBuild Projects="./FrameWork/SAHL.Common.WebServices/SAHL.Common.WebServices.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildWebProjects_SAHLWebPublic">
+    <MSBuild Projects="./Applications/SAHL.Web.Public/SAHL.Web.Public/SAHL.Web.Public.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildWebProjects_SAHLClientSecure">
+    <MSBuild Projects="./Applications/SAHL.Web.Public/SAHL.Web.ClientSecure/SAHL.Web.ClientSecure.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildWebProjects_SAHLWebServicesPublic">
+    <MSBuild Projects="./Applications/SAHL.Web.Services/SAHL.Web.Services.Public/SAHL.Web.Services.Public.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildWebProjects_SAHLWebServicesInternal">
+    <MSBuild Projects="./Applications/SAHL.Web.Services/SAHL.Web.Services.Internal/SAHL.Web.Services.Internal.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildServicesProjects_BatchService">
+    <MSBuild Projects="./Services/SAHL.Batch.Service/SAHL.Batch.Service.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildTestProjects">
+    <MSBuild.ExtensionPack.Framework.Parallel TaskAction="BuildTargetsInParallel" Targets="BuildTestProjects_ApplicationTest;BuildTestProjects_SAHLSTestAutomation;BuildTestProjects_FrameworkTest"/>
+  </Target>
+
+  <Target Name="BuildTestProjects_SAHLSTestAutomation">
+    <MSBuild Projects="./Automation.Test/HaloTestAutomation/SAHLSTestAutomation.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildTestProjects_FrameworkTest">
+    <MSBuild Projects="./Framework.Test/Framework.Test.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildTestProjects_ApplicationTest">
+    <MSBuild Projects="./Application.Test/Application.Test.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="GenerateWorkflowMaps" DependsOnTargets="LabelMaps;BuildAndCompileWorkflowMaps;BuildMapsAndMapsMSpec"/>
+  <Target Name="BuildAndCompileWorkflowMaps">
+    <Exec Command="powershell $(BuildWorkingMapsScript) -BuildServerMode $(BuildServerMode) -NugetPullApiUrl $(SAHLNugetServerURL)"/>
+  </Target>
+
+  <Target Name="GenerateWorkflowMapsAndCheckReferences">
+    <Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Cap2 Offers.x2p&quot; -c true -n $(SAHLNugetServerURL)" WorkingDirectory="$(WorkflowMapsPath)\Cap2"/>
+    <Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Debt Counselling.x2p&quot; -c true -n $(SAHLNugetServerURL)" WorkingDirectory="$(WorkflowMapsPath)\Debt Counselling"/>
+    <Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Help Desk.x2p&quot; -c true -n $(SAHLNugetServerURL)" WorkingDirectory="$(WorkflowMapsPath)\Help Desk"/>
+    <Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Life.x2p&quot; -c true -n $(SAHLNugetServerURL)" WorkingDirectory="$(WorkflowMapsPath)\Life"/>
+    <Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Loan Adjustments.x2p&quot; -c true -n $(SAHLNugetServerURL)" WorkingDirectory="$(WorkflowMapsPath)\Loan Adjustments"/>
+    <Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Origination.x2p&quot; -c true -n $(SAHLNugetServerURL)" WorkingDirectory="$(WorkflowMapsPath)\Origination"/>
+    <Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Personal Loan.x2p&quot; -c true -n $(SAHLNugetServerURL)" WorkingDirectory="$(WorkflowMapsPath)\Personal Loan"/>
+  </Target>
+
+  <Target Name="BuildWorkflowMaps">
+    <MSBuild Projects="./WorkFlowMaps/WorkFlowMaps.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="BuildMapsAndMapsMSpec" DependsOnTargets="BuildWorkflowMaps">
+  </Target>
+
+  <Target Name="DomainServiceCodeCoverage">
+    <PropertyGroup>
+      <MAP>$(LocalPath)\DomainService\DomainService2.Specs\bin\$(Configuration)\DomainService2.Specs.dll</MAP>
+    </PropertyGroup>
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <MakeDir Directories = "$(ReportsCoveragePath)" Condition = "!Exists('$(ReportsCoveragePath)')" />
+    <MakeDir Directories = "$(ReportsMSpecPath)" Condition = "!Exists('$(ReportsMSpecPath)')" />
+
+    <!-- Execute opencover -->
+    <Exec Command="&quot;$(OpenCoverPath)\OpenCover.Console.exe&quot; -register:user -output:&quot;$(OpenCoverTmpOuputFileForWorkflowMaps)&quot; -target:&quot;$(MSpecPath)\$(MSpecExecutable)&quot; -filter:&quot;-[*.Specs]* +[DomainService2*]DomainService2.* -[DomainService2]DomainService2.SharedServices.WorkflowAssignment*&quot; -excludebyattribute:*.CoverageExcludeAttribute* -targetargs:&quot;\&quot;$(MAP)\&quot; --html \&quot;$(MSpecReportOutputFile)&quot;" />
+    <!-- Use ReportGenerator Tool to build an xml Summary -->
+    <Exec Command="&quot;$(OpenCoverReportGenPath)\ReportGenerator.exe&quot; &quot;$(OpenCoverTmpOuputFileForWorkflowMaps)&quot; &quot;$(ReportsCoveragePath)&quot;"/>
+
+    <Delete Files="$(OpenCoverTmpOuputFileForWorkflowMaps)" />
+
+  </Target>
+
+  <Target Name="WorkFlowMapsCodeCoverage" >
+    <!-- Convention is impossible here... -->
+    <ItemGroup>
+      <WorkflowMaps Include="Cap2">
+        <ClassName>CAP2Offers</ClassName>
+        <Name>CAP2 Offers</Name>
+        <SpecsName>Cap2</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Debt Counselling">
+        <ClassName>DebtCounselling</ClassName>
+        <Name>Debt Counselling</Name>
+        <SpecsName>DebtCounselling</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Help Desk">
+        <ClassName>HelpDesk</ClassName>
+        <Name>Help Desk</Name>
+        <SpecsName>HelpDesk</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Life">
+        <ClassName>Life</ClassName>
+        <Name>Life</Name>
+        <SpecsName>Life</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Loan Adjustments">
+        <ClassName>LoanAdjustments</ClassName>
+        <Name>Loan Adjustments</Name>
+        <SpecsName>LoanAdjustments</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Origination">
+        <ClassName>Origination</ClassName>
+        <SpecsName>Origination</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Personal Loan">
+        <ClassName>PersonalLoan</ClassName>
+        <SpecsName>PersonalLoan</SpecsName>
+      </WorkflowMaps>
+    </ItemGroup>
+
+    <!-- Setup Folders -->
+    <MakeDir Directories = "$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports" Condition = "!Exists('$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports')" />
+    <MakeDir Directories = "$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\MSpec" Condition = "!Exists('$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\MSpec')" />
+    <MakeDir Directories = "$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\Coverage" Condition = "!Exists('$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\Coverage')" />
+
+    <!-- Execute opencover -->
+    <Exec Command="&quot;$(OpenCoverPath)\OpenCover.Console.exe&quot; -register:user -output:&quot;$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\Coverage\workflowmaps-coverage-tmp-output.xml&quot; -target:&quot;$(MSpecPath)\$(MSpecExecutable)&quot; -filter:&quot;-[*.Specs]* -[%(WorkflowMaps.ClassName)*]*_Data +[%(WorkflowMaps.ClassName)*]X2*&quot; -excludebyattribute:*.CoverageExcludeAttribute* -targetargs:&quot;\&quot;$(RootPath)\WorkFlowMaps\%(WorkflowMaps.Identity)\WorkflowMaps.%(WorkflowMaps.SpecsName).Specs\bin\$(Configuration)\WorkflowMaps.%(WorkflowMaps.SpecsName).Specs.dll\&quot; --html \&quot;$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\MSpec\%(WorkflowMaps.SpecsName).Specs.html&quot;" />
+
+    <!-- Use ReportGenerator Tool to build an xml Summary -->
+    <Exec Command="&quot;$(OpenCoverReportGenPath)\ReportGenerator.exe&quot; &quot;$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\Coverage\workflowmaps-coverage-tmp-output.xml&quot; &quot;$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\Coverage&quot;" />
+    <!-- Delete the original opencover output before it was transformed by ReportGenerator -->
+    <Delete Files="$(WorkflowMapsPath)\%(WorkflowMaps.Identity)\Reports\Coverage\workflowmaps-coverage-tmp-output.xml" />
+
+  </Target>
+
+  <Target Name="BuildTools">
+    <MSBuild Projects="./Tools/SAHL.Tools/SAHL.Tools.sln" ContinueOnError="false" Properties="Configuration=$(Configuration)">
+      <Output ItemName="BuildOutput" TaskParameter="TargetOutputs"/>
+    </MSBuild>
+  </Target>
+
+  <Target Name="MSpecTests" DependsOnTargets="MSpecDomainService;MSpecFramework;MSpecV3FrameWork;MSpecFrameworkTest">
+    <!-- <MSBuild.ExtensionPack.Framework.Parallel TaskAction="BuildTargetsInParallel" Targets="MSpecDomainService;MSpecMaps;MSpecFramework;MSpecFrameworkTest"/> -->
+  </Target>
+
+  <Target Name="ScriptenatorCheck">
+    <PropertyGroup>
+      <ScriptenatorCoverageToolPath>$(RootPath)\Tools\SAHL.Tools\Tool Binaries\SAHL.Tools.Scriptenator.CoverageCheck.exe</ScriptenatorCoverageToolPath>
+      <ScriptsPath>$(RootPath)\Scripts</ScriptsPath>
+      <ScriptenatorFileName>Scriptenator.xml</ScriptenatorFileName>
+      <OutputFile>$(BuildOutputPath)\ScriptenatorCheck.txt</OutputFile>
+    </PropertyGroup>
+    <MakeDir Directories = "$(BuildOutputPath)" Condition = "!Exists('$(BuildOutputPath)')" />
+    <Exec Command="&quot;$(ScriptenatorCoverageToolPath)&quot; -p &quot;$(ScriptsPath)&quot; -s $(ScriptenatorFileName)" />
+    <ReadLinesFromFile File="$(OutputFile)">
+      <Output TaskParameter="Lines" ItemName="OutputLines"/>
+    </ReadLinesFromFile>
+    <Message Text="@(OutputLines)" />
+  </Target>
+
+  <Target Name="ReportenatorCheck">
+    <PropertyGroup>
+      <ReportenatorCoverageToolPath>$(RootPath)\Tools\SAHL.Tools\Tool Binaries\SAHL.Tools.Reportenator.CoverageCheck.exe</ReportenatorCoverageToolPath>
+      <ReportsPath>$(RootPath)\Reports</ReportsPath>
+        <ReportenatorFileName>Reportenator.xml</ReportenatorFileName>
+      <OutputFile>$(BuildOutputPath)\ReportenatorCheck.txt</OutputFile>
+    </PropertyGroup>
+    <MakeDir Directories = "$(BuildOutputPath)" Condition = "!Exists('$(BuildOutputPath)')" />
+    <Exec Command="&quot;$(ReportenatorCoverageToolPath)&quot; -p &quot;$(ReportsPath)&quot; -s $(ReportenatorFileName)" />
+    <ReadLinesFromFile File="$(OutputFile)">
+      <Output TaskParameter="Lines" ItemName="OutputLines"/>
+    </ReadLinesFromFile>
+    <Message Text="@(OutputLines)" />
+  </Target>
+
+  <Target Name="MSpecDomainService">
+    <ItemGroup>
+      <DSSpecDll Include="$(RootPath)\DomainService\DomainService2.Specs\bin\$(Configuration)\DomainService2.Specs.dll" />
+    </ItemGroup>
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(MSpecPath)\$(MSpecExecutable)&quot; &quot;@(DSSpecDll)&quot; --teamcity"/>
+  </Target>
+
+  <Target Name="MSpecMaps">
+    <ItemGroup>
+      <WorkflowMaps Include="Cap2">
+        <ClassName>CAP2Offers</ClassName>
+        <Name>CAP2 Offers</Name>
+        <SpecsName>Cap2</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Debt Counselling">
+        <ClassName>DebtCounselling</ClassName>
+        <Name>Debt Counselling</Name>
+        <SpecsName>DebtCounselling</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Help Desk">
+        <ClassName>HelpDesk</ClassName>
+        <Name>Help Desk</Name>
+        <SpecsName>HelpDesk</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Life">
+        <ClassName>Life</ClassName>
+        <Name>Life</Name>
+        <SpecsName>Life</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Loan Adjustments">
+        <ClassName>LoanAdjustments</ClassName>
+        <Name>Loan Adjustments</Name>
+        <SpecsName>LoanAdjustments</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Origination">
+        <ClassName>Origination</ClassName>
+        <SpecsName>Origination</SpecsName>
+      </WorkflowMaps>
+      <WorkflowMaps Include="Personal Loan">
+        <ClassName>PersonalLoan</ClassName>
+        <SpecsName>PersonalLoan</SpecsName>
+      </WorkflowMaps>
+    </ItemGroup>
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(MSpecPath)\$(MSpecExecutable)&quot; &quot;$(RootPath)\WorkFlowMaps\%(WorkflowMaps.Identity)\WorkflowMaps.%(WorkflowMaps.SpecsName).Specs\bin\$(Configuration)\WorkflowMaps.%(WorkflowMaps.SpecsName).Specs.dll&quot; --teamcity"/>
+  </Target>
+
+  <Target Name="MSpecFramework">
+    <ItemGroup>
+      <FrameWorkSpecDll Include="$(RootPath)\FrameWork\SAHL.Common.BusinessModel.Specs\bin\$(Configuration)\SAHL.Common.BusinessModel.Specs.dll" />
+    </ItemGroup>
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(MSpecPath)\$(MSpecExecutable)&quot; &quot;@(FrameWorkSpecDll)&quot; --teamcity"/>
+  </Target>
+
+  <Target Name="MSpecV3Framework">
+    <ItemGroup>
+      <V3FrameWorkSpecDll Include="$(RootPath)\FrameWork\SAHL.V3.Framework.Specs\bin\$(Configuration)\SAHL.V3.Framework.Specs.dll" />
+    </ItemGroup>
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(MSpecPath)\$(MSpecExecutable)&quot; &quot;@(V3FrameWorkSpecDll)&quot; --teamcity"/>
+  </Target>
+
+  <Target Name="MSpecFrameworkTest">
+    <ItemGroup>
+      <FrameWorkTestSpecDll Include="$(RootPath)\FrameWork.Test\SAHL.Common.BusinessModel.Spec.Test\bin\$(Configuration)\SAHL.Common.BusinessModel.Spec.Test.dll" />
+    </ItemGroup>
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(MSpecPath)\$(MSpecExecutable)&quot; &quot;@(FrameWorkTestSpecDll)&quot; --teamcity"/>
+  </Target>
+
+  <Target Name="NUnitFrameworkTests">
+	<!-- DependsOnTargets="NUnitFramework_General;NUnitFramework_DAO" -->
+    <!-- DependsOnTargets="NUnitFramework_InMemoryLoadSaveLoad;NUnitFramework_General;NUnitFramework_DAO">-->
+    <MSBuild.ExtensionPack.Framework.Parallel TaskAction="BuildTargetsInParallel" Targets="NUnitFramework_DAO;NUnitFramework_General;NUnitFramework_Rules"/>
+  </Target>
+
+  <Target Name="NUnitFramework_InMemoryLoadSaveLoad">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; FrameWork.Test\FrameWork.LoadSaveLoad.Memory.Test.nunit /nologo /noshadow /domain=single /config:$(Configuration) /xml:$(NUnitPathOutputFile1)" WorkingDirectory="."/>
+  </Target>
+
+  <Target Name="NUnitFramework_DAO">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; FrameWork.Test\FrameWork_DAO.Test.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile3)" WorkingDirectory="."/>
+  </Target>
+
+  <Target Name="NUnitFramework_General">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; FrameWork.Test\FrameWork.Test.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile2) " WorkingDirectory="."/>
+  </Target>
+  
+  <Target Name="NUnitFramework_General_1">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; FrameWork.Test\FrameWork.Test_Others.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile2_1)" WorkingDirectory="."/>
+  </Target>
+
+  <Target Name="NUnitFramework_General_2">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; FrameWork.Test\FrameWork.Test_Repositories.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile2_2)" WorkingDirectory="."/>
+  </Target>
+
+  <Target Name="NUnitFramework_Rules">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; FrameWork.Test\FrameWork.Test_Rules.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile2_3)" WorkingDirectory="."/>
+  </Target>
+
+  <Target Name="NUnitDomainService">
+    <!--
+		<ItemGroup>
+			<DomainServiceNUnitDll Include="$(RootPath)\DomainService\DomainService2.Tests\bin\$(Configuration)\DomainService2.Tests.dll" />
+		</ItemGroup>
+		-->
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; DomainService\DomainService2.Tests.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile4)" WorkingDirectory="."/>
+  </Target>
+
+  <Target Name="AllTests" DependsOnTargets="MSpecTests;NUnitFrameworkTests;NUnitDomainService">
+
+  </Target>
+
+  <Target Name= "Label" DependsOnTargets="LabelAssemblies">
+
+  </Target>
+
+  	<Target Name="BackupTestDatabases">
+		<Exec WorkingDirectory="$(RootPath)" Command="$(PowerShellExecutable) &quot;$(StartSqlJob)&quot; -server $(BackupJobServer) -username $(DB_Username) -password $(DB_Password) -jobName '$(BackupTestDBJob)' -sleepPeriod $(sleepPeriod)" />
+	</Target>
+	
+	<Target Name="RestoreTestDatabases">
+		<Exec WorkingDirectory="$(RootPath)" Command="$(PowerShellExecutable) &quot;$(StartSqlJob)&quot; -server $(RestoreJobServer) -username $(DB_Username) -password $(DB_Password) -jobName '$(RestoreTestDBJob)' -sleepPeriod $(sleepPeriod)" />
+	</Target>
+	
+	<Target Name="RunDBTests">
+		<MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+		<Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; Database.Tests\Database.Tests.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile5)" WorkingDirectory="."/>
+	</Target>
+  
+  <Target Name="ConfigureSecurityTests">
+    <Exec Command="powershell.exe .\Database.Tests\ConfigureSecurityTests.ps1" />
+  </Target>
+
+  <Target Name="RunSecurityTests" DependsOnTargets="ConfigureSecurityTests">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <Exec Command="&quot;$(NUnitPath)\$(NUnitExecutable)&quot; Database.Tests\Database.Tests.Security.nunit /nologo /noshadow /config:$(Configuration) /xml:$(NUnitPathOutputFile1)" WorkingDirectory="."/>
+  </Target>
+
+  <Target Name="LabelAssemblies">
+    <ItemGroup>
+      <!-- Framework assemblies -->
+      <AssemblyInfoFiles Include="$(RootPath)\Framework\**\AssemblyInfo.cs"/>
+
+      <!-- DomainService assemblies -->
+      <AssemblyInfoFiles Include="$(RootPath)\DomainService\**\AssemblyInfo.cs"/>
+
+      <!-- Application assemblies -->
+      <AssemblyInfoFiles Include="$(RootPath)\Application\**\AssemblyInfo.cs"/>
+      <AssemblyInfoFiles Include="$(RootPath)\Applications\**\AssemblyInfo.cs"/>
+
+      <!-- Tools assemblies -->
+      <AssemblyInfoFiles Include="$(RootPath)\Tools\**\AssemblyInfo.cs"/>
+
+      <!-- WorkflowMaps assemblies -->
+      <AssemblyInfoFiles Include="$(RootPath)\WorkflowMaps\**\AssemblyInfo.cs"/>
+
+      <!-- X2 Engine assemblies --><!--
+      <AssemblyInfoFiles Include="$(RootPath)\X2Engine\**\AssemblyInfo.cs"/>-->
+    </ItemGroup>
+
+    <!-- Update the Assembly and File Version -->
+    <MSBuild.ExtensionPack.Framework.AssemblyInfo AssemblyInfoFiles="@(AssemblyInfoFiles)" SkipVersioning="false" Condition="'$(AssemblyVersion)' != ''"
+      AssemblyVersion="$(AssemblyVersion)"
+      AssemblyFileVersion="$(AssemblyVersion)"
+		   >
+    </MSBuild.ExtensionPack.Framework.AssemblyInfo>
+  </Target>
+
+  <Target Name="LabelMaps">
+    <PropertyGroup>
+      <MapsVersion>"$(AssemblyVersion)"</MapsVersion>
+    </PropertyGroup>
+    <Exec Command="powershell $(UpdateMapVersionScript) $(MapsVersion)"/>
+  </Target>
+
+  <Target Name="LabelHg">
+    <Exec Command="hg tag --force -m &quot;build tag&quot; &quot;$(AssemblyVersion)&quot;"/>
+    <Exec Command="hg push"/>
+  </Target>
+
+  <Target Name="TransformConfigsForApplication">
+    <SlowCheetah.Tasks.TransformXml Source="$(RootPath)\Application\SAHL.Web\Web.config2" Transform="$(RootPath)\Application\SAHL.Web\Web.$(DEPLOY_ENV).config2" Destination="$(RootPath)\Application\SAHL.Web\Config\Web.transformed.config" />
+  </Target>
+
+  <Target Name="PrePackagewithBuild" DependsOnTargets="Label;Build;Package">
+  </Target>
+  
+	<Target Name=" NugetPrePackagewithBuild" DependsOnTargets="Label;Build;NuGetPackageBinaries">
+	</Target>
+  
+  <Target Name="FxCop">
+    <MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" />
+    <MSBuild.Community.Tasks.FxCop
+			ToolPath="$(FXCOPPATH)"
+			ProjectFile="$(RootPath)\Application\SAHL.Web\SAHL.Web.fxCop"
+			AnalysisReportFileName="$(RootPath)\BuildOutput\Reports\FxCopReport.xml"
+			FailOnError="True"
+			ApplyOutXsl="False"
+			OutputXslFileName="$(FXCOPPATH)\Xml\FxCopReport.xsl"/>
+    <Message Text="##teamcity[importData type='FxCop' path='$(RootPath)\BuildOutput\Reports\FxCopReport.xml']"/>
+  </Target>
+</Project>

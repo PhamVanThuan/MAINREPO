@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5860B50C-6E6C-4058-935D-9C3C825E8FD4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.UserProfile.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.UserProfile.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Identity">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.UserProfile">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.UserProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHandlers\GetCapabilitiesForUserOrganisationStructureQueryHandlerSpecs\when_invalid_user_organisation_structure_key_queried .cs" />
+    <Compile Include="QueryHandlers\GetCapabilitiesForUserOrganisationStructureQueryHandlerSpecs\when_something_goes_wrong_with_the_infrastructure.cs" />
+    <Compile Include="QueryHandlers\GetCapabilitiesForUserOrganisationStructureQueryHandlerSpecs\when_valid_user_organisation_structure_key_queried.cs" />
+    <Compile Include="QueryHandlers\GetUserDetailsForUserQueryHandlerSpecs\when_invalid_aduser_parameter_is_queried.cs" />
+    <Compile Include="QueryHandlers\GetUserDetailsForUserQueryHandlerSpecs\when_invalid_aduser_is_queried.cs" />
+    <Compile Include="QueryHandlers\GetUserDetailsForUserQueryHandlerSpecs\when_valid_aduser_is_queried.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.UserProfile\SAHL.Services.UserProfile.csproj">
+      <Project>{4b316a81-859e-442c-8c8e-e8828b6b9a1f}</Project>
+      <Name>SAHL.Services.UserProfile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,42 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwgv" Namespace="DevExpress.Web.ASPxGridView" Assembly="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="SAHL" Namespace="SAHL.Common.Web.UI.Controls" Assembly="SAHL.Common.Web.UI" %>
+
+<SAHL:DXGridView runat="server"
+	CssFilePath="{0}/styles.css" CssPostfix="Office2003Blue">
+	<Images SpriteCssFilePath="{0}/sprite.css">
+        <LoadingPanel Url="GridView/Loading.gif"></LoadingPanel>
+        <LoadingPanelOnStatusBar Url="GridView/gvLoadingOnStatusBar.gif"></LoadingPanelOnStatusBar>
+	</Images>	
+    <ImagesFilterControl>
+        <LoadingPanel Url="Editors/Loading.gif"></LoadingPanel>
+    </ImagesFilterControl>
+    <Styles>
+        <Header SortingImageSpacing="5"></Header>
+	<LoadingPanel ImageSpacing="10px" />
+    </Styles>	
+    <StylesEditors>
+        <ProgressBar Height="25px">
+        </ProgressBar>
+    </StylesEditors>
+</SAHL:DXGridView>
+
+<dxwgv:ASPxGridView runat="server"
+	CssFilePath="{0}/styles.css" CssPostfix="Office2003Blue">
+	<Images SpriteCssFilePath="{0}/sprite.css">
+        <LoadingPanel Url="GridView/Loading.gif"></LoadingPanel>
+        <LoadingPanelOnStatusBar Url="GridView/gvLoadingOnStatusBar.gif"></LoadingPanelOnStatusBar>
+	</Images>	
+    <ImagesFilterControl>
+        <LoadingPanel Url="Editors/Loading.gif"></LoadingPanel>
+    </ImagesFilterControl>
+    <Styles>
+        <Header SortingImageSpacing="5"></Header>
+	<LoadingPanel ImageSpacing="10px" />
+    </Styles>	
+    <StylesEditors>
+        <ProgressBar Height="25px">
+        </ProgressBar>
+    </StylesEditors>
+</dxwgv:ASPxGridView>
+

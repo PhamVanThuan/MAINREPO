@@ -1,0 +1,89 @@
+﻿body 
+{
+	font-family:Verdana;
+	font-size:12px;
+}
+
+/* TabStrip - START */
+.tabstrip
+{
+	float:left;
+	width:800px;
+	font-size:93%;
+	line-height:normal;
+	border-bottom:1px solid #000000;
+	margin: 0px;
+	padding: 0px;
+	vertical-align:bottom;
+}
+.tabstrip ul
+{
+	margin:0;
+	padding:0px 0px 0 0px;
+	list-style:none;
+}
+.tabstrip li
+{
+	display:inline;
+	margin:0;
+	padding:0;
+}
+.tabstrip a
+{
+	float:left;
+	background:url("<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.tableft.gif") %>") no-repeat left top;
+	margin:0;
+	padding:0 0 0 5px;
+	text-decoration:none;
+	cursor:default;
+}
+.tabstrip a span
+{
+	float:left;
+	display:block;
+	background:url("<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.tabright.gif") %>") no-repeat right top;
+	padding:5px 10px 5px 4px;
+	color:#000000;
+	cursor:default;
+}
+.tabstrip a:hover span 
+{
+	color:#000000;
+}
+.tabstrip a:hover 
+{
+	background-position:0% -42px;
+}
+.tabstrip a:hover span 
+{
+	background-position:100% -42px;
+}
+.tabstrip .active
+{
+	background-position:0% -42px;
+}
+.tabstrip .active a 
+{
+	background-position:0% -42px;
+}	
+.tabstrip .active span 
+{
+	background-position:100% -42px;
+	color:#000000;
+	font-weight:bold;
+}
+.tsleftnav
+{
+	float:left;
+	width:25px;
+}
+
+.tsrightnav
+{
+	float:right;
+	width:25px;
+}
+
+/* TabStrip - end */
+
+

@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3809B035-1623-4A0D-AF64-5B944BED9F5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.ApplicationDomain</RootNamespace>
+    <AssemblyName>SAHL.Services.ApplicationDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MoreLinq">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\morelinq\lib\net35\MoreLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ApplicationDomain, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ApplicationDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainQuery">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\AmendAffordabilityAssessmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddApplicationAffordabilityAssessmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddRefinanceApplicationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AmendAffordabilityAssessmentIncomeContributorsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ConfirmApplicationAffordabilityAssessmentsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DeleteUnconfirmedAffordabilityAssessmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DetermineApplicationHouseholdIncomeCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Internal\CopyAffordabilityAssessmentIncomeContributorsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Internal\UpdateAffordabilityAssessmentIncomeContributorsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Internal\UpdateAffordabilityAssessmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Internal\CopyAffordabilityAssessmentCommandHandler.cs" />
+    <Compile Include="CommandHandlers\LinkExternalVendorToApplicationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\LinkPropertyToApplicationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\MakeApplicantAnIncomeContributorCommandHandler.cs" />
+    <Compile Include="CommandHandlers\SetApplicationEmploymentTypeCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddApplicantAffordabilityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\LinkDomiciliumAddressToApplicantCommandHandler.cs" />
+    <Compile Include="CommandHandlers\SetExternalOriginatorAttributeCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddLeadApplicantToApplicationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddApplicationDebitOrderCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddApplicantDeclarationsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddApplicationMailingAddressCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddSwitchApplicationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddNewPurchaseApplicationCommandHandler.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\AffordabilityAssessmentManager.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\IAffordabilityAssessmentManager.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetActiveAffordabilityAssessmentsByGenericKeyStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\ConfirmAffordabilityAssessmentStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetLatestConfirmedAffordabilityAssessmentByGenericKeyStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetAffordabilityAssessmentContributorsStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetAssessmentStressFactorByPercentageStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetAffordabilityAssessmentSummaryStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetAffordabilityAssessmentItemsStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\ArchiveAffordabilityAssessmentStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetHocInstalmentForFurtherLendingApplicationStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetBondInstalmentForFurtherLendingApplicationStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetHocInstalmentForNewBusinessApplicationStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\Statements\GetBondInstalmentForNewBusinessApplicationStatement.cs" />
+    <Compile Include="Managers\Affordability\IAffordabilityDataManager.cs" />
+    <Compile Include="Managers\Affordability\AffordabilityDataManager.cs" />
+    <Compile Include="Managers\Affordability\Statements\DoesAffordabilityRequireDescriptionStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\DoesBankAccountBelongToApplicantOnApplicationStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\GeApplicantAttributesStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\GetActiveClientRoleOnApplicationStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\GetApplicantDeclarationsStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\GetClientDateOfBirthStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\AffordabilityAssessmentDataManager.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\IAffordabilityAssessmentDataManager.cs" />
+    <Compile Include="Managers\Application\Statements\DoesOpenApplicationExistForPropertyAndClientStatement.cs" />
+    <Compile Include="Managers\Application\Statements\GetExternalVendorForVendorCodeStatement.cs" />
+    <Compile Include="Managers\Application\Statements\GetLatestApplicationOfferInformationStatement.cs" />
+    <Compile Include="Managers\Application\Statements\GetLegalEntityKeyForVendorStatement.cs" />
+    <Compile Include="Managers\Application\Statements\GetMinimumLoanAmountForApplicationStatement.cs" />
+    <Compile Include="Managers\Application\Statements\LinkPropertyToApplicationStatement.cs" />
+    <Compile Include="Managers\Applicant\ApplicantManager.cs" />
+    <Compile Include="Managers\Applicant\IApplicantManager.cs" />
+    <Compile Include="Managers\Applicant\Statements\ClientHasOpenAccountOrOfferStatement.cs" />
+    <Compile Include="Managers\Domicilium\DomiciliumDataManager.cs" />
+    <Compile Include="Managers\Domicilium\IDomiciliumDataManager.cs" />
+    <Compile Include="Managers\Applicant\Statements\GetActiveApplicationRoleStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\DoesApplicantHavePendingDomiciliumOnApplicationStatement.cs" />
+    <Compile Include="Managers\Domicilium\Statements\IsDomiciliumAddressPendingDomiciliumAddressStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\CheckClientIsAnApplicantOnTheApplicationStatement.cs" />
+    <Compile Include="Managers\Application\Statements\DoesApplicationExistStatement.cs" />
+    <Compile Include="Managers\Application\Statements\DoesApplicationMailingAddressExistStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\DoesClientAddressBelongToApplicantStatement.cs" />
+    <Compile Include="Managers\Application\Statements\DoesOpenApplicationExistStatement.cs" />
+    <Compile Include="Managers\Applicant\Statements\GetApplicantByIDNumberStatement.cs" />
+    <Compile Include="Managers\Application\Statements\GetApplicationDebitOrderStatement.cs" />
+    <Compile Include="Managers\Application\ApplicationManager.cs" />
+    <Compile Include="Managers\Application\IApplicationManager.cs" />
+    <Compile Include="Managers\Application\Statements\GetIncomeContributorApplicantsCurrentEmploymentStatement.cs" />
+    <Compile Include="Managers\Applicant\ApplicantDataManager.cs" />
+    <Compile Include="Managers\Applicant\IApplicantDataManager.cs" />
+    <Compile Include="Managers\Application\ApplicationDataManager.cs" />
+    <Compile Include="Managers\Application\IApplicationDataManager.cs" />
+    <Compile Include="Managers\Application\Statements\GetApplicationMailingAddressStatement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHandlers\DoesOpenApplicationExistForPropertyAndClientQueryHandler.cs" />
+    <Compile Include="QueryHandlers\GetAffordabilityAssessmentByKeyQueryHandler.cs" />
+    <Compile Include="QueryHandlers\GetHocInstalmentForApplicationQueryHandler.cs" />
+    <Compile Include="QueryHandlers\GetBondInstalmentForApplicationQueryHandler.cs" />
+    <Compile Include="QueryStatements\GetAffordabilityAssessmentStressFactorsQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetApplicantsWithRoleForApplicationQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetApplicantsWithExternalRoleForApplicationQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetAffordabilityAssessmentsForAccountQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetHistoricalAffordabilityAssessmentsForApplicationQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetNonApplicantsWithExternalRoleRelationshipForApplicationQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetNonApplicantsWithRelationshipForApplicationQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetAffordabilityAssessmentsForApplicationQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetUnconfirmedAffordabilityAssessmentsForApplicationQueryStatement.cs" />
+    <Compile Include="Rules\AffordabilityAssessmentContributingApplicantsMustBeGreaterThanZeroRule.cs" />
+    <Compile Include="Rules\AffordabilityAssessmentRequiresAtLeastOneIncomeContributorRule.cs" />
+    <Compile Include="QueryStatements\DoesAccountBelongToClientQueryStatement.cs" />
+    <Compile Include="Rules\AffordabilityDescriptionRequiredRule.cs" />
+    <Compile Include="Rules\ApplicantCannotBeAnExistingIncomeContributorRule.cs" />
+    <Compile Include="Rules\ApplicantCannotHaveAnExistingAffordabilityAssessmentRule.cs" />
+    <Compile Include="Rules\ApplicantCannotHaveAnExistingPendingDomiciliumAddressRule.cs" />
+    <Compile Include="Rules\ApplicantCanOnlyBeLinkedToAPendingDomiciliumAddressRule.cs" />
+    <Compile Include="Rules\ApplicantMustHaveAtLeastOneContactDetailRule.cs" />
+    <Compile Include="Rules\ApplicantMustHaveFirstNamesAndSurnameRule.cs" />
+    <Compile Include="Rules\ApplicantsMustBeBetween18And65YearsOldRule.cs" />
+    <Compile Include="Rules\ApplicationMailingAddressCannotBeAFreeTextAddressRule.cs" />
+    <Compile Include="Rules\ApplicationMayNotBeAcceptedWhenDeterminingApplicationHouseholdIncomeRule.cs" />
+    <Compile Include="Rules\ApplicationMayNotBeAcceptedWhenSettingApplicationEmploymentTypeRule.cs" />
+    <Compile Include="Rules\AssessmentCanContainOnlyOneOfEachAffordabilityTypeRule.cs" />
+    <Compile Include="Rules\CheckIfClientForEmailCorrespondenceIsRequiredRule.cs" />
+    <Compile Include="Rules\CheckIfOnlineFormatStatementIsRequiredRule.cs" />
+    <Compile Include="Rules\ClientAddressMustBelongToAnApplicantRule.cs" />
+    <Compile Include="Rules\ClientBankAccountMustBelongToApplicantOnApplicationRule.cs" />
+    <Compile Include="Rules\ClientCannotBeAnExistingApplicantRule.cs" />
+    <Compile Include="Rules\ClientCannotHaveExistingDeclarationsRule.cs" />
+    <Compile Include="Rules\ClientIsAnApplicantOnApplicationRule.cs" />
+    <Compile Include="Rules\ClientShouldBeANaturalPersonRule.cs" />
+    <Compile Include="Rules\DebitOrderDayCannotBeAfterThe28thDayRule.cs" />
+    <Compile Include="Rules\DebtArrangementAnsweredIsRequiredWhenUnderDebtReviewRule.cs" />
+    <Compile Include="Rules\ExternalVendorMustBeActiveRule.cs" />
+    <Compile Include="Rules\LoanAmountMustBeAboveMinimumRequiredRule.cs" />
+    <Compile Include="Rules\NewBusinessRequestedLoanAmountMustBeAboveMinimumRequiredRule.cs" />
+    <Compile Include="Rules\RefinanceRequestedLoanAmountMustBeAboveMinimumRequiredRule.cs" />
+    <Compile Include="Rules\RehabilitationDateIsRequiredWhenClientHasBeenDeclaredInsolventRule.cs" />
+    <Compile Include="Rules\RescindedDateRequiredWhenClientHasBeenUnderAdminOrderRule.cs" />
+    <Compile Include="Rules\SwitchRequestedLoanAmountMustBeAboveMinimumRequiredRule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommandHandlers\Internal\" />
+    <Folder Include="QueryStatements\" />
+    <Folder Include="Rules\QueryStatements\" />
+    <Folder Include="CommandHandlers\Internal\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

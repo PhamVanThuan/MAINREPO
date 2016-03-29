@@ -1,0 +1,17 @@
+<SAHL.Common.WebServices.Properties.Settings>
+	<setting name="SAHL_Common_WebServices_ReportingServices2005_ReportingService2005"
+		serializeAs="String">
+		<value>http://DEVC15/SQLReportServer/ReportService2005.asmx</value>
+	</setting>
+	<setting name="SAHL_Common_WebServices_ReportExecution2005_ReportExecutionService"
+		serializeAs="String">	
+		<value>http://DEVC15/SQLReportServer/ReportExecution2005.asmx</value>
+	</setting>
+	<setting name="SAHL_Common_WebServices_AVM_SAHL" serializeAs="String">
+		<value>http://www.lightstone.co.za/avm/webservices/sahl.asmx</value>
+	</setting>
+	<setting name="SAHL_Common_WebServices_AdCheck_ValuationService"
+		serializeAs="String">
+		<value>https://hera.adcheck.co.za/ePropSAHLintegration/ValuationServices.asmx</value>
+	</setting>
+</SAHL.Common.WebServices.Properties.Settings>

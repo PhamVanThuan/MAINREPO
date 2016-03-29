@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="X2" targetNamespace="http://tempuri.org/X2.xsd" xmlns:mstns="http://tempuri.org/X2.xsd" xmlns="http://tempuri.org/X2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="X2ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="X2ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.X2ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="X2ConnectionString3" IsAppSettingsProperty="true" Modifier="Assembly" Name="X2ConnectionString3 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.X2ConnectionString3" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="X2ConnectionString5" IsAppSettingsProperty="true" Modifier="Assembly" Name="X2ConnectionString5 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.X2ConnectionString5" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="X2ConnectionString4" IsAppSettingsProperty="true" Modifier="Assembly" Name="X2ConnectionString4 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.X2ConnectionString4" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_2AMConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="_2AMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default._2AMConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="X2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="X2" msprop:Generator_UserDSName="X2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ActiveExternalActivity" msprop:Generator_UserTableName="ActiveExternalActivity" msprop:Generator_RowEvArgName="ActiveExternalActivityRowChangeEvent" msprop:Generator_TableVarName="tableActiveExternalActivity" msprop:Generator_TablePropName="ActiveExternalActivity" msprop:Generator_RowDeletingName="ActiveExternalActivityRowDeleting" msprop:Generator_RowChangingName="ActiveExternalActivityRowChanging" msprop:Generator_RowDeletedName="ActiveExternalActivityRowDeleted" msprop:Generator_TableClassName="ActiveExternalActivityDataTable" msprop:Generator_RowChangedName="ActiveExternalActivityRowChanged" msprop:Generator_RowEvHandlerName="ActiveExternalActivityRowChangeEventHandler" msprop:Generator_RowClassName="ActiveExternalActivityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ExternalActivityID" msprop:Generator_ColumnVarNameInTable="columnExternalActivityID" msprop:Generator_ColumnPropNameInRow="ExternalActivityID" msprop:Generator_ColumnPropNameInTable="ExternalActivityIDColumn" msprop:Generator_UserColumnName="ExternalActivityID" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" />
+              <xs:element name="ActivatingInstanceID" msprop:Generator_ColumnVarNameInTable="columnActivatingInstanceID" msprop:Generator_ColumnPropNameInRow="ActivatingInstanceID" msprop:Generator_ColumnPropNameInTable="ActivatingInstanceIDColumn" msprop:Generator_UserColumnName="ActivatingInstanceID" type="xs:long" minOccurs="0" />
+              <xs:element name="ActivationTime" msprop:Generator_ColumnVarNameInTable="columnActivationTime" msprop:Generator_ColumnPropNameInRow="ActivationTime" msprop:Generator_ColumnPropNameInTable="ActivationTimeColumn" msprop:Generator_UserColumnName="ActivationTime" type="xs:dateTime" />
+              <xs:element name="ActivityXMLData" msprop:Generator_ColumnVarNameInTable="columnActivityXMLData" msprop:Generator_ColumnPropNameInRow="ActivityXMLData" msprop:Generator_ColumnPropNameInTable="ActivityXMLDataColumn" msprop:Generator_UserColumnName="ActivityXMLData" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkFlowProviderName" msprop:Generator_ColumnVarNameInTable="columnWorkFlowProviderName" msprop:Generator_ColumnPropNameInRow="WorkFlowProviderName" msprop:Generator_ColumnPropNameInTable="WorkFlowProviderNameColumn" msprop:Generator_UserColumnName="WorkFlowProviderName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SourceInstanceID" msprop:Generator_ColumnVarNameInTable="columnSourceInstanceID" msprop:Generator_ColumnPropNameInRow="SourceInstanceID" msprop:Generator_ColumnPropNameInTable="SourceInstanceIDColumn" msprop:Generator_UserColumnName="SourceInstanceID" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkList" msprop:Generator_UserTableName="WorkList" msprop:Generator_RowEvArgName="WorkListRowChangeEvent" msprop:Generator_TableVarName="tableWorkList" msprop:Generator_TablePropName="WorkList" msprop:Generator_RowDeletingName="WorkListRowDeleting" msprop:Generator_RowChangingName="WorkListRowChanging" msprop:Generator_RowDeletedName="WorkListRowDeleted" msprop:Generator_TableClassName="WorkListDataTable" msprop:Generator_RowChangedName="WorkListRowChanged" msprop:Generator_RowEvHandlerName="WorkListRowChangeEventHandler" msprop:Generator_RowClassName="WorkListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:long" />
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ListDate" msprop:Generator_ColumnVarNameInTable="columnListDate" msprop:Generator_ColumnPropNameInRow="ListDate" msprop:Generator_ColumnPropNameInTable="ListDateColumn" msprop:Generator_UserColumnName="ListDate" type="xs:dateTime" />
+              <xs:element name="Message" msprop:Generator_ColumnVarNameInTable="columnMessage" msprop:Generator_ColumnPropNameInRow="Message" msprop:Generator_ColumnPropNameInTable="MessageColumn" msprop:Generator_UserColumnName="Message">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Activity" msprop:Generator_UserTableName="Activity" msprop:Generator_RowEvArgName="ActivityRowChangeEvent" msprop:Generator_TableVarName="tableActivity" msprop:Generator_TablePropName="Activity" msprop:Generator_RowDeletingName="ActivityRowDeleting" msprop:Generator_RowChangingName="ActivityRowChanging" msprop:Generator_RowDeletedName="ActivityRowDeleted" msprop:Generator_TableClassName="ActivityDataTable" msprop:Generator_RowChangedName="ActivityRowChanged" msprop:Generator_RowEvHandlerName="ActivityRowChangeEventHandler" msprop:Generator_RowClassName="ActivityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:int" />
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" minOccurs="0" />
+              <xs:element name="NextStateID" msprop:Generator_ColumnVarNameInTable="columnNextStateID" msprop:Generator_ColumnPropNameInRow="NextStateID" msprop:Generator_ColumnPropNameInTable="NextStateIDColumn" msprop:Generator_UserColumnName="NextStateID" type="xs:int" />
+              <xs:element name="SplitWorkFlow" msprop:Generator_ColumnVarNameInTable="columnSplitWorkFlow" msprop:Generator_ColumnPropNameInRow="SplitWorkFlow" msprop:Generator_ColumnPropNameInTable="SplitWorkFlowColumn" msprop:Generator_UserColumnName="SplitWorkFlow" type="xs:boolean" />
+              <xs:element name="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" msprop:Generator_UserColumnName="Priority" type="xs:int" />
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" minOccurs="0" />
+              <xs:element name="ActivityMessage" msprop:Generator_ColumnVarNameInTable="columnActivityMessage" msprop:Generator_ColumnPropNameInRow="ActivityMessage" msprop:Generator_ColumnPropNameInTable="ActivityMessageColumn" msprop:Generator_UserColumnName="ActivityMessage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RaiseExternalActivity" msprop:Generator_ColumnVarNameInTable="columnRaiseExternalActivity" msprop:Generator_ColumnPropNameInRow="RaiseExternalActivity" msprop:Generator_ColumnPropNameInTable="RaiseExternalActivityColumn" msprop:Generator_UserColumnName="RaiseExternalActivity" type="xs:int" minOccurs="0" />
+              <xs:element name="ExternalActivityTarget" msprop:Generator_ColumnVarNameInTable="columnExternalActivityTarget" msprop:Generator_ColumnPropNameInRow="ExternalActivityTarget" msprop:Generator_ColumnPropNameInTable="ExternalActivityTargetColumn" msprop:Generator_UserColumnName="ExternalActivityTarget" type="xs:int" minOccurs="0" />
+              <xs:element name="ActivatedByExternalActivity" msprop:Generator_ColumnVarNameInTable="columnActivatedByExternalActivity" msprop:Generator_ColumnPropNameInRow="ActivatedByExternalActivity" msprop:Generator_ColumnPropNameInTable="ActivatedByExternalActivityColumn" msprop:Generator_UserColumnName="ActivatedByExternalActivity" type="xs:int" minOccurs="0" />
+              <xs:element name="ChainedActivityName" msprop:Generator_ColumnVarNameInTable="columnChainedActivityName" msprop:Generator_ColumnPropNameInRow="ChainedActivityName" msprop:Generator_ColumnPropNameInTable="ChainedActivityNameColumn" msprop:Generator_UserColumnName="ChainedActivityName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ActivitySecurity" msprop:Generator_UserTableName="ActivitySecurity" msprop:Generator_RowEvArgName="ActivitySecurityRowChangeEvent" msprop:Generator_TableVarName="tableActivitySecurity" msprop:Generator_TablePropName="ActivitySecurity" msprop:Generator_RowDeletingName="ActivitySecurityRowDeleting" msprop:Generator_RowChangingName="ActivitySecurityRowChanging" msprop:Generator_RowDeletedName="ActivitySecurityRowDeleted" msprop:Generator_TableClassName="ActivitySecurityDataTable" msprop:Generator_RowChangedName="ActivitySecurityRowChanged" msprop:Generator_RowEvHandlerName="ActivitySecurityRowChangeEventHandler" msprop:Generator_RowClassName="ActivitySecurityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" />
+              <xs:element name="SecurityGroupID" msprop:Generator_ColumnVarNameInTable="columnSecurityGroupID" msprop:Generator_ColumnPropNameInRow="SecurityGroupID" msprop:Generator_ColumnPropNameInTable="SecurityGroupIDColumn" msprop:Generator_UserColumnName="SecurityGroupID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ActivityType" msprop:Generator_UserTableName="ActivityType" msprop:Generator_RowEvArgName="ActivityTypeRowChangeEvent" msprop:Generator_TableVarName="tableActivityType" msprop:Generator_TablePropName="ActivityType" msprop:Generator_RowDeletingName="ActivityTypeRowDeleting" msprop:Generator_RowChangingName="ActivityTypeRowChanging" msprop:Generator_RowDeletedName="ActivityTypeRowDeleted" msprop:Generator_TableClassName="ActivityTypeDataTable" msprop:Generator_RowChangedName="ActivityTypeRowChanged" msprop:Generator_RowEvHandlerName="ActivityTypeRowChangeEventHandler" msprop:Generator_RowClassName="ActivityTypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ExternalActivity" msprop:Generator_UserTableName="ExternalActivity" msprop:Generator_RowEvArgName="ExternalActivityRowChangeEvent" msprop:Generator_TableVarName="tableExternalActivity" msprop:Generator_TablePropName="ExternalActivity" msprop:Generator_RowDeletingName="ExternalActivityRowDeleting" msprop:Generator_RowChangingName="ExternalActivityRowChanging" msprop:Generator_RowDeletedName="ExternalActivityRowDeleted" msprop:Generator_TableClassName="ExternalActivityDataTable" msprop:Generator_RowChangedName="ExternalActivityRowChanged" msprop:Generator_RowEvHandlerName="ExternalActivityRowChangeEventHandler" msprop:Generator_RowClassName="ExternalActivityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ExternalActivityTarget" msprop:Generator_UserTableName="ExternalActivityTarget" msprop:Generator_RowEvArgName="ExternalActivityTargetRowChangeEvent" msprop:Generator_TableVarName="tableExternalActivityTarget" msprop:Generator_TablePropName="ExternalActivityTarget" msprop:Generator_RowDeletingName="ExternalActivityTargetRowDeleting" msprop:Generator_RowChangingName="ExternalActivityTargetRowChanging" msprop:Generator_RowDeletedName="ExternalActivityTargetRowDeleted" msprop:Generator_TableClassName="ExternalActivityTargetDataTable" msprop:Generator_RowChangedName="ExternalActivityTargetRowChanged" msprop:Generator_RowEvHandlerName="ExternalActivityTargetRowChangeEventHandler" msprop:Generator_RowClassName="ExternalActivityTargetRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Form" msprop:Generator_UserTableName="Form" msprop:Generator_RowEvArgName="FormRowChangeEvent" msprop:Generator_TableVarName="tableForm" msprop:Generator_TablePropName="Form" msprop:Generator_RowDeletingName="FormRowDeleting" msprop:Generator_RowChangingName="FormRowChanging" msprop:Generator_RowDeletedName="FormRowDeleted" msprop:Generator_TableClassName="FormDataTable" msprop:Generator_RowChangedName="FormRowChanged" msprop:Generator_RowEvHandlerName="FormRowChangeEventHandler" msprop:Generator_RowClassName="FormRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Instance" msprop:Generator_UserTableName="Instance" msprop:Generator_RowEvArgName="InstanceRowChangeEvent" msprop:Generator_TableVarName="tableInstance" msprop:Generator_TablePropName="Instance" msprop:Generator_RowDeletingName="InstanceRowDeleting" msprop:Generator_RowChangingName="InstanceRowChanging" msprop:Generator_RowDeletedName="InstanceRowDeleted" msprop:Generator_TableClassName="InstanceDataTable" msprop:Generator_RowChangedName="InstanceRowChanged" msprop:Generator_RowEvHandlerName="InstanceRowChangeEventHandler" msprop:Generator_RowClassName="InstanceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" />
+              <xs:element name="ParentInstanceID" msprop:Generator_ColumnVarNameInTable="columnParentInstanceID" msprop:Generator_ColumnPropNameInRow="ParentInstanceID" msprop:Generator_ColumnPropNameInTable="ParentInstanceIDColumn" msprop:Generator_UserColumnName="ParentInstanceID" type="xs:long" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Subject" msprop:Generator_ColumnVarNameInTable="columnSubject" msprop:Generator_ColumnPropNameInRow="Subject" msprop:Generator_ColumnPropNameInTable="SubjectColumn" msprop:Generator_UserColumnName="Subject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="800" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkFlowProvider" msprop:Generator_ColumnVarNameInTable="columnWorkFlowProvider" msprop:Generator_ColumnPropNameInRow="WorkFlowProvider" msprop:Generator_ColumnPropNameInTable="WorkFlowProviderColumn" msprop:Generator_UserColumnName="WorkFlowProvider">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreatorADUserName" msprop:Generator_ColumnVarNameInTable="columnCreatorADUserName" msprop:Generator_ColumnPropNameInRow="CreatorADUserName" msprop:Generator_ColumnPropNameInTable="CreatorADUserNameColumn" msprop:Generator_UserColumnName="CreatorADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreationDate" msprop:Generator_ColumnVarNameInTable="columnCreationDate" msprop:Generator_ColumnPropNameInRow="CreationDate" msprop:Generator_ColumnPropNameInTable="CreationDateColumn" msprop:Generator_UserColumnName="CreationDate" type="xs:dateTime" />
+              <xs:element name="StateChangeDate" msprop:Generator_ColumnVarNameInTable="columnStateChangeDate" msprop:Generator_ColumnPropNameInRow="StateChangeDate" msprop:Generator_ColumnPropNameInTable="StateChangeDateColumn" msprop:Generator_UserColumnName="StateChangeDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeadlineDate" msprop:Generator_ColumnVarNameInTable="columnDeadlineDate" msprop:Generator_ColumnPropNameInRow="DeadlineDate" msprop:Generator_ColumnPropNameInTable="DeadlineDateColumn" msprop:Generator_UserColumnName="DeadlineDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActivityDate" msprop:Generator_ColumnVarNameInTable="columnActivityDate" msprop:Generator_ColumnPropNameInRow="ActivityDate" msprop:Generator_ColumnPropNameInTable="ActivityDateColumn" msprop:Generator_UserColumnName="ActivityDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActivityADUserName" msprop:Generator_ColumnVarNameInTable="columnActivityADUserName" msprop:Generator_ColumnPropNameInRow="ActivityADUserName" msprop:Generator_ColumnPropNameInTable="ActivityADUserNameColumn" msprop:Generator_UserColumnName="ActivityADUserName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" minOccurs="0" />
+              <xs:element name="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" msprop:Generator_UserColumnName="Priority" type="xs:int" minOccurs="0" />
+              <xs:element name="SourceInstanceID" msprop:Generator_ColumnVarNameInTable="columnSourceInstanceID" msprop:Generator_ColumnPropNameInRow="SourceInstanceID" msprop:Generator_ColumnPropNameInTable="SourceInstanceIDColumn" msprop:Generator_UserColumnName="SourceInstanceID" type="xs:long" minOccurs="0" />
+              <xs:element name="ReturnActivityID" msprop:Generator_ColumnVarNameInTable="columnReturnActivityID" msprop:Generator_ColumnPropNameInRow="ReturnActivityID" msprop:Generator_ColumnPropNameInTable="ReturnActivityIDColumn" msprop:Generator_UserColumnName="ReturnActivityID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InstanceActivitySecurity" msprop:Generator_UserTableName="InstanceActivitySecurity" msprop:Generator_RowEvArgName="InstanceActivitySecurityRowChangeEvent" msprop:Generator_TableVarName="tableInstanceActivitySecurity" msprop:Generator_TablePropName="InstanceActivitySecurity" msprop:Generator_RowDeletingName="InstanceActivitySecurityRowDeleting" msprop:Generator_RowChangingName="InstanceActivitySecurityRowChanging" msprop:Generator_RowDeletedName="InstanceActivitySecurityRowDeleted" msprop:Generator_TableClassName="InstanceActivitySecurityDataTable" msprop:Generator_RowChangedName="InstanceActivitySecurityRowChanged" msprop:Generator_RowEvHandlerName="InstanceActivitySecurityRowChangeEventHandler" msprop:Generator_RowClassName="InstanceActivitySecurityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:long" />
+              <xs:element name="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" />
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Log" msprop:Generator_UserTableName="Log" msprop:Generator_RowEvArgName="LogRowChangeEvent" msprop:Generator_TableVarName="tableLog" msprop:Generator_TablePropName="Log" msprop:Generator_RowDeletingName="LogRowDeleting" msprop:Generator_RowChangingName="LogRowChanging" msprop:Generator_RowDeletedName="LogRowDeleted" msprop:Generator_TableClassName="LogDataTable" msprop:Generator_RowChangedName="LogRowChanged" msprop:Generator_RowEvHandlerName="LogRowChangeEventHandler" msprop:Generator_RowClassName="LogRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
+              <xs:element name="ProcessID" msprop:Generator_ColumnVarNameInTable="columnProcessID" msprop:Generator_ColumnPropNameInRow="ProcessID" msprop:Generator_ColumnPropNameInTable="ProcessIDColumn" msprop:Generator_UserColumnName="ProcessID" type="xs:int" minOccurs="0" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" minOccurs="0" />
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:int" minOccurs="0" />
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" minOccurs="0" />
+              <xs:element name="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" minOccurs="0" />
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Message" msprop:Generator_ColumnVarNameInTable="columnMessage" msprop:Generator_ColumnPropNameInRow="Message" msprop:Generator_ColumnPropNameInTable="MessageColumn" msprop:Generator_UserColumnName="Message" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StackTrace" msprop:Generator_ColumnVarNameInTable="columnStackTrace" msprop:Generator_ColumnPropNameInRow="StackTrace" msprop:Generator_ColumnPropNameInTable="StackTraceColumn" msprop:Generator_UserColumnName="StackTrace" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Process" msprop:Generator_UserTableName="Process" msprop:Generator_RowEvArgName="ProcessRowChangeEvent" msprop:Generator_TableVarName="tableProcess" msprop:Generator_TablePropName="Process" msprop:Generator_RowDeletingName="ProcessRowDeleting" msprop:Generator_RowChangingName="ProcessRowChanging" msprop:Generator_RowDeletedName="ProcessRowDeleted" msprop:Generator_TableClassName="ProcessDataTable" msprop:Generator_RowChangedName="ProcessRowChanged" msprop:Generator_RowEvHandlerName="ProcessRowChangeEventHandler" msprop:Generator_RowClassName="ProcessRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ProcessAncestorID" msprop:Generator_ColumnVarNameInTable="columnProcessAncestorID" msprop:Generator_ColumnPropNameInRow="ProcessAncestorID" msprop:Generator_ColumnPropNameInTable="ProcessAncestorIDColumn" msprop:Generator_UserColumnName="ProcessAncestorID" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnPropNameInTable="VersionColumn" msprop:Generator_UserColumnName="Version" type="xs:string" />
+              <xs:element name="DesignerData" msprop:Generator_ColumnVarNameInTable="columnDesignerData" msprop:Generator_ColumnPropNameInRow="DesignerData" msprop:Generator_ColumnPropNameInTable="DesignerDataColumn" msprop:Generator_UserColumnName="DesignerData" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProcessAssembly" msprop:Generator_UserTableName="ProcessAssembly" msprop:Generator_RowEvArgName="ProcessAssemblyRowChangeEvent" msprop:Generator_TableVarName="tableProcessAssembly" msprop:Generator_TablePropName="ProcessAssembly" msprop:Generator_RowDeletingName="ProcessAssemblyRowDeleting" msprop:Generator_RowChangingName="ProcessAssemblyRowChanging" msprop:Generator_RowDeletedName="ProcessAssemblyRowDeleted" msprop:Generator_TableClassName="ProcessAssemblyDataTable" msprop:Generator_RowChangedName="ProcessAssemblyRowChanged" msprop:Generator_RowEvHandlerName="ProcessAssemblyRowChangeEventHandler" msprop:Generator_RowClassName="ProcessAssemblyRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ProcessID" msprop:Generator_ColumnVarNameInTable="columnProcessID" msprop:Generator_ColumnPropNameInRow="ProcessID" msprop:Generator_ColumnPropNameInTable="ProcessIDColumn" msprop:Generator_UserColumnName="ProcessID" type="xs:int" />
+              <xs:element name="ParentID" msprop:Generator_ColumnVarNameInTable="columnParentID" msprop:Generator_ColumnPropNameInRow="ParentID" msprop:Generator_ColumnPropNameInTable="ParentIDColumn" msprop:Generator_UserColumnName="ParentID" type="xs:int" minOccurs="0" />
+              <xs:element name="DLLName" msprop:Generator_ColumnVarNameInTable="columnDLLName" msprop:Generator_ColumnPropNameInRow="DLLName" msprop:Generator_ColumnPropNameInTable="DLLNameColumn" msprop:Generator_UserColumnName="DLLName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DLLData" msprop:Generator_ColumnVarNameInTable="columnDLLData" msprop:Generator_ColumnPropNameInRow="DLLData" msprop:Generator_ColumnPropNameInTable="DLLDataColumn" msprop:Generator_UserColumnName="DLLData" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ScheduledActivity" msprop:Generator_UserTableName="ScheduledActivity" msprop:Generator_RowEvArgName="ScheduledActivityRowChangeEvent" msprop:Generator_TableVarName="tableScheduledActivity" msprop:Generator_TablePropName="ScheduledActivity" msprop:Generator_RowDeletingName="ScheduledActivityRowDeleting" msprop:Generator_RowChangingName="ScheduledActivityRowChanging" msprop:Generator_RowDeletedName="ScheduledActivityRowDeleted" msprop:Generator_TableClassName="ScheduledActivityDataTable" msprop:Generator_RowChangedName="ScheduledActivityRowChanged" msprop:Generator_RowEvHandlerName="ScheduledActivityRowChangeEventHandler" msprop:Generator_RowClassName="ScheduledActivityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:long" />
+              <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:dateTime" />
+              <xs:element name="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" />
+              <xs:element name="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" msprop:Generator_UserColumnName="Priority" type="xs:int" />
+              <xs:element name="WorkFlowProviderName" msprop:Generator_ColumnVarNameInTable="columnWorkFlowProviderName" msprop:Generator_ColumnPropNameInRow="WorkFlowProviderName" msprop:Generator_ColumnPropNameInTable="WorkFlowProviderNameColumn" msprop:Generator_UserColumnName="WorkFlowProviderName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SecurityGroup" msprop:Generator_UserTableName="SecurityGroup" msprop:Generator_RowEvArgName="SecurityGroupRowChangeEvent" msprop:Generator_TableVarName="tableSecurityGroup" msprop:Generator_TablePropName="SecurityGroup" msprop:Generator_RowDeletingName="SecurityGroupRowDeleting" msprop:Generator_RowChangingName="SecurityGroupRowChanging" msprop:Generator_RowDeletedName="SecurityGroupRowDeleted" msprop:Generator_TableClassName="SecurityGroupDataTable" msprop:Generator_RowChangedName="SecurityGroupRowChanged" msprop:Generator_RowEvHandlerName="SecurityGroupRowChangeEventHandler" msprop:Generator_RowClassName="SecurityGroupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="IsDynamic" msprop:Generator_ColumnVarNameInTable="columnIsDynamic" msprop:Generator_ColumnPropNameInRow="IsDynamic" msprop:Generator_ColumnPropNameInTable="IsDynamicColumn" msprop:Generator_UserColumnName="IsDynamic" type="xs:boolean" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProcessID" msprop:Generator_ColumnVarNameInTable="columnProcessID" msprop:Generator_ColumnPropNameInRow="ProcessID" msprop:Generator_ColumnPropNameInTable="ProcessIDColumn" msprop:Generator_UserColumnName="ProcessID" type="xs:int" minOccurs="0" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StageActivity" msprop:Generator_UserTableName="StageActivity" msprop:Generator_RowEvArgName="StageActivityRowChangeEvent" msprop:Generator_TableVarName="tableStageActivity" msprop:Generator_TablePropName="StageActivity" msprop:Generator_RowDeletingName="StageActivityRowDeleting" msprop:Generator_RowChangingName="StageActivityRowChanging" msprop:Generator_RowDeletedName="StageActivityRowDeleted" msprop:Generator_TableClassName="StageActivityDataTable" msprop:Generator_RowChangedName="StageActivityRowChanged" msprop:Generator_RowEvHandlerName="StageActivityRowChangeEventHandler" msprop:Generator_RowClassName="StageActivityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" />
+              <xs:element name="StageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnVarNameInTable="columnStageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInRow="StageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInTable="StageDefinitionStageDefinitionGroupKeyColumn" msprop:Generator_UserColumnName="StageDefinitionStageDefinitionGroupKey" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="State" msprop:Generator_UserTableName="State" msprop:Generator_RowEvArgName="StateRowChangeEvent" msprop:Generator_TableVarName="tableState" msprop:Generator_TablePropName="State" msprop:Generator_RowDeletingName="StateRowDeleting" msprop:Generator_RowChangingName="StateRowChanging" msprop:Generator_RowDeletedName="StateRowDeleted" msprop:Generator_TableClassName="StateDataTable" msprop:Generator_RowChangedName="StateRowChanged" msprop:Generator_RowEvHandlerName="StateRowChangeEventHandler" msprop:Generator_RowClassName="StateRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" type="xs:int" />
+              <xs:element name="ForwardState" msprop:Generator_ColumnVarNameInTable="columnForwardState" msprop:Generator_ColumnPropNameInRow="ForwardState" msprop:Generator_ColumnPropNameInTable="ForwardStateColumn" msprop:Generator_UserColumnName="ForwardState" type="xs:boolean" />
+              <xs:element name="ReturnWorkflowID" msprop:Generator_ColumnVarNameInTable="columnReturnWorkflowID" msprop:Generator_ColumnPropNameInRow="ReturnWorkflowID" msprop:Generator_ColumnPropNameInTable="ReturnWorkflowIDColumn" msprop:Generator_UserColumnName="ReturnWorkflowID" type="xs:int" minOccurs="0" />
+              <xs:element name="ReturnActivityID" msprop:Generator_ColumnVarNameInTable="columnReturnActivityID" msprop:Generator_ColumnPropNameInRow="ReturnActivityID" msprop:Generator_ColumnPropNameInTable="ReturnActivityIDColumn" msprop:Generator_UserColumnName="ReturnActivityID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StateForm" msprop:Generator_UserTableName="StateForm" msprop:Generator_RowEvArgName="StateFormRowChangeEvent" msprop:Generator_TableVarName="tableStateForm" msprop:Generator_TablePropName="StateForm" msprop:Generator_RowDeletingName="StateFormRowDeleting" msprop:Generator_RowChangingName="StateFormRowChanging" msprop:Generator_RowDeletedName="StateFormRowDeleted" msprop:Generator_TableClassName="StateFormDataTable" msprop:Generator_RowChangedName="StateFormRowChanged" msprop:Generator_RowEvHandlerName="StateFormRowChangeEventHandler" msprop:Generator_RowClassName="StateFormRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" />
+              <xs:element name="FormID" msprop:Generator_ColumnVarNameInTable="columnFormID" msprop:Generator_ColumnPropNameInRow="FormID" msprop:Generator_ColumnPropNameInTable="FormIDColumn" msprop:Generator_UserColumnName="FormID" type="xs:int" />
+              <xs:element name="FormOrder" msprop:Generator_ColumnVarNameInTable="columnFormOrder" msprop:Generator_ColumnPropNameInRow="FormOrder" msprop:Generator_ColumnPropNameInTable="FormOrderColumn" msprop:Generator_UserColumnName="FormOrder" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StateTrackList" msprop:Generator_UserTableName="StateTrackList" msprop:Generator_RowEvArgName="StateTrackListRowChangeEvent" msprop:Generator_TableVarName="tableStateTrackList" msprop:Generator_TablePropName="StateTrackList" msprop:Generator_RowDeletingName="StateTrackListRowDeleting" msprop:Generator_RowChangingName="StateTrackListRowChanging" msprop:Generator_RowDeletedName="StateTrackListRowDeleted" msprop:Generator_TableClassName="StateTrackListDataTable" msprop:Generator_RowChangedName="StateTrackListRowChanged" msprop:Generator_RowEvHandlerName="StateTrackListRowChangeEventHandler" msprop:Generator_RowClassName="StateTrackListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" />
+              <xs:element name="SecurityGroupID" msprop:Generator_ColumnVarNameInTable="columnSecurityGroupID" msprop:Generator_ColumnPropNameInRow="SecurityGroupID" msprop:Generator_ColumnPropNameInTable="SecurityGroupIDColumn" msprop:Generator_UserColumnName="SecurityGroupID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StateType" msprop:Generator_UserTableName="StateType" msprop:Generator_RowEvArgName="StateTypeRowChangeEvent" msprop:Generator_TableVarName="tableStateType" msprop:Generator_TablePropName="StateType" msprop:Generator_RowDeletingName="StateTypeRowDeleting" msprop:Generator_RowChangingName="StateTypeRowChanging" msprop:Generator_RowDeletedName="StateTypeRowDeleted" msprop:Generator_TableClassName="StateTypeDataTable" msprop:Generator_RowChangedName="StateTypeRowChanged" msprop:Generator_RowEvHandlerName="StateTypeRowChangeEventHandler" msprop:Generator_RowClassName="StateTypeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StateWorkList" msprop:Generator_UserTableName="StateWorkList" msprop:Generator_RowEvArgName="StateWorkListRowChangeEvent" msprop:Generator_TableVarName="tableStateWorkList" msprop:Generator_TablePropName="StateWorkList" msprop:Generator_RowDeletingName="StateWorkListRowDeleting" msprop:Generator_RowChangingName="StateWorkListRowChanging" msprop:Generator_RowDeletedName="StateWorkListRowDeleted" msprop:Generator_TableClassName="StateWorkListDataTable" msprop:Generator_RowChangedName="StateWorkListRowChanged" msprop:Generator_RowEvHandlerName="StateWorkListRowChangeEventHandler" msprop:Generator_RowClassName="StateWorkListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" />
+              <xs:element name="SecurityGroupID" msprop:Generator_ColumnVarNameInTable="columnSecurityGroupID" msprop:Generator_ColumnPropNameInRow="SecurityGroupID" msprop:Generator_ColumnPropNameInTable="SecurityGroupIDColumn" msprop:Generator_UserColumnName="SecurityGroupID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TrackList" msprop:Generator_UserTableName="TrackList" msprop:Generator_RowEvArgName="TrackListRowChangeEvent" msprop:Generator_TableVarName="tableTrackList" msprop:Generator_TablePropName="TrackList" msprop:Generator_RowDeletingName="TrackListRowDeleting" msprop:Generator_RowChangingName="TrackListRowChanging" msprop:Generator_RowDeletedName="TrackListRowDeleted" msprop:Generator_TableClassName="TrackListDataTable" msprop:Generator_RowChangedName="TrackListRowChanged" msprop:Generator_RowEvHandlerName="TrackListRowChangeEventHandler" msprop:Generator_RowClassName="TrackListRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:long" />
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ListDate" msprop:Generator_ColumnVarNameInTable="columnListDate" msprop:Generator_ColumnPropNameInRow="ListDate" msprop:Generator_ColumnPropNameInTable="ListDateColumn" msprop:Generator_UserColumnName="ListDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkFlow" msprop:Generator_UserTableName="WorkFlow" msprop:Generator_RowEvArgName="WorkFlowRowChangeEvent" msprop:Generator_TableVarName="tableWorkFlow" msprop:Generator_TablePropName="WorkFlow" msprop:Generator_RowDeletingName="WorkFlowRowDeleting" msprop:Generator_RowChangingName="WorkFlowRowChanging" msprop:Generator_RowDeletedName="WorkFlowRowDeleted" msprop:Generator_TableClassName="WorkFlowDataTable" msprop:Generator_RowChangedName="WorkFlowRowChanged" msprop:Generator_RowEvHandlerName="WorkFlowRowChangeEventHandler" msprop:Generator_RowClassName="WorkFlowRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ProcessID" msprop:Generator_ColumnVarNameInTable="columnProcessID" msprop:Generator_ColumnPropNameInRow="ProcessID" msprop:Generator_ColumnPropNameInTable="ProcessIDColumn" msprop:Generator_UserColumnName="ProcessID" type="xs:int" />
+              <xs:element name="WorkFlowAncestorID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowAncestorID" msprop:Generator_ColumnPropNameInRow="WorkFlowAncestorID" msprop:Generator_ColumnPropNameInTable="WorkFlowAncestorIDColumn" msprop:Generator_UserColumnName="WorkFlowAncestorID" type="xs:int" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_UserColumnName="CreateDate" type="xs:dateTime" />
+              <xs:element name="StorageTable" msprop:Generator_ColumnVarNameInTable="columnStorageTable" msprop:Generator_ColumnPropNameInRow="StorageTable" msprop:Generator_ColumnPropNameInTable="StorageTableColumn" msprop:Generator_UserColumnName="StorageTable">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StorageKey" msprop:Generator_ColumnVarNameInTable="columnStorageKey" msprop:Generator_ColumnPropNameInRow="StorageKey" msprop:Generator_ColumnPropNameInTable="StorageKeyColumn" msprop:Generator_UserColumnName="StorageKey">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IconID" msprop:Generator_ColumnVarNameInTable="columnIconID" msprop:Generator_ColumnPropNameInRow="IconID" msprop:Generator_ColumnPropNameInTable="IconIDColumn" msprop:Generator_UserColumnName="IconID" type="xs:int" />
+              <xs:element name="DefaultSubject" msprop:Generator_ColumnVarNameInTable="columnDefaultSubject" msprop:Generator_ColumnPropNameInRow="DefaultSubject" msprop:Generator_ColumnPropNameInTable="DefaultSubjectColumn" msprop:Generator_UserColumnName="DefaultSubject" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkFlowActivity" msprop:Generator_UserTableName="WorkFlowActivity" msprop:Generator_RowEvArgName="WorkFlowActivityRowChangeEvent" msprop:Generator_TableVarName="tableWorkFlowActivity" msprop:Generator_TablePropName="WorkFlowActivity" msprop:Generator_RowDeletingName="WorkFlowActivityRowDeleting" msprop:Generator_RowChangingName="WorkFlowActivityRowChanging" msprop:Generator_RowDeletedName="WorkFlowActivityRowDeleted" msprop:Generator_TableClassName="WorkFlowActivityDataTable" msprop:Generator_RowChangedName="WorkFlowActivityRowChanged" msprop:Generator_RowEvHandlerName="WorkFlowActivityRowChangeEventHandler" msprop:Generator_RowClassName="WorkFlowActivityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NextWorkFlowID" msprop:Generator_ColumnVarNameInTable="columnNextWorkFlowID" msprop:Generator_ColumnPropNameInRow="NextWorkFlowID" msprop:Generator_ColumnPropNameInTable="NextWorkFlowIDColumn" msprop:Generator_UserColumnName="NextWorkFlowID" type="xs:int" />
+              <xs:element name="NextActivityID" msprop:Generator_ColumnVarNameInTable="columnNextActivityID" msprop:Generator_ColumnPropNameInRow="NextActivityID" msprop:Generator_ColumnPropNameInTable="NextActivityIDColumn" msprop:Generator_UserColumnName="NextActivityID" type="xs:int" />
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" minOccurs="0" />
+              <xs:element name="ReturnActivityID" msprop:Generator_ColumnVarNameInTable="columnReturnActivityID" msprop:Generator_ColumnPropNameInRow="ReturnActivityID" msprop:Generator_ColumnPropNameInTable="ReturnActivityIDColumn" msprop:Generator_UserColumnName="ReturnActivityID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkFlowHistory" msprop:Generator_UserTableName="WorkFlowHistory" msprop:Generator_RowEvArgName="WorkFlowHistoryRowChangeEvent" msprop:Generator_TableVarName="tableWorkFlowHistory" msprop:Generator_TablePropName="WorkFlowHistory" msprop:Generator_RowDeletingName="WorkFlowHistoryRowDeleting" msprop:Generator_RowChangingName="WorkFlowHistoryRowChanging" msprop:Generator_RowDeletedName="WorkFlowHistoryRowDeleted" msprop:Generator_TableClassName="WorkFlowHistoryDataTable" msprop:Generator_RowChangedName="WorkFlowHistoryRowChanged" msprop:Generator_RowEvHandlerName="WorkFlowHistoryRowChangeEventHandler" msprop:Generator_RowClassName="WorkFlowHistoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:long" />
+              <xs:element name="StateID" msprop:Generator_ColumnVarNameInTable="columnStateID" msprop:Generator_ColumnPropNameInRow="StateID" msprop:Generator_ColumnPropNameInTable="StateIDColumn" msprop:Generator_UserColumnName="StateID" type="xs:int" />
+              <xs:element name="ActivityID" msprop:Generator_ColumnVarNameInTable="columnActivityID" msprop:Generator_ColumnPropNameInRow="ActivityID" msprop:Generator_ColumnPropNameInTable="ActivityIDColumn" msprop:Generator_UserColumnName="ActivityID" type="xs:int" minOccurs="0" />
+              <xs:element name="CreatorADUserName" msprop:Generator_ColumnVarNameInTable="columnCreatorADUserName" msprop:Generator_ColumnPropNameInRow="CreatorADUserName" msprop:Generator_ColumnPropNameInTable="CreatorADUserNameColumn" msprop:Generator_UserColumnName="CreatorADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CreationDate" msprop:Generator_ColumnVarNameInTable="columnCreationDate" msprop:Generator_ColumnPropNameInRow="CreationDate" msprop:Generator_ColumnPropNameInTable="CreationDateColumn" msprop:Generator_UserColumnName="CreationDate" type="xs:dateTime" />
+              <xs:element name="StateChangeDate" msprop:Generator_ColumnVarNameInTable="columnStateChangeDate" msprop:Generator_ColumnPropNameInRow="StateChangeDate" msprop:Generator_ColumnPropNameInTable="StateChangeDateColumn" msprop:Generator_UserColumnName="StateChangeDate" type="xs:dateTime" />
+              <xs:element name="DeadlineDate" msprop:Generator_ColumnVarNameInTable="columnDeadlineDate" msprop:Generator_ColumnPropNameInRow="DeadlineDate" msprop:Generator_ColumnPropNameInTable="DeadlineDateColumn" msprop:Generator_UserColumnName="DeadlineDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActivityDate" msprop:Generator_ColumnVarNameInTable="columnActivityDate" msprop:Generator_ColumnPropNameInRow="ActivityDate" msprop:Generator_ColumnPropNameInTable="ActivityDateColumn" msprop:Generator_UserColumnName="ActivityDate" type="xs:dateTime" />
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" msprop:Generator_UserColumnName="Priority" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkFlowIcon" msprop:Generator_UserTableName="WorkFlowIcon" msprop:Generator_RowEvArgName="WorkFlowIconRowChangeEvent" msprop:Generator_TableVarName="tableWorkFlowIcon" msprop:Generator_TablePropName="WorkFlowIcon" msprop:Generator_RowDeletingName="WorkFlowIconRowDeleting" msprop:Generator_RowChangingName="WorkFlowIconRowChanging" msprop:Generator_RowDeletedName="WorkFlowIconRowDeleted" msprop:Generator_TableClassName="WorkFlowIconDataTable" msprop:Generator_RowChangedName="WorkFlowIconRowChanged" msprop:Generator_RowEvHandlerName="WorkFlowIconRowChangeEventHandler" msprop:Generator_RowClassName="WorkFlowIconRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Icon" msprop:Generator_ColumnVarNameInTable="columnIcon" msprop:Generator_ColumnPropNameInRow="Icon" msprop:Generator_ColumnPropNameInTable="IconColumn" msprop:Generator_UserColumnName="Icon" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkFlowProviderInstances" msprop:Generator_UserTableName="WorkFlowProviderInstances" msprop:Generator_RowEvArgName="WorkFlowProviderInstancesRowChangeEvent" msprop:Generator_TableVarName="tableWorkFlowProviderInstances" msprop:Generator_TablePropName="WorkFlowProviderInstances" msprop:Generator_RowDeletingName="WorkFlowProviderInstancesRowDeleting" msprop:Generator_RowChangingName="WorkFlowProviderInstancesRowChanging" msprop:Generator_RowDeletedName="WorkFlowProviderInstancesRowDeleted" msprop:Generator_TableClassName="WorkFlowProviderInstancesDataTable" msprop:Generator_RowChangedName="WorkFlowProviderInstancesRowChanged" msprop:Generator_RowEvHandlerName="WorkFlowProviderInstancesRowChangeEventHandler" msprop:Generator_RowClassName="WorkFlowProviderInstancesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="WorkFlowProviderName" msprop:Generator_ColumnVarNameInTable="columnWorkFlowProviderName" msprop:Generator_ColumnPropNameInRow="WorkFlowProviderName" msprop:Generator_ColumnPropNameInTable="WorkFlowProviderNameColumn" msprop:Generator_UserColumnName="WorkFlowProviderName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActiveDate" msprop:Generator_ColumnVarNameInTable="columnActiveDate" msprop:Generator_ColumnPropNameInRow="ActiveDate" msprop:Generator_ColumnPropNameInTable="ActiveDateColumn" msprop:Generator_UserColumnName="ActiveDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkFlowSecurity" msprop:Generator_UserTableName="WorkFlowSecurity" msprop:Generator_RowEvArgName="WorkFlowSecurityRowChangeEvent" msprop:Generator_TableVarName="tableWorkFlowSecurity" msprop:Generator_TablePropName="WorkFlowSecurity" msprop:Generator_RowDeletingName="WorkFlowSecurityRowDeleting" msprop:Generator_RowChangingName="WorkFlowSecurityRowChanging" msprop:Generator_RowDeletedName="WorkFlowSecurityRowDeleted" msprop:Generator_TableClassName="WorkFlowSecurityDataTable" msprop:Generator_RowChangedName="WorkFlowSecurityRowChanged" msprop:Generator_RowEvHandlerName="WorkFlowSecurityRowChangeEventHandler" msprop:Generator_RowClassName="WorkFlowSecurityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" msprop:Generator_UserColumnName="WorkFlowID" type="xs:int" />
+              <xs:element name="SecurityGroupID" msprop:Generator_ColumnVarNameInTable="columnSecurityGroupID" msprop:Generator_ColumnPropNameInRow="SecurityGroupID" msprop:Generator_ColumnPropNameInTable="SecurityGroupIDColumn" msprop:Generator_UserColumnName="SecurityGroupID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Session" msprop:Generator_UserTableName="Session" msprop:Generator_RowEvArgName="SessionRowChangeEvent" msprop:Generator_TableVarName="tableSession" msprop:Generator_TablePropName="Session" msprop:Generator_RowDeletingName="SessionRowDeleting" msprop:Generator_RowChangingName="SessionRowChanging" msprop:Generator_RowDeletedName="SessionRowDeleted" msprop:Generator_TableClassName="SessionDataTable" msprop:Generator_RowChangedName="SessionRowChanged" msprop:Generator_RowEvHandlerName="SessionRowChangeEventHandler" msprop:Generator_RowClassName="SessionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SessionID" msprop:Generator_ColumnVarNameInTable="columnSessionID" msprop:Generator_ColumnPropNameInRow="SessionID" msprop:Generator_ColumnPropNameInTable="SessionIDColumn" msprop:Generator_UserColumnName="SessionID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="36" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SessionStartTime" msprop:Generator_ColumnVarNameInTable="columnSessionStartTime" msprop:Generator_ColumnPropNameInRow="SessionStartTime" msprop:Generator_ColumnPropNameInTable="SessionStartTimeColumn" msprop:Generator_UserColumnName="SessionStartTime" type="xs:dateTime" />
+              <xs:element name="LastActivityTime" msprop:Generator_ColumnVarNameInTable="columnLastActivityTime" msprop:Generator_ColumnPropNameInRow="LastActivityTime" msprop:Generator_ColumnPropNameInTable="LastActivityTimeColumn" msprop:Generator_UserColumnName="LastActivityTime" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StageDefinition" msprop:Generator_UserTableName="StageDefinition" msprop:Generator_RowEvArgName="StageDefinitionRowChangeEvent" msprop:Generator_TableVarName="tableStageDefinition" msprop:Generator_TablePropName="StageDefinition" msprop:Generator_RowDeletingName="StageDefinitionRowDeleting" msprop:Generator_RowChangingName="StageDefinitionRowChanging" msprop:Generator_RowDeletedName="StageDefinitionRowDeleted" msprop:Generator_TableClassName="StageDefinitionDataTable" msprop:Generator_RowChangedName="StageDefinitionRowChanged" msprop:Generator_RowEvHandlerName="StageDefinitionRowChangeEventHandler" msprop:Generator_RowClassName="StageDefinitionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StageDefinitionKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnStageDefinitionKey" msprop:Generator_ColumnPropNameInRow="StageDefinitionKey" msprop:Generator_ColumnPropNameInTable="StageDefinitionKeyColumn" msprop:Generator_UserColumnName="StageDefinitionKey" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GeneralStatusKey" msprop:Generator_ColumnVarNameInTable="columnGeneralStatusKey" msprop:Generator_ColumnPropNameInRow="GeneralStatusKey" msprop:Generator_ColumnPropNameInTable="GeneralStatusKeyColumn" msprop:Generator_UserColumnName="GeneralStatusKey" type="xs:int" />
+              <xs:element name="IsComposite" msprop:Generator_ColumnVarNameInTable="columnIsComposite" msprop:Generator_ColumnPropNameInRow="IsComposite" msprop:Generator_ColumnPropNameInTable="IsCompositeColumn" msprop:Generator_UserColumnName="IsComposite" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CompositeTypeName" msprop:Generator_ColumnVarNameInTable="columnCompositeTypeName" msprop:Generator_ColumnPropNameInRow="CompositeTypeName" msprop:Generator_ColumnPropNameInTable="CompositeTypeNameColumn" msprop:Generator_UserColumnName="CompositeTypeName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StageDefinitionGroup" msprop:Generator_UserTableName="StageDefinitionGroup" msprop:Generator_RowEvArgName="StageDefinitionGroupRowChangeEvent" msprop:Generator_TableVarName="tableStageDefinitionGroup" msprop:Generator_TablePropName="StageDefinitionGroup" msprop:Generator_RowDeletingName="StageDefinitionGroupRowDeleting" msprop:Generator_RowChangingName="StageDefinitionGroupRowChanging" msprop:Generator_RowDeletedName="StageDefinitionGroupRowDeleted" msprop:Generator_TableClassName="StageDefinitionGroupDataTable" msprop:Generator_RowChangedName="StageDefinitionGroupRowChanged" msprop:Generator_RowEvHandlerName="StageDefinitionGroupRowChangeEventHandler" msprop:Generator_RowClassName="StageDefinitionGroupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StageDefinitionGroupKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInRow="StageDefinitionGroupKey" msprop:Generator_ColumnPropNameInTable="StageDefinitionGroupKeyColumn" msprop:Generator_UserColumnName="StageDefinitionGroupKey" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GenericKeyTypeKey" msprop:Generator_ColumnVarNameInTable="columnGenericKeyTypeKey" msprop:Generator_ColumnPropNameInRow="GenericKeyTypeKey" msprop:Generator_ColumnPropNameInTable="GenericKeyTypeKeyColumn" msprop:Generator_UserColumnName="GenericKeyTypeKey" type="xs:int" />
+              <xs:element name="GeneralStatusKey" msprop:Generator_ColumnVarNameInTable="columnGeneralStatusKey" msprop:Generator_ColumnPropNameInRow="GeneralStatusKey" msprop:Generator_ColumnPropNameInTable="GeneralStatusKeyColumn" msprop:Generator_UserColumnName="GeneralStatusKey" type="xs:int" />
+              <xs:element name="ParentKey" msprop:Generator_ColumnVarNameInTable="columnParentKey" msprop:Generator_ColumnPropNameInRow="ParentKey" msprop:Generator_ColumnPropNameInTable="ParentKeyColumn" msprop:Generator_UserColumnName="ParentKey" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StageTransition" msprop:Generator_UserTableName="StageTransition" msprop:Generator_RowEvArgName="StageTransitionRowChangeEvent" msprop:Generator_TableVarName="tableStageTransition" msprop:Generator_TablePropName="StageTransition" msprop:Generator_RowDeletingName="StageTransitionRowDeleting" msprop:Generator_RowChangingName="StageTransitionRowChanging" msprop:Generator_RowDeletedName="StageTransitionRowDeleted" msprop:Generator_TableClassName="StageTransitionDataTable" msprop:Generator_RowChangedName="StageTransitionRowChanged" msprop:Generator_RowEvHandlerName="StageTransitionRowChangeEventHandler" msprop:Generator_RowClassName="StageTransitionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StageTransitionKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnStageTransitionKey" msprop:Generator_ColumnPropNameInRow="StageTransitionKey" msprop:Generator_ColumnPropNameInTable="StageTransitionKeyColumn" msprop:Generator_UserColumnName="StageTransitionKey" type="xs:int" />
+              <xs:element name="StageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnVarNameInTable="columnStageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInRow="StageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInTable="StageDefinitionStageDefinitionGroupKeyColumn" msprop:Generator_UserColumnName="StageDefinitionStageDefinitionGroupKey" type="xs:int" />
+              <xs:element name="GenericKey" msprop:Generator_ColumnVarNameInTable="columnGenericKey" msprop:Generator_ColumnPropNameInRow="GenericKey" msprop:Generator_ColumnPropNameInTable="GenericKeyColumn" msprop:Generator_UserColumnName="GenericKey" type="xs:int" />
+              <xs:element name="ADUserKey" msprop:Generator_ColumnVarNameInTable="columnADUserKey" msprop:Generator_ColumnPropNameInRow="ADUserKey" msprop:Generator_ColumnPropNameInTable="ADUserKeyColumn" msprop:Generator_UserColumnName="ADUserKey" type="xs:int" />
+              <xs:element name="TransitionDate" msprop:Generator_ColumnVarNameInTable="columnTransitionDate" msprop:Generator_ColumnPropNameInRow="TransitionDate" msprop:Generator_ColumnPropNameInTable="TransitionDateColumn" msprop:Generator_UserColumnName="TransitionDate" type="xs:dateTime" />
+              <xs:element name="Comments" msprop:Generator_ColumnVarNameInTable="columnComments" msprop:Generator_ColumnPropNameInRow="Comments" msprop:Generator_ColumnPropNameInTable="CommentsColumn" msprop:Generator_UserColumnName="Comments" type="xs:string" minOccurs="0" />
+              <xs:element name="EndTransitionDate" msprop:Generator_ColumnVarNameInTable="columnEndTransitionDate" msprop:Generator_ColumnPropNameInRow="EndTransitionDate" msprop:Generator_ColumnPropNameInTable="EndTransitionDateColumn" msprop:Generator_UserColumnName="EndTransitionDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ADUser" msprop:Generator_UserTableName="ADUser" msprop:Generator_RowEvArgName="ADUserRowChangeEvent" msprop:Generator_TableVarName="tableADUser" msprop:Generator_TablePropName="ADUser" msprop:Generator_RowDeletingName="ADUserRowDeleting" msprop:Generator_RowChangingName="ADUserRowChanging" msprop:Generator_RowDeletedName="ADUserRowDeleted" msprop:Generator_TableClassName="ADUserDataTable" msprop:Generator_RowChangedName="ADUserRowChanged" msprop:Generator_RowEvHandlerName="ADUserRowChangeEventHandler" msprop:Generator_RowClassName="ADUserRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ADUserKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnADUserKey" msprop:Generator_ColumnPropNameInRow="ADUserKey" msprop:Generator_ColumnPropNameInTable="ADUserKeyColumn" msprop:Generator_UserColumnName="ADUserKey" type="xs:int" />
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GeneralStatusKey" msprop:Generator_ColumnVarNameInTable="columnGeneralStatusKey" msprop:Generator_ColumnPropNameInRow="GeneralStatusKey" msprop:Generator_ColumnPropNameInTable="GeneralStatusKeyColumn" msprop:Generator_UserColumnName="GeneralStatusKey" type="xs:int" />
+              <xs:element name="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Initials" msprop:Generator_ColumnVarNameInTable="columnInitials" msprop:Generator_ColumnPropNameInRow="Initials" msprop:Generator_ColumnPropNameInTable="InitialsColumn" msprop:Generator_UserColumnName="Initials" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TelephoneNumber" msprop:Generator_ColumnVarNameInTable="columnTelephoneNumber" msprop:Generator_ColumnPropNameInRow="TelephoneNumber" msprop:Generator_ColumnPropNameInTable="TelephoneNumberColumn" msprop:Generator_UserColumnName="TelephoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FaxNumber" msprop:Generator_ColumnVarNameInTable="columnFaxNumber" msprop:Generator_ColumnPropNameInRow="FaxNumber" msprop:Generator_ColumnPropNameInTable="FaxNumberColumn" msprop:Generator_UserColumnName="FaxNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EmailAddress" msprop:Generator_ColumnVarNameInTable="columnEmailAddress" msprop:Generator_ColumnPropNameInRow="EmailAddress" msprop:Generator_ColumnPropNameInTable="EmailAddressColumn" msprop:Generator_UserColumnName="EmailAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Password" msprop:Generator_ColumnVarNameInTable="columnPassword" msprop:Generator_ColumnPropNameInRow="Password" msprop:Generator_ColumnPropNameInTable="PasswordColumn" msprop:Generator_UserColumnName="Password" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PasswordQuestion" msprop:Generator_ColumnVarNameInTable="columnPasswordQuestion" msprop:Generator_ColumnPropNameInRow="PasswordQuestion" msprop:Generator_ColumnPropNameInTable="PasswordQuestionColumn" msprop:Generator_UserColumnName="PasswordQuestion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PasswordAnswer" msprop:Generator_ColumnVarNameInTable="columnPasswordAnswer" msprop:Generator_ColumnPropNameInRow="PasswordAnswer" msprop:Generator_ColumnPropNameInTable="PasswordAnswerColumn" msprop:Generator_UserColumnName="PasswordAnswer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StageDefinitionStageDefinitionGroup" msprop:Generator_UserTableName="StageDefinitionStageDefinitionGroup" msprop:Generator_RowEvArgName="StageDefinitionStageDefinitionGroupRowChangeEvent" msprop:Generator_TableVarName="tableStageDefinitionStageDefinitionGroup" msprop:Generator_TablePropName="StageDefinitionStageDefinitionGroup" msprop:Generator_RowDeletingName="StageDefinitionStageDefinitionGroupRowDeleting" msprop:Generator_RowChangingName="StageDefinitionStageDefinitionGroupRowChanging" msprop:Generator_RowDeletedName="StageDefinitionStageDefinitionGroupRowDeleted" msprop:Generator_TableClassName="StageDefinitionStageDefinitionGroupDataTable" msprop:Generator_RowChangedName="StageDefinitionStageDefinitionGroupRowChanged" msprop:Generator_RowEvHandlerName="StageDefinitionStageDefinitionGroupRowChangeEventHandler" msprop:Generator_RowClassName="StageDefinitionStageDefinitionGroupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnVarNameInTable="columnStageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInRow="StageDefinitionStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInTable="StageDefinitionStageDefinitionGroupKeyColumn" msprop:Generator_UserColumnName="StageDefinitionStageDefinitionGroupKey" type="xs:int" minOccurs="0" />
+              <xs:element name="StageDefinitionGroupKey" msprop:Generator_ColumnVarNameInTable="columnStageDefinitionGroupKey" msprop:Generator_ColumnPropNameInRow="StageDefinitionGroupKey" msprop:Generator_ColumnPropNameInTable="StageDefinitionGroupKeyColumn" msprop:Generator_UserColumnName="StageDefinitionGroupKey" type="xs:int" minOccurs="0" />
+              <xs:element name="StageDefinitionKey" msprop:Generator_ColumnVarNameInTable="columnStageDefinitionKey" msprop:Generator_ColumnPropNameInRow="StageDefinitionKey" msprop:Generator_ColumnPropNameInTable="StageDefinitionKeyColumn" msprop:Generator_UserColumnName="StageDefinitionKey" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WorkListLog" msprop:Generator_TableClassName="WorkListLogDataTable" msprop:Generator_TableVarName="tableWorkListLog" msprop:Generator_TablePropName="WorkListLog" msprop:Generator_RowDeletingName="WorkListLogRowDeleting" msprop:Generator_UserTableName="WorkListLog" msprop:Generator_RowChangingName="WorkListLogRowChanging" msprop:Generator_RowEvHandlerName="WorkListLogRowChangeEventHandler" msprop:Generator_RowDeletedName="WorkListLogRowDeleted" msprop:Generator_RowEvArgName="WorkListLogRowChangeEvent" msprop:Generator_RowChangedName="WorkListLogRowChanged" msprop:Generator_RowClassName="WorkListLogRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="InstanceID" msprop:Generator_ColumnVarNameInTable="columnInstanceID" msprop:Generator_ColumnPropNameInRow="InstanceID" msprop:Generator_ColumnPropNameInTable="InstanceIDColumn" msprop:Generator_UserColumnName="InstanceID" type="xs:long" />
+              <xs:element name="ADUserName" msprop:Generator_ColumnVarNameInTable="columnADUserName" msprop:Generator_ColumnPropNameInRow="ADUserName" msprop:Generator_ColumnPropNameInTable="ADUserNameColumn" msprop:Generator_UserColumnName="ADUserName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ListDate" msprop:Generator_ColumnVarNameInTable="columnListDate" msprop:Generator_ColumnPropNameInRow="ListDate" msprop:Generator_ColumnPropNameInTable="ListDateColumn" msprop:Generator_UserColumnName="ListDate" type="xs:dateTime" />
+              <xs:element name="WorkflowHistoryID" msprop:Generator_ColumnVarNameInTable="columnWorkflowHistoryID" msprop:Generator_ColumnPropNameInRow="WorkflowHistoryID" msprop:Generator_ColumnPropNameInTable="WorkflowHistoryIDColumn" msprop:Generator_UserColumnName="WorkflowHistoryID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ActiveExternalActivity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WorkList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkList" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Activity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Activity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ActivitySecurity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ActivitySecurity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ActivityType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ActivityType" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ExternalActivity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ExternalActivity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ExternalActivityTarget_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ExternalActivityTarget" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Form_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Form" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Instance_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Instance" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="InstanceActivitySecurity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InstanceActivitySecurity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Log_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Log" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Process_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Process" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ProcessAssembly_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ProcessAssembly" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ScheduledActivity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ScheduledActivity" />
+      <xs:field xpath="mstns:InstanceID" />
+      <xs:field xpath="mstns:Time" />
+      <xs:field xpath="mstns:ActivityID" />
+    </xs:unique>
+    <xs:unique name="SecurityGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SecurityGroup" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="StageActivity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StageActivity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="State_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:State" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="StateForm_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StateForm" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="StateTrackList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StateTrackList" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="StateType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StateType" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="StateWorkList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StateWorkList" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="TrackList_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TrackList" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WorkFlow_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkFlow" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WorkFlowActivity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkFlowActivity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WorkFlowHistory_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkFlowHistory" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WorkFlowIcon_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkFlowIcon" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WorkFlowProviderInstances_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkFlowProviderInstances" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WorkFlowSecurity_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WorkFlowSecurity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="Session_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Session" />
+      <xs:field xpath="mstns:SessionID" />
+    </xs:unique>
+    <xs:unique name="StageDefinition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StageDefinition" />
+      <xs:field xpath="mstns:StageDefinitionKey" />
+    </xs:unique>
+    <xs:unique name="StageDefinitionGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StageDefinitionGroup" />
+      <xs:field xpath="mstns:StageDefinitionGroupKey" />
+    </xs:unique>
+    <xs:unique name="StageTransition_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StageTransition" />
+      <xs:field xpath="mstns:StageTransitionKey" />
+    </xs:unique>
+    <xs:unique name="ADUser_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ADUser" />
+      <xs:field xpath="mstns:ADUserKey" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_ActiveExternalActivity_ExternalActivity" msdata:parent="ExternalActivity" msdata:child="ActiveExternalActivity" msdata:parentkey="ID" msdata:childkey="ExternalActivityID" msprop:Generator_UserChildTable="ActiveExternalActivity" msprop:Generator_ChildPropName="GetActiveExternalActivityRows" msprop:Generator_UserParentTable="ExternalActivity" msprop:Generator_UserRelationName="FK_ActiveExternalActivity_ExternalActivity" msprop:Generator_RelationVarName="relationFK_ActiveExternalActivity_ExternalActivity" msprop:Generator_ParentPropName="ExternalActivityRow" />
+      <msdata:Relationship name="Instance_WorkList_FK1" msdata:parent="Instance" msdata:child="WorkList" msdata:parentkey="ID" msdata:childkey="InstanceID" msprop:Generator_UserChildTable="WorkList" msprop:Generator_ChildPropName="GetWorkListRows" msprop:Generator_UserParentTable="Instance" msprop:Generator_UserRelationName="Instance_WorkList_FK1" msprop:Generator_RelationVarName="relationInstance_WorkList_FK1" msprop:Generator_ParentPropName="InstanceRow" />
+      <msdata:Relationship name="FK_Activity_ActivityType" msdata:parent="ActivityType" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="Type" msprop:Generator_UserChildTable="Activity" msprop:Generator_ChildPropName="GetActivityRows" msprop:Generator_UserParentTable="ActivityType" msprop:Generator_UserRelationName="FK_Activity_ActivityType" msprop:Generator_RelationVarName="relationFK_Activity_ActivityType" msprop:Generator_ParentPropName="ActivityTypeRow" />
+      <msdata:Relationship name="FK_Activity_ExternalActivity" msdata:parent="ExternalActivity" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="RaiseExternalActivity" msprop:Generator_UserChildTable="Activity" msprop:Generator_ChildPropName="GetActivityRows" msprop:Generator_UserParentTable="ExternalActivity" msprop:Generator_UserRelationName="FK_Activity_ExternalActivity" msprop:Generator_RelationVarName="relationFK_Activity_ExternalActivity" msprop:Generator_ParentPropName="ExternalActivityRow" />
+      <msdata:Relationship name="FK_Activity_ExternalActivityTarget" msdata:parent="ExternalActivityTarget" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="ExternalActivityTarget" msprop:Generator_UserChildTable="Activity" msprop:Generator_ChildPropName="GetActivityRows" msprop:Generator_UserParentTable="ExternalActivityTarget" msprop:Generator_UserRelationName="FK_Activity_ExternalActivityTarget" msprop:Generator_RelationVarName="relationFK_Activity_ExternalActivityTarget" msprop:Generator_ParentPropName="ExternalActivityTargetRow" />
+      <msdata:Relationship name="FK_Activity_State" msdata:parent="State" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="Activity" msprop:Generator_ChildPropName="GetActivityRowsByFK_Activity_State" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="FK_Activity_State" msprop:Generator_RelationVarName="relationFK_Activity_State" msprop:Generator_ParentPropName="StateRowByFK_Activity_State" />
+      <msdata:Relationship name="Form_Activity_FK1" msdata:parent="Form" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="FormID" msprop:Generator_UserChildTable="Activity" msprop:Generator_ChildPropName="GetActivityRows" msprop:Generator_UserParentTable="Form" msprop:Generator_UserRelationName="Form_Activity_FK1" msprop:Generator_RelationVarName="relationForm_Activity_FK1" msprop:Generator_ParentPropName="FormRow" />
+      <msdata:Relationship name="State_Activity_NextState_FK" msdata:parent="State" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="NextStateID" msprop:Generator_UserChildTable="Activity" msprop:Generator_ChildPropName="GetActivityRowsByState_Activity_FK1" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_Activity_NextState_FK" msprop:Generator_RelationVarName="relationState_Activity_NextState_FK" msprop:Generator_ParentPropName="StateRowByState_Activity_NextState_FK" />
+      <msdata:Relationship name="WorkFlow_Activity_FK1" msdata:parent="WorkFlow" msdata:child="Activity" msdata:parentkey="ID" msdata:childkey="WorkFlowID" msprop:Generator_UserChildTable="Activity" msprop:Generator_ChildPropName="GetActivityRows" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="WorkFlow_Activity_FK1" msprop:Generator_RelationVarName="relationWorkFlow_Activity_FK1" msprop:Generator_ParentPropName="WorkFlowRow" />
+      <msdata:Relationship name="Activity_ActivitySecurity_FK1" msdata:parent="Activity" msdata:child="ActivitySecurity" msdata:parentkey="ID" msdata:childkey="ActivityID" msprop:Generator_UserChildTable="ActivitySecurity" msprop:Generator_ChildPropName="GetActivitySecurityRows" msprop:Generator_UserParentTable="Activity" msprop:Generator_UserRelationName="Activity_ActivitySecurity_FK1" msprop:Generator_RelationVarName="relationActivity_ActivitySecurity_FK1" msprop:Generator_ParentPropName="ActivityRow" />
+      <msdata:Relationship name="SecurityGroup_ActivitySecurity_FK1" msdata:parent="SecurityGroup" msdata:child="ActivitySecurity" msdata:parentkey="ID" msdata:childkey="SecurityGroupID" msprop:Generator_UserChildTable="ActivitySecurity" msprop:Generator_ChildPropName="GetActivitySecurityRows" msprop:Generator_UserParentTable="SecurityGroup" msprop:Generator_UserRelationName="SecurityGroup_ActivitySecurity_FK1" msprop:Generator_RelationVarName="relationSecurityGroup_ActivitySecurity_FK1" msprop:Generator_ParentPropName="SecurityGroupRow" />
+      <msdata:Relationship name="WorkFlow_Form_FK1" msdata:parent="WorkFlow" msdata:child="Form" msdata:parentkey="ID" msdata:childkey="WorkFlowID" msprop:Generator_UserChildTable="Form" msprop:Generator_ChildPropName="GetFormRows" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="WorkFlow_Form_FK1" msprop:Generator_RelationVarName="relationWorkFlow_Form_FK1" msprop:Generator_ParentPropName="WorkFlowRow" />
+      <msdata:Relationship name="Instance_Instance_FK1" msdata:parent="Instance" msdata:child="Instance" msdata:parentkey="ID" msdata:childkey="ParentInstanceID" msprop:Generator_UserChildTable="Instance" msprop:Generator_ChildPropName="GetInstanceRows" msprop:Generator_UserParentTable="Instance" msprop:Generator_UserRelationName="Instance_Instance_FK1" msprop:Generator_RelationVarName="relationInstance_Instance_FK1" msprop:Generator_ParentPropName="InstanceRowParent" />
+      <msdata:Relationship name="State_Instance_FK1" msdata:parent="State" msdata:child="Instance" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="Instance" msprop:Generator_ChildPropName="GetInstanceRows" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_Instance_FK1" msprop:Generator_RelationVarName="relationState_Instance_FK1" msprop:Generator_ParentPropName="StateRow" />
+      <msdata:Relationship name="WorkFlow_Instance_FK1" msdata:parent="WorkFlow" msdata:child="Instance" msdata:parentkey="ID" msdata:childkey="WorkFlowID" msprop:Generator_UserChildTable="Instance" msprop:Generator_ChildPropName="GetInstanceRows" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="WorkFlow_Instance_FK1" msprop:Generator_RelationVarName="relationWorkFlow_Instance_FK1" msprop:Generator_ParentPropName="WorkFlowRow" />
+      <msdata:Relationship name="Activity_InstanceActivitySecurity_FK1" msdata:parent="Activity" msdata:child="InstanceActivitySecurity" msdata:parentkey="ID" msdata:childkey="ActivityID" msprop:Generator_UserChildTable="InstanceActivitySecurity" msprop:Generator_ChildPropName="GetInstanceActivitySecurityRows" msprop:Generator_UserParentTable="Activity" msprop:Generator_UserRelationName="Activity_InstanceActivitySecurity_FK1" msprop:Generator_RelationVarName="relationActivity_InstanceActivitySecurity_FK1" msprop:Generator_ParentPropName="ActivityRow" />
+      <msdata:Relationship name="Instance_InstanceActivitySecurity_FK1" msdata:parent="Instance" msdata:child="InstanceActivitySecurity" msdata:parentkey="ID" msdata:childkey="InstanceID" msprop:Generator_UserChildTable="InstanceActivitySecurity" msprop:Generator_ChildPropName="GetInstanceActivitySecurityRows" msprop:Generator_UserParentTable="Instance" msprop:Generator_UserRelationName="Instance_InstanceActivitySecurity_FK1" msprop:Generator_RelationVarName="relationInstance_InstanceActivitySecurity_FK1" msprop:Generator_ParentPropName="InstanceRow" />
+      <msdata:Relationship name="Activity_Log_FK1" msdata:parent="Activity" msdata:child="Log" msdata:parentkey="ID" msdata:childkey="ActivityID" msprop:Generator_UserChildTable="Log" msprop:Generator_ChildPropName="GetLogRows" msprop:Generator_UserParentTable="Activity" msprop:Generator_UserRelationName="Activity_Log_FK1" msprop:Generator_RelationVarName="relationActivity_Log_FK1" msprop:Generator_ParentPropName="ActivityRow" />
+      <msdata:Relationship name="State_Log_FK1" msdata:parent="State" msdata:child="Log" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="Log" msprop:Generator_ChildPropName="GetLogRows" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_Log_FK1" msprop:Generator_RelationVarName="relationState_Log_FK1" msprop:Generator_ParentPropName="StateRow" />
+      <msdata:Relationship name="Process_Process_FK1" msdata:parent="Process" msdata:child="Process" msdata:parentkey="ID" msdata:childkey="ProcessAncestorID" msprop:Generator_UserChildTable="Process" msprop:Generator_ChildPropName="GetProcessRows" msprop:Generator_UserParentTable="Process" msprop:Generator_UserRelationName="Process_Process_FK1" msprop:Generator_RelationVarName="relationProcess_Process_FK1" msprop:Generator_ParentPropName="ProcessRowParent" />
+      <msdata:Relationship name="Process_ProcessAssembly_FK1" msdata:parent="Process" msdata:child="ProcessAssembly" msdata:parentkey="ID" msdata:childkey="ProcessID" msprop:Generator_UserChildTable="ProcessAssembly" msprop:Generator_ChildPropName="GetProcessAssemblyRows" msprop:Generator_UserParentTable="Process" msprop:Generator_UserRelationName="Process_ProcessAssembly_FK1" msprop:Generator_RelationVarName="relationProcess_ProcessAssembly_FK1" msprop:Generator_ParentPropName="ProcessRow" />
+      <msdata:Relationship name="ProcessAssembly_ProcessAssembly_FK1" msdata:parent="ProcessAssembly" msdata:child="ProcessAssembly" msdata:parentkey="ID" msdata:childkey="ParentID" msprop:Generator_UserChildTable="ProcessAssembly" msprop:Generator_ChildPropName="GetProcessAssemblyRows" msprop:Generator_UserParentTable="ProcessAssembly" msprop:Generator_UserRelationName="ProcessAssembly_ProcessAssembly_FK1" msprop:Generator_RelationVarName="relationProcessAssembly_ProcessAssembly_FK1" msprop:Generator_ParentPropName="ProcessAssemblyRowParent" />
+      <msdata:Relationship name="Process_SecurityGroup_FK1" msdata:parent="Process" msdata:child="SecurityGroup" msdata:parentkey="ID" msdata:childkey="ProcessID" msprop:Generator_UserChildTable="SecurityGroup" msprop:Generator_ChildPropName="GetSecurityGroupRows" msprop:Generator_UserParentTable="Process" msprop:Generator_UserRelationName="Process_SecurityGroup_FK1" msprop:Generator_RelationVarName="relationProcess_SecurityGroup_FK1" msprop:Generator_ParentPropName="ProcessRow" />
+      <msdata:Relationship name="WorkFlow_SecurityGroup_FK1" msdata:parent="WorkFlow" msdata:child="SecurityGroup" msdata:parentkey="ID" msdata:childkey="WorkFlowID" msprop:Generator_UserChildTable="SecurityGroup" msprop:Generator_ChildPropName="GetSecurityGroupRows" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="WorkFlow_SecurityGroup_FK1" msprop:Generator_RelationVarName="relationWorkFlow_SecurityGroup_FK1" msprop:Generator_ParentPropName="WorkFlowRow" />
+      <msdata:Relationship name="FK_StageActivity_Activity" msdata:parent="Activity" msdata:child="StageActivity" msdata:parentkey="ID" msdata:childkey="ActivityID" msprop:Generator_UserChildTable="StageActivity" msprop:Generator_ChildPropName="GetStageActivityRows" msprop:Generator_UserParentTable="Activity" msprop:Generator_UserRelationName="FK_StageActivity_Activity" msprop:Generator_RelationVarName="relationFK_StageActivity_Activity" msprop:Generator_ParentPropName="ActivityRow" />
+      <msdata:Relationship name="FK_State_StateType" msdata:parent="StateType" msdata:child="State" msdata:parentkey="ID" msdata:childkey="Type" msprop:Generator_UserChildTable="State" msprop:Generator_ChildPropName="GetStateRows" msprop:Generator_UserParentTable="StateType" msprop:Generator_UserRelationName="FK_State_StateType" msprop:Generator_RelationVarName="relationFK_State_StateType" msprop:Generator_ParentPropName="StateTypeRow" />
+      <msdata:Relationship name="WorkFlow_State_FK1" msdata:parent="WorkFlow" msdata:child="State" msdata:parentkey="ID" msdata:childkey="WorkFlowID" msprop:Generator_UserChildTable="State" msprop:Generator_ChildPropName="GetStateRows" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="WorkFlow_State_FK1" msprop:Generator_RelationVarName="relationWorkFlow_State_FK1" msprop:Generator_ParentPropName="WorkFlowRow" />
+      <msdata:Relationship name="Form_StateForms_FK1" msdata:parent="Form" msdata:child="StateForm" msdata:parentkey="ID" msdata:childkey="FormID" msprop:Generator_UserChildTable="StateForm" msprop:Generator_ChildPropName="GetStateFormRows" msprop:Generator_UserParentTable="Form" msprop:Generator_UserRelationName="Form_StateForms_FK1" msprop:Generator_RelationVarName="relationForm_StateForms_FK1" msprop:Generator_ParentPropName="FormRow" />
+      <msdata:Relationship name="State_StateForms_FK1" msdata:parent="State" msdata:child="StateForm" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="StateForm" msprop:Generator_ChildPropName="GetStateFormRows" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_StateForms_FK1" msprop:Generator_RelationVarName="relationState_StateForms_FK1" msprop:Generator_ParentPropName="StateRow" />
+      <msdata:Relationship name="SecurityGroupID_StateSecurity_FK1" msdata:parent="SecurityGroup" msdata:child="StateTrackList" msdata:parentkey="ID" msdata:childkey="SecurityGroupID" msprop:Generator_UserChildTable="StateTrackList" msprop:Generator_ChildPropName="GetStateTrackListRows" msprop:Generator_UserParentTable="SecurityGroup" msprop:Generator_UserRelationName="SecurityGroupID_StateSecurity_FK1" msprop:Generator_RelationVarName="relationSecurityGroupID_StateSecurity_FK1" msprop:Generator_ParentPropName="SecurityGroupRow" />
+      <msdata:Relationship name="State_StateTrackList_FK1" msdata:parent="State" msdata:child="StateTrackList" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="StateTrackList" msprop:Generator_ChildPropName="GetStateTrackListRows" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_StateTrackList_FK1" msprop:Generator_RelationVarName="relationState_StateTrackList_FK1" msprop:Generator_ParentPropName="StateRow" />
+      <msdata:Relationship name="SecurityGroupID_StateWorkList_FK1" msdata:parent="SecurityGroup" msdata:child="StateWorkList" msdata:parentkey="ID" msdata:childkey="SecurityGroupID" msprop:Generator_UserChildTable="StateWorkList" msprop:Generator_ChildPropName="GetStateWorkListRows" msprop:Generator_UserParentTable="SecurityGroup" msprop:Generator_UserRelationName="SecurityGroupID_StateWorkList_FK1" msprop:Generator_RelationVarName="relationSecurityGroupID_StateWorkList_FK1" msprop:Generator_ParentPropName="SecurityGroupRow" />
+      <msdata:Relationship name="State_StateWorkList_FK1" msdata:parent="State" msdata:child="StateWorkList" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="StateWorkList" msprop:Generator_ChildPropName="GetStateWorkListRows" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_StateWorkList_FK1" msprop:Generator_RelationVarName="relationState_StateWorkList_FK1" msprop:Generator_ParentPropName="StateRow" />
+      <msdata:Relationship name="Instance_TrackList_FK1" msdata:parent="Instance" msdata:child="TrackList" msdata:parentkey="ID" msdata:childkey="InstanceID" msprop:Generator_UserChildTable="TrackList" msprop:Generator_ChildPropName="GetTrackListRows" msprop:Generator_UserParentTable="Instance" msprop:Generator_UserRelationName="Instance_TrackList_FK1" msprop:Generator_RelationVarName="relationInstance_TrackList_FK1" msprop:Generator_ParentPropName="InstanceRow" />
+      <msdata:Relationship name="Process_WorkFlow_FK1" msdata:parent="Process" msdata:child="WorkFlow" msdata:parentkey="ID" msdata:childkey="ProcessID" msprop:Generator_UserChildTable="WorkFlow" msprop:Generator_ChildPropName="GetWorkFlowRows" msprop:Generator_UserParentTable="Process" msprop:Generator_UserRelationName="Process_WorkFlow_FK1" msprop:Generator_RelationVarName="relationProcess_WorkFlow_FK1" msprop:Generator_ParentPropName="ProcessRow" />
+      <msdata:Relationship name="WorkFlow_WorkFlow_FK1" msdata:parent="WorkFlow" msdata:child="WorkFlow" msdata:parentkey="ID" msdata:childkey="WorkFlowAncestorID" msprop:Generator_UserChildTable="WorkFlow" msprop:Generator_ChildPropName="GetWorkFlowRows" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="WorkFlow_WorkFlow_FK1" msprop:Generator_RelationVarName="relationWorkFlow_WorkFlow_FK1" msprop:Generator_ParentPropName="WorkFlowRowParent" />
+      <msdata:Relationship name="WorkFlowIcon_WorkFlow_FK1" msdata:parent="WorkFlowIcon" msdata:child="WorkFlow" msdata:parentkey="ID" msdata:childkey="IconID" msprop:Generator_UserChildTable="WorkFlow" msprop:Generator_ChildPropName="GetWorkFlowRows" msprop:Generator_UserParentTable="WorkFlowIcon" msprop:Generator_UserRelationName="WorkFlowIcon_WorkFlow_FK1" msprop:Generator_RelationVarName="relationWorkFlowIcon_WorkFlow_FK1" msprop:Generator_ParentPropName="WorkFlowIconRow" />
+      <msdata:Relationship name="FK_WorkFlowActivity_Activity" msdata:parent="Activity" msdata:child="WorkFlowActivity" msdata:parentkey="ID" msdata:childkey="NextActivityID" msprop:Generator_UserChildTable="WorkFlowActivity" msprop:Generator_ChildPropName="GetWorkFlowActivityRows" msprop:Generator_UserParentTable="Activity" msprop:Generator_UserRelationName="FK_WorkFlowActivity_Activity" msprop:Generator_RelationVarName="relationFK_WorkFlowActivity_Activity" msprop:Generator_ParentPropName="ActivityRow" />
+      <msdata:Relationship name="FK_WorkFlowActivity_NextW_WorkFlow" msdata:parent="WorkFlow" msdata:child="WorkFlowActivity" msdata:parentkey="ID" msdata:childkey="NextWorkFlowID" msprop:Generator_UserChildTable="WorkFlowActivity" msprop:Generator_ChildPropName="GetWorkFlowActivityRowsByFK_WorkFlowActivity_NextW_WorkFlow" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="FK_WorkFlowActivity_NextW_WorkFlow" msprop:Generator_RelationVarName="relationFK_WorkFlowActivity_NextW_WorkFlow" msprop:Generator_ParentPropName="WorkFlowRowByFK_WorkFlowActivity_NextW_WorkFlow" />
+      <msdata:Relationship name="FK_WorkFlowActivity_WorkFlow" msdata:parent="WorkFlow" msdata:child="WorkFlowActivity" msdata:parentkey="ID" msdata:childkey="WorkFlowID" msprop:Generator_UserChildTable="WorkFlowActivity" msprop:Generator_ChildPropName="GetWorkFlowActivityRowsByFK_WorkFlowActivity_WorkFlow" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="FK_WorkFlowActivity_WorkFlow" msprop:Generator_RelationVarName="relationFK_WorkFlowActivity_WorkFlow" msprop:Generator_ParentPropName="WorkFlowRowByFK_WorkFlowActivity_WorkFlow" />
+      <msdata:Relationship name="Activity_FlowHistory_FK1" msdata:parent="Activity" msdata:child="WorkFlowHistory" msdata:parentkey="ID" msdata:childkey="ActivityID" msprop:Generator_UserChildTable="WorkFlowHistory" msprop:Generator_ChildPropName="GetWorkFlowHistoryRows" msprop:Generator_UserParentTable="Activity" msprop:Generator_UserRelationName="Activity_FlowHistory_FK1" msprop:Generator_RelationVarName="relationActivity_FlowHistory_FK1" msprop:Generator_ParentPropName="ActivityRow" />
+      <msdata:Relationship name="State_FlowHistory_FK1" msdata:parent="State" msdata:child="WorkFlowHistory" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="WorkFlowHistory" msprop:Generator_ChildPropName="GetWorkFlowHistoryRows" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_FlowHistory_FK1" msprop:Generator_RelationVarName="relationState_FlowHistory_FK1" msprop:Generator_ParentPropName="StateRow" />
+      <msdata:Relationship name="FK_WorkFlowSecurity_SecurityGroup" msdata:parent="SecurityGroup" msdata:child="WorkFlowSecurity" msdata:parentkey="ID" msdata:childkey="SecurityGroupID" msprop:Generator_UserChildTable="WorkFlowSecurity" msprop:Generator_ChildPropName="GetWorkFlowSecurityRows" msprop:Generator_UserParentTable="SecurityGroup" msprop:Generator_UserRelationName="FK_WorkFlowSecurity_SecurityGroup" msprop:Generator_RelationVarName="relationFK_WorkFlowSecurity_SecurityGroup" msprop:Generator_ParentPropName="SecurityGroupRow" />
+      <msdata:Relationship name="FK_WorkFlowSecurity_WorkFlow" msdata:parent="WorkFlow" msdata:child="WorkFlowSecurity" msdata:parentkey="ID" msdata:childkey="WorkFlowID" msprop:Generator_UserChildTable="WorkFlowSecurity" msprop:Generator_ChildPropName="GetWorkFlowSecurityRows" msprop:Generator_UserParentTable="WorkFlow" msprop:Generator_UserRelationName="FK_WorkFlowSecurity_WorkFlow" msprop:Generator_RelationVarName="relationFK_WorkFlowSecurity_WorkFlow" msprop:Generator_ParentPropName="WorkFlowRow" />
+      <msdata:Relationship name="State_WorkFlowActivity" msdata:parent="State" msdata:child="WorkFlowActivity" msdata:parentkey="ID" msdata:childkey="StateID" msprop:Generator_UserChildTable="WorkFlowActivity" msprop:Generator_ChildPropName="GetWorkFlowActivityRows" msprop:Generator_UserParentTable="State" msprop:Generator_UserRelationName="State_WorkFlowActivity" msprop:Generator_RelationVarName="relationState_WorkFlowActivity" msprop:Generator_ParentPropName="StateRow" />
+      <msdata:Relationship name="StageDefinition_StageDefinitionStageDefinitionGroup" msdata:parent="StageDefinition" msdata:child="StageDefinitionStageDefinitionGroup" msdata:parentkey="StageDefinitionKey" msdata:childkey="StageDefinitionKey" msprop:Generator_UserChildTable="StageDefinitionStageDefinitionGroup" msprop:Generator_ChildPropName="GetStageDefinitionStageDefinitionGroupRows" msprop:Generator_UserParentTable="StageDefinition" msprop:Generator_UserRelationName="StageDefinition_StageDefinitionStageDefinitionGroup" msprop:Generator_RelationVarName="relationStageDefinition_StageDefinitionStageDefinitionGroup" msprop:Generator_ParentPropName="StageDefinitionRow" />
+      <msdata:Relationship name="StageDefinitionGroup_StageDefinitionStageDefinitionGroup" msdata:parent="StageDefinitionGroup" msdata:child="StageDefinitionStageDefinitionGroup" msdata:parentkey="StageDefinitionGroupKey" msdata:childkey="StageDefinitionGroupKey" msprop:Generator_UserChildTable="StageDefinitionStageDefinitionGroup" msprop:Generator_ChildPropName="GetStageDefinitionStageDefinitionGroupRows" msprop:Generator_UserParentTable="StageDefinitionGroup" msprop:Generator_UserRelationName="StageDefinitionGroup_StageDefinitionStageDefinitionGroup" msprop:Generator_RelationVarName="relationStageDefinitionGroup_StageDefinitionStageDefinitionGroup" msprop:Generator_ParentPropName="StageDefinitionGroupRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0232E64-BAD0-4F65-88E4-68B8317E6D43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Interfaces.FinanceDomain.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.Interfaces.FinanceDomain.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DocumentManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\Internal\when_performing_the_add_invoice_attachment_command.cs" />
+    <Compile Include="Commands\Internal\when_performing_the_create_empty_invoice_command.cs" />
+    <Compile Include="Commands\Internal\when_performing_the_create_workflow_case_command.cs" />
+    <Compile Include="Commands\when_performing_the_amend_third_party_invoice_command.cs" />
+    <Compile Include="Commands\when_performing_the_approve_third_party_invoice_command.cs" />
+    <Compile Include="Commands\when_performing_the_capture_third_party_invoice_command.cs" />
+    <Compile Include="Models\InvoiceLineItemModel\when_invoice_line_item_created_with_IsVat_set_to_false.cs" />
+    <Compile Include="Models\InvoiceLineItemModel\when_invoice_line_item_created_with_IsVat_set_to_true.cs" />
+    <Compile Include="Models\ThirdPartyInvoice\when_third_party_is_not_in_the_range_1_to_2147483647.cs" />
+    <Compile Include="Models\ThirdPartyInvoice\when_invoice_number_is_not_set.cs" />
+    <Compile Include="Models\InvoiceLineItemModel\when_invoice_line_item_created_with_invalid_amount.cs" />
+    <Compile Include="Models\InvoiceLineItemModel\when_invoice_line_item_created_with_invalid_third_party_invoice_key.cs" />
+    <Compile Include="Models\InvoiceLineItemModel\when_invoice_line_item_created_with_invalid_invoice_line_item_description_key.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.Interfaces.FinanceDomain\SAHL.Services.Interfaces.FinanceDomain.csproj">
+      <Project>{8caaeb04-0e74-4674-b409-5a57e90cf19d}</Project>
+      <Name>SAHL.Services.Interfaces.FinanceDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

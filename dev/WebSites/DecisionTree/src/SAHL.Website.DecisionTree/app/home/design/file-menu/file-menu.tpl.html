@@ -1,0 +1,33 @@
+﻿<div id="filePage">
+    <!--ng-hide="$state.current.name != 'home.design.file-menu'"-->
+    <nav id="fileMenu" class="vertical-menu compact sideBarMenu">
+        <ul>
+            <li>
+                <a class="title" ng-click="go_back_no_check()">
+                    <h1><i id="titleBack" class="icon-arrow-left-3 smaller fg-white"></i></h1>
+                </a>
+            </li>
+            <li><a ng-class="{active: $state.current.name == 'home.design.file-menu.info'}" ng-click="documentInfo()">Info</a></li>
+            <li><a ng-class="{active: $state.current.name == 'home.design.file-menu.new'}" ng-click="newDocument()">New</a></li>
+            <li><a ng-class="{active: $state.current.name.lastIndexOf('home.design.file-menu.open', 0) === 0}"  ng-click="openDocument()">Open</a></li>
+            <li><a ng-click="saveDocument();">Save</a></li>
+            <li><a ng-click="saveDocumentAs()">Save As</a></li>
+            <li><a ng-class="{active: $state.current.name == 'home.design.file-menu.test'}" ng-click="defineTests()">Test</a></li>
+            <li ng-hide="document.isPublished"><a ng-click="publish()">Publish</a></li>
+            <!--<li><a ng-class="{active: $state.current.name == 'home.design.file-menu.print'}" ng-click="printDocument()">Print</a></li>-->
+            <li><a ng-class="{active: $state.current.name.lastIndexOf('home.design.file-menu.export', 0) === 0}"   ng-click="exportDocument()">Export</a></li>
+            <li><a ng-click="closeDocument()">Close</a></li>
+            <li ng-show="superUser==true"><a ng-click="deleteDocument()">Delete</a></li><!--NB: disable except for certain roles-->
+        </ul>
+    </nav>
+    <div id="document-header"><span class="pad-margin">{{document.displayName}}{{document.isPublished?"(published)":""}}{{document.isReadOnly?"(ReadOnly)":""}}{{document.isLockedByUser?"(Locked by: " + document.isLockedByUser + ")":""}} - Decision Tree Designer</span><button ng-click="closeDocument()"><i class="icon-close-button"></i></button></div><!--class="pad-margin"-->
+    <div id="user-box" class="inline">
+        <img class="user-image-small" ng-src="{{userimagesrc}}" />
+        <div class="user-details">
+            <div class="user-name">{{userDisplayName}}</div>
+        </div>
+    </div>
+    <div class="childView-container" ui-view>
+
+    </div>
+</div>

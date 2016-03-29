@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65730963-CA0D-4ADA-8344-3F9F64BE5CEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.FinanceDomain.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.FinanceDomain.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.DomainQuery.Client">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.DomainQuery.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.X2.Client, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.X2.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Exchange, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Exchange.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing.Fakes">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.CATS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.CATS.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DocumentManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainQuery">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinanceDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinanceDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Shared.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlersSpec\AddThirdPartyPaymentBatchItem\when_adding_third_party_payment_batch_item.cs" />
+    <Compile Include="CommandHandlersSpec\AddThirdPartyPaymentBatchItem\when_the_invoice_is_invalid_for_payment_processing.cs" />
+    <Compile Include="CommandHandlersSpec\AmendInvoiceLineItem\AmendThirdPartyInvoice\when_amending_third_party_invoice_succeeds.cs" />
+    <Compile Include="CommandHandlersSpec\AmendInvoiceLineItem\AmendThirdPartyInvoice\when_an_invoice_has_new_line_items.cs" />
+    <Compile Include="CommandHandlersSpec\AmendInvoiceLineItem\AmendThirdPartyInvoice\when_an_invoice_has_removed_line_items.cs" />
+    <Compile Include="CommandHandlersSpec\AmendInvoiceLineItem\AmendThirdPartyInvoice\when_an_invoice_has_updated_line_items.cs" />
+    <Compile Include="CommandHandlersSpec\AmendInvoiceLineItem\AmendThirdPartyInvoice\when_registering_rules.cs" />
+    <Compile Include="CommandHandlersSpec\AmendInvoiceLineItem\when_third_party_invoice_line_item_is_updated.cs" />
+    <Compile Include="CommandHandlersSpec\ApproveThirdPartyInvoice\when_one_of_capabilies_is_not_linked_user_org_structure_key.cs" />
+    <Compile Include="CommandHandlersSpec\ApproveThirdPartyInvoice\when_creating_handler_should_register_business_rules.cs" />
+    <Compile Include="CommandHandlersSpec\ApproveThirdPartyInvoice\when_user_does_not_have_invoice_approver_capabilities.cs" />
+    <Compile Include="CommandHandlersSpec\ApproveThirdPartyInvoice\when_capabilty_approves_invoice_amount_within_its_mandate.cs" />
+    <Compile Include="CommandHandlersSpec\ApproveThirdPartyInvoice\when_capability_attempts_to_approve_invoice_amount_greater_than_authenticated.cs" />
+    <Compile Include="CommandHandlersSpec\CaptureThirdPartyInvoice\when_capturing_an_invoice_that_has_already_been_captured.cs" />
+    <Compile Include="CommandHandlersSpec\CaptureThirdPartyInvoice\when_creating_handler_register_rule.cs" />
+    <Compile Include="CommandHandlersSpec\CaptureThirdPartyInvoice\when_adding_a_line_item_fails.cs" />
+    <Compile Include="CommandHandlersSpec\CaptureThirdPartyInvoice\when_adding_third_party_invoice_without_line_items.cs" />
+    <Compile Include="CommandHandlersSpec\AcceptThirdPartyInvoice\ErrorOccurs\when_creating_an_X2_case.cs" />
+    <Compile Include="CommandHandlersSpec\AcceptThirdPartyInvoice\ErrorOccurs\when_saving_an_invoice_attachment.cs" />
+    <Compile Include="CommandHandlersSpec\AcceptThirdPartyInvoice\ErrorOccurs\when_creating_an_empty_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\AcceptThirdPartyInvoice\ThirdPartyTestBase.cs" />
+    <Compile Include="CommandHandlersSpec\AcceptThirdPartyInvoice\when_account_does_not_exist.cs" />
+    <Compile Include="CommandHandlersSpec\AcceptThirdPartyInvoice\when_account_exist.cs" />
+    <Compile Include="CommandHandlersSpec\AcceptThirdPartyInvoice\when_creating_handler.cs" />
+    <Compile Include="CommandHandlersSpec\AddInvoiceLineItem\when_adding_invoice_line_item_succeed.cs" />
+    <Compile Include="CommandHandlersSpec\CompensateAcceptThirdPartyInvoice\when_reversing_adding_invoice_attachment_succeeds.cs" />
+    <Compile Include="CommandHandlersSpec\CaptureThirdPartyInvoice\when_adding_third_party_invoice_succeed.cs" />
+    <Compile Include="CommandHandlersSpec\ConfirmInvoicePayment\when_confirming_payment_successfully.cs" />
+    <Compile Include="CommandHandlersSpec\CreateEmptyInvoice\when_creating_an_empty_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\CreateThirdPartyInvoiceWorkflowCase\when_completing_workflow_case_fails.cs" />
+    <Compile Include="CommandHandlersSpec\CreateThirdPartyInvoiceWorkflowCase\when_creating_workflow_case_successfully.cs" />
+    <Compile Include="CommandHandlersSpec\CreateThirdPartyInvoiceWorkflowCase\when_creating_workflow_case_fails.cs" />
+    <Compile Include="CommandHandlersSpec\EscalateThirdPartyInvoiceForApproval\when_escalating_for_approval.cs" />
+    <Compile Include="CommandHandlersSpec\QueryThirdPartyInvoice\when_querying_an_approved_third_party_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\QueryThirdPartyInvoice\when_querying_a_third_party_invoice_that_is_not_approved.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransactionReversal\when_retrieving_financial_transaction_key_fails.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransactionReversal\when_retrieving_invoice_fails.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransactionReversal\when_processing_a_transaction.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransactionReversal\when_posting_the_transaction_fails.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransaction\when_posting_a_capitalised_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransaction\when_posting_a_noncapitalised_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransaction\when_processing_an_uncapitalised_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransaction\when_posting_the_transaction_fails.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransaction\when_processing_a_capitalised_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransaction\when_retrieving_finacial_service_key_fails.cs" />
+    <Compile Include="CommandHandlersSpec\ProcessInvoicePaymentTransaction\when_retrieving_third_party_invoice_query_fails.cs" />
+    <Compile Include="CommandHandlersSpec\ConfirmInvoicePayment\when_instantiating_the_handler.cs" />
+    <Compile Include="CommandHandlersSpec\RejectThirdPartyInvoice\when_rejecting_a_thirdparty_invoice_after_approval.cs" />
+    <Compile Include="CommandHandlersSpec\StartInvoicePaymentProcess\when_unsuccessful.cs" />
+    <Compile Include="CommandHandlersSpec\StartInvoicePaymentProcess\when_successful.cs" />
+    <Compile Include="CommandHandlersSpec\ConfirmInvoicePayment\whe_executing_the_rules_fail.cs" />
+    <Compile Include="CommandHandlersSpec\RejectThirdPartyInvoice\when_rejecting_a_thirdparty_invoice_before_approval.cs" />
+    <Compile Include="CommandHandlersSpec\RemoveThirdPartyInvoiceLineItems\when_removing_line_items.cs" />
+    <Compile Include="CommandHandlersSpec\ReverseInvoicePaymentProcess\when_reversing_invoice_payment_process.cs" />
+    <Compile Include="Managers\CapabilityManagerSpec\when_retrieving_capability_mandates.cs" />
+    <Compile Include="Managers\FinanceDataManagerSpec\when_updating_an_invoice_status.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\when_invoice_approvercapabilities_is_null.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\when_no_invoice_approvercapability_is_provided.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\when_higher_capability_is_invoice_approver_over_R60000.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\when_higher_capability_is_loss_controlFee_invoice_approver_up_to_R60000.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\when_higher_capability_is_Loss_control_fee_invoice_approver_under_R30000.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\when_higher_capability_is_loss_control_fFee_invoice_approver_under_R15000.cs" />
+    <Compile Include="CommandHandlersSpec\RemoveThirdPartyPaymentBatchItem\when_removing_a_third_party_payment_batch_item.cs" />
+    <Compile Include="Managers\FinanceDataManagerSpec\when_retrieving_financial_transaction_key.cs" />
+    <Compile Include="Managers\FinanceDataManagerSpec\when_retrieving_financial_service_key_by_account_fails.cs" />
+    <Compile Include="Managers\FinanceDataManagerSpec\when_retrieving_financial_service_key_by_account.cs" />
+    <Compile Include="Managers\LoanTransactionManagerSpec\when_posting_a_reversal_transaction.cs" />
+    <Compile Include="Managers\LoanTransactionManagerSpec\when_posting_a_transaction_without_errors.cs" />
+    <Compile Include="Managers\LoanTransactionManagerSpec\when_posting_a_transaction_with_errors.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetInvoiceLineItemsSpecs\when_getting_an_invoices_line_items.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetRemovedInvoiceLineItemsSpecs\when_the_existing_invoice_has_no_line_items.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetRemovedInvoiceLineItemsSpecs\when_given_an_empty_list_of_new_line_items.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetRemovedInvoiceLineItemsSpecs\when_items_have_been_removed.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetRemovedInvoiceLineItemsSpecs\when_items_have_been_removed_and_added.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetRemovedInvoiceLineItemsSpecs\when_items_have_not_been_removed.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetUpdatedInvoicedLineItemsSpecs\when_line_items_have_been_updated.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\GetUpdatedInvoicedLineItemsSpecs\when_no_line_items_have_been_updated.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\HasThirdPartyInvoiceHeaderChangedSpecs\when_the_payment_ref_has_changed.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\HasThirdPartyInvoiceHeaderChangedSpecs\when_the_current_invoice_date_is_null.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\HasThirdPartyInvoiceHeaderChangedSpecs\when_the_invoice_number_has_changed.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\HasThirdPartyInvoiceHeaderChangedSpecs\when_the_invoice_date_has_changed.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\HasThirdPartyInvoiceHeaderChangedSpecs\when_the_capitalise_invoice_has_changed.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\HasThirdPartyInvoiceHeaderChangedSpecs\when_the_third_party_has_changed.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\UpdateThirdPartyInvoiceStatusSpecs\when_updating_the_invoice_status.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingRange\when_capability_is_invoice_approver_over_R60000.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingRange\when_capability_is_Loss_control_fee_invoice_approver_up_to_R60000.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingRange\when_capability_is_loss_controlFee_invoice_approver_up_to_R60000.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingRange\when_capability_is_Loss_control_fee_invoice_approver_under_R30000.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingMandatedCapabilities\when_invoice_amount_from_15K_to_under_R30K .cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingRange\when_capability_is_loss_control_fFee_invoice_approver_under_R15000.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_amending_third_party_invoice_totals.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_getting_user_capabilities_by_org_str_Key.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_grouping_cats_third_party_invoice_payments.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_removing_invoice_line_item.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_getting_third_party_invoice.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_retrieving_an_sahl_reference.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_amending_third_party_invoice_line_item.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_amending_third_party_invoice.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_adding_invoice_line_item.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_inserting_empty_third_party_invoice.cs" />
+    <Compile Include="CommandHandlersSpec\AddInvoiceAttachment\when_adding_invoice_attachment_fails.cs" />
+    <Compile Include="CommandHandlersSpec\AddInvoiceAttachment\when_adding_invoice_attachment_succeeds.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_retrieving_invoices_by_invoice_number.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_retrieving_invoice_batch_payment_information.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_retrieving_invoice_payment_information.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceData\when_retrieving_third_party_email_subject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHandlers\CanUserApproveInvoiceBasedOnMandate\when_thirdpartypnvoice_does_not_exist.cs" />
+    <Compile Include="Rules\AllCapabilitiesMustBeLinkedToUser\when_all_capability_are_linked_to_user.cs" />
+    <Compile Include="Rules\AllCapabilitiesMustBeLinkedToUser\when_both_user_organisation_structure_key_and_capabilities_are_not_provided.cs" />
+    <Compile Include="Rules\AllCapabilitiesMustBeLinkedToUser\when_user_organisation_structure_key_is_not_provided_but_capabilities_are_provided.cs" />
+    <Compile Include="Rules\AllCapabilitiesMustBeLinkedToUser\when_there_is_a_capability_that_not_linked_to_user.cs" />
+    <Compile Include="Rules\AttorneyInvoiceMustHaveAtLeastOneLineItemRuleSpecs\when_there_are_no_line_items.cs" />
+    <Compile Include="Rules\AttorneyInvoiceMustHaveAtLeastOneLineItemRuleSpecs\when_there_are_multiple_line_items.cs" />
+    <Compile Include="Rules\AttorneyInvoiceMustHaveAtLeastOneLineItemRuleSpecs\when_there_is_a_single_line_item.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR100\when_user_has_loss_control_fee_invoice_approver_under_R30000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR100\when_user_has_loss_control_fee_invoice_approver_up_to_R60000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR100\when_user_has_invoice_approver_over_R60000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR100\when_user_has_loss_control_fee_invoice_approver_under_R15000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR15000\when_user_has_invoice_approver_over_R60000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR15000\when_user_has_loss_control_fee_invoice_approver_under_R15000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR15000\when_user_has_loss_control_fee_invoice_approver_under_R30000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR15000\when_user_has_loss_control_fee_invoice_approver_up_to_R60000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR30000\when_user_has_invoice_approver_over_R60000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR30000\when_user_has_loss_control_fee_invoice_approver_under_R15000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR30000\when_user_has_loss_control_fee_invoice_approver_under_R30000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR30000\when_user_has_loss_control_fee_invoice_approver_up_to_R60000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR60001\when_user_has_invoice_approver_over_R60000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR60001\when_user_has_loss_control_fee_invoice_approver_under_R15000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR60001\when_user_has_loss_control_fee_invoice_approver_under_R30000_capability.cs" />
+    <Compile Include="Rules\CapabilityMustBeMandatedToApproveAmount\ApprovingR60001\when_user_has_loss_control_fee_invoice_approver_up_to_R60000_capability.cs" />
+    <Compile Include="Rules\DoesAccountExist\AccountRuleModel.cs" />
+    <Compile Include="Rules\DoesAccountExist\when_the_account_exists.cs" />
+    <Compile Include="Rules\DoesAccountExist\when_the_account_does_not_exist.cs" />
+    <Compile Include="Rules\InvoiceDateCannotBeInFutureSpecs\when_invoice_date_is_current_day.cs" />
+    <Compile Include="Rules\InvoiceDateCannotBeInFutureSpecs\when_invoice_date_is_in_the_past.cs" />
+    <Compile Include="Rules\InvoiceDateCannotBeInFutureSpecs\when_invoice_date_is_empty.cs" />
+    <Compile Include="Rules\InvoiceDateCannotBeInFutureSpecs\when_invoice_date_is_midnight_tomorrow.cs" />
+    <Compile Include="Rules\InvoiceDateCannotBeInFutureSpecs\when_the_invoice_date_is_a_future_date.cs" />
+    <Compile Include="Rules\InvoiceCannotBeAmendedOnceApprovedSpecs\when_the_invoice_has_been_approved.cs" />
+    <Compile Include="Rules\InvoiceCannotBeAmendedOnceApprovedSpecs\when_the_invoice_has_not_been_approved.cs" />
+    <Compile Include="Rules\InvoiceCannotBeAmendedOnceAuthorisedForPaymentSpecs\when_the_invoice_is_authorised_for_payment.cs" />
+    <Compile Include="Rules\InvoiceCannotBeAmendedOnceAuthorisedForPaymentSpecs\when_the_invoice_is_not_authorised_for_payment.cs" />
+    <Compile Include="Rules\InvoiceDateMustBeCapturedRuleSpecs\when_the_invoice_date_has_been_captured.cs" />
+    <Compile Include="Rules\InvoiceDateMustBeCapturedRuleSpecs\when_the_invoice_date_has_not_been_captured.cs" />
+    <Compile Include="Rules\InvoicePaymentMustBeApprovedSpec\when_starting_invoice_payment_process_and_invoice_is_not_approved.cs" />
+    <Compile Include="Rules\InvoicePaymentMustBeApprovedSpec\when_starting_invoice_payment_process_and_invoice_is_approved.cs" />
+    <Compile Include="Rules\InvoiceMustBeApprovedInOrderToBeProcessedForPaymentRuleSpecs\when_approved.cs" />
+    <Compile Include="Rules\InvoiceMustBeApprovedInOrderToBeProcessedForPaymentRuleSpecs\when_not_approved.cs" />
+    <Compile Include="Rules\InvoiceNumberMustBeCapturedSpecs\when_the_invoice_number_has_not_been_captured.cs" />
+    <Compile Include="Rules\InvoiceNumberMustBeCapturedSpecs\when_the_invoice_number_has_been_captured.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingMandatedCapabilities\when_invoice_amount_from_R30K_to_under_R60K .cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingMandatedCapabilities\when_invoice_amount_from_R60K.cs" />
+    <Compile Include="Managers\InvoiceApprovalMandateProvider\GettingMandatedCapabilities\when_invoice_amount_under_R15K.cs" />
+    <Compile Include="Rules\InvoicePaymentMustBeProcessedRuleSpecs\RuleModel.cs" />
+    <Compile Include="Rules\InvoicePaymentMustBeProcessedRuleSpecs\when_payment_has_been_processed.cs" />
+    <Compile Include="Rules\InvoicePaymentMustBeProcessedRuleSpecs\when_payment_has_not_been_processed.cs" />
+    <Compile Include="Rules\InvoicePaymentReferenceCannotBeEmptySpecs\when_payment_reference_is_an_empty_string.cs" />
+    <Compile Include="Rules\InvoicePaymentReferenceCannotBeEmptySpecs\when_payment_reference_is_null.cs" />
+    <Compile Include="Rules\InvoicePaymentReferenceCannotBeEmptySpecs\when_payment_reference_is_white_space.cs" />
+    <Compile Include="Rules\InvoiceShouldBeAmendedOnceInitiallyCapturedSpecs\when_invoice_has_not_been_captured.cs" />
+    <Compile Include="Rules\InvoiceShouldBeAmendedOnceInitiallyCapturedSpecs\when_invoice_has_already_been_captured.cs" />
+    <Compile Include="Rules\ThirdPartyInvoiceNumberMustBeUniqueRuleSpecs\when_the_invoice_collection_is_null.cs" />
+    <Compile Include="Rules\ThirdPartyInvoiceNumberMustBeUniqueRuleSpecs\when_one_does_not_exist_against_another_invoice_for_the_same_third_party.cs" />
+    <Compile Include="Rules\ThirdPartyInvoiceNumberMustBeUniqueRuleSpecs\when_one_exists_against_another_invoice_for_another_third_party.cs" />
+    <Compile Include="Rules\ThirdPartyInvoiceNumberMustBeUniqueRuleSpecs\when_no_other_invoice_exists.cs" />
+    <Compile Include="Rules\ThirdPartyInvoiceNumberMustBeUniqueRuleSpecs\when_one_exists_against_another_invoice_for_the_same_third_party.cs" />
+    <Compile Include="Rules\ThirdPartyMustBeCapturedAgainstTheInvoiceRuleSpecs\when_the_third_party_has_been_captured.cs" />
+    <Compile Include="Rules\ThirdPartyMustBeCapturedAgainstTheInvoiceRuleSpecs\when_the_third_party_id_is_an_empty_guid.cs" />
+    <Compile Include="Rules\ThirdPartyMustBeCapturedAgainstTheInvoiceRuleSpecs\when_the_third_party_has_not_been_captured.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.FinanceDomain\SAHL.Services.FinanceDomain.csproj">
+      <Project>{3809b035-1623-4a0d-af64-5b944bed9f5a}</Project>
+      <Name>SAHL.Services.FinanceDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

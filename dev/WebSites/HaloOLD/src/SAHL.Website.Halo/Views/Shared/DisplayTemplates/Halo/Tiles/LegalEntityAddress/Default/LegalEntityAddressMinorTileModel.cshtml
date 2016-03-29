@@ -1,0 +1,34 @@
+﻿@model SAHL.Core.UI.Halo.Tiles.LegalEntityAddress.Default.LegalEntityAddressMinorTileModel
+<span class="badge badge-pale minor-tile-icon" style="margin-top:0px; margin-right:0px;">
+@if(Model.IsDomicilium=="Yes")
+{
+    <span class="badge sahl-open">
+        @if(Model.AddressType=="Postal")
+        { <i class="icon-envelope"></i> }
+        else
+        { <i class="icon-home"></i>} <i class="icon-legal"></i></span>
+}
+else if(Model.IsDomicilium=="Pending")
+{
+    <span class="badge sahl-application">
+        @if(Model.AddressType=="Postal")
+        { <i class="icon-envelope"></i> }
+        else
+        { <i class="icon-home"></i>} <i class="icon-legal"></i></span>
+        @Html.DisplayNotificationIconFor(x=>x.Notification)
+}
+else
+{
+        if(Model.AddressType=="Postal")
+        { <i class="icon-envelope"></i> }
+        else
+        { <i class="icon-home"></i>}
+}
+    </span>
+<br />
+<br />
+@Html.Title(@Model.AddressType + " Address")
+@Html.DisplayLabelModelPairFor("Address", x => x.Address)
+@Html.DisplayLabelModelPairFor("Effective Date", x => x.EffectiveDate)
+@Html.DisplayLabelModelPairFor("Is Domicilium", x => x.IsDomicilium)
+

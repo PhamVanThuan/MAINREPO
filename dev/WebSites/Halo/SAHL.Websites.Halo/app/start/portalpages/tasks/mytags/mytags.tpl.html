@@ -1,0 +1,10 @@
+﻿<div id="myTags" ng-controller="MyTagsCtrl" class="myTags">
+    <div id="tagsHolder" class="menu">
+        <ul class="listforTags">
+            <li ng-repeat="(guid,tag) in allTags" class="tagRow">
+                <div ng-style="tag.Style" class="selectionTag roundedEdges" ng-click="forFiltering(guid, tag)" ng-class="{active :$active(guid)}">{{tag.Caption}}</div>
+            </li>
+            <li><button ng-click="clearSelection()" class="roundedEdges">Clear Selection</button></li>
+        </ul>
+    </div>
+</div>

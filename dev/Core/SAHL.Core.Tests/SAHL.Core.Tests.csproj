@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63CD2CCD-E1DE-48FA-8FA0-089178A420E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Tests</RootNamespace>
+    <AssemblyName>SAHL.Core.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.38.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\Binaries\ExternalBinaries\NUnit\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SAHL.Core.Testing\ConventionTests.cs">
+      <Link>ConventionTests.cs</Link>
+    </Compile>
+    <Compile Include="DataModelTests.cs" />
+    <Compile Include="DataTypes\FormatsTests.cs" />
+    <Compile Include="Events\TestWrappedEvent.cs" />
+    <Compile Include="Extensions\ConcurrentDictionaryExtensionsTests.cs" />
+    <Compile Include="Extensions\StringExtensionsTests.cs" />
+    <Compile Include="Strings\StringReplacerTests.cs" />
+    <Compile Include="Extensions\TestExceptionExtensions.cs" />
+    <Compile Include="Extensions\TestTypeExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TestServiceUrlConfigurationProvider.cs" />
+    <Compile Include="Validation\Attributes\ShouldBeInSahlDateFormatAttributeTests.cs" />
+    <Compile Include="Validation\Attributes\ShouldBeInSahlDateTimeFormatAttributeTests.cs" />
+    <Compile Include="Validation\Attributes\TieredRegularExpressionAttributeTests.cs" />
+    <Compile Include="Validation\Fakes\DeeplyNested\FakeValidationCompositeDeeplyNested.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandWithSubTypeOfDictionaryWithReferenceValue.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandWithSubTypeOfDictionary.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandComposite.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandCompositeGeneric.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandCompositeHoldingGeneric.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandCompositeList.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandCompositeListOfObject.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandCompositeListWithList.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandCompositeWithArray.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandMultipleProperty.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandSingleProperty.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandUniqueValidationProperties.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandWithDictionary.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandWithIsoDateFormat.cs" />
+    <Compile Include="Validation\Fakes\FakeValidationCommandWithTieredRegularExpression.cs" />
+    <Compile Include="Validation\Fakes\Namespace\FakeCommandWithGlobalNamespace.cs" />
+    <Compile Include="Validation\ValidationFakesHelpers.cs" />
+    <Compile Include="Validation\ValidationUnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data.Dapper\SAHL.Core.Data.Dapper.csproj">
+      <Project>{e65c3d29-c6d7-4e01-b20c-f3fd74201e21}</Project>
+      <Name>SAHL.Core.Data.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.2AM\SAHL.Core.Data.Models.2AM.csproj">
+      <Project>{5ae349cf-67f9-47bd-9aa0-48cda3bbac51}</Project>
+      <Name>SAHL.Core.Data.Models.2AM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.Capitec\SAHL.Core.Data.Models.Capitec.csproj">
+      <Project>{744e4b80-5378-400e-b2ea-99db856006bf}</Project>
+      <Name>SAHL.Core.Data.Models.Capitec</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.Cuttlefish\SAHL.Core.Data.Models.Cuttlefish.csproj">
+      <Project>{b082349a-467f-4acf-9fc9-1d28ae04f8a8}</Project>
+      <Name>SAHL.Core.Data.Models.Cuttlefish</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.DecisionTree\SAHL.Core.Data.Models.DecisionTree.csproj">
+      <Project>{9d4f4193-1cef-449b-b2ee-cbe5ce5495d2}</Project>
+      <Name>SAHL.Core.Data.Models.DecisionTree</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.EventProjection\SAHL.Core.Data.Models.EventProjection.csproj">
+      <Project>{479a23d1-fcae-42eb-9d3b-ab24876de629}</Project>
+      <Name>SAHL.Core.Data.Models.EventProjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.EventStore\SAHL.Core.Data.Models.EventStore.csproj">
+      <Project>{e0f36d7e-8960-4d00-9bca-fed18823d339}</Project>
+      <Name>SAHL.Core.Data.Models.EventStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.X2\SAHL.Core.Data.Models.X2.csproj">
+      <Project>{3271fe6c-90a1-4423-87a7-1760ffc4eeb3}</Project>
+      <Name>SAHL.Core.Data.Models.X2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging.Shared\SAHL.Core.Messaging.Shared.csproj">
+      <Project>{5b05aefb-2351-4393-8f9b-1ab0aa926d45}</Project>
+      <Name>SAHL.Core.Messaging.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Testing\SAHL.Core.Testing.csproj">
+      <Project>{2f21ffe3-ab20-4623-84b5-29d1d93627e6}</Project>
+      <Name>SAHL.Core.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

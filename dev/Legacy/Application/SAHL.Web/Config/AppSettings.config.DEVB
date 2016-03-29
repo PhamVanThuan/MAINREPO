@@ -1,0 +1,28 @@
+  <appSettings>
+    <add key="ClientValidationEnabled" value="true" />
+    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+    <add key="MessageServer" value="sahls47"/>
+    <add key="messageBusUsername" value="admin" /> 
+    <add key="messageBusPassword" value="W0rdpass" />  
+    <add key="PublishMetrics" value="false" />
+    <add key="ApplicationName" value="HALO" />
+    <!-- 0 - None, 1 - Errors Only, 2 - Warnings & Errors, 3 - Info, Warnings & Errors, 4 - Debug, Info, Warnings & Errors -->
+    <add key="LogLevel" value="1"/>
+    <add key="ArchiveSuperSearchWorkflows" value="'Application Capture','Application Management','Readvance Payments'" />
+    <add key="HaloNoWorkFlowAccess" value="HaloNoWorkFlowAccess" />
+    <add key="Languages" value="" />
+    <add key="ReportServiceUsername" value="ReportUser"/>
+    <add key="ReportServicePassword" value="W0rdpass"/>
+    <add key="Domain" value="SAHL"/>
+    <add key="ReportServerURL" value="http://SAHLS15/SqlReportServer"/>
+	<add key="ApplicationDomainService_HostName" value="SAHL-WS02"/>
+	<add key="ApplicationDomainService_ServiceName" value="ApplicationDomainService"/>
+    <add key="CommunicationsService_HostName" value="SAHL-WS02"/>
+    <add key="CommunicationsService_ServiceName" value="CommunicationsService"/>
+    <add key="LifeDomainService_HostName" value="SAHL-WS02"/>
+    <add key="LifeDomainService_ServiceName" value="LifeDomainService"/>
+	<add key="MortgageLoanDomainService_HostName" value="SAHL-WS02"/>
+	<add key="MortgageLoanDomainService_ServiceName" value="MortgageLoanDomainService"/>
+  	<add key="DecisionTreeService_HostName" value="SAHL-WS02"/>
+	<add key="DecisionTreeService_ServiceName" value="DecisionTreeService"/>
+</appSettings>

@@ -1,0 +1,18 @@
+﻿<div class="childView">
+    <div class="row1">
+        <h1>Open</h1>
+        <br />
+    </div>
+    <div class="row2">
+        <div id="filePageSideBar">
+            <nav class="vertical-menu compact ">
+                <ul>
+                    <li ng-class="{active: $state.current.name == 'home.design.file-menu.open.all'}"><a ui-sref="home.design.file-menu.open.all"><i></i>All Decision Trees</a></li>
+                    <li ng-class="{active: $state.current.name == 'home.design.file-menu.open.recent'}"><a ui-sref="home.design.file-menu.open.recent"><i class="icon-recent-trees"></i>Recent Decision Trees</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="filePageContainer" spin-loader="loadTrees" ui-view>
+            
+        </div>
+</div>

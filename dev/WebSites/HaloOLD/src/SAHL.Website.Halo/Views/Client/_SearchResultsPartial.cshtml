@@ -1,0 +1,75 @@
+﻿@using SAHL.Services.Interfaces.Search.Models
+@model SAHL.Core.TextSearch.QueryResult<ClientQueryResult>
+@if (Model.PageIndexResults != null && Model.PageIndexResults.Count() > 0)
+  {
+        <h3>Search Results</h3>
+        var count = 1;
+        foreach (var client in Model.PageIndexResults)
+        {
+          count++;
+              <div class="row @(count % 2 == 0 ? "even" : "odd")">
+                <a href="@Url.Action("SearchResult", "Client", new { id = client.ID, displayName = client.DisplayName })">
+                  <h5>@client.DisplayName - @client.SAIDNumber</h5>
+                  <div class="span3">
+                    <dl class="dl-horizontal">
+                      <dt>Home Phone:</dt>
+                      <dt>Work Phone:</dt>
+                      <dt>Cell Phone:</dt>
+                      <dt>Email: </dt>
+
+                      <dd>@(!String.IsNullOrEmpty(client.HomeTelephone) ? client.HomeTelephone : "-")</dd>
+                      <dd>@(!String.IsNullOrEmpty(client.WorkTelephone) ? client.WorkTelephone : "-")</dd>
+                      <dd>@(!String.IsNullOrEmpty(client.CellTelephone) ? client.CellTelephone : "-")</dd>
+                      <dd>@(!String.IsNullOrEmpty(client.EmailAddress) ? client.EmailAddress : "-")</dd>
+                    </dl>
+                  </div>
+                  <div class="span4">
+                    <dl class="dl-horizontal">
+                      <dt>Address:</dt>
+                      <dd>@(!String.IsNullOrEmpty(client.PropertyAddress) ? client.PropertyAddress : "-")</dd>
+                    </dl>
+                  </div>
+                </a>
+              </div>
+        }
+        <div class="pagination nav" data-pageindex="@(Model.Paging.CurrentPage - 1)" data-pagesize="@Model.Paging.ItemsPerPage">
+			<ul>
+			@{
+                var shownPages = 15;
+                var showPreviousValid = Model.Paging.CurrentPage - shownPages >= 0;
+                var shownPageStart = showPreviousValid ?  Model.Paging.CurrentPage - shownPages : 1;
+                var showNextValid = shownPageStart + shownPages <= Model.Paging.TotalPages;
+                var shownPageEnd = showNextValid ? shownPageStart + shownPages - 1 : shownPageStart + Model.Paging.TotalPages;
+             }
+
+            @if (showPreviousValid)
+			{
+                <li><a href="#">Prev</a></li>
+				<li><a href="#">...</a></li>
+			}
+
+			@for (int i = shownPageStart; i <= shownPageEnd; i++)
+			{
+                if (Model.Paging.CurrentPage == i)
+                {
+                    <li class="active"><a href="#">@i</a></li>
+                }
+				else
+				{
+					<li><a href="#">@i</a></li>
+				}
+			}
+
+            @if (showNextValid)
+			{
+				<li><a href="#">...</a></li>
+				<li><a href="#">Next</a></li>
+			}
+			</ul>
+		</div>  
+}
+else
+{
+    <h3>No results</h3>
+}
+

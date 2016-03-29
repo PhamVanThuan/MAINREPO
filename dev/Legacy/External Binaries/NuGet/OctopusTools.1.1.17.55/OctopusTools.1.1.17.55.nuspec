@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>OctopusTools</id>
+    <version>1.1.17.55</version>
+    <authors>Octopus Deploy</authors>
+    <owners>Octopus Deploy</owners>
+    <licenseUrl>http://octopusdeploy.com/Pricing</licenseUrl>
+    <projectUrl>http://octopusdeploy.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Useful tools for automating Octopus.</description>
+    <releaseNotes />
+    <language>en-US</language>
+  </metadata>
+</package>

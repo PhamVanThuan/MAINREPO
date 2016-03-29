@@ -1,0 +1,394 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="PhysicalValuation" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="PhysicalValuation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="APPLICATION_INFORMATION">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ACCOUNT_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLICANT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="APPLICANT_TEL" type="xs:string" minOccurs="0" />
+              <xs:element name="CONTACT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="CONTACT_TEL" type="xs:string" minOccurs="0" />
+              <xs:element name="ALTERNATE_CONTACT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="ALTERNATE_CONTACT_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="BOND_NO" type="xs:string" minOccurs="0" />
+              <xs:element name="ASSESSMENT_COMPANY" type="xs:string" minOccurs="1" />
+              <xs:element name="ADMINISTRATOR_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="VALUATION_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="NAME_OF_ASSESSOR" type="xs:string" minOccurs="0" />
+              <xs:element name="DATE_OF_ASSESSMENT" minOccurs="0" >
+				<xs:simpleType>
+				  <xs:restriction base="xs:dateTime">
+					<xs:minInclusive value="1753-01-01T00:00:00.000" />
+					<xs:maxInclusive value="9999-12-31T23:59:59.997" />
+				  </xs:restriction>
+				</xs:simpleType>
+			  </xs:element>
+              <xs:element name="PURCHASE_PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="PURPOSE_OF_ASSESSMENT" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PROPERTY_DESCRIPTION">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STREET_ADDRESS" type="xs:string" minOccurs="0" />
+              <xs:element name="STREET_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="STREET_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="TOWN" type="xs:string" minOccurs="0" />
+              <xs:element name="SUBURB" type="xs:string" minOccurs="0" />
+              <xs:element name="REGION" type="xs:string" minOccurs="0" />
+              <xs:element name="ERF_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="PORTION" type="xs:string" minOccurs="0" />
+              <xs:element name="PTNPTN" type="xs:string" minOccurs="0" />
+              <xs:element name="LAND_SIZE" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE_OF_OWNERSHIP" type="xs:string" minOccurs="0" />
+              <xs:element name="SCHEME_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="UNIT_NR" type="xs:string" minOccurs="0" />
+              <xs:element name="DOOR_NR" type="xs:string" minOccurs="0" />
+              <xs:element name="UNIT_SIZE" type="xs:string" minOccurs="0" />
+              <xs:element name="LEGAL_DESCRIPTION" type="xs:string" minOccurs="0" />
+              <xs:element name="PROPERTY_PROPERLY_IDENTIFIED" type="xs:string" minOccurs="0" />
+              <xs:element name="STREET_ADDRESS_CONFIRMED" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TOWN_PLANNING">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RATING_AREA" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE_OF_OWNERSHIP_TOWN_PLANNING" type="xs:string" minOccurs="0" />
+              <xs:element name="CURRENT_USE" type="xs:string" minOccurs="0" />
+              <xs:element name="INTENDED_USE" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IMPROVEMENTS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HEIGHT" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE_OF_WALLS" type="xs:string" minOccurs="0" />
+              <xs:element name="EXTERIOR_WALLS" type="xs:string" minOccurs="0" />
+              <xs:element name="INTERIOR_WALLS" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE_OF_ROOF_MB" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE_OF_ROOF_OB" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE_OF_ROOF_COTTAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="ROOF_COVERING_MB" type="xs:string" minOccurs="0" />
+              <xs:element name="ROOF_COVERING_OB" type="xs:string" minOccurs="0" />
+              <xs:element name="ROOF_COVERING_COTTAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="WINDOW" type="xs:string" minOccurs="0" />
+              <xs:element name="FLOOR_COVERING" type="xs:string" minOccurs="0" />
+              <xs:element name="TYPE_OF_SECTIONAL_UNIT" type="xs:string" minOccurs="0" />
+              <xs:element name="HIGHRISE_FLOOR" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ACCOMODATION_MAIN_BUILDING">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ENTRANCE_HALL" type="xs:string" minOccurs="0" />
+              <xs:element name="LOUNGE" type="xs:string" minOccurs="0" />
+              <xs:element name="DINING" type="xs:string" minOccurs="0" />
+              <xs:element name="FAMILY_ROOM" type="xs:string" minOccurs="0" />
+              <xs:element name="STUDY" type="xs:string" minOccurs="0" />
+              <xs:element name="KITCHEN" type="xs:string" minOccurs="0" />
+              <xs:element name="LAUNDRY" type="xs:string" minOccurs="0" />
+              <xs:element name="PANTRY" type="xs:string" minOccurs="0" />
+              <xs:element name="BEDROOMS" type="xs:string" minOccurs="0" />
+              <xs:element name="BATHROOMS" type="xs:string" minOccurs="0" />
+              <xs:element name="WC_SEPARATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SUN_ROOM" type="xs:string" minOccurs="0" />
+              <xs:element name="COVERED_PATIO" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER_DESCRIPTION" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER" type="xs:string" minOccurs="0" />
+              <xs:element name="AGE_OF_BUILDING" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ACCOMODATION_OUTBUILDING">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GARAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="STAFF_QUARTERS" type="xs:string" minOccurs="0" />
+              <xs:element name="WC_SHOWER" type="xs:string" minOccurs="0" />
+              <xs:element name="BEDROOMS" type="xs:string" minOccurs="0" />
+              <xs:element name="BATHROOM" type="xs:string" minOccurs="0" />
+              <xs:element name="WC" type="xs:string" minOccurs="0" />
+              <xs:element name="STORE_ROOM" type="xs:string" minOccurs="0" />
+              <xs:element name="WORKSHOP" type="xs:string" minOccurs="0" />
+              <xs:element name="CARPORT" type="xs:string" minOccurs="0" />
+              <xs:element name="HOLLYWOOD_GARAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER_OUTBUILDING_DESCRIPTION" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER_OUTBUIDING" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ACCOMODATION_COTTAGE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KITCHEN" type="xs:string" minOccurs="0" />
+              <xs:element name="LOUNGE" type="xs:string" minOccurs="0" />
+              <xs:element name="BEDROOM" type="xs:string" minOccurs="0" />
+              <xs:element name="BATHROOMS" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER_COTTAGE_DECSRIPTION" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ACCOMODATION_OTHER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GARDEN_LAWNS" type="xs:string" minOccurs="0" />
+              <xs:element name="SWIMMING_POOL" type="xs:string" minOccurs="0" />
+              <xs:element name="BOREHOLE" type="xs:string" minOccurs="0" />
+              <xs:element name="PAVINGDRIVEWAY" type="xs:string" minOccurs="0" />
+              <xs:element name="RETAINING_WALLS" type="xs:string" minOccurs="0" />
+              <xs:element name="BOUNDARY_FENCE" type="xs:string" minOccurs="0" />
+              <xs:element name="LAPA" type="xs:string" minOccurs="0" />
+              <xs:element name="AUTO_GARAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="ELECTRONIC_GATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SECURITY_SYSTEM" type="xs:string" minOccurs="0" />
+              <xs:element name="AIRCONDITIONING" type="xs:string" minOccurs="0" />
+              <xs:element name="SPRINKLER_SYSTEM" type="xs:string" minOccurs="0" />
+              <xs:element name="SOLAR_HEATING" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER_FACILITY_1" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER_FACILITY_2" type="xs:string" minOccurs="0" />
+              <xs:element name="OTHER_FACILITY_3" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EXCLUSIVE_USE_AREAS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CARPORT" type="xs:string" minOccurs="0" />
+              <xs:element name="GARAGE" type="xs:string" minOccurs="0" />
+              <xs:element name="GARDEN" type="xs:string" minOccurs="0" />
+              <xs:element name="STORE_ROOM" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="COMMON_PROPERTY">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COMMON_PROPERTY_1" type="xs:string" minOccurs="0" />
+              <xs:element name="COMMON_PROPERTY_2" type="xs:string" minOccurs="0" />
+              <xs:element name="COMMON_PROPERTY_3" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CONDITIONS">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CONDITION_1" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITION_2" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITION_3" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITION_5" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITION_4" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITION_6" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITION_7" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITION_8" type="xs:string" minOccurs="0" />
+              <xs:element name="CONDITIONS_REASON" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCATION" type="xs:string" minOccurs="0" />
+              <xs:element name="PROPERTY" type="xs:string" minOccurs="0" />
+              <xs:element name="IMPROVEMENTS" type="xs:string" minOccurs="0" />
+              <xs:element name="ACCOMMODATION" type="xs:string" minOccurs="0" />
+              <xs:element name="SECURITY_FOR_MORTGAGE_PURPOSES" type="xs:string" minOccurs="0" />
+              <xs:element name="MARKET" type="xs:string" minOccurs="0" />
+              <xs:element name="REPAIRS_REQUIRED" type="xs:string" minOccurs="0" />
+              <xs:element name="ELECTRICITY_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="WATER_METER" type="xs:string" minOccurs="0" />
+              <xs:element name="OWNER_OCCUPIED" type="xs:string" minOccurs="0" />
+              <xs:element name="VALUERS_REMARKSCOMMENTS" type="xs:string" minOccurs="0" />
+              <xs:element name="OWNER_OCCUPIED_TENANTED" type="xs:string" minOccurs="0" />
+              <xs:element name="OWNER_OCCUPIED_TENANTED_CONTACT_DETAILS" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="COMP_SALES_1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STAND" type="xs:string" minOccurs="0" />
+              <xs:element name="SUBURB" type="xs:string" minOccurs="0" />
+              <xs:element name="PURCHASE_PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="PURCHASE_DATE" minOccurs="0" >
+				<xs:simpleType>
+				  <xs:restriction base="xs:dateTime">
+					<xs:minInclusive value="1753-01-01T00:00:00.000" />
+					<xs:maxInclusive value="9999-12-31T23:59:59.997" />
+				  </xs:restriction>
+				</xs:simpleType>
+			  </xs:element>
+              <xs:element name="ACCOMMODATION" type="xs:string" minOccurs="0" />
+              <xs:element name="SITE_IMPROVEMENTS" type="xs:string" minOccurs="0" />
+              <xs:element name="OVERALL_DESIRABILITY_OF_PROPERTY_CHARACTERISTICS" type="xs:string" minOccurs="0" />
+              <xs:element name="FUNCTIONALLY_EFFECIENCY" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCATION" type="xs:string" minOccurs="0" />
+              <xs:element name="SIMILAR" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="COMP_SALES_2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STAND" type="xs:string" minOccurs="0" />
+              <xs:element name="SUBURB" type="xs:string" minOccurs="0" />
+              <xs:element name="PURCHASE_PRICE" type="xs:string" minOccurs="0" />
+              <xs:element name="PURCHASE_DATE" minOccurs="0" >
+				<xs:simpleType>
+				  <xs:restriction base="xs:dateTime">
+					<xs:minInclusive value="1753-01-01T00:00:00.000" />
+					<xs:maxInclusive value="9999-12-31T23:59:59.997" />
+				  </xs:restriction>
+				</xs:simpleType>
+			  </xs:element>
+              <xs:element name="ACCOMMODATION" type="xs:string" minOccurs="0" />
+              <xs:element name="SITE_IMPROVEMENTS" type="xs:string" minOccurs="0" />
+              <xs:element name="OVERALL_DESIRABILITY_OF_PROPERTY_CHARACTERISTICS" type="xs:string" minOccurs="0" />
+              <xs:element name="FUNCTIONALLY_EFFECIENCY" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCATION" type="xs:string" minOccurs="0" />
+              <xs:element name="SIMILAR" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="COMP_SALES_3">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STAND_CS2" type="xs:string" minOccurs="0" />
+              <xs:element name="SUBURB_CS2" type="xs:string" minOccurs="0" />
+              <xs:element name="PURCHASE_PRICE_CS2" type="xs:string" minOccurs="0" />
+              <xs:element name="PURCHASE_DATE_CS2" minOccurs="0" >
+				<xs:simpleType>
+				  <xs:restriction base="xs:dateTime">
+					<xs:minInclusive value="1753-01-01T00:00:00.000" />
+					<xs:maxInclusive value="9999-12-31T23:59:59.997" />
+				  </xs:restriction>
+				</xs:simpleType>
+			  </xs:element>
+              <xs:element name="ACCOMMODATION_CS2" type="xs:string" minOccurs="0" />
+              <xs:element name="SITE_IMPROVEMENTS_CS2" type="xs:string" minOccurs="0" />
+              <xs:element name="FUNCTIONALLY_EFFECIENCY_CS2" type="xs:string" minOccurs="0" />
+              <xs:element name="OVERALL_DESIRABILITY_OF_PROPERTY_CHARACTERISTICS" type="xs:string" minOccurs="0" />
+              <xs:element name="LOCATION_CS2" type="xs:string" minOccurs="0" />
+              <xs:element name="SIMILAR_CS2" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="REPLACEMENT_COST">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ROOF_TYPE" type="xs:string" minOccurs="1" />
+              <xs:element name="LAPA_DIST_FROM_MB" type="xs:double" minOccurs="0" />
+              <xs:element name="MAIN_BUILDING_M2" type="xs:long" minOccurs="0" />
+              <xs:element name="MAIN_BUILDING_RM2_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="MAIN_BUILDING_TOTAL_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="MAIN_BUILDING_RM2_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="MAIN_BUILDING_TOTAL_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_1_M2" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_1_RM2_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_1_TOTAL_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_1_RM2_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_1_TOTAL_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_2_M2" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_2_RM2_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_2_TOTAL_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_2_RM2_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="OUTBUILDING_2_TOTAL_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="COTTAGE_M2" type="xs:long" minOccurs="0" />
+              <xs:element name="COTTAGE_RM2_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="COTTAGE_TOTAL_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="COTTAGE_RM2_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="COTTAGE_TOTAL_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_M2" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_RM2_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_TOTAL_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_RM2_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_TOTAL_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="LAPA_M2" type="xs:long" minOccurs="0" />
+              <xs:element name="LAPA_RM2_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="LAPA_TOTAL_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="LAPA_RM2_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="LAPA_TOTAL_THATCH" type="xs:long" minOccurs="0" />
+              <xs:element name="SUBTOTAL_CONVENTIONAL" type="xs:long" minOccurs="0" />
+              <xs:element name="SUBTOTAL_THATCH" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OTHER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SWIMMING_POOL_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="SWIMMING_POOL_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="SWIMMING_POOL_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="PATIO_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="PATIO_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="PATIO_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="PAVING_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="PAVING_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="PAVING_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="PERIMETER_WALLINGFENCE_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="PERIMETER_WALLINGFENCE_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="PERIMETER_WALLINGFENCE_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="ELECTRONIC_GATE_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="ELECTRONIC_GATE_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="ELECTRONIC_GATE_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="SECURITY_SYSTEM_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="SECURITY_SYSTEM_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="SECURITY_SYSTEM_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="AIRCONDITIONING_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="AIRCONDITIONING_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="AIRCONDITIONING_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="ALARM_SYSTEM_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="ALARM_SYSTEM_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="ALARM_SYSTEM_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="BOREHOLE_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="BOREHOLE_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="BOREHOLE_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="CARPORT_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_1_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_1_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_1_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_2_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_2_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_2_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_3_QTYM2" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_3_RUNIT" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_3_TOTAL" type="xs:long" minOccurs="0" />
+              <xs:element name="OTHER_SUBTOTAL" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InstructionDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UniqueID" type="xs:string" minOccurs="0" />
+              <xs:element name="CompletionDate" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="INSURANCE_VALUE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="REPLACEMENT_CONVENTIONAL" type="xs:double" minOccurs="0" />
+              <xs:element name="REPLACEMENT_THATCH" type="xs:double" minOccurs="0" />
+              <xs:element name="REPLACEMENT_OTHER" type="xs:double" minOccurs="0" />
+              <xs:element name="REPLACEMENT_SUB_TOTAL" type="xs:double" minOccurs="0" />
+              <xs:element name="PERCENTAGE_APPLIED_PROFESSIONAL_FEES" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTAL_INSURANCE_VALUE" type="xs:double" minOccurs="0" />
+              <xs:element name="TOTAL_REPLACEMENTINSURANCE_VALUE" type="xs:double" minOccurs="1" />
+              <xs:element name="PRESENT_MARKET_VALUE" type="xs:double" minOccurs="1" />
+              <xs:element name="COST_OF_IMPROVEMENTS_TO_BE_DONE" type="xs:long" minOccurs="0" />
+              <xs:element name="ESTIMATED_COMPLETION_VALUE" type="xs:double" minOccurs="0" />
+              <xs:element name="FORCED_SALE_VALUE" type="xs:double" minOccurs="0" />
+              <xs:element name="QUALIFICATION" type="xs:string" minOccurs="0" />
+              <xs:element name="REG_NO" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

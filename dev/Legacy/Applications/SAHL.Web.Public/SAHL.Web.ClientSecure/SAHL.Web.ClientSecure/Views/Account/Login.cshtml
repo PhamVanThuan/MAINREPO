@@ -1,0 +1,102 @@
+﻿@model SAHL.Web.ClientSecure.Models.LoginViewModel
+@{
+    ViewBag.Title = "Client Online Services";
+}
+
+<h2>CLIENT ONLINE SERVICES</h2>
+<div>
+    <table>
+        <tr>
+            <td>
+                <div id="main-content">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <fieldset>
+                            <legend></legend>
+                            <div class="editor-label">
+                                @Html.LabelFor(m => m.UserName, "E-mail address")
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="editor-field">
+                                @Html.TextBoxFor(m => m.UserName)
+                                @Html.ValidationMessageFor(m => m.UserName)
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="editor-label">
+                                @Html.LabelFor(m => m.Password)
+                            </div>
+                            <div class="spacer"></div>
+                            <div class="editor-field">
+                                @Html.PasswordFor(m => m.Password)
+                                @Html.ValidationMessageFor(m => m.Password)
+                            </div>
+                            <p>
+                                <input type="submit" value="Log in" /><br />
+                                <br />
+                            </p>
+                        </fieldset>
+                    }
+                    <div class="instructions">
+
+                        <p class="summary">
+                            If you have not logged on before or have forgotten your password then use the @Html.ActionLink("reset password", "ResetPassword") page 
+                                with your e-mail address. Check your e-mail inbox for further instructions.<br />
+                        </p>
+                        <div class="spacer"></div>
+                        <img src="../Images/step-3.png" />
+                        <p>
+                            If you have not logged on for a long time, your password would have been reset for various reasons. Please
+                        contact us below.
+                        </p>
+                        <h4>Client Services Helpdesk</h4>
+                        <dl class="contact-details">
+                            <dt class="telephone">Tel: </dt>
+                            <dd class="telephone">0861 888 777</dd>
+                            <dt class="fax">Fax: </dt>
+                            <dd class="fax">031 571 3150</dd>
+                            <dt class="mail">E-mail: </dt>
+                            <dd class="mail"><a href="mailto:admin@sahomeloans.com">admin@sahomeloans.com</a></dd>
+                        </dl>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <aside id="sidebar">
+                    <!-- the lack of spacing between the div close tag and aside open tag is necessary -->
+                    <h2>Info for existing clients</h2>
+                    <article>
+                        <h4 class="title">Welcome to SA Home Loans</h4>
+                        <img class="iconWelcome" src="../images/Welcome.jpg" alt="" />
+                        <p class="summary">
+                            You’re a valued client to us, and we look forward to assisting you with all your needs. At SA Home Loans we
+                        really appreciate your support and continue to welcome you as a member of the home financing company that
+                        puts your needs above all else.  It’s a privilege to have you with us.
+                        </p>
+                        <a class="read-more" href="http://www.sahomeloans.com/WelcometoSAHomeLoans.aspx">Read more</a>
+                    </article>
+                    <article>
+                        <h4 class="title">Further Lending</h4>
+                        <img class="iconFurtherLending" src="../images/FurtherLending.jpg" alt="" />
+                        <p class="summary">
+                            Choosing a home loan provider is as important a decision as buying a home. It is important that your home loan
+                        provides you with future opportunities as your lifestyle and needs change.  That’s why you’ll want to make a
+                        choice that’s going to suit your needs now and in the future.
+                        </p>
+                        <a class="read-more" href="http://www.sahomeloans.com/FurtherLending.aspx">Read more</a>
+                    </article>
+                </aside>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5596329-2', 'auto');
+  ga('send', 'pageview');
+
+</script>

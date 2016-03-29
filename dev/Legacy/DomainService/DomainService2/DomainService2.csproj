@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B0BE20BD-9A3E-4F94-8F4B-370169B16C03}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainService2</RootNamespace>
+    <AssemblyName>DomainService2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\External Binaries\NuGet\Ninject.3.0.0.15\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\RabbitMQ.Client\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.DAO, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Service.Interfaces, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Service.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.X2.BusinessModel.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.X2.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Communication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework, Version=1.0.8.107, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandler.cs" />
+    <Compile Include="Hosts\ScenarioMaps\ScenarioMapsHost.cs" />
+    <Compile Include="SharedServices\Common\CheckApplicationHasAttributeCommand.cs" />
+    <Compile Include="SharedServices\Common\CheckApplicationHasAttributeCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\ClearCacheCommand.cs" />
+    <Compile Include="SharedServices\Common\ClearCacheCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\ClearRuleCacheCommand.cs" />
+    <Compile Include="SharedServices\Common\ClearRuleCacheCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\ConfirmApplicationAffordabilityAssessmentsCommand.cs" />
+    <Compile Include="SharedServices\Common\ConfirmApplicationAffordabilityAssessmentsCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationStatusCommand.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationStatusCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationTypeCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SharedServices\Common\GetApplicationTypeCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SharedServices\Common\GetComcorpVendorOrgStructureByApplicationCommand.cs" />
+    <Compile Include="SharedServices\Common\GetComcorpVendorOrgStructureByApplicationCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CheckIsComcorpApplicationRuleCommand.cs" />
+    <Compile Include="SharedServices\Common\IsComcorpApplicationCommand.cs" />
+    <Compile Include="SharedServices\Common\CheckIsComcorpApplicationRuleCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\IsComcorpApplicationCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\ProcessManuallySelectedEmploymentTypeCommand.cs" />
+    <Compile Include="SharedServices\Common\ProcessManuallySelectedEmploymentTypeCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\RefreshAllLookupsCommand.cs" />
+    <Compile Include="SharedServices\Common\RefreshAllLookupsCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\RefreshLookupItemCommand.cs" />
+    <Compile Include="SharedServices\Common\RefreshLookuptemCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\RefreshDSCacheCommand.cs" />
+    <Compile Include="SharedServices\Common\RefreshDSCacheCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\RefreshUIStatementCacheCommand.cs" />
+    <Compile Include="SharedServices\Common\RefreshUIStatementCacheCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\RemoveApplicationAttributeCommand.cs" />
+    <Compile Include="SharedServices\Common\RemoveApplicationAttributeCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetRoundRobinPointerCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetRoundRobinPointerCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckApplicationHas30YearTermRuleCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\Check30YearTermApplicationRuleCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckApplicationHas30YearTermRuleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\Check30YearTermApplicationRuleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HelpDeskNTUCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HelpDeskNTUCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\Revert30YearTermApplicationToPreviousTermCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\Revert30YearTermApplicationToPreviousTermCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckApplicationIsNewBusinessRuleCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckApplicationIsNewBusinessRuleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckEmploymentTypeConfirmedRuleCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckEmploymentTypeConfirmedRuleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\DisqualifyApplicationForGEPFCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\DisqualifyApplicationForGEPFCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCededAmountCoversApplicationAmountRuleCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCededAmountCoversApplicationAmountRuleCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionClientRulesCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionClientRulesCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckExternalPolicyIsCededRuleCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckExternalPolicyIsCededRuleCommandHandler.cs" />
+    <Compile Include="RuleSetDomainServiceCommandHandler.cs" />
+    <Compile Include="DomainService.cs" />
+    <Compile Include="DomainServiceCommand.cs" />
+    <Compile Include="ICommandHandler.cs" />
+    <Compile Include="IDomainHost.cs" />
+    <Compile Include="RuleDomainServiceCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CheckApplicationMinimumIncomeRulesCommand.cs" />
+    <Compile Include="SharedServices\Common\CheckApplicationMinimumIncomeRulesCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CalculateAndSaveApplicationCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CalculateAndSaveApplicationCommand.cs" />
+    <Compile Include="SharedServices\Common\GetLatestReasonDescriptionKeyForGenericKeyCommand.cs" />
+    <Compile Include="SharedServices\Common\GetLatestReasonDescriptionKeyForGenericKeyCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetLegalEntityLegalNameCommand.cs" />
+    <Compile Include="SharedServices\Common\GetLegalEntityLegalNameCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetPreviousStateNameCommand.cs" />
+    <Compile Include="SharedServices\Common\GetPreviousStateNameCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\IsRCSCommand.cs" />
+    <Compile Include="SharedServices\Common\IsRCSCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\OptOutNonPerformingLoanCommand.cs" />
+    <Compile Include="SharedServices\Common\OptOutNonPerformingLoanCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendNewClientConsultantDetailsSMSCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendNewClientConsultantDetailsSMSCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactivateUserOrRoundRobinForWorkflowRoleAssignmentCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactivateUserOrRoundRobinForWorkflowRoleAssignmentCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\RoundRobinAndAssignOtherFLCasesCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\RoundRobinAndAssignOtherFLCasesCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ResolveWorkflowRoleAssignmentCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ResolveWorkflowRoleAssignmentCommandHandler.cs" />
+    <Compile Include="StandardDomainServiceCommand.cs" />
+    <Compile Include="DomainServiceWithExclusionSetCommand.cs" />
+    <Compile Include="ExceptionsCommandHandler.cs" />
+    <Compile Include="Hosts\Cap2\Cap2Host.cs" />
+    <Compile Include="Hosts\Common\CommonHost.cs" />
+    <Compile Include="Hosts\DebtCounselling\DebtCounsellingHost.cs" />
+    <Compile Include="Hosts\HelpDesk\HelpDeskHost.cs" />
+    <Compile Include="Hosts\HostBase.cs" />
+    <Compile Include="Hosts\PersonalLoan\PersonalLoansHost.cs" />
+    <Compile Include="Hosts\WorkflowAssignment\WorkflowAssignmentHost.cs" />
+    <Compile Include="IDomainServiceIOC.cs" />
+    <Compile Include="IDomainServiceLoader.cs" />
+    <Compile Include="IDomainServiceWithExclusionSetCommand.cs" />
+    <Compile Include="IHandlesDomainServiceCommandDecorator.cs" />
+    <Compile Include="Hosts\Life\LifeHost.cs" />
+    <Compile Include="Hosts\LoanAdjustments\LoanAdjustmentsHost.cs" />
+    <Compile Include="Hosts\Origination\ApplicationCapture\ApplicationCaptureHost.cs" />
+    <Compile Include="Hosts\Origination\ApplicationManagement\ApplicationManagementHost.cs" />
+    <Compile Include="Hosts\Origination\Credit\CreditHost.cs" />
+    <Compile Include="Hosts\Origination\FurtherLending\FurtherLendingHost.cs" />
+    <Compile Include="Hosts\Origination\Valuations\ValuationsHost.cs" />
+    <Compile Include="IDomainServiceCommand.cs" />
+    <Compile Include="IHandlesDomainServiceCommand.cs" />
+    <Compile Include="IRuleDomainServiceCommand.cs" />
+    <Compile Include="IRuleSetDomainServiceCommand.cs" />
+    <Compile Include="IStandardDomainServiceCommand.cs" />
+    <Compile Include="LoggingCommandHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleDomainServiceCommand.cs" />
+    <Compile Include="RuleSetDomainServiceCommand.cs" />
+    <Compile Include="Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SharedServices\Common\AddDetailTypeCommand.cs" />
+    <Compile Include="SharedServices\Common\AddDetailTypeCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\AddReasonsCommand.cs" />
+    <Compile Include="SharedServices\Common\AddReasonsCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\ArchiveV3ITCForApplicationCommand.cs" />
+    <Compile Include="SharedServices\Common\ArchiveV3ITCForApplicationCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CheckLightStoneValuationRulesCommand.cs" />
+    <Compile Include="SharedServices\Common\CheckLightStoneValuationRulesCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CheckPropertyExistsCommand.cs" />
+    <Compile Include="SharedServices\Common\CheckPropertyExistsCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CheckUserInMandateCommand.cs" />
+    <Compile Include="SharedServices\Common\CheckUserInMandateCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CloneExistsForParentCommand.cs" />
+    <Compile Include="SharedServices\Common\CloneExistsForParentCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CreateAccountForApplicationCommand.cs" />
+    <Compile Include="SharedServices\Common\CreateAccountForApplicationCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CreateNewRevisionCommand.cs" />
+    <Compile Include="SharedServices\Common\CreateNewRevisionCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\DoCreditScoreCommand.cs" />
+    <Compile Include="SharedServices\Common\DoCreditScoreCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\DoLightStoneValuationForWorkFlowCommand.cs" />
+    <Compile Include="SharedServices\Common\DoLightStoneValuationForWorkFlowCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetCreditScoreDecisionKeyCommand.cs" />
+    <Compile Include="SharedServices\Common\GetCreditScoreDecisionKeyCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetFollowupTimeCommand.cs" />
+    <Compile Include="SharedServices\Common\GetFollowupTimeCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetLightStoneValuationCommand.cs" />
+    <Compile Include="SharedServices\Common\GetLightStoneValuationCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetnWorkingDaysFromTodayCommand.cs" />
+    <Compile Include="SharedServices\Common\GetnWorkingDaysFromTodayCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\HasInstancePerformedActivityCommand.cs" />
+    <Compile Include="SharedServices\Common\HasInstancePerformedActivityCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\IsValuationInProgressCommand.cs" />
+    <Compile Include="SharedServices\Common\IsValuationInProgressCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\PerformEWorkActionCommand.cs" />
+    <Compile Include="SharedServices\Common\PerformEWorkActionCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\PricingForRiskCommand.cs" />
+    <Compile Include="SharedServices\Common\PricingForRiskCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\RecalculateHouseHoldIncomeAndSaveCommand.cs" />
+    <Compile Include="SharedServices\Common\RecalculateHouseHoldIncomeAndSaveCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\RemoveDetailFromAccountCommand.cs" />
+    <Compile Include="SharedServices\Common\RemoveDetailFromAccountCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\SendClientSurveyExternalEmailCommand.cs" />
+    <Compile Include="SharedServices\Common\SendClientSurveyExternalEmailCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\SendClientSurveyInternalEmailCommand.cs" />
+    <Compile Include="SharedServices\Common\SendClientSurveyInternalEmailCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\SendReminderEMailCommand.cs" />
+    <Compile Include="SharedServices\Common\SendReminderEMailCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\SendSMSToMainApplicantsCommand.cs" />
+    <Compile Include="SharedServices\Common\SendSMSToMainApplicantsCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\SetOfferEndDateCommand.cs" />
+    <Compile Include="SharedServices\Common\SetOfferEndDateCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\UpdateAccountStatusCommand.cs" />
+    <Compile Include="SharedServices\Common\UpdateAccountStatusCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\UpdateAssignedUserInIDMCommand.cs" />
+    <Compile Include="SharedServices\Common\UpdateAssignedUserInIDMCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\UpdateOfferStatusCommand.cs" />
+    <Compile Include="SharedServices\Common\UpdateOfferStatusCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\UpdateParentVarsCommand.cs" />
+    <Compile Include="SharedServices\Common\UpdateParentVarsCommandHandler.cs" />
+    <Compile Include="SharedServices\IX2WorkflowService.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignBranchManagerForOrgStrucKeyCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignBranchManagerForOrgStrucKeyCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignCaseThatWasPreviouslyInDisputeIndicatedCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignCaseThatWasPreviouslyInDisputeIndicatedCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignCreateorAsDynamicRoleCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignCreateorAsDynamicRoleCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignDebtCounsellingCaseForGroupOrLoadBalanceCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignDebtCounsellingCaseForGroupOrLoadBalanceCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignWorkflowRoleCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignWorkflowRoleCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignWorkflowRoleForADUserCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\AssignWorkflowRoleForADUserCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\CheckUserInWorkflowRoleCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\CheckUserInWorkflowRoleCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReturnFeedbackOnverrideUserCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReturnFeedbackOnverrideUserCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReturnPolicyOverrideUserCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\CloneActiveSecurityFromInstanceForInstanceCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\CloneActiveSecurityFromInstanceForInstanceCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\DeactivateAllWorkflowRoleAssigmentsForInstanceCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\DeactivateAllWorkflowRoleAssigmentsForInstanceCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetBranchManagerOrgStructureKeyCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetBranchManagerOrgStructureKeyCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetFirstAssignedCreditUserCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetFirstAssignedCreditUserCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetLastUserToWorkOnCaseAcrossInstancesCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetLastUserToWorkOnCaseAcrossInstancesCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetLatestUserAcrossInstancesCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetLatestUserAcrossInstancesCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetUserWhoWorkedOnThisLEsOtherCasesForDynamicRoleCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetUserWhoWorkedOnThisLEsOtherCasesForDynamicRoleCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\HandleApplicationManagementRolesOnReturnFromNTUtoPreviousStateCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\HandleApplicationManagementRolesOnReturnFromNTUtoPreviousStateHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\InsertInternetLeadWorkflowAssignmentCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\InsertInternetLeadWorkflowAssignmentCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsPolicyOverrideCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsPolicyOverrideCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\PolicyOverrideReassignToFirstUserOrRoundRobinCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\PolicyOverrideReassignToFirstUserOrRoundRobinCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReActivateBranchUsersForOriginationCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReActivateBranchUsersForOriginationCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeyByProcessCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeyByProcessCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeysByProcessCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeysByProcessCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeysCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeysCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignCaseToUserByProcessCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignCaseToUserByProcessCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignToMostSenPersonWhoWorkedOnThisCaseInCreditComand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignToMostSenPersonWhoWorkedOnThisCaseInCreditComandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignToPreviousValuationsUserIfExistsElseRoundRobinCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignToPreviousValuationsUserIfExistsElseRoundRobinCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ResolveDynamicRoleToUserNameCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ResolveDynamicRoleToUserNameCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReturnPolicyOverrideUserCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2RoundRobinForGivenOSKeyCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2RoundRobinForGivenOSKeyCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactivateUserOrLoadBalanceAssignWithStatesCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactivateUserOrLoadBalanceAssignWithStatesCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsUserActiveByADUserKeyCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsUserActiveByADUserKeyCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\DeActiveUsersForInstanceAndProcessCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\DeActiveUsersForInstanceAndProcessCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\DeActiveUsersForInstanceCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\DeActiveUsersForInstanceCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetConsultantForInstanceAndRoleCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetConsultantForInstanceAndRoleCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetCurrentConsultantAndAdminCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetCurrentConsultantAndAdminCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetUsersWhoWorkedOnThisCaseInOtherMapsWhereUserIsStillActiveAndInSameOrgStructCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\GetUsersWhoWorkedOnThisCaseInOtherMapsWhereUserIsStillActiveAndInSameOrgStructCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\InsertCommissionableConsultantCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\InsertCommissionableConsultantCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsUserActiveByADUserNameCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsUserActiveByADUserNameCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsUserStillInSameOrgStructureForCaseReassignCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\IsUserStillInSameOrgStructureForCaseReassignCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactivateUserOrLoadBalanceAssignCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactivateUserOrLoadBalanceAssignCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeyCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReactiveUserOrRoundRobinForOSKeyCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignCaseToUserCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignCaseToUserCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignParentMapToCurrentUserCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\ReassignParentMapToCurrentUserCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2LoadBalanceAssignCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2LoadBalanceAssignCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2RoundRobinForGivenOSKeysCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2RoundRobinForGivenOSKeysCommandHandler.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2RoundRobinForPointerDescriptionCommand.cs" />
+    <Compile Include="SharedServices\WorkflowAssignment\X2RoundRobinForPointerDescriptionCommandHandler.cs" />
+    <Compile Include="SharedServices\X2WorkflowService.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionalCommandHandler.cs" />
+    <Compile Include="Workflow\Cap2\IsCreditCheckRequiredCommand.cs" />
+    <Compile Include="Workflow\Cap2\IsCreditCheckRequiredCommandHandler.cs" />
+    <Compile Include="Workflow\Cap2\CheckReadvanceDoneRulesCommand.cs" />
+    <Compile Include="Workflow\Cap2\CheckReadvanceDoneRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Cap2\IsLANotRequiredCommand.cs" />
+    <Compile Include="Workflow\Cap2\IsLANotRequiredCommandHandler.cs" />
+    <Compile Include="Workflow\Cap2\OnCompleteActivity_Promotion_ClientCommand.cs" />
+    <Compile Include="Workflow\Cap2\OnCompleteActivity_Promotion_ClientCommandHandler.cs" />
+    <Compile Include="Workflow\Cap2\UpdateCapOfferStatusCommand.cs" />
+    <Compile Include="Workflow\Cap2\UpdateCapOfferStatusCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\CheckIfUserIsPartOfOrgStructureCommand.cs" />
+    <Compile Include="SharedServices\Common\CheckIfUserIsPartOfOrgStructureCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationKeyFromSourceInstanceIDCommand.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationKeyFromSourceInstanceIDCommandHandler.cs" />
+    <Compile Include="SharedServices\Common\GetCaseNameCommand.cs" />
+    <Compile Include="SharedServices\Common\GetCaseNameCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounsellingCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounsellingCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounselling_EXTCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounselling_EXTCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckFiveDaysTerminationReminderRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckFiveDaysTerminationReminderRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckFortyFiveDayReminderRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckFortyFiveDayReminderRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckNoDateNoPayRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckNoDateNoPayRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendTerminationLetterRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendTerminationLetterRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendToLitigationRulesCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflow\DebtCounselling\CheckSendToLitigationRulesCommandHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflow\DebtCounselling\CheckAcceptProposalRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckAcceptProposalRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckPaymentReceivedRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckPaymentReceivedRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendCounterProposalRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendCounterProposalRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendDeclineLetterRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendDeclineLetterRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendProposalForApprovalRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendProposalForApprovalRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckTenDaysTerminationReminderRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckTenDaysTerminationReminderRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckAttorneyToOpposeRulesCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckAttorneyToOpposeRulesCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\ConvertDebtCounsellingCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\ConvertDebtCounsellingCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetInstanceSubjectForDebtCounsellingCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetInstanceSubjectForDebtCounsellingCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\NTUOpenPersonalLoanCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\NTUOpenPersonalLoanCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationsCancellatonRegistered_EXTCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationsCancellatonRegistered_EXTCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\TerminateDebtCounsellingCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\TerminateDebtCounsellingCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendLitigationReminderInternalEmailCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendLitigationReminderInternalEmailCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateActiveAcceptedProposalCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateActiveAcceptedProposalCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingDebtReviewArrangementCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingDebtReviewArrangementCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingStatusCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingStatusCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\RollbackTransactionCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\RollbackTransactionCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetEworkDataForLossControlCaseCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetEworkDataForLossControlCaseCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetReviewDateCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetReviewDateCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetSeventeenPointOneDateDaysCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetSeventeenPointOneDateDaysCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\ProcessDebtCounsellingOptOutCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\ProcessDebtCounsellingOptOutCommandHandler.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateHearingDetailStatusToInactiveCommand.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateHearingDetailStatusToInactiveCommandHandler.cs" />
+    <Compile Include="Workflow\HelpDesk\CreateRequestCommand.cs" />
+    <Compile Include="Workflow\HelpDesk\CreateRequestCommandHandler.cs" />
+    <Compile Include="Workflow\HelpDesk\X2AutoArchive2AM_UpdateCommand.cs" />
+    <Compile Include="Workflow\HelpDesk\X2AutoArchive2AM_UpdateCommandHandler.cs" />
+    <Compile Include="Workflow\Life\AcceptBenefitsCommand.cs" />
+    <Compile Include="Workflow\Life\AcceptBenefitsCommandHandler.cs" />
+    <Compile Include="Workflow\Life\ActivateLifePolicyCommand.cs" />
+    <Compile Include="Workflow\Life\ActivateLifePolicyCommandHandler.cs" />
+    <Compile Include="Workflow\Life\AwaitingConfirmationTimeoutCommand.cs" />
+    <Compile Include="Workflow\Life\AwaitingConfirmationTimeoutCommandHandler.cs" />
+    <Compile Include="Workflow\Life\ContinueSaleCommand.cs" />
+    <Compile Include="Workflow\Life\ContinueSaleCommandHandler.cs" />
+    <Compile Include="Workflow\Life\CreateInstanceCommand.cs" />
+    <Compile Include="Workflow\Life\CreateInstanceCommandHandler.cs" />
+    <Compile Include="Workflow\Life\DeclineQuoteCommand.cs" />
+    <Compile Include="Workflow\Life\DeclineQuoteCommandHandler.cs" />
+    <Compile Include="Workflow\Life\GetActivityTimeWaitForCallbackCommand.cs" />
+    <Compile Include="Workflow\Life\GetActivityTimeWaitForCallbackCommandHandler.cs" />
+    <Compile Include="Workflow\Life\GetPolicyTypeKeyForOfferLifeCommand.cs" />
+    <Compile Include="Workflow\Life\GetPolicyTypeKeyForOfferLifeCommandHandler.cs" />
+    <Compile Include="Workflow\Life\NTUPolicyCommand.cs" />
+    <Compile Include="Workflow\Life\NTUPolicyCommandHandler.cs" />
+    <Compile Include="Workflow\Life\OlderThan45DaysCommand.cs" />
+    <Compile Include="Workflow\Life\OlderThan45DaysCommandHandler.cs" />
+    <Compile Include="Workflow\Life\PolicyNTUdCommand.cs" />
+    <Compile Include="Workflow\Life\PolicyNTUdCommandHandler.cs" />
+    <Compile Include="Workflow\Life\ReactivatePolicyCommand.cs" />
+    <Compile Include="Workflow\Life\ReactivatePolicyCommandHandler.cs" />
+    <Compile Include="Workflow\Life\ReadyToCallbackCommand.cs" />
+    <Compile Include="Workflow\Life\ReadyToCallbackCommandHandler.cs" />
+    <Compile Include="Workflow\LoanAdjustments\ApproveTermChangeRequestCommand.cs" />
+    <Compile Include="Workflow\LoanAdjustments\ApproveTermChangeRequestCommandHandler.cs" />
+    <Compile Include="Workflow\LoanAdjustments\CheckIfCanApproveTermChangeRulesCommand.cs" />
+    <Compile Include="Workflow\LoanAdjustments\CheckIfCanApproveTermChangeRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckBranchSubmitApplicationRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckBranchSubmitApplicationRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionPrimaryITCRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionPrimaryITCRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionSecondaryITCRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionSecondaryITCRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckManagerSubmitApplicationRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckManagerSubmitApplicationRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateCommissionableConsultantRoleCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateCommissionableConsultantRoleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateInternetApplicationCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateInternetLeadCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateInternetLeadCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\DemoteMainApplicantToLeadCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\DemoteMainApplicantToLeadCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateInternetApplicationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentInRoleCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentInRoleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\PromoteLeadToMainApplicantCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\PromoteLeadToMainApplicantCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendReminderEmailCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendReminderEmailCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SubmitApplicationToApplicationManagementCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SubmitApplicationToApplicationManagementCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ActivateNTUFromWatchdogTimeCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ActivateNTUFromWatchdogTimeCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ArchiveChildInstancesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ArchiveChildInstancesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckADUserInSameBranchRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckADUserInSameBranchRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckApplicationDebitOrderCollectionRuleCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckApplicationDebitOrderCollectionRuleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckCreditOverrideRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckCreditOverrideRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckEWorkAtCorrectStateRuleCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckEWorkAtCorrectStateRuleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckIfReinstateAllowedByUserCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckIfReinstateAllowedByUserCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckInstructAttorneyRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckInstructAttorneyRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckQACompleteRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckQACompleteRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckResubOverRideRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckResubOverRideRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckValuationRequiredRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckValuationRequiredRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CreateEWorkPipelineCaseCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CreateEWorkPipelineCaseCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HasApplicationRoleCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HasApplicationRoleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\NTUCaseCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\NTUCaseCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveAccountFromRegMailCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveAccountFromRegMailCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveDetailFromApplicationAfterNTUFinalisedCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveDetailFromApplicationAfterNTUFinalisedCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveRegistrationProcessDetailTypesCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveRegistrationProcessDetailTypesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnNonDisbursedLoanToProspectCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnDisbursedLoanToRegistrationCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnDisbursedLoanToRegistrationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SaveApplicationCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SaveApplicationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantForValuationDoneCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantForValuationDoneCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendNTUFinalResubMailCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendNTUFinalResubMailCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SetAccountStatusToApplicationPriorToInstructAttorneyCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SetAccountStatusToApplicationPriorToInstructAttorneyCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\AddDetailTypeInstructionSentCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\AddDetailTypeInstructionSentCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\UpdateRegMailDetailToInstructionNotSentCommand.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\UpdateRegMailDetailToInstructionNotSentCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckCreditApprovalRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckCreditApprovalRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\DoesNotMeetCreditSignatureRequirementsCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\DoesNotMeetCreditSignatureRequirementsCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsCreditSecondPassCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsCreditSecondPassCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsReviewRequiredCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsReviewRequiredCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsValuationApprovalRequiredCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsValuationApprovalRequiredCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\PerformCreditMandateCheckCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\PerformCreditMandateCheckCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\SendCreditDecisionMailCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\SendCreditDecisionMailCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\SendResubMailCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\SendResubMailCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Credit\UpdateConditionsCommand.cs" />
+    <Compile Include="Workflow\Origination\Credit\UpdateConditionsCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddAccountMemoMessageOnReceiptOfApplicationCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddAccountMemoMessageOnReceiptOfApplicationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddDetailTypesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddDetailTypesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AppsInProgOfHigherPriCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AppsInProgOfHigherPriCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ArchiveFLRelatedCasesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ArchiveFLRelatedCasesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CanRollbackReadvanceCorrectionTransactionCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CanRollbackReadvanceCorrectionTransactionCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckCanDisburseReadvanceRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckCanDisburseReadvanceRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckInformClientRuleCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckInformClientRuleCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckIsFurtherAdvanceBelowLAARulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckIsFurtherAdvanceBelowLAARulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckNTUDeclineFinalRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckNTUDeclineFinalRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckOptOutSuperLoRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckOptOutSuperLoRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckRapidShouldGotoCreditRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckRapidShouldGotoCreditRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRequiredRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRequiredRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuretyForReAdvanceRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuretyForReAdvanceRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRequiredWithNoMessagesRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRequiredWithNoMessagesRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\FLCompleteUnholdNextApplicationWhereApplicableCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\FLCompleteUnholdNextApplicationWhereApplicableCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\HighestPriorityCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\HighestPriorityCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\InitialFLNTUCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\InitialFLNTUCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\LTVForFLCaseCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\LTVForFLCaseCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\OptOutSuperLoCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\OptOutSuperLoCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\RemoveDetailTypesCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\RemoveDetailTypesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\SuretySignedConfirmedCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\SuretySignedConfirmedCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ValuationRequiredCommand.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ValuationRequiredCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckIfCanPerformFurtherValuationCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckIfCanPerformFurtherValuationCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationExistsRecentRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationExistsRecentRulesCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\RecalcHOCCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\RecalcHOCCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SendEmailToAllOpenApplicationConsultantsForValuationCompleteCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SendEmailToAllOpenApplicationConsultantsForValuationCompleteCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationActiveAndSaveCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationActiveAndSaveCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationIsActiveCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationIsActiveCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationStatusCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationStatusCommandHandler.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationInOrderRulesCommand.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationInOrderRulesCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckAlteredApprovalStageTransitionRuleCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckAlteredApprovalStageTransitionRuleCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCanEmailPersonalLoanApplicationRuleCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCanEmailPersonalLoanApplicationRuleCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionRulesCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionRulesCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckDisbursementCutOffTimeRuleCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckDisbursementCutOffTimeRuleCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckSendOfferRulesCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckSendOfferRulesCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckUnderDebtCounsellingRuleCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckUnderDebtCounsellingRuleCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\ActivatePendingDomiciliumAddressCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\CreateAndOpenPersonalLoanCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\CreateAndOpenPersonalLoanCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\DisburseFundsCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\DisburseFundsCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\EmailCorrespondenceReportToApplicationMailingAddressCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\EmailCorrespondenceReportToApplicationMailingAddressCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\GetADUserNameByWorkflowRoleTypeCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\GetADUserNameByWorkflowRoleTypeCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\GetInstanceSubjectForPersonalLoanCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\GetInstanceSubjectForPersonalLoanCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\ActivatePendingDomiciliumAddressCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\ApplicationHasSAHLLifeAppliedCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\ApplicationHasSAHLLifeAppliedCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\ReturnDisbursedPersonalLoanToApplicationCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\ReturnDisbursedPersonalLoanToApplicationCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\SendSMSToApplicantUponDisbursementCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\SendSMSToApplicantUponDisbursementCommandHandler.cs" />
+    <Compile Include="Workflow\PersonalLoan\UpdateOfferInformationTypeCommand.cs" />
+    <Compile Include="Workflow\PersonalLoan\UpdateOfferInformationTypeCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowDomainValidationExceptionCommand.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowDomainMessageExceptionCommand.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowExceptionWithMessagesCommand.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowExceptionWithoutMessagesCommand.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowDomainValidationExceptionCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowDomainMessageExceptionCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowExceptionWithMessagesCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowExceptionWithoutMessagesCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowSqlApiExceptionCommand.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowSqlApiExceptionCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowSqlTimeOutExceptionCommand.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowSqlExceptionCommand.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowSqlTimeOutExceptionCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowSqlExceptionCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowDAO_ExceptionCommandHandler.cs" />
+    <Compile Include="Workflow\ScenarioMaps\ThrowDAO_ExceptionCommand.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnNonDisbursedLoanToProspectCommandHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainService2.V3.Client\DomainService2.V3.Client.csproj">
+      <Project>{c2fb33f0-39cb-4b44-835f-b5ae160d0207}</Project>
+      <Name>DomainService2.V3.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\EWorkConnector\EWorkConnector.csproj">
+      <Project>{E189851D-1A73-47D2-BCEB-D553426FB280}</Project>
+      <Name>EWorkConnector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Cap2\X2DomainService.Interface.Cap2.csproj">
+      <Project>{21296FF1-818B-4A1F-B780-F07977447465}</Project>
+      <Name>X2DomainService.Interface.Cap2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Common\X2DomainService.Interface.Common.csproj">
+      <Project>{B0A86C70-D332-4125-BFCF-3A4AA69F0F2C}</Project>
+      <Name>X2DomainService.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.DebtCounselling\X2DomainService.Interface.DebtCounselling.csproj">
+      <Project>{2A57916A-D755-47A9-9D40-DAEB1BF48CA2}</Project>
+      <Name>X2DomainService.Interface.DebtCounselling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.HelpDesk\X2DomainService.Interface.HelpDesk.csproj">
+      <Project>{CCED1937-BAF2-43C2-B350-3F643260AAB1}</Project>
+      <Name>X2DomainService.Interface.HelpDesk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Life\X2DomainService.Interface.Life.csproj">
+      <Project>{971C8696-85AE-4C99-B244-B3ADA1AFA329}</Project>
+      <Name>X2DomainService.Interface.Life</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.LoanAdjustments\X2DomainService.Interface.LoanAdjustments.csproj">
+      <Project>{05078A97-CF9F-4FCA-A7C1-D867356DEE9B}</Project>
+      <Name>X2DomainService.Interface.LoanAdjustments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Origination\X2DomainService.Interface.Origination.csproj">
+      <Project>{D43D729E-30FA-4F45-AA6E-DCE900324913}</Project>
+      <Name>X2DomainService.Interface.Origination</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.PersonalLoan\X2DomainService.Interface.PersonalLoan.csproj">
+      <Project>{73F0738E-0918-4681-B8D2-82A1B2FE785E}</Project>
+      <Name>X2DomainService.Interface.PersonalLoan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.ScenarioMaps\X2DomainService.Interface.ScenarioMaps.csproj">
+      <Project>{6649a10c-9b62-4bfa-b388-68b2fcb0daa0}</Project>
+      <Name>X2DomainService.Interface.ScenarioMaps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.WorkflowAssignment\X2DomainService.Interface.WorkflowAssignment.csproj">
+      <Project>{E10206A2-8BDA-44AD-8FBE-02BEF8AD9403}</Project>
+      <Name>X2DomainService.Interface.WorkflowAssignment</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>robocopy "$(ProjectDir)bin\$(ConfigurationName)" "$(SolutionDir)\DomainServiceBinaries" $(ProjectName).dll $(ProjectName).pdb /XO /NJH /NP
+if %25errorlevel%25 GEQ 2 goto BuildEventFailed
+if %25errorlevel%25 LEQ 1 goto end
+  :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+  exit 1
+  :end echo FILECOPY for $(ProjectName) COMPLETED OK
+  exit 0
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,8 @@
+﻿@model SAHL.Services.Web.CommandService.Models.PageModel
+
+<ul class="command">
+@foreach (var command in this.Model.Commands)
+{
+    <li>@Ajax.ActionLink(command.Replace("_"," "),"GetCommand",new{name = command},new AjaxOptions{HttpMethod="Get",InsertionMode=InsertionMode.Replace,UpdateTargetId="ajaxContent",OnComplete="CallComplete();"})</li>
+}
+</ul>

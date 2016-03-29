@@ -1,0 +1,31 @@
+<div class="labels">
+	<div>Legal Name:</div>
+	<div>ID Number:</div>
+	<div>Registration Number:</div>
+	<div>Legal Entity Status:</div>
+	<div>Homephone Number:</div>
+	<div>Workphone Number:</div>
+	<div>Cell Phone Number:</div>
+	<div>Date Of Birth:</div>
+	<div>Banking Institute:</div>
+	<div>Email Address:</div>	
+	<div>Postal Address:</div>
+	<div>Residential Address:</div>
+</div>
+<div class="values">
+
+<div tool-tip="item.tileData.LegalName.trim()">{{item.tileData.LegalName| characters:38 :true}}</div>
+    <div>{{item.tileData.IDNumber | emptyStringDecorator }}</div>
+	<div>{{item.tileData.RegistrationNumber | emptyStringDecorator}}</div>
+	<div>{{item.tileData.LegalEntityStatus}}</div>
+	<div>{{item.tileData.HomephoneNumber | emptyStringDecorator}}</div>
+	<div>{{item.tileData.WorkphoneNumber | emptyStringDecorator}}</div>
+	<div>{{item.tileData.CellPhoneNumber | emptyStringDecorator}}</div>
+	<div>{{item.tileData.DateOfBirth |dateViewFilter }}</div>	
+	<div>{{item.tileData.BankingInstitute | emptyStringDecorator}}</div>
+	<div>{{item.tileData.EmailAddress | emptyStringDecorator}}</div>
+	<div>{{item.tileData.PostalAddress | emptyStringDecorator}}</div>
+	<div tool-tip="item.tileData.ResidentialAddress.trim()">{{item.tileData.ResidentialAddress| emptyStringDecorator| characters:55 :true}}</div>
+
+</div>
+

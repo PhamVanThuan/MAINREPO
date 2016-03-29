@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAHL.X2.Framework.Logging" GeneratedClassName="LogSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="X2Log" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">X2Log</Value>
+    </Setting>
+    <Setting Name="WorkflowLog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">WorkflowLog</Value>
+    </Setting>
+    <Setting Name="InfrastructureLog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">InfrastructureLog</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

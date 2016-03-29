@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.sahomeloans.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://webservices.sahomeloans.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is the SA Homeloans Send Mail and Fax Service.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.sahomeloans.com/">
+      <s:element name="SendMailorFax">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendMailorFaxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendMailorFaxResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTextEmailInternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTextEmailInternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendTextEmailInternalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailInternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isBodyHTML" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailInternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendEmailInternalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailWithAttachmentInternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isBodyHTML" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailWithAttachmentInternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendEmailWithAttachmentInternalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailWithAttachmentsExternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="genericKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendEmailWithAttachmentsExternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendEmailWithAttachmentsExternalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendHTMLEmailWithAttachmentsExternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="genericKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment3" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="contentType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendHTMLEmailWithAttachmentsExternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendHTMLEmailWithAttachmentsExternalResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendFax">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="genericKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="faxNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="faxAttachment" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendFaxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendFaxResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendFaxMultipleDocs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="genericKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attachment3" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendFaxMultipleDocsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendFaxMultipleDocsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="genericKey" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cellphoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSMSResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMailorFaxSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailorFax" />
+  </wsdl:message>
+  <wsdl:message name="SendMailorFaxSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailorFaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendTextEmailInternalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendTextEmailInternal" />
+  </wsdl:message>
+  <wsdl:message name="SendTextEmailInternalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendTextEmailInternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailInternalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmailInternal" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailInternalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailInternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailWithAttachmentInternalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmailWithAttachmentInternal" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailWithAttachmentInternalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailWithAttachmentInternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailWithAttachmentsExternalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendEmailWithAttachmentsExternal" />
+  </wsdl:message>
+  <wsdl:message name="SendEmailWithAttachmentsExternalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendEmailWithAttachmentsExternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendHTMLEmailWithAttachmentsExternalSoapIn">
+    <wsdl:part name="parameters" element="tns:SendHTMLEmailWithAttachmentsExternal" />
+  </wsdl:message>
+  <wsdl:message name="SendHTMLEmailWithAttachmentsExternalSoapOut">
+    <wsdl:part name="parameters" element="tns:SendHTMLEmailWithAttachmentsExternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendFaxSoapIn">
+    <wsdl:part name="parameters" element="tns:SendFax" />
+  </wsdl:message>
+  <wsdl:message name="SendFaxSoapOut">
+    <wsdl:part name="parameters" element="tns:SendFaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendFaxMultipleDocsSoapIn">
+    <wsdl:part name="parameters" element="tns:SendFaxMultipleDocs" />
+  </wsdl:message>
+  <wsdl:message name="SendFaxMultipleDocsSoapOut">
+    <wsdl:part name="parameters" element="tns:SendFaxMultipleDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SendMailSoap">
+    <wsdl:operation name="SendMailorFax">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method sends an email Sends </wsdl:documentation>
+      <wsdl:input message="tns:SendMailorFaxSoapIn" />
+      <wsdl:output message="tns:SendMailorFaxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTextEmailInternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Sends Emails to Internal SAHL Staff using SMTP Email service</wsdl:documentation>
+      <wsdl:input message="tns:SendTextEmailInternalSoapIn" />
+      <wsdl:output message="tns:SendTextEmailInternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailInternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends Emails to Internal SAHL Staff using SMTP Email service with an html body</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailInternalSoapIn" />
+      <wsdl:output message="tns:SendEmailInternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailWithAttachmentInternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Sends Emails to Internal SAHL Staff using SMTP Email service with  an attachment</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailWithAttachmentInternalSoapIn" />
+      <wsdl:output message="tns:SendEmailWithAttachmentInternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailWithAttachmentsExternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends Emails to External Clients using ClientEmail table</wsdl:documentation>
+      <wsdl:input message="tns:SendEmailWithAttachmentsExternalSoapIn" />
+      <wsdl:output message="tns:SendEmailWithAttachmentsExternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendHTMLEmailWithAttachmentsExternal">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sends Emails to External Clients using ClientEmail table</wsdl:documentation>
+      <wsdl:input message="tns:SendHTMLEmailWithAttachmentsExternalSoapIn" />
+      <wsdl:output message="tns:SendHTMLEmailWithAttachmentsExternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFax">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Sends Faxes to External Clients using ClientEmail table</wsdl:documentation>
+      <wsdl:input message="tns:SendFaxSoapIn" />
+      <wsdl:output message="tns:SendFaxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendFaxMultipleDocs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Sends Faxes with Multiple Attachments to External Clients using ClientEmail table</wsdl:documentation>
+      <wsdl:input message="tns:SendFaxMultipleDocsSoapIn" />
+      <wsdl:output message="tns:SendFaxMultipleDocsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"> Sends SMS's to External Clients using ClientEmail table</wsdl:documentation>
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SendMailSoap" type="tns:SendMailSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMailorFax">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendMailorFax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTextEmailInternal">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendTextEmailInternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailInternal">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendEmailInternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailWithAttachmentInternal">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendEmailWithAttachmentInternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailWithAttachmentsExternal">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendEmailWithAttachmentsExternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendHTMLEmailWithAttachmentsExternal">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendHTMLEmailWithAttachmentsExternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFax">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendFax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFaxMultipleDocs">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendFaxMultipleDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SendMailSoap12" type="tns:SendMailSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMailorFax">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendMailorFax" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTextEmailInternal">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendTextEmailInternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailInternal">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendEmailInternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailWithAttachmentInternal">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendEmailWithAttachmentInternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendEmailWithAttachmentsExternal">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendEmailWithAttachmentsExternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendHTMLEmailWithAttachmentsExternal">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendHTMLEmailWithAttachmentsExternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFax">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendFax" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendFaxMultipleDocs">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendFaxMultipleDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SendMail">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is the SA Homeloans Send Mail and Fax Service.</wsdl:documentation>
+    <wsdl:port name="SendMailSoap" binding="tns:SendMailSoap">
+      <soap:address location="http://localhost/SAHL.WEB.SERVICES/Internal/SendMail.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SendMailSoap12" binding="tns:SendMailSoap12">
+      <soap12:address location="http://localhost/SAHL.WEB.SERVICES/Internal/SendMail.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

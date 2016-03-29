@@ -1,0 +1,98 @@
+<schema name="Task" version="3.5">
+
+<types>
+	<fieldType name="string" class="solr.StrField" />
+
+	<fieldType name="int" class="solr.TrieIntField" />
+	 <analyzer>
+	   <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+         </analyzer>
+	<fieldType name="text" class="solr.TextField" />
+	
+	<fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+	 <analyzer>
+	   <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+	   <filter class="solr.LowerCaseFilterFactory"/>
+	    <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+	 </analyzer>
+	</fieldType>
+	
+	<fieldType name="text_st" class="solr.TextField" positionIncrementGap="100">
+	 <analyzer>
+	   <tokenizer class="solr.StandardTokenizerFactory"/>
+	   <filter class="solr.LowerCaseFilterFactory"/>
+	    <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+	 </analyzer>
+	</fieldType>
+	
+	<fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>	  
+    </fieldType>
+	
+	<fieldType name="text_suggest_ngram" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.UAX29URLEmailTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.ASCIIFoldingFilterFactory"/>
+			<filter class="solr.EnglishPossessiveFilterFactory"/>
+			<filter class="solr.EdgeNGramFilterFactory" maxGramSize="50" minGramSize="2"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.UAX29URLEmailTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.ASCIIFoldingFilterFactory"/>
+			<filter class="solr.EnglishPossessiveFilterFactory"/>
+		</analyzer>
+	</fieldType>
+	
+</types>
+			<fields>
+				<field name="InstanceId" type="int" indexed="true" stored="true" required="true"/>
+				<field name="_version_" type="string" indexed="true" stored="true" multiValued="false"/>
+				<field name="UserName" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Process" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Workflow" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="State" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Subject" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="GenericKeyType" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="GenericKeyTypeKey" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="GenericKeyValue" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute1Type" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute1Value" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute1DataType" type="text_st" indexed="true" stored="true" required="false"/>				
+				<field name="Attribute2Type" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute2Value" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute2DataType" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute3Type" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute3Value" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Attribute3DataType" type="text_st" indexed="true" stored="true" required="false"/>
+				<field name="Status" type="text_st" indexed="true" stored="true" required="false"/>				
+				<field name="IndexText" type="text_suggest_ngram" indexed="true" stored="true" multiValued="true"/>
+
+			</fields>
+
+			<uniqueKey>InstanceId</uniqueKey>
+
+			<copyField source="UserName" dest="IndexText"/>
+			<copyField source="Process" dest="IndexText"/>
+			<copyField source="Workflow" dest="IndexText"/>
+			<copyField source="State" dest="IndexText"/>
+			<copyField source="Subject" dest="IndexText"/>
+			<copyField source="GenericKeyValue" dest="IndexText"/>						
+			<copyField source="Attribute1Value" dest="IndexText"/>
+			<copyField source="Attribute2Value" dest="IndexText"/>
+			<copyField source="Attribute3Value" dest="IndexText"/>
+			<copyField source="Status" dest="IndexText"/>						
+</schema>

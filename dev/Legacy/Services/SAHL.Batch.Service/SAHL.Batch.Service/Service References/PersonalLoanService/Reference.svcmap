@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="049fa5e0-8021-4a51-8928-0334f960f5e8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SAHL.Web.Services.Internal/PersonalLoan.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PersonalLoan.disco" MetadataType="Disco" ID="402a68f7-7393-49a7-a6b8-7857da815357" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/PersonalLoan.svc?disco" />
+    <MetadataFile FileName="PersonalLoan.xsd" MetadataType="Schema" ID="1b94c1fd-1c08-46c4-bfaf-1b82dba4a551" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/PersonalLoan.svc?xsd=xsd0" />
+    <MetadataFile FileName="PersonalLoan1.xsd" MetadataType="Schema" ID="f3ff30cf-1fba-40d8-b3ac-0525d39b688e" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/PersonalLoan.svc?xsd=xsd1" />
+    <MetadataFile FileName="PersonalLoan.wsdl" MetadataType="Wsdl" ID="63415f41-2070-42de-bfbc-abbeb3749875" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/PersonalLoan.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

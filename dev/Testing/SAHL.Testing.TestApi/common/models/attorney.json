@@ -1,0 +1,193 @@
+{
+  "name": "attorney",
+  "plural": "attorney",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "mssql": {
+    "schema": "dbo",
+    "table": "Attorney"
+  },
+  "properties": {
+    "attorneykey": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "deedsofficekey": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "DeedsOfficeKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "attorneycontact": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyContact",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "attorneymandate": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyMandate",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "attorneyworkflowenabled": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyWorkFlowEnabled",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "attorneyloantarget": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyLoanTarget",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "attorneyfurtherloantarget": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 53,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyFurtherLoanTarget",
+        "dataType": "float",
+        "dataLength": null,
+        "dataPrecision": 53,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "attorneylitigationind": {
+      "type": "Boolean",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyLitigationInd",
+        "dataType": "bit",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "legalentitykey": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "LegalEntityKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "attorneyregistrationind": {
+      "type": "Boolean",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AttorneyRegistrationInd",
+        "dataType": "bit",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "generalstatuskey": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "GeneralStatusKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

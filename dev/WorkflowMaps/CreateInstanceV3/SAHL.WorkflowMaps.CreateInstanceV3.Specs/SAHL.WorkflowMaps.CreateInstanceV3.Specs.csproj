@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60AC7751-615A-4E55-80E8-23138BC633E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.WorkflowMaps.CreateInstanceV3.Specs</RootNamespace>
+    <AssemblyName>SAHL.WorkflowMaps.CreateInstanceV3.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CreateInstanceV3">
+      <HintPath>..\Binaries\CreateInstanceV3.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Workflow.CreateInstanceV3">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Workflow.CreateInstanceV3.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Workflow.Maps.Config, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Workflow.Maps.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\Create Case\OnComplete\when_create_case_on_complete.cs" />
+    <Compile Include="Activities\Create Case\OnGetActivityMessage\when_create_case_on_get_activity_message.cs" />
+    <Compile Include="Activities\Create Case\OnGetStageTransition\when_create_case_on_get_stage_transition.cs" />
+    <Compile Include="Activities\Create Case\OnStart\when_create_case_on_start.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Create Case\OnEnter\when_create_case_state_on_enter_application_created.cs" />
+    <Compile Include="States\Create Case\OnExit\when_create_case_state_on_exit_application_created.cs" />
+    <Compile Include="WorkflowSpecCreateInstanceV3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Roles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SAHL.WorkflowMaps.Specs.Common\SAHL.WorkflowMaps.Specs.Common.csproj">
+      <Project>{d9859384-0b48-4902-b241-4fa95390ac10}</Project>
+      <Name>SAHL.WorkflowMaps.Specs.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

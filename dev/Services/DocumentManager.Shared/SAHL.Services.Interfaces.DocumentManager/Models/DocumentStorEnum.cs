@@ -1,0 +1,45 @@
+﻿
+namespace SAHL.Services.Interfaces.DocumentManager.Models
+{
+    public enum DocumentStorEnum
+    {
+        LoanFilesCorrespondence = 1,
+        ProspectFiles = 2,
+        AmazingService = 3,
+        DeclinedApplications = 4,
+        LossControl = 5,
+        DefendingCancellations = 6,
+        DataStorArchive = 7,
+        HALOCorrespondence = 8,
+        HOCLife = 9,
+        ValuationsAudit = 11,
+        DebtCounselling = 12,
+        ShortTermInsurance = 13,
+        Forensics = 15,
+        RegDocuments = 16,
+        Clientfiles = 17,
+        PersonalFiles = 18,
+        HREmployeeFiles = 21,
+        InsuranceOmbudsman = 22,
+        InsuranceRecoveries = 23,
+        PAYROLLPayrollInput = 25,
+        Finance = 26,
+        PAYROLLStandardBankPetrolCards = 27,
+        PAYROLLMaternityLeave = 28,
+        PAYROLLTerminations = 29,
+        PAYROLLAdminDisabled = 30,
+        PAYROLLAdmin = 31,
+        LDFiling = 33,
+        LifeCessionForms = 34,
+        HRRashnee = 35,
+        LegalAttorneys = 36,
+        KevinPenwarden = 37,
+        CrispinHarrison = 38,
+        JackeySobey = 39,
+        KevinGeneral = 40,
+        Compliance = 41,
+        ComplianceCorrespondence = 42,
+        ProofOfPayment = 43,
+        LossControlAttorneyInvoices = 44
+    }
+}

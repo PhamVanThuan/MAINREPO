@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="OriginationSource">
+  <modelMoniker Id="b7c4d8f6-289b-4e61-9828-90d880f17cbc" />
+  <nestedChildShapes>
+    <classShape Id="ea7163d2-b27f-49a0-b6df-09839bc52246" absoluteBounds="0.5, 1.375, 1.5, 1.0549544166525204">
+      <modelClassMoniker name="/b7c4d8f6-289b-4e61-9828-90d880f17cbc/OriginationSource" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0258b27-3fe9-4371-818e-009c18d3482e" absoluteBounds="0.515, 1.7850000000000001, 1.4700000000000002, 0.54495441665252042" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94276125-710d-41fd-835e-aa9cd2c57cc5" absoluteBounds="3.875, 1.625, 1.5, 1.2218163928389552">
+      <modelClassMoniker name="/b7c4d8f6-289b-4e61-9828-90d880f17cbc/OriginationSourceIcon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc72e1c7-518d-4c8a-bf6d-6e6243b80112" absoluteBounds="3.89, 2.035, 1.4700000000000002, 0.711816392838955" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(3.875 : 2.02747720832626); (2 : 2.02747720832626)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="674a85a1-42c2-498d-94cd-c93af5feaaf1" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="94276125-710d-41fd-835e-aa9cd2c57cc5" />
+        <classShapeMoniker Id="ea7163d2-b27f-49a0-b6df-09839bc52246" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

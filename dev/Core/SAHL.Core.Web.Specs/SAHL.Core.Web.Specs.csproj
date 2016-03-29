@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6395A09-AC97-4D6F-9260-40278F75F724}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Web.Specs</RootNamespace>
+    <AssemblyName>SAHL.Core.Web.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.Web.Infrastructure\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.WebHost\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Mvc\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Razor\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandAuthorisersSpecs\TestCommandWithAttributeWithRoles.cs" />
+    <Compile Include="CommandAuthorisersSpecs\TestQueryWithAttributeWithRoles.cs" />
+    <Compile Include="CommandAuthorisersSpecs\UnauthenticatedIdentity.cs" />
+    <Compile Include="CommandAuthorisersSpecs\AuthenticatedIdentity.cs" />
+    <Compile Include="CommandAuthorisersSpecs\TestCommandWithoutAttribute.cs" />
+    <Compile Include="CommandAuthorisersSpecs\TestCommandWithAttributeNoRoles.cs" />
+    <Compile Include="CommandAuthorisersSpecs\when_authorising_a_command_that_does_not_require_auth.cs" />
+    <Compile Include="CommandAuthorisersSpecs\when_authorising_a_command_with_required_roles_for_a_user_without_the_roles.cs" />
+    <Compile Include="CommandAuthorisersSpecs\when_authorising_a_command_with_required_roles_for_a_user_with_the_roles.cs" />
+    <Compile Include="CommandAuthorisersSpecs\when_authorising_a_command_that_requires_auth_for_an_unauthenticated_user.cs" />
+    <Compile Include="CommandAuthorisersSpecs\when_authorising_a_command_that_requires_auth_for_an_authenticated_user.cs" />
+    <Compile Include="CommandAuthorisersSpecs\when_performing_an_http_query_that_fails_authorising.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_performing_failing_command_with_retry_policy.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_performing_failing_command_with_retry_policy_none.cs" />
+    <Compile Include="FakeHttpContent.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_auth_token_is_not_authorised.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_auth_token_is_not_authenticated.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_json_activator_throws_error.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_result_has_error_messages.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_auth_token_is_un_authorised.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_json_packet_is_not_serialized.cs" />
+    <Compile Include="CommandHttpHandlerBaseControllerSpecs\when_performing_command.cs" />
+    <Compile Include="FakeLogger.cs" />
+    <Compile Include="HttpMetaDataManagerSpecs\when_headers_contain_all_expected_values.cs" />
+    <Compile Include="HttpMetaDataManagerSpecs\when_no_values_exist.cs" />
+    <Compile Include="HttpMetaDataManagerSpecs\when_username_exists_in_header.cs" />
+    <Compile Include="HttpMetaDataManagerSpecs\when_ipaddress_exists_in_header.cs" />
+    <Compile Include="HttpMetaDataManagerSpecs\when_getting_meta_data_without_headers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\FakeQuery.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\when_order_by_is_set_for_valid_query.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\when_filter_is_set_for_valid_query.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\when_page_size_is_set_for_valid_query.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\when_query_is_not_authenticated.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\when_json_activator_throws_error.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\when_query_is_not_authorised.cs" />
+    <Compile Include="QueryHttpHandlerBaseControllerSpecs\when_performing_command_query.cs" />
+    <Compile Include="Services\When_Command_ReRun_Fails_Again.cs" />
+    <Compile Include="Services\When_Command_ReRun_Occures.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.EventStore\SAHL.Core.Data.Models.EventStore.csproj">
+      <Project>{E0F36D7E-8960-4D00-9BCA-FED18823D339}</Project>
+      <Name>SAHL.Core.Data.Models.EventStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928F-4E97-9EA4-4AA749B6E40E}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging.Shared\SAHL.Core.Messaging.Shared.csproj">
+      <Project>{5b05aefb-2351-4393-8f9b-1ab0aa926d45}</Project>
+      <Name>SAHL.Core.Messaging.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Services\SAHL.Core.Services.csproj">
+      <Project>{0ba4337f-8b60-4736-ac59-8886fb7db725}</Project>
+      <Name>SAHL.Core.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Testing.Fakes\SAHL.Core.Testing.Fakes.csproj">
+      <Project>{135F06A4-0426-421C-AE4C-31E0571ADC63}</Project>
+      <Name>SAHL.Core.Testing.Fakes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Web.Mvc\SAHL.Core.Web.Mvc.csproj">
+      <Project>{08aa0ef7-030e-42b1-964b-e9a2ae23707f}</Project>
+      <Name>SAHL.Core.Web.Mvc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Web\SAHL.Core.Web.csproj">
+      <Project>{90afd6bd-b9e2-4197-9de9-7b3ed398b471}</Project>
+      <Name>SAHL.Core.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

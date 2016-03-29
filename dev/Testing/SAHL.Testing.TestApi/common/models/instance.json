@@ -1,0 +1,97 @@
+{
+  "name": "instance",
+  "plural": "instance",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "mssql": {
+    "schema": "x2",
+    "table": "instance"
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "id",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "subject": {
+      "type": "String",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "subject",
+        "dataType": "varchar(max)",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "stateid": {
+      "type": "Number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "stateid",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "workflowid": {
+      "type": "Number",
+      "id": false,
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "workflowid",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "name": {
+      "type": "String",
+      "id": false,
+      "required": true,
+      "length": 128,
+      "mssql": {
+        "columnName": "name",
+        "dataType": "varchar",
+        "dataLength": 128,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

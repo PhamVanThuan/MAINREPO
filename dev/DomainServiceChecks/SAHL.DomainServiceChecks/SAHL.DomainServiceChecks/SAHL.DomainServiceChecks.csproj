@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B10B504-24DB-46FA-8542-5D367820ADF2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.DomainServiceChecks</RootNamespace>
+    <AssemblyName>SAHL.DomainServiceChecks</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Dapper">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckHandlers\RequiresCapabilityHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresX2InstanceHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresNonProcessedCATSPaymentBatchHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresAccountHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresActiveClientRoleHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresArchivedAffordabilityAssessmentHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresOpenLatestApplicationInformationHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresAddressHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresConfirmedAffordabilityAssessmentHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresUnconfirmedAffordabilityAssessmentHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresPendingDisabilityClaimHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresPropertyHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresOpenApplicationHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdPartyHandler.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdPartyInvoiceHandler.cs" />
+    <Compile Include="Checks\IRequiresCapability.cs" />
+    <Compile Include="Checks\IRequiresX2Instance.cs" />
+    <Compile Include="Checks\IRequiresNonProcessedCATSPaymentBatch.cs" />
+    <Compile Include="Checks\IRequiresAccount.cs" />
+    <Compile Include="Checks\IRequiresActiveClientRole.cs" />
+    <Compile Include="Checks\IRequiresAddress.cs" />
+    <Compile Include="Checks\IRequiresArchivedAffordabilityAssessment.cs" />
+    <Compile Include="Checks\IRequiresOpenLatestApplicationInformation.cs" />
+    <Compile Include="Checks\IRequiresConfirmedAffordabilityAssessment.cs" />
+    <Compile Include="Checks\IRequiresUnconfirmedAffordabilityAssessment.cs" />
+    <Compile Include="Checks\IRequiresPendingDisabilityClaim.cs" />
+    <Compile Include="Checks\IRequiresProperty.cs" />
+    <Compile Include="Checks\IRequiresClient.cs" />
+    <Compile Include="CheckHandlers\RequiresClientCheckHandler.cs" />
+    <Compile Include="Checks\IRequiresOpenApplication.cs" />
+    <Compile Include="Checks\IRequiresThirdParty.cs" />
+    <Compile Include="Checks\IRequiresThirdPartyInvoice.cs" />
+    <Compile Include="Managers\AccountDataManager\AccountDataManager.cs" />
+    <Compile Include="Managers\AccountDataManager\IAccountDataManager.cs" />
+    <Compile Include="Managers\AccountDataManager\Statements\AccountExistsStatement.cs" />
+    <Compile Include="Managers\AddressDataManager\AddressDataManager.cs" />
+    <Compile Include="Managers\AddressDataManager\IAddressDataManager.cs" />
+    <Compile Include="Managers\AddressDataManager\Statements\AddressExistsStatement.cs" />
+    <Compile Include="Managers\AffordabilityAssessmentDataManager\IAffordabilityAssessmentDataManager.cs" />
+    <Compile Include="Managers\AffordabilityAssessmentDataManager\AffordabilityAssessmentDataManager.cs" />
+    <Compile Include="Managers\AffordabilityAssessmentDataManager\Statements\GetAffordabilityAssessmentByKeyStatement.cs" />
+    <Compile Include="Managers\ApplicationDataManager\ApplicationDataManager.cs" />
+    <Compile Include="Managers\ApplicationDataManager\IApplicationDataManager.cs" />
+    <Compile Include="Managers\ApplicationDataManager\Statements\IsLatestApplicationInformationOpenStatement.cs" />
+    <Compile Include="Managers\ApplicationDataManager\Statements\IsOpenApplicationStatement.cs" />
+    <Compile Include="Managers\ApplicationDataManager\Statements\IsActiveClientRoleStatement.cs" />
+    <Compile Include="Managers\ClientDataManager\ClientDataManager.cs" />
+    <Compile Include="Managers\ClientDataManager\IClientDataManager.cs" />
+    <Compile Include="Managers\ClientDataManager\Statements\IsClientANaturalPersonStatement.cs" />
+    <Compile Include="Managers\ClientDataManager\Statements\ClientExistsStatement.cs" />
+    <Compile Include="Managers\LifeDataManager\ILifeDataManager.cs" />
+    <Compile Include="Managers\LifeDataManager\LifeDataManager.cs" />
+    <Compile Include="Managers\LifeDataManager\Statements\GetDisabilityClaimByKeyStatement.cs" />
+    <Compile Include="Managers\PropertyDataManager\PropertyDataManager.cs" />
+    <Compile Include="Managers\PropertyDataManager\IPropertyDataManager.cs" />
+    <Compile Include="Managers\PropertyDataManager\Statements\PropertyExistsStatement.cs" />
+    <Compile Include="Managers\CatsDataManager\ICatsDataManager.cs" />
+    <Compile Include="Managers\CatsDataManager\Statements\DoesCATSPaymentBatchExistStatement.cs" />
+    <Compile Include="Managers\CatsDataManager\CatsDataManager.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceDataManager\IThirdPartyInvoiceDataManager.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceDataManager\Statements\ThirdPartyExistsStatement.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceDataManager\Statements\ThirdPartyInvoiceExistsStatement.cs" />
+    <Compile Include="Managers\ThirdPartyInvoiceDataManager\ThirdPartyInvoiceDataManager.cs" />
+    <Compile Include="Managers\WorkflowAssignmentDataManagerSpecs\WorkflowAssignmentDataManager.cs" />
+    <Compile Include="Managers\WorkflowAssignmentDataManagerSpecs\IWorkflowAssignmentDataManager.cs" />
+    <Compile Include="Managers\X2InstanceDataManager\IX2DataManager.cs" />
+    <Compile Include="Managers\X2InstanceDataManager\Statement\DoesInstanceExistStatement.cs" />
+    <Compile Include="Managers\X2InstanceDataManager\X2DataManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

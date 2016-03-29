@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3809B035-1623-4A0D-AF64-5B944BED9F5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.ClientDomain</RootNamespace>
+    <AssemblyName>SAHL.Services.ClientDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ClientDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ClientDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainQuery">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\AddClientAddressAsPendingDomiciliumCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddEmployerCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddFixedLongTermInvestmentLiabilityToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddFixedPropertyAssetToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddLiabilityLoanToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddNaturalPersonClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddOtherAssetToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddLifeAssuranceAssetToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddInvestmentAssetToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddLiabilitySuretyToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddMarketingOptionsToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddUnconfirmedUnEmployedEmploymentToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddUnconfirmedSalariedEmploymentToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddUnconfirmedSalaryDeductionEmploymentToClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UpdateActiveNaturalPersonClientCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UpdateInactiveNaturalPersonClientCommandHandler.cs" />
+    <Compile Include="Managers\AssetLiability\AssetLiabilityDataManager.cs" />
+    <Compile Include="Managers\Client\ClientManager.cs" />
+    <Compile Include="Managers\Client\IClientManager.cs" />
+    <Compile Include="Managers\Client\Statements\DoesClientMarketingOptionExistStatement.cs" />
+    <Compile Include="Managers\Client\Statements\FindClientByIdNumberStatement.cs" />
+    <Compile Include="Managers\Client\Statements\FindClientByPassportNumberStatement.cs" />
+    <Compile Include="Managers\Client\Statements\FindOpenApplicationNumbersForClientStatement.cs" />
+    <Compile Include="Managers\Client\Statements\FindOpenAccountKeysForClientStatement.cs" />
+    <Compile Include="Managers\DomiciliumAddress\Statements\AddressTypeIsAResidentialAddressTypeStatement.cs" />
+    <Compile Include="Managers\DomiciliumAddress\Statements\ClientAddressIsActiveDomiciliumAddressOnClientStatement.cs" />
+    <Compile Include="Managers\DomiciliumAddress\Statements\ClientAddressIsPendingDomiciliumStatement.cs" />
+    <Compile Include="Managers\AssetLiability\IAssetLiabilityDataManager.cs" />
+    <Compile Include="Managers\AssetLiability\Statements\IsAddressLinkedToClientAsGivenAssetTypeStatement.cs" />
+    <Compile Include="Managers\Client\ClientDataManager.cs" />
+    <Compile Include="Managers\DomiciliumAddress\DomiciliumAddressDataManager.cs" />
+    <Compile Include="Managers\DomiciliumAddress\IDomiciliumAddressDataManager.cs" />
+    <Compile Include="Managers\DomiciliumAddress\Statements\GetActiveClientAddressStatement.cs" />
+    <Compile Include="Managers\DomiciliumAddress\Statements\FindExistingClientPendingDomiciliumStatement.cs" />
+    <Compile Include="Managers\Employment\EmploymentDataManager.cs" />
+    <Compile Include="Managers\Client\IClientDataManager.cs" />
+    <Compile Include="Managers\Employment\IEmploymentDataManager.cs" />
+    <Compile Include="Managers\Client\Statements\GetClientStatement.cs" />
+    <Compile Include="Managers\Employment\Statements\GetEmployerStatement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryHandlers\ClientHasOpenAccountOrApplicationQueryHandler.cs" />
+    <Compile Include="QueryStatements\FindClientByIdNumberQueryStatement.cs" />
+    <Compile Include="QueryStatements\FindClientByPassportNumberQueryStatement.cs" />
+    <Compile Include="Rules\AddressMustBeAnActiveClientAddressRule.cs" />
+    <Compile Include="Rules\AtLeastOneClientContactDetailShouldBeProvidedRule.cs" />
+    <Compile Include="Rules\BasicIncomeIsRequiredRule.cs" />
+    <Compile Include="Rules\ClientAddressCannotBeAnActiveDomiciliumAddressRule.cs" />
+    <Compile Include="Rules\ClientAddressCannotBeAPendingDomiciliumAddressRule.cs" />
+    <Compile Include="Rules\ClientCannotBeLinkedToAnOpenApplicationRule.cs" />
+    <Compile Include="Rules\ClientCannotBeLinkedToAnOpenAccountRule.cs" />
+    <Compile Include="Rules\ClientDateOfBirthMustBePriorToTodayRule.cs" />
+    <Compile Include="Rules\EmployeeDeductionsCanOnlyContainOneOfEachTypeRule.cs" />
+    <Compile Include="Rules\FixedPropertyAssetAcquiredDateCannotBeInTheFutureRule.cs" />
+    <Compile Include="Rules\ClientAddressMustBeAStreetAddressRule.cs" />
+    <Compile Include="Rules\EmploymentMinimumDataRequiredRule.cs" />
+    <Compile Include="Rules\EmploymentStartDateMustBeBeforeTodayRule.cs" />
+    <Compile Include="Rules\HousingAllowanceIsRequiredForSalaryDeductionRule.cs" />
+    <Compile Include="Rules\IDNumberMustBeUniqueRule.cs" />
+    <Compile Include="Rules\IDNumberMustBeValidWhenProvidedForASACitizenRule.cs" />
+    <Compile Include="Rules\Models\NaturalPersonClientRuleModel.cs" />
+    <Compile Include="Rules\PassportNumberCannotBeAValidIdentityNumberRule.cs" />
+    <Compile Include="Rules\PassportNumberMustBeUniqueRule.cs" />
+    <Compile Include="Rules\PassportNumberMustBeValidWhenProvidedRule.cs" />
+    <Compile Include="Utils\LegalEntitySanitiser.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

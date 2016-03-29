@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="4c76ec99-36b6-4202-b677-3fa651cbc094" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="LegalEntity" schema="dbo" table="LegalEntity">
+      <targets>
+        <manyToOneRelation Id="0fd5065e-24e1-4bb2-b034-c91ed552a878" targetColumnKey="LegalEntityExceptionStatusKey" targetTable="LegalEntity" targetPropertyName="LegalEntities" sourceColumn="LegalEntityExceptionStatusKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntityExceptionStatus" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="079a325a-fb9a-4973-a7f6-835fa56427db" targetColumnKey="LegalEntityStatusKey" targetTable="LegalEntity" targetPropertyName="LegalEntities" sourceColumn="LegalEntityStatusKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntityStatus" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="eb38edb5-b7b5-4240-b9af-76a8c9c620f0" targetColumnKey="LegalEntityTypeKey" targetTable="LegalEntity" targetPropertyName="LegalEntities" sourceColumn="LegalEntityTypeKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntityType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="63e1bae8-4f2d-47ad-b8c7-d6847e74a324" name="MaritalStatusKey" column="MaritalStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="c8c52630-c1ea-4e86-8b28-0a45d0577dff" name="GenderKey" column="GenderKey" columnType="Int32" length="0" />
+        <modelProperty Id="3f251107-fe58-4456-b218-2229a5b82759" name="PopulationGroupKey" column="PopulationGroupKey" columnType="Int32" length="0" />
+        <modelProperty Id="735da143-b2ba-4676-b56d-ed09cca2c2fd" name="IntroductionDate" column="IntroductionDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="95ec94d1-5eff-4b74-bf2f-4c2aa19b1741" name="Salutationkey" column="Salutationkey" columnType="Int32" length="0" />
+        <modelProperty Id="85122acd-9440-49ab-a111-e4d48797a0f5" name="FirstNames" column="FirstNames" length="0" />
+        <modelProperty Id="49deff22-6acc-41ee-80c9-f0c62a77d233" name="Initials" column="Initials" length="0" />
+        <modelProperty Id="2aeb302c-b0a1-4dce-aa44-7625db3fc842" name="Surname" column="Surname" length="0" />
+        <modelProperty Id="d3b8300b-b2db-46fa-ad71-8c804ac921d5" name="PreferredName" column="PreferredName" length="0" />
+        <modelProperty Id="8a1de5bd-afb4-44e5-88c9-08f089191991" name="IDNumber" column="IDNumber" length="0" />
+        <modelProperty Id="dfd3453f-b394-42e8-af58-b1d56578f048" name="PassportNumber" column="PassportNumber" length="0" />
+        <modelProperty Id="f8f49529-8db1-4755-81eb-3437e2ad76b3" name="TaxNumber" column="TaxNumber" length="0" />
+        <modelProperty Id="f782e62b-a9dc-41e3-a1d5-dff9c79ffe92" name="RegistrationNumber" column="RegistrationNumber" length="0" />
+        <modelProperty Id="c6b1a96a-60d2-4eae-9824-76e532fa97d1" name="RegisteredName" column="RegisteredName" length="0" />
+        <modelProperty Id="9ad85603-b6f5-4eaf-add0-8322b63385a1" name="TradingName" column="TradingName" length="0" />
+        <modelProperty Id="df2a4ee8-dd9f-4893-9666-e9164a2b17ad" name="DateOfBirth" column="DateOfBirth" columnType="Timestamp" length="0" />
+        <modelProperty Id="4252c3f9-ae64-40c1-9dd4-6c17e2b52dd1" name="HomePhoneCode" column="HomePhoneCode" length="0" />
+        <modelProperty Id="af42e307-b23d-4cd0-b2a5-c6f03c99d44b" name="HomePhoneNumber" column="HomePhoneNumber" length="0" />
+        <modelProperty Id="3d7d69f8-c80a-42b3-9e86-31c0042f7f38" name="WorkPhoneCode" column="WorkPhoneCode" length="0" />
+        <modelProperty Id="4549a199-b4dd-4b27-ba1c-55cfbc12c7fa" name="WorkPhoneNumber" column="WorkPhoneNumber" length="0" />
+        <modelProperty Id="74327b3b-62e7-48ab-9e89-f5b0b49b819b" name="CellPhoneNumber" column="CellPhoneNumber" length="0" />
+        <modelProperty Id="4bde627f-c944-4641-ac23-32430d9522f5" name="EmailAddress" column="EmailAddress" length="0" />
+        <modelProperty Id="210d687c-abf7-4e88-9349-4cc0e0af91a5" name="FaxCode" column="FaxCode" length="0" />
+        <modelProperty Id="17fc3606-d9a6-403b-880f-56f27f3b748c" name="FaxNumber" column="FaxNumber" length="0" />
+        <modelProperty Id="6062b071-d8bb-45c1-93cb-3a4d4fe6bd2f" name="Password" column="Password" length="0" />
+        <modelProperty Id="4fb0611b-6d6b-42ca-bb47-5efca51fd32e" name="CitizenTypeKey" column="CitizenTypeKey" columnType="Int32" length="0" />
+        <modelProperty Id="1403cf44-0eec-4524-aa40-5be872dfd193" name="Comments" column="Comments" length="0" />
+        <modelProperty Id="13e1821e-b6a8-4bdd-810e-06ca7735cd9c" name="UserID" column="UserID" length="0" notNull="true" />
+        <modelProperty Id="e88b4202-dc1a-43a6-8a1e-f50aec209099" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="71f85b65-fb80-412d-a725-86146a8bddf5" name="EducationKey" column="EducationKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="5227c899-45b2-45ef-9c17-99d4663bcc05" name="HomeLanguageKey" column="HomeLanguageKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="88e6bec6-349f-447d-bec4-7043837774b3" name="DocumentLanguageKey" column="DocumentLanguageKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="776192bf-acad-4ae9-870d-ebd8cd65baa2" name="ResidenceStatusKey" column="ResidenceStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="ecc7e4c7-7f46-42cd-84ce-d053f969e8de" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+      <manyToManyTargets>
+        <manyToManyRelation Id="c7478423-c946-4a28-8e31-4eb794dc6a40" sourceColumn="LegalEntityKey" schema="dbo" table="LegalEntityException" targetColumn="LegalEntityExceptionReasonKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntityExceptionReason" />
+        </manyToManyRelation>
+      </manyToManyTargets>
+    </modelClass>
+    <modelClass name="LegalEntityMemo" schema="dbo" table="LegalEntityMemo">
+      <targets>
+        <manyToOneRelation Id="1eaa3151-dd1a-4695-b0c9-18840fc3c27f" targetColumnKey="LegalEntityKey" targetTable="LegalEntityMemo" targetPropertyName="LegalEntityMemoes" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="e351f23d-93bf-4d7f-9255-b9e5e8ed3683" name="InsertDate" column="InsertDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="3abf034f-c550-4809-bcf6-8ceb65eb0faf" name="ReminderDate" column="ReminderDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="93b4522f-f485-4fc9-93e1-1884f8df0c04" name="ExpiryDate" column="ExpiryDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="4271efcb-4261-4ceb-b069-1872a94eda29" name="Memo" column="Memo" length="0" notNull="true" />
+        <modelProperty Id="1e49b029-7e25-4be1-bbcb-1c919d49c6ed" name="UserID" column="UserID" length="0" notNull="true" />
+        <modelProperty Id="c6bf613e-9ee2-4ace-901a-5e3966860fcb" name="AccountMemoStatusKey" column="AccountMemoStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1a5e9be8-d1fb-43e4-9147-d20434182819" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="d0c2375f-a434-415e-bc54-7dc57d8bbff0" name="LegalEntityMemoKey" column="LegalEntityMemoKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityAddress" schema="dbo" table="LegalEntityAddress">
+      <targets>
+        <manyToOneRelation Id="6f26708c-8cb1-4b7d-82c4-8a7260d30f39" targetColumnKey="LegalEntityKey" targetTable="LegalEntityAddress" targetPropertyName="LegalEntityAddresses" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="dd479cc3-1003-44e3-9b32-108d0717f6f7" name="AddressKey" column="AddressKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="fc8c1173-9d62-408f-a5e6-b8ed4b31dd85" name="AddressTypeKey" column="AddressTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="ad21eefc-1526-43c9-be5c-708732d1e47a" name="EffectiveDate" column="EffectiveDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="9f610449-78aa-4ca1-b665-78da781bdb86" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="c86cc778-a8d3-417a-82ac-54e2c85a0e79" name="LegalEntityAddressKey" column="LegalEntityAddressKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityAffordabilityExpense" schema="dbo" table="LegalEntityAffordabilityExpense">
+      <targets>
+        <manyToOneRelation Id="9d66aaa3-ddff-47e3-81e5-51a89de1199c" targetColumnKey="LegalEntityKey" targetTable="LegalEntityAffordabilityExpense" targetPropertyName="LegalEntityAffordabilityExpenses" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="6ccf921c-13f9-4bd2-9f17-5da7f3610447" name="ExpenseTypeKey" column="ExpenseTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0eb2c917-86bb-42ea-a3b4-374640a05352" name="Amount" column="Amount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="170b37fb-602f-4bae-b535-8636c5444858" name="Description" column="Description" length="0" />
+        <modelProperty Id="9771972c-61aa-4400-820a-7f56d8e02fbe" name="LegalEntityAffordabilityExpenseKey" column="LegalEntityAffordabilityExpenseKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityAssetLiability" schema="dbo" table="LegalEntityAssetLiability">
+      <targets>
+        <manyToOneRelation Id="b7d6254f-e4f5-4519-8954-ddec875fefd1" targetColumnKey="LegalEntityKey" targetTable="LegalEntityAssetLiability" targetPropertyName="LegalEntityAssetLiabilities" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="219a491f-3479-4fe0-82ed-f6ea75d6fbaa" name="AssetLiabilityKey" column="AssetLiabilityKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="2e972115-ccff-4a0c-a45a-391f8ca7fe89" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="10ae7f1d-01c2-45ab-b15a-1cfd667680fb" name="LegalEntityAssetLiabilityKey" column="LegalEntityAssetLiabilityKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityBankAccount" schema="dbo" table="LegalEntityBankAccount">
+      <targets>
+        <manyToOneRelation Id="f8d3c84d-bc29-45e2-a6a5-ab9b20b5fb9f" targetColumnKey="LegalEntityKey" targetTable="LegalEntityBankAccount" targetPropertyName="LegalEntityBankAccounts" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="b4df82cf-9e16-48d4-aecc-2ce0c2678eb8" name="BankAccountKey" column="BankAccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1bc016ab-33ea-4c06-9303-0dcfba2ab8a0" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="2d45c3d7-ad7c-4745-ab71-55415e52c7f4" name="UserID" column="UserID" length="0" notNull="true" />
+        <modelProperty Id="73aef8ee-d559-49a1-b8e8-290c9577c0ef" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="61aebc73-a0c0-4a12-be66-66ff92f95f19" name="LegalEntityBankAccountKey" column="LegalEntityBankAccountKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityExceptionReason" schema="dbo" table="LegalEntityExceptionReason">
+      <properties>
+        <modelProperty Id="20ca7519-29a7-4c23-bece-55340ebb5ca6" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="a230c38e-79b1-4ca3-a8a9-eebfa98721ef" name="Priority" column="Priority" columnType="Byte" length="0" notNull="true" />
+        <modelProperty Id="c54d704c-5bcb-45c6-98fe-11696c4b6af4" name="LegalEntityExceptionReasonKey" column="LegalEntityExceptionReasonKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityExceptionStatus" schema="dbo" table="LegalEntityExceptionStatus">
+      <properties>
+        <modelProperty Id="768e47a1-94ee-4208-925c-b3c8dab24586" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="9877d410-b340-4266-9eb9-63c320f00fe3" name="LegalEntityExceptionStatusKey" column="LegalEntityExceptionStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityMarketingOption" schema="dbo" table="LegalEntityMarketingOption">
+      <targets>
+        <manyToOneRelation Id="c6136923-d1ac-4028-a694-07602aafef87" targetColumnKey="LegalEntityKey" targetTable="LegalEntityMarketingOption" targetPropertyName="LegalEntityMarketingOptions" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="31545ff5-2e48-4546-9e72-5f8b6d2a8dad" name="MarketingOptionKey" column="MarketingOptionKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="920bbe21-c5b8-4b64-93a9-bbd9fbee636d" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="c2206bb6-e458-4e2a-812b-3d42d71f63c0" name="UserID" column="UserID" length="0" />
+        <modelProperty Id="3f5de5f3-bfee-40d4-ac5b-2d188a4d4a6a" name="LegalEntityMarketingOptionKey" column="LegalEntityMarketingOptionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityMarketingOptionHistory" schema="dbo" table="LegalEntityMarketingOptionHistory">
+      <properties>
+        <modelProperty Id="ccda5a75-e348-4f6a-978e-bb8283aed4a3" name="LegalEntityMarketingOptionKey" column="LegalEntityMarketingOptionKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="cf2869d0-1bd0-409f-adef-4cbf2e8b3daa" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="10c82ba0-89c9-404a-89d2-821f519bd3b2" name="MarketingOptionKey" column="MarketingOptionKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="27581301-60aa-4cbd-9738-c49a82f80c17" name="ChangeAction" column="ChangeAction" length="0" notNull="true" />
+        <modelProperty Id="16d32025-65dd-4667-9f38-aa1c3f886474" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="18ac52c2-7ec8-4fe7-aedc-bee16229f0d2" name="UserID" column="UserID" length="0" />
+        <modelProperty Id="91767c13-e49e-4334-b4ef-dc3b99eb2d9b" name="LegalEntityMarketingOptionHistoryKey" column="LegalEntityMarketingOptionHistoryKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityRelationship" schema="dbo" table="LegalEntityRelationship">
+      <targets>
+        <manyToOneRelation Id="7a4ecfb0-9d79-49b7-ad85-5e2d439d087b" targetColumnKey="LegalEntityKey" targetTable="LegalEntityRelationship" targetPropertyName="LegalEntityRelationships" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="19b0a525-bba3-43ab-9f5b-b0f9a7a7b022" targetColumnKey="RelatedLegalEntityKey" targetTable="LegalEntityRelationship" targetPropertyName="LegalEntityRelationships" sourceColumn="RelatedLegalEntityKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="92a50fdc-50a9-40a6-96b7-221055915b19" targetColumnKey="RelationshipTypeKey" targetTable="LegalEntityRelationship" targetPropertyName="LegalEntityRelationships" sourceColumn="RelationshipTypeKey">
+          <modelClassMoniker name="/4c76ec99-36b6-4202-b677-3fa651cbc094/LegalEntityRelationshipType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="97b2bab9-05ef-4108-a128-667cb3ceba7b" name="LegalEntityRelationshipKey" column="LegalEntityRelationshipKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityRelationshipType" schema="dbo" table="LegalEntityRelationshipType">
+      <properties>
+        <modelProperty Id="aed0ebdd-ba19-4b1f-b4c4-6e5580a94edc" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="8499d8d0-e34a-4941-acb6-85bf39e6c0e5" name="RelationshipTypeKey" column="RelationshipTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityStatus" schema="dbo" table="LegalEntityStatus">
+      <properties>
+        <modelProperty Id="5ce77e4b-fa64-4291-91d4-3868ddb2e52a" name="Description" column="Description" length="0" />
+        <modelProperty Id="fbc688dd-d5d2-4d0c-916d-0a18d61b08b2" name="LegalEntityStatusKey" column="LegalEntityStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityType" schema="dbo" table="LegalEntityType">
+      <properties>
+        <modelProperty Id="0f7b6eb7-c5af-44f1-86dd-4c781da094d5" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="24dcf298-ea5b-409e-bc06-2f750d70f18d" name="LegalEntityTypeKey" column="LegalEntityTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

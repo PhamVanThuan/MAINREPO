@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="RuleStuff">
+  <modelMoniker Id="b37cde97-7ce4-4098-adb5-97dc71846e10" />
+  <nestedChildShapes>
+    <classShape Id="bbc4647c-8ac0-44c4-96ce-4bf3ee56f5b8" absoluteBounds="0.625, 2.625, 1.5, 1.2670800781250002">
+      <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="301b9d1e-dd85-4c45-903d-d5e80f5deb27" absoluteBounds="0.64, 3.035, 1.4700000000000002, 0.75708007812500011" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ecc12be6-24ae-44fd-a734-90d1e812b406" absoluteBounds="4.25, 0.875, 1.5, 1.0901595052083333">
+      <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleSetRule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0c8c393f-9584-4541-9ddc-1ed995894559" absoluteBounds="4.2650000000000006, 1.2850000000000001, 1.4700000000000002, 0.58015950520833326" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1339de36-24c3-40e4-9d26-12047eec180b" absoluteBounds="1.25, 5.25, 1.5, 1.2670800781250002">
+      <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleParameter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="32e774e1-345c-4c95-8855-335bba5f4996" absoluteBounds="1.2650000000000001, 5.66, 1.4700000000000002, 0.75708007812500011" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d88c7692-819b-4831-aea8-b567c1472222" absoluteBounds="3.75, 4.625, 1.5, 1.0901595052083333">
+      <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleParameterType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="063d837b-92ce-4ec3-8ca6-5f41a2113f48" absoluteBounds="3.765, 5.035, 1.4700000000000002, 0.58015950520833326" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce92a25a-f36c-49cf-815b-bc7296e94ebe" absoluteBounds="0.5, 0.875, 1.5, 1.2670800781250002">
+      <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b6fa70d-ea9f-4328-b6bf-4fe44015ab1f" absoluteBounds="0.515, 1.2850000000000001, 1.4700000000000002, 0.75708007812500011" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(1.6875 : 5.25); (1.6875 : 3.892080078125)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="08c08f6f-d5bb-4e65-b23b-4bcf5a055ef1" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="1339de36-24c3-40e4-9d26-12047eec180b" />
+        <classShapeMoniker Id="bbc4647c-8ac0-44c4-96ce-4bf3ee56f5b8" />
+      </nodes>
+    </manyToOneConnector>
+    <manyToOneConnector edgePoints="[(5 : 1.96515950520833); (5 : 3.2585400390625); (2.125 : 3.2585400390625)]" manuallyRouted="false" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <manyToOneRelationMoniker Id="40e7bf86-2a30-4cdc-9882-19d92671b7b2" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="ecc12be6-24ae-44fd-a734-90d1e812b406" />
+        <classShapeMoniker Id="bbc4647c-8ac0-44c4-96ce-4bf3ee56f5b8" />
+      </nodes>
+    </manyToOneConnector>
+    <manyToOneConnector edgePoints="[(4.25 : 1.42007975260417); (2 : 1.42007975260417)]" manuallyRouted="false" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <manyToOneRelationMoniker Id="5db58b55-c065-4270-bd2f-03bdec0641d1" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="ecc12be6-24ae-44fd-a734-90d1e812b406" />
+        <classShapeMoniker Id="ce92a25a-f36c-49cf-815b-bc7296e94ebe" />
+      </nodes>
+    </manyToOneConnector>
+    <manyToOneConnector edgePoints="[(2.75 : 5.48257975260417); (3.75 : 5.48257975260417)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="aa607439-9137-48b3-a134-d6e9e29f3d32" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="1339de36-24c3-40e4-9d26-12047eec180b" />
+        <classShapeMoniker Id="d88c7692-819b-4831-aea8-b567c1472222" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

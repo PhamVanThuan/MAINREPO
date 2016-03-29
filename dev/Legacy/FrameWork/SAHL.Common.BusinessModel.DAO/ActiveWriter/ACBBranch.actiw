@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="b728ec60-7ae8-40e1-bd2a-7db1f3f9a058" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="ACBBranch" schema="dbo" table="ACBBranch">
+      <properties>
+        <modelProperty Id="6534f05a-894a-403d-95ec-765d6286c16d" name="ACBBankCode" column="ACBBankCode" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="8cdb96f2-ab14-4f10-8649-bb059d51d4b2" name="ACBBranchDescription" column="ACBBranchDescription" length="0" notNull="true" />
+        <modelProperty Id="c44af01e-b035-4b4a-a9aa-1b22f6a3d750" name="ActiveIndicator" column="ActiveIndicator" columnType="AnsiChar" length="0" notNull="true" />
+        <modelProperty Id="2e2fa9de-34b4-45ce-9336-082367e1018f" name="ACBBranchCode" column="ACBBranchCode" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

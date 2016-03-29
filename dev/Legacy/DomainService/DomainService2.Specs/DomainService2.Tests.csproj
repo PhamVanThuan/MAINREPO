@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E389AFD-B806-4576-8C91-127C2E6A4C9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainService2.Tests</RootNamespace>
+    <AssemblyName>DomainService2.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\log4net.2.0.0\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.0.3.3\lib\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.0.3.3\lib\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.2.0\lib\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\External Binaries\NuGet\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\External Binaries\NuGet\RhinoMocks.3.6\lib\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlerTestBase.cs" />
+    <Compile Include="DomainService\When_instantiated_with_a_null_remotingserviceconfigurator.cs" />
+    <Compile Include="DomainService\When_instantiated_with_a_null_activerecordinitialiser.cs" />
+    <Compile Include="DomainService\When_instantiated_with_a_null_ioc.cs" />
+    <Compile Include="DomainService\When_started.cs" />
+    <Compile Include="DomainService\When_stopped.cs" />
+    <Compile Include="DomainService\Stubs\ARemotingService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemotingServiceConfiguratorTests\When_instantiated.cs" />
+    <Compile Include="RemotingServiceConfiguratorTests\When_instantiated_with_a_null_configuration_provider.cs" />
+    <Compile Include="RemotingServiceConfiguratorTests\When_instantiated_with_a_null_remotingserviceshelper.cs" />
+    <Compile Include="RemotingServiceConfiguratorTests\When_adding_a_null_service.cs" />
+    <Compile Include="RemotingServiceConfiguratorTests\When_adding_a_valid_service.cs" />
+    <Compile Include="RemotingServiceConfiguratorTests\When_registering_a_channel.cs" />
+    <Compile Include="RemotingServiceConfiguratorTests\When_unregistering_a_channel.cs" />
+    <Compile Include="TransactionalCommandHandlerTests\DummyCommand.cs" />
+    <Compile Include="TransactionalCommandHandlerTests\When_handling_a_command_with_no_errors.cs" />
+    <Compile Include="TransactionalCommandHandlerTests\When_instantiated.cs" />
+    <Compile Include="TransactionalCommandHandlerTests\When_instantiated_with_a_null_innercommandhandler.cs" />
+    <Compile Include="TransactionalCommandHandlerTests\When_instantiated_with_a_null_transactionmanager.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommandHandlerTests\When_instantiated_with_a_null_applicationrepository.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommandHandlerTests\When_a_nonfurtheradvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommandHandlerTests\When_a_furtheradvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommandHandlerTests\When_instantiated_with_a_null_applicationrepository.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommandHandlerTests\When_a_furtherloan_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommandHandlerTests\When_a_nonfurtherloan_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommandHandler\When_a_readvanceadvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommandHandler\When_a_nonreadvanceadvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommandHandler\When_instantiated_with_a_null_applicationrepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Workflow\Cap2\" />
+    <Folder Include="Workflow\DebtCounselling\" />
+    <Folder Include="Workflow\DeleteDebitOrder\" />
+    <Folder Include="Workflow\HelpDesk\" />
+    <Folder Include="Workflow\IT\" />
+    <Folder Include="Workflow\Life\" />
+    <Folder Include="Workflow\LoanAdjustments\" />
+    <Folder Include="Workflow\Origination\ApplicationCapture\" />
+    <Folder Include="Workflow\Origination\ApplicationManagement\" />
+    <Folder Include="Workflow\Origination\Credit\" />
+    <Folder Include="Workflow\Origination\QuickCash\" />
+    <Folder Include="Workflow\Origination\Valuations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainService2\DomainService2.csproj">
+      <Project>{B0BE20BD-9A3E-4F94-8F4B-370169B16C03}</Project>
+      <Name>DomainService2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

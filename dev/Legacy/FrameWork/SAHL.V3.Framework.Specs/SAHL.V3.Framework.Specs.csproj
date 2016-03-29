@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FB2172F-DA3A-4C01-9F48-808439B5931B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.V3.Framework.Specs</RootNamespace>
+    <AssemblyName>SAHL.V3.Framework.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications, Version=0.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.LifeDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.LifeDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.MortgageLoanDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.MortgageLoanDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DecisionTree.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.DecisionTree.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ApplicationDomain, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ApplicationDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Communications, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Communications.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DecisionTree, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DecisionTree.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.LifeDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.LifeDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.MortgageLoanDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.MortgageLoanDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.AutoMocking">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap.automocking\lib\net40\StructureMap.AutoMocking.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.AutoMocking.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute.StructureMap.AutoMocking\lib\StructureMap.AutoMocking.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainObjects\StubEventList.cs" />
+    <Compile Include="DomainObjects\StubReadOnlyEventList.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_amend_affordability_assessment_applicants.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_add_an_affordability_assessment.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_amend_an_unconfirmed_affordability_assessment.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_get_affordability_assessments_for_application.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_get_affordability_assessments_for_account.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_get_historical_affordability_assessments_for_application.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_get_unconfirmed_affordability_assessments.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_get_affordability_assessment_stress_factors.cs" />
+    <Compile Include="DomainServicesSpecs\ApplicationDomainServiceSpecs\when_told_to_delete_an_affordability_assessment.cs" />
+    <Compile Include="DomainServicesSpecs\LifeDomainServiceSpecs\when_told_to_create_a_claim.cs" />
+    <Compile Include="DomainServicesSpecs\MortgageLoanDomainServiceSpecs\when_asking_for_the_debit_order_day_given_a_mortgageloanaccount.cs" />
+    <Compile Include="ModelSpecs\Factory.cs" />
+    <Compile Include="ModelSpecs\QualifyApplicationFor30YearLoanTermQuerySpecs\when_creating_a_30_year_term_query.cs" />
+    <Compile Include="ModelSpecs\QualifyHighestIncomeContributorQuerySpecs\when_creating_a_highest_income_contributor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorySpecs\DecisionTreeRepositorySpecs\BaseSpec.cs" />
+    <Compile Include="RepositorySpecs\DecisionTreeRepositorySpecs\when_asked_to_determine_NCR_guideline_min_monthly_fixed_expenses.cs" />
+    <Compile Include="RepositorySpecs\DecisionTreeRepositorySpecs\when_asked_to_qualify_a_mortgage_loan_application_given_an_error.cs" />
+    <Compile Include="RepositorySpecs\DecisionTreeRepositorySpecs\when_asked_to_qualify_a_mortgage_loan_application_for_30_year_term.cs" />
+    <Compile Include="ServicesSpecs\CommunicationSpecs\when_told_to_send_live_reply.cs" />
+    <Compile Include="ServicesSpecs\DecisionTreeSpecs\DetermineNCRGuidelineMinMonthlyFixedExpenses\when_calling_the_NCR_Assessment_Tree_fails_with_exception.cs" />
+    <Compile Include="ServicesSpecs\DecisionTreeSpecs\DetermineNCRGuidelineMinMonthlyFixedExpenses\when_calling_the_NCR_Assessment_Tree_returns_messages.cs" />
+    <Compile Include="ServicesSpecs\DecisionTreeSpecs\QualifyApplicationFor30YearLoanTerm\when_an_exception_occurs_qualifying_a_30_year_term.cs" />
+    <Compile Include="ServicesSpecs\DecisionTreeSpecs\QualifyApplicationFor30YearLoanTerm\when_successfully_qualifying_a_30_year_term.cs" />
+    <Compile Include="ServicesSpecs\DecisionTreeSpecs\QualifyApplicationFor30YearLoanTerm\when_failing_to_qualify_for_a_30_year_term.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.Interfaces\SAHL.Common.BusinessModel.Interfaces.csproj">
+      <Project>{73da2a37-4a25-4fe9-98f2-60ed1b2d1cab}</Project>
+      <Name>SAHL.Common.BusinessModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common\SAHL.Common.csproj">
+      <Project>{c8e9a1aa-1b28-4310-92bd-12a52ec3a996}</Project>
+      <Name>SAHL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0c1b7b75-8887-4169-a41d-0aacddff3d49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.V3.Framework\SAHL.V3.Framework.csproj">
+      <Project>{39c80b95-704a-406e-8a26-8aa377cb9b87}</Project>
+      <Name>SAHL.V3.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

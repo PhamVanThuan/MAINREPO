@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F35B82C-5602-4DC0-A054-F9EA36363180}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Interfaces.CATS</RootNamespace>
+    <AssemblyName>SAHL.Services.Interfaces.CATS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CATSServiceClient.cs" />
+    <Compile Include="Commands\AddCATSPaymentBatchItemCommand.cs" />
+    <Compile Include="Commands\MarkCATSPaymentBatchAsFailedCommand.cs" />
+    <Compile Include="Commands\NotifyCATSPaymentBatchRecipientsCommand.cs" />
+    <Compile Include="Commands\ProcessCATSPaymentBatchCommand.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Commands\GenerateCatsFileCommand.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Commands\RemoveCATSPaymentBatchItemCommand.cs" />
+    <Compile Include="Commands\SummarisePaymentsToRecipientCommand.cs" />
+    <Compile Include="Enums\CATsEnvironment.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Events\CATSPaymentBatchProcessedEvent.cs" />
+    <Compile Include="Events\CATSPaymentBatchRecipientsNotifiedEvent.cs" />
+    <Compile Include="Events\SummarisedPaymentsToRecipientEvent.cs" />
+    <Compile Include="ICATSServiceCommand.cs" />
+    <Compile Include="ICATSServiceQuery.cs" />
+    <Compile Include="ICATSServiceClient.cs" />
+    <Compile Include="Models\CatsPaymentBatchRuleModel.cs" />
+    <Compile Include="Models\DoesCatsPaymentBatchForTodayExistModel.cs" />
+    <Compile Include="Models\GetCatsPaymentBatchItemsByBatchReferenceQueryResult.cs" />
+    <Compile Include="Models\GetNewThirdPartyPaymentBatchReferenceQueryResult.cs" />
+    <Compile Include="Models\GetPreviousFileFailureQueryResult.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentBatch.cs" />
+    <Compile Include="Models\CATSPaymentBatchItemModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\DoesCatsPaymentBatchForTodayExistQuery.cs" />
+    <Compile Include="Queries\IsThereACatsFileBeingProcessedForProfileQuery.cs" />
+    <Compile Include="Queries\GetPreviousFileFailureQuery.cs" />
+    <Compile Include="Queries\GetCatsPaymentBatchItemsByBatchReferenceQuery.cs" />
+    <Compile Include="Queries\GetNewThirdPartyPaymentBatchReferenceQuery.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.sahomeloans.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://webservices.sahomeloans.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.sahomeloans.com/">
+      <s:element name="CreateLead">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="prospect" type="tns:PreProspect" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PreProspect">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ApplicationKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OfferSubmitted" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="marketrateKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditMatrixKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmploymentType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LinkRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterestRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaximumInstallment" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PurposeNumber" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaturityMonths" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IncomeType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfApplicants" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryKey" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AdvertisingCampaignID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferringServerURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreProspectFirstNames" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreProspectSurname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreProspectIDNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreProspectHomePhoneCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreProspectHomePhoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreProspectEmailAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VarifixMarketRateKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarketRateTypeNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rateConfigKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MortgageLoanPurpose" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterestOnly" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Product" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="InitiationFee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RegistrationFee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CapitaliseFees" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancellationFee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterimInterest" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValuationFee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TransferFee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Deposit" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentLoan" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalFee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="HouseholdIncome" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LTV" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PTI" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActiveMarketRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstalmentTotal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="EstimatedPropertyValue" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MarginKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Term" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CashOut" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="InstalmentFix" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="FixPercent" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PurchasePrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalPrice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoanAmountRequired" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="FixLoan" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ElectedFixedPercentage" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ElectedVariablePercentage" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ElectedFixedRate" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreateLeadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateLeadResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateLeadSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateLead" />
+  </wsdl:message>
+  <wsdl:message name="CreateLeadSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateLeadResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ApplicationSoap">
+    <wsdl:operation name="CreateLead">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Creates a New 2AM lead - Returns the Application key on success and -1 on failure to create the case</wsdl:documentation>
+      <wsdl:input message="tns:CreateLeadSoapIn" />
+      <wsdl:output message="tns:CreateLeadSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ApplicationSoap" type="tns:ApplicationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateLead">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CreateLead" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ApplicationSoap12" type="tns:ApplicationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateLead">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CreateLead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Application">
+    <wsdl:port name="ApplicationSoap" binding="tns:ApplicationSoap">
+      <soap:address location="http://localhost/SAHL.Web.Services/Internal/Application.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ApplicationSoap12" binding="tns:ApplicationSoap12">
+      <soap12:address location="http://localhost/SAHL.Web.Services/Internal/Application.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,165 @@
+{
+	"decision_tree": {
+		"id": "1",
+		"name": "Credit Category Decision",
+		"tree": {
+			"variables": [{
+				"id": "1",
+				"type": "float",
+				"usage": "input",
+				"name": "HouseHold Income"
+			},
+			{
+				"id": "2",
+				"type": "float",
+				"usage": "input",
+				"name": "Loan Purpose"
+			},
+			{
+				"id": "3",
+				"usage": "input",
+				"type": "enumeration",
+				"type_enumeration_values": ["Salaried",
+				"Salaried With Deduction",
+				"Self Employed"],
+				"name": "Household Income Type"
+			},
+			{
+				"id": "4",
+				"usage": "input",
+				"type": "float",
+				"name": "Loan Amount"
+			},
+			{
+				"id": "5",
+				"usage": "input",
+				"type": "float",
+				"name": "Property Value"
+			},
+			{
+				"id": "6",
+				"usage": "input",
+				"type": "float",
+				"name": "LTV"
+			},
+			{
+				"id": "7",
+				"usage": "output",
+				"type": "string",
+				"name": "CreditCategory"
+			}],
+			"nodes": [{
+				"id": "1",
+				"name": "Start",
+				"type": "Start",
+				"required_variables": [],
+				"output_variables": [],
+				"code": ""
+			},
+			{
+				"id": "2",
+				"type": "decision",
+				"name": "Is Salaried",
+				"required_variables": ["3"],
+				"output_variables": [],
+				"code": ""
+			},
+			{
+				"id": "3",
+				"type": "decision",
+				"name": "Is New Purchase",
+				"required_variables": ["2"],
+				"output_variables": [],
+				"code": ""
+			},
+			{
+				"id": "4",
+				"type": "decision",
+				"name": "Is Salaried With Deduction",
+				"required_variables": ["2"],
+				"output_variables": [],
+				"code": ""
+			},
+			{
+				"id": "5",
+				"type": "process",
+				"name": "Check Loan Amount",
+				"required_variables": ["4"],
+				"output_variables": [],
+				"code": " if Variables.Input.LoanAmount >  Variables.Credit.MaximumSalariedNewPurchaseLoanAmount && Variables.Input.LoanAmount < Variables.Credit.MinimumSalariedNewPurchaseLoanAmount then NodeMessages.AddError(Messages.Credit.SalariedNewPurchaseLoanAmountOutsideLimits) end"
+			},
+			{
+				"id": "6",
+				"type": "process",
+				"name": "Check Household Income",
+				"required_variables": ["4"],
+				"output_variables": [],
+				"code": " if Variables.Input.HouseholdIncome >  Variables.Credit.MaximumSalariedNewPurchaseHouseholdIncome && Variables.Input.HouseholdIncome < Variables.Credit.MinimumSalariedNewPurchaseHouseholdIncome then NodeMessages.AddError(Messages.Credit.SalariedNewPurchaseHouseholdIncometOutsideLimits) end"
+			},
+			{
+				"id": "7",
+				"type": "process",
+				"name": "Establish Credit Category",
+				"required_variables": ["4",
+				"6"],
+				"output_variables": ["7"],
+				"code": " if Variables.Input.LTV <  Variables.Credit.Category0SalariedNewPurchaseMaxLTV then Variables.Outputs.CreditCategory = Variables.Credit.Categories.Category0 end"
+			}],
+			"links": [{
+				"id": "1",
+				"type": "decision_yes",
+				"fromNodeId": "1",
+				"toNodeId": "2"
+			},
+			{
+				"id": "2",
+				"type": "decision_yes",
+				"fromNodeId": "2",
+				"toNodeId": "3"
+			},
+			{
+				"id": "3",
+				"type": "decision_no",
+				"fromNodeId": "2",
+				"toNodeId": "4"
+			},
+			{
+				"id": "4",
+				"type": "decision_yes",
+				"fromNodeId": "3",
+				"toNodeId": "5"
+			},
+			{
+				"id": "5",
+				"type": "link",
+				"fromNodeId": "5",
+				"toNodeId": "6"
+			}]
+		},
+		"layout": {
+			"nodes": [{
+				"id": "1",
+				"loc": "0 90"
+			}],
+			"links": [{
+				"linkId": "1",
+				"fromPort": "L",
+				"toPort": "R",
+				"visible": true,
+				"points": [460.5,
+				447,
+				470.5,
+				447,
+				470.5,
+				500,
+				367,
+				500,
+				263.5,
+				500,
+				253.5,
+				500],
+				"text": "False"
+			}]
+		}
+	}
+}

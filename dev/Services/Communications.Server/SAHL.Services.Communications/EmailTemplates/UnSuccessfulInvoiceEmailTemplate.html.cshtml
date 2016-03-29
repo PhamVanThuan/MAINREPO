@@ -1,0 +1,28 @@
+﻿@using System.Collections;
+@using System.Collections.Generic;
+<h1>Automatic E-Mail Notification:  Invoice Submission Rejected</h1>
+<p>
+    Please note that your invoice submission has been rejected by our electronic invoicing system. Please see below for the reason(s) for the rejection.
+</p>
+
+@if (Model.RejectionReasons.Count > 0)
+{
+    <p>
+        <strong>Rejection Reasons:</strong>
+        <ul>
+            @foreach (var reason in Model.RejectionReasons)
+            {
+                <li>@reason</li>
+            }
+        </ul>
+    </p>
+}
+
+<p>Please correct the above issue(s) and resend the invoice. If you have any queries, please contact 031-576 5797</p>
+
+<p>Thank You.</p>
+
+<p>
+    Operations Consultant<br/>
+    <strong>SA Home Loans (PTY) Ltd</strong>
+</p>

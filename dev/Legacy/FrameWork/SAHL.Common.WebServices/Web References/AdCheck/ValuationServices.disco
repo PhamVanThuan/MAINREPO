@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://artemis.epharma.co.za/epropSAHLIntegration/ValuationServices.asmx?wsdl" docRef="http://artemis.epharma.co.za/epropSAHLIntegration/ValuationServices.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://artemis.epharma.co.za/epropSAHLIntegration/ValuationServices.asmx" xmlns:q1="http://AdcheckMobile/IntegrationService/" binding="q1:ePropService" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://artemis.epharma.co.za/epropSAHLIntegration/ValuationServices.asmx" xmlns:q2="http://AdcheckMobile/IntegrationService/" binding="q2:ePropService1" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

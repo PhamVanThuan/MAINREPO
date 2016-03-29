@@ -1,0 +1,228 @@
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("#infoDraggable").draggable({ handle: "#infoDraggableHandle" });
+    });
+</script>
+<div class="fluent-menu" data-role="fluentmenu" ng-hide="$state.current.name != 'home.design'" spin-loader="documentLoading">
+    <div id="document-header">{{document.displayName}}{{document.isPublished?"(published)":""}}{{document.isReadOnly?"(ReadOnly)":""}}{{document.isLockedByUser?"(Locked by: " + document.isLockedByUser + ")":""}} - Decision Tree Designer<i class="system-button icon-sahl-logo"></i><button ng-click="closeDocument()"><i class="icon-close-button"></i></button></div>
+    <ul class="tabs-holder">
+        <li class="special"><a ui-sref="home.design.file-menu.info">File</a></li>
+        <li ng-class="{active: currentTab=='home'}"><a ng-click="currentTab='home'" href="">Home</a></li>
+        <li ng-class="{active: currentTab=='insert'}"><a ng-click="(currentTab !='insert' ? requestUpdate(): requestNoUpdate());currentTab='insert'" href="">Insert</a></li>
+        <li ng-class="{active: currentTab=='debug'}"><a ng-click="currentTab='debug'" href="">Debug</a></li>
+        <li ng-class="{active: currentTab=='view'}"><a ng-click="currentTab='view'" href="">View</a></li>
+        <li id="user-box" class="inline">
+            <div>
+                <img class="user-image-small" ng-src="{{userimagesrc}}" />
+                <div class="user-details">
+                    <div class="user-name">{{userDisplayName}}</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div id="infoDraggable" class="draggable" style="width:500px; z-index: 100000; position: absolute;padding: 0px 20px 20px 20px;  border: 1px #ccc solid;   margin: 0 0 10px 0;  background-color: #fdfdfd !important; display:none;">
+        <div id="infoDraggableHandle" class="handle">Find and Replace</div>
+        <a style="position:relative;left:450px;top:-20px; cursor:pointer; color:black;" onclick="$('#infoDraggable').fadeOut('fast');"><i style="width:12px;height:12px;" class=" icon-close-button"></i></a>
+        <form>
+            <fieldset>
+                <legend>Find</legend>
+                <label>Find what:</label>
+                <div data-role="input-control" class="input-control text">
+                    <input type="text" placeholder="type text" ng-model="searchText" id="searchText">
+                    <button tabindex="-1" class="btn-clear" type="button" ng-click="removeSearchText()"></button>
+                </div>
+                <label>Replace with:</label>
+                <div data-role="input-control" class="input-control text ">
+                    <input type="text" placeholder="type text" ng-model="searchReplaceText" id="searchReplaceText">
+                    <button tabindex="-1" class="btn-clear" type="button" ng-click="removeSearchReplaceText()"></button>
+                </div>
+                <div>
+                    <div data-role="input-control" class="input-control checkbox" >
+                        <label>
+                            <input type="checkbox" checked="" ng-model="matchWholeWord">
+                            <span class="check"></span>
+                            Match whole word
+                        </label>
+                    </div>
+                    <div data-role="input-control" class="input-control checkbox">
+                        <label>
+                            <input type="checkbox" checked="" ng-model="matchCase">
+                            <span class="check"></span>
+                            Match case
+                        </label>
+                    </div>
+                </div>
+
+                <input type="submit" value="Search" ng-click="searchDocument(searchText, matchWholeWord, matchCase, null);"  ng-disabled="((searchText == null)||(searchText.length == 0))" >
+                <input type="submit" value="Find Next {{currentSearchItemIndex+1}}" ng-disabled="((searchResults == null)||(searchResults.length == 0))" ng-click="searchFindNextDocument();" >
+                <input type="submit" value="Replace {{currentSearchItemIndex+1}}" ng-disabled="((searchResults == null)||(searchResults.length == 0)||(searchReplaceText == null)||(searchReplaceText == ''))" ng-click="searchReplaceNextDocument(matchWholeWord, matchCase, searchReplaceText);" >
+                <br/><br/>
+                <div style="font-size:smaller" ng-show="searchResults[currentSearchItemIndex].isCodeResult && searchResults.length > 0 && currentSearchItemIndex >=0">Search Item: Node: {{searchResults[currentSearchItemIndex].nodeName}} | Code  [{{searchResults[currentSearchItemIndex].nodeCodeLineNumber}}|{{searchResults[currentSearchItemIndex].nodeCodeIndex}}] : {{searchResults[currentSearchItemIndex].codeLine}}</div>
+                <div style="font-size:smaller" ng-show="!searchResults[currentSearchItemIndex].isCodeResult && searchResults.length > 0 && currentSearchItemIndex >=0">Search Item: Node: {{searchResults[currentSearchItemIndex].nodeName}}</div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="tabs-content">
+        <div class="tab-panel" id="tab_home" ng-show="currentTab==='home'">
+            <div class="tab-panel-group">
+                <div class="tab-group-content">
+                    <button class="fluent-big-button" ng-click="document.clipboardManager.paste()" ng-disabled="!document.clipboardManager.canPaste">
+                        <span class="icon-clipboard"></span>
+                        <span class="button-label">
+                            Paste
+                        </span>
+                    </button>
+                    <div class="tab-content-segment">
+                        <button class="fluent-button" ng-click="document.clipboardManager.cut()" ng-disabled="!document.clipboardManager.canCut">
+                            <span class="icon-scissors on-left"></span>
+                            Cut
+                        </button>
+                        <button class="fluent-button" ng-click="document.clipboardManager.copy()" ng-disabled="!document.clipboardManager.canCopy">
+                            <span class="icon-copy on-left"></span>
+                            Copy
+                        </button>
+
+                    </div>
+                </div>
+                <div class="tab-group-caption">Clipboard</div>
+            </div>
+            <div class="tab-panel-group">
+                <div class="tab-group-content">
+                    <div class="tab-content-segment">
+                        <button class="fluent-button" ng-click="document.undoManager.undo()" ng-disabled="!document.undoManager.canUndo"><span class="icon-undo on-left"></span>Undo</button>
+                        <button class="fluent-button" ng-click="document.undoManager.redo()" ng-disabled="!document.undoManager.canRedo"><span class="icon-redo on-left"></span>Redo</button>
+                        <button class="fluent-button" ng-click="document.selectionManager.deleteSelection()" ng-disabled="!document.selectionManager.canDelete" title="Delete (Delete)">
+                            <span class="icon-cancel on-left"></span>
+                            <span class="button-label">
+                                Delete
+                            </span>
+                        </button>
+                    </div>
+                    <div class="tab-content-segment">
+                        <button class="fluent-button" ng-click="displayFind()" title="Find (F3)">
+                            <span class="icon-search"></span>
+                            Find
+                        </button>
+                        <button class="fluent-button" ng-click="displayFind()" title="Replace (F3)">
+                            <span class="icon-spin"></span>
+                            Replace
+                        </button>
+                    </div>
+                    <div class="tab-group-caption">Editing</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-panel" id="tab_insert" ng-show="currentTab==='insert'">
+            <div class="tab-panel-group">
+                <div class="tab-group-content">
+                    <div style="display: inline-block; width:505px">
+                        <div id="designPalette" style="width: 505px; height: 80px"></div>
+                    </div>
+                </div>
+                <div class="tab-group-caption">Decision</div>
+            </div>
+        </div>
+
+        <div class="tab-panel" id="tab_debug" ng-show="currentTab==='debug'">
+            <div class="tab-panel-group">
+                <div class="tab-group-content">
+                    <div class="tab-content-segment">
+                        <button class="fluent-big-button" ng-disabled="document.debugger.isDebugging && !document.debugger.isStopped" ng-click="startDebug()" ><span class="icon-play fg-green" title="Start Debug (F5)"></span>{{{true:'Continue',false:'Start Debug'}[document.debugger.isDebugging]}}</button>
+                        <button class="fluent-big-button" ng-hide="!document.debugger.isDebugging" ng-click="stopDebug()" ><span class="icon-stop fg-red" title="Stop Debug (Shift+F5)"></span>Stop Debug</button>
+                    </div>
+                    <div class="tab-content-segment">
+                        <button class="fluent-big-button" ng-hide="!document.debugger.isDebugging" ng-click="restart()"><span class="icon-spin fg-orange" title="Restart (Ctrl+Shift+F5)"></span>Restart</button>
+                        <button class="fluent-big-button" ng-click="stepOver()" ng-disabled="document.debugger.isDebugging != document.debugger.isStopped"><span class="icon-debug-step-over on-left" title="Step Over (F10)"></span>Step Over</button>
+                    </div>
+                </div>
+                <div class="tab-group-caption">Debug</div>
+            </div>
+            <div class="tab-panel-group">
+                <button class="fluent-button" ng-click="debugger.toggle()" ng-disabled="!debugger.canActionBreakpoint" title="{{{true:'Toggle Breakpoint (F9)',false:'Add Breakpoint (F9)'}[debugger.hasBreakpoint]}}">
+                    <span class="button-label" ng-show="!debugger.hasBreakpoint">
+                        <span class="icon-plus"></span> add breakpoint
+                    </span>
+                    <span class="button-label" ng-show="debugger.hasBreakpoint">
+                        <span ng-class="{true:'icon-eye fg-green', false:'icon-eye fg-red'}[debugger.enabled]" ></span> breakpoint {{{true:'enabled',false:'disabled'}[debugger.enabled]}}
+                    </span>
+                </button>
+                <button class="fluent-button" ng-click="debugger.remove()" ng-disabled="!debugger.hasBreakpoint">
+                    <span class="button-label">
+                        <span class="icon-cancel"></span> remove breakpoint
+                    </span>
+                </button>
+                <div class="tab-group-caption">Node Options</div>
+            </div>
+            <div class="tab-panel-group">
+                <div class="tab-group-content">
+                        <div>
+                            Enumerations
+                            <select data-validate="required" ng-model="globals.globalsVersionsModel.EnumerationsVersion" ng-options="o.version as o.label for o in globals.globalsVersionsData.EnumerationsVersions"></select>
+                        </div>
+                        <div>
+                            Messages
+                            <select data-validate="required" ng-model="globals.globalsVersionsModel.MessagesVersion" ng-options="o.version as o.label for o in globals.globalsVersionsData.MessagesVersions"></select>
+                        </div>
+                        <div>
+                            Variables
+                            <select data-validate="required" ng-model="globals.globalsVersionsModel.VariablesVersion" ng-options="o.version as o.label for o in globals.globalsVersionsData.VariablesVersions"></select> 
+                        </div>
+                </div>
+                <div class="tab-group-caption">Globals Version Options</div>
+            </div>            
+        </div>
+
+        <div class="tab-panel" id="tab_view" ng-show="currentTab==='view'">
+            <div class="tab-panel-group">
+                <div class="tab-group-content">
+                    <div class="tab-content-segment">
+                        <div class="button-set" id="toggledockbuttons">
+                            <button ng-class="varDockVisible?'fluent-big-button active':'fluent-big-button'" id="var" ng-click="toggleEastView()" title="Properties View (F4)"><i class="icon-view-variables"></i>Properties</button>
+                            <button ng-class="codeDockVisible?'fluent-big-button active':'fluent-big-button'" id="code" ng-click="toggleSouthView()" title="Code View (F6)"><i class="icon-view-code"></i>Code</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-group-caption">Windows</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="designSurfaceContent" ng-hide="$state.current.name != 'home.design'">
+    <div class="ui-layout-container">
+    
+        <span class="pin-button"></span>
+        <div class="ui-layout-east">
+            <span class="pin-button button-pin button-pin-east button-pin-down button-pin-east-down" pin="down" title="Un-Pin"></span>
+            <div class="panelheader">{{eastPanelWindows.current.name}}</div>
+            <div class="sidepanel tab-container dockcontent">
+                <div ng-repeat="panel in eastPanelWindows.open" ng-show="eastPanelWindows.current.name === panel.name" ng-include="panel.url" />
+            </div>
+               <ul class="sidepanel inverse tabs-list" >
+                    <li ng-repeat="openWindow in eastPanelWindows.open" ng-click="eastPanelWindows.current = openWindow" ng-class="{active: openWindow.name===eastPanelWindows.current.name}" ><a href="">{{openWindow.name}}</a></li>
+               </ul>
+        </div>
+
+        <span class="pin-button"></span>
+        <div class="ui-layout-south pane pane-south">
+            <span class="pin-button button-pin button-pin-south button-pin-down button-pin-south-down" pin="down" title="Un-Pin"></span>
+            <div class="panelheader">{{southPanelWindows.current.name}}</div>
+            <div class="sidepanel tab-container dockcontent">
+                <div ng-repeat="panel in southPanelWindows.open" ng-show="southPanelWindows.current.name === panel.name" ng-include="panel.url" />
+            </div>
+            <ul class="sidepanel inverse tabs-list">
+                <li ng-repeat="openWindow in southPanelWindows.open" ng-click="southPanelWindows.current = openWindow" ng-class="{active: openWindow.name===southPanelWindows.current.name}" ><a href="">{{openWindow.name}}</a></li>
+            </ul>
+        </div>
+        
+        <div class="ui-layout-center pane-center" style="height:100%;">
+            <div id="mainContent">
+                <div id="designSurface" class="ui-layout-content" style="height:100%"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="fileMenuView" ui-view>
+</div>
+<div id="statusbar" ng-hide="$state.current.name != 'home.design'"></div>

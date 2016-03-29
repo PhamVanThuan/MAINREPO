@@ -1,0 +1,26 @@
+﻿@using System.Collections;
+@using System.Collections.Generic;
+<h1>Automatic E-Mail Notification of Rejected Invoice</h1>
+
+<p>
+    <strong>SA Home Loans Account No:</strong> @Model.AccountNumber <br />
+    <strong>SA Home Loans Reference No:</strong> @Model.SAHLReference
+</p>
+
+<p>
+    Please note that your invoice submission has been rejected for the following reason:
+    <ul>
+        <li>@Model.RejectionComment</li>
+    </ul>
+</p>
+
+
+<p>For queries, please contact 031-576 5797.</p>
+
+<p>Thank You.</p>
+
+<p>
+    Legal Fee Consultant<br/>
+    <strong>SA Home Loans (PTY) Ltd</strong>
+</p>
+

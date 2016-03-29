@@ -1,0 +1,55 @@
+﻿@model SAHL.Core.UI.Elements.Areas.TileElementArea
+
+
+<div class="scrollable-container scrollable-large">
+    <div class="scrollable-wrapper">
+        <div class="scrollable-inner-container scrollable-inner-container-right">
+            <div id="tile-area" class="scrollable-contents">
+                <div id="GreyedOutTileArea"></div>
+                @if (Model != null &&
+                    Model.MajorTileArea != null &&
+                    Model.MajorTileArea.MajorTile != null)
+                {
+                    @Html.DisplayForModel(x => x.MajorTileArea.MajorTile)
+
+                    foreach (var childTile in Model.ChildTileArea.ChildTiles)
+                    {
+                    @Html.DisplayForModel(x => childTile)
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="scrollable-controls scrollable-controls-grey scrollable-controls-right">
+        <i class="scrollable-back scrollable-grey  scrollable-control icon-angle-left"></i>
+        <i class="scrollable-forward scrollable-grey scrollable-control icon-angle-right"></i>
+    </div>
+</div>
+
+
+
+<div class="scrollable-container scrollable-medium">
+    <div class="scrollable-wrapper">
+        <div class="scrollable-inner-container scrollable-inner-container-right scrollable-inner-container-left container-left container-right">
+            <div id="action-area" class="scrollable-contents">
+
+                @if (Model != null && Model.ActionTileArea != null)
+                {
+                    foreach (var actionTile in Model.ActionTileArea.ActionTiles)
+                    {
+                    @Html.DisplayForModel(x => actionTile)
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+
+    <div class="scrollable-controls scrollable-controls-grey scrollable-controls-left">
+        <i class="scrollable-back scrollable-grey scrollable-control icon-angle-left"></i>
+    </div>
+    <div class="scrollable-controls scrollable-controls-grey scrollable-controls-right ">
+        <i class="scrollable-forward scrollable-grey scrollable-control icon-angle-right"></i>
+    </div>
+</div>

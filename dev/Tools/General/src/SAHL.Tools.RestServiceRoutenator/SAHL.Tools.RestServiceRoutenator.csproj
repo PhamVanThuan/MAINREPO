@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AD49879F-2248-44C0-B780-A6ED2AEAB9A8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Tools.RestServiceRoutenator</RootNamespace>
+    <AssemblyName>SAHL.Tools.RestServiceRoutenator</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLine">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\CommandLineParser\lib\net45\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandOptions.cs" />
+    <Compile Include="DesiredTypeHelper.cs" />
+    <Compile Include="FileManagement.cs" />
+    <Compile Include="IRestBaseTemplate.cs" />
+    <Compile Include="IFileManagement.cs" />
+    <Compile Include="INamespaceProvider.cs" />
+    <Compile Include="IOCConfig.cs" />
+    <Compile Include="IScanConvention.cs" />
+    <Compile Include="IScanResult.cs" />
+    <Compile Include="ITemplate.cs" />
+    <Compile Include="ITemplateForModel.cs" />
+    <Compile Include="ITemplateManager.cs" />
+    <Compile Include="ITokeniser.cs" />
+    <Compile Include="ITypeScanner.cs" />
+    <Compile Include="IValidationAttributeScanner.cs" />
+    <Compile Include="NamespaceProvider.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\GetAllRoutes.cs" />
+    <Compile Include="Reflection\MonoCecilRepresentationRestQueryScan.cs" />
+    <Compile Include="Reflection\TypeScanConventionBase.cs" />
+    <Compile Include="Reflection\TypeScanner.cs" />
+    <Compile Include="RouteFinder.cs" />
+    <Compile Include="Routes.cs" />
+    <Compile Include="TemplateManager.cs" />
+    <Compile Include="Templates\Partials\RouteDefinitionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RouteDefinitionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\RouteDefinitionTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\RoutePartTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoutePartTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\RoutePartTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\TypeDefinitionTemplate.cs">
+      <DependentUpon>TypeDefinitionTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Partials\TypeDefinitionTemplatePartial.cs" />
+    <Compile Include="Templates\RestBaseTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestBaseTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\RestBaseTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\RepresentationTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepresentationTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\RepresentationTemplatePartial.cs" />
+    <Compile Include="TextHelper.cs" />
+    <Compile Include="Tokeniser.cs" />
+    <Compile Include="Validation\ValidationAttribute.cs" />
+    <Compile Include="Validation\ValidationAttributeScanner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Templates\Partials\RouteDefinitionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RouteDefinitionTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\RoutePartTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RoutePartTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\TypeDefinitionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TypeDefinitionTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\RestBaseTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RestBaseTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\RepresentationTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RepresentationTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

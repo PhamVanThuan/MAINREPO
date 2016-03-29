@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LDAP", "LDAP\LDAP.csproj", "{EFC2E164-EF45-43A4-9D55-48BAA1BE8F11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Reporting.WebServices", "LDAPService\SAHL.Reporting.WebServices.csproj", "{D04BDF86-9861-456B-BBF7-7742FCB5DF88}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CLR", "CLR\CLR.sqlproj", "{777DD5E6-8BE0-4C93-A87B-8EC16C4830CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLR.LDAP.Proxy", "CLR.LDAP.Proxy\CLR.LDAP.Proxy.csproj", "{F3A9D8A3-1CA5-4606-A85E-7EA7675BFCC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFC2E164-EF45-43A4-9D55-48BAA1BE8F11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFC2E164-EF45-43A4-9D55-48BAA1BE8F11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFC2E164-EF45-43A4-9D55-48BAA1BE8F11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFC2E164-EF45-43A4-9D55-48BAA1BE8F11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D04BDF86-9861-456B-BBF7-7742FCB5DF88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D04BDF86-9861-456B-BBF7-7742FCB5DF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D04BDF86-9861-456B-BBF7-7742FCB5DF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D04BDF86-9861-456B-BBF7-7742FCB5DF88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777DD5E6-8BE0-4C93-A87B-8EC16C4830CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{777DD5E6-8BE0-4C93-A87B-8EC16C4830CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{777DD5E6-8BE0-4C93-A87B-8EC16C4830CF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{777DD5E6-8BE0-4C93-A87B-8EC16C4830CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{777DD5E6-8BE0-4C93-A87B-8EC16C4830CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{777DD5E6-8BE0-4C93-A87B-8EC16C4830CF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F3A9D8A3-1CA5-4606-A85E-7EA7675BFCC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A9D8A3-1CA5-4606-A85E-7EA7675BFCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A9D8A3-1CA5-4606-A85E-7EA7675BFCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A9D8A3-1CA5-4606-A85E-7EA7675BFCC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

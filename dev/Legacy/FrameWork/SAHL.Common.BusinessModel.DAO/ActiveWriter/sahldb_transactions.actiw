@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="1c720256-1140-419b-9133-2a4b512301e9" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Loantransaction" schema="dbo" table="Loantransaction">
+      <properties>
+        <modelProperty Id="f9c36ee1-8483-4ea8-ae17-e96aea1146d3" name="LoanNumber" column="LoanNumber" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="009bc1bc-7308-4d47-92d0-ef1ca41bf58b" name="TransactionTypeNumber" column="TransactionTypeNumber" columnType="Int16" length="0" notNull="true" />
+        <modelProperty Id="18523cd9-c5db-41a2-99eb-7f9ebfad1e5a" name="LoanTransactionInsertDate" column="LoanTransactionInsertDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="2d978f6d-bd84-4b52-97eb-d783d24b887c" name="LoanTransactionEffectiveDate" column="LoanTransactionEffectiveDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="e18a6625-7200-45e2-a2c0-e0db31d561d8" name="LoanTransactionRate" column="LoanTransactionRate" columnType="Single" length="0" notNull="true" />
+        <modelProperty Id="a430f25e-1473-4af6-b035-b78a998e7c15" name="LoanTransactionAmount" column="LoanTransactionAmount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="f4cdbe67-959a-48db-8568-70e1e3d33093" name="LoanTransactionNewBalance" column="LoanTransactionNewBalance" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="f623fc55-4392-4feb-8c18-d4a4ab2f937f" name="LoanTransactionReference" column="LoanTransactionReference" length="0" />
+        <modelProperty Id="f00756ba-7a06-4f9d-a064-cdaef29ee69f" name="LoanTransactionUserID" column="LoanTransactionUserID" length="0" notNull="true" />
+        <modelProperty Id="675d2d10-6f30-4dd1-95cb-dee8f8a09eb2" name="SPVNumber" column="SPVNumber" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="73835e50-d72d-469a-8ead-81254f0c9c2b" name="LoanTransactionActualEffectiveDate" column="LoanTransactionActualEffectiveDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="9ca04f8e-10c3-464f-a19e-955153fbd85c" name="RolledBackInd" column="RolledBackInd" columnType="AnsiChar" length="0" />
+        <modelProperty Id="2a213e95-4f3d-476f-902d-4ff99f8eb709" name="LoanAccountCurrentBalance" column="LoanAccountCurrentBalance" columnType="Double" length="0" />
+        <modelProperty Id="e275b585-43f5-4bc5-966b-e75a3dad82f7" name="Adjustments" column="Adjustments" columnType="Double" length="0" />
+        <modelProperty Id="96c641cb-a19f-49a4-9472-c563b65b9b97" name="StandardRate" column="StandardRate" columnType="Single" length="0" />
+        <modelProperty Id="d9188673-2ac0-40b6-aed3-9801ef083624" name="CoPayment" column="CoPayment" columnType="Double" length="0" />
+        <modelProperty Id="9c0c3f30-89fe-4b98-bd19-0cb0bb248534" name="LoanTransactionActiveMarketRate" column="LoanTransactionActiveMarketRate" columnType="Double" length="0" />
+        <modelProperty Id="d51ecb82-6f17-4619-ae70-dbadb4e459c1" name="LoanTransactionNumber" column="LoanTransactionNumber" columnType="Decimal" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="TransactionType" schema="dbo" table="TransactionType">
+      <properties>
+        <modelProperty Id="63c89c91-7d97-4600-9f40-df81a67023e8" name="TransactionTypeLoanDescription" column="TransactionTypeLoanDescription" length="0" notNull="true" />
+        <modelProperty Id="e0e9d252-4611-4c0e-a197-0713958d692a" name="TransactionTypeMBSDescription" column="TransactionTypeMBSDescription" length="0" notNull="true" />
+        <modelProperty Id="75de0bb8-6edb-409c-bd33-485e54025471" name="TransactionTypeCurrentDrCr" column="TransactionTypeCurrentDrCr" columnType="Int16" length="0" notNull="true" />
+        <modelProperty Id="016617f9-b421-40a3-a7a3-ac7e31d6638e" name="TransactionTypeArrearDrCr" column="TransactionTypeArrearDrCr" columnType="Int16" length="0" notNull="true" />
+        <modelProperty Id="c7516955-e8e8-4252-b8a6-4b7a6e6e1d79" name="TransactionTypeMBSDrCr" column="TransactionTypeMBSDrCr" columnType="Int16" length="0" notNull="true" />
+        <modelProperty Id="4349fbac-acd4-439e-a37b-a536aa9d83b2" name="TransactionTypeMemo" column="TransactionTypeMemo" columnType="Int16" length="0" notNull="true" />
+        <modelProperty Id="950099e0-1240-42e3-85d0-82dbe86d6365" name="TransactionTypeScreenBatch" column="TransactionTypeScreenBatch" columnType="Int16" length="0" notNull="true" />
+        <modelProperty Id="e8b51f88-d740-4406-9fc3-b9bd805f667b" name="TransactionTypeGLAccount" column="TransactionTypeGLAccount" length="0" />
+        <modelProperty Id="3663306f-30d6-4f0e-a62d-37d48d343925" name="TransactionTypeGLContra" column="TransactionTypeGLContra" length="0" />
+        <modelProperty Id="97100cb3-fca3-49f8-96d7-d0e185da52c5" name="TransactionTypeSecuritisationDescription" column="TransactionTypeSecuritisationDescription" length="0" />
+        <modelProperty Id="50516674-aa22-4cc2-b8dc-d4492deb58b4" name="TransactionTypeHTMLColour" column="TransactionTypeHTMLColour" length="0" />
+        <modelProperty Id="86390f1b-395b-49f1-b8c2-e134a07b1858" name="TransactionTypeForeColour" column="TransactionTypeForeColour" length="0" />
+        <modelProperty Id="f14cfd48-5f2e-4f9f-85d0-1341a3fa81b5" name="TransactionTypeLoanDescriptionAfr" column="TransactionTypeLoanDescriptionAfr" length="0" />
+        <modelProperty Id="0013cab8-e56c-44f6-a893-c8fb2df971ab" name="TransactionTypeNumber" column="TransactionTypeNumber" columnType="Int16" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Disbursement" schema="dbo" table="Disbursement">
+      <targets>
+        <manyToOneRelation Id="4cf77ba4-4aa5-42eb-b010-7a8b3844773c" targetColumnKey="DisbursementStatusKey" targetTable="Disbursement" targetPropertyName="Disbursements" sourceColumn="DisbursementStatusKey">
+          <modelClassMoniker name="/1c720256-1140-419b-9133-2a4b512301e9/DisbursementStatus" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="c5e887a9-2ecf-48f4-9ba7-c88fd4473060" targetColumnKey="DisbursementTransactionTypeKey" targetTable="Disbursement" targetPropertyName="Disbursements" sourceColumn="DisbursementTransactionTypeKey">
+          <modelClassMoniker name="/1c720256-1140-419b-9133-2a4b512301e9/DisbursementTransactionType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="96754a33-b64e-4ffc-a28e-07453f5a4df5" name="AccountKey" column="AccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="7451b6a1-83b4-4f00-a352-3f79569c2fce" name="ACBBankCode" column="ACBBankCode" columnType="Int32" length="0" />
+        <modelProperty Id="07086958-8295-4280-9d37-d58fbc413c01" name="ACBBranchCode" column="ACBBranchCode" length="0" />
+        <modelProperty Id="10293cfa-603c-4b32-8595-d09a1d2fb120" name="ACBTypeNumber" column="ACBTypeNumber" columnType="Int32" length="0" />
+        <modelProperty Id="96af944f-f731-4a25-aeb7-324adbe58a06" name="PreparedDate" column="PreparedDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="2886efa6-e34b-4249-a3c0-1b6c61f5dc5e" name="ActionDate" column="ActionDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="45ff921d-8e8e-4ec7-8311-710e97183bcc" name="AccountName" column="AccountName" length="0" />
+        <modelProperty Id="75af88e1-65e9-4475-a3e2-07ca1d815c81" name="AccountNumber" column="AccountNumber" length="0" />
+        <modelProperty Id="ced24b49-c03c-44e2-858d-b9f3205969ce" name="Amount" column="Amount" columnType="Double" length="0" />
+        <modelProperty Id="628ff519-f326-4fc8-8281-db1b525c70f5" name="CapitalAmount" column="CapitalAmount" columnType="Double" length="0" />
+        <modelProperty Id="69ba5368-7ff6-434e-822c-cef101ed932a" name="GuaranteeAmount" column="GuaranteeAmount" columnType="Double" length="0" />
+        <modelProperty Id="a95609a5-33da-4c00-a4a1-16c942032171" name="InterestRate" column="InterestRate" columnType="Double" length="0" />
+        <modelProperty Id="d7f7be82-2e4b-4ae4-a62f-01b9b139132d" name="InterestStartDate" column="InterestStartDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="32931746-a3df-4b0c-b195-ecdbfb865286" name="InterestApplied" column="InterestApplied" columnType="AnsiChar" length="0" />
+        <modelProperty Id="6961ff30-4a6e-4a92-8dbe-c0a47df27a7b" name="PaymentAmount" column="PaymentAmount" columnType="Double" length="0" />
+        <modelProperty Id="57eeda4a-309c-4909-9117-1fd7cc6b3c2a" name="DisbursementKey" column="DisbursementKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementLoanTransaction" schema="dbo" table="DisbursementLoanTransaction">
+      <targets>
+        <manyToOneRelation Id="a2fac7c4-d724-4b84-8739-c3a37fdbbaa4" targetColumnKey="DisbursementKey" targetTable="DisbursementLoanTransaction" targetPropertyName="DisbursementLoanTransactions" sourceColumn="DisbursementKey">
+          <modelClassMoniker name="/1c720256-1140-419b-9133-2a4b512301e9/Disbursement" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="63408dea-4f6f-4599-9156-720302756441" name="LoanTransactionNumber" column="LoanTransactionNumber" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="648415c2-f2d3-429a-84d7-2d0483bc1a46" name="DisbursementLoanTransactionKey" column="DisbursementLoanTransactionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementStatus" schema="dbo" table="DisbursementStatus">
+      <properties>
+        <modelProperty Id="0e55e36c-946f-4c69-93b7-6bf4db747d96" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="6c81b23a-80d6-4386-8527-5aa70c185fd7" name="DisbursementStatusKey" column="DisbursementStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementTransactionType" schema="dbo" table="DisbursementTransactionType">
+      <properties>
+        <modelProperty Id="94b7270a-5171-419a-b546-79ef2139401e" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="b065797a-6b52-4a06-ad18-9c921c94dcb7" name="TransactionTypeNumber" column="TransactionTypeNumber" columnType="Int32" length="0" />
+        <modelProperty Id="cf50478d-f684-4e82-af9c-edf902542949" name="DisbursementTransactionTypeKey" column="DisbursementTransactionTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementType" schema="dbo" table="DisbursementType">
+      <properties>
+        <modelProperty Id="34226215-6f5e-404f-a301-763525eff50a" name="Description" column="Description" length="0" />
+        <modelProperty Id="9c62a6bd-26a7-4956-ac5e-86fcc337df8b" name="DisbursementTypeKey" column="DisbursementTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="RegMail" schema="dbo" table="RegMail">
+      <properties>
+        <modelProperty Id="c1cdcc77-4447-457f-811d-6e68936a600d" name="LoanNumber" column="LoanNumber" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="06b5897f-e786-44e6-bb39-f747ef7ac8a1" name="PurposeNumber" column="PurposeNumber" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="2261208d-eb9b-497d-af4c-b9bac3851c0c" name="DetailTypeNumber" column="DetailTypeNumber" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="30374247-ddaa-4df0-91b2-35e4b3708375" name="AttorneyNumber" column="AttorneyNumber" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="87fc1fc9-6de7-4679-85de-2191852e301f" name="RegMailLoanStatus" column="RegMailLoanStatus" columnType="Int16" length="0" />
+        <modelProperty Id="378f7fa9-3916-4e6f-b49a-d5d6d68c4796" name="RegMailDateTime" column="RegMailDateTime" columnType="Timestamp" length="0" />
+        <modelProperty Id="55ec5966-642a-4954-8954-9d493a4e929d" name="RegMailBondAmount" column="RegMailBondAmount" columnType="Double" length="0" />
+        <modelProperty Id="1ac4cd02-84f3-44b9-9151-98682aa77e13" name="RegMailBondDate" column="RegMailBondDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="713fbb2d-b245-4a77-b43d-e8f30859649a" name="RegMailGuaranteeAmount" column="RegMailGuaranteeAmount" columnType="Double" length="0" />
+        <modelProperty Id="ee89c915-d896-4053-b5ff-ae0208945745" name="RegMailCashRequired" column="RegMailCashRequired" columnType="Double" length="0" />
+        <modelProperty Id="53c55556-112a-415c-bd6d-b68983e7fb9b" name="RegMailCashDeposit" column="RegMailCashDeposit" columnType="Double" length="0" />
+        <modelProperty Id="df4960cc-c283-4f49-b277-dfe5d1194b7a" name="RegMailConveyancingFee" column="RegMailConveyancingFee" columnType="Double" length="0" />
+        <modelProperty Id="3d249f25-9947-4d89-ab5b-616929d6a675" name="RegMailVAT" column="RegMailVAT" columnType="Double" length="0" />
+        <modelProperty Id="7a7258d4-bd14-4bc3-86d6-4b9703962980" name="RegMailTransferDuty" column="RegMailTransferDuty" columnType="Double" length="0" />
+        <modelProperty Id="e3c4aa41-0e4c-4364-a35d-4b38428b7eb3" name="RegMailDeedsFee" column="RegMailDeedsFee" columnType="Double" length="0" />
+        <modelProperty Id="0f5fa572-033e-41d2-9d98-baf937bba31e" name="RegMailInstructions1" column="RegMailInstructions1" length="0" />
+        <modelProperty Id="d0b08590-c348-4015-824c-d01f00a7d1c1" name="RegMailInstructions2" column="RegMailInstructions2" length="0" />
+        <modelProperty Id="31f68648-b0c4-4485-973c-13e3270176ed" name="RegMailInstructions3" column="RegMailInstructions3" length="0" />
+        <modelProperty Id="c948d439-af62-42e4-a6a3-2e2bd12a69b4" name="RegMailStampDuty" column="RegMailStampDuty" columnType="Double" length="0" />
+        <modelProperty Id="1308fe9a-5ecd-47ee-b32b-d6fa2121d68f" name="RegMailCancelFee" column="RegMailCancelFee" columnType="Double" length="0" />
+        <modelProperty Id="5672fad2-e633-480c-af4b-5ba84af8e8f3" name="RegMailCATSFlag" column="RegMailCATSFlag" columnType="Int16" length="0" />
+        <modelProperty Id="d97e3916-f8d4-4877-a373-b24633395a4f" name="RegMailLoanAgreementAmount" column="RegMailLoanAgreementAmount" columnType="Double" length="0" />
+        <modelProperty Id="a2a9f9e9-0384-48a9-b263-b5e3a60f0b2a" name="RegMailValuationFee" column="RegMailValuationFee" columnType="Double" length="0" />
+        <modelProperty Id="f7fac304-0a5e-4582-882d-7672ec16f522" name="RegMailAdminFee" column="RegMailAdminFee" columnType="Double" length="0" />
+        <modelProperty Id="fe4b5ed7-0a64-4499-b9b6-042da40ef712" name="QuickCashInterest" column="QuickCashInterest" columnType="Double" length="0" />
+        <modelProperty Id="3f8bcf83-7055-42f1-acb1-daa91a3a214f" name="QCAdminFee" column="QCAdminFee" columnType="Double" length="0" />
+        <modelProperty Id="2b0f9e3d-ba6e-486d-9223-96b5076857fd" name="RegMailNumber" column="RegMailNumber" columnType="Decimal" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

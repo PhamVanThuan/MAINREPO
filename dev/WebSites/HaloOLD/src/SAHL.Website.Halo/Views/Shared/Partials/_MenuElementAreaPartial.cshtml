@@ -1,0 +1,5 @@
+﻿@{
+    SAHL.Core.UI.Elements.Areas.MenuElementArea menuElementArea = SAHL.Website.Halo.App_Start.DependencyResolution.StaticHelpers.GetUserMenu(@User);
+
+}
+@Html.DisplayForModel(x => menuElementArea)

@@ -1,0 +1,8 @@
+﻿<ConnectionStrings>
+	<Connection ID="103a" AlwaysMigrate="true"
+			 X2="Data Source=DEVA03;Initial Catalog=X2;Persist Security Info=True;User Id = eworkadmin2;Password=W0rdpass;Connect Timeout=30"
+			 AM="Data Source=DEVA03;Initial Catalog=2am;Persist Security Info=True;User Id = eworkadmin2;Password=W0rdpass;Connect Timeout=30"/>
+	<Connection ID="203\UAT" AlwaysMigrate="true"
+			 X2="Data Source=sahls203\uat;Initial Catalog=X2;Persist Security Info=True;User Id = eworkadmin2;Password=W0rdpass;Connect Timeout=30"
+			 AM="Data Source=sahls203\uat;Initial Catalog=2am;Persist Security Info=True;User Id = eworkadmin2;Password=W0rdpass;Connect Timeout=30"/>
+</ConnectionStrings>

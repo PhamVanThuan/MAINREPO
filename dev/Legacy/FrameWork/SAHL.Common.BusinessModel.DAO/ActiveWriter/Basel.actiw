@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="b6da9ab0-5197-4f2d-92af-931338d4e711" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="PDCategory" schema="dbo" table="PDCategory">
+      <properties>
+        <modelProperty Id="28ea25ea-7113-41b3-8d2d-a2a1c5b9f3a2" name="PDKey" column="PDKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="193e2145-8187-45c9-83ea-edf9ffd2cc14" name="Description" column="Description" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="Account" schema="dbo" table="Account">
+      <properties>
+        <modelProperty Id="bc57e342-2789-49d6-8500-dd4cbdbaab90" name="AccountKey" column="AccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="050ff00b-01bb-4be7-8014-37fcef92025a" name="FixedPayment" column="FixedPayment" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="8563b26f-e220-4e93-ab6b-b8bddc99ca0f" name="AccountStatusKey" column="AccountStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="ba0c5475-d487-4e1d-83df-4ba6b437b54c" name="InsertedDate" column="InsertedDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="f6b28b5e-c9d5-414e-b0ae-f9d1e4b26c92" name="OriginationSourceProductKey" column="OriginationSourceProductKey" columnType="Int32" length="0" />
+        <modelProperty Id="5a4ba4f4-c878-488f-9485-908828f728bf" name="OpenDate" column="OpenDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="1939cb7e-25b3-4383-92e9-4e831f05f1f1" name="CloseDate" column="CloseDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="bd83720b-206a-4019-b5e9-4bd0679fe0f3" name="RrrProductkey" column="RRR_ProductKey" columnType="Int32" length="0" />
+        <modelProperty Id="03fa01cb-7c15-4948-a4a6-aea757aeada5" name="RrrOriginationsourcekey" column="RRR_OriginationSourceKey" columnType="Int32" length="0" />
+        <modelProperty Id="3b103f62-1f70-43aa-8c76-da0dd598ed28" name="UserID" column="UserID" length="0" />
+        <modelProperty Id="4fe04630-0d0d-4d6f-8800-f63e1052c264" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="BaselImport" schema="dbo" table="BaselImport">
+      <targets>
+        <manyToOneRelation Id="3f58aa0b-d3b8-4052-918c-30e0af50da03" targetColumnKey="AccountKey" targetTable="BaselImport" targetPropertyName="BaselImports" sourceColumn="AccountKey">
+          <modelClassMoniker name="/b6da9ab0-5197-4f2d-92af-931338d4e711/Account" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="3558f2d2-e0b2-43d2-8bd5-2c576bbb656f" name="BaselImportKey" column="BaselImportKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="f17aa33a-f4a5-408c-a28f-871c536e61a4" name="AccountingDate" column="AccountingDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="ba9f0160-776a-4cb5-9a48-eaa9c4e01b4d" name="ProcessDate" column="ProcessDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="a22aca6f-473f-4d50-a905-fe779f5fbc19" name="LGD" column="LGD" columnType="Double" length="0" />
+        <modelProperty Id="5eb961f8-f51c-473d-b72f-d4d03aee5708" name="EAD" column="EAD" columnType="Double" length="0" />
+        <modelProperty Id="5c86ff08-f22a-475f-8c05-3c30e40ee5cb" name="PD" column="PD" columnType="Double" length="0" />
+        <modelProperty Id="7758e39e-f93d-4599-a557-6f4c63ba15ad" name="EL" column="EL" columnType="Int32" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

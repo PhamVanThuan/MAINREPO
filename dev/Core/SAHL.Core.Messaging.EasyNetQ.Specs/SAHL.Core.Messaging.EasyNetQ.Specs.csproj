@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3B0B136-44CE-4650-851C-FF896F825A66}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Messaging.EasyNetQ.Specs</RootNamespace>
+    <AssemblyName>SAHL.Core.Messaging.EasyNetQ.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes.RhinoMocks\lib\net40\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\Binaries\ExternalBinaries\RhinoMocks\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShortNameSerializerSpecs\FakeEvent.cs" />
+    <Compile Include="ShortNameSerializerSpecs\when_event_is_complex_wrapped_event.cs" />
+    <Compile Include="ShortNameSerializerSpecs\when_name_is_too_long.cs" />
+    <Compile Include="ShortNameSerializerSpecs\when_deserializing_wrapped_type_name.cs" />
+    <Compile Include="ShortNameSerializerSpecs\when_deserializing_type_name.cs" />
+    <Compile Include="ShortNameSerializerSpecs\when_serializing_a_type.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Events\SAHL.Core.Events.csproj">
+      <Project>{b771075c-7563-4598-ac72-86b1f10cc013}</Project>
+      <Name>SAHL.Core.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging.EasyNetQ\SAHL.Core.Messaging.EasyNetQ.csproj">
+      <Project>{0d1338eb-73bc-491d-9a3a-062f8abb016f}</Project>
+      <Name>SAHL.Core.Messaging.EasyNetQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging.Shared\SAHL.Core.Messaging.Shared.csproj">
+      <Project>{5b05aefb-2351-4393-8f9b-1ab0aa926d45}</Project>
+      <Name>SAHL.Core.Messaging.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging\SAHL.Core.Messaging.csproj">
+      <Project>{87639fd7-2e47-44a6-997c-b28b497d9b2d}</Project>
+      <Name>SAHL.Core.Messaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

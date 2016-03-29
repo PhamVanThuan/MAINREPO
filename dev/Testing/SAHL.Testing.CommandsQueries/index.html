@@ -1,0 +1,71 @@
+<html ng-app="servicesApp">
+	<head>
+		  <link href="css/styles.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div ng-controller="servicesController">
+			<h2>Server:
+				<input ng-model="serverName" value="serverName"></input>
+				<button ng-click="serverChange(serverName)">Refresh</button>
+			</h2>
+			<div ng-repeat="service in services">
+				<label>{{service.error}}</label>
+			</div>
+			<select ng-model="selectedService" ng-options="service.name for service in services" ng-init="selectedService = services[0]">
+			</select>
+			<br>
+			<select multiple id="commandsQueries" ng-model="selectedCommandsQueries" ng-options="commandQuery.name for commandQuery in selectedService.commandsQueries">
+			 	<option value="">-- Select Command --</option>
+			</select>
+			<div ng-repeat="commandQuery in selectedCommandsQueries">
+				<br>
+				<table id="{{commandQuery.name}}" cellpadding="4" cellspacing="2" border="0">
+				<th>
+					<th>{{commandQuery.name}}</th>
+				</th>
+				<tr>
+					<td colspan="2">
+						<b text-transform:uppercase>{{commandOrQuery.name}}</b>
+					</td>
+				</tr>
+				<tr ng-repeat="param in commandQuery.params">
+					<td colspan="2" id="params"> 
+						<div ng-if="param.isModel">
+															
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr ng-repeat="param2 in param.params">
+									<td width="120">{{param2.name}}</td>
+									<td><input type="text" ng-model="paramValue2" ng-change="param2.value=paramValue2"></input></td>
+								</tr>
+							</table>
+						</div>
+						<div ng-if="!param.isModel">
+							<table>
+								<tr>
+									<td valign="top" width="120">{{param.name}}: </td>
+									<td><input type="text" ng-model="paramValue" ng-change="param.value=paramValue"></input></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="left" >
+						<div id="jsonResponse">
+							<pre ng-repeat="res in commandQuery.response">{{res.value}}</pre>
+						</div>
+					</td>
+				</tr>
+				</table>
+				</br>
+			</div>
+			<button ng-if="selectedCommandsQueries.length > 0" ng-click="executeCommandsQueries(selectedCommandsQueries, selectedService.models)">Execute</button>
+		</div>
+		<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+		<script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+		<script type="text/javascript" src="utils.js"></script>
+		<script type="text/javascript" src="objects.js"></script>
+		<script type="text/javascript" src="servicesApp.js"></script>
+		<script type="text/javascript" src="servicesController.js"></script>
+	</body>
+</html>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="22fecdda-3525-43df-8447-470baa6a0458" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="ActiveExternalActivity" schema="X2" table="ActiveExternalActivity">
+      <targets>
+        <manyToOneRelation Id="968a40ea-4434-433c-8e57-bf744d35d8c6" targetColumnKey="ExternalActivityID" targetTable="ActiveExternalActivity" targetPropertyName="ActiveExternalActivities" sourceColumn="ExternalActivityID">
+          <modelClassMoniker name="/22fecdda-3525-43df-8447-470baa6a0458/ExternalActivity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="987117ce-6f64-46b5-bff1-d3d1f05eeed9" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="484cc480-a0ca-4731-9e0f-eea7819ea3c1" name="ActivatingInstanceID" column="ActivatingInstanceID" columnType="Int64" length="0" />
+        <modelProperty Id="e64abb24-8f66-4c25-9494-16731b1c8745" name="ActivationTime" column="ActivationTime" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="c340077c-55c6-4756-8935-6fdc7193b2af" name="ActivityXMLData" column="ActivityXMLData" columnType="StringClob" length="0" />
+        <modelProperty Id="e7e2677e-f4c7-4790-9465-7291bc0b9e53" name="WorkFlowProviderName" column="WorkFlowProviderName" length="0" />
+        <modelProperty Id="8a6235e2-3ede-4fd6-90ff-5b097f7c43d1" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Activity" schema="X2" table="Activity">
+      <targets>
+        <manyToOneRelation Id="70700a01-9335-4282-aa4a-efd742e4c1c1" targetColumnKey="Type" targetTable="Activity" targetPropertyName="Activities" sourceColumn="Type">
+          <modelClassMoniker name="/22fecdda-3525-43df-8447-470baa6a0458/ActivityType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="c418c2d7-5c07-4209-83e6-2f1931096c6a" targetColumnKey="RaiseExternalActivity" targetTable="Activity" targetPropertyName="Activities" sourceColumn="RaiseExternalActivity">
+          <modelClassMoniker name="/22fecdda-3525-43df-8447-470baa6a0458/ExternalActivity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="fb1e532c-0f57-42c2-b7dc-aeaa1fc16b3a" targetColumnKey="ExternalActivityTarget" targetTable="Activity" targetPropertyName="Activities" sourceColumn="ExternalActivityTarget">
+          <modelClassMoniker name="/22fecdda-3525-43df-8447-470baa6a0458/ExternalActivityTarget" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="ad3b3464-0901-4ec5-a74d-fddc1aaaa615" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="334a95da-1c2b-4413-85e1-1cb43e2f94a0" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="b72d0de9-e98a-4e82-8c3f-4ee76a0c6698" name="StateID" column="StateID" columnType="Int32" length="0" />
+        <modelProperty Id="86d992b2-00af-4ddd-8c25-461b640c2c77" name="NextStateID" column="NextStateID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="c7d0a008-236b-46bf-931f-2d03d0d7867b" name="SplitWorkFlow" column="SplitWorkFlow" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="956decc5-b43d-4251-b6b7-d205cedf0c66" name="Priority" column="Priority" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1f2f4e3f-02ba-4c5a-ad7e-d7407a1bd0e6" name="FormID" column="FormID" columnType="Int32" length="0" />
+        <modelProperty Id="772b6773-cac9-430d-a055-bf147a945382" name="ActivityMessage" column="ActivityMessage" length="0" />
+        <modelProperty Id="35970b64-1fbf-48aa-b138-aaf70903f88c" name="ActivatedByExternalActivity" column="ActivatedByExternalActivity" columnType="Int32" length="0" />
+        <modelProperty Id="0f36a440-6d40-4b0f-90d0-ec33b32b1fc3" name="ChainedActivityName" column="ChainedActivityName" length="0" />
+        <modelProperty Id="d6e98537-4224-4e7d-8255-4b6279b01bfb" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ActivityType" schema="X2" table="ActivityType">
+      <properties>
+        <modelProperty Id="01efab39-04a3-434c-baac-f02f0f38368e" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="fae93f3a-cebe-4c56-8c14-c947ae12913b" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ExternalActivity" schema="X2" table="ExternalActivity">
+      <properties>
+        <modelProperty Id="bda8e7b0-9750-496a-a685-ea5ecf8c9635" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0afcb6ca-7fb5-4088-addd-a59f0cb6ca71" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="66765fd6-4d39-4997-8f68-75a041ea674b" name="Description" column="Description" length="0" />
+        <modelProperty Id="77e9bcf5-d475-4f68-a23f-84fd0b28996f" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ExternalActivityTarget" schema="X2" table="ExternalActivityTarget">
+      <properties>
+        <modelProperty Id="abf3beec-e944-4409-a71d-a5616fa94790" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="4cc19ef3-1cbb-4c8f-b816-1a2b89108be0" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Log" schema="X2" table="Log">
+      <targets>
+        <manyToOneRelation Id="e7aa8ef5-f26c-48cb-bd3e-15ee733ad59a" targetColumnKey="ActivityID" targetTable="Log" targetPropertyName="Logs" sourceColumn="ActivityID">
+          <modelClassMoniker name="/22fecdda-3525-43df-8447-470baa6a0458/Activity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="f92bd475-59d4-4e87-bb17-161baf0236bf" name="Date" column="Date" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="58495715-ea93-4f3c-aa04-01853d1930d8" name="ProcessID" column="ProcessID" columnType="Int32" length="0" />
+        <modelProperty Id="2ef62dbd-0a3d-40d1-a8cc-b6c703ad87b5" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" />
+        <modelProperty Id="f4b1ce40-8b7c-4c22-8fc1-7f173d4e665d" name="InstanceID" column="InstanceID" columnType="Int32" length="0" />
+        <modelProperty Id="b3676faf-424b-4e58-8212-40fdc0eb8d16" name="StateID" column="StateID" columnType="Int32" length="0" />
+        <modelProperty Id="66c04633-bc7a-4b50-9118-efad7c894078" name="ADUserName" column="ADUserName" length="0" />
+        <modelProperty Id="3eb50fba-e785-44e1-9df0-67d02c8d3a0c" name="Message" column="Message" columnType="StringClob" length="0" />
+        <modelProperty Id="925e7635-f82b-4407-ba1e-4be9538ce1de" name="StackTrace" column="StackTrace" columnType="StringClob" length="0" />
+        <modelProperty Id="53fd6725-221a-45e6-85e3-caa168c047e4" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="StageActivity" schema="X2" table="StageActivity">
+      <targets>
+        <manyToOneRelation Id="9b8cf647-85cf-47ec-8811-9cef90cd2da3" targetColumnKey="ActivityID" targetTable="StageActivity" targetPropertyName="StageActivities" sourceColumn="ActivityID">
+          <modelClassMoniker name="/22fecdda-3525-43df-8447-470baa6a0458/Activity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="76965969-2a9a-45f8-a26f-0cccc67f0ff2" name="StageDefinitionKey" column="StageDefinitionKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1f538ac8-2801-4498-9472-060fb4951074" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkFlowHistory" schema="X2" table="WorkFlowHistory">
+      <targets>
+        <manyToOneRelation Id="019cd2d7-3b97-472d-a975-55f07631a214" targetColumnKey="ActivityID" targetTable="WorkFlowHistory" targetPropertyName="WorkFlowHistories" sourceColumn="ActivityID">
+          <modelClassMoniker name="/22fecdda-3525-43df-8447-470baa6a0458/Activity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="a265698a-7a46-4043-8eb7-82a761be6977" name="InstanceID" column="InstanceID" columnType="Int64" length="0" notNull="true" />
+        <modelProperty Id="6d7caa06-665e-4819-8ea8-9f015476ab2d" name="StateID" column="StateID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1a19c4a4-81a5-4163-a216-c5da6bb87123" name="CreatorADUserName" column="CreatorADUserName" length="0" notNull="true" />
+        <modelProperty Id="645d0f69-0c34-4b41-acbe-22e46a3bb188" name="CreationDate" column="CreationDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="95a6e34e-cd6c-4aaf-9463-a94ba228e862" name="StateChangeDate" column="StateChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="9907fe01-5725-4535-9948-9d61f8f1f404" name="DeadlineDate" column="DeadlineDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="769961b0-ab50-4db4-b72a-14ddf7a3b119" name="ActivityDate" column="ActivityDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="44e2c8f5-2633-401b-946e-a2de50388ab0" name="ADUserName" column="ADUserName" length="0" notNull="true" />
+        <modelProperty Id="5e12c7df-a98e-4cae-8446-b3af808a3405" name="Priority" column="Priority" columnType="Int32" length="0" />
+        <modelProperty Id="51425490-cfe0-4cf7-9f8a-057a1afd74f3" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

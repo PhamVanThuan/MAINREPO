@@ -1,0 +1,81 @@
+﻿@model SAHL.Core.Services.Metrics.CommandServiceRequestMetrics
+@{
+    ViewBag.Title = "Index";
+    this.Layout = "~/Views/Shared/_MetricsLayout.cshtml";
+}
+@section header{
+     Command Service Request Metrics
+    <div>
+        <div class="float-left">@Model.ServiceName</div>
+        <div class="float-right">Version: @Model.ServiceVersion</div>
+    </div>
+    <div>
+        <div class="float-left">Service Uptime: @Model.ServiceUptime</div>
+        <div class="float-right">Last Updated at: @DateTime.Now</div>
+    </div>
+}
+<ul class="metrics center">
+    <li>
+        <h1>@Model.TotalRequestsCount</h1>
+        <b>Total Command<br />Requests</b>
+    </li>
+    <li>@MetricData.Doughnut(@Model.TotalRequestsForLastMinute, "minute")</li>
+    <li>@MetricData.Doughnut(@Model.TotalRequestsForLastHour, "hour")</li>
+    <li>@MetricData.Doughnut(@Model.TotalRequestsForLastDay, "day")</li>
+</ul>
+@if (Model.TotalRequestsCount != 0)
+{
+    <ul class="metrics center">
+        <li></li>
+        <li>@MetricData.AverageRequests(Model.TotalLatencyForLastMinute, "Minute")</li>
+        <li>@MetricData.AverageRequests(Model.TotalLatencyForLastHour, "Minute")</li>
+        <li>@MetricData.AverageRequests(Model.TotalLatencyForLastDay, "Day")</li>
+    </ul>
+    <ul class="metrics center">
+        @if (Model.TotalLatencyForLastMinute != null) { <li>@MetricData.Analytics(Model.TotalLatencyForLastMinute.Histogram, "Minute")</li> }
+        @if (Model.TotalLatencyForLastHour != null) { <li>@MetricData.Analytics(Model.TotalLatencyForLastHour.Histogram, "Hour")</li> }
+        @if (Model.TotalLatencyForLastMinute != null) { <li>@MetricData.Analytics(Model.TotalLatencyForLastMinute.Histogram, "Daily")</li> }
+    </ul>
+    <ul class="metrics center">
+        @if (Model.TotalLatencyForLastMinute != null) { <li>@MetricData.Latency(Model.TotalLatencyForLastMinute.Max, "Max")</li> }
+        @if (Model.TotalLatencyForLastMinute != null) { <li>@MetricData.Latency(Model.TotalLatencyForLastMinute.Min, "Min")</li> }
+        @if (Model.TotalLatencyForLastMinute != null) { <li>@MetricData.Latency(Model.TotalLatencyForLastMinute.Mean, "Average")</li> }
+    </ul>
+}
+@section content
+{
+    <div id="ajaxContent"></div>
+    <div id="top20"></div>
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/Graphing")
+    @Scripts.Render("~/bundles/jqueryui")
+    <script>
+        $(document).ready(function () {
+            $(".dough").each(function(){
+                $(this).Doughnut([{ name: "Number Of Requests", value: $(this).data("field") }],@Model.TotalRequestsCount);
+            });
+            $(".analytics").each(function(){
+                $(this).Analytics($(this).data("field"));
+            });
+            var url = "metrics/Top20";
+            $.get(url, function (data) {
+                $("#top20").html(data);
+                $(".command>li>a").first().click();
+            });
+        });
+
+        function CallComplete(){
+            var totalCount = $("#container").data().count;
+            $(".ui-dialog-titlebar").removeClass('ui-widget-header');
+            $("#container").find(".dough").each(function () {
+                $(this).Doughnut([{ name: "Number Of Requests", value: $(this).data("field") }], totalCount);
+            });
+            $("#container").find(".analytics").each(function () {
+                $(this).Analytics($(this).data("field"));
+            });
+        }
+    </script>
+}

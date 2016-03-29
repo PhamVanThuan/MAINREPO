@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E54BB0A-AFDC-43FB-B1B0-F99144AC4005}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.WCFServices.ComcorpConnector.Specs</RootNamespace>
+    <AssemblyName>SAHL.WCFServices.ComcorpConnector.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.WCFServices.ComcorpConnector.Server\SAHL.WCFServices.ComcorpConnector.Server.csproj">
+      <Project>{eea640a6-8e72-4226-b8ef-140411eb0aee}</Project>
+      <Name>SAHL.WCFServices.ComcorpConnector.Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.WCFServices.ComcorpConnector\SAHL.WCFServices.ComcorpConnector.csproj">
+      <Project>{323881ab-e239-40a1-b32c-603fdb7054f9}</Project>
+      <Name>SAHL.WCFServices.ComcorpConnector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HandlerSpecs\ImagingHandler\when_authentication_fails_for_an_application_request.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_authentication_fails_for_a_coapplicant_request.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_authentication_fails_for_a_mainapplicant_request.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_authentication_throws_an_exception.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_saving_coapplicant_documents_with_spouse.cs" />
+    <Compile Include="HandlerSpecs\NewPurchaseApplication\when_receiving_a_duplicate_new_purchase_application.cs" />
+    <Compile Include="HandlerSpecs\RefinanceApplication\when_receiving_a_duplicate_refinance_application.cs" />
+    <Compile Include="HandlerSpecs\RefinanceApplication\when_receiving_a_comcorp_refinance_application.cs" />
+    <Compile Include="HandlerSpecs\SwitchApplication\when_receiving_a_duplicate_switch_application.cs" />
+    <Compile Include="HandlerSpecs\SwitchApplication\when_receiving_a_comcorp_switch_application.cs" />
+    <Compile Include="ManagerSpecs\ComcorpApplicationData\when_getting_app_number_for_comcorp_code_and_not_exists.cs" />
+    <Compile Include="ManagerSpecs\ComcorpApplicationData\when_getting_app_number_for_comcorp_code_and_exists.cs" />
+    <Compile Include="ManagerSpecs\MacAuthentication\MacHelper.cs" />
+    <Compile Include="ManagerSpecs\MacAuthentication\when_authenticating_a_message_with_an_invalid_request_mac.cs" />
+    <Compile Include="ManagerSpecs\MacAuthentication\when_authenticating_a_message_with_a_valid_request_mac.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_populating_an_applicants_addresses_with_the_fixed_property_asset_address.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_populating_an_applicants_addresses_with_the_property_address.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_populating_the_property_address.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_populating_the_residential_address_for_a_property.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_the_comcorp_country_value_is_not_provided.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_expense_item_with_no_captured_description.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_income_item_with_no_captured_description.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_populating_values_that_map_directly_to_the_comcorp_applicant.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_populating_values_that_required_the_parsing_of_an_enum.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_populating_an_applicants_related_models.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_populating_a_surety.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_the_applicants_current_employment_type_is_empty.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_the_applicants_current_employment_type_is_null.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_the_applicants_highest_qualification_is_empty.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_the_applicants_highest_qualification_is_null.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\WithModelManagerFakes.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicationMailingAddressManagerSpecs\when_populating_the_application_mailing_address.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicationModelManagerSpecs\when_populating_a_switch_application.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_fixed_property_without_country.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\EmploymentModelManagerSpecs\when_populating_an_applicants_unemployed_employment.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\EmploymentModelManagerSpecs\when_populating_an_applicants_salaried_with_deductions_employment.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\EmploymentModelManagerSpecs\when_populating_an_applicants_salaried_employment.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_populating_an_applicants_postal_address.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_populating_an_applicants_residential_address.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_an_other_asset.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_an_unlisted_investment.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicantModelManagerSpecs\when_populating_a_main_applicant.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\BankAccountModelManagerSpecs\when_populating_multiple_applicant_bank_accounts.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\DeclarationsModelManagerSpecs\when_populating_applicant_declarations.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\DeclarationsModelManagerSpecs\when_populating_applicant_declarations_and_under_debt_review.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\DeclarationsModelManagerSpecs\when_populating_applicant_declarations_with_a_rehab_date.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\DeclarationsModelManagerSpecs\when_populating_applicant_declarations_with_a_rescinded_date.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_a_fixed_long_term_investment.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_a_fixed_property_asset.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_a_liability_surety.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_a_life_assurance_asset.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_a_listed_investment.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_a_personal_loan_liability_loan.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AssetsLiabilitiesModelManagerSpecs\when_populating_a_student_loan_liability_loan.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\EmploymentModelManagerSpecs\when_populating_an_applicants_unemployed_employment_with_invalid_remuneration.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\MarketingOptionsModelManagerSpecs\when_populating_a_subset_of_marketing_options.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\MarketingOptionsModelManagerSpecs\when_populating_a_complete_set_of_marketing_options.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_other_expenses_for_applicant_affordability.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_other_incomes_for_applicant_affordability.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_rental_income_for_applicant_affordability.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_commission_and_overtime_for_applicant_affordability.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_expenses_for_applicant_affordability.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AffordabilityModelManagerSpecs\when_populating_basic_salary_for_applicant_affordability.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_the_physical_address_suburb_is_empty.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_the_physical_address_suburb_is_null.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_the_postal_address_suburb_is_empty.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\AddressModelManagerSpecs\when_the_postal_address_suburb_is_null.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicationDebitOrderModelManagerSpecs\when_no_bank_accounts_exist.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicationDebitOrderModelManagerSpecs\when_no_debit_order_bank_account_exists.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicationDebitOrderModelManagerSpecs\when_populating_the_application_debit_order.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicationDebitOrderModelManagerSpecs\when_the_salary_payment_date_is_set_to_28.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\ApplicationDebitOrderModelManagerSpecs\when_the_salary_payment_day_is_greater_than_28.cs" />
+    <Compile Include="ManagerSpecs\ModelCreation\PropertyDataModelManagerSpecs\when_populating_comcorp_property_data.cs" />
+    <Compile Include="Mocks\IntegrationServiceTestHelper.cs" />
+    <Compile Include="HandlerSpecs\NewPurchaseApplication\when_receiving_a_comcorp_new_purchase_application.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_saving_applicant_documents_with_spouse.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_saving_application_documents.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_saving_main_applicant_documents.cs" />
+    <Compile Include="HandlerSpecs\ImagingHandler\when_saving_co_applicant_documents.cs" />
+    <Compile Include="ManagerSpecs\ImagingRequestData\when_checking_if_a_request_exists_and_it_doesnt.cs" />
+    <Compile Include="ManagerSpecs\ImagingRequestData\when_checking_if_a_request_exists_and_it_does.cs" />
+    <Compile Include="ManagerSpecs\ImagingRequestData\when_incrementing_the_received_messages.cs" />
+    <Compile Include="ManagerSpecs\ImagingRequestData\when_saving_a_new_imaging_reference.cs" />
+    <Compile Include="ManagerSpecs\MacAuthentication\when_decrypting_a_request_mac.cs" />
+    <Compile Include="ManagerSpecs\MacAuthentication\when_hashing_a_message_from_comcorp.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\SupportingDocumentFactory.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_error_occurs_while_saving_documents.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_handling_a_new_imaging_request.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_handling_a_request_and_reference_is_not_guid.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_handling_a_request_with_non_existent_reference.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_handling_a_request_with_an_imaging_reference.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_no_applicants_are_found_on_the_offer.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_saving_docs_for_an_applicant_and_spouse.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_saving_docs_for_an_applicant_not_on_offer.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_saving_documents_for_an_application.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_the_bank_reference_is_unknown.cs" />
+    <Compile Include="ManagerSpecs\SupportingDocument\when_the_bank_reference_is_not_a_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantAge\when_applicant_is_too_old.cs" />
+    <Compile Include="RuleSpecs\ApplicantAge\when_applicant_is_the right_age.cs" />
+    <Compile Include="RuleSpecs\ApplicantAge\when_applicant_is_too_young.cs" />
+    <Compile Include="RuleSpecs\ApplicantAssetItem\when_no_province_is_populated_for_fixed_property_asset.cs" />
+    <Compile Include="RuleSpecs\ApplicantAssetItem\when_no_city_is_populated_for_fixed_property_asset.cs" />
+    <Compile Include="RuleSpecs\ApplicantAssetItem\when_no_post_code_is_populated_for_fixed_property_asset.cs" />
+    <Compile Include="RuleSpecs\ApplicantAssetItem\when_no_suburb_is_populated_for_fixed_property_asset.cs" />
+    <Compile Include="RuleSpecs\ApplicantAssetItem\when_no_address_line_1_is_populated_for_fixed_property_asset.cs" />
+    <Compile Include="RuleSpecs\ApplicantAssetItem\when_all_address_fields_are_populated_for_fixed_property_asset.cs" />
+    <Compile Include="RuleSpecs\ApplicantContactDetails\when_all_contact_details_are_sent.cs" />
+    <Compile Include="RuleSpecs\ApplicantContactDetails\when_at_least_one_contact_detail_is_sent.cs" />
+    <Compile Include="RuleSpecs\ApplicantContactDetails\when_no_contact_details_are_sent.cs" />
+    <Compile Include="RuleSpecs\ApplicantIDNumberRequiredRuleSpecs\when_an_sa_citizen_has_a_valid_id_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantIDNumberRequiredRuleSpecs\when_an_sa_citizen_nonresident_has_a_valid_id_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantIDNumberRequiredRuleSpecs\when_an_sa_citizen_nonresident_has_whitespace_id_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantIDNumberRequiredRuleSpecs\when_an_sa_citizen_nonresident_has_no_id_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantIDNumberRequiredRuleSpecs\when_an_sa_citizen_has_an_invalid_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantIDNumberRequiredRuleSpecs\when_an_sa_citizen_has_a_null_id_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantIDNumberRequiredRuleSpecs\when_a_foreigner_has_no_id_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantPassportNumberRequiredRuleSpecs\when_the_applicant_is_a_nonresident_with_a_valid_passport_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantPassportNumberRequiredRuleSpecs\when_the_applicant_is_a_foreigner_with_a_valid_passport_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantPassportNumberRequiredRuleSpecs\when_the_applicant_is_a_SA_Citizen_non_resident.cs" />
+    <Compile Include="RuleSpecs\ApplicantPassportNumberRequiredRuleSpecs\when_the_applicant_is_a_SA_Citizen.cs" />
+    <Compile Include="RuleSpecs\ApplicantPassportNumberRequiredRuleSpecs\when_the_applicant_is_a_nonresident_with_an_null_passport_number.cs" />
+    <Compile Include="RuleSpecs\ApplicantPassportNumberRequiredRuleSpecs\when_the_applicant_is_a_foreigner_with_an_empty_passport_number.cs" />
+    <Compile Include="RuleSpecs\PropertyMarketValue\when_newpurchase_and_property_market_value_is_zero.cs" />
+    <Compile Include="RuleSpecs\PropertyMarketValue\when_newpurchase_and_property_market_value_is_greater_than_zero.cs" />
+    <Compile Include="RuleSpecs\PropertyMarketValue\when_switch_and_property_market_value_is_greater_than_zero.cs" />
+    <Compile Include="RuleSpecs\PropertyMarketValue\when_refinance_and_property_market_value_is_greater_than_zero.cs" />
+    <Compile Include="RuleSpecs\PropertyMarketValue\when_switch_and_property_market_value_is_zero.cs" />
+    <Compile Include="RuleSpecs\PropertyMarketValue\when_refinance_and_property_market_value_is_zero.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.DomainProcessManager.Client">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.DomainProcessManager.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing.Fakes">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainProcessManager.DomainProcesses, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainProcessManager.DomainProcesses.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainProcessManager.Models">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainProcessManager.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ApplicationDomain, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ApplicationDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DocumentManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainProcessManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainProcessManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainProcessManager.Tests">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainProcessManager.Tests.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainQuery, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PublicKey.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SampleMessage.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestMessage.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PrivateKey.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

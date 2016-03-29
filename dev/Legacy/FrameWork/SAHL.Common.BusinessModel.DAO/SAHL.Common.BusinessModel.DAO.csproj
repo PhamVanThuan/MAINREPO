@@ -1,0 +1,806 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{609A7113-A7DD-4E72-98FD-2B07D13550B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Common.BusinessModel.DAO</RootNamespace>
+    <AssemblyName>SAHL.Common.BusinessModel.DAO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\FrameWork\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SAHL.Common.BusinessModel.DAO.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\PostSharp.2.1.7.11\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AAA_DAO.cs" />
+    <Compile Include="ACBBank_DAO.cs" />
+    <Compile Include="ACBBranch_DAO.cs" />
+    <Compile Include="ACBType_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccountAttorneyInvoice_DAO.cs" />
+    <Compile Include="AccountDebtSettlement_DAO.cs" />
+    <Compile Include="AccountDocument_DAO.cs" />
+    <Compile Include="AccountExpense_DAO.cs" />
+    <Compile Include="AccountHOC_DAO.cs" />
+    <Compile Include="AccountIndicationType_DAO.cs" />
+    <Compile Include="AccountIndication_DAO.cs" />
+    <Compile Include="AccountInformationType_DAO.cs" />
+    <Compile Include="AccountInformation_DAO.cs" />
+    <Compile Include="AccountPersonalLoan_DAO.cs" />
+    <Compile Include="AccountQuickCash_DAO.cs" />
+    <Compile Include="AccountSequence_DAO.cs" />
+    <Compile Include="AffordabilityAssessmentStressFactor_DAO.cs" />
+    <Compile Include="AffordabilityAssessment_DAO.cs" />
+    <Compile Include="AffordabilityTypeGroup_DAO.cs" />
+    <Compile Include="AffordabilityType_DAO.cs" />
+    <Compile Include="AllocationMandateOperator_DAO.cs" />
+    <Compile Include="AllocationMandateSetGroup_DAO.cs" />
+    <Compile Include="AllocationMandateSet_DAO.cs" />
+    <Compile Include="AllocationMandate_DAO.cs" />
+    <Compile Include="AllocationOperatorGroup_DAO.cs" />
+    <Compile Include="AllocationOperator_DAO.cs" />
+    <Compile Include="AnswerImage_DAO.cs" />
+    <Compile Include="AnswerType_DAO.cs" />
+    <Compile Include="Answer_DAO.cs" />
+    <Compile Include="ApplicantType_DAO.cs" />
+    <Compile Include="ApplicationAggregateDecision_DAO.cs" />
+    <Compile Include="ApplicationAttributeTypeGroup_DAO.cs" />
+    <Compile Include="ApplicationCreditScore_DAO.cs" />
+    <Compile Include="ApplicationDebitOrder_DAO.cs" />
+    <Compile Include="ApplicationDebtSettlement_DAO.cs" />
+    <Compile Include="ApplicationDeclarationAnswer_DAO.cs" />
+    <Compile Include="ApplicationDeclarationQuestionAnswerConfiguration_DAO.cs" />
+    <Compile Include="ApplicationDeclarationQuestionAnswer_DAO.cs" />
+    <Compile Include="ApplicationDeclarationQuestion_DAO.cs" />
+    <Compile Include="ApplicationDeclaration_DAO.cs" />
+    <Compile Include="ApplicationDocumentReference_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApplicationDocument_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApplicationExpense_DAO.cs" />
+    <Compile Include="ApplicationInformationAppliedRateAdjustment_DAO.cs" />
+    <Compile Include="ApplicationInformationInterestOnly_DAO.cs" />
+    <Compile Include="ApplicationInformationEdge_DAO.cs" />
+    <Compile Include="ApplicationInformationQuickCashDetail_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ApplicationInformationPersonalLoan_DAO.cs" />
+    <Compile Include="ApplicationInformationSuperLoLoan_DAO.cs" />
+    <Compile Include="ApplicationInformationVarifixLoan_DAO.cs" />
+    <Compile Include="ApplicationCapitecDetail_DAO.cs" />
+    <Compile Include="ApplicationITCCreditScore_DAO.cs" />
+    <Compile Include="ApplicationMailingAddress_DAO.cs" />
+    <Compile Include="ApplicationMortgageLoanNewPurchase_DAO.cs" />
+    <Compile Include="ApplicationMortgageLoanRefinance_DAO.cs" />
+    <Compile Include="ApplicationMortgageLoanSwitch_DAO.cs" />
+    <Compile Include="ApplicationOriginator_DAO.cs" />
+    <Compile Include="AffordabilityAssessmentStatus_DAO.cs" />
+    <Compile Include="ApplicationUnsecuredLending_DAO.cs" />
+    <Compile Include="ApplicationRoleType_DAO.cs" />
+    <Compile Include="ApplicationRole_DAO.cs" />
+    <Compile Include="ApplicationSource_DAO.cs" />
+    <Compile Include="ApplicationUnknown_DAO.cs" />
+    <Compile Include="ArrearTransaction_DAO.cs" />
+    <Compile Include="AssetLiabilityInvestmentPrivate_DAO.cs" />
+    <Compile Include="AssetLiabilityInvestmentPublic_DAO.cs" />
+    <Compile Include="AssetLiabilityLiabilityLoan_DAO.cs" />
+    <Compile Include="AssetLiabilityLiabilitySurety_DAO.cs" />
+    <Compile Include="AssetLiabilityLifeAssurance_DAO.cs" />
+    <Compile Include="AssetLiabilityOther_DAO.cs" />
+    <Compile Include="AssetTransfer_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\ConstructorInjector.cs" />
+    <Compile Include="Attributes\DoNotGenerateRefreshOverride.cs" />
+    <Compile Include="Attributes\DoNotTestWithGenericTestAttribute.cs" />
+    <Compile Include="Attributes\GenericTest.cs" />
+    <Compile Include="Attributes\HideBaseClassAttribute.cs" />
+    <Compile Include="Attributes\LurkerAttribute.cs" />
+    <Compile Include="AuditFinancialTranPosted_DAO.cs" />
+    <Compile Include="Audit_DAO.cs" />
+    <Compile Include="AccountBaselII_DAO.cs" />
+    <Compile Include="BalanceType_DAO.cs" />
+    <Compile Include="Balance_DAO.cs" />
+    <Compile Include="BatchLoanTransaction_DAO.cs" />
+    <Compile Include="BatchService_DAO.cs" />
+    <Compile Include="BatchTotal_DAO.cs" />
+    <Compile Include="BatchTransactionStatus_DAO.cs" />
+    <Compile Include="BatchTransaction_DAO.cs" />
+    <Compile Include="BulkBatchLog_DAO.cs" />
+    <Compile Include="BulkBatchParameter_DAO.cs" />
+    <Compile Include="BulkBatchStatus_DAO.cs" />
+    <Compile Include="BulkBatchType_DAO.cs" />
+    <Compile Include="BulkBatch_DAO.cs" />
+    <Compile Include="BusinessEventQuestionnaire_DAO.cs" />
+    <Compile Include="BusinessEvent_DAO.cs" />
+    <Compile Include="CallingContextType_DAO.cs" />
+    <Compile Include="CallingContext_DAO.cs" />
+    <Compile Include="CampaignDefinition_DAO.cs" />
+    <Compile Include="CampaignTarget_DAO.cs" />
+    <Compile Include="CampaignTargetContact_DAO.cs" />
+    <Compile Include="CampaignTargetResponse_DAO.cs" />
+    <Compile Include="CancellationReason_DAO.cs" />
+    <Compile Include="CancellationType_DAO.cs" />
+    <Compile Include="Attributes\CompositePrimaryKeyAttribute.cs" />
+    <Compile Include="AssetLiabilityFixedProperty_DAO.cs" />
+    <Compile Include="CapCreditBrokerToken_DAO.cs" />
+    <Compile Include="AssetLiabilityFixedLongTermInvestment_DAO.cs" />
+    <Compile Include="CapPaymentOption_DAO.cs" />
+    <Compile Include="CAP_DAO.cs" />
+    <Compile Include="DisabilityClaimStatus_DAO.cs" />
+    <Compile Include="DisabilityType_DAO.cs" />
+    <Compile Include="ClaimStatus_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimType_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cleanup_DAO.cs" />
+    <Compile Include="ClientAnswerValue_DAO.cs" />
+    <Compile Include="ClientAnswer_DAO.cs" />
+    <Compile Include="ClientEmail_DAO.cs" />
+    <Compile Include="ApplicationRoleTypeGroup_DAO.cs" />
+    <Compile Include="ApplicationInternetReferrer_DAO.cs" />
+    <Compile Include="AccountEdge_DAO.cs" />
+    <Compile Include="ClientQuestionnaire_DAO.cs" />
+    <Compile Include="ConditionSetUIStatement_DAO.cs" />
+    <Compile Include="ContentType_DAO.cs" />
+    <Compile Include="Context_DAO.cs" />
+    <Compile Include="ControlGroup_DAO.cs" />
+    <Compile Include="AccountCreditProtectionPlan_DAO.cs" />
+    <Compile Include="ExternalLifePolicy_DAO.cs" />
+    <Compile Include="ExternalRoleDeclaration_DAO.cs" />
+    <Compile Include="ExternalRoleDomicilium_DAO.cs" />
+    <Compile Include="Provider_DAO.cs" />
+    <Compile Include="InterestOnly_DAO.cs" />
+    <Compile Include="CreditCriteriaUnsecuredLending_DAO.cs" />
+    <Compile Include="CreditMatrixUnsecuredLending_DAO.cs" />
+    <Compile Include="LegalEntityDomicilium_DAO.cs" />
+    <Compile Include="ApplicationRoleDomicilium_DAO.cs" />
+    <Compile Include="DisabilityClaim_DAO.cs" />
+    <Compile Include="LifePolicyClaim_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PreWorkflowDataFilter_DAO.cs" />
+    <Compile Include="PreContextFilter_DAO.cs" />
+    <Compile Include="Filter_DAO.cs" />
+    <Compile Include="FinancialServiceAttributeType_DAO.cs" />
+    <Compile Include="FinancialServiceAttribute_DAO.cs" />
+    <Compile Include="InternalRole_DAO.cs" />
+    <Compile Include="ManualDebitOrder_DAO.cs" />
+    <Compile Include="ReportFormatType_DAO.cs" />
+    <Compile Include="RequiresPostSharp.cs" />
+    <Compile Include="SearchSelect_DAO.cs" />
+    <Compile Include="Setup_DAO.cs" />
+    <Compile Include="SnapShotAccount_DAO.cs" />
+    <Compile Include="SnapShotFinancialAdjustment_DAO.cs" />
+    <Compile Include="SnapShotFinancialService_DAO.cs" />
+    <Compile Include="StaticRateAdjustment_DAO.cs" />
+    <Compile Include="SuperLo_DAO.cs" />
+    <Compile Include="TransactionTypeUI_DAO.cs" />
+    <Compile Include="Fees_DAO.cs" />
+    <Compile Include="SPVBalance_DAO.cs" />
+    <Compile Include="SPVCompany_DAO.cs" />
+    <Compile Include="DifferentialProvisionAdjustment_DAO.cs" />
+    <Compile Include="FinancialTransaction_DAO.cs" />
+    <Compile Include="FixedRateAdjustment_DAO.cs" />
+    <Compile Include="InterestRateAdjustment_DAO.cs" />
+    <Compile Include="MortgageLoan_DAO.cs" />
+    <Compile Include="PaymentAdjustment_DAO.cs" />
+    <Compile Include="PaymentSplitType_DAO.cs" />
+    <Compile Include="ReversalProvisionAdjustment_DAO.cs" />
+    <Compile Include="SPVAttributeType_DAO.cs" />
+    <Compile Include="SPVAttribute_DAO.cs" />
+    <Compile Include="SPVFeeType_DAO.cs" />
+    <Compile Include="CorrespondenceTemplate_DAO.cs" />
+    <Compile Include="FeeFrequency_DAO.cs" />
+    <Compile Include="FeeType_DAO.cs" />
+    <Compile Include="FinancialAdjustmentSource_DAO.cs" />
+    <Compile Include="FinancialAdjustmentStatus_DAO.cs" />
+    <Compile Include="FinancialAdjustmentTypeSource_DAO.cs" />
+    <Compile Include="FinancialAdjustmentType_DAO.cs" />
+    <Compile Include="FinancialAdjustment_DAO.cs" />
+    <Compile Include="FrequencyUnit_DAO.cs" />
+    <Compile Include="LoanBalance_DAO.cs" />
+    <Compile Include="RecoveriesProposal_DAO.cs" />
+    <Compile Include="CorrespondenceDetail_DAO.cs" />
+    <Compile Include="ExternalRoleTypeGroup_DAO.cs" />
+    <Compile Include="LegalEntityLogin_DAO.cs" />
+    <Compile Include="SPVFee_DAO.cs" />
+    <Compile Include="TransactionEffect_DAO.cs" />
+    <Compile Include="TransactionTypeBalanceEffect_DAO.cs" />
+    <Compile Include="TransactionTypeGroup_DAO.cs" />
+    <Compile Include="ValuationDiscriminatedLightStonePhysical_DAO.cs" />
+    <Compile Include="Vendor_DAO.cs" />
+    <Compile Include="WorkflowContext_DAO.cs" />
+    <Compile Include="WorkflowData_DAO.cs" />
+    <Compile Include="WorkflowRole_DAO.cs" />
+    <Compile Include="NoteDetail_DAO.cs" />
+    <Compile Include="Note_DAO.cs" />
+    <Compile Include="DebtCounsellingStatus_DAO.cs" />
+    <Compile Include="Court_DAO.cs" />
+    <Compile Include="HearingAppearanceType_DAO.cs" />
+    <Compile Include="HearingDetail_DAO.cs" />
+    <Compile Include="CourtType_DAO.cs" />
+    <Compile Include="DebtCounsellingGroup_DAO.cs" />
+    <Compile Include="HearingType_DAO.cs" />
+    <Compile Include="MigrationDebtCounsellingExternalRole_DAO.cs" />
+    <Compile Include="MigrationDebtCounsellingProposalItem_DAO.cs" />
+    <Compile Include="MigrationDebtCounsellingProposal_DAO.cs" />
+    <Compile Include="MigrationDebtCounselling_DAO.cs" />
+    <Compile Include="ProposalType_DAO.cs" />
+    <Compile Include="CreditScoreDecision_DAO.cs" />
+    <Compile Include="Database\DB_Test_WTF.cs" />
+    <Compile Include="DebtCounselling_DAO.cs" />
+    <Compile Include="DebtCounsellorDetail_DAO.cs" />
+    <Compile Include="EmploymentConfirmationSource_DAO.cs" />
+    <Compile Include="EmploymentVerificationProcessType_DAO.cs" />
+    <Compile Include="EmploymentVerificationProcess_DAO.cs" />
+    <Compile Include="ExternalRoleType_DAO.cs" />
+    <Compile Include="ExternalRole_DAO.cs" />
+    <Compile Include="GenericSetDefinition_DAO.cs" />
+    <Compile Include="GenericSetType_DAO.cs" />
+    <Compile Include="GenericSet_DAO.cs" />
+    <Compile Include="Image_DAO.cs" />
+    <Compile Include="InternetLeadUsers_DAO.cs" />
+    <Compile Include="ITCCreditScore_DAO.cs" />
+    <Compile Include="ITCDecisionReason_DAO.cs" />
+    <Compile Include="LegalEntityOrganisationStructureHistory_DAO.cs" />
+    <Compile Include="LegalEntityOrganisationStructure_DAO.cs" />
+    <Compile Include="LifeOfferAssignment_DAO.cs" />
+    <Compile Include="LifePolicyType_DAO.cs" />
+    <Compile Include="BehaviouralScoreCategory_DAO.cs" />
+    <Compile Include="MarketingOptionRelevance_DAO.cs" />
+    <Compile Include="ProposalItem_DAO.cs" />
+    <Compile Include="ProposalStatus_DAO.cs" />
+    <Compile Include="Proposal_DAO.cs" />
+    <Compile Include="QuestionnaireEmail_DAO.cs" />
+    <Compile Include="QuestionnaireQuestionAnswer_DAO.cs" />
+    <Compile Include="QuestionnaireQuestionnaireEmail_DAO.cs" />
+    <Compile Include="QuestionnaireQuestion_DAO.cs" />
+    <Compile Include="Questionnaire_DAO.cs" />
+    <Compile Include="Question_DAO.cs" />
+    <Compile Include="RateAdjustmentElementType_DAO.cs" />
+    <Compile Include="RateAdjustmentElement_DAO.cs" />
+    <Compile Include="RateAdjustmentGroup_DAO.cs" />
+    <Compile Include="RiskMatrixCellDimension_DAO.cs" />
+    <Compile Include="RiskMatrixCell_DAO.cs" />
+    <Compile Include="RiskMatrixDimensionScoreCard_DAO.cs" />
+    <Compile Include="RiskMatrixDimension_DAO.cs" />
+    <Compile Include="RiskMatrixRange_DAO.cs" />
+    <Compile Include="RiskMatrixRevision_DAO.cs" />
+    <Compile Include="RiskMatrix_DAO.cs" />
+    <Compile Include="RoundRobinPointerDefinition_DAO.cs" />
+    <Compile Include="RoundRobinPointer_DAO.cs" />
+    <Compile Include="SANTAMPolicyStatus_DAO.cs" />
+    <Compile Include="SANTAMPolicyTracking_DAO.cs" />
+    <Compile Include="ScoreCardAttributeRange_DAO.cs" />
+    <Compile Include="ScoreCardAttribute_DAO.cs" />
+    <Compile Include="ScoreCard_DAO.cs" />
+    <Compile Include="UserOrganisationStructureRoundRobinStatus_DAO.cs" />
+    <Compile Include="ValuationDiscriminatedRCSPhysical_DAO.cs" />
+    <Compile Include="Database\DB_AuditableBase.cs" />
+    <Compile Include="Database\DB_Base.cs" />
+    <Compile Include="Database\DB_ImageIndex.cs" />
+    <Compile Include="Database\DB_NonAuditableBase.cs" />
+    <Compile Include="Database\DB_SAHL.cs" />
+    <Compile Include="AccountDefendingDiscountRate_DAO.cs" />
+    <Compile Include="Database\DB_Warehouse.cs" />
+    <Compile Include="DataProviderDataService_DAO.cs" />
+    <Compile Include="DataProvider_DAO.cs" />
+    <Compile Include="DataService_DAO.cs" />
+    <Compile Include="Data_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentSetConfig_DAO.cs" />
+    <Compile Include="DocumentTypeGroupConfiguration_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentTypeReferenceObject_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EmploymentSalaried_DAO.cs" />
+    <Compile Include="EmploymentSelfEmployed_DAO.cs" />
+    <Compile Include="EmploymentSubsidised_DAO.cs" />
+    <Compile Include="EmploymentUnemployed_DAO.cs" />
+    <Compile Include="EmploymentUnknown_DAO.cs" />
+    <Compile Include="ErrorRepository_DAO.cs" />
+    <Compile Include="ApplicationFurtherAdvance_DAO.cs" />
+    <Compile Include="ApplicationFurtherLoan_DAO.cs" />
+    <Compile Include="FailedLegalEntityAddress_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FailedPostalMigration_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FailedPropertyAddress_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FailedStreetMigration_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GenericKeyTypeParameter_DAO.cs" />
+    <Compile Include="HelpDeskCategory_DAO.cs" />
+    <Compile Include="HelpDeskQuery_DAO.cs" />
+    <Compile Include="ImportApplication_DAO.cs" />
+    <Compile Include="ImportFile_DAO.cs" />
+    <Compile Include="ImportLegalEntity_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImportStatus_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITCArchive_DAO.cs" />
+    <Compile Include="ITCXSL_DAO.cs" />
+    <Compile Include="LegalEntityAffordability_DAO.cs" />
+    <Compile Include="LegalEntityCloseCorporation_DAO.cs" />
+    <Compile Include="LegalEntityTrust_DAO.cs" />
+    <Compile Include="LegalEntityUnknown_DAO.cs" />
+    <Compile Include="LifeInsurableInterest_DAO.cs" />
+    <Compile Include="AccountLifePolicy_DAO.cs" />
+    <Compile Include="AccountTypeRecognition_DAO.cs" />
+    <Compile Include="Account_DAO.cs" />
+    <Compile Include="AccountStatus_DAO.cs" />
+    <Compile Include="AddressFormat_DAO.cs" />
+    <Compile Include="AddressStreet_DAO.cs" />
+    <Compile Include="AddressType_DAO.cs" />
+    <Compile Include="Address_DAO.cs" />
+    <Compile Include="ADUser_DAO.cs" />
+    <Compile Include="AreaClassification_DAO.cs" />
+    <Compile Include="AssetLiabilitySubType_DAO.cs" />
+    <Compile Include="AssetLiabilityType_DAO.cs" />
+    <Compile Include="AssetLiability_DAO.cs" />
+    <Compile Include="Attorney_DAO.cs" />
+    <Compile Include="BankAccount_DAO.cs" />
+    <Compile Include="BankRange_DAO.cs" />
+    <Compile Include="Bond_DAO.cs" />
+    <Compile Include="Broker_DAO.cs" />
+    <Compile Include="Calendar_DAO.cs" />
+    <Compile Include="Callback_DAO.cs" />
+    <Compile Include="CapNTUReason_DAO.cs" />
+    <Compile Include="CapApplicationDetail_DAO.cs" />
+    <Compile Include="CapApplication_DAO.cs" />
+    <Compile Include="CapStatus_DAO.cs" />
+    <Compile Include="CapTypeConfigurationDetail_DAO.cs" />
+    <Compile Include="CapTypeConfiguration_DAO.cs" />
+    <Compile Include="CapType_DAO.cs" />
+    <Compile Include="Category_DAO.cs" />
+    <Compile Include="CBOMenu_DAO.cs" />
+    <Compile Include="CDCIM900Exceptions_DAO.cs" />
+    <Compile Include="CDVExceptions_DAO.cs" />
+    <Compile Include="CDV_DAO.cs" />
+    <Compile Include="CitizenType_DAO.cs" />
+    <Compile Include="City_DAO.cs" />
+    <Compile Include="CommissionTransaction_DAO.cs" />
+    <Compile Include="Condition_DAO.cs" />
+    <Compile Include="ConditionSetCondition_DAO.cs" />
+    <Compile Include="ConditionConfiguration_DAO.cs" />
+    <Compile Include="ConditionSet_DAO.cs" />
+    <Compile Include="ConditionToken_DAO.cs" />
+    <Compile Include="ConditionType_DAO.cs" />
+    <Compile Include="ContextMenu_DAO.cs" />
+    <Compile Include="Control_DAO.cs" />
+    <Compile Include="AddressBox_DAO.cs" />
+    <Compile Include="AddressPostnetSuite_DAO.cs" />
+    <Compile Include="AddressPrivateBag_DAO.cs" />
+    <Compile Include="AddressFreeText_DAO.cs" />
+    <Compile Include="AddressClusterBox_DAO.cs" />
+    <Compile Include="CorrespondenceMedium_DAO.cs" />
+    <Compile Include="CorrespondenceParameters_DAO.cs" />
+    <Compile Include="Correspondence_DAO.cs" />
+    <Compile Include="CourierAppointment_DAO.cs" />
+    <Compile Include="Courier_DAO.cs" />
+    <Compile Include="DataGridConfigurationType_DAO.cs" />
+    <Compile Include="DataGridConfiguration_DAO.cs" />
+    <Compile Include="DataType_DAO.cs" />
+    <Compile Include="DebitOrderDay_DAO.cs" />
+    <Compile Include="DeedsOffice_DAO.cs" />
+    <Compile Include="DeedsPropertyType_DAO.cs" />
+    <Compile Include="DetailClass_DAO.cs" />
+    <Compile Include="DetailType_DAO.cs" />
+    <Compile Include="Detail_DAO.cs" />
+    <Compile Include="DisbursementInterestApplied_DAO.cs" />
+    <Compile Include="DisbursementStatus_DAO.cs" />
+    <Compile Include="DisbursementTransactionType_DAO.cs" />
+    <Compile Include="DisbursementType_DAO.cs" />
+    <Compile Include="Disbursement_DAO.cs" />
+    <Compile Include="DocumentGroup_DAO.cs" />
+    <Compile Include="DocumentSet_DAO.cs" />
+    <Compile Include="DocumentSourceType_DAO.cs" />
+    <Compile Include="DocumentType_DAO.cs" />
+    <Compile Include="DocumentVersion_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainField_DAO.cs" />
+    <Compile Include="EmployerBusinessType_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Employer_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EmploymentSector_DAO.cs" />
+    <Compile Include="EmploymentStatus_DAO.cs" />
+    <Compile Include="Employment_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExpenseTypeGroup_DAO.cs" />
+    <Compile Include="ExpenseType_DAO.cs" />
+    <Compile Include="Fee_DAO.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinancialServiceBankAccount_DAO.cs" />
+    <Compile Include="FinancialServiceCondition_DAO.cs" />
+    <Compile Include="FinancialServicePaymentType_DAO.cs" />
+    <Compile Include="FinancialServiceRecurringTransaction_DAO.cs" />
+    <Compile Include="FormatType_DAO.cs" />
+    <Compile Include="FutureDatedChangeDetail_DAO.cs" />
+    <Compile Include="FutureDatedChangeType_DAO.cs" />
+    <Compile Include="FutureDatedChange_DAO.cs" />
+    <Compile Include="Guarantee_DAO.cs" />
+    <Compile Include="HOCRates_DAO.cs" />
+    <Compile Include="Country_DAO.cs" />
+    <Compile Include="CreditCriteria_DAO.cs" />
+    <Compile Include="CreditMatrix_DAO.cs" />
+    <Compile Include="Database\DB_2AM.cs" />
+    <Compile Include="Education_DAO.cs" />
+    <Compile Include="EmploymentType_DAO.cs" />
+    <Compile Include="Feature_DAO.cs" />
+    <Compile Include="FeatureGroup_DAO.cs" />
+    <Compile Include="FinancialServiceGroup_DAO.cs" />
+    <Compile Include="FinancialServiceType_DAO.cs" />
+    <Compile Include="FinancialService_DAO.cs" />
+    <Compile Include="Gender_DAO.cs" />
+    <Compile Include="GeneralStatus_DAO.cs" />
+    <Compile Include="GenericColumnDefinition_DAO.cs" />
+    <Compile Include="GenericKeyType_DAO.cs" />
+    <Compile Include="HOCConstruction_DAO.cs" />
+    <Compile Include="HOCHistoryDetail_DAO.cs" />
+    <Compile Include="HOCHistory_DAO.cs" />
+    <Compile Include="HOCInsurer_DAO.cs" />
+    <Compile Include="HOCRoof_DAO.cs" />
+    <Compile Include="HOCStatus_DAO.cs" />
+    <Compile Include="HOCSubsidence_DAO.cs" />
+    <Compile Include="HOC_DAO.cs" />
+    <Compile Include="InputGenericType.cs" />
+    <Compile Include="Insurer_DAO.cs" />
+    <Compile Include="ITC_DAO.cs" />
+    <Compile Include="Language_DAO.cs" />
+    <Compile Include="LegalEntity_DAO.cs" />
+    <Compile Include="LegalEntityAddress_DAO.cs" />
+    <Compile Include="LegalEntityAssetLiability_DAO.cs" />
+    <Compile Include="LegalEntityBankAccount_DAO.cs" />
+    <Compile Include="LegalEntityCleanUp_DAO.cs" />
+    <Compile Include="LegalEntityCompany_DAO.cs" />
+    <Compile Include="LegalEntityExceptionReason_DAO.cs" />
+    <Compile Include="LegalEntityExceptionStatus_DAO.cs" />
+    <Compile Include="LegalEntityMarketingOption_DAO.cs" />
+    <Compile Include="LegalEntityMarketingOptionHistory_DAO.cs" />
+    <Compile Include="LegalEntityNaturalPerson_DAO.cs" />
+    <Compile Include="LegalEntityRelationship_DAO.cs" />
+    <Compile Include="LegalEntityRelationshipType_DAO.cs" />
+    <Compile Include="LegalEntityStatus_DAO.cs" />
+    <Compile Include="LegalEntityType_DAO.cs" />
+    <Compile Include="LifeCommissionRates_DAO.cs" />
+    <Compile Include="LifeCommissionSecurity_DAO.cs" />
+    <Compile Include="LifeCommissionTargets_DAO.cs" />
+    <Compile Include="LifeInsureableInterestType_DAO.cs" />
+    <Compile Include="ApplicationLifePolicy_DAO.cs" />
+    <Compile Include="LifePolicyStatus_DAO.cs" />
+    <Compile Include="LifePolicy_DAO.cs" />
+    <Compile Include="LifePremiumForecast_DAO.cs" />
+    <Compile Include="LifePremiumHistory_DAO.cs" />
+    <Compile Include="LoanAgreement_DAO.cs" />
+    <Compile Include="Attributes\LookupAttribute.cs" />
+    <Compile Include="Lookup_DAO.cs" />
+    <Compile Include="MailingAddress_DAO.cs" />
+    <Compile Include="Margin_DAO.cs" />
+    <Compile Include="MarginProduct_DAO.cs" />
+    <Compile Include="MaritalStatus_DAO.cs" />
+    <Compile Include="MarketingOption_DAO.cs" />
+    <Compile Include="MarketRateHistory_DAO.cs" />
+    <Compile Include="MarketRate_DAO.cs" />
+    <Compile Include="Memo_DAO.cs" />
+    <Compile Include="MessageType_DAO.cs" />
+    <Compile Include="MortgageLoanPurpose_DAO.cs" />
+    <Compile Include="MortgageLoanPurposeGroup_DAO.cs" />
+    <Compile Include="AccountNewVariableLoan_DAO.cs" />
+    <Compile Include="OccupancyType_DAO.cs" />
+    <Compile Include="ApplicationAttribute_DAO.cs" />
+    <Compile Include="ApplicationAttributeType_DAO.cs" />
+    <Compile Include="ApplicationCampaign_DAO.cs" />
+    <Compile Include="ApplicationCondition_DAO.cs" />
+    <Compile Include="ApplicationConditionToken_DAO.cs" />
+    <Compile Include="ApplicationException_DAO.cs" />
+    <Compile Include="ApplicationExceptionType_DAO.cs" />
+    <Compile Include="ApplicationExceptionTypeGroup_DAO.cs" />
+    <Compile Include="ApplicationInformation_DAO.cs" />
+    <Compile Include="ApplicationInformationQuickCash_DAO.cs" />
+    <Compile Include="ApplicationInformationFinancialAdjustment_DAO.cs" />
+    <Compile Include="ApplicationInformationType_DAO.cs" />
+    <Compile Include="ApplicationInformationVariableLoan_DAO.cs" />
+    <Compile Include="ApplicationLifeDetail_DAO.cs" />
+    <Compile Include="ApplicationMarketingSurveyTypeGroup_DAO.cs" />
+    <Compile Include="MarketingSurveyType_DAO.cs" />
+    <Compile Include="ApplicationMortgageLoanDetail_DAO.cs" />
+    <Compile Include="ApplicationStatus_DAO.cs" />
+    <Compile Include="ApplicationType_DAO.cs" />
+    <Compile Include="Application_DAO.cs" />
+    <Compile Include="ApplicationRoleAttributeType_DAO.cs" />
+    <Compile Include="ApplicationRoleAttribute_DAO.cs" />
+    <Compile Include="OnlineStatementFormat_DAO.cs" />
+    <Compile Include="OperatorGroup_DAO.cs" />
+    <Compile Include="Operator_DAO.cs" />
+    <Compile Include="OrganisationStructure_DAO.cs" />
+    <Compile Include="OrganisationStructureAttributeType_DAO.cs" />
+    <Compile Include="OrganisationStructureAttribute_DAO.cs" />
+    <Compile Include="OrganisationStructureOriginationSource_DAO.cs" />
+    <Compile Include="OrganisationType_DAO.cs" />
+    <Compile Include="OriginationSource_DAO.cs" />
+    <Compile Include="OriginationSourceIcon_DAO.cs" />
+    <Compile Include="OriginationSourceProduct_DAO.cs" />
+    <Compile Include="OriginationSourceProductConfiguration_DAO.cs" />
+    <Compile Include="OSPFinancialAdjustmentTypeSource_DAO.cs" />
+    <Compile Include="ParameterType_DAO.cs" />
+    <Compile Include="PaymentType_DAO.cs" />
+    <Compile Include="PopulationGroup_DAO.cs" />
+    <Compile Include="PostOffice_DAO.cs" />
+    <Compile Include="Priority_DAO.cs" />
+    <Compile Include="Product_DAO.cs" />
+    <Compile Include="ProductCategory_DAO.cs" />
+    <Compile Include="ProductConditionType_DAO.cs" />
+    <Compile Include="ProductCondition_DAO.cs" />
+    <Compile Include="ProfileType_DAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyAccessDetails_DAO.cs" />
+    <Compile Include="PropertyDataProviderDataService_DAO.cs" />
+    <Compile Include="PropertyData_DAO.cs" />
+    <Compile Include="PropertyTitleDeed_DAO.cs" />
+    <Compile Include="PropertyType_DAO.cs" />
+    <Compile Include="Property_DAO.cs" />
+    <Compile Include="Province_DAO.cs" />
+    <Compile Include="QuickCashPaymentType_DAO.cs" />
+    <Compile Include="RateConfiguration_DAO.cs" />
+    <Compile Include="ApplicationReAdvance_DAO.cs" />
+    <Compile Include="ReasonDefinition_DAO.cs" />
+    <Compile Include="ReasonDescription_DAO.cs" />
+    <Compile Include="ReasonType_DAO.cs" />
+    <Compile Include="ReasonTypeGroup_DAO.cs" />
+    <Compile Include="Reason_DAO.cs" />
+    <Compile Include="RecurringTransactionType_DAO.cs" />
+    <Compile Include="RegentStatus_DAO.cs" />
+    <Compile Include="Regent_DAO.cs" />
+    <Compile Include="Regmail_DAO.cs" />
+    <Compile Include="RemunerationType_DAO.cs" />
+    <Compile Include="ReportGroup_DAO.cs" />
+    <Compile Include="ReportParameterType_DAO.cs" />
+    <Compile Include="ReportParameter_DAO.cs" />
+    <Compile Include="ReportStatement_DAO.cs" />
+    <Compile Include="ReportType_DAO.cs" />
+    <Compile Include="ResetConfiguration_DAO.cs" />
+    <Compile Include="Reset_DAO.cs" />
+    <Compile Include="ResidenceStatus_DAO.cs" />
+    <Compile Include="RoleType_DAO.cs" />
+    <Compile Include="Role_DAO.cs" />
+    <Compile Include="RuleExclusionSet_DAO.cs" />
+    <Compile Include="RuleExclusion_DAO.cs" />
+    <Compile Include="RuleItem_DAO.cs" />
+    <Compile Include="RuleParameter_DAO.cs" />
+    <Compile Include="Salutation_DAO.cs" />
+    <Compile Include="SPVMandate_DAO.cs" />
+    <Compile Include="SPV_DAO.cs" />
+    <Compile Include="StageDefinitionComposite.cs" />
+    <Compile Include="StageDefinitionGroup_DAO.cs" />
+    <Compile Include="StageDefinitionStageDefinitionGroup_DAO.cs" />
+    <Compile Include="StageDefinition_DAO.cs" />
+    <Compile Include="StageTransitionComposite_DAO.cs" />
+    <Compile Include="StageTransition_DAO.cs" />
+    <Compile Include="StatementDefinition_DAO.cs" />
+    <Compile Include="StatementParameter_DAO.cs" />
+    <Compile Include="STOR_DAO.cs" />
+    <Compile Include="SubsidyProviderType_DAO.cs" />
+    <Compile Include="SubsidyProvider_DAO.cs" />
+    <Compile Include="Subsidy_DAO.cs" />
+    <Compile Include="Suburb_DAO.cs" />
+    <Compile Include="AccountSuperLo_DAO.cs" />
+    <Compile Include="TextStatementType_DAO.cs" />
+    <Compile Include="TextStatement_DAO.cs" />
+    <Compile Include="TitleDeedCheck_DAO.cs" />
+    <Compile Include="TitleType_DAO.cs" />
+    <Compile Include="Token_DAO.cs" />
+    <Compile Include="TokenType_DAO.cs" />
+    <Compile Include="Trade_DAO.cs" />
+    <Compile Include="TransactionGroup_DAO.cs" />
+    <Compile Include="TransactionTypeDataAccess_DAO.cs" />
+    <Compile Include="TransactionType_DAO.cs" />
+    <Compile Include="TranslatableItem.cs" />
+    <Compile Include="TranslatedText.cs" />
+    <Compile Include="UIStatementType_DAO.cs" />
+    <Compile Include="UIStatement_DAO.cs" />
+    <Compile Include="UserAssignment_DAO.cs" />
+    <Compile Include="UserOrganisationStructure_DAO.cs" />
+    <Compile Include="UserOrganisationStructureHistory_DAO.cs" />
+    <Compile Include="UserProfileSettings_DAO.cs" />
+    <Compile Include="UserProfile_DAO.cs" />
+    <Compile Include="ValidatorType_DAO.cs" />
+    <Compile Include="Validator_DAO.cs" />
+    <Compile Include="ValuationClassification_DAO.cs" />
+    <Compile Include="ValuationCombinedThatch_DAO.cs" />
+    <Compile Include="ValuationCottage_DAO.cs" />
+    <Compile Include="ValuationDataProviderDataService_DAO.cs" />
+    <Compile Include="ValuationDiscriminatedAdCheckDesktop_DAO.cs" />
+    <Compile Include="ValuationDiscriminatedAdCheckPhysical_DAO.cs" />
+    <Compile Include="ValuationDiscriminatedLightStoneAVM_DAO.cs" />
+    <Compile Include="ValuationDiscriminatedSAHLClientEstimate_DAO.cs" />
+    <Compile Include="ValuationImprovementType_DAO.cs" />
+    <Compile Include="ValuationImprovement_DAO.cs" />
+    <Compile Include="ValuationMainBuilding_DAO.cs" />
+    <Compile Include="ValuationOutBuilding_DAO.cs" />
+    <Compile Include="ValuationRoofType_DAO.cs" />
+    <Compile Include="ValuationDiscriminatedSAHLManual_DAO.cs" />
+    <Compile Include="ValuationStatus_DAO.cs" />
+    <Compile Include="Valuation_DAO.cs" />
+    <Compile Include="Valuator_DAO.cs" />
+    <Compile Include="AccountVariableLoan_DAO.cs" />
+    <Compile Include="AccountVariFixLoan_DAO.cs" />
+    <Compile Include="WatchListConfiguration_DAO.cs" />
+    <Compile Include="WorkflowMenu_DAO.cs" />
+    <Compile Include="WorkflowOrganisationStructure_DAO.cs" />
+    <Compile Include="WorkflowRoleTypeGroup.cs" />
+    <Compile Include="WorkflowRoleType_DAO.cs" />
+    <Compile Include="WorkflowRuleSet_DAO.cs" />
+    <Compile Include="XMLHistory_DAO.cs" />
+    <Compile Include="XSLTransformation_DAO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.Logging\SAHL.Common.Logging.csproj">
+      <Project>{B73E4F52-B7F1-4001-9762-02DB2DF14A23}</Project>
+      <Name>SAHL.Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service.Interfaces\SAHL.Common.Service.Interfaces.csproj">
+      <Project>{7180E406-6B7C-44B9-BD02-D3FCCCC617BC}</Project>
+      <Name>SAHL.Common.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common\SAHL.Common.csproj">
+      <Project>{C8E9A1AA-1B28-4310-92BD-12A52EC3A996}</Project>
+      <Name>SAHL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0C1B7B75-8887-4169-A41D-0AACDDFF3D49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>robocopy "$(ProjectDir)\bin\$(ConfigurationName)" "$(SolutionDir)..\Internal Binaries" $(ProjectName).dll $(ProjectName).pdb /XO /NJH /NP
+if %25errorlevel%25 GEQ 2 goto BuildEventFailed
+if %25errorlevel%25 LEQ 1 goto end
+  :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+  exit 1
+  :end echo FILECOPY for $(ProjectName) COMPLETED OK
+  exit 0</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets" Condition="Exists('..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets')" />
+</Project>

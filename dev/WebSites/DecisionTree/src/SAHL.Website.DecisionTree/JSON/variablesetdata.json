@@ -1,0 +1,108 @@
+{
+	"variables": {
+		"groups": [{
+			"name": "Credit",
+			"variables": [{
+				"id": "1",
+				"type": "float",
+				"usage": "global",
+				"name": "HouseHold Income"
+			},
+			{
+				"id": "2",
+				"usage": "global",
+				"type": "enumeration",
+				"enumeration_group_id": "1",
+				"name": "Loan Purpose"
+			},
+			{
+				"id": "3",
+				"usage": "global",
+				"type": "enumeration",
+				"enumeration_group_id": "2",
+				"name": "Household Income Type"
+			},
+			{
+				"id": "4",
+				"usage": "global",
+				"type": "float",
+				"name": "Loan Amount"
+			},
+			{
+				"id": "5",
+				"usage": "global",
+				"type": "float",
+				"name": "Property Value"
+			},
+			{
+				"id": "6",
+				"usage": "global",
+				"type": "float",
+				"name": "LTV"
+			}],
+			"name": "Credit2",
+			"variables": [{
+				"id": "7",
+				"type": "float",
+				"usage": "global",
+				"name": "HouseHold Income"
+			},
+			{
+				"id": "8",
+				"usage": "global",
+				"type": "enumeration",
+				"enumeration_group_id": "1",
+				"name": "Loan Purpose"
+			},
+			{
+				"id": "9",
+				"usage": "global",
+				"type": "enumeration",
+				"enumeration_group_id":"2",	
+				"name": "Household Income Type"
+			},
+			{
+				"id": "10",
+				"usage": "global",
+				"type": "float",
+				"name": "Loan Amount"
+			},
+			{
+				"id": "11",
+				"usage": "global",
+				"type": "float",
+				"name": "Property Value"
+			},
+			{
+				"id": "12",
+				"usage": "global",
+				"type": "float",
+				"name": "LTV"
+			}]
+		}],
+		"values": [{
+			"variableId": "1",
+			"value": "250000"
+		},
+		{
+			"variableId": "2",
+			"value": "9"
+		},
+		{
+			"variableId": "3",
+			"value": "1"
+		},
+		{
+			"variableId": "4",
+			"value": "1000000"
+		},
+		{
+			"variableId": "5",
+			"value": "1200000"
+		},
+		{
+			"variableId": "6",
+			"value": "0.80"
+		}]
+	}
+}

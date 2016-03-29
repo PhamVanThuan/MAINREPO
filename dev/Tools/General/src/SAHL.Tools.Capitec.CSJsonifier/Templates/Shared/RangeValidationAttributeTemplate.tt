@@ -1,0 +1,13 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#if(this.Model.numberCheck) {#>
+if(this.<#=this.Model.PropertyName#> && isNaN(this.<#=this.Model.PropertyName#>)) {
+								results.push({'<#=this.Model.PropertyName#>':'<#=this.Model.PropertyNameText#> must be a number.'});
+						}<#}#>
+
+						if(!(typeof(this.<#=this.Model.PropertyName#>) === 'undefined' || this.<#=this.Model.PropertyName#> === null) && !isNaN(this.<#=this.Model.PropertyName#>) && (this.<#=this.Model.PropertyName#> < <#=this.Model.min#> || this.<#=this.Model.PropertyName#> > <#=this.Model.max#> )) {
+							results.push({'<#=this.Model.PropertyName#>': '<#=String.IsNullOrWhiteSpace(this.Model.ErrorMessage)? this.Model.PropertyNameText + " must be between " + this.Model.Args[0] + " and " + this.Model.Args[1] : this.Model.ErrorMessage#>'});
+						}

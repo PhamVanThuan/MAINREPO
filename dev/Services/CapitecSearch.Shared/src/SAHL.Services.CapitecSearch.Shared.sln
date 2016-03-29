@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.Interfaces.CapitecSearch", "SAHL.Services.Interfaces.CapitecSearch\SAHL.Services.Interfaces.CapitecSearch.csproj", "{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.Interfaces.CapitecSearch.Tests", "SAHL.Services.Interfaces.CapitecSearch.Tests\SAHL.Services.Interfaces.CapitecSearch.Tests.csproj", "{CC1BADDB-DA5B-4B41-8468-F7BD5D11AA0A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1BADDB-DA5B-4B41-8468-F7BD5D11AA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1BADDB-DA5B-4B41-8468-F7BD5D11AA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1BADDB-DA5B-4B41-8468-F7BD5D11AA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1BADDB-DA5B-4B41-8468-F7BD5D11AA0A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

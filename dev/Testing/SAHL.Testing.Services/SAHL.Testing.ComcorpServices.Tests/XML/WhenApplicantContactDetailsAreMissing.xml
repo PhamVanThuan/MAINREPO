@@ -1,0 +1,311 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <To xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none" s:mustUnderstand="1">http://comcorp.sahomeloans.com/ComcorpConnectorService/SAHLIntegrationService.svc/integration</To>
+    <Action xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none" s:mustUnderstand="1">http://tempuri.org/ISAHLIntegrationService/Submit</Action>
+  </s:Header>
+  <s:Body>
+    <SAHLRequest xmlns="http://tempuri.org/">
+      <Application xmlns:a="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:ApplicationCode>5001513902</a:ApplicationCode>
+        <a:CapitaliseFees>false</a:CapitaliseFees>
+        <a:CashOutAmt>100</a:CashOutAmt>
+        <a:CashOutReason>dsgsdgh</a:CashOutReason>
+        <a:CoApplicants />
+        <a:ConsultantFirstName>Raeesa</a:ConsultantFirstName>
+        <a:ConsultantSurname>Gaffar</a:ConsultantSurname>
+        <a:DepositCash>10</a:DepositCash>
+        <a:DepositOther />
+        <a:DepositSource>false</a:DepositSource>
+        <a:EstCostFees>0</a:EstCostFees>
+        <a:HigherBond>0</a:HigherBond>
+        <a:InstalmentMethod>Debit Order</a:InstalmentMethod>
+        <a:LoanAmountRequired>700000</a:LoanAmountRequired>
+        <a:MainApplicant>
+          <a:AddressCityWork>SANDTON</a:AddressCityWork>
+          <a:AddressLine1Work>21520 WORK ADDRESS</a:AddressLine1Work>
+          <a:AddressSuburbWork>21520 WORK ADDRESS</a:AddressSuburbWork>
+          <a:AdminRescinded>0001-01-01T00:00:00</a:AdminRescinded>
+          <a:AssetItems>
+            <a:AssetItem>
+              <a:AssetCompanyName />
+              <a:AssetDescription />
+              <a:AssetOutstandingLiability>250000</a:AssetOutstandingLiability>
+              <a:AssetPhysicalAddressCity>SANDTON</a:AssetPhysicalAddressCity>
+              <a:AssetPhysicalAddressCode>2090</a:AssetPhysicalAddressCode>
+              <a:AssetPhysicalAddressLine1>15 SEPENG AVENUE</a:AssetPhysicalAddressLine1>
+              <a:AssetPhysicalAddressLine2 />
+              <a:AssetPhysicalAddressSuburb>ALEXANDRA</a:AssetPhysicalAddressSuburb>
+              <a:AssetPhysicalCountry />
+              <a:AssetPhysicalProvince />
+              <a:DateAssetAcquired>2014-11-05T00:00:00</a:DateAssetAcquired>
+              <a:SAHLAssetDesc>FIXED PROPERTY</a:SAHLAssetDesc>
+              <a:SAHLAssetValue>1450000</a:SAHLAssetValue>
+            </a:AssetItem>
+            <a:AssetItem>
+              <a:AssetCompanyName>LIBERTY</a:AssetCompanyName>
+              <a:AssetDescription />
+              <a:AssetOutstandingLiability>0</a:AssetOutstandingLiability>
+              <a:AssetPhysicalAddressCity />
+              <a:AssetPhysicalAddressCode />
+              <a:AssetPhysicalAddressLine1 />
+              <a:AssetPhysicalAddressLine2 />
+              <a:AssetPhysicalAddressSuburb />
+              <a:AssetPhysicalCountry />
+              <a:AssetPhysicalProvince />
+              <a:DateAssetAcquired>0001-01-01T00:00:00</a:DateAssetAcquired>
+              <a:SAHLAssetDesc>LISTED INVESTMENTS</a:SAHLAssetDesc>
+              <a:SAHLAssetValue>50</a:SAHLAssetValue>
+            </a:AssetItem>
+            <a:AssetItem>
+              <a:AssetCompanyName>SANLAM</a:AssetCompanyName>
+              <a:AssetDescription />
+              <a:AssetOutstandingLiability>0</a:AssetOutstandingLiability>
+              <a:AssetPhysicalAddressCity />
+              <a:AssetPhysicalAddressCode />
+              <a:AssetPhysicalAddressLine1 />
+              <a:AssetPhysicalAddressLine2 />
+              <a:AssetPhysicalAddressSuburb />
+              <a:AssetPhysicalCountry />
+              <a:AssetPhysicalProvince />
+              <a:DateAssetAcquired>0001-01-01T00:00:00</a:DateAssetAcquired>
+              <a:SAHLAssetDesc>UNLISTED INVESTMENTS</a:SAHLAssetDesc>
+              <a:SAHLAssetValue>25698</a:SAHLAssetValue>
+            </a:AssetItem>
+            <a:AssetItem>
+              <a:AssetCompanyName />
+              <a:AssetDescription>MOTOR BIKE</a:AssetDescription>
+              <a:AssetOutstandingLiability>100</a:AssetOutstandingLiability>
+              <a:AssetPhysicalAddressCity />
+              <a:AssetPhysicalAddressCode />
+              <a:AssetPhysicalAddressLine1 />
+              <a:AssetPhysicalAddressLine2 />
+              <a:AssetPhysicalAddressSuburb />
+              <a:AssetPhysicalCountry />
+              <a:AssetPhysicalProvince />
+              <a:DateAssetAcquired>0001-01-01T00:00:00</a:DateAssetAcquired>
+              <a:SAHLAssetDesc>OTHER ASSET</a:SAHLAssetDesc>
+              <a:SAHLAssetValue>65350</a:SAHLAssetValue>
+            </a:AssetItem>
+            <a:AssetItem>
+              <a:AssetCompanyName>ANGLO</a:AssetCompanyName>
+              <a:AssetDescription />
+              <a:AssetOutstandingLiability>0</a:AssetOutstandingLiability>
+              <a:AssetPhysicalAddressCity />
+              <a:AssetPhysicalAddressCode />
+              <a:AssetPhysicalAddressLine1 />
+              <a:AssetPhysicalAddressLine2 />
+              <a:AssetPhysicalAddressSuburb />
+              <a:AssetPhysicalCountry />
+              <a:AssetPhysicalProvince />
+              <a:DateAssetAcquired>0001-01-01T00:00:00</a:DateAssetAcquired>
+              <a:SAHLAssetDesc>LIFE ASSURANCE</a:SAHLAssetDesc>
+              <a:SAHLAssetValue>2000</a:SAHLAssetValue>
+            </a:AssetItem>
+          </a:AssetItems>
+          <a:BankAccounts>
+            <a:BankAccount>
+              <a:AccountBranch>FOURWAYS CROSSING</a:AccountBranch>
+              <a:AccountInstitution>STANDARD BANK OF SOUTH AFRICA LIMITED</a:AccountInstitution>
+              <a:AccountName>C BASS</a:AccountName>
+              <a:AccountNumber>230505740</a:AccountNumber>
+              <a:AccountType>Current</a:AccountType>
+              <a:IsBusinessAccount>false</a:IsBusinessAccount>
+              <a:STDAccountBranchCode />
+              <a:isMainAccount>false</a:isMainAccount>
+            </a:BankAccount>
+          </a:BankAccounts>
+          <a:BusinessMember>false</a:BusinessMember>
+          <a:Cellphone></a:Cellphone>
+          <a:CorrespondenceLanguage>ENGLISH</a:CorrespondenceLanguage>
+          <a:CurrentEmploymentType>SALARIED</a:CurrentEmploymentType>
+          <a:DateJoinedEmployer>2010-02-02T00:00:00</a:DateJoinedEmployer>
+          <a:DateOfBirth>1975-04-20T00:00:00</a:DateOfBirth>
+          <a:DateRehabilitated>2014-10-23T00:00:00</a:DateRehabilitated>
+          <a:DateSalaryPaid>25</a:DateSalaryPaid>
+          <a:DebtRearrangement>false</a:DebtRearrangement>
+          <a:DeclaredInsolvent>true</a:DeclaredInsolvent>
+          <a:EmailAddress></a:EmailAddress>
+          <a:EmployeeMedicalAid>10</a:EmployeeMedicalAid>
+          <a:EmployeeNo />
+          <a:EmployeePAYE>10</a:EmployeePAYE>
+          <a:EmployeePension>10</a:EmployeePension>
+          <a:EmployeeUIF>10</a:EmployeeUIF>
+          <a:EmployerBusinessType>UNKNOWN</a:EmployerBusinessType>
+          <a:EmployerEmail />
+          <a:EmployerGrossMonthlySalary>10000</a:EmployerGrossMonthlySalary>
+          <a:EmployerName>GOSSIP GIRL</a:EmployerName>
+          <a:EmployerRemunerationType>SALARIED</a:EmployerRemunerationType>
+          <a:EmploymentSector>MEDIA</a:EmploymentSector>
+          <a:EthnicGroup>ASIAN</a:EthnicGroup>
+          <a:ExpenditureItems>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>200</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Water, lights, refuse removal</a:ExpenditureDesc>
+              <a:ExpenditureType>3</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>500</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Food and groceries</a:ExpenditureDesc>
+              <a:ExpenditureType>11</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>10</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Medical expenses</a:ExpenditureDesc>
+              <a:ExpenditureType>24</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>10</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Other debt repayment</a:ExpenditureDesc>
+              <a:ExpenditureType>49</a:ExpenditureType>
+            </a:ExpenditureItem>
+          </a:ExpenditureItems>
+          <a:FaxCode>011</a:FaxCode>
+          <a:FaxNo>2396325</a:FaxNo>
+          <a:FirstName>CHUCK</a:FirstName>
+          <a:Gender>MALE</a:Gender>
+          <a:HomeLanguage>ENGLISH</a:HomeLanguage>
+          <a:HomePhone></a:HomePhone>
+          <a:HomePhoneCode></a:HomePhoneCode>
+          <a:IdentificationNo>8104208371189</a:IdentificationNo>
+          <a:IncomeContributor>true</a:IncomeContributor>
+          <a:IncomeItems>
+            <a:IncomeItem>
+              <a:CapturedDescription />
+              <a:IncomeAmount>10000</a:IncomeAmount>
+              <a:IncomeDesc>Basic Salary</a:IncomeDesc>
+              <a:IncomeType>22</a:IncomeType>
+            </a:IncomeItem>
+          </a:IncomeItems>
+          <a:IsUnderAdminOrder>false</a:IsUnderAdminOrder>
+          <a:IsUnderDebtReview>false</a:IsUnderDebtReview>
+          <a:JudgementIndicator>false</a:JudgementIndicator>
+          <a:JudgementValue />
+          <a:LiabilityItems>
+            <a:LiabilityItem>
+              <a:LiabilityAssetValue>0</a:LiabilityAssetValue>
+              <a:LiabilityCompanyName>ABEL</a:LiabilityCompanyName>
+              <a:LiabilityDateRepayable>2014-11-05T00:00:00</a:LiabilityDateRepayable>
+              <a:LiabilityDescription>LIABILITY LOAN</a:LiabilityDescription>
+              <a:LiabilityLoanType>PERSONAL LOAN</a:LiabilityLoanType>
+              <a:LiabilityOutstandingLiability>0</a:LiabilityOutstandingLiability>
+              <a:SAHLLiabilityCost>2000</a:SAHLLiabilityCost>
+              <a:SAHLLiabilityDesc>LIABILITY LOAN</a:SAHLLiabilityDesc>
+              <a:SAHLLiabilityValue>36540</a:SAHLLiabilityValue>
+            </a:LiabilityItem>
+            <a:LiabilityItem>
+              <a:LiabilityAssetValue>4000</a:LiabilityAssetValue>
+              <a:LiabilityCompanyName />
+              <a:LiabilityDateRepayable>0001-01-01T00:00:00</a:LiabilityDateRepayable>
+              <a:LiabilityDescription>LIABILITY SURETY</a:LiabilityDescription>
+              <a:LiabilityLoanType />
+              <a:LiabilityOutstandingLiability>0</a:LiabilityOutstandingLiability>
+              <a:SAHLLiabilityCost>0</a:SAHLLiabilityCost>
+              <a:SAHLLiabilityDesc>LIABILITY SURETY</a:SAHLLiabilityDesc>
+              <a:SAHLLiabilityValue>2000</a:SAHLLiabilityValue>
+            </a:LiabilityItem>
+            <a:LiabilityItem>
+              <a:LiabilityAssetValue>0</a:LiabilityAssetValue>
+              <a:LiabilityCompanyName>COB</a:LiabilityCompanyName>
+              <a:LiabilityDateRepayable>0001-01-01T00:00:00</a:LiabilityDateRepayable>
+              <a:LiabilityDescription>FIXED LONG TERM INVESTMENT</a:LiabilityDescription>
+              <a:LiabilityLoanType />
+              <a:LiabilityOutstandingLiability>0</a:LiabilityOutstandingLiability>
+              <a:SAHLLiabilityCost>0</a:SAHLLiabilityCost>
+              <a:SAHLLiabilityDesc>FIXED LONG TERM INVESTMENT</a:SAHLLiabilityDesc>
+              <a:SAHLLiabilityValue>245000</a:SAHLLiabilityValue>
+            </a:LiabilityItem>
+          </a:LiabilityItems>
+          <a:MaritalStatus>Single</a:MaritalStatus>
+          <a:MarketingConsumerLists>false</a:MarketingConsumerLists>
+          <a:MarketingEmail>false</a:MarketingEmail>
+          <a:MarketingFlyer>false</a:MarketingFlyer>
+          <a:MarketingMagazine>false</a:MarketingMagazine>
+          <a:MarketingMarketing>false</a:MarketingMarketing>
+          <a:MarketingNewspaper>false</a:MarketingNewspaper>
+          <a:MarketingOnline>false</a:MarketingOnline>
+          <a:MarketingOther>false</a:MarketingOther>
+          <a:MarketingRadio>false</a:MarketingRadio>
+          <a:MarketingReferral>true</a:MarketingReferral>
+          <a:MarketingSMS>false</a:MarketingSMS>
+          <a:MarketingTV>false</a:MarketingTV>
+          <a:MarketingTelemarketing>false</a:MarketingTelemarketing>
+          <a:MarriedStatus>NONE</a:MarriedStatus>
+          <a:MayDoCreditBureauEnquiry>true</a:MayDoCreditBureauEnquiry>
+          <a:MemberCompanyName />
+          <a:MemberCompanyNumber />
+          <a:NetAssets />
+          <a:Occupation>ACTOR</a:Occupation>
+          <a:PassportNo />
+          <a:PermanentResident>true</a:PermanentResident>
+          <a:PhysicalAddressCity>BENONI</a:PhysicalAddressCity>
+          <a:PhysicalAddressCode>1501</a:PhysicalAddressCode>
+          <a:PhysicalAddressLine1>250 MARI STREET</a:PhysicalAddressLine1>
+          <a:PhysicalAddressLine2 />
+          <a:PhysicalAddressSuburb>ACTONVILLE EXT 2</a:PhysicalAddressSuburb>
+          <a:PhysicalCountry />
+          <a:PhysicalProvince>GAUTENG</a:PhysicalProvince>
+          <a:PostalAddressCity>BOKSBURG</a:PostalAddressCity>
+          <a:PostalAddressCode>1459</a:PostalAddressCode>
+          <a:PostalAddressLine1>250 MARI STREET</a:PostalAddressLine1>
+          <a:PostalAddressLine2 />
+          <a:PostalAddressSuburb>VAN DYK PARK</a:PostalAddressSuburb>
+          <a:PostalCodeWork>1459</a:PostalCodeWork>
+          <a:PostalCountry />
+          <a:PostalProvince>GAUTENG</a:PostalProvince>
+          <a:PreferredContactDelivery>EMAIL</a:PreferredContactDelivery>
+          <a:PreferredName />
+          <a:PreviousEmployerName />
+          <a:PreviousEmployerPeriod />
+          <a:RelationshipType>BROTHER</a:RelationshipType>
+          <a:SACitizen>true</a:SACitizen>
+          <a:SAHLDeclaration>false</a:SAHLDeclaration>
+          <a:SAHLHighestQualification>DIPLOMA</a:SAHLHighestQualification>
+          <a:SAHLIsSurety>false</a:SAHLIsSurety>
+          <a:SAHLSACitizenType>SA CITIZEN</a:SAHLSACitizenType>
+          <a:Surname>BASS</a:Surname>
+          <a:Title>MR</a:Title>
+          <a:WorkPhone></a:WorkPhone>
+          <a:WorkPhoneCode></a:WorkPhoneCode>
+          <a:Spouse i:nil="true" />
+        </a:MainApplicant>
+        <a:NamePropertyRegistered>RG_07 SAHL</a:NamePropertyRegistered>
+        <a:OffPlanIndicator>false</a:OffPlanIndicator>
+        <a:OutstandingLoan>100</a:OutstandingLoan>
+        <a:ProductSelection>New Variable Loan</a:ProductSelection>
+        <a:Property>
+          <a:AddressCity />
+          <a:AddressSuburb />
+          <a:ComplexName />
+          <a:ContactCellphone>0856325852</a:ContactCellphone>
+          <a:ContactName>JADE PINK</a:ContactName>
+          <a:PortionNo>125</a:PortionNo>
+          <a:PostalCode />
+          <a:Province>GAUTENG</a:Province>
+          <a:SellerIDNo />
+          <a:StandErfNo>125</a:StandErfNo>
+          <a:StreetName>ROSE STREET</a:StreetName>
+          <a:StreetNo>25</a:StreetNo>
+          <a:UsePropertyAddressAsDomiciliumAddress>true</a:UsePropertyAddressAsDomiciliumAddress>
+          <a:UsePropertyAddressAsLoanMailingAddress>true</a:UsePropertyAddressAsLoanMailingAddress>
+        </a:Property>
+        <a:PropertyMarketValue>65000</a:PropertyMarketValue>
+        <a:PropertyPurchasePrice>65000</a:PropertyPurchasePrice>
+        <a:QuickCashIndicator>false</a:QuickCashIndicator>
+        <a:SAHLBondAccountNo>0</a:SAHLBondAccountNo>
+        <a:SAHLOccupancyType>Owner Occupied</a:SAHLOccupancyType>
+        <a:SAHLPropertyType>Flat</a:SAHLPropertyType>
+        <a:SAHLTitleType>Sectional Title	</a:SAHLTitleType>
+        <a:SAHLVendorCode>SAHL1</a:SAHLVendorCode>
+        <a:SahlLoanPurpose>Switch Loan</a:SahlLoanPurpose>
+        <a:SahlTransferAtt>Bham</a:SahlTransferAtt>
+        <a:SectionalTitleUnitNo />
+        <a:TermOfLoan>2</a:TermOfLoan>
+        <a:TotalEstLoan>0</a:TotalEstLoan>
+      </Application>
+    </SAHLRequest>
+  </s:Body>
+</s:Envelope>

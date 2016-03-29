@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8E9A1AA-1B28-4310-92BD-12A52EC3A996}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Common</RootNamespace>
+    <AssemblyName>SAHL.Common</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\FrameWork\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SAHL.Common.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ, Version=0.50.1.392, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\PostSharp.2.1.7.11\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\RabbitMQ.Client\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\FactoryTypeAttribute.cs" />
+    <Compile Include="Authentication\Authentication.cs" />
+    <Compile Include="Authentication\AuthenticationException.cs" />
+    <Compile Include="Authentication\Impersonation.cs" />
+    <Compile Include="CacheData\BackButtonCacheObjectLifeTime.cs" />
+    <Compile Include="CacheData\CacheObjectLifeTimeEventArgs.cs" />
+    <Compile Include="CacheData\ICacheObjectLifeTime.cs" />
+    <Compile Include="CacheData\ICacheObjectLifeTimeEvent.cs" />
+    <Compile Include="CacheData\ISAHLPrincipalCache.cs" />
+    <Compile Include="CacheData\ISAHLPrincipalCacheProvider.cs" />
+    <Compile Include="CacheData\PageNavigateCacheObjectLlifeTime.cs" />
+    <Compile Include="CacheData\SAHLPrincipalCache.cs" />
+    <Compile Include="CacheData\SAHLPrincipalCacheProvider.cs" />
+    <Compile Include="CacheData\SimplePageCacheObjectLifeTime.cs" />
+    <Compile Include="Collections\DAOEventList.cs" />
+    <Compile Include="Collections\EventList.cs" />
+    <Compile Include="Collections\EventListBase.cs" />
+    <Compile Include="Collections\Interfaces\IBusinessModelTypeMapper.cs" />
+    <Compile Include="Collections\Interfaces\IDAOObject.cs" />
+    <Compile Include="Collections\Interfaces\IEventList.cs" />
+    <Compile Include="Collections\Interfaces\IProxyableDAOObject.cs" />
+    <Compile Include="Collections\Interfaces\IReadOnlyEventList.cs" />
+    <Compile Include="Collections\Interfaces\ISAHLDictionary.cs" />
+    <Compile Include="Collections\ReadOnlyEventList.cs" />
+    <Compile Include="Collections\SAHLDictionary.cs" />
+    <Compile Include="Collections\SortedDAOEventList.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Configuration\ConfigFileConfigurationProviderBase.cs" />
+    <Compile Include="Configuration\ConfigHelper.cs" />
+    <Compile Include="Configuration\CorrespondenceSection.cs" />
+    <Compile Include="Configuration\Security\ADGroupElementCollection.cs" />
+    <Compile Include="Configuration\Security\ADGroupElement.cs" />
+    <Compile Include="Configuration\Security\ADUserElement.cs" />
+    <Compile Include="Configuration\Security\ADUserElementCollection.cs" />
+    <Compile Include="Configuration\Security\FeatureElementCollection.cs" />
+    <Compile Include="Configuration\Security\FeatureElement.cs" />
+    <Compile Include="Configuration\Security\SecurityElement.cs" />
+    <Compile Include="Configuration\Security\PresenterElementCollection.cs" />
+    <Compile Include="Configuration\Security\ViewElementCollection.cs" />
+    <Compile Include="Configuration\Security\PresenterElement.cs" />
+    <Compile Include="Configuration\Security\ViewElement.cs" />
+    <Compile Include="Configuration\Security\DefaultElement.cs" />
+    <Compile Include="Configuration\Security\TagElementCollection.cs" />
+    <Compile Include="Configuration\Security\TagElement.cs" />
+    <Compile Include="Configuration\Security\SecuritySection.cs" />
+    <Compile Include="Configuration\FactoryConfiguration.cs" />
+    <Compile Include="Configuration\MandateConfiguration.cs" />
+    <Compile Include="Configuration\RedirectionConfiguration.cs" />
+    <Compile Include="Configuration\RulesConfiguration.cs" />
+    <Compile Include="DataAccess\ActiveRecordTransactionManager.cs" />
+    <Compile Include="DataAccess\Common\Helper.cs" />
+    <Compile Include="DataAccess\DBHelper.cs" />
+    <Compile Include="DataAccess\Exceptions\DataAccessException.cs" />
+    <Compile Include="DataAccess\Exceptions\MetricException.cs" />
+    <Compile Include="DataAccess\ParameterCollection.cs" />
+    <Compile Include="DataAccess\Settings.cs" />
+    <Compile Include="DataAccess\TransactionContext.cs" />
+    <Compile Include="DataAccess\TransactionController.cs" />
+    <Compile Include="DataAccess\UIStatementRepository.cs" />
+    <Compile Include="DataSets\Audits.Designer.cs">
+      <DependentUpon>Audits.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\CBO.cs">
+      <DependentUpon>CBO.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\CBO.Designer.cs">
+      <DependentUpon>CBO.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\ControlConstants.Designer.cs">
+      <DependentUpon>ControlConstants.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\CreditMatrix.cs">
+      <DependentUpon>CreditMatrix.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\CreditMatrix.Designer.cs">
+      <DependentUpon>CreditMatrix.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\ErrorSet.Designer.cs">
+      <DependentUpon>ErrorSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\Financials.Designer.cs">
+      <DependentUpon>Financials.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\LoanCalculations.Designer.cs">
+      <DependentUpon>LoanCalculations.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\Metrics.Designer.cs">
+      <DependentUpon>Metrics.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\Rules.Designer.cs">
+      <DependentUpon>Rules.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Exceptions\CBONodeNotFoundException.cs" />
+    <Compile Include="Exceptions\DomainValidationException.cs" />
+    <Compile Include="Exceptions\MissingDomainMessageCollectionException.cs" />
+    <Compile Include="Exceptions\PrincipalNotCachedException.cs" />
+    <Compile Include="Exceptions\X2ActivityStartFailedException.cs" />
+    <Compile Include="Exceptions\X2InstanceLockedException.cs" />
+    <Compile Include="Factories\FactoryCacheItem.cs" />
+    <Compile Include="Factories\IFactoryStrategy.cs" />
+    <Compile Include="Factories\LoadArgs.cs" />
+    <Compile Include="Factories\RepositoryFactory.cs" />
+    <Compile Include="Factories\ServiceFactory.cs" />
+    <Compile Include="Factories\Strategies\DefaultStrategy.cs" />
+    <Compile Include="Factories\TypeFactory.cs" />
+    <Compile Include="CacheData\GlobalData.cs" />
+    <Compile Include="Globals\Enumerations.cs" />
+    <Compile Include="Globals\Enumerations2.cs" />
+    <Compile Include="Globals\Messages.cs" />
+    <Compile Include="Globals\ResourceConstants.cs" />
+    <Compile Include="Globals\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Interfaces\IBusinessModelContainer.cs" />
+    <Compile Include="Interfaces\IOrganisationStructureFactory.cs" />
+    <Compile Include="Interfaces\INotificationException.cs" />
+    <Compile Include="Interfaces\IShallowCloneable.cs" />
+    <Compile Include="NameValue.cs" />
+    <Compile Include="CacheData\PresenterData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequiresPostSharp.cs" />
+    <Compile Include="SAHLConstants.cs" />
+    <Compile Include="Security\ISAHLPrincipalProvider.cs" />
+    <Compile Include="Security\Password.cs" />
+    <Compile Include="Security\SAHLPrincipal.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Security\SAHLPrincipalProvider.cs" />
+    <Compile Include="StringEnum.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfiles\IUserProfileSetting.cs" />
+    <Compile Include="UserProfiles\Settings\SearchHistorySetting.cs" />
+    <Compile Include="UserProfiles\Settings\StringSetting.cs" />
+    <Compile Include="UserProfiles\UserProfile.cs" />
+    <Compile Include="UserProfiles\UserProfileSettingBase.cs" />
+    <Compile Include="Utils\DateUtils.cs" />
+    <Compile Include="Utils\InPlaceConfigurationSourceWithLazyDefault.cs" />
+    <Compile Include="Utils\IOUtils.cs" />
+    <Compile Include="Utils\ObjectSerialization.cs" />
+    <Compile Include="Utils\Sorting\Dynamic.cs" />
+    <Compile Include="Utils\Sorting\DynamicComparer.cs" />
+    <Compile Include="Utils\Sorting\DynamicEmit.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+    <Compile Include="Utils\ValidationUtils.cs" />
+    <Compile Include="Utils\WebRequest.cs" />
+    <Compile Include="Utils\XmlUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Audits.xsc">
+      <DependentUpon>Audits.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Audits.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Audits.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Audits.xss">
+      <DependentUpon>Audits.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CBO.xsc">
+      <DependentUpon>CBO.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CBO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CBO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\CBO.xss">
+      <DependentUpon>CBO.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ControlConstants.xsc">
+      <DependentUpon>ControlConstants.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ControlConstants.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ControlConstants.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\ControlConstants.xss">
+      <DependentUpon>ControlConstants.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CreditMatrix.xsc">
+      <DependentUpon>CreditMatrix.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CreditMatrix.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CreditMatrix.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\CreditMatrix.xss">
+      <DependentUpon>CreditMatrix.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ErrorSet.xsc">
+      <DependentUpon>ErrorSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ErrorSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ErrorSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\ErrorSet.xss">
+      <DependentUpon>ErrorSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Financials.xsc">
+      <DependentUpon>Financials.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Financials.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Financials.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Financials.xss">
+      <DependentUpon>Financials.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LoanCalculations.xsc">
+      <DependentUpon>LoanCalculations.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LoanCalculations.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoanCalculations.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\LoanCalculations.xss">
+      <DependentUpon>LoanCalculations.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Metrics.xsc">
+      <DependentUpon>Metrics.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Metrics.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Metrics.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Metrics.xss">
+      <DependentUpon>Metrics.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Rules.xsc">
+      <DependentUpon>Rules.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Rules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Rules.xss">
+      <DependentUpon>Rules.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Globals\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.Logging\SAHL.Common.Logging.csproj">
+      <Project>{B73E4F52-B7F1-4001-9762-02DB2DF14A23}</Project>
+      <Name>SAHL.Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0C1B7B75-8887-4169-A41D-0AACDDFF3D49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>robocopy "$(ProjectDir)bin\$(ConfigurationName)" "$(SolutionDir)..\Internal Binaries" $(ProjectName).dll $(ProjectName).pdb /XO /NJH /NP
+if %25errorlevel%25 GEQ 2 goto BuildEventFailed
+if %25errorlevel%25 LEQ 1 goto end
+  :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+  exit 1
+  :end echo FILECOPY for $(ProjectName) COMPLETED OK
+  exit 0
+</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets" Condition="Exists('..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets')" />
+</Project>

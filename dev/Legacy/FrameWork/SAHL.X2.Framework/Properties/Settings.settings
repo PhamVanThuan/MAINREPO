@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAHL.X2.Framework.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DJIN\SQL2005;Initial Catalog=2AM;Persist Security Info=True;User Id=sa;Password=sapassword;&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DJIN\SQL2005;Initial Catalog=2AM;Persist Security Info=True;User Id=sa;Password=sapassword;</Value>
+    </Setting>
+    <Setting Name="Warehouse" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DJIN\SQL2005;Initial Catalog=Warehouse;Persist Security Info=True;User Id=sa;Password=sapassword;&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DJIN\SQL2005;Initial Catalog=Warehouse;Persist Security Info=True;User Id=sa;Password=sapassword;</Value>
+    </Setting>
+    <Setting Name="X2URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tcp://localhost:8089/X2Engine</Value>
+    </Setting>
+    <Setting Name="X2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVA03;Initial Catalog=X2;Persist Security Info=True;User ID=christofn;Password=&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVA03;Initial Catalog=X2;Persist Security Info=True;User ID=christofn;Password=</Value>
+    </Setting>
+    <Setting Name="ImageIndexConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVA03;Initial Catalog=ImageIndex;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVA03;Initial Catalog=ImageIndex;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect</Value>
+    </Setting>
+    <Setting Name="X2WebHost_Url" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:50091/</Value>
+    </Setting>
+    <Setting Name="X2ProviderWeb" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RepositoryFind" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;select Statement, statementkey from dbo.uiStatement where Version = 	( select max(Version) from dbo.uiStatement
+	  where ApplicationName = @Application and StatementName = @Statement)
+and ApplicationName = @Application and StatementName = @Statement&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">select Statement, statementkey from dbo.uiStatement where Version = 	( select max(Version) from dbo.uiStatement
+	  where ApplicationName = @Application and StatementName = @Statement)
+and ApplicationName = @Application and StatementName = @Statement</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

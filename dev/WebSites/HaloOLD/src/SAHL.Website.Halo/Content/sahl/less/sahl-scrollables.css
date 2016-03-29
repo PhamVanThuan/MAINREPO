@@ -1,0 +1,90 @@
+﻿@font-face {
+  font-family: 'TradeGothicLTStdBdCnNo';
+  src: url('/Content/sahl/fonts/tradegothicltstd-bdcn20-webfont.eot');
+  src: url('/Content/sahl/fonts/tradegothicltstd-bdcn20-webfont.eot?#iefix') format('embedded-opentype'), url('/Content/sahl/fonts/tradegothicltstd-bdcn20-webfont.woff') format('woff'), url('/Content/sahl/fonts/tradegothicltstd-bdcn20-webfont.ttf') format('truetype'), url('/Content/sahl/fonts/tradegothicltstd-bdcn20-webfont.svg#TradeGothicLTStdBdCnNo.20') format('svg');
+}
+@font-face {
+  font-family: 'TradeGothicLTStdBold';
+  src: url('/Content/sahl/fonts/tradegothicltstd-bold-webfont.eot');
+  src: url('/Content/sahl/fonts/tradegothicltstd-bold-webfont.eot?#iefix') format('embedded-opentype'), url('/Content/sahl/fonts/tradegothicltstd-bold-webfont.woff') format('woff'), url('/Content/sahl/fonts/tradegothicltstd-bold-webfont.ttf') format('truetype'), url('/Content/sahl/fonts/tradegothicltstd-bold-webfont.svg#TradeGothicLTStdBold') format('svg');
+}
+.scrollable-container .scrollable-wrapper {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.scrollable-container .scrollable-inner-container {
+  height: 100%;
+}
+.scrollable-container.scrollable-inner-container-clear {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.scrollable-container .scrollable-inner-container-right {
+  margin-right: 14px;
+}
+.scrollable-container .scrollable-inner-container-left {
+  margin-left: 14px;
+}
+.scrollable-container .scrollable-controls {
+  width: 14px;
+}
+.scrollable-container .scrollable-control {
+  height: 100%;
+  line-height: 100%;
+  font-size: 28px;
+}
+.scrollable-container .scrollable-controls-left {
+  float: left;
+  margin-left: -100%;
+}
+.scrollable-container .scrollable-controls-right {
+  float: right;
+  margin-left: -100%;
+}
+.scrollable-container .scrollable-control {
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 28px;
+  display: block;
+}
+.scrollable-container.scrollable-medium .scrollable-inner-container-right {
+  margin-right: 22px;
+}
+.scrollable-container.scrollable-medium .scrollable-inner-container-left {
+  margin-left: 22px;
+}
+.scrollable-container.scrollable-medium .scrollable-controls {
+  width: 22px;
+}
+.scrollable-container.scrollable-medium .scrollable-control {
+  height: 106px;
+  line-height: 106px;
+  font-size: 60px;
+}
+.scrollable-container.scrollable-large .scrollable-inner-container-right {
+  margin-right: 36px;
+}
+.scrollable-container.scrollable-large .scrollable-inner-container-left {
+  margin-left: 36px;
+}
+.scrollable-container.scrollable-large .scrollable-controls {
+  width: 36px;
+}
+.scrollable-container.scrollable-large .scrollable-control {
+  height: 205px;
+  line-height: 205px;
+  font-size: 100px;
+}
+.scrollable-container .scrollable-controls-grey {
+  background-color: #ededed;
+}
+.scrollable-container .scrollable-grey {
+  color: #cecece;
+}
+.scrollable-container .scrollable-scroll-enabled {
+  color: #ed7900;
+}
+.scrollable-container .scrollable-contents {
+  overflow: hidden;
+}

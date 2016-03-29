@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PDFDocumentWriter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="RepositoryFind" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select StatementKey,Statement from dbo.uiStatement where Version = ( select max(Version) from dbo.uiStatement where ApplicationName = @Application and StatementName = @StatementName ) and ApplicationName = @Application and StatementName = @StatementName</Value>
+    </Setting>
+    <Setting Name="RepositoryUpdateLastAccessedDate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">update dbo.uiStatement set LastAccessedDate = @LastAccessedDate where StatementKey = @StatementKey</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

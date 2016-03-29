@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC3A30CF-7499-41CB-9259-2219FBE939BA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Logging.Loggers.MessageBus</RootNamespace>
+    <AssemblyName>SAHL.Core.Logging.Loggers.MessageBus</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IMessageBusLoggerConfigurationProvider.cs" />
+    <Compile Include="MessageBusLoggerConfigurationProvider.cs" />
+    <Compile Include="Messages\BaseMessage.cs" />
+    <Compile Include="Messages\IBaseMessage.cs" />
+    <Compile Include="Messages\Logging\ILoggingMessage.cs" />
+    <Compile Include="Messages\Logging\LoggingMessage.cs" />
+    <Compile Include="Messages\Metrics\IMetricMessage.cs" />
+    <Compile Include="Messages\Metrics\InstantaneousValueMetricMessage.cs" />
+    <Compile Include="Messages\Metrics\LatencyMetricMessage.cs" />
+    <Compile Include="Messages\Metrics\MetricMessage.cs" />
+    <Compile Include="Messages\Metrics\ThroughputMetricMessage.cs" />
+    <Compile Include="Messages\Metrics\TimeUnit.cs" />
+    <Compile Include="Messages\Metrics\TimeUnitReference.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Messaging.Shared\SAHL.Core.Messaging.Shared.csproj">
+      <Project>{5b05aefb-2351-4393-8f9b-1ab0aa926d45}</Project>
+      <Name>SAHL.Core.Messaging.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging\SAHL.Core.Messaging.csproj">
+      <Project>{87639fd7-2e47-44a6-997c-b28b497d9b2d}</Project>
+      <Name>SAHL.Core.Messaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

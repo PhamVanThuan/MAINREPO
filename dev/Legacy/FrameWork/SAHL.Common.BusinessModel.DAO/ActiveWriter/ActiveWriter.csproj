@@ -1,0 +1,793 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7094528-94C1-4C81-8EFE-17633D7964D5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Common.BusinessModel</RootNamespace>
+    <AssemblyName>ActiveWriter</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <None Include="ACBBank.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="ACBBank.actiw.diagram">
+      <DependentUpon>ACBBank.actiw</DependentUpon>
+    </None>
+    <None Include="ACBBranch.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>ACBBranch.cs</LastGenOutput>
+    </None>
+    <None Include="ACBBranch.actiw.diagram">
+      <DependentUpon>ACBBranch.actiw</DependentUpon>
+    </None>
+    <None Include="ACBType.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>ACBType.cs</LastGenOutput>
+    </None>
+    <None Include="ACBType.actiw.diagram">
+      <DependentUpon>ACBType.actiw</DependentUpon>
+    </None>
+    <None Include="Account.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Account.cs</LastGenOutput>
+    </None>
+    <None Include="Account.actiw.diagram">
+      <DependentUpon>Account.actiw</DependentUpon>
+    </None>
+    <None Include="AccountAttorneyInvoice.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>AccountAttorneyInvoice.cs</LastGenOutput>
+    </None>
+    <None Include="AccountAttorneyInvoice.actiw.diagram">
+      <DependentUpon>AccountAttorneyInvoice.actiw</DependentUpon>
+    </None>
+    <None Include="AccountStatus.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>AccountStatus.cs</LastGenOutput>
+    </None>
+    <None Include="AccountStatus.actiw.diagram">
+      <DependentUpon>AccountStatus.actiw</DependentUpon>
+    </None>
+    <None Include="ActiveWriter1.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="ActiveWriter1.actiw.diagram">
+      <DependentUpon>ActiveWriter1.actiw</DependentUpon>
+    </None>
+    <None Include="CAP.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>CAP.cs</LastGenOutput>
+    </None>
+    <None Include="CAP.actiw.diagram">
+      <DependentUpon>CAP.actiw</DependentUpon>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="CourtDetails.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>CourtDetails.cs</LastGenOutput>
+    </None>
+    <None Include="CourtDetails.actiw.diagram">
+      <DependentUpon>CourtDetails.actiw</DependentUpon>
+    </None>
+    <None Include="DebtCounsellingMigration.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>DebtCounsellingMigration.cs</LastGenOutput>
+    </None>
+    <None Include="DebtCounsellingMigration.actiw.diagram">
+      <DependentUpon>DebtCounsellingMigration.actiw</DependentUpon>
+    </None>
+    <None Include="DebtCounselling.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>DebtCounselling.cs</LastGenOutput>
+    </None>
+    <None Include="DebtCounselling.actiw.diagram">
+      <DependentUpon>DebtCounselling.actiw</DependentUpon>
+    </None>
+    <None Include="Audit.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Audit.cs</LastGenOutput>
+    </None>
+    <None Include="Audit.actiw.diagram">
+      <DependentUpon>Audit.actiw</DependentUpon>
+    </None>
+    <None Include="Basel.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="Basel.actiw.diagram">
+      <DependentUpon>Basel.actiw</DependentUpon>
+    </None>
+    <None Include="CampaignDefinition.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>CampaignDefinition.cs</LastGenOutput>
+    </None>
+    <None Include="CampaignDefinition.actiw.diagram">
+      <DependentUpon>CampaignDefinition.actiw</DependentUpon>
+    </None>
+    <None Include="ADUser.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="ADUser.actiw.diagram">
+      <DependentUpon>ADUser.actiw</DependentUpon>
+    </None>
+    <None Include="BankAccount.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>BankAccount.cs</LastGenOutput>
+    </None>
+    <None Include="BankAccount.actiw.diagram">
+      <DependentUpon>BankAccount.actiw</DependentUpon>
+    </None>
+    <None Include="CBOMenu.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="CBOMenu.actiw.diagram">
+      <DependentUpon>CBOMenu.actiw</DependentUpon>
+    </None>
+    <None Include="CitizenType.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>CitizenType.cs</LastGenOutput>
+    </None>
+    <None Include="CitizenType.actiw.diagram">
+      <DependentUpon>CitizenType.actiw</DependentUpon>
+    </None>
+    <None Include="Condition.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Condition.cs</LastGenOutput>
+    </None>
+    <None Include="Condition.actiw.diagram">
+      <DependentUpon>Condition.actiw</DependentUpon>
+    </None>
+    <None Include="ContextMenu.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="ContextMenu.actiw.diagram">
+      <DependentUpon>ContextMenu.actiw</DependentUpon>
+    </None>
+    <None Include="DisbursementLoanTransaction.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>DisbursementLoanTransaction.cs</LastGenOutput>
+    </None>
+    <None Include="DisbursementLoanTransaction.actiw.diagram">
+      <DependentUpon>DisbursementLoanTransaction.actiw</DependentUpon>
+    </None>
+    <None Include="Education.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Education.cs</LastGenOutput>
+    </None>
+    <None Include="Education.actiw.diagram">
+      <DependentUpon>Education.actiw</DependentUpon>
+    </None>
+    <None Include="ExternalRole.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>ExternalRole.cs</LastGenOutput>
+    </None>
+    <None Include="ExternalRole.actiw.diagram">
+      <DependentUpon>ExternalRole.actiw</DependentUpon>
+    </None>
+    <None Include="Feature.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="Feature.actiw.diagram">
+      <DependentUpon>Feature.actiw</DependentUpon>
+    </None>
+    <None Include="FeatureGroup.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="FeatureGroup.actiw.diagram">
+      <DependentUpon>FeatureGroup.actiw</DependentUpon>
+    </None>
+    <None Include="Gender.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Gender.cs</LastGenOutput>
+    </None>
+    <None Include="Gender.actiw.diagram">
+      <DependentUpon>Gender.actiw</DependentUpon>
+    </None>
+    <None Include="GeneralStatus.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="GeneralStatus.actiw.diagram">
+      <DependentUpon>GeneralStatus.actiw</DependentUpon>
+    </None>
+    <None Include="GenericType.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="GenericType.actiw.diagram">
+      <DependentUpon>GenericType.actiw</DependentUpon>
+    </None>
+    <None Include="InputGenericType.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="InputGenericType.actiw.diagram">
+      <DependentUpon>InputGenericType.actiw</DependentUpon>
+    </None>
+    <None Include="Language.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Language.cs</LastGenOutput>
+    </None>
+    <None Include="Language.actiw.diagram">
+      <DependentUpon>Language.actiw</DependentUpon>
+    </None>
+    <None Include="LegalEntity.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>LegalEntity.cs</LastGenOutput>
+    </None>
+    <None Include="LegalEntity.actiw.diagram">
+      <DependentUpon>LegalEntity.actiw</DependentUpon>
+    </None>
+    <None Include="LegalEntityOrganisationStructure.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>LegalEntityOrganisationStructure.cs</LastGenOutput>
+    </None>
+    <None Include="LegalEntityOrganisationStructure.actiw.diagram">
+      <DependentUpon>LegalEntityOrganisationStructure.actiw</DependentUpon>
+    </None>
+    <None Include="LegalEntityRole.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>LegalEntityRole.cs</LastGenOutput>
+    </None>
+    <None Include="LegalEntityRole.actiw.diagram">
+      <DependentUpon>LegalEntityRole.actiw</DependentUpon>
+    </None>
+    <None Include="MaritalStatus.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>MaritalStatus.cs</LastGenOutput>
+    </None>
+    <None Include="MaritalStatus.actiw.diagram">
+      <DependentUpon>MaritalStatus.actiw</DependentUpon>
+    </None>
+    <None Include="Offer.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Offer.cs</LastGenOutput>
+    </None>
+    <None Include="Offer.actiw.diagram">
+      <DependentUpon>Offer.actiw</DependentUpon>
+    </None>
+    <None Include="OfferInformationLife.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>OfferInformationLife.cs</LastGenOutput>
+    </None>
+    <None Include="OfferInformationLife.actiw.diagram">
+      <DependentUpon>OfferInformationLife.actiw</DependentUpon>
+    </None>
+    <None Include="OfferInsuranceSurvey.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>OfferInsuranceSurvey.cs</LastGenOutput>
+    </None>
+    <None Include="OfferInsuranceSurvey.actiw.diagram">
+      <DependentUpon>OfferInsuranceSurvey.actiw</DependentUpon>
+    </None>
+    <None Include="OrganisationStructure.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="OrganisationStructure.actiw.diagram">
+      <DependentUpon>OrganisationStructure.actiw</DependentUpon>
+    </None>
+    <None Include="OrganisationStructureOriginationSource.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="OrganisationStructureOriginationSource.actiw.diagram">
+      <DependentUpon>OrganisationStructureOriginationSource.actiw</DependentUpon>
+    </None>
+    <None Include="OrganisationType.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="OrganisationType.actiw.diagram">
+      <DependentUpon>OrganisationType.actiw</DependentUpon>
+    </None>
+    <None Include="OriginationSource.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>OriginationSource.cs</LastGenOutput>
+    </None>
+    <None Include="OriginationSource.actiw.diagram">
+      <DependentUpon>OriginationSource.actiw</DependentUpon>
+    </None>
+    <None Include="OriginationSourceProduct.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>OriginationSourceProduct.cs</LastGenOutput>
+    </None>
+    <None Include="OriginationSourceProduct.actiw.diagram">
+      <DependentUpon>OriginationSourceProduct.actiw</DependentUpon>
+    </None>
+    <None Include="PopulationGroup.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>PopulationGroup.cs</LastGenOutput>
+    </None>
+    <None Include="PopulationGroup.actiw.diagram">
+      <DependentUpon>PopulationGroup.actiw</DependentUpon>
+    </None>
+    <None Include="Product.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Product.cs</LastGenOutput>
+    </None>
+    <None Include="Product.actiw.diagram">
+      <DependentUpon>Product.actiw</DependentUpon>
+    </None>
+    <None Include="Proposal.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Proposal.cs</LastGenOutput>
+    </None>
+    <None Include="Proposal.actiw.diagram">
+      <DependentUpon>Proposal.actiw</DependentUpon>
+    </None>
+    <None Include="Regent.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Regent.cs</LastGenOutput>
+    </None>
+    <None Include="Regent.actiw.diagram">
+      <DependentUpon>Regent.actiw</DependentUpon>
+    </None>
+    <None Include="ResidenceStatus.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>ResidenceStatus.cs</LastGenOutput>
+    </None>
+    <None Include="ResidenceStatus.actiw.diagram">
+      <DependentUpon>ResidenceStatus.actiw</DependentUpon>
+    </None>
+    <None Include="Rules.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Rules.cs</LastGenOutput>
+    </None>
+    <None Include="Rules.actiw.diagram">
+      <DependentUpon>Rules.actiw</DependentUpon>
+    </None>
+    <None Include="RuleStuff.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>RuleStuff.cs</LastGenOutput>
+    </None>
+    <None Include="RuleStuff.actiw.diagram">
+      <DependentUpon>RuleStuff.actiw</DependentUpon>
+    </None>
+    <None Include="sahldb_transactions.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>sahldb_transactions.cs</LastGenOutput>
+    </None>
+    <None Include="sahldb_transactions.actiw.diagram">
+      <DependentUpon>sahldb_transactions.actiw</DependentUpon>
+    </None>
+    <None Include="Salutation.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Salutation.cs</LastGenOutput>
+    </None>
+    <None Include="Salutation.actiw.diagram">
+      <DependentUpon>Salutation.actiw</DependentUpon>
+    </None>
+    <None Include="SuperLo.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>SuperLo.cs</LastGenOutput>
+    </None>
+    <None Include="SuperLo.actiw.diagram">
+      <DependentUpon>SuperLo.actiw</DependentUpon>
+    </None>
+    <None Include="Valuation.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Valuation.cs</LastGenOutput>
+    </None>
+    <None Include="Valuation.actiw.diagram">
+      <DependentUpon>Valuation.actiw</DependentUpon>
+    </None>
+    <None Include="Workflow.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>Workflow.cs</LastGenOutput>
+    </None>
+    <None Include="Workflow.actiw.diagram">
+      <DependentUpon>Workflow.actiw</DependentUpon>
+    </None>
+    <None Include="X2Activity.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2Activity.cs</LastGenOutput>
+    </None>
+    <None Include="X2Activity.actiw.diagram">
+      <DependentUpon>X2Activity.actiw</DependentUpon>
+    </None>
+    <None Include="X2Form.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2Form.cs</LastGenOutput>
+    </None>
+    <None Include="X2Form.actiw.diagram">
+      <DependentUpon>X2Form.actiw</DependentUpon>
+    </None>
+    <None Include="X2LifeOrigination.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2LifeOrigination.cs</LastGenOutput>
+    </None>
+    <None Include="X2LifeOrigination.actiw.diagram">
+      <DependentUpon>X2LifeOrigination.actiw</DependentUpon>
+    </None>
+    <None Include="X2Process.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2Process.cs</LastGenOutput>
+    </None>
+    <None Include="X2Process.actiw.diagram">
+      <DependentUpon>X2Process.actiw</DependentUpon>
+    </None>
+    <None Include="X2ScheduledActivity.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2ScheduledActivity.cs</LastGenOutput>
+    </None>
+    <None Include="X2ScheduledActivity.actiw.diagram">
+      <DependentUpon>X2ScheduledActivity.actiw</DependentUpon>
+    </None>
+    <None Include="X2SecurityGroup.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2SecurityGroup.cs</LastGenOutput>
+    </None>
+    <None Include="X2SecurityGroup.actiw.diagram">
+      <DependentUpon>X2SecurityGroup.actiw</DependentUpon>
+    </None>
+    <None Include="X2State.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2State.cs</LastGenOutput>
+    </None>
+    <None Include="TranslatableItem.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>TranslatableItem.cs</LastGenOutput>
+    </None>
+    <None Include="TranslatableItem.actiw.diagram">
+      <DependentUpon>TranslatableItem.actiw</DependentUpon>
+    </None>
+    <None Include="UserOrganisationStructure.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+    </None>
+    <None Include="UserOrganisationStructure.actiw.diagram">
+      <DependentUpon>UserOrganisationStructure.actiw</DependentUpon>
+    </None>
+    <None Include="X2State.actiw.diagram">
+      <DependentUpon>X2State.actiw</DependentUpon>
+    </None>
+    <None Include="X2WorkFlow.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2WorkFlow.cs</LastGenOutput>
+    </None>
+    <None Include="X2.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2.cs</LastGenOutput>
+    </None>
+    <None Include="X2.actiw.diagram">
+      <DependentUpon>X2.actiw</DependentUpon>
+    </None>
+    <None Include="X2Instance.actiw">
+      <Generator>ActiveWriterCodeGenerator</Generator>
+      <LastGenOutput>X2Instance.cs</LastGenOutput>
+    </None>
+    <None Include="X2Instance.actiw.diagram">
+      <DependentUpon>X2Instance.actiw</DependentUpon>
+    </None>
+    <None Include="X2WorkFlow.actiw.diagram">
+      <DependentUpon>X2WorkFlow.actiw</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACBBank.cs" />
+    <Compile Include="ACBBranch.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACBBranch.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="ACBType.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ACBType.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Account.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Account.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="AccountAttorneyInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountAttorneyInvoice.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="AccountStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountStatus.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="CAP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CAP.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="CourtDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CourtDetails.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="DebtCounsellingMigration.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DebtCounsellingMigration.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Audit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Audit.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="CampaignDefinition.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CampaignDefinition.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="ADUser.cs" />
+    <Compile Include="BankAccount.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BankAccount.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="CBOMenu.cs" />
+    <Compile Include="CitizenType.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CitizenType.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Condition.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Condition.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="ContextMenu.cs" />
+    <Compile Include="DebtCounselling.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DebtCounselling.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="DisbursementLoanTransaction.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisbursementLoanTransaction.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Education.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Education.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalRole.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExternalRole.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Feature.cs" />
+    <Compile Include="FeatureGroup.cs" />
+    <Compile Include="Gender.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gender.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralStatus.cs" />
+    <Compile Include="GenericType.cs" />
+    <Compile Include="InputGenericType.cs" />
+    <Compile Include="Language.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Language.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="LegalEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LegalEntity.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="LegalEntityOrganisationStructure.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LegalEntityOrganisationStructure.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="LegalEntityRole.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LegalEntityRole.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="MaritalStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MaritalStatus.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Offer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Offer.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="OfferInformationLife.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OfferInformationLife.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="OfferInsuranceSurvey.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OfferInsuranceSurvey.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="OrganisationStructure.cs" />
+    <Compile Include="OrganisationStructureOriginationSource.cs" />
+    <Compile Include="OrganisationType.cs" />
+    <Compile Include="OriginationSource.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OriginationSource.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="OriginationSourceProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OriginationSourceProduct.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="PopulationGroup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PopulationGroup.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Product.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Proposal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proposal.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Regent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Regent.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="ResidenceStatus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResidenceStatus.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Rules.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rules.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="RuleStuff.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RuleStuff.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="sahldb_transactions.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sahldb_transactions.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Salutation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Salutation.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="SuperLo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SuperLo.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Valuation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Valuation.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="Workflow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Workflow.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2Activity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2Activity.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2Form.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2Form.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2LifeOrigination.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2LifeOrigination.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2Process.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2Process.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2ScheduledActivity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2ScheduledActivity.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2SecurityGroup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2SecurityGroup.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2State.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2State.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="TranslatableItem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TranslatableItem.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="UserOrganisationStructure.cs" />
+    <Compile Include="X2WorkFlow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2WorkFlow.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2.actiw</DependentUpon>
+    </Compile>
+    <Compile Include="X2Instance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>X2Instance.actiw</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Castle.ActiveRecord, Version=0.0.1.3, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.0.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Nullables, Version=2.0.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\Nullables.dll</HintPath>
+    </Reference>
+    <Reference Include="Nullables.NHibernate, Version=2.0.0.1001, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\Nullables.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+<div id="tagButtonSet" class="subProcessContainer button-set">
+    <button ng-repeat="tag in allTags" ng-click="tagFilterSelected(tag,$event)" class="{{tag.toggle}} task-wrapper {{tag.activeClass}}" draggable dragItem="dragItem()" 
+        ng-mousedown="tagFilterStartedDrag(tag)"> {{tag.Caption}}
+        <div class="corner-wrapper" ng-click="tagFilterSelected(tag,$event)" ng-mousedown="tagFilterStartedDrag(tag)">
+            <div class="triangle-topright" style="color: {{tag.Style['color']}}">
+                
+            </div>
+        </div>
+    </button>                    
+</div>
+<div id="tagBin" droppable drop="dropTag()">                 
+        Drop tags here to delete them...
+</div>

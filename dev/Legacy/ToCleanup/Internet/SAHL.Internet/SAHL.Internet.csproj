@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08AAAF9F-F6D2-432E-8AC8-ECB339F80C05}</ProjectGuid>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SAHL.Internet</AssemblyName>
+    <RootNamespace>SAHL.Internet</RootNamespace>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>Bin\SAHL.Internet.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Components\Calculators\Scripts\AffordabilityCalculator.js" />
+    <EmbeddedResource Include="Components\Calculators\Scripts\Input.js" />
+    <EmbeddedResource Include="Components\Calculators\Scripts\GeneralCalculator.js" />
+    <EmbeddedResource Include="Components\Calculators\Scripts\ApplicationForm.js" />
+    <Content Include="Components\Other\ContactMeForm.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <EmbeddedResource Include="Components\Other\Scripts\ContactMeForm.js" />
+    <Content Include="Components\Other\SendQ1Email.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Components\Survey\Survey.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="SendQ1MarketingMail.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Survey.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Default.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="images\1.png" />
+    <Content Include="images\1999.gif" />
+    <Content Include="images\1x1.GIF" />
+    <Content Include="images\2.png" />
+    <Content Include="images\2000.gif" />
+    <Content Include="images\2001.gif" />
+    <Content Include="images\2002.gif" />
+    <Content Include="images\2003.gif" />
+    <Content Include="images\2004.gif" />
+    <Content Include="images\2005.gif" />
+    <Content Include="images\2006.gif" />
+    <Content Include="images\2007.gif" />
+    <Content Include="images\2008.gif" />
+    <Content Include="images\action.gif" />
+    <Content Include="images\action_bottom.gif" />
+    <Content Include="images\action_delete.gif" />
+    <Content Include="images\action_down.gif" />
+    <Content Include="images\action_export.gif" />
+    <Content Include="images\action_help.gif" />
+    <Content Include="images\action_import.gif" />
+    <Content Include="images\action_move.gif" />
+    <Content Include="images\action_print.gif" />
+    <Content Include="images\action_refresh.gif" />
+    <Content Include="images\action_right.gif" />
+    <Content Include="images\action_rss.gif" />
+    <Content Include="images\action_settings.gif" />
+    <Content Include="images\action_top.gif" />
+    <Content Include="images\action_up.gif" />
+    <Content Include="images\add.gif" />
+    <Content Include="images\banner.gif" />
+    <Content Include="images\begin.gif" />
+    <Content Include="images\bevel.gif" />
+    <Content Include="images\bevel_blue.gif" />
+    <Content Include="images\black-dot.gif" />
+    <Content Include="images\bottom-left.gif" />
+    <Content Include="images\bottom-right.gif" />
+    <Content Include="images\bottom-tile.gif" />
+    <Content Include="images\bottom.gif" />
+    <Content Include="images\breadcrumb.gif" />
+    <Content Include="images\calendar.png" />
+    <Content Include="images\cancel.gif" />
+    <Content Include="images\cancel2.gif" />
+    <Content Include="images\captcha.jpg" />
+    <Content Include="images\cart.gif" />
+    <Content Include="images\checked.gif" />
+    <Content Include="images\collapse.gif" />
+    <Content Include="images\copy.gif" />
+    <Content Include="images\dbldn.gif" />
+    <Content Include="images\dblup.gif" />
+    <Content Include="images\delete.gif" />
+    <Content Include="images\dn.gif" />
+    <Content Include="images\dnlt.gif" />
+    <Content Include="images\dnnanim.gif" />
+    <Content Include="images\dnrt.gif" />
+    <Content Include="images\edit.gif" />
+    <Content Include="images\edit_pen.gif" />
+    <Content Include="images\eip_edit.gif" />
+    <Content Include="images\eip_save.gif" />
+    <Content Include="images\eip_toolbar.gif" />
+    <Content Include="images\end.gif" />
+    <Content Include="images\expand.gif" />
+    <Content Include="images\ffwd.gif" />
+    <Content Include="images\file.gif" />
+    <Content Include="images\folder.gif" />
+    <Content Include="images\folderblank.gif" />
+    <Content Include="images\folderclosed.gif" />
+    <Content Include="images\folderminus.gif" />
+    <Content Include="images\folderopen.gif" />
+    <Content Include="images\folderplus.gif" />
+    <Content Include="images\folderup.gif" />
+    <Content Include="images\frev.gif" />
+    <Content Include="images\frew.gif" />
+    <Content Include="images\fwd.gif" />
+    <Content Include="images\green-ok.gif" />
+    <Content Include="images\help.gif" />
+    <Content Include="images\icon_authentication_16px.gif" />
+    <Content Include="images\icon_authentication_32px.gif" />
+    <Content Include="images\icon_bulkmail_16px.gif" />
+    <Content Include="images\icon_bulkmail_32px.gif" />
+    <Content Include="images\icon_exceptionviewer_16px.gif" />
+    <Content Include="images\icon_filemanager_16px.gif" />
+    <Content Include="images\icon_filemanager_32px.gif" />
+    <Content Include="images\icon_help_32px.gif" />
+    <Content Include="images\icon_hostsettings_16px.gif" />
+    <Content Include="images\icon_hostsettings_32px.gif" />
+    <Content Include="images\icon_hostusers_16px.gif" />
+    <Content Include="images\icon_hostusers_32px.gif" />
+    <Content Include="images\icon_host_16px.gif" />
+    <Content Include="images\icon_host_32px.gif" />
+    <Content Include="images\icon_language_16px.gif" />
+    <Content Include="images\icon_language_32px.gif" />
+    <Content Include="images\icon_lists_16px.gif" />
+    <Content Include="images\icon_lists_32px.gif" />
+    <Content Include="images\icon_moduledefinitions_16px.gif" />
+    <Content Include="images\icon_moduledefinitions_32px.gif" />
+    <Content Include="images\icon_profile_16px.gif" />
+    <Content Include="images\icon_profile_32px.gif" />
+    <Content Include="images\icon_recyclebin_16px.gif" />
+    <Content Include="images\icon_recyclebin_32px.gif" />
+    <Content Include="images\icon_scheduler_16px.gif" />
+    <Content Include="images\icon_scheduler_32px.gif" />
+    <Content Include="images\icon_search_16px.gif" />
+    <Content Include="images\icon_search_32px.gif" />
+    <Content Include="images\icon_securityroles_16px.gif" />
+    <Content Include="images\icon_securityroles_32px.gif" />
+    <Content Include="images\icon_sitelog_16px.gif" />
+    <Content Include="images\icon_sitelog_32px.gif" />
+    <Content Include="images\icon_sitesettings_16px.gif" />
+    <Content Include="images\icon_sitesettings_32px.gif" />
+    <Content Include="images\icon_site_16px.gif" />
+    <Content Include="images\icon_site_32px.gif" />
+    <Content Include="images\icon_skins_16px.gif" />
+    <Content Include="images\icon_skins_32px.gif" />
+    <Content Include="images\icon_solutions_16px.gif" />
+    <Content Include="images\icon_solutions_32px.gif" />
+    <Content Include="images\icon_sql_16px.gif" />
+    <Content Include="images\icon_sql_32px.gif" />
+    <Content Include="images\icon_survey_32px.gif" />
+    <Content Include="images\icon_tabs_16px.gif" />
+    <Content Include="images\icon_tabs_32px.gif" />
+    <Content Include="images\icon_users_16px.gif" />
+    <Content Include="images\icon_users_32px.gif" />
+    <Content Include="images\icon_Vendors_16px.gif" />
+    <Content Include="images\icon_Vendors_32px.gif" />
+    <Content Include="images\icon_viewstats_16px.gif" />
+    <Content Include="images\icon_viewstats_32px.gif" />
+    <Content Include="images\icon_wizard_16px.gif" />
+    <Content Include="images\icon_wizard_32px.gif" />
+    <Content Include="images\left-tile.gif" />
+    <Content Include="images\login.gif" />
+    <Content Include="images\logo.gif" />
+    <Content Include="images\lt.gif" />
+    <Content Include="images\max.gif" />
+    <Content Include="images\menu_down.gif" />
+    <Content Include="images\menu_right.gif" />
+    <Content Include="images\min.gif" />
+    <Content Include="images\minus.gif" />
+    <Content Include="images\minus2.gif" />
+    <Content Include="images\move.gif" />
+    <Content Include="images\node.gif" />
+    <Content Include="images\password.gif" />
+    <Content Include="images\pause.gif" />
+    <Content Include="images\plainbutton.gif" />
+    <Content Include="images\plus.gif" />
+    <Content Include="images\plus2.gif" />
+    <Content Include="images\print.gif" />
+    <Content Include="images\progressbar.gif" />
+    <Content Include="images\pxl-trans.gif" />
+    <Content Include="images\ratingminus.gif" />
+    <Content Include="images\ratingplus.gif" />
+    <Content Include="images\ratingzero.gif" />
+    <Content Include="images\rec.gif" />
+    <Content Include="images\red-error.gif" />
+    <Content Include="images\red.gif" />
+    <Content Include="images\refresh.gif" />
+    <Content Include="images\register.gif" />
+    <Content Include="images\required.gif" />
+    <Content Include="images\reset.gif" />
+    <Content Include="images\restore.gif" />
+    <Content Include="images\rev.gif" />
+    <Content Include="images\rew.gif" />
+    <Content Include="images\right-tile.gif" />
+    <Content Include="images\rss.gif" />
+    <Content Include="images\rt.gif" />
+    <Content Include="images\SAHomeLoans\afford-bottom-arrow-short.gif" />
+    <Content Include="images\SAHomeLoans\afford-bottom-arrow.gif" />
+    <Content Include="images\SAHomeLoans\afford-bottom-arrowOLD.gif" />
+    <Content Include="images\SAHomeLoans\already-value.gif" />
+    <Content Include="images\SAHomeLoans\awards-block.jpg" />
+    <Content Include="images\SAHomeLoans\Buttons\Calc-Apply-Button.jpg" />
+    <Content Include="images\SAHomeLoans\Buttons\CalculateAffordability-Butt.jpg" />
+    <Content Include="images\SAHomeLoans\Buttons\How-Much-Can-I-Save.jpg" />
+    <Content Include="images\SAHomeLoans\Buttons\Submit-Application.jpg" />
+    <Content Include="images\SAHomeLoans\Buttons\What-Can-I-Afford.jpg" />
+    <Content Include="images\SAHomeLoans\buying-title.gif" />
+    <Content Include="images\SAHomeLoans\buying.gif" />
+    <Content Include="images\SAHomeLoans\comp-block.jpg" />
+    <Content Include="images\SAHomeLoans\Comp-Landing-Page.jpg" />
+    <Content Include="images\SAHomeLoans\Contact Us.swf" />
+    <Content Include="images\SAHomeLoans\contact-no-flash.gif" />
+    <Content Include="images\SAHomeLoans\ContactUsFlash.swf" />
+    <Content Include="images\SAHomeLoans\different-title.gif" />
+    <Content Include="images\SAHomeLoans\different.gif" />
+    <Content Include="images\SAHomeLoans\flash.gif" />
+    <Content Include="images\SAHomeLoans\funding-model-image.jpg" />
+    <Content Include="images\SAHomeLoans\furtherLending.gif" />
+    <Content Include="images\SAHomeLoans\GAU-Branch-Locator.jpg" />
+    <Content Include="images\SAHomeLoans\history.swf" />
+    <Content Include="images\SAHomeLoans\historygraph.swf" />
+    <Content Include="images\SAHomeLoans\historyPREVIOUS.swf" />
+    <Content Include="images\SAHomeLoans\home-no-flash.gif" />
+    <Content Include="images\SAHomeLoans\HomeBanner.swf" />
+    <Content Include="images\SAHomeLoans\HomeBannerFlash.swf" />
+    <Content Include="images\SAHomeLoans\HomeBannerOLD.swf" />
+    <Content Include="images\SAHomeLoans\HomeBannerPREVIOUS.swf" />
+    <Content Include="images\SAHomeLoans\HomeImage.jpg" />
+    <Content Include="images\SAHomeLoans\HomeSubNavImages\Financing your home through SA Home Loans.jpg" />
+    <Content Include="images\SAHomeLoans\HomeSubNavImages\Find out more about SA Home Loans.jpg" />
+    <Content Include="images\SAHomeLoans\HomeSubNavImages\Switch to SA Home Loans And Save.jpg" />
+    <Content Include="images\SAHomeLoans\Icons\Calculator.jpg" />
+    <Content Include="images\SAHomeLoans\JPMorgan.gif" />
+    <Content Include="images\SAHomeLoans\KZN-Branch-Locator.jpg" />
+    <Content Include="images\SAHomeLoans\line.swf" />
+    <Content Include="images\SAHomeLoans\lineGeoff 29-Aug.swf" />
+    <Content Include="images\SAHomeLoans\lineOLD.swf" />
+    <Content Include="images\SAHomeLoans\lineTom 25-Aug.swf" />
+    <Content Include="images\SAHomeLoans\SA-Branch-Locator.jpg" />
+    <Content Include="images\SAHomeLoans\sahlaboutanimation.swf" />
+    <Content Include="images\SAHomeLoans\sahlaboutanimationOLD.swf" />
+    <Content Include="images\SAHomeLoans\Scripts\insertflash.js" />
+    <Content Include="images\SAHomeLoans\Standard-Bank.gif" />
+    <Content Include="images\SAHomeLoans\switch.gif" />
+    <Content Include="images\SAHomeLoans\switching-title.gif" />
+    <Content Include="images\save.gif" />
+    <Content Include="images\search.gif" />
+    <Content Include="images\search_go.gif" />
+    <Content Include="images\settings.gif" />
+    <Content Include="images\sortascending.gif" />
+    <Content Include="images\sortdescending.gif" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\stop.gif" />
+    <Content Include="images\synchronize.gif" />
+    <Content Include="images\tabimage.gif" />
+    <Content Include="images\tabimage_blue.gif" />
+    <Content Include="images\tableft.gif" />
+    <Content Include="images\tablogin_blue.gif" />
+    <Content Include="images\tablogin_gray.gif" />
+    <Content Include="images\tabright.gif" />
+    <Content Include="images\textbox-arrow.gif" />
+    <Content Include="images\thumbnail.jpg" />
+    <Content Include="images\top-left.gif" />
+    <Content Include="images\top-right.gif" />
+    <Content Include="images\top-tile.gif" />
+    <Content Include="images\top.gif" />
+    <Content Include="images\trace1.png" />
+    <Content Include="images\trace2.png" />
+    <Content Include="images\unchecked.gif" />
+    <Content Include="images\up.gif" />
+    <Content Include="images\uplt.gif" />
+    <Content Include="images\uprt.gif" />
+    <Content Include="images\userOnline.gif" />
+    <Content Include="images\view.gif" />
+    <Content Include="images\xml.gif" />
+    <Content Include="images\yellow-warning.gif" />
+    <Content Include="Components\Calculators\AffordabilityCalculator.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Components\Calculators\ApplicationForm.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Components\Calculators\ApplicationSummary.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Components\Calculators\GeneralCalculator.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Components\SessionVariables.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="CSS\skin.css" />
+    <Content Include="Menu.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\ControlCollectionExtensions.cs" />
+    <Compile Include="Components\ObjectExtensions.cs" />
+    <Compile Include="Components\Other\ContactMeForm.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Other\ContactMeForm.ascx.designer.cs">
+      <DependentUpon>ContactMeForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Other\SendQ1Email.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Other\SendQ1Email.ascx.designer.cs">
+      <DependentUpon>SendQ1Email.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Survey\SahlSurvey.cs" />
+    <Compile Include="Components\Survey\SahlSurveyAnswer.cs" />
+    <Compile Include="Components\Survey\Survey.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Survey\Survey.ascx.designer.cs">
+      <DependentUpon>Survey.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Other\ErrorHandler.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Other\ErrorHandler.ascx.designer.cs">
+      <DependentUpon>ErrorHandler.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Other\SpectacularAdCampaign.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Other\SpectacularAdCampaign.ascx.designer.cs">
+      <DependentUpon>SpectacularAdCampaign.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Survey\SurveyBase.cs" />
+    <Compile Include="Components\WebServiceBase.cs" />
+    <Compile Include="SendQ1MarketingMail.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Survey.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorHandler.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logging.cs" />
+    <Compile Include="SendMail.cs" />
+    <Compile Include="Spectacular.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Calculators\AffordabilityCalculator.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Calculators\AffordabilityCalculator.ascx.designer.cs">
+      <DependentUpon>AffordabilityCalculator.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Calculators\ApplicationForm.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Calculators\ApplicationForm.ascx.designer.cs">
+      <DependentUpon>ApplicationForm.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Calculators\ApplicationSummary.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Calculators\ApplicationSummary.ascx.designer.cs">
+      <DependentUpon>ApplicationSummary.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Calculators\GeneralCalculator.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Calculators\GeneralCalculator.ascx.designer.cs">
+      <DependentUpon>GeneralCalculator.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Calculators\WebCalculatorBase.cs" />
+    <Compile Include="Components\SAHLWebSession.cs" />
+    <Compile Include="Components\SessionVariables.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\SessionVariables.ascx.designer.cs">
+      <DependentUpon>SessionVariables.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.ascx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AffordabilityCalculator.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationForm.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ApplicationSummary.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewPurchaseCalculator.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SwitchCalculator.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web References\SAHL.Web.Services.SendMail\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAHL.Web.Services.Application\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAHL.Web.Services.Calculators\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAHL.Web.Services.Globals\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SAHL.Web.Services.Survey\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="images\SAHomeLoans\Buttons\Thumbs.db" />
+    <None Include="images\SAHomeLoans\HomeSubNavImages\Thumbs.db" />
+    <None Include="images\SAHomeLoans\Icons\Thumbs.db" />
+    <None Include="images\SAHomeLoans\Thumbs.db" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.SendMail\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.SendMail\SendMail.wsdl" />
+    <None Include="Web References\SAHL.Web.Services.Application\Application.wsdl" />
+    <None Include="Web References\SAHL.Web.Services.Application\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Calculators\Calculators.wsdl" />
+    <Content Include="AffordabilityCalculator.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ApplicationForm.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ApplicationSummary.aspx" />
+    <Content Include="Components\Other\ErrorHandler.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Components\Other\SpectacularAdCampaign.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ErrorPage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ErrorHandler.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="images\SAHomeLoans\Advertising\Spectacular\pxl-trans.gif" />
+    <Content Include="images\SAHomeLoans\Advertising\Spectacular\what_happens_banner.jpg" />
+    <Content Include="images\SAHomeLoans\Buttons\send.jpg" />
+    <Content Include="images\SAHomeLoans\pxl-trans.gif" />
+    <Content Include="Spectacular.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="NewPurchaseCalculator.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="SwitchCalculator.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <None Include="Web References\SAHL.Web.Services.Calculators\Calculators.disco" />
+    <None Include="Web References\SAHL.Web.Services.Calculators\CreditCriteria.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Calculators\CreditDisqualifications.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Calculators\OriginationFees.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Calculators\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Globals\Globals.wsdl" />
+    <None Include="Web References\SAHL.Web.Services.Globals\Globals.disco" />
+    <None Include="Web References\SAHL.Web.Services.Globals\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Application\Application.disco" />
+    <None Include="Web References\SAHL.Web.Services.Survey\ClientQuestionnaire.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Survey\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SAHL.Web.Services.Survey\survey.disco" />
+    <None Include="Web References\SAHL.Web.Services.SendMail\SendMail.disco" />
+    <None Include="Web References\SAHL.Web.Services.Survey\survey.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost/SAHL.Web.Services/Internal/Application.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAHL.Web.Services.Application\</RelPath>
+      <UpdateFromURL>http://localhost/SAHL.Web.Services/Internal/Application.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAHL_Internet_SAHL_Web_Services_Application_Application</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/SAHL.Web.Services/Internal/Calculators.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAHL.Web.Services.Calculators\</RelPath>
+      <UpdateFromURL>http://localhost/SAHL.Web.Services/Internal/Calculators.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAHL_Internet_SAHL_Web_Services_Calculators</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/SAHL.Web.Services/Common/Globals.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAHL.Web.Services.Globals\</RelPath>
+      <UpdateFromURL>http://localhost/SAHL.Web.Services/Common/Globals.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAHL_Internet_SAHL_Web_Services_Globals_Globals</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/SAHL.WEB.SERVICES/Internal/SendMail.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAHL.Web.Services.SendMail\</RelPath>
+      <UpdateFromURL>http://localhost/SAHL.WEB.SERVICES/Internal/SendMail.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAHL_Internet_localhost_SendMail</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost/sahl.web.services/internal/survey.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SAHL.Web.Services.Survey\</RelPath>
+      <UpdateFromURL>http://localhost/sahl.web.services/internal/survey.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SAHL_Internet_SAHL_Web_Services_Survey_Survey</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Components\Internal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

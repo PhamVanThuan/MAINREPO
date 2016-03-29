@@ -1,0 +1,2424 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ApplicationBlocks.UIProcess</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.SessionMoniker">
+            <summary>
+            Internal class used to store session information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionMoniker.IsMonikerValid(System.String)">
+            <summary>
+            Tests a moniker retrieved from context to see if it matches the NavGraphName:CurrentViewName:TaskGuid pattern.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionMoniker.GetFromSession(System.Guid)">
+            <summary>
+            Gets the session moniker related to the specified task.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task). The session moniker for this task will be retrieved.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionMoniker.GetAllFromSession">
+            <summary>
+            Gets all session monikers actually stored in the user session.
+            </summary>
+            <returns>An array of session monikers.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionMoniker.StoreInSession">
+            <summary>
+            Stores the session moniker in the user session.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager">
+            <summary>
+            Provides methods to manipulate WebForm views. 
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.IViewManager">
+            <summary>
+            Represents a view manager. 
+            Each type of application has an associated view manager, making it 
+            easier to add application types.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IViewManager.StoreProperty(System.Guid,System.String,System.Object)">
+            <summary>
+            Stores a property in the view manager. 
+            Each task has its own properties.
+            </summary>
+            <remarks>Property storage is a view manager responsibility.</remarks>
+            <param name="name">The property name.</param>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <param name="value">The property value.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IViewManager.ActivateView(System.String,System.String,Microsoft.ApplicationBlocks.UIProcess.Navigator)">
+            <summary>
+            Activates the specified view.
+            </summary>
+            <param name="previousView">The view currently displayed.</param>
+            <param name="view">The name of the view to be displayed next.</param>
+            <param name="context">The context in which the view is activated.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IViewManager.ActivateView(System.String,System.String,Microsoft.ApplicationBlocks.UIProcess.Navigator,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Activates the specified view.
+            </summary>
+            <param name="previousView">The view currently displayed.</param>
+            <param name="view">The name of the view to be displayed next.</param>
+            <param name="context">The context in which the view is activated.</param>
+            <param name="args">Optional arguments passed to the <code>Initialize</code> method on the view.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IViewManager.IsRequestCurrentView(Microsoft.ApplicationBlocks.UIProcess.IView,System.String)">
+            <summary>
+             Utility method that checks requests to ensure that the requested view and current view match.
+             </summary>
+             <param name="view">The IView requested.</param>
+             <param name="stateViewName">The view name saved in the state.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IViewManager.GetViewNameForCurrentRequest(Microsoft.ApplicationBlocks.UIProcess.IView)">
+            <summary>
+            Utility method that checks the request and gets the view name that corresponds with the request.
+            This is used primarily to enable Back button support.
+            </summary>
+            <param name="currentView"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IViewManager.GetCurrentTasks">
+            <summary>
+            Gets the running tasks in the manager.
+            </summary>
+            <returns>An array with the task identifiers.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IViewManager.GetActiveViewCount">
+            <summary>
+            Gets the number of active views in the manager.
+            </summary>
+            <returns>The count.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.#ctor">
+            <summary>
+            Initializes a new instance of a WebFormViewManager
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.ActivateView(System.String,System.Guid,System.String,System.String)">
+            <summary>
+            Activates a specific view.
+            </summary>
+            <param name="previousView">The view actually displayed.</param>
+            <param name="taskId">An existing task identifier (a GUID associated with the task).</param>
+            <param name="navGraph">A configured navigation graph name.</param>
+            <param name="view">The name of the view to be displayed.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.ActivateView(System.String,System.String,Microsoft.ApplicationBlocks.UIProcess.Navigator,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Activates a specific view.
+            </summary>
+            <param name="previousView">The view actually displayed.</param>		
+            <param name="view">The name of the view to be displayed.</param>
+            <param name="navigator">The navigator requesting the transition.</param>
+            <param name="args">Not used in this implementation of ActivateView.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.ActivateView(System.String,System.String,Microsoft.ApplicationBlocks.UIProcess.Navigator)">
+            <summary>
+            Activates a specific view.
+            </summary>
+            <param name="previousView">The view actually displayed.</param>		
+            <param name="view">The name of the view to be displayed.</param>
+            <param name="navigator">The navigator requesting the transition.</param>		
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.StoreProperty(System.Guid,System.String,System.Object)">
+            <summary>
+            Stores a property in the view manager. 
+            Each task has its own properties.
+            </summary>
+            <remarks>Property storage is a view manager responsibility.</remarks>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <param name="name">The property name.</param>
+            <param name="value">The property value.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.IsRequestCurrentView(Microsoft.ApplicationBlocks.UIProcess.IView,System.String)">
+            <summary>
+            A utility method that checks Web requests to ensure that the requested page and current view match.
+            If a user bookmarks page D, then proceeds to page F, and then returns to the bookmark, the
+            state, when loaded, will have F as the current view.  
+            Any submissions on page D will fail, because the navigation graph may not have appropriate view-navigateResult pairs.
+            Therefore, you should code defensively against this. Check the current page, check the referring page, andc heck the state object's current view.
+            </summary>
+            <param name="view">The next view.</param>
+            <param name="stateViewName">The view saved in the state.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.GetViewNameForCurrentRequest(Microsoft.ApplicationBlocks.UIProcess.IView)">
+            <summary>
+            Returns the name of the view that is being requested by the browser. This method has been implemented
+            to aid in Back button support functionality.
+            </summary>
+            <param name="currentView">View currently executing.</param>
+            <returns>Name of the view requested by browser.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.GetCurrentTasks">
+            <summary>
+            Gets the running tasks in the manager.
+            </summary>
+            <returns>An array with the task identifiers.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.GetActiveView">
+            <summary>
+            Not implemented for WebFormViewManager.
+            </summary>
+            <returns>Null.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormViewManager.GetActiveViewCount">
+            <summary>
+            Not implemented for WebFormViewManager.
+            </summary>
+            <returns>0</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.CryptHelper">
+            <summary>
+            Helper class used to perform encryption/decryption of information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CryptHelper.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the CryptHelper class.
+            </summary>
+            <param name="registryPath">Path to the registry key that contains the key used to
+            perform encryption and decription.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CryptHelper.Encrypt(System.Byte[],System.Byte[])">
+            <summary>
+            Encrypts a stream of bytes by using a TripleDES symmetric algorithm.
+            </summary>
+            <param name="plainValue">Stream of bytes to be encrypted.</param>
+            <param name="key">Symmetric algorithm key.</param>
+            <returns>An encrypted stream of bytes.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CryptHelper.Decrypt(System.Byte[],System.Byte[])">
+            <summary>
+            Decrypts an encrypted stream of bytes by using a TripleDES symmetric algorithm.
+            </summary>
+            <param name="cipherValue">The encrypted stream of bytes to be decrypted.</param>
+            <param name="key">Symmetric algorithm key.</param>
+            <returns>A stream of bytes.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CryptHelper.Encrypt(System.Byte[])">
+            <summary>
+            Encrypts a stream of bytes by using a TripleDES symmetric algorithm.
+            </summary>
+            <param name="plainValue">Stream of bytes to be encrypted.</param>		
+            <returns>An encrypted stream of bytes.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CryptHelper.Decrypt(System.Byte[])">
+            <summary>
+            Decrypts an encrypted stream of bytes by using a TripleDES symmetric algorithm.
+            </summary>
+            <param name="cipherValue">The encrypted stream of bytes to be decrypted.</param>		
+            <returns>A stream of bytes.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ITask">
+            <summary>
+            Defines a Task object that can be passed to UIPManager. This object is used by applications that 
+            must get the task ID for their internal use. For example, if a user logs on and has an associated 
+            shopping cart, when the application redirects to another page, it must retain the task ID to correlate 
+            with the logon.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ITask.Get">
+            <summary>Gets the task ID for the logon.</summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ITask.Create(System.Guid)">
+            <summary>Creates a task ID for the logon. </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.GenericFactory">
+            <summary>
+            Acts as the basic implementation of the multiple factory classes used in UIProcess.
+            UIP needs to create instances based on configuration information for state, state persistence providers, ViewManagers, and so on.
+            UIP has factories for these, and because there is much common code for doing reflection-based activation,
+            it keeps that code in one central place.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GenericFactory.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GenericFactory.Create(Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings)">
+            <summary>
+            Creates an object using the full name type contained in typeSettings.
+            </summary>
+            <param name="typeSettings">A typeSetting object with the needed type information to create a class instance.</param>
+            <returns>An instance of the specified type.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GenericFactory.Create(Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings,System.Object[])">
+            <summary>
+            Creates an object using the full name type contained in typeSettings.
+            </summary>
+            <param name="typeSettings">A typeSetting object with the needed type information to create a class instance.</param>
+            <param name="args">Constructor arguments.</param>
+            <returns>An instance of the specified type.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ViewSettings">
+            <summary>
+            The ViewSettings capture the configuration information for a specific view (a view is a class that implements the 
+            <see cref="T:Microsoft.ApplicationBlocks.UIProcess.IView"/> interface).
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings">
+            <summary>
+            Base class for all providers settings within the UIP configuration settings in the configuration file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings.#ctor">
+            <summary>
+            Overloaded. Default constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Overloaded. Initialized an instance of the ObjectTypeSettings class using the specified configNode.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings.SplitType(System.String)">
+            <summary>
+            Takes the incoming full type string, defined as: 
+            "Microsoft.ApplicationBlocks.UIProcess.WinFormViewManager,   Microsoft.ApplicationBlocks.UIProcess, 
+            		Version=1.0.0.4, Culture=neutral, PublicKeyToken=d69d63db1380c14d"
+             and splits the type into two strings: the typeName and the assemblyName. These are passed as OUT params. 
+             This routine also cleans up any extra white space and throws an exception if the full type string
+             does not have five comma-delimited parts. It expects the true full name, complete with version and publicKeyToken.
+            </summary>
+            <param name="fullType">The full type string defined in the configuration file.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings.Name">
+            <summary>
+            Gets the object name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings.Type">
+            <summary>
+            Gets the object fully qualified type name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings.Assembly">
+            <summary>
+            Gets the object fully qualified assembly name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.#ctor">
+            <summary>
+            Overloaded. Default constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Overloaded. Initialized a new instance of the ViewSettings class using the specified configNode.
+            </summary>
+            /// <param name="configNode">XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.#ctor(System.Xml.XmlNode,System.IFormatProvider)">
+            <summary>
+            Creates an instance of ViewSettings using the specified configNode and IFormatProvider. 
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+            <param name="formatProvider">The IFormatProvider required for globalization.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.Controller">
+            <summary>
+            Gets the controller name related to this view.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.IsStayOpen">
+            <summary>
+            Specifies if the windows should stay open when the Navigate
+            method is invoked.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.IsOpenModal">
+            <summary>
+            Gets a value that indicates if this view is displayed modally.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.LayoutManager">
+            <summary>
+            Gets a value that indicates the layout manager for this view.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.Navigator">
+            <summary>
+            Gets the XPathNavigator that can be used to traverse the XmlNode that defines the view. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.IsFloatable">
+            <summary>
+            Returns true if the view can be a floating window; if not, returns false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.CanHaveFloatingWindows">
+            <summary>
+            Returns true if the view can be a parent for floating windows; if not, returns false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.CustomAttributes">
+            <summary>
+            Gets the collection of custom attributes defined in the app.config. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ViewSettings.ChildNodes">
+            <summary>
+            Gets the child nodes that make up the View element in the app.config.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceProviderSettings">
+            <summary>
+            The StatePersistenceProviderSettings class is a representation of the 
+            state persistence configuration defined in the configuration file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceProviderSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Creates an instance of the StatePersistenceProviderSettings class using the specified configNode.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceProviderSettings.AdditionalAttributes">
+            <summary>
+            Gets the state persistence attributes.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.PresenterBase`1">
+            <summary>
+            UIP base Presenter
+            </summary>
+            <typeparam name="T">The view interface.</typeparam>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.PresenterBase`1.#ctor(`0,Microsoft.ApplicationBlocks.UIProcess.IController)">
+            <summary>
+            PresenterBase Construcutor
+            </summary>
+            <param name="TView">The view this presenter will be managing.</param>
+            <param name="Controller">The controller that controls this presenter.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.SqlServerPersistState">
+            <summary>
+            IStatePersistence SQL Server implementation.
+            This provider uses SQL Server storage to dehydrate and rehydrate State objects.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.IStatePersistence">
+            <summary>
+            This interface defines how State and Task objects can be dehydrated or rehydrated by the Manager object.
+            It allows you to abstract storage so that you can use SQL, file, binary, XML, or whatever.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IStatePersistence.Init(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the provider.
+            </summary>
+            <param name="statePersistenceParameters">The provider settings.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IStatePersistence.Save(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Serializes and saves the state in a specific storage location.
+            </summary>
+            <param name="state">A valid State object.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IStatePersistence.Load(System.Guid)">
+            <summary>
+            Restores and deserializes the state from a specific storage location. 
+            </summary>
+            <param name="taskId">A task identifier (a GUID associated with the task). 
+            This identifier is used to restore a saved state.
+            </param>
+            <remarks>If the task does not exist, then a null value is returned.</remarks>
+            <returns>A valid State object.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IStatePersistence.Remove(System.Guid)">
+            <summary>
+            Deletes a stored state object from a specific storage location. 
+            </summary>
+            <param name="taskId">A task identifier (a GUID associated with the task). 
+            This identifier is used to remove a saved state.
+            </param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SqlServerPersistState.#ctor">
+            <summary>
+            Initializes a new instance of the SqlServerPersistState class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SqlServerPersistState.Init(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            The possible provider configuration attributes are:
+               connectionString: Specifies the database connection string.
+            </summary>
+            <param name="statePersistenceParameters">Collection of configuration information to be used by
+            the persistence provider.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SqlServerPersistState.Save(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Saves the State object in a SQL Server database.
+            </summary>
+            <param name="state">A valid State object.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SqlServerPersistState.Load(System.Guid)">
+            <summary>
+            Loads an existing State object from a SQL Server database.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <returns>A valid State object.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SqlServerPersistState.Remove(System.Guid)">
+            <summary>
+            Removes state information from the database.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task). State information for this task will be removed.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence">
+            <summary>
+            IStatePersistence implementation for isolated storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence.#ctor">
+            <summary>
+            Creates a new instance of an IsolatedStoragePersistence object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence.Init(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Used to pass extra parameters from the configuration file to this instance.
+            </summary>
+            <param name="statePersistenceParameters">Any extra attributes found in the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence.Save(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Saves the State object to isolated storage.
+            </summary>
+            <param name="state">A valid State object.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence.Load(System.Guid)">
+            <summary>
+            Loads the state from isolated storage. 
+            </summary>
+            <param name="taskId">The identifier of the task to load the state for.</param>
+            <returns>A valid State object.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence.Remove(System.Guid)">
+            <summary>
+            Removes (deletes) the State object from isolated storage.
+            </summary>
+            <param name="taskId">The identifier of the task to remove the state for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence.ToByteArray(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Converts a State object to an array of bytes.
+            </summary>
+            <param name="state">The state object to convert.</param>
+            <returns>The array of bytes.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IsolatedStoragePersistence.FromByteArray(System.Byte[])">
+            <summary>
+            Deserializes a byte array into a State object.
+            </summary>
+            <param name="serializedObj">Byte array that will be deserialized into a State object.</param>
+            <returns>A valid State object.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.NavigateEventArgs">
+            <summary>
+            Arguments passed when the NavigateEvent on <code>UIPManager</code> occurs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigateEventArgs.#ctor(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Creates a NavigateEventArgs object that contains the state.
+            </summary>
+            <param name="state">State of the task.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigateEventArgs.State">
+            <summary>
+            The state of the task when the navigate event occurred.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode">
+            <summary>
+            Specifies the expiration modes supported by the state cache in the user process manager.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode.Absolute">
+            <summary>
+            Cache expiration cannot be changed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode.Sliding">
+            <summary>
+            Cache expriation varies.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode.None">
+            <summary>
+            Cache does not expire.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UIPConfiguration">
+            <summary>
+            Helper class to obtain UIP configuration from the configuration file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UIPConfiguration.Config">
+            <summary>
+            Gets the UIP configuration.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UIPException">
+            <summary>
+            The UIP main exception.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPException.#ctor">
+            <summary>
+            Overloaded. Default Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPException.#ctor(System.String)">
+            <summary>
+            Overloaded. Initializes a new UIPException with the specified message.
+            </summary>
+            <param name="msg">Exception message.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPException.#ctor(System.String,System.Exception)">
+            <summary>
+            Overloaded. Initializes a new UIPException with the specified message and inner exception.
+            </summary>
+            <param name="msg">Exception message.</param>
+            <param name="inner">Inner exception.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Deserialization constructor.
+            </summary>
+            <param name="info">Holds all of the data needed to serialize or deserialize an object.</param>
+            <param name="context">The source and destination of a given serialized stream.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPException.GetFirstExceptionMessage(System.Exception)">
+            <summary>
+            Returns the first exception information in an exception's stack trace.
+            </summary>
+            <param name="e">The exception.</param>
+            <returns>The first line in the stack trace.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.IShutdownUIP">
+            <summary>
+            All classes that implement IShutdownUIP can be registered with the 
+            UIPManager. Upon closure of all UIP forms, the Shutdown method will
+            be called.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IShutdownUIP.Shutdown">
+            <summary>
+            Called when UIP shuts down.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings">
+            <summary>
+            Base class that encapsulates information from the configuration file that is common
+            to different types of navigators.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.AttributeIViewManager">
+            <summary>
+            Key used to retrieve the viewManager attribute for this object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.AttributeName">
+            <summary>
+            Key used to retrieve the name attribute for this object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.AttributeState">
+            <summary>
+            Key used to retrieve the state attribute for this object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.AttributeStatePersist">
+            <summary>
+            /// Key used to retrieve the statePersist attribute for this object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.AttributeExpirationMode">
+            <summary>
+            /// Key used to retrieve the cacheExpirationMode attribute for this object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.AttributeExpirationInterval">
+            <summary>
+            /// Key used to retrieve the cacheExpirationInterval attribute for this object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.#ctor">
+            <summary>
+            Creates a NavigatorSettings object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.LoadAttributes(System.Xml.XmlNode)">
+            <summary>
+            Initializes properties based on settings in the configuration file.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.LoadRemainingAttributes(System.Xml.XmlNode)">
+            <summary>
+            Loads the remaining attributes from the configuration file.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.ViewManager">
+            <summary>
+            Gets the IViewManager name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.Name">
+            <summary>
+            Gets the navigation graph name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.State">
+            <summary>
+            Gets the State object type used by this navigation graph.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.StatePersist">
+            <summary>
+            Gets the state persistence provider used by this navigation graph.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.CacheExpirationMode">
+            <summary>
+            Gets the state cache expiration mode.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigatorSettings.CacheExpirationInterval">
+            <summary>
+            Gets the state cache expiration interval.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.CacheEntry">
+            <summary>
+            This class represents an entry in the state cache.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CacheEntry.#ctor(System.Object,System.DateTime)">
+            <summary>
+            Overloaded. Initializes a new CacheEntry class with a value and an expiration time.
+            </summary>
+            <param name="value">The item value.</param>
+            <param name="itemAge">The item age. Specifies that the item expires.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CacheEntry.#ctor(System.Object)">
+            <summary>
+            Overloaded. Initializes a new CacheEntry class that never expires and has a value.
+            </summary>
+            <remarks>The item never expires.</remarks>
+            <param name="value">The item value.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.CacheEntry.IsExpired">
+            <summary>
+            Specifies if the item has expired.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.CacheEntry.Value">
+            <summary>
+            Gets the item value.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.StateCache">
+            <summary>
+            Object used to provide caching services for State objects.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateCache.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateCache.CreateCacheEntry(Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode,System.TimeSpan,System.Object)">
+            <summary>
+            Creates a new cache entry.
+            </summary>
+            <param name="mode">The cache expiration mode.</param>
+            <param name="interval">The cache expiration interval.</param>
+            <param name="cacheValue">The cache value.</param>
+            <returns>A valid CacheEntry object.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateCache.LoadFromCache(System.Guid)">
+            <summary>
+            Looks up a State object from the cache for the specified navigation graph and task ID.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <returns>The State object.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateCache.PutStateInCache(Microsoft.ApplicationBlocks.UIProcess.State,System.String,System.Boolean)">
+            <summary>
+            Stores the state in StateCache.
+            </summary>
+            <param name="state">The state to be cached.</param>
+            <param name="navigationGraph">The name of the navigation graph.</param>
+            <param name="trackResurection">Indicates when to stop tracking the object. If true, the object is tracked after finalization; if false, the object is tracked only until finalization. </param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateCache.PutStateInCache(Microsoft.ApplicationBlocks.UIProcess.State,System.Boolean)">
+            <summary>
+            Stores the state in the StateCache.
+            </summary>
+            <param name="state">The state to be cached.</param>
+            <param name="trackResurection">Indicates when to stop tracking the object. If true, the object is tracked after finalization; if false, the object is tracked only until finalization.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateCache.RemoveFromCache(System.Guid)">
+            <summary>
+            Remove the state for a given task from the StateCache.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.Resource">
+            <summary>
+            Helper class used to manage application resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Resource.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Resource.GetStream(System.String)">
+            <summary>
+            Gets a resource stream with the messages used by the UIP classes.
+            </summary>
+            <param name="name">The resource key.</param>
+            <returns>A resource stream.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Resource.FormatMessage(System.String,System.Object[])">
+            <summary>
+            Formats a message stored in the UIP assembly resource file.
+            </summary>
+            <param name="key">The resource key.</param>
+            <param name="format">The format arguments.</param>
+            <returns>A formatted string.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Resource.ResourceManager">
+            <summary>
+            Gets a resource manager for the assembly resource file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Resource.Item(System.String)">
+            <summary>
+            Gets the message with the specified key from the assembly resource file.
+            </summary>
+            <param name="key">Key of the item to retrieve from the resource file.</param>
+            <returns>Value from the resource file identified by the key.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.Resource.Exceptions">
+            <summary>
+            Class used to expose constants that represent keys in the resource file.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator">
+            <summary>
+            Navigator used when transitions are defined using a NavigationGraph.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.Navigator">
+            <summary>
+            Navigators provide navigation services to controllers, and start tasks.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.SetState(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Used to set the state during construction of a navigator.
+            </summary>
+            <param name="state">State object for this navigator.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.Navigate(System.String)">
+            <summary>
+            Navigates to the next node.
+            </summary>
+            <param name="nextNode">The node or view that will display next.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.GetController(Microsoft.ApplicationBlocks.UIProcess.IView)">
+            <summary>
+            Creates the controller for this view.
+            </summary>
+            <param name="view">The view that needs a controller.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.OnStartTask(System.Object,Microsoft.ApplicationBlocks.UIProcess.StartTaskEventArgs)">
+            <summary>
+            Handles any StartTask events raised by a controller.
+            </summary>
+            <param name="sender">Controller that raised the event.</param>
+            <param name="e">Arguments used by the event handler.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.GetState(Microsoft.ApplicationBlocks.UIProcess.ITask)">
+            <summary>
+            Creates or loads the state for this task.
+            </summary>
+            <param name="task">The task to create or load state for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.GetState(System.Guid)">
+            <summary>
+            Creates or loads state for this task.
+            </summary>
+            <param name="taskId">The identifier of the task to load or create state for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.CreateState">
+            <summary>
+            Creates a State object using the type specified in the configuration file for this navigator.
+            Navigators can override this if they need to create state in a different way.
+            </summary>
+            <returns>The state that was created.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.LoadState(System.Guid)">
+            <summary>
+            Loads a State object using the type specified in the configuration file for this navigator and task ID.
+            Navigators can override this if they need to load state in a different way.
+            </summary>
+            <param name="taskId">The identifier of the task to load the state for.</param>
+            <returns>The state that was created.</returns>		
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Navigator.GetViewNameFromNodeName(System.String)">
+            <summary>
+            Used to retrieve the name of a view from a particular node. Meant to be overriden by derived
+            navigators that need to implement this functionality.
+            </summary>
+            <param name="nodeName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Navigator.ViewManager">
+            <summary>
+            The view manager used. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Navigator.Name">
+            <summary>
+            The name of the navigator.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Navigator.CurrentState">
+            <summary>
+            The current state of the navigator.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Navigator.CacheExpirationMode">
+            <summary>
+            The expiration mode of the state cache for this task.
+            <see cref="P:Microsoft.ApplicationBlocks.UIProcess.Navigator.CacheExpirationMode"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Navigator.CacheExpirationInterval">
+            <summary>
+            The interval used to expire entries in the state cache.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.#ctor(System.String)">
+            <summary>
+            Creates a graph navigator.
+            </summary>
+            <param name="name">The name of the graph navigator in the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.#ctor(System.String,System.Guid)">
+            <summary>
+            Creates a graph navigator that resumes a saved task.
+            </summary>
+            <param name="name">The name of the graph navigator in the configuration file.</param>
+            <param name="taskId">The task ID of a previously saved task.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.CreateViewManager(System.String)">
+            <summary>
+            Creates the view manager for this navigator.
+            </summary>
+            <param name="name">Name of the view manager to create, as defined in the configuration file.</param>
+            <returns>The view manager.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.StartTask">
+            <summary>
+            Starts a new task on the first view.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.StartTask(Microsoft.ApplicationBlocks.UIProcess.ITask,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Resumes an existing task or begins a new one, passing the TaskArgumentsHolder to the controller of the first view.
+            </summary>
+            <param name="task">The task to resume.</param>
+            <param name="holder">The holder for any arguments to pass to the controller of the first view. Can be null.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.StartTask(System.Guid,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Resumes an existing task, passing the TaskArgumentsHolder to the controller of the first view.
+            </summary>
+            <param name="taskId">The identifier of the task to resume.</param>
+            <param name="holder">The holder for any arguments to pass to the controller of the first view. Can be null.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.Navigate(System.String)">
+            <summary>
+            Navigates to the next node in the navigation graph.
+            </summary>
+            <param name="nextNode">The next node.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.ActivateNextView(System.String,System.String)">
+            <summary>
+            Activates the next view.
+            </summary>
+            <param name="previousView">The view currently displayed.</param>
+            <param name="currentView">The name of the view to be displayed next.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.NavigationSettings">
+            <summary>
+            The NavigationSettings from the configuration file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.CacheExpirationMode">
+            <summary>
+            The expiration mode of the state cache for this task.
+            <see cref="P:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.CacheExpirationMode"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.CacheExpirationInterval">
+            <summary>
+            The interval used to expire entries in the state cache.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.GraphNavigator.StartView">
+            <summary>
+            The first view to show as specified in the configuration file.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceFactory">
+            <summary>
+            Abstract factory that creates IStatePersistence types.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceFactory.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceFactory.Create">
+            <summary>
+            Returns the default instance of IStatePersistence.
+            </summary>
+            <returns>An instance of IStatePersistence.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceFactory.Create(System.String)">
+            <summary>
+            Returns an instance of IStatePersistence according to the navigator used.
+            This is an optimization to avoid having to look up type information in the config object each time; instead, it uses the navigator name.
+            </summary>
+            <param name="navigator">The navigator name.</param>
+            <returns>An instance of IStatePersistence of the specified type. It gets this from the internal cache, if possible.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceFactory.Create(Microsoft.ApplicationBlocks.UIProcess.StatePersistenceProviderSettings)">
+            <summary>
+            Returns an instance of <see cref="T:Microsoft.ApplicationBlocks.UIProcess.IStatePersistence"/>
+            for the given <see cref="T:Microsoft.ApplicationBlocks.UIProcess.StatePersistenceProviderSettings"/>.
+            </summary>
+            <param name="providerSettings">The settings for  state persistence.</param>
+            <returns>The instance of IStatePersistence. It gets this from the internal cache, if possible.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Factories.PresenterFactory.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.Factories.PresenterFactory.Create(Microsoft.ApplicationBlocks.UIProcess.IView,Microsoft.ApplicationBlocks.UIProcess.ControllerBase)">
+            <summary>
+            Creates the controller for the view.
+            </summary>
+            <param name="view">The name of the view in the Views section of the configuration file.</param>
+            <param name="navigator">The navigator that the controller uses for navigation services.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.IView.Initialize(Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder,Microsoft.ApplicationBlocks.UIProcess.ViewSettings)">
+            <summary>
+            Called after the view manager instantiates the view, but before calling <code>Show().</code>
+            </summary>
+            <param name="args">Optional arguments passed in when starting the task.</param>
+            <param name="settings">The ViewSettings.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.IView.ViewName">
+            <summary>
+            Gets the view name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator">
+            <summary>
+            Provides navigation services for Windows Forms applications with UserControls.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.#ctor(System.String)">
+            <summary>
+            Creates a HostedControlsNavigator.
+            </summary>
+            <param name="name">The name of the navigator from the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.Navigate(System.String)">
+            <summary>
+            Navigates to the next node or view.
+            </summary>
+            <param name="nextNode">The node or view to navigate to.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.StartTask(Microsoft.ApplicationBlocks.UIProcess.ITask)">
+            <summary>
+            Starts or resumes a task.
+            </summary>
+            <param name="task">The task to start or resume.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.StartTask(Microsoft.ApplicationBlocks.UIProcess.ITask,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Starts or resumes a task, and passes optional arguments to the first view.
+            </summary>
+            <param name="task">The task to start or resume.</param>
+            <param name="args">Optional arguments to pass to the first view.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.StartTask(System.Guid,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Resumes a saved task and passes optional arguments to the first view.
+            </summary>
+            <param name="taskId">The task identifier of the task to resume.</param>
+            <param name="args">Optional arguments to pass to the first view.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.GetViewNameFromNodeName(System.String)">
+            <summary>
+            Returns the name of a child view from the name of a node.
+            </summary>
+            <param name="nodeName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.CacheExpirationMode">
+            <summary>
+            The expiration mode of the state cache for this task.
+            <see cref="P:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.CacheExpirationMode"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UserControlsNavigator.CacheExpirationInterval">
+            <summary>
+            The interval used to expire entries in the state cache.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.SessionStatePersistence">
+            <summary>
+            This class provides simple session-based state persistence for Web applications.  
+            It pushes state directly to session variables keyed to the task GUID.
+            It is useful for applications where state might be ephemeral and not worth saving in a SQL database. 
+            It is also useful for Web farm applications, where multiple front-end servers need to see the same state.
+            In this case, ASP Session would be used either as a state server OR in SQL session mode, and this 
+            persistence provider would piggyback on ASP Session.
+            By using this class, you can easily migrate applications to non-ASP by replacing the 
+            state persistence provider (and by completing other normal, necessary changes).
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionStatePersistence.#ctor">
+            <summary>
+            Creates a new instance of a session state persistence provider.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionStatePersistence.Init(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Initializes the state persistence provider.
+            </summary>
+            <param name="statePersistenceParameters">The provider settings.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionStatePersistence.Load(System.Guid)">
+            <summary>
+            Loads state from the Session object.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task). The state of this task will be loaded.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionStatePersistence.Save(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Saves state to the Session object.
+            </summary>
+            <param name="inState">The state to save.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SessionStatePersistence.Remove(System.Guid)">
+            <summary>
+            Removes (deletes) state from the Session object.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task). The state of this task will be removed.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings">
+            <summary>
+            The SharedTransitionSettings class is a representation of the 
+            shared transition configuration defined in the configuration file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings.#ctor">
+            <summary>
+            Overloaded. Initializes a new instance of the SharedTransitionSettings class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings.#ctor(System.String,System.String)">
+            <summary>
+            Overloaded. Initializes a new instance of the SharedTransitionSettings class using the passed in navigateValue and viewName.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Overloaded. Initializes an instance of the SharedTransitionSettings class using the specified configNode.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings.NavigateValue">
+            <summary>
+            Gets the navigation value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings.View">
+            <summary>
+            Gets or sets the view name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UIPManager">
+            <summary>
+            This class allows the UIPManager to dispense controllers to views, 
+            sense when controllers have finished, spawn new views,
+            and coordinate tasks.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPManager.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPManager.RegisterShutdown(Microsoft.ApplicationBlocks.UIProcess.IShutdownUIP)">
+            <summary>
+            Adds a shutdown listener that is invoked when all views have been closed.
+            </summary>
+            <param name="shutdownListener">The shutdown listener.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPManager.StartNavigationTask(System.String)">
+            <summary>
+            Starts a UIProcess for navigation.
+            </summary>
+            <param name="navGraph">The name of the navigationGraph element in app.config. </param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPManager.InvokeEventHandlers(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Called by all classes that wish to alert all listeners for NavigateEvent that navigation has occurred.
+            </summary>
+            <param name="state">The current state.</param>
+        </member>
+        <member name="E:Microsoft.ApplicationBlocks.UIProcess.UIPManager.NavigateEvent">
+            <summary>
+            Occurs when navigation occurs.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UIPManager.NavigateEventHandler">
+            <summary>
+            Delegates for the NavigateEvent.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">A NavigateEventArgs object that contains the event data.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.SecureSqlServerPersistState">
+            <summary>
+            IStatePersistence implementation.
+            This provider encrypts the serialized data by using a symmetric algorithm.
+            The algorithm key is obtained from the LOCAL_MACHINE hive in the Windows registry.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SecureSqlServerPersistState.Init(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            The possible provider configuration attributes are:
+              connectionString: Specifies the database connection string.
+              registryPath: Specifies the registry key path where the 
+                            encryption symmetric key is stored. 
+            </summary>
+            <param name="statePersistenceParameters">The collection of configuration information to be used by
+            the persistence provider.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SecureSqlServerPersistState.Save(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Saves the State object in a SQL Server database.
+            </summary>
+            <remarks>The provider encrypts the serialized state before storing it in the database.</remarks>
+            <param name="state">A valid State object.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SecureSqlServerPersistState.Load(System.Guid)">
+            <summary>
+            Loads an existing State object from a SQL Server database.
+            </summary>
+            <remarks>The provider decrypts the serialized state before restoring it.</remarks>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <returns>A valid State object.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SecureSqlServerPersistState.Remove(System.Guid)">
+            <summary>
+            Removes secure state information from the SQL Server database.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.MemoryStatePersistence">
+            <summary>
+            This provides simple memory-based state persistence for Windows Forms applications. 
+            DO NOT use it on the server; the locking mechanism will cause a bottleneck for
+            busy Web applications.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.MemoryStatePersistence.Init(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            UIP uses this method to pass extra configuration information to the persistence provider.
+            </summary>
+            <param name="statePersistenceParameters">Collection of configuration information to be used by
+            the persistence provider.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.MemoryStatePersistence.Load(System.Guid)">
+            <summary>
+            Loads the saved state for this task.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.MemoryStatePersistence.Save(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Saves the State object in memory.
+            </summary>
+            <param name="state">A valid State object.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.MemoryStatePersistence.Remove(System.Guid)">
+            <summary>
+            Removes (deletes) the State object from memory.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task). The State object for this task will be removed.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings">
+            <summary>
+            Represents the settings defined by the navigationGraph element in the configuration file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.AttributeStartView">
+            <summary>
+            Key used to retrieve the startView attribute for this NavigationGraphSettings object from
+            the configuration file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.AttributeEndView">
+            <summary>
+            Key used to retrieve the endView attribute for this NavigationGraphSettings object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.AttributeRunInWizardMode">
+            <summary>
+            Key used to retrieve the runInWizardMode attribute for this NavigationGraphSettings object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.NodeXPath">
+            <summary>
+            XPath expression used to retrieve the nodes that are defined for this NavigationGraphSettings
+            object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.SharedTransitionsXPath">
+            <summary>
+            XPath expression used to retrieve the shared transitions that are defined for this NavigationGraphSettings
+            object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.#ctor(System.Xml.XmlNode)">
+            <summary>		
+            Creates an instance of the NavigationGraphSettings class using the specified configNode.		
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.LoadAttributes(System.Xml.XmlNode)">
+            <summary>
+            Overridden. Loads the attributes for the navigation graph specified in the configuration file.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.Views">
+            <summary>
+            Returns an array <see cref="T:Microsoft.ApplicationBlocks.UIProcess.NodeSettings"/> for each node specfied in the navigation graph.
+            </summary>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.SharedTransitions">
+            <summary>
+            Returns an array of <see cref="T:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings"/> for the navigation graph.
+            </summary>
+            <returns>The array of shared transition settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.GetSharedTransitionSettings(System.String)">
+            <summary>
+            Returns the <see cref="T:Microsoft.ApplicationBlocks.UIProcess.SharedTransitionSettings"/> for the specified navigate value.
+            </summary>
+            <param name="navigateValue">The navigate value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.RunInWizardMode">
+            <summary>
+            Returns true if the navigation graph is to be used for a wizard; otherwise, returns false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.Item(System.String)">
+            <summary>
+            Gets <see cref="T:Microsoft.ApplicationBlocks.UIProcess.NodeSettings"/> for the specified view.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.FirstView">
+            <summary>
+            Gets the first <see cref="T:Microsoft.ApplicationBlocks.UIProcess.NodeSettings"/> configured in the navigation graph.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigationGraphSettings.LastView">
+            <summary>
+            Gets the last <see cref="T:Microsoft.ApplicationBlocks.UIProcess.NodeSettings"/> configured in the navigation graph.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.CacheConfiguration">
+            <summary>
+            Stores information needed to configure the state cache.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.CacheConfiguration.#ctor(Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode,System.TimeSpan)">
+            <summary>
+            Create a CacheConfiguration object.
+            </summary>
+            <param name="mode">The expiration mode for the cache. <see cref="T:Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode"/></param>
+            <param name="interval">How often to check for expiration.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.CacheConfiguration.Mode">
+            <summary>
+            The expiration mode of the cache. <see cref="T:Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.CacheConfiguration.Interval">
+            <summary>
+            The expiration interval for the cache.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.Views.INavigate.Navigator">
+            <summary>
+            Gets the context in which the presenter is executing.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ILayoutManager">
+            <summary>
+            The interface used to hook a layout manager into the UIP block.
+            The view manager calls the LayoutControls method after instantiating a view, but before calling <code>Show()</code>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ILayoutManager.LayoutControls(System.Windows.Forms.Control)">
+            <summary>
+            Performs layout functions on any child control of the parent control.
+            </summary>
+            <param name="parentControl">The container on which to perform layout.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ViewManagerFactory">
+            <summary>
+            Factory for creating view managers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewManagerFactory.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewManagerFactory.Create(System.String)">
+            <summary>
+            Creates an IViewManager of a type specific to the named NavigationGraph. 
+            If possible, it returns a reference from the internal cache because these are presumed to be stateless.
+            </summary>
+            <param name="navigator">The name of a navigator.</param>
+            <returns>An instance of IViewManager. It gets this from the internal cache, if possible.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewManagerFactory.Create(System.String,System.Object[])">
+            <summary>
+            Creates an IViewManager of a type specific to the named NavigationGraph. 
+            If possible, it returns a reference from the internal cache because these are presumed to be stateless.
+            </summary>
+            <param name="navigator">The name of a navigator.</param>
+            <param name="args">The constructor parameter for ViewManager.</param>
+            <returns>An instance of IViewManager. It gets this from the internal cache, if possible.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewManagerFactory.Create">
+            <summary>
+            Creates an IViewManager defined as DefaultViewManager. 
+            </summary>
+            <returns>An instance of IViewManager.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ViewManagerFactory.GetViewManagers">
+            <summary>
+            Method to retrieve all of the active view managers.
+            </summary>
+            <returns>An array of active view managers.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ControllerBase">
+            <summary>
+            This class coordinates the user process.
+            It represents the controller in a Model-View-Controller pattern.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.#ctor(Microsoft.ApplicationBlocks.UIProcess.INavigator)">
+            <summary>
+            Creates a controller.
+            </summary>
+            <param name="navigator">Provides navigation services for the controller.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.Navigate">
+            <summary>
+            Allows for a default Next button that causes the manager to navigate to the next page.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.Navigate(System.String)">
+            <summary>
+            Navigates to the specified view or node.
+            </summary>
+            <param name="navigateValue">Name of the node or view to navigate to.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.SuspendTask">
+            <summary>
+            Ends or suspends the current task.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.OnStartTask(System.String)">
+            <summary>
+            Navigates to the next navigation graph.
+            </summary>
+            <param name="nextNavigator">Name of the next navigationGraph.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.OnStartTask(System.String,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder,Microsoft.ApplicationBlocks.UIProcess.ITask)">
+            <summary>		
+            Navigates to the next navigation graph.
+            </summary>		
+            <param name="nextNavigatorName">Name of the next navigation graph.</param>
+            <param name="taskArguments">A holder for originating the navigation graph and task ID, and an object that
+            the controller can use to get state information from the previous navigation graph.</param>
+            <param name="nextTask">Task to be started.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.EnterTask(Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            The UIPManager calls this method when a new task starts.
+            </summary>
+            <param name="taskArguments">A holder for originating the navigation graph and task ID, and an object that
+            the controller can use to get state information from the previous navigation graph.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.CompleteTask">
+            <summary>
+            Completes the task. Completing a task permanently removes any state data for the task.
+            A completed task cannot be restarted.
+            </summary>
+        </member>
+        <member name="E:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.StartTask">
+            <summary>
+            Event raised when a task is being started.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.State">
+            <summary>
+            Gets the controller state.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ControllerBase.Navigator">
+            <summary>
+            The navigator for this task.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.StartTaskEventHandler">
+            <summary>
+            Represents the method that will handle the StartTask event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">A StartTaskEventArgs object that contains the event data.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.StartTaskEventArgs">
+            <summary>
+            Provides data for the StartTask event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StartTaskEventArgs.#ctor(System.String)">
+            <summary>
+            Overloaded. Initializes a new StartTaskEventArgs class that assumes chaining of the navigation graphs.
+            </summary>
+            <param name="nextNavigationGraphName">The next navigation graph.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StartTaskEventArgs.#ctor(System.String,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder,Microsoft.ApplicationBlocks.UIProcess.ITask)">
+            <summary>
+            Overloaded. Initializes a new StartTaskEventArgs class that assumes chaining of the navigation graphs, and 
+            the need for all information relevant to having a return pointer on a stack.
+            </summary>
+            <param name="nextNavigationGraphName">The next navigation graph.</param>
+            <param name="taskArguments">The task arguments.</param>
+            <param name="nextTask">A known point in a previously used navigation graph.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.StartTaskEventArgs.NextNavigationGraph">
+            <summary>
+            Gets the next navigation graph name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.StartTaskEventArgs.TaskArguments">
+            <summary>
+            Gets the the task arguments.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.StartTaskEventArgs.NextTask">
+            <summary>
+            Gets the next task.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.LayoutManagerFactory">
+            <summary>
+            Factory for creating layout managers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.LayoutManagerFactory.Create(System.String)">
+            <summary>
+            Creates a layout manager for the view.
+            </summary>
+            <param name="view">The view whose configuration information contains the layout manager settings.</param>
+            <returns>A layout manager.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ControllerFactory">
+            <summary>
+            Factory for creating controllers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerFactory.#cctor">
+            <summary>
+            Static constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ControllerFactory.Create(System.String,Microsoft.ApplicationBlocks.UIProcess.Navigator)">
+            <summary>
+            Creates the controller for the view.
+            </summary>
+            <param name="view">The name of the view in the Views section of the configuration file.</param>
+            <param name="navigator">The navigator that the controller uses for navigation services.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UIPConfigHandler">
+            <summary>
+            The configuration section handler for the uipConfiguration section of the configuration file. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigHandler.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigHandler.Create(System.Object,System.Object,System.Xml.XmlNode)">
+            <summary>
+            Factory method that creates a configuration handler for a specific section of XML in the app.config.
+            </summary>
+            <param name="parent">Unused; was for future development (should be removed).</param>
+            <param name="input">Unused; was for future development (should be removed).</param>
+            <param name="section">The node.</param>
+            <returns>UIPConfigSettings for the section.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigHandler.Create(System.Object,System.Object,System.Xml.XmlNode,System.IFormatProvider)">
+            <summary>
+            Factory method that creates a configuration handler for a specific section of XML in the app.config.
+            </summary>
+            <param name="parent">Unused; was for future development (should be removed).</param>
+            <param name="input">Unused; was for future development (should be removed).</param>
+            <param name="section">The node.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns>UIPConfigSettings for the section.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.NavigateToSettings">
+            <summary>
+            Class that defines the navigateTo settings within the UIP configuration settings in the configuration file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigateToSettings.AttributeNavigateValue">
+            <summary>
+            Key used to retrieve the navigateValue attribute for this navigateToSettings object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NavigateToSettings.AttributeView">
+            <summary>
+            Key used to retrieve the view attribute for this navigateToSettings object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NavigateToSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Creates an instance of the NavigationToSettings class using the specified configNode.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigateToSettings.NavigateValue">
+            <summary>
+            Gets the navigation value.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NavigateToSettings.View">
+            <summary>
+            Gets or sets the view name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.WebFormView">
+            <summary>
+            Represents a view used in Web applications.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.WebFormView.CurrentTaskKey">
+            <summary>
+            The QueryString key used to get the current task identifier.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormView.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.WebFormView.Initialize(Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder,Microsoft.ApplicationBlocks.UIProcess.ViewSettings)">
+            <summary>
+            Initializes the WebFormView.
+            </summary>
+            <param name="args">The initialization arguments.</param>
+            <param name="settings">The settings for the view.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.WebFormView.TaskId">
+            <summary>
+            Gets the task identifier related to this view.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.WebFormView.ViewName">
+            <summary>
+            Gets the view name.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.WebFormView.Navigator">
+            <summary>
+            Gets the navigator
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator">
+            <summary>
+            Navigator used when transitions between views are made. To use this navigator, specify the view names 
+            to transition to.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.#ctor(System.String)">
+            <summary>
+            Overrides. Initializes a new OpenNavigator.
+            </summary>
+            <param name="name">The name of the navigation graph to which open navigation applies.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.#ctor(System.String,System.Guid)">
+            <summary>
+            Overloaded. Initializes a new OpenNavigator.
+            </summary>
+            <param name="name">The name of the navigation graph to which open navigation applies.</param>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.Navigate(System.String)">
+            <summary>
+            Activates the next view.
+            </summary>
+            <param name="nextView">The name of the next view to be activated.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(System.String)">
+            <summary>
+            Overloaded. Starts open navigation, beginning with specified first view.
+            </summary>
+            <param name="firstView">The name of the first view.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(Microsoft.ApplicationBlocks.UIProcess.ITask)">
+            <summary>
+            Overloaded. Starts open navigation for a specified task.
+            </summary>
+            <param name="task">The name of the task.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(System.String,Microsoft.ApplicationBlocks.UIProcess.ITask)">
+            <summary>
+            Overloaded. Starts open navigation beginning with the specified first view for the specified task.
+            </summary>
+            <param name="firstView">The name of the first view.</param>
+            <param name="task">The name of the task.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(Microsoft.ApplicationBlocks.UIProcess.ITask,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Overloaded. Starts open navigation for the specified task.
+            </summary>
+            <param name="task">The name of the task.</param>
+            <param name="args">Additional navigation arguments.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(System.String,Microsoft.ApplicationBlocks.UIProcess.ITask,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Overloaded. Starts open navigation, beginning with the first view for the specified task.
+            </summary>
+            <param name="firstView">The name of the first view.</param>
+            <param name="task">The name of the task.</param>
+            <param name="args">Additional navigation arguments.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(System.Guid)">
+            <summary>
+            Overloaded. Starts open navigation for the specified task identifier.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(System.Guid,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Overloaded. Starts open navigation for the specified task identifier.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <param name="args">Additional navigation arguments.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.StartTask(System.String,Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder)">
+            <summary>
+            Overloaded. Starts open navigation beginning with the first view.
+            </summary>
+            <param name="firstView">The name of the first view.</param>
+            <param name="args">Additional navigation arguments.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.CreateState">
+            <summary>
+            Overrides. Creates a new <see cref="T:Microsoft.ApplicationBlocks.UIProcess.State"/> for OpenNavigation.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.LoadState(System.Guid)">
+            <summary>
+            Overrides. Loads the <see cref="T:Microsoft.ApplicationBlocks.UIProcess.State"/> of the OpenNavigator for the given task ID.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <returns>The loaded state.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.CacheExpirationInterval">
+            <summary>
+            Gets the Timespan object that represents the life span of the OpenNavigator.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.OpenNavigator.CacheExpirationMode">
+            <summary>
+            Gets the <see cref="T:Microsoft.ApplicationBlocks.UIProcess.CacheExpirationMode"/> for the OpenNavigator.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.StateFactory">
+            <summary>
+            Factory for creating State objects. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateFactory.Load(System.String,System.Guid)">
+            <summary>
+            Loads a State object based on the navigation graph and task ID. Internally, attempts to get the object
+            from the cache first, then creates state persistence provider, and uses it to load explicitly.
+            </summary>
+            <param name="navigationGraph">A navigation graph.</param>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <returns>State</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateFactory.Load(System.Guid)">
+            <summary>
+            Loads the state for a given task identifier.
+            </summary>
+            <param name="taskId">The task identifier (a GUID associated with the task).</param>
+            <returns>The state.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateFactory.Load(Microsoft.ApplicationBlocks.UIProcess.IStatePersistence,System.Guid)">
+            <summary>
+            Uses the task ID to explicitly load the state from the provided IStatePersistence instance.
+            Note that this overload does not attempt to fetch from the cache.
+            </summary>
+            <param name="statePersistenceProvider"></param>
+            <param name="taskId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateFactory.Create">
+            <summary>
+            Creates the default State object, loading it from the persistence provider.
+            </summary>
+            <returns>Default state instance of type specified in the configuration file.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateFactory.Create(System.String)">
+            <summary>
+            Creates a State object, loading it from persistence provider.
+            </summary>
+            <param name="navigatorName">Name of the navigator.</param>
+            <returns>State instance of the type specified in the configuration file.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateFactory.Create(Microsoft.ApplicationBlocks.UIProcess.IStatePersistence,Microsoft.ApplicationBlocks.UIProcess.ObjectTypeSettings)">
+            <summary>
+            Creates a State object, loading it from persistence provider.
+            </summary>
+            <param name="spp">The state persistence provider.</param>
+            <param name="typeSettings">The state settings.</param>
+            <returns>A state instance of the type specified in the configuration file.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder">
+            <summary>
+            This class hold the arguments that can be passed from one navigation graph to another when chaining use cases.
+            The data includes a return pointer (the originating graph and task ID) and an object that can be used
+            to encapsulate data that is passed from one navigation graph to another.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder.#ctor(System.Guid,System.String,System.Object)">
+            <summary>
+            Initializes a new instance of TaskArgumentsHolder with a task ID, a navigation graph name, and arguments.
+            </summary>
+            <param name="originatingTaskID">The originating task identifier (a GUID associated with the task).</param>
+            <param name="originatingNavGraphName">The originating navigation graph name.</param>
+            <param name="taskArguments">An object with generic data.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder.TaskArguments">
+            <summary>
+            Gets or sets an object that can be used
+            to encapsulate data that is passed from one navigation graph to another.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder.OriginatingTaskID">
+            <summary>
+            Gets or sets the originating task ID.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.TaskArgumentsHolder.OriginatingNavGraphName">
+            <summary>
+            Gets or sets the originating navigation graph name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.SecureIsolatedStoragePersistence">
+            <summary>
+            The IStatePersistence implementation.
+            This provider encrypts the serialized data by using a symmetric algorithm.
+            The algorithm key is obtained from the LOCAL_MACHINE hive in the Windows registry.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SecureIsolatedStoragePersistence.Init(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            The possible provider config attributes are:
+              - registryPath: Specifies the registry key path where the
+                              encryption symmetric key is stored. 
+            </summary>
+            <param name="statePersistenceParameters">The collection of configuration information to be used by
+            the persistence provider.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SecureIsolatedStoragePersistence.FromByteArray(System.Byte[])">
+            <summary>
+            Deserializes an encrypted byte array into a State object.
+            </summary>
+            <param name="serializedObject">Encrypted byte array that will be deserialized to a State object.</param>
+            <returns>A valid State object.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.SecureIsolatedStoragePersistence.ToByteArray(Microsoft.ApplicationBlocks.UIProcess.State)">
+            <summary>
+            Converts a State object to an encrypted array of bytes.
+            </summary>
+            <param name="state">The state object to convert.</param>
+            <returns>The array of encrypted bytes that represent the serialized state object.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.NodeSettings">
+            <summary>
+            Represents the settings defined by the Node element in the configuration file.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NodeSettings.AttributeView">
+            <summary>
+            Key used to retrieve the view attribute for this object.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationBlocks.UIProcess.NodeSettings.NodeNavigateTo">
+            <summary>
+            Key used to retrieve the navigateTo attribute for this object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NodeSettings.#ctor">
+            <summary>
+            Overloaded. Default contructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.NodeSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Overloaded. Initializes an instance of the NodeSettings class using the specified configNode.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NodeSettings.Item(System.String)">
+            <summary>
+            Gets the specifed navigateTo settings.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.NodeSettings.View">
+            <summary>
+            Gets the view name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.StateChangedEventArgs">
+            <summary>
+            Provides data for a StateChanged event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.StateChangedEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new StateChangedEventArgs class with a key.
+            </summary>
+            <param name="key">The state item key.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.StateChangedEventArgs.Key">
+            <summary>
+            Gets the changed state item key.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.State">
+            <summary>
+            This class maintains user process state. It represents the model in a 
+            Model-View-Controller pattern.
+            </summary>
+            <remarks>
+            This class must be serializable. If a derived class requires a 
+            complex serialization mecanism, then it must implement the
+            <see cref="T:System.Runtime.Serialization.ISerializable"/> interface.
+            Derived classes must call the base GetObjectData and serialization constructor appropriately to ensure
+            full serialization or deserialization.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.#ctor(Microsoft.ApplicationBlocks.UIProcess.IStatePersistence)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="statePersistenceProvider">A valid state persistence provider.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.#ctor(System.Guid)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="taskId">A task identifier (a GUID associated with the task).</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.#ctor(System.Guid,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="taskId">A task identifier (a GUID associated with the task).</param>
+            <param name="navGraph">A valid navigation navigation graph name.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.#ctor(System.Guid,System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="taskId">A task identifier (a GUID associated with the task).</param>
+            <param name="navGraph">A valid navigation graph name.</param>
+            <param name="currentView">The current view in the navigation graph.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.#ctor(System.Guid,System.String,System.String,System.String,Microsoft.ApplicationBlocks.UIProcess.IStatePersistence)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="taskId">A task identifier (a GUID associated with the task).</param>
+            <param name="navigationGraph">A valid navigation graph name.</param>
+            <param name="currentView">The current view in the navigation graph.</param>
+            <param name="navigateValue">Used by the controller to determine which view is next.</param>
+            <param name="statePersistence">A valid state persistence provider.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Constructor; required by ISerializable.  
+            </summary>
+            <param name="serializationInfo">The serialization information.</param>
+            <param name="context">The streaming context.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Required GetObjectData of ISerializable. This packages class information into SerializationInfo.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.Accept(Microsoft.ApplicationBlocks.UIProcess.IStatePersistence)">
+            <summary>
+            The visitor pattern for StatePersistence.
+            </summary>
+            <param name="statePersistence">A valid state persistence provider object.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.Save">
+            <summary>
+            Stores the state using the persistence provider related to this state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.Delete">
+            <summary>
+            Deletes the state from storage using the persistence provider related to this state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.Add(System.String,System.Object)">
+            <summary>
+            Adds an element with the specified key to the state.
+            </summary>
+            <param name="key">Key used to identify the element in the state.</param>
+            <param name="value">Element to add to the state.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.Remove(System.String)">
+            <summary>
+            Removes the element with the specified key from the state.
+            </summary>
+            <param name="key">Key of the element to remove from the state.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.Contains(System.String)">
+            <summary>
+            Determines whether the state contains a specific key.
+            </summary>
+            <param name="key">Key to find in the collection.</param>
+            <returns>True if the key was found; otherwise false.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.OnClearComplete">
+            <summary>
+            Occurs when the state has been cleared.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.State.CopyTo(System.Collections.DictionaryEntry[],System.Int32)">
+            <summary>
+            Copies the state elements to a array.
+            </summary>
+            <param name="array">The array to copy to. This must be capable of accepting objects of type DictionaryEntry.</param>
+            <param name="index">The zero-based array where the copying should begin.</param>
+        </member>
+        <member name="E:Microsoft.ApplicationBlocks.UIProcess.State.StateChanged">
+            <summary>
+            Occurs when the state changes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.State.NavigateValue">
+            <summary>
+            Gets or sets the navigation value. This value determines 
+            which view is the next view in the navigation graph.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.State.NavigationGraph">
+            <summary>
+            Gets or sets the state navigation graph.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.State.CurrentView">
+            <summary>
+            Gets or sets the current view in the navigation graph.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.State.TaskId">
+            <summary>
+            Gets or sets the current task ID.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.State.Item(System.String)">
+            <summary>
+            Indexer. Gets the item with the specified key.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.State.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchonize access to the state.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.State.StateChangedEventHandler">
+            <summary>
+            This event is raised when the state has changed. Therefore, the views can refresh themselves to stay synchronized.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">A StateChangedEventArgs object that contains the event data.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UserControlsSettings">
+            <summary>
+            The UserControls settings capture the configuration information for a specific user controls
+            navigator.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsSettings.#ctor">
+            <summary>
+            Creates a new HostedControlsSettings object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UserControlsSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Creates a new HostedControlsSettings object, and initializes it using the XmlNode from the configuration file.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UserControlsSettings.StartFormName">
+            <summary>
+            The name of the form to start on.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UserControlsSettings.Item(System.String)">
+            <summary>
+            Returns the FormSettings class for the named form.
+            </summary>
+            <param name="name">The name of the form to retrieve the settings for.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.FormSettings">
+            <summary>
+            Represents the configuration file settings for a form in the HostedControls section of the configuration file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.FormSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Creates an instance of a FormSettings object based on information from the configuration file.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.FormSettings.Name">
+            <summary>
+            The name of the form. Must correspond to a name in the Views section of the configuration file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.FormSettings.InitialView">
+            <summary>
+            The first control to start on. Optional.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.FormSettings.Item(System.String)">
+            <summary>
+            Gets the ChildViewSettings for a control with that name.
+            </summary>
+            <param name="name">The control to retrieve the settings for.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.ChildViewSettings">
+            <summary>
+            Represents a childview (WinFormControlView) on a form.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.ChildViewSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Creates a ChildViewSettings object based on information from the configuration file.
+            </summary>
+            <param name="configNode">XmlNode that contains the configuration information for this
+            object</param>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ChildViewSettings.Name">
+            <summary>
+            The name of the control.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.ChildViewSettings.ViewName">
+            <summary>
+            The name of the view in the ViewSettings section of the configuration file.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings">
+            <summary>
+            This class contains all of the UIP configuration from the configuration file.
+            </summary>
+            <remarks>
+            The UIPConfigSettings hierarchy is as follows:
+              UIPConfigSettings
+                --- ObjectTypeSettings collection
+                --- ViewSettings collection
+            		--- SharedTransitionSettings collection
+                --- NavigationGraphSettings
+            					--- SharedTransitionSettings collection
+                      --- NodeSettings collection
+                            --- NavigateToSettings collection 
+            </remarks>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.LayoutManagerCount">
+            <summary>
+            Used for testing. Should be removed.
+            </summary>
+            <returns>Number of layout managers.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.#ctor(System.Xml.XmlNode)">
+            <summary>
+            Creates an instance of the UIPConfigSettings class using the specified configNode.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.#ctor(System.Xml.XmlNode,System.IFormatProvider)">
+            <summary>
+            Creates UIPConfigSettings from an XmlNode read of the app.config and an IFormatProvider.
+            </summary>
+            <param name="configNode">The XmlNode from the configuration file.</param>
+            <param name="formatProvider">The provider.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetSharedTransitionSettings(System.String)">
+            <summary>
+            Returns the settings for the shared transition.
+            </summary>
+            <param name="navigateValue">The name of the navigation graph element.</param>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.ContainsNavigationGraphSettings(System.String)">
+            <summary>
+            Checks if a navigation graph by that name exists.
+            </summary>
+            <param name="navigationGraphName">The name of the navigation graph element.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetNavigationGraphSettings(System.String)">
+            <summary>
+            Returns the settings for the navigation graph.
+            </summary>
+            <param name="navigationGraphName">The name of the navigation graph element.</param>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetNavigateToNode(System.String)">
+            <summary>
+            Get the XmlNode containing the NavigateTo values for a given view
+            </summary>
+            <param name="viewName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.ContainsHostedControlsSettings(System.String)">
+            <summary>
+            Checks if a hosted controls element exists.
+            </summary>
+            <param name="hostedControlsName">The name of the element to check for.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetHostedControlsSettings(System.String)">
+            <summary>
+            Returns the settings for hosted controls.
+            </summary>
+            <param name="hostedControlsName">The name of the hosted controls element.</param>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetNavigatorSettings(System.String)">
+            <summary>
+            Gets the navigator settings.
+            </summary>
+            <param name="navigatorName">The navigator name.</param>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetIViewManagerSettingsFromNavigatorName(System.String)">
+            <summary>
+            Returns an ObjectTypeSettings wrapper around type information for the IViewManager found in the configuration file.
+            </summary>
+            <param name="navigatorName">The name of the navigation graph.</param>
+            <returns>The IViewManager settings configured for the specified navigation graph.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetIViewManagerSettings(System.String)">
+            <summary>
+            Returns the settings for a view manager.
+            </summary>
+            <param name="viewName">The name of the view manager.</param>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetViewSettingsFromName(System.String)">
+            <summary>
+            Looks up a view name based on view name.
+            </summary>  
+            <param name="viewName">The name of the view to retrieve the settings for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetViewSettingsFromType(System.String)">
+            <summary>
+            Finds the view setting for a specified view type.
+            </summary>
+            <param name="viewType">The view type defined in the app.config.</param>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetNextViewSettings(System.String,System.String,System.String)">
+            <summary>
+            Looks up the next view based on the incoming graph, view, and navigation values.
+            </summary>
+            <param name="navigationGraphName">Name of the navigation graph that is being worked in.</param>
+            <param name="currentViewName">Name of the current view.</param>
+            <param name="navigateValue">Navigate value used to determine the next view to be navigated to from the current view.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetFirstViewSettings(System.String)">
+            <summary>
+            Returns the first view name in given navigation graph. 
+            </summary>
+            <param name="navigationGraphName">The name of the navigation graph to retrieve the first view for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetPersistenceProviderSettings(System.String)">
+            <summary>
+            Looks up the state persistence provider by using the navigator name.
+            </summary>
+            <param name="navigatorName">The name of the navigator to retrieve the persistence provider settings for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetStateSettings(System.String)">
+            <summary>
+            Gets the settings of the state object used by the specified navigator.
+            </summary>
+            <param name="navigatorName">The name of the navigator to retrieve the state settings for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetStateSettingsByName(System.String)">
+            <summary>
+            Finds the state setting for a specified state.
+            </summary>
+            <param name="stateName">The state name.</param>
+            <returns>The settings.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetControllerSettings(System.String)">
+            <summary>
+            Gets the settings of the controller object used by the specified view.
+            </summary>
+            <param name="viewName">The name of the view to retrieve the controller settings for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetLayoutManagerSettings(System.String)">
+            <summary>
+            Gets the settings of the layout manager used by the specified view.
+            </summary>
+            <param name="viewName">The name of the view to retrieve layout manager settings for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.ViewExistsInNavigationGraph(System.String,System.String)">
+            <summary>
+            Method used to determine if a view exists within a navigation graph.
+            </summary>
+            <param name="navigationGraphName">Name of the navigation graph to look in.</param>
+            <param name="viewName">Name of the view to search for in the navigation graph.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.ViewExpectsLayoutManager(Microsoft.ApplicationBlocks.UIProcess.ViewSettings)">
+            <summary>
+            Returns true if a layout manager is expected. Returns false if no layout manager was specified for a particular view.
+            </summary>
+            <param name="viewSettings">The configuration of a specific view.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetCacheConfiguration(System.String)">
+            <summary>
+            Gets the cache settings used by the specified navigation graph.
+            </summary>
+            <param name="navigatorName">The name of the navigation graph to retrieve cache configuration information for.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.GetCacheConfiguration">
+            <summary>
+            Gets the <see cref="T:Microsoft.ApplicationBlocks.UIProcess.CacheConfiguration"/> for the default mode and interval.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.IsStateCacheEnabled">
+            <summary>
+            Specifies whether or not the state cache is enabled.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.DefaultState">
+            <summary>
+            Gets the default state as specified in app.config.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.DefaultStatePersistence">
+            <summary>
+            Gets the default state persistence as specified in app.config.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.DefaultViewManager">
+            <summary>
+            Gets the default view manager as specified in app.config.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.AllowBackButton">
+            <summary>
+            Returns true if Back button support is enabled. Returns false to prevent the Back button from functioning.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationBlocks.UIProcess.UIPConfigSettings.SharedTransitions">
+            <summary>
+            Array of global shared transition settings.
+            </summary>
+        </member>
+    </members>
+</doc>

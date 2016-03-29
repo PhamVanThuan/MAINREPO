@@ -1,0 +1,305 @@
+{
+    "js": [
+        "node_modules/angular/angular.min.js",
+        "node_modules/angular-route/angular-route.min.js",
+        "servicesApp.js",
+        "servicesController.js",
+        "objects.js",
+        "utils.js"
+    ],
+    "css": [
+        "css/styles.css"
+    ],
+    "services": [
+        {
+            "name": "WorkflowTaskService",
+            "route": "WorkflowTaskService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.WorkflowTask\\app\\SAHL.Services.Interfaces.WorkflowTask.Queries.js"
+        },
+        {
+            "name": "WorkflowTaskService",
+            "route": "WorkflowTaskService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.WorkflowTask\\app\\SAHL.Services.Interfaces.WorkflowTask.Commands.js"
+        },
+        {
+            "name": "UserProfileService",
+            "route": "UserProfileService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.UserProfile\\app\\SAHL.Services.Interfaces.UserProfile.Queries.js"
+        },
+        {
+            "name": "SearchService",
+            "route": "SearchService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Search\\app\\SAHL.Services.Interfaces.Search.SharedModels.js"
+        },
+        {
+            "name": "SearchService",
+            "route": "SearchService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Search\\app\\SAHL.Services.Interfaces.Search.Queries.js"
+        },
+        {
+            "name": "PropertyDomainService",
+            "route": "PropertyDomainService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.PropertyDomain\\app\\SAHL.Services.Interfaces.PropertyDomain.SharedModels.js"
+        },
+        {
+            "name": "PropertyDomainService",
+            "route": "PropertyDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.PropertyDomain\\app\\SAHL.Services.Interfaces.PropertyDomain.Queries.js"
+        },
+        {
+            "name": "PropertyDomainService",
+            "route": "PropertyDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.PropertyDomain\\app\\SAHL.Services.Interfaces.PropertyDomain.Commands.js"
+        },
+        {
+            "name": "MortgageLoanDomainService",
+            "route": "MortgageLoanDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.MortgageLoanDomain\\app\\SAHL.Services.Interfaces.MortgageLoanDomain.Queries.js"
+        },
+        {
+            "name": "LoggingService",
+            "route": "LoggingService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Logging\\app\\SAHL.Services.Interfaces.Logging.Commands.js"
+        },
+        {
+            "name": "LifeDomainService",
+            "route": "LifeDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.LifeDomain\\app\\SAHL.Services.Interfaces.LifeDomain.Queries.js"
+        },
+        {
+            "name": "LifeDomainService",
+            "route": "LifeDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.LifeDomain\\app\\SAHL.Services.Interfaces.LifeDomain.Commands.js"
+        },
+        {
+            "name": "LegacyEventGeneratorService",
+            "route": "LegacyEventGeneratorService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.LegacyEventGenerator\\app\\SAHL.Services.Interfaces.LegacyEventGenerator.Queries.js"
+        },
+        {
+            "name": "LegacyEventGeneratorService",
+            "route": "LegacyEventGeneratorService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.LegacyEventGenerator\\app\\SAHL.Services.Interfaces.LegacyEventGenerator.Commands.js"
+        },
+        {
+            "name": "JsonDocumentService",
+            "route": "JsonDocumentService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.JsonDocument\\app\\SAHL.Services.Interfaces.JsonDocument.Queries.js"
+        },
+        {
+            "name": "JsonDocumentService",
+            "route": "JsonDocumentService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.JsonDocument\\app\\SAHL.Services.Interfaces.JsonDocument.Commands.js"
+        },
+        {
+            "name": "ITCService",
+            "route": "ITCService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ITC\\app\\SAHL.Services.Interfaces.ITC.SharedModels.js"
+        },
+        {
+            "name": "ITCService",
+            "route": "ITCService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ITC\\app\\SAHL.Services.Interfaces.ITC.Queries.js"
+        },
+        {
+            "name": "ITCService",
+            "route": "ITCService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ITC\\app\\SAHL.Services.Interfaces.ITC.Commands.js"
+        },
+        {
+            "name": "HaloService",
+            "route": "HaloService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Halo\\app\\SAHL.Services.Interfaces.Halo.SharedModels.js"
+        },
+        {
+            "name": "HaloService",
+            "route": "HaloService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Halo\\app\\SAHL.Services.Interfaces.Halo.Queries.js"
+        },
+        {
+            "name": "HaloService",
+            "route": "HaloService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Halo\\app\\SAHL.Services.Interfaces.Halo.Commands.js"
+        },
+        {
+            "name": "FinancialDomainService",
+            "route": "FinancialDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.FinancialDomain\\app\\SAHL.Services.Interfaces.FinancialDomain.Queries.js"
+        },
+        {
+            "name": "FinancialDomainService",
+            "route": "FinancialDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.FinancialDomain\\app\\SAHL.Services.Interfaces.FinancialDomain.Commands.js"
+        },
+        {
+            "name": "FinanceDomainService",
+            "route": "FinanceDomainService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.FinanceDomain\\app\\SAHL.Services.Interfaces.FinanceDomain.SharedModels.js"
+        },
+        {
+            "name": "FinanceDomainService",
+            "route": "FinanceDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.FinanceDomain\\app\\SAHL.Services.Interfaces.FinanceDomain.Queries.js"
+        },
+        {
+            "name": "FinanceDomainService",
+            "route": "FinanceDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.FinanceDomain\\app\\SAHL.Services.Interfaces.FinanceDomain.Commands.js"
+        },
+        {
+            "name": "EventPublisherService",
+            "route": "EventPublisherService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.EventPublisher\\app\\SAHL.Services.Interfaces.EventPublisher.Commands.js"
+        },
+        {
+            "name": "EventProjectionStreamerService",
+            "route": "EventProjectionStreamerService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.EventProjectionStreamer\\app\\SAHL.Services.Interfaces.EventProjectionStreamer.Commands.js"
+        },
+        {
+            "name": "DomainQueryService",
+            "route": "DomainQueryService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DomainQuery\\app\\SAHL.Services.Interfaces.DomainQuery.Queries.js"
+        },
+        {
+            "name": "DomainProcessManagerProxyService",
+            "route": "DomainProcessManagerProxyService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DomainProcessManagerProxy\\app\\SAHL.Services.Interfaces.DomainProcessManagerProxy.Queries.js"
+        },
+        {
+            "name": "DomainProcessManagerProxyService",
+            "route": "DomainProcessManagerProxyService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DomainProcessManagerProxy\\app\\SAHL.Services.Interfaces.DomainProcessManagerProxy.Commands.js"
+        },
+        {
+            "name": "DocumentManagerService",
+            "route": "DocumentManagerService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DocumentManager\\app\\SAHL.Services.Interfaces.DocumentManager.SharedModels.js"
+        },
+        {
+            "name": "DocumentManagerService",
+            "route": "DocumentManagerService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DocumentManager\\app\\SAHL.Services.Interfaces.DocumentManager.Queries.js"
+        },
+        {
+            "name": "DocumentManagerService",
+            "route": "DocumentManagerService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DocumentManager\\app\\SAHL.Services.Interfaces.DocumentManager.Commands.js"
+        },
+        {
+            "name": "DecisionTreeDesignService",
+            "route": "DecisionTreeDesignService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DecisionTreeDesign\\app\\SAHL.Services.Interfaces.DecisionTreeDesign.Queries.js"
+        },
+        {
+            "name": "DecisionTreeDesignService",
+            "route": "DecisionTreeDesignService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DecisionTreeDesign\\app\\SAHL.Services.Interfaces.DecisionTreeDesign.Commands.js"
+        },
+        {
+            "name": "DecisionTreeService",
+            "route": "DecisionTreeService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DecisionTree\\app\\SAHL.Services.Interfaces.DecisionTree.SharedModels.js"
+        },
+        {
+            "name": "DecisionTreeService",
+            "route": "DecisionTreeService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.DecisionTree\\app\\SAHL.Services.Interfaces.DecisionTree.Queries.js"
+        },
+        {
+            "name": "CommunicationsService",
+            "route": "CommunicationsService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Communications\\app\\SAHL.Services.Interfaces.Communications.SharedModels.js"
+        },
+        {
+            "name": "CommunicationsService",
+            "route": "CommunicationsService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Communications\\app\\SAHL.Services.Interfaces.Communications.Commands.js"
+        },
+        {
+            "name": "ClientDomainService",
+            "route": "ClientDomainService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ClientDomain\\app\\SAHL.Services.Interfaces.ClientDomain.SharedModels.js"
+        },
+        {
+            "name": "ClientDomainService",
+            "route": "ClientDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ClientDomain\\app\\SAHL.Services.Interfaces.ClientDomain.Queries.js"
+        },
+        {
+            "name": "ClientDomainService",
+            "route": "ClientDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ClientDomain\\app\\SAHL.Services.Interfaces.ClientDomain.Commands.js"
+        },
+        {
+            "name": "CATSService",
+            "route": "CATSService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.CATS\\app\\SAHL.Services.Interfaces.CATS.SharedModels.js"
+        },
+        {
+            "name": "CATSService",
+            "route": "CATSService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.CATS\\app\\SAHL.Services.Interfaces.CATS.Commands.js"
+        },
+        {
+            "name": "CapitecSearchService",
+            "route": "CapitecSearchService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.CapitecSearch\\app\\SAHL.Services.Interfaces.CapitecSearch.Commands.js"
+        },
+        {
+            "name": "CapitecService",
+            "route": "CapitecService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Capitec\\app\\SAHL.Services.Interfaces.Capitec.SharedModels.js"
+        },
+        {
+            "name": "CapitecService",
+            "route": "CapitecService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Capitec\\app\\SAHL.Services.Interfaces.Capitec.Queries.js"
+        },
+        {
+            "name": "CapitecService",
+            "route": "CapitecService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.Capitec\\app\\SAHL.Services.Interfaces.Capitec.Commands.js"
+        },
+        {
+            "name": "BankAccountDomainService",
+            "route": "BankAccountDomainService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.BankAccountDomain\\app\\SAHL.Services.Interfaces.BankAccountDomain.SharedModels.js"
+        },
+        {
+            "name": "BankAccountDomainService",
+            "route": "BankAccountDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.BankAccountDomain\\app\\SAHL.Services.Interfaces.BankAccountDomain.Commands.js"
+        },
+        {
+            "name": "ApplicationDomainService",
+            "route": "ApplicationDomainService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ApplicationDomain\\app\\SAHL.Services.Interfaces.ApplicationDomain.SharedModels.js"
+        },
+        {
+            "name": "ApplicationDomainService",
+            "route": "ApplicationDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ApplicationDomain\\app\\SAHL.Services.Interfaces.ApplicationDomain.Queries.js"
+        },
+        {
+            "name": "ApplicationDomainService",
+            "route": "ApplicationDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.ApplicationDomain\\app\\SAHL.Services.Interfaces.ApplicationDomain.Commands.js"
+        },
+        {
+            "name": "AddressDomainService",
+            "route": "AddressDomainService/getModels",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.AddressDomain\\app\\SAHL.Services.Interfaces.AddressDomain.SharedModels.js"
+        },
+        {
+            "name": "AddressDomainService",
+            "route": "AddressDomainService/getQueries",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.AddressDomain\\app\\SAHL.Services.Interfaces.AddressDomain.Queries.js"
+        },
+        {
+            "name": "AddressDomainService",
+            "route": "AddressDomainService/getCommands",
+            "filespec": "C:\\SAHL\\blue\\Binaries\\ClientScripts\\Generated\\SAHL.Services.Interfaces.AddressDomain\\app\\SAHL.Services.Interfaces.AddressDomain.Commands.js"
+        }
+    ]
+}

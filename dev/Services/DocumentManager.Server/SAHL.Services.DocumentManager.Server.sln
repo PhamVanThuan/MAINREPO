@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Config.Services.DocumentManager.Server", "SAHL.Config.Services.DocumentManager.Server\SAHL.Config.Services.DocumentManager.Server.csproj", "{D13026F5-65B6-4D70-82BD-A05E9E127582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.DocumentManager", "SAHL.Services.DocumentManager\SAHL.Services.DocumentManager.csproj", "{B2BBC8D3-2B42-4EF0-A847-9D7B49F489E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.DocumentManager.Specs", "SAHL.Services.DocumentManager.Specs\SAHL.Services.DocumentManager.Specs.csproj", "{A73AC388-79B4-4D16-B638-750EA383DC31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.DocumentManager.Tests", "SAHL.Services.DocumentManager.Tests\SAHL.Services.DocumentManager.Tests.csproj", "{A082C31A-E8C4-4F14-ADE6-92429CE314E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D13026F5-65B6-4D70-82BD-A05E9E127582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D13026F5-65B6-4D70-82BD-A05E9E127582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D13026F5-65B6-4D70-82BD-A05E9E127582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D13026F5-65B6-4D70-82BD-A05E9E127582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2BBC8D3-2B42-4EF0-A847-9D7B49F489E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2BBC8D3-2B42-4EF0-A847-9D7B49F489E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2BBC8D3-2B42-4EF0-A847-9D7B49F489E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2BBC8D3-2B42-4EF0-A847-9D7B49F489E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A73AC388-79B4-4D16-B638-750EA383DC31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A73AC388-79B4-4D16-B638-750EA383DC31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A73AC388-79B4-4D16-B638-750EA383DC31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A73AC388-79B4-4D16-B638-750EA383DC31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A082C31A-E8C4-4F14-ADE6-92429CE314E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A082C31A-E8C4-4F14-ADE6-92429CE314E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A082C31A-E8C4-4F14-ADE6-92429CE314E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A082C31A-E8C4-4F14-ADE6-92429CE314E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

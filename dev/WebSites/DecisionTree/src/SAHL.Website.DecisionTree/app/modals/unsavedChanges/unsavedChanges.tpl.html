@@ -1,0 +1,13 @@
+﻿<form name="unsavedChangesForm" class="twoColumn">
+    <fieldset>
+        <label>There are unsaved changes to the currently open document.</label>
+    </fieldset>
+    <div class="button-set">
+        <div class="place-right">
+            <button ng-click="closeDialog()">Save</button>
+            <button ng-click="shouldSave=false;closeDialog()">Don't Save</button>
+            <button ng-click="cancelDialog()">Cancel</button>
+        </div>
+    </div>
+</form>
+

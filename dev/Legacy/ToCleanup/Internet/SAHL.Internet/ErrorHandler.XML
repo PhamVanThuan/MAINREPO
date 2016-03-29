@@ -1,0 +1,237 @@
+<SAHomeloans_ErrorMessages>
+  <ERROR xmlns="Error">
+	<ERRORCODE>400</ERRORCODE>
+    <HTTP_Message>HTTP 400 - Bad Request</HTTP_Message>
+    <HEAD>The page you requested could not be found.</HEAD>
+	<MESSAGE>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+	<ERRORCODE>401.1</ERRORCODE>
+    <HTTP_Message>HTTP 401.1 - Unauthorized: Logon Failed</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>401.2</ERRORCODE>
+	<HTTP_Message>HTTP 401.2 - Unauthorized: Logon failed due to server configuration</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+	<ERRORCODE>401.3</ERRORCODE>
+    <HTTP_Message>HTTP 401.3 - Access denied by ACL on resource</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>401.4</ERRORCODE>
+	<HTTP_Message>HTTP 401.4 - Unauthorized: Authorization denied by filter</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>401.5</ERRORCODE>
+	<HTTP_Message>HTTP 401.5 - Unauthorized: Authorization by ISAPI or CGI application failed</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403</ERRORCODE>
+	<HTTP_Message>HTTP Error 403 - Forbidden </HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.1</ERRORCODE>
+	<HTTP_Message>HTTP 403.1 Forbidden: Execute Access Forbidden</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with a program on the page you are trying to reach, and the page cannot be displayed.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+	<ERRORCODE>403.2</ERRORCODE>
+    <HTTP_Message>HTTP 403.2 - Forbidden: Read Access Forbidden</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with a program on the page you are trying to reach, and the page cannot be displayed.</MESSAGE>
+  </ERROR>
+   <ERROR xmlns="Error">
+    <ERRORCODE>403.3</ERRORCODE>
+	<HTTP_Message>HTTP 403.3 - Forbidden: Write Access Forbidden</HTTP_Message>
+    <HEAD>The page cannot be saved</HEAD>
+	<MESSAGE>There is a problem trying to save the page to the Web site. This error can be caused if you attempt to upload to, or modify a file in, a directory that does not allow Write access.</MESSAGE>
+  </ERROR>
+   <ERROR xmlns="Error">
+   <ERRORCODE>403.4</ERRORCODE>
+    <HTTP_Message>HTTP 403.4 - Forbidden: SSL required</HTTP_Message>
+    <HEAD>The page must be viewed over a secure channel</HEAD>
+	<MESSAGE>The page you are trying to view requires the use of "https" in the address.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+	<ERRORCODE>403.5</ERRORCODE>
+    <HTTP_Message>HTTP 403.5 - Forbidden: SSL 128 required</HTTP_Message>
+    <HEAD>The page must be viewed with a high-security Web browser</HEAD>
+	<MESSAGE>The page you are trying to view requires the use of a Web browser configured for 128-bit encryption.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.6</ERRORCODE>
+	<HTTP_Message>HTTP 403.6 - Forbidden: IP address rejected</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page from the Internet address of your Web browser.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.7</ERRORCODE>
+	<HTTP_Message>HTTP 403.7 - Forbidden: Client certificate required</HTTP_Message>
+    <HEAD>The page requires a client certificate</HEAD>
+	<MESSAGE>The page you are trying to view requires the use of a client certificate.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.8</ERRORCODE>
+	<HTTP_Message>HTTP 403.8 - Forbidden: Site access denied</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page from the Internet address of your Web browser.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.9</ERRORCODE>
+	<HTTP_Message>HTTP 403.9 - Access Forbidden: Too many users are connected</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There are too many people accessing the Web site at this time.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.10</ERRORCODE>
+	<HTTP_Message>HTTP 403.10 - Access Forbidden: Invalid configuration</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.11</ERRORCODE>
+	<HTTP_Message>HTTP 403.11 - Access Forbidden: Password change</HTTP_Message>
+    <HEAD>You are not authorized to view this page</HEAD>
+	<MESSAGE>You do not have permission to view this directory or page using the credentials you supplied.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.12</ERRORCODE>
+	<HTTP_Message>HTTP 403.12 - Access Forbidden: Mapper denied access</HTTP_Message>
+    <HEAD>The page requires a valid client certificate</HEAD>
+	<MESSAGE>The page you are trying to view requires the use of a valid client certificate. Your client certificate map has been denied access to this Web site.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.13</ERRORCODE>
+	<HTTP_Message>HTTP 403.13 - Forbidden: Client certificate revoked</HTTP_Message>
+    <HEAD>The page requires a valid client certificate</HEAD>
+	<MESSAGE>The page you are trying to view requires the use of a valid client certificate. Your client certificate was revoked, or the revocation status could not be determined. The certificate is used for authenticating you as a valid user of the resource.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.15</ERRORCODE>
+	<HTTP_Message>HTTP 403.15 - Forbidden: Client Access Licenses exceeded</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There are too many people accessing the Web site at this time.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.16</ERRORCODE>
+	<HTTP_Message>HTTP 403.16 - Forbidden: Client certificate untrusted or invalid</HTTP_Message>
+    <HEAD>The page requires a valid client certificate</HEAD>
+	<MESSAGE>The page you are trying to view requires the use of a valid client certificate. Your client certificate is untrusted or invalid. The client certificate is used for authenticating you as a valid user of the resource.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>403.17</ERRORCODE>
+	<HTTP_Message>HTTP 403.17 - Forbidden: Client certificate has expired or is not yet valid</HTTP_Message>
+    <HEAD>The page requires a valid client certificate</HEAD>
+	<MESSAGE>The page you are trying to view requires the use of a valid client certificate. Your client certificate has expired or is not yet valid. The client certificate is used for identifying you as a valid user of the resource.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>404.1</ERRORCODE>
+	<HTTP_Message>HTTP 404.1 - Web site not found</HTTP_Message>
+    <HEAD>The Web site cannot be found</HEAD>
+	<MESSAGE>The Web site you are looking for is unavailable due to its identification configuration settings.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>404</ERRORCODE>
+	<HTTP_Message>HTTP 404 - File not found</HTTP_Message>
+    <HEAD>The page you requested could not be found.</HEAD>
+	<MESSAGE>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>405</ERRORCODE>
+	<HTTP_Message>HTTP 405 - Resource not allowed</HTTP_Message>
+    <HEAD>The page you requested could not be displayed.</HEAD>
+	<MESSAGE>The page you are looking for cannot be displayed because the page address is incorrect.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>406</ERRORCODE>
+	<HTTP_Message>HTTP Error 406 - Not acceptable </HTTP_Message>
+    <HEAD>The resource cannot be displayed</HEAD>
+	<MESSAGE>The resource you are looking for cannot be opened by your browser.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>407</ERRORCODE>
+	<HTTP_Message>HTTP 407 - Proxy Authentication Required</HTTP_Message>
+    <HEAD>Proxy Authentication Required</HEAD>
+	<MESSAGE>You must authenticate with a proxy server before this request can be serviced.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>410</ERRORCODE>
+	<HTTP_Message>HTTP Error 410 - Permanently not available</HTTP_Message>
+    <HEAD>The page does not exist</HEAD>
+	<MESSAGE>The page you are looking for has been removed.</MESSAGE>
+  </ERROR>  
+  <ERROR xmlns="Error">
+    <ERRORCODE>412</ERRORCODE>
+	<HTTP_Message>HTTP 412 - Precondition Failed</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>The request was not completed due to preconditions that were set on the page you are trying to view.</MESSAGE>
+  </ERROR>  
+  <ERROR xmlns="Error">
+    <ERRORCODE>414</ERRORCODE>
+	<HTTP_Message>HTTP 414 - Request - URI Too Long</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR>  
+  <ERROR xmlns="Error">
+    <ERRORCODE>500.11</ERRORCODE>
+	<HTTP_Message>HTTP Error 500-11 Server shutting down</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR>
+    <ERROR xmlns="Error">
+    <ERRORCODE>500.12</ERRORCODE>
+	<HTTP_Message>HTTP Error 500-12 Application Restarting</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR>  
+  <ERROR xmlns="Error">
+    <ERRORCODE>500.13</ERRORCODE>
+	<HTTP_Message>HTTP Error 500-13 - Server too busy</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>500.14</ERRORCODE>
+	<HTTP_Message>HTTP Error 500-14 - Invalid application</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR>
+
+  <ERROR xmlns="Error">
+    <ERRORCODE>500.15</ERRORCODE>
+	<HTTP_Message>HTTP Error 500-15 - Requests for global.asa not allowed</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR>
+  <ERROR xmlns="Error">
+    <ERRORCODE>500</ERRORCODE>
+	<HTTP_Message>HTTP 500 - Internal server error</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR>  
+  <ERROR xmlns="Error">
+    <ERRORCODE>501</ERRORCODE>
+	<HTTP_Message>Error 501 - Not implemented </HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>The page you are trying to reach cannot be retrieved.</MESSAGE>
+  </ERROR>  
+  <ERROR xmlns="Error">
+    <ERRORCODE>502</ERRORCODE>
+	<HTTP_Message>HTTP 502 - Bad Gateway</HTTP_Message>
+    <HEAD>The page cannot be displayed</HEAD>
+	<MESSAGE>There is a problem with the page you are trying to reach and it cannot be displayed.</MESSAGE>
+  </ERROR> 
+</SAHomeloans_ErrorMessages>

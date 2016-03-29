@@ -1,0 +1,183 @@
+BODY
+{
+    BACKGROUND-COLOR: lightsteelblue   
+}
+.ManagementPanel 
+{
+
+    border:groove 2px white;
+    FONT-SIZE: 13px;
+    COLOR: black;
+    FONT-FAMILY: Sans-Serif;
+    BACKGROUND-COLOR: #d2b48c;
+}
+.Generic
+{
+    FONT-SIZE: 14px;
+    COLOR: blue;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: lightsteelblue
+}
+.Table
+{
+    BORDER-RIGHT: black 2px groove;
+    BORDER-TOP: white 2px groove;
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: white 2px groove;
+    COLOR: white;
+    BORDER-BOTTOM: black 2px groove;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: steelblue
+}
+.button-orange1
+{
+    BORDER-RIGHT: white 2px ridge;
+    BORDER-TOP: white 2px ridge;
+    FONT-SIZE: 13px;
+    BORDER-LEFT: white 2px ridge;
+    COLOR: white;
+    BORDER-BOTTOM: white 2px ridge;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: #ff8200
+}
+.DropDown
+{
+    FONT-SIZE: 13px;
+    COLOR: blue;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: #ffd69d
+}
+.button-orange2
+{
+    BORDER-RIGHT: white 2px groove;
+    BORDER-TOP: black 1px groove;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: white 2px groove;
+    WIDTH: 120px;
+    COLOR: white;
+    BORDER-BOTTOM: white 2px groove;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    HEIGHT: 37px;
+    BACKGROUND-COLOR: #ffa000
+}
+.button1
+{
+    BORDER-RIGHT: white 2px groove;
+    BORDER-TOP: black 1px groove;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: white 2px groove;
+    COLOR: white;
+    BORDER-BOTTOM: white 2px groove;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: #ffa000
+}
+.button2
+{
+    BORDER-RIGHT: 2px groove;
+    BORDER-TOP: 1px groove;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: 2px groove;
+    COLOR: white;
+    BORDER-BOTTOM: 2px groove;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: seagreen
+}
+.Table1
+{
+    BORDER-RIGHT: white 2px groove;
+    BORDER-TOP: white 2px groove;
+    FONT-SIZE: 11pt;
+    BORDER-LEFT: white 2px groove;
+    COLOR: black;
+    BORDER-BOTTOM: white 2px groove;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: tan
+}
+.button3
+{
+    BORDER-RIGHT: white 2px ridge;
+    BORDER-TOP: black 1px groove;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: white 2px ridge;
+    COLOR: white;
+    BORDER-BOTTOM: white 2px ridge;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: steelblue
+}
+.Header1
+{
+    BORDER-RIGHT: 2px groove;
+    BORDER-TOP: 2px groove;
+    FONT-SIZE: 13px;
+    BORDER-LEFT: 2px groove;
+    COLOR: yellow;
+    BORDER-BOTTOM: 2px groove;
+    FONT-FAMILY: 'Microsoft Sans Serif';
+    BACKGROUND-COLOR: royalblue
+}
+.Image1
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    BACKGROUND-IMAGE: url(images/MLSAllowed.bmp);
+    BORDER-LEFT: medium none;
+    WIDTH: 19px;
+    BORDER-BOTTOM: medium none;
+    HEIGHT: 23px;
+    BACKGROUND-COLOR: transparent
+}
+.Table2
+{
+    BORDER-RIGHT: white 2px groove;
+    BORDER-TOP: white 2px groove;
+    FONT-SIZE: 10px;
+    BORDER-LEFT: white 2px groove;
+    COLOR: white;
+    BORDER-BOTTOM: white 2px groove;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: tan
+}
+.ErrorLine
+{
+    FONT-WEIGHT: bolder;
+    FONT-SIZE: 12pt;
+    COLOR: white;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: red
+}
+.Table3
+{
+    FONT-SIZE: 11pt;
+    COLOR: black;
+    FONT-FAMILY: 'Microsoft Sans Serif'
+}
+.Header2
+{
+    FONT-SIZE: 13px;
+    COLOR: white;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: #ffa000
+}
+.Calculators
+{
+    COLOR: black;
+    FONT-FAMILY: 'MS Sans Serif';
+    BACKGROUND-COLOR: lightsteelblue
+}
+.Header3
+{
+    FONT-SIZE: 13px;
+    COLOR: white;
+    FONT-FAMILY: 'MS Sans Serif'
+}
+.TextBox1
+{
+    WIDTH: 80px;
+    HEIGHT: 20px
+}
+.TextBox2
+{
+    WIDTH: 120px;
+    HEIGHT: 20px
+}

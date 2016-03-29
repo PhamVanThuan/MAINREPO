@@ -1,0 +1,16 @@
+﻿@model SAHL.Core.UI.Elements.Menus.MenuBarMenuElement
+<div class="menu-bar" id="@Model.Id">
+    <ul class="nav nav-pills">
+
+        <li  class="brand halo-logo">
+            <a id="halo-logo-text" href="#">Halo</a>
+        </li>
+        <li class="divider-vertical"></li>
+        @foreach (var menuItemElement in Model.MenuItemElements)
+        {
+            @Html.DisplayForModel(x => menuItemElement)
+        }
+
+        @Html.Partial("_UserDetailsPartial")
+    </ul>
+</div>

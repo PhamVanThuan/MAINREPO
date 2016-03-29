@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DB21B76-FA27-4235-85CC-72DF9E8D4668}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.X2</RootNamespace>
+    <AssemblyName>SAHL.Core.X2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDomain\AppDomainProcessProxy.cs" />
+    <Compile Include="AppDomain\AppDomainProcessProxyFactory.cs" />
+    <Compile Include="AppDomain\IAppDomainFactory.cs" />
+    <Compile Include="AppDomain\IAppDomainProcessProxy.cs" />
+    <Compile Include="AppDomain\IAppDomainProcessProxyCache.cs" />
+    <Compile Include="AppDomain\IAppDomainProcessProxyFactory.cs" />
+    <Compile Include="AppDomain\IProcessInstantiator.cs" />
+    <Compile Include="Events\IWorkflowEvent.cs" />
+    <Compile Include="Events\WorkflowTransitionEvent.cs" />
+    <Compile Include="Exceptions\MapReturnedFalseException.cs" />
+    <Compile Include="Exceptions\NoRoutesAvailableException.cs" />
+    <Compile Include="Exceptions\RuleCommandException.cs" />
+    <Compile Include="Factories\IMessageCollectionFactory.cs" />
+    <Compile Include="IX2LegacyProcess.cs" />
+    <Compile Include="IX2Map.cs" />
+    <Compile Include="IX2Params.cs" />
+    <Compile Include="IX2Process.cs" />
+    <Compile Include="Logging\IX2Logging.cs" />
+    <Compile Include="Logging\LogLocationEnum.cs" />
+    <Compile Include="Logging\X2Logging.cs" />
+    <Compile Include="Messages\IX2CreateRequest.cs" />
+    <Compile Include="Messages\IX2ExternalActivityRequest.cs" />
+    <Compile Include="Messages\IX2Message.cs" />
+    <Compile Include="Messages\IX2NodeManagementMessage.cs" />
+    <Compile Include="Messages\IX2Request.cs" />
+    <Compile Include="Messages\IX2RequestForExistingInstance.cs" />
+    <Compile Include="Messages\IX2RequestForSecurityRecalc.cs" />
+    <Compile Include="Messages\IX2RequestWithParent.cs" />
+    <Compile Include="Messages\IX2ReturnWorkflowRequest.cs" />
+    <Compile Include="Messages\IX2SystemRequest.cs" />
+    <Compile Include="Messages\IX2UserRequest.cs" />
+    <Compile Include="Messages\Management\X2NodeManagementMessage.cs" />
+    <Compile Include="Messages\Management\X2SupportedProcessesResponse.cs" />
+    <Compile Include="Messages\QueueNameConstructor.cs" />
+    <Compile Include="Messages\X2Constants.cs" />
+    <Compile Include="Messages\X2CreateInstanceWithCompleteRequest.cs" />
+    <Compile Include="Messages\X2CreateInstanceRequest.cs" />
+    <Compile Include="Messages\X2ErrorResponse.cs" />
+    <Compile Include="Messages\X2ExternalActivityRequest.cs" />
+    <Compile Include="Messages\X2BundledRequest.cs" />
+    <Compile Include="Messages\X2ManagementTypeEnum.cs" />
+    <Compile Include="Messages\X2NotificationOfNewScheduledActivityRequest.cs" />
+    <Compile Include="Messages\X2Process.cs" />
+    <Compile Include="Messages\X2Request.cs" />
+    <Compile Include="Messages\X2RequestForAutoForward.cs" />
+    <Compile Include="Messages\X2RequestForExistingInstance.cs" />
+    <Compile Include="Messages\X2RequestForSecurityRecalc.cs" />
+    <Compile Include="Messages\X2RequestTypeEnum.cs" />
+    <Compile Include="Messages\X2Response.cs" />
+    <Compile Include="Messages\X2SystemRequestGroup.cs" />
+    <Compile Include="Messages\X2Workflow.cs" />
+    <Compile Include="Messages\X2WorkflowRequest.cs" />
+    <Compile Include="Messages\X2FailedRequest.cs" />
+    <Compile Include="Messages\X2WrappedRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\IX2ContextualDataProvider.cs" />
+    <Compile Include="Providers\IX2ProcessProvider.cs" />
+    <Compile Include="X2Params.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.X2\SAHL.Core.Data.Models.X2.csproj">
+      <Project>{3271fe6c-90a1-4423-87a7-1760ffc4eeb3}</Project>
+      <Name>SAHL.Core.Data.Models.X2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging.Shared\SAHL.Core.Messaging.Shared.csproj">
+      <Project>{5b05aefb-2351-4393-8f9b-1ab0aa926d45}</Project>
+      <Name>SAHL.Core.Messaging.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Services\SAHL.Core.Services.csproj">
+      <Project>{0ba4337f-8b60-4736-ac59-8886fb7db725}</Project>
+      <Name>SAHL.Core.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.X2.Shared\SAHL.Core.X2.Shared.csproj">
+      <Project>{5e67d019-896d-4056-a19a-84f5d1f36b0b}</Project>
+      <Name>SAHL.Core.X2.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\" Condition="Exists('$(SolutionDir)\.nuget\')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

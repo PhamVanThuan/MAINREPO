@@ -1,0 +1,13 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register Assembly="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
+
+<dxe:ASPxCalendar runat="server" SpriteCssFilePath="{0}/sprite.css" CssFilePath="{0}/styles.css" CssPostfix="RedWine">
+    <FooterStyle Spacing="17px"></FooterStyle>
+    <HeaderStyle Spacing="1px"></HeaderStyle>
+    <ValidationSettings>
+        <ErrorFrameStyle ImageSpacing="4px">
+            <ErrorTextPaddings PaddingLeft="4px"></ErrorTextPaddings>
+        </ErrorFrameStyle>
+    </ValidationSettings>
+</dxe:ASPxCalendar>
+

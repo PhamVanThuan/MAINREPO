@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D54E795-84D4-4282-83A7-BA2810521964}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.BusinessModel</RootNamespace>
+    <AssemblyName>SAHL.Core.BusinessModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessContext.cs" />
+    <Compile Include="BusinessKey.cs" />
+    <Compile Include="Caching\PrincipalBusinessContextCacheGeneratorFactory.cs" />
+    <Compile Include="Enums\ACBTypeEnum.cs" />
+    <Compile Include="Enums\AccountIndicationTypeEnum.cs" />
+    <Compile Include="Enums\AccountInformationTypeEnum.cs" />
+    <Compile Include="Enums\AccountStatusEnum.cs" />
+    <Compile Include="Enums\AddressFormatEnum.cs" />
+    <Compile Include="Enums\AddressTypeEnum.cs" />
+    <Compile Include="Enums\AffordabilityAssessmentItemCategoryEnum.cs" />
+    <Compile Include="Enums\AffordabilityAssessmentItemTypeEnum.cs" />
+    <Compile Include="Enums\AffordabilityAssessmentStatusEnum.cs" />
+    <Compile Include="Enums\AffordabilityTypeEnum.cs" />
+    <Compile Include="Enums\AffordabilityTypeGroupEnum.cs" />
+    <Compile Include="Enums\AnswerTypeEnum.cs" />
+    <Compile Include="Enums\ApplicantOfferRoleTypeEnum.cs" />
+    <Compile Include="Enums\ApplicantTypeEnum.cs" />
+    <Compile Include="Enums\AssetInvestmentType.cs" />
+    <Compile Include="Enums\AssetLiabilitySubTypeEnum.cs" />
+    <Compile Include="Enums\AssetLiabilityTypeEnum.cs" />
+    <Compile Include="Enums\AuthenticationTypeEnum.cs" />
+    <Compile Include="Enums\BalanceTypeEnum.cs" />
+    <Compile Include="Enums\BatchStatusEnum.cs" />
+    <Compile Include="Enums\BatchTransactionStatusEnum.cs" />
+    <Compile Include="Enums\BehaviouralScoreCategoryEnum.cs" />
+    <Compile Include="Enums\BulkBatchStatusEnum.cs" />
+    <Compile Include="Enums\BulkBatchTypeEnum.cs" />
+    <Compile Include="Enums\CampaignTargetResponseEnum.cs" />
+    <Compile Include="Enums\CancellationReasonEnum.cs" />
+    <Compile Include="Enums\CapabilityEnum.cs" />
+    <Compile Include="Enums\CAPPaymentOptionEnum.cs" />
+    <Compile Include="Enums\CapStatusEnum.cs" />
+    <Compile Include="Enums\CATSPaymentBatchStatusEnum.cs" />
+    <Compile Include="Enums\CATSPaymentBatchTypeEnum.cs" />
+    <Compile Include="Enums\CitizenTypeEnum.cs" />
+    <Compile Include="Enums\DisabilityClaimStatusEnum.cs" />
+    <Compile Include="Enums\ClaimStatusEnum.cs" />
+    <Compile Include="Enums\ClaimTypeEnum.cs" />
+    <Compile Include="Enums\ClientOfferStatusEnum.cs" />
+    <Compile Include="Enums\ComcorpEventStatusEnum.cs" />
+    <Compile Include="Enums\ConditionSetEnum.cs" />
+    <Compile Include="Enums\ConditionTypeEnum.cs" />
+    <Compile Include="Enums\ContentTypeEnum.cs" />
+    <Compile Include="Enums\CorrespondenceLanguageEnum.cs" />
+    <Compile Include="Enums\CorrespondenceMediumEnum.cs" />
+    <Compile Include="Enums\CorrespondenceTemplateEnum.cs" />
+    <Compile Include="Enums\CourtTypeEnum.cs" />
+    <Compile Include="Enums\CreditCriteriaAttributeTypeEnum.cs" />
+    <Compile Include="Enums\DataProviderEnum.cs" />
+    <Compile Include="Enums\DataServiceEnum.cs" />
+    <Compile Include="Enums\DebtCounsellingStatusEnum.cs" />
+    <Compile Include="Enums\DeedsPropertyTypeEnum.cs" />
+    <Compile Include="Enums\DetailClassEnum.cs" />
+    <Compile Include="Enums\DisabilityPaymentStatusEnum.cs" />
+    <Compile Include="Enums\DisabilityTypeEnum.cs" />
+    <Compile Include="Enums\DisbursementStatusEnum.cs" />
+    <Compile Include="Enums\DisbursementTransactionTypeEnum.cs" />
+    <Compile Include="Enums\DisbursementTypeEnum.cs" />
+    <Compile Include="Enums\DocumentGroupEnum.cs" />
+    <Compile Include="Enums\DomainProcessStatusEnum.cs" />
+    <Compile Include="Enums\EducationEnum.cs" />
+    <Compile Include="Enums\EmployeeDeductionTypeEnum.cs" />
+    <Compile Include="Enums\EmployerBusinessTypeEnum.cs" />
+    <Compile Include="Enums\EmploymentSectorEnum.cs" />
+    <Compile Include="Enums\EmploymentStatusEnum.cs" />
+    <Compile Include="Enums\EmploymentTypeEnum.cs" />
+    <Compile Include="Enums\ExpenseTypeEnum.cs" />
+    <Compile Include="Enums\ExpenseTypeGroupEnum.cs" />
+    <Compile Include="Enums\ExternalRoleTypeEnum.cs" />
+    <Compile Include="Enums\ExternalRoleTypeGroupEnum.cs" />
+    <Compile Include="Enums\FinancialAdjustmentSourceEnum.cs" />
+    <Compile Include="Enums\FinancialAdjustmentStatusEnum.cs" />
+    <Compile Include="Enums\FinancialAdjustmentTypeEnum.cs" />
+    <Compile Include="Enums\FinancialServiceAttributeTypeEnum.cs" />
+    <Compile Include="Enums\FinancialServiceGroupEnum.cs" />
+    <Compile Include="Enums\FinancialServicePaymentTypeEnum.cs" />
+    <Compile Include="Enums\FormatTypeEnum.cs" />
+    <Compile Include="Enums\FutureDatedChangeTypeEnum.cs" />
+    <Compile Include="Enums\GenderEnum.cs" />
+    <Compile Include="Enums\GeneralStatusEnum.cs" />
+    <Compile Include="Enums\GenericKeyTypeEnum.cs" />
+    <Compile Include="Enums\HearingTypeEnum.cs" />
+    <Compile Include="Enums\HOCConstructionEnum.cs" />
+    <Compile Include="Enums\HOCInsurerEnum.cs" />
+    <Compile Include="Enums\HOCRoofEnum.cs" />
+    <Compile Include="Enums\HocStatusEnum.cs" />
+    <Compile Include="Enums\HOCSubsidenceEnum.cs" />
+    <Compile Include="Enums\ImportStatusEnum.cs" />
+    <Compile Include="Enums\InsurerEnum.cs" />
+    <Compile Include="Enums\InvoiceStatusEnum.cs" />
+    <Compile Include="Enums\LanguageEnum.cs" />
+    <Compile Include="Enums\LeadApplicantOfferRoleTypeEnum.cs" />
+    <Compile Include="Enums\LegalEntityExceptionStatusEnum.cs" />
+    <Compile Include="Enums\LegalEntityRelationshipTypeEnum.cs" />
+    <Compile Include="Enums\LegalEntityStatusEnum.cs" />
+    <Compile Include="Enums\LegalEntityTypeEnum.cs" />
+    <Compile Include="Enums\LifeInsurableInterestTypeEnum.cs" />
+    <Compile Include="Enums\LifePolicyStatusEnum.cs" />
+    <Compile Include="Enums\LifePolicyTypeEnum.cs" />
+    <Compile Include="Enums\MaritalStatusEnum.cs" />
+    <Compile Include="Enums\MarketingOptionEnum.cs" />
+    <Compile Include="Enums\MarketingOptionRelevanceEnum.cs" />
+    <Compile Include="Enums\MarketRates.cs" />
+    <Compile Include="Enums\MessageTypeEnum.cs" />
+    <Compile Include="Enums\MortgageLoanPurposeEnum.cs" />
+    <Compile Include="Enums\MortgageLoanPurposeGroupEnum.cs" />
+    <Compile Include="Enums\OccupancyTypeEnum.cs" />
+    <Compile Include="Enums\OfferAttributeTypeEnum.cs" />
+    <Compile Include="Enums\OfferAttributeTypeGroupEnum.cs" />
+    <Compile Include="Enums\OfferDeclarationAnswerEnum.cs" />
+    <Compile Include="Enums\OfferDeclarationQuestionEnum.cs" />
+    <Compile Include="Enums\OfferExceptionTypeGroupEnum.cs" />
+    <Compile Include="Enums\OfferInformationTypeEnum.cs" />
+    <Compile Include="Enums\OfferMarketingSurveyTypeGroupEnum.cs" />
+    <Compile Include="Enums\OfferRoleAttributeTypeEnum.cs" />
+    <Compile Include="Enums\OfferRoleTypeEnum.cs" />
+    <Compile Include="Enums\OfferRoleTypeGroupEnum.cs" />
+    <Compile Include="Enums\OfferStageEnum.cs" />
+    <Compile Include="Enums\OfferStatusEnum.cs" />
+    <Compile Include="Enums\EventTypeEnum.cs" />
+    <Compile Include="Enums\OfferTypeEnum.cs" />
+    <Compile Include="Enums\OnlineStatementFormatEnum.cs" />
+    <Compile Include="Enums\OrganisationTypeEnum.cs" />
+    <Compile Include="Enums\OriginationSourceEnum.cs" />
+    <Compile Include="Enums\PaymentTypeEnum.cs" />
+    <Compile Include="Enums\PopulationGroupEnum.cs" />
+    <Compile Include="Enums\ProductEnum.cs" />
+    <Compile Include="Enums\PropertyTypeEnum.cs" />
+    <Compile Include="Enums\ProposalStatusEnum.cs" />
+    <Compile Include="Enums\ProposalTypeEnum.cs" />
+    <Compile Include="Enums\QuickCashPaymentTypeEnum.cs" />
+    <Compile Include="Enums\RateAdjustmentGroupEnum.cs" />
+    <Compile Include="Enums\ReasonTypeEnum.cs" />
+    <Compile Include="Enums\ReasonTypeGroupEnum.cs" />
+    <Compile Include="Enums\RecurringTransactionTypeEnum.cs" />
+    <Compile Include="Enums\RemunerationTypeEnum.cs" />
+    <Compile Include="Enums\ReportParameterTypeEnum.cs" />
+    <Compile Include="Enums\ReportTypeEnum.cs" />
+    <Compile Include="Enums\ResetConfigurationEnum.cs" />
+    <Compile Include="Enums\ResidenceStatusEnum.cs" />
+    <Compile Include="Enums\riskMatrixEnum.cs" />
+    <Compile Include="Enums\RoleTypeEnum.cs" />
+    <Compile Include="Enums\RoundRobinPointerEnum.cs" />
+    <Compile Include="Enums\RuleExclusionSetEnum.cs" />
+    <Compile Include="Enums\SalaryDeductionRemunerationTypeEnum.cs" />
+    <Compile Include="Enums\SalariedRemunerationTypeEnum.cs" />
+    <Compile Include="Enums\SalutationTypeEnum.cs" />
+    <Compile Include="Enums\SPVAttributeTypeEnum.cs" />
+    <Compile Include="Enums\SPVFeeTypeEnum.cs" />
+    <Compile Include="Enums\StageDefinitionGroupEnum.cs" />
+    <Compile Include="Enums\SubsidyProviderTypeEnum.cs" />
+    <Compile Include="Enums\ThirdPartyTypeEnum.cs" />
+    <Compile Include="Enums\TitleTypeEnum.cs" />
+    <Compile Include="Enums\TrancheTypeEnum.cs" />
+    <Compile Include="Enums\TransactionGroupEnum.cs" />
+    <Compile Include="Enums\TransactionStatusEnum.cs" />
+    <Compile Include="Enums\UnemployedRemunerationType.cs" />
+    <Compile Include="Enums\ValuationImprovementTypeEnum.cs" />
+    <Compile Include="Enums\ValuationRoofTypeEnum.cs" />
+    <Compile Include="Enums\ValuationStatusEnum.cs" />
+    <Compile Include="Enums\WorkflowRoleTypeEnum.cs" />
+    <Compile Include="Enums\WorkflowRoleTypeGroupEnum.cs" />
+    <Compile Include="OrderedBusinessKey.cs" />
+    <Compile Include="PrincipalBusinessContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\IValidationUtils.cs" />
+    <Compile Include="Validation\ValidationUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\" Condition="Exists('$(SolutionDir)\.nuget\')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,118 @@
+USE [2AM]
+GO
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'test.AutomationFLTestCasesEmergency ') and OBJECTPROPERTY(id, N'IsTable') = 1)
+Begin
+	DROP TABLE test.AutomationFLTestCasesEmergency 
+	Print 'Dropped TABLE test.AutomationFLTestCasesEmergency' 
+End
+Go
+			CREATE TABLE test.AutomationFLTestCasesEmergency 
+			(
+			TestIdentifier VARCHAR(150),
+			TestGroup VARCHAR(150),
+			AccountKey INT,
+			ValuationDate DATETIME,
+			LTV FLOAT,
+			Product VARCHAR(150),
+			ReadvanceAmount FLOAT,
+			FurtherAdvanceAmount FLOAT,
+			FurtherLoanAmount FLOAT,
+			MaxFurtherLending FLOAT,
+			SPV VARCHAR(150),
+			OfferKey INT,
+			ReadvOfferKey INT,
+			FAdvOfferKey INT,
+			FLOfferKey INT,
+			AssignedFLAppProcUser VARCHAR(150),
+			OrigConsultant VARCHAR(150),
+			Password VARCHAR(150),
+			ContactOption VARCHAR(150),
+			AssignedFLSupervisor VARCHAR(150),
+			AssignedCreditUser VARCHAR(150),
+			Credit bit,
+			ReadvancePayments bit,
+			CurrentState varchar(50),
+			ValuationAmount FLOAT,
+			CurrentBalance FLOAT,
+			InstanceID bigint
+			)
+			
+			EXEC test.insertFLTestCases 10000
+
+--we need a debt counselling test case for exclusions
+CREATE TABLE #debt_counselling (   
+  generickey     INT
+  )   
+--this will retrieve the debt counselling in/out transitions  
+INSERT INTO #debt_counselling   
+				SELECT distinct r.accountKey
+				FROM [2am]..[Role] r (NOLOCK)
+				JOIN [2am]..LegalEntity le (NOLOCK) 
+					ON le.LegalEntityKey = r.LegalEntityKey
+				JOIN [2am]..ExternalRole er (NOLOCK) 
+					ON le.LegalEntityKey = er.LegalEntityKey and er.GenericKeyTypeKey = 27 --DebtCounselling
+				JOIN [2am].debtcounselling.DebtCounselling dc (NOLOCK) 
+					ON er.GenericKey = dc.DebtCounsellingKey
+				WHERE
+					er.GeneralStatusKey = 1
+						AND 
+					dc.DebtCounsellingStatusKey = 1
+						AND 
+					er.ExternalRoleTypeKey = 1;
+
+--we need non performing loans for exclusions
+SELECT NonPerforming.AccountKey
+INTO
+#NonPerforming
+FROM
+(  
+select a.accountKey from [2am].dbo.Account a
+join [2am].dbo.financialService fs on a.accountKey=fs.accountKey and parentFinancialServiceKey is null
+join [2am].fin.financialAdjustment fa on fs.financialServiceKey = fa.financialServiceKey
+and (financialadjustmentsourceKey=2 and financialAdjustmentTypeKey=5)
+where fa.financialAdjustmentStatusKey=1 and rrr_productkey=5
+) as NonPerforming
+
+--insert into test.AutomationFLTestCasesEmergency
+	select top 10 'ReadvanceCreate'+cast(row_number() over (order by test.accountkey desc) as varchar(3)) as [TestIdentifier],
+	'Readvances' as [TestGroup],
+	test.AccountKey, ValuationDate, round(LTV,2) as LTV, Product, round(ReadvanceAmount-1,0) as ReadvanceAmount,
+	-1 as FurtherAdvanceAmount, -1 as FurtherLoanAmount, round(maxFurtherLending,0) as maxFurtherLending, SPV, 
+	'' as OfferKey,'' as ReadvOfferKey,'' as FAdvOfferKey, '' as FLOfferKey, '' as AssignedFLAppProcUser, 'SAHL\FLAppProcUser3' as OrigConsultant, 'Natal123' as Password,
+	case when row_number() over (order by test.accountkey) % 2 = 0 then 'Fax' else 'Email' end as ContactOption,'','',0,0,
+	'' as CurrentState, test.[ValuationAmount], test.[CurrentBalance], 0
+	--into #AutomationFLTestCasesEmergency
+	from test.furtherlendingtestcases test
+	left join offer on test.accountkey=offer.accountkey 
+		and offertypekey in (2,3,4) 
+		and offerstatuskey=1
+	left join detail d on test.accountkey = d.accountkey
+	and d.detailtypekey in (
+	104,	--Amended Cancellation Figures
+	227,	--Under Cancellation - Guarantee Received
+	481,	--Cancellation Refund Form received
+	299,	--Cancellation Lodged
+	453,	--Cancellation - Held Over
+	455,	--Cancellation - Up for fees
+	251,	--Cancellation Registered
+	248,	--Loan Cancelled – Shortfall Approved
+	249,	--Loan Cancelled – A.O.D (Acknowledgement of Debt)
+	242,	--Under Administration
+	180,	--Sequestration or Liquidation
+	279,	--Estate Late – Secured
+	14, 	--Estate Late - Unsecured
+	294,	--Disability Claim Lodged
+	295,	--Disability Claim Approved
+	150		--Debit Order Suspended
+	)
+	left join #debt_counselling debt on test.accountkey=debt.generickey
+	left join #NonPerforming np on test.AccountKey=np.AccountKey 
+	where readvanceamount > 10000
+	and offer.accountkey is null
+	and d.accountkey is null and test.rapidLTV < 79.5
+	and debt.generickey is null
+	and np.AccountKEy is null
+	and valuationdate > DATEADD( yy, -2, GETDATE())
+		order by test.accountKey desc
+		
+		select * from #AutomationFLTestCasesEmergency

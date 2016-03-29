@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="52e3be8b-9eb7-41f7-b597-1bee5088ac8d" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="ExternalRole" schema="dbo" table="ExternalRole">
+      <targets>
+        <manyToOneRelation Id="eb6fc395-d3eb-4fec-8991-272d75c18287" targetColumnKey="ExternalRoleTypeKey" targetTable="ExternalRole" targetPropertyName="ExternalRoles" sourceColumn="ExternalRoleTypeKey">
+          <modelClassMoniker name="/52e3be8b-9eb7-41f7-b597-1bee5088ac8d/ExternalRoleType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="cf4025d1-36f5-4afe-a586-c5a77c85f937" targetColumnKey="GeneralStatusKey" targetTable="ExternalRole" targetPropertyName="ExternalRoles" sourceColumn="GeneralStatusKey">
+          <modelClassMoniker name="/52e3be8b-9eb7-41f7-b597-1bee5088ac8d/GeneralStatus" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="16c98e2c-60a2-407d-9e75-62d55ffbf321" targetColumnKey="GenericKeyTypeKey" targetTable="ExternalRole" targetPropertyName="ExternalRoles" sourceColumn="GenericKeyTypeKey">
+          <modelClassMoniker name="/52e3be8b-9eb7-41f7-b597-1bee5088ac8d/GenericKeyType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="8f025677-15c0-4e9d-907a-67536d3b2223" targetColumnKey="LegalEntityKey" targetTable="ExternalRole" targetPropertyName="ExternalRoles" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/52e3be8b-9eb7-41f7-b597-1bee5088ac8d/LegalEntity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="2b62050b-7a6e-4bd1-9201-e931a014d950" name="ExternalRoleKey" column="ExternalRoleKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="01a998bc-430f-4daf-b0a5-472ae2f6944c" name="GenericKey" column="GenericKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="ExternalRoleType" schema="dbo" table="ExternalRoleType">
+      <properties>
+        <modelProperty Id="50329926-508c-4d80-aecc-7145abe0988e" name="ExternalRoleTypeKey" column="ExternalRoleTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="77ba1533-5d34-43b3-ae59-5b739590ed73" name="Description" column="Description" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="GeneralStatus" schema="dbo" table="GeneralStatus">
+      <properties>
+        <modelProperty Id="83453cd3-0dc9-4ea0-8fdc-cb047bcb4b48" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="c20cdcdd-5201-4e2f-80ae-f56d984ad063" name="Description" column="Description" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntity" schema="dbo" table="LegalEntity">
+      <properties>
+        <modelProperty Id="184e30b4-6190-4ec0-af3c-98aeb40cdd82" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="3189fcbe-748c-4a79-be16-42f7255cda04" name="LegalEntityTypeKey" column="LegalEntityTypeKey" columnType="Int32" length="0" />
+        <modelProperty Id="60a2b65b-cff0-46a8-a539-be40e4229e75" name="MaritalStatusKey" column="MaritalStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="616a426b-f478-4f13-94db-990b94167bf8" name="GenderKey" column="GenderKey" columnType="Int32" length="0" />
+        <modelProperty Id="6d5adf34-72da-474e-9a33-79e7a608fccf" name="PopulationGroupKey" column="PopulationGroupKey" columnType="Int32" length="0" />
+        <modelProperty Id="bde4b8f7-d51c-498e-9618-5faa4f57190c" name="IntroductionDate" column="IntroductionDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="8648cf35-de7c-42dc-a632-f2910e271214" name="Salutationkey" column="Salutationkey" columnType="Int32" length="0" />
+        <modelProperty Id="f66abdb6-de24-44cc-ba6b-0e9f8d483252" name="FirstNames" column="FirstNames" length="0" />
+        <modelProperty Id="a4799fb7-a8e1-459e-bde1-57fed9fc0dd1" name="Initials" column="Initials" length="0" />
+        <modelProperty Id="ff1523cc-7203-4629-b4fe-0ac32dfa635b" name="Surname" column="Surname" length="0" />
+        <modelProperty Id="3c4dcd97-e3f2-4f22-b61e-1a03ccaa0c23" name="PreferredName" column="PreferredName" length="0" />
+        <modelProperty Id="bf513288-c1c9-4ac7-b90b-57cebdc00eb7" name="IDNumber" column="IDNumber" length="0" />
+        <modelProperty Id="d5baa5b4-1bc9-4e6d-a4ba-c68301e8dab3" name="PassportNumber" column="PassportNumber" length="0" />
+        <modelProperty Id="d3482e18-f3ec-4530-91e5-74bedc1aa7bb" name="TaxNumber" column="TaxNumber" length="0" />
+        <modelProperty Id="dc66d449-e2b9-4ee1-a16b-8e39d6ec0dd5" name="RegistrationNumber" column="RegistrationNumber" length="0" />
+        <modelProperty Id="91e368be-1138-40f7-870c-94ef1351b48d" name="RegisteredName" column="RegisteredName" length="0" />
+        <modelProperty Id="e476e0bb-bb96-49da-a32d-6645304cd136" name="TradingName" column="TradingName" length="0" />
+        <modelProperty Id="3457c9ed-04b0-41a1-a5e2-c32bdcd91d16" name="DateOfBirth" column="DateOfBirth" columnType="Timestamp" length="0" />
+        <modelProperty Id="2a12162b-4597-4112-8a03-999a4f9b543a" name="HomePhoneCode" column="HomePhoneCode" length="0" />
+        <modelProperty Id="ca8479cb-782c-46a6-8dd4-308b46ba8da3" name="HomePhoneNumber" column="HomePhoneNumber" length="0" />
+        <modelProperty Id="1c664a5d-70e1-42e5-b249-4494c41be692" name="WorkPhoneCode" column="WorkPhoneCode" length="0" />
+        <modelProperty Id="36b80068-0947-448d-89fb-c9e564c0ffaa" name="WorkPhoneNumber" column="WorkPhoneNumber" length="0" />
+        <modelProperty Id="2da9d9d4-6e02-4a59-a9e7-874aebd2c8fc" name="CellPhoneNumber" column="CellPhoneNumber" length="0" />
+        <modelProperty Id="1fdc0974-0e1c-4643-94f5-52f23e8a2424" name="EmailAddress" column="EmailAddress" length="0" />
+        <modelProperty Id="1a7cecf3-6518-423b-b004-7f6372c772dc" name="FaxCode" column="FaxCode" length="0" />
+        <modelProperty Id="bd8a7cb7-c875-49ca-b6fd-000e0f370944" name="FaxNumber" column="FaxNumber" length="0" />
+        <modelProperty Id="128ae190-b274-4006-8f4a-28e5031d8a8d" name="Password" column="Password" length="0" />
+        <modelProperty Id="cc4a2a25-8291-400b-91c3-5b7662e8c74e" name="CitizenTypeKey" column="CitizenTypeKey" columnType="Int32" length="0" />
+        <modelProperty Id="7bf3d195-fac6-4080-9b99-1cce1769c57f" name="LegalEntityStatusKey" column="LegalEntityStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="55ae64ff-9ea7-44e1-959a-379abe6c5bcf" name="Comments" column="Comments" length="0" />
+        <modelProperty Id="449100e1-997e-46b2-b55a-53fcb9614f12" name="LegalEntityExceptionStatusKey" column="LegalEntityExceptionStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="78425019-ab51-4940-9d06-39c1250e7105" name="UserID" column="UserID" length="0" />
+        <modelProperty Id="48a0712b-f1b4-44b0-8acf-faa4c34cf767" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="116d88f7-a091-4221-95ee-c8163b7df588" name="EducationKey" column="EducationKey" columnType="Int32" length="0" />
+        <modelProperty Id="86729e19-f415-4625-afbc-9b59a4cd0504" name="HomeLanguageKey" column="HomeLanguageKey" columnType="Int32" length="0" />
+        <modelProperty Id="a20024c0-5f83-4b4e-a6ec-7501f40bb9ea" name="DocumentLanguageKey" column="DocumentLanguageKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="754a3f0f-9895-4b44-8ac6-4d4ea78f8748" name="ResidenceStatusKey" column="ResidenceStatusKey" columnType="Int32" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="GenericKeyType" schema="dbo" table="GenericKeyType">
+      <properties>
+        <modelProperty Id="0c3c9eaa-510e-424c-b837-61b0ad44a4de" name="GenericKeyTypeKey" column="GenericKeyTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="ec126b79-6988-405d-8686-4b6a0a5f7193" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="962823a0-fa12-4ca4-a00c-e0b2f08541b0" name="TableName" column="TableName" length="0" />
+        <modelProperty Id="6297688d-fb9f-42d4-bf7c-0edff06efd0f" name="PrimaryKeyColumn" column="PrimaryKeyColumn" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

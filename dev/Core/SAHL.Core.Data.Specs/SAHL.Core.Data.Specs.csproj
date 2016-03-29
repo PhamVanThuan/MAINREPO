@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{625A97D8-C2C5-4FAD-B252-180CE602A3E5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Data.Specs</RootNamespace>
+    <AssemblyName>SAHL.Core.Data.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Db\FakeDbConfigurationProvider.cs" />
+    <Compile Include="Db\when_InReadOnlyAppContext_is_disposed.cs" />
+    <Compile Include="Db\when_InReadOnlyAppContext_is_used.cs" />
+    <Compile Include="Managers\ADUserDataManager\when_getting_an_aduser_by_name.cs" />
+    <Compile Include="Managers\ADUserManager\when_getting_an_adUserKey.cs" />
+    <Compile Include="Managers\ADUserManager\when_getting_an_adUserKey_and_no_user_exists.cs" />
+    <Compile Include="Managers\ADUserManager\when_getting_an_aduser_by_name.cs" />
+    <Compile Include="Managers\LinkedKeyDataManagerSpecs\when_deleting_a_linked_key.cs" />
+    <Compile Include="Managers\LinkedKeyDataManagerSpecs\when_inserting_a_linked_key.cs" />
+    <Compile Include="Managers\LinkedKeyDataManagerSpecs\when_retrieving_a_linked_key.cs" />
+    <Compile Include="Managers\LinkedKeyManagerSpecs\when_deleting_a_linked_key.cs" />
+    <Compile Include="Managers\LinkedKeyManagerSpecs\when_inserting_a_linked_key.cs" />
+    <Compile Include="Managers\LinkedKeyManagerSpecs\when_retrieving_a_linked_key.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork\when_multiple_unitofworks_is_used.cs" />
+    <Compile Include="UnitOfWork\when_unitofwork_is_created.cs" />
+    <Compile Include="UnitOfWork\when_unitofwork_is_disposed.cs" />
+    <Compile Include="UnitOfWork\when_unitofwork_is_used_with_multiple_db_actions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data.Dapper\SAHL.Core.Data.Dapper.csproj">
+      <Project>{e65c3d29-c6d7-4e01-b20c-f3fd74201e21}</Project>
+      <Name>SAHL.Core.Data.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.2AM\SAHL.Core.Data.Models.2AM.csproj">
+      <Project>{5ae349cf-67f9-47bd-9aa0-48cda3bbac51}</Project>
+      <Name>SAHL.Core.Data.Models.2AM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Testing.Fakes\SAHL.Core.Testing.Fakes.csproj">
+      <Project>{135f06a4-0426-421c-ae4c-31e0571adc63}</Project>
+      <Name>SAHL.Core.Testing.Fakes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Testing\SAHL.Core.Testing.csproj">
+      <Project>{2f21ffe3-ab20-4623-84b5-29d1d93627e6}</Project>
+      <Name>SAHL.Core.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\" Condition="Exists('$(SolutionDir)\.nuget\')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

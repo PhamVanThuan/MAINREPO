@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:theme="clr-namespace:SAHomeloans.SAHL_VSExtensions.Themes"
+>
+    <Style x:Key="baseTextControl" TargetType="{x:Type Control}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static theme:ThemeHelper.NewProjectDialogContentForeground}}" />
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static theme:ThemeHelper.NewProjectDialogContentForeground}}" />
+    </Style>
+
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource baseTextControl}" />
+    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource baseTextControl}" />
+</ResourceDictionary>

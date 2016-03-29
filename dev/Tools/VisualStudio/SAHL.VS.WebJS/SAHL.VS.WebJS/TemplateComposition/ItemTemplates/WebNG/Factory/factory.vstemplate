@@ -1,0 +1,15 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>factory.js</DefaultName>
+    <Name>AngularJs Factory</Name>
+    <Description>AngularJs Factory File and Spec.</Description>
+    <ProjectType>WebNG</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>factory.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.js" ReplaceParameters="true" SubType="Compile">factory.js</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.js/$fileinputname$.spec.js" ReplaceParameters="true" SubType="">factory.spec.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <!-- Root Path definition relative for actual build file -->
+  <PropertyGroup>
+    <RootPath Condition=" '$(RootPath)' == '' ">$(MSBuildProjectDirectory)\..\..</RootPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <Configuration Condition=" '$(Configuration)' == '' ">NET40-Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{652F95D4-86E2-40B6-919D-CFC6E449386B}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Castle.ActiveRecord</AssemblyName>
+    <AssemblyOriginatorKeyFile>..\..\CastleKey.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Castle.ActiveRecord</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET40-Debug|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <OutputPath>bin\NET40-Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG;PHYSICALASSEMBLY DOTNET DOTNET40 CLIENTPROFILE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NET40-Release|AnyCPU' ">
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <OutputPath>bin\NET40-Release\</OutputPath>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;PHYSICALASSEMBLY DOTNET DOTNET40 CLIENTPROFILE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\NET40-Release\Castle.ActiveRecord.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NET35-Debug|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <OutputPath>bin\NET35-Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PHYSICALASSEMBLY DOTNET DOTNET35</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NET35-Release|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <OutputPath>bin\NET35-Release\</OutputPath>
+    <DefineConstants>TRACE;PHYSICALASSEMBLY DOTNET DOTNET35</DefineConstants>
+    <DocumentationFile>bin\NET35-Release\Castle.ActiveRecord.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MONO26-Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MONO26-Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MONO28-Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MONO28-Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SL30-Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SL30-Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SL40-Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SL40-Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;PHYSICALASSEMBLY DOTNET DOTNET40 CLIENTPROFILE</DefineConstants>
+    <DocumentationFile>bin\NET40-Release\Castle.ActiveRecord.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;PHYSICALASSEMBLY DOTNET DOTNET40 CLIENTPROFILE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Components.Validator, Version=0.0.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=0.0.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.0.3, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.1.0.2002, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=2.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search, Version=2.0.0.1001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ActiveRecordAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\ActiveRecordSkip.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\AnyAttribute.cs" />
+    <Compile Include="Attributes\BaseAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\BelongsToAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\CollectionIDAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\CompositeKeyAttribute.cs" />
+    <Compile Include="Attributes\FieldAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\HasAndBelongsToManyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\HasManyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\HasManyToAnyAttribute.cs" />
+    <Compile Include="Attributes\HiLoAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\JoinedBaseAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\JoinedKeyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\KeyPropertyAttribute.cs" />
+    <Compile Include="Attributes\NestedAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\OneToOneAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\PrimaryKeyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\PropertyAccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\PropertyAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\RelationAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\TimestampAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\VersionAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Attributes\WithAccessAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ByteCode\LazyInitializer.cs" />
+    <Compile Include="ByteCode\ProxyFactory.cs" />
+    <Compile Include="ByteCode\ProxyFactoryFactory.cs" />
+    <Compile Include="Framework\ActiveRecordBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\ActiveRecordException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\ActiveRecordLinq.cs" />
+    <Compile Include="Framework\ActiveRecordLinqBase.cs" />
+    <Compile Include="Framework\ActiveRecordMediator.cs" />
+    <Compile Include="Framework\ActiveRecordMediator.Generic.cs" />
+    <Compile Include="Framework\ActiveRecordStarter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\ActiveRecordValidationBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Config\ActiveRecordSectionHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Config\IConfigurationSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Config\InPlaceConfigurationSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Config\XmlConfigurationSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\DictionaryAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\HookDispatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\ActiveRecordModelBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\ActiveRecordModelCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\IVisitable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\IVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\ActiveRecordModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\AnyModel.cs" />
+    <Compile Include="Framework\Internal\Model\BelongsToModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\CollectionIDModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\FieldModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\HasAndBelongsToManyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\HasManyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\HasManyToAnyModel.cs" />
+    <Compile Include="Framework\Internal\Model\HiloModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\KeyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\NestedModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\OneToOneModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\PrimaryKeyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\PropertyModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\TimestampModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Model\VersionModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Visitors\AbstractDepthFirstVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Visitors\GraphConnectorVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Visitors\SemanticVerifierVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Internal\Visitors\XmlGenerationVisitor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\ISessionFactoryHolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\IThreadScopeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\NotFoundException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Queries\ActiveRecordBaseQuery.cs" />
+    <Compile Include="Framework\Queries\IActiveRecordQuery.cs" />
+    <Compile Include="Framework\Queries\LinqQuery.cs" />
+    <Compile Include="Framework\Queries\ScalarQuery.cs" />
+    <Compile Include="Framework\Queries\SimpleQuery.cs" />
+    <Compile Include="Framework\Scopes\AbstractScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Scopes\AbstractThreadScopeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Scopes\ISessionScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Scopes\ScopeMachineryException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Scopes\SessionScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Scopes\ThreadScopeAccessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Scopes\ThreadScopeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\Scopes\TransactionScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\SessionFactoryHolder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\SupportingUtils.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Framework\TransactionException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\buildscripts\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Attributes\AddEventListenerAttribute.cs" />
+    <Compile Include="Attributes\EventListenerAssemblyAttribute.cs" />
+    <Compile Include="Attributes\EventListenerAttribute.cs" />
+    <Compile Include="Attributes\IgnoreEventListenerAttribute.cs" />
+    <Compile Include="Attributes\SqlNamedQueryAttribute.cs" />
+    <Compile Include="Attributes\WithAccessOptionalTableAttribute.cs" />
+    <Compile Include="Attributes\CompositeUserTypeAttribute.cs" />
+    <Compile Include="Attributes\Enums.cs" />
+    <Compile Include="Attributes\HqlNamedQueryAttribute.cs" />
+    <Compile Include="Attributes\ImportAttribute.cs" />
+    <Compile Include="Attributes\JoinedTableAttribute.cs" />
+    <Compile Include="Attributes\NestedParentReferenceAttribute.cs" />
+    <Compile Include="Attributes\RawXmlMappingAttribute.cs" />
+    <Compile Include="Attributes\Validations\ValidateIsUniqueAttribute.cs" />
+    <Compile Include="Framework\ActiveRecordBase.Generic.cs" />
+    <Compile Include="Framework\ActiveRecordHooksBase.cs" />
+    <Compile Include="Framework\ARSchemaCreator.cs" />
+    <Compile Include="Framework\ActiveRecordValidationBase.Generic.cs" />
+    <Compile Include="Framework\ActiveRecordValidator.cs" />
+    <Compile Include="Framework\ActiveRecordHooksValidationBase.cs" />
+    <Compile Include="Framework\ActiveRecordValidationException.cs" />
+    <Compile Include="Framework\Config\Configure.cs" />
+    <Compile Include="Framework\Config\DefaultDatabaseConfiguration.cs" />
+    <Compile Include="Framework\Config\DatabaseType.cs" />
+    <Compile Include="Framework\Config\DefaultActiveRecordConfiguration.cs" />
+    <Compile Include="Framework\Config\DefaultFlushType.cs" />
+    <Compile Include="Framework\INHContributor.cs" />
+    <Compile Include="Framework\Config\DefaultStorageConfiguration.cs" />
+    <Compile Include="Framework\Config\FluentActiveRecordConfiguration.cs" />
+    <Compile Include="Framework\Config\FluentNHibernateMapping.cs" />
+    <Compile Include="Framework\Config\FluentStorageConfiguration.cs" />
+    <Compile Include="Framework\Config\FluentStorageTypeSelection.cs" />
+    <Compile Include="Framework\Config\IActiveRecordConfiguration.cs" />
+    <Compile Include="Framework\Config\IDatabaseConfiguration.cs" />
+    <Compile Include="Framework\Config\IMappingSpecification.cs" />
+    <Compile Include="Framework\Config\IStorageConfiguration.cs" />
+    <Compile Include="Framework\Config\MsSqlServer2000Configuration.cs" />
+    <Compile Include="Framework\Config\MsSqlServer2005Configuration.cs" />
+    <Compile Include="Framework\Config\StorageTypeSelection.cs" />
+    <Compile Include="Framework\Config\XmlNhibernateMapping.cs" />
+    <Compile Include="Framework\NHSearchContributor.cs" />
+    <Compile Include="Framework\Queries\ValueAndTypeTuple.cs" />
+    <Compile Include="Framework\Scopes\ConversationalScope.cs" />
+    <Compile Include="Framework\Scopes\ConversationCanceledEventArgs.cs" />
+    <Compile Include="Framework\Scopes\IConversation.cs" />
+    <Compile Include="Framework\Scopes\IScopeConversation.cs" />
+    <Compile Include="Framework\Scopes\ScopedConversation.cs" />
+    <Compile Include="Framework\StatelessSessionWrapper.cs" />
+    <Compile Include="Framework\AbstractNHContributor.cs" />
+    <Compile Include="Framework\Internal\EventListener\EventListenerConfig.cs" />
+    <Compile Include="Framework\Internal\EventListener\EventListenerContributor.cs" />
+    <Compile Include="Framework\NHEventListeners.cs" />
+    <Compile Include="Framework\Internal\Model\JoinedTableModel.cs" />
+    <Compile Include="Framework\IValidationProvider.cs" />
+    <Compile Include="Framework\CriteriaHelper.cs" />
+    <Compile Include="Framework\InterceptorFactory.cs" />
+    <Compile Include="Framework\Internal\Constants.cs" />
+    <Compile Include="Framework\Internal\IModelBuilderExtension.cs" />
+    <Compile Include="Framework\Internal\Inflector.cs" />
+    <Compile Include="Framework\Internal\ModelBuilderExtensionComposite.cs" />
+    <Compile Include="Framework\Internal\Model\CompositeKeyModel.cs" />
+    <Compile Include="Framework\Internal\Model\CompositeUserTypeModel.cs" />
+    <Compile Include="Framework\Internal\Model\DependentObjectModel.cs" />
+    <Compile Include="Framework\Internal\Model\ImportModel.cs" />
+    <Compile Include="Framework\Internal\Model\NestedParentReferenceModel.cs" />
+    <Compile Include="Framework\Internal\NHibernateNullablesSupport.cs" />
+    <Compile Include="Framework\Internal\AssemblyXmlGenerator.cs" />
+    <Compile Include="Framework\IWebThreadScopeInfo.cs" />
+    <Compile Include="Framework\Queries\ActiveRecordCriteriaQuery.cs" />
+    <Compile Include="Framework\Queries\ActiveRecordMultiQuery.cs" />
+    <Compile Include="Framework\Queries\CountQuery.cs" />
+    <Compile Include="Framework\Queries\HqlBasedQuery.cs" />
+    <Compile Include="Framework\Queries\IActiveRecordQuery.Generic.cs" />
+    <Compile Include="Framework\Queries\Modifiers\IQueryModifier.cs" />
+    <Compile Include="Framework\Queries\Modifiers\QueryRange.cs" />
+    <Compile Include="Framework\Queries\Modifiers\QueryParameter.cs" />
+    <Compile Include="Framework\Queries\Modifiers\QueryResultTransformer.cs" />
+    <Compile Include="Framework\Queries\Modifiers\SqlQueryJoinDefinition.cs" />
+    <Compile Include="Framework\Queries\Modifiers\SqlQueryScalarDefinition.cs" />
+    <Compile Include="Framework\Queries\ProjectionQuery.cs" />
+    <Compile Include="Framework\Queries\ScalarProjectionQuery.cs" />
+    <Compile Include="Framework\Queries\Modifiers\SqlQueryReturnDefinition.cs" />
+    <Compile Include="Framework\Queries\ScalarQuery.Generic.cs" />
+    <Compile Include="Framework\Queries\SimpleQuery.Generic.cs" />
+    <Compile Include="Framework\Scopes\StatelessSessionScope.cs" />
+    <Compile Include="Framework\Scopes\DifferentDatabaseScope.cs" />
+    <Compile Include="Framework\Scopes\FlushAction.cs" />
+    <Compile Include="Framework\Scopes\ScopeUtil.cs" />
+    <Compile Include="Framework\Validators\IsUniqueValidator.cs" />
+    <Compile Include="PrivateAssemblyInfo.cs" />
+    <Compile Include="Testing\InMemoryConnectionProvider.cs" />
+    <Compile Include="Testing\InMemoryTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Diagrams\Queries.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(RootPath)\Settings.proj" />
+  <Import Project="$(BuildScriptsPath)\Castle.Common.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

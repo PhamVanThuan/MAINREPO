@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3809B035-1623-4A0D-AF64-5B944BED9F5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.FinancialDomain</RootNamespace>
+    <AssemblyName>SAHL.Services.FinancialDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainQuery">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinancialDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinancialDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Shared.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Managers\Models\GetOfferAttributesModel.cs" />
+    <Compile Include="Managers\Statements\DetermineApplicationAttributesStatement.cs" />
+    <Compile Include="Managers\Statements\GetApplicationAttributeByAttributeTypeStatement.cs" />
+    <Compile Include="Managers\Statements\RemoveApplicationAttributeStatement.cs" />
+    <Compile Include="QueryHandlers\DetermineSPVQueryHandler.cs" />
+    <Compile Include="Managers\ApplicationCalculator.cs" />
+    <Compile Include="Managers\FinancialManager.cs" />
+    <Compile Include="Managers\IApplicationCalculator.cs" />
+    <Compile Include="CommandHandlers\FundNewBusinessApplicationCommandHandler.cs" />
+    <Compile Include="CommandHandlers\PriceNewBusinessApplicationCommandHandler.cs" />
+    <Compile Include="Managers\Functions.cs" />
+    <Compile Include="Managers\FinancialDataManager.cs" />
+    <Compile Include="Managers\IFinancialDataManager.cs" />
+    <Compile Include="Managers\IFinancialManager.cs" />
+    <Compile Include="Managers\Models\GetValidSPVResultModel.cs" />
+    <Compile Include="Managers\Statements\CalculateOriginationFeesStatement.cs" />
+    <Compile Include="Managers\Statements\GetValidSPVStatement.cs" />
+    <Compile Include="Managers\Statements\GetFeeApplicationAttributesStatement.cs" />
+    <Compile Include="Managers\Statements\GetCreditCriteriaStatement.cs" />
+    <Compile Include="Managers\Statements\GetLatestApplicationOfferInformationStatement.cs" />
+    <Compile Include="Managers\Statements\GetLatestOfferInformationTypeStatement.cs" />
+    <Compile Include="Managers\Statements\GetOfferInformationVariableLoanStatement.cs" />
+    <Compile Include="Managers\Statements\GetApplicationStatement.cs" />
+    <Compile Include="Managers\Statements\GetRateConfigurationValuesStatement.cs" />
+    <Compile Include="Managers\Statements\GetMortgageLoanApplicationInformationStatement.cs" />
+    <Compile Include="Managers\Statements\SetApplicationResetConfigurationStatement.cs" />
+    <Compile Include="Managers\Statements\RemoveAllApplicationFeesStatement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\ApplicationMayNotBeAcceptedBaseRule.cs" />
+    <Compile Include="Rules\ApplicationMayNotBeAcceptedWhenPricingNewBusinessApplicationRule.cs" />
+    <Compile Include="Rules\ApplicationMayNotBeAcceptedWhenFundingNewBusinessApplicationRule.cs" />
+    <Compile Include="Rules\MustBeANewBusinessMortgageLoanApplicationBaseRule.cs" />
+    <Compile Include="Rules\ApplicationMustBeANewBusinessMortgageLoanWhenFundingRule.cs" />
+    <Compile Include="Rules\ApplicationMustBeANewBusinessMortgageLoanWhenPricingRule.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

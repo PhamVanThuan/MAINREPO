@@ -1,0 +1,6 @@
+function PerformChecks()
+{
+	<# BEGIN WEBSERVER PUBLIC CHECKS #>
+	
+	<# END WEBSERVER PUBLIC CHECKS #>
+}

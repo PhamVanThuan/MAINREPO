@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d4e69fec-3334-46a4-ad25-63884c4d6c45" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ClientSecure.disco" MetadataType="Disco" ID="e693925e-bc1c-4679-91ae-f0cd84fabbeb" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?disco" />
+    <MetadataFile FileName="ClientSecure.xsd" MetadataType="Schema" ID="61f87daa-e4fa-4ce2-9fdd-848a7e4af457" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd3" />
+    <MetadataFile FileName="ClientSecure1.xsd" MetadataType="Schema" ID="5edc3607-4308-4203-b30c-b51cc0630288" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd1" />
+    <MetadataFile FileName="ClientSecure2.xsd" MetadataType="Schema" ID="5fdf712a-1b88-40cc-b041-bbcbc8cc503c" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd0" />
+    <MetadataFile FileName="ClientSecure.wsdl" MetadataType="Wsdl" ID="4657e14d-a68a-4dad-ada8-41591d9ab99d" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?wsdl" />
+    <MetadataFile FileName="ClientSecure3.xsd" MetadataType="Schema" ID="c2746d95-de4d-4d47-ac99-df6c4bac31ab" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,48 @@
+<div ng-controller="UI_Halo_Wizards_ThirdPartyInvoiceCaptureWizardPageStateCtrl">
+<span class="mif-icon_name">
+  <div>Received From <strong>{{invoice.receivedFromEmailAddress}}</strong> on the <strong>{{invoice.invoiceDate | dateViewFilter}}</strong></div>
+  <div>
+    <div style="margin-right: 300px;display: inline-block;width: 30%;margin-bottom: 12px">
+      <div class="labels">
+        <div>SAHL Reference:</div>
+        <div>Account Number:</div>
+        <div>Client:</div>
+      </div>
+      <div class="values">
+        <div>{{invoice.sahlReference}}</div>
+        <div>{{invoice.accountKey}}</div>
+        <div>{{invoice.clientName}}</div>
+      </div>
+    </div>
+    <div style="display: inline-block;width: 30%;margin-bottom: 12px">
+      <div class="labels">
+      <div>Loss Control:</div>
+      <div>SPV:</div>
+    </div>
+       <div class="values">
+           <div>{{invoice.sahlReference}}</div>
+           <div>{{invoice.accountKey}}</div>
+       </div>
+    </div>
+    <div style="display: inline-block;width: 100px;height: 65px;margin-bottom: -8px">
+        <div class="pdf-icon" ng-click="loadPdf(invoiceDocument.id)"></div>
+    </div>
+  </div>
+          
+   <!--UI Grid -->  
+
+  <div ui-grid="invoiceGrid"
+        ui-grid-grouping 
+        ui-grid-pagination
+        ui-grid-pinning
+        ui-grid-edit
+        ui-grid-selection
+        ui.grid.cellNav></div>
+    <div class="toolbar">
+      <button style="height:26px;width:50px;padding-top:0px;"><i class="icon-plus"></i></button>
+      <span class="divider"></span>
+      <button style="height:26px;width:50px;"><i class="icon-minus"></i></button> 
+      <button class="button small-button" ng-show="invoiceGrid.invoiceHasLineItems"><strong>Save</strong></button>
+    </div>   
+</span>
+</div>

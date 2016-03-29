@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="ContextMenu">
+  <modelMoniker Id="8b115fe7-f465-4eaa-ae5b-33e32977610f" />
+  <nestedChildShapes>
+    <classShape Id="a709f811-a0c5-4a5c-98ad-1378f796bc79" absoluteBounds="0.5, 1.375, 1.5, 1.7035424804687502">
+      <modelClassMoniker name="/8b115fe7-f465-4eaa-ae5b-33e32977610f/ContextMenu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3bc3e22-8221-455b-a669-9be96ce2d3c2" absoluteBounds="0.515, 1.7850000000000001, 1.4700000000000002, 1.19354248046875" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(1.03192307692308 : 3.07854248046875); (1.03192307692308 : 3.32854248046875); (1.47846153846154 : 3.32854248046875); (1.47846153846154 : 3.07854248046875)]" manuallyRouted="false" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <manyToOneRelationMoniker Id="c2d5c724-c0bf-4e14-a187-862e4aff1e43" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="a709f811-a0c5-4a5c-98ad-1378f796bc79" />
+        <classShapeMoniker Id="a709f811-a0c5-4a5c-98ad-1378f796bc79" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

@@ -1,0 +1,96 @@
+﻿<div class="childView-container" spin-loader="loadEnumerations">
+    <div class="childView">
+        <div class="row1">
+            <h1>Enumerations <span ng-if="lockedByUser"> - Locked By : {{lockedByUser}}</span></h1>
+            <h2 ng-show="isLatestVersion">Latest Version : {{latestVersion}}</h2>
+            <h2 ng-hide="isLatestVersion">Version: {{version}}</h2>
+            <h3 ng-hide="isLatestVersion">Latest Version : {{latestVersion}}</h3>
+        </div>
+        <br />
+        <div class="row2">
+            <div id="scrollBox">
+                <div>
+                    <div class="breadcrumbsContainer">
+                        <nav class="breadcrumbs" style="margin-left:0px;">
+                            <ul>
+                                <li ng-repeat="bc in breadcrumbs"><a href="" ng-click="GoToGroupItem($index)">{{bc.name}}</a></li>
+                            </ul>
+                        </nav>
+                        <div class="button-set place-right">
+                            <button class="last-column" ng-show="isLatestVersion" ng-click="addNewGroup()">Add Group</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tableContainer">
+                    <form name="enumerationsForm">
+                        <table class="table bordered hovered">
+                            <tbody ng-repeat="group in currentContext.groups">
+                                <tr class="groupRow">
+                                    <th class="text-left" ng-click="SelectGroupInContext($index)">
+                                        <span contenteditable class="editableGroupName" ng-model="group.name" strip-br="true" />
+                                        <div class="place-right"><a href="" title="Delete this group" ng-show="isLatestVersion" ng-click="deleteGroup($index)"><span class="icon-remove fg-black"></span> Delete</a></div>
+                                    </th>
+                                    <th class="text-center last-column">
+                                        <a href="" title="Add enumeration to group." ng-show="isLatestVersion" ng-click="addNewEnum($index)"><span class="icon-plus fg-black"></span> Add</a>
+                                    </th>
+                                </tr>
+                                <tr ng-show="group.enumerations.length > 0 && $index == GetSelectedIndexInContext()">
+                                    <th class="text-left">Enumeration</th>
+                                    <th></th>
+                                </tr>
+                                <tr ng-repeat="item in group.enumerations" ng-show="$parent.$index == GetSelectedIndexInContext()">
+                                    <td>
+                                        <div class="accordion with-marker" data-role="accordion">
+                                            <div class="accordion-frame">
+                                                <div class="heading" title="double click to edit">{{item.name}}</div>
+                                                <div class="content">
+                                                    <table class="table bordered hovered">
+                                                        <tr>
+                                                            <th>Enumeration Definition</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><div class="input-control textarea"><textarea ng-model="item.definition" ng-required="true"></textarea></div></td>
+                                                        </tr>
+                                                    </table>
+                                                    <table class="table bordered hovered">
+                                                        <tbody>
+                                                            <tr class="groupRow">
+                                                                <th class="text-left">Enumeration Value</th>
+                                                                <th class="last-column text-center"><a href="" title="Add item to enumeration." ng-show="isLatestVersion" ng-click="addNewEnumItem($parent.$index,$index)"><span class="icon-plus fg-black"></span> Add</a></th>
+                                                            </tr>
+                                                            <tr ng-repeat="enum in item.value track by $index">
+                                                                <td><div class="input-control text"><input type="text" ng-model="item.value[$index]" ng-required="true" ng-disabled="!isLatestVersion" ng-change="validateEnumItem($parent.$parent.$index,$parent.$index,$index)" id="{{getId($parent.$parent.$index,$parent.$index,$index)}}" /></div></td>
+                                                                <td class="text-center"><a href="" ng-show="isLatestVersion" ng-click="deleteEnumItem($parent.$parent.$index,$parent.$index,$index)"><span class="icon-cancel fg-red"></span> Delete</a></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center last-column">
+                                        <a href="" title="Delete" ng-show="isLatestVersion" ng-click="deleteEnum($parent.$index,$index)"><span class="icon-cancel fg-red"></span> Delete</a>
+                                    </td>
+                                </tr>
+                                <tr class="subgroupRow" ng-repeat="subGroup in group.groups" ng-show="$parent.$index == GetSelectedIndexInContext()">
+                                    <th class="text-left"><a href="" ng-click="SelectSubGroupInContext($parent.$index,$index)">{{subGroup.name}}</a></th>
+                                    <th>
+                                        <a href="" title="Delete" ng-show="isLatestVersion" ng-click="deleteSubGroup($parent.$index,$index)"><span class="icon-cancel fg-red"></span> Delete</a>
+                                    </th>
+                                </tr>
+                                <tr class="subgroupRow" ng-show="($index == GetSelectedIndexInContext()) && isLatestVersion">
+                                    <th class="text-left" colspan="2" ng-show="isLatestVersion" ng-click="addNewSubGroup($index)"><span class="icon-plus fg-black"></span> Create subgroup...</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="bottomButtonsContainer">
+                    <div class="button-set place-right">
+                        <button ng-show="isLatestVersion" class="last-column">Add Group</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

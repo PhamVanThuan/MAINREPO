@@ -1,0 +1,24 @@
+<div class="labels">
+	<div>Invoice Number:</div>
+	<div>Payment Reference:</div>
+	<div>Reference:</div>
+	<div>Invoice Status Description:</div>
+	<div>Total Amount Excl. VAT:</div>
+	<div>Total VAT Amount:</div>
+	<div>Total Amount Incl. VAT:</div>
+	<div>Invoice Date:</div>
+	<div>Received From:</div>
+	<div>Attorney Name:</div>
+</div>
+<div class="values">
+	<div>{{item.tileData.InvoiceNumber | emptyStringDecorator}}</div>
+	<div>{{item.tileData.PaymentReference | emptyStringDecorator}}</div>
+	<div>{{item.tileData.Reference | emptyStringDecorator}}</div>
+	<div>{{item.tileData.InvoiceStatusDescription | emptyStringDecorator}}</div>
+	<div>{{item.tileData.AmountExcludingVAT | currencyFilter:2}}</div>
+	<div>{{item.tileData.VATAmount | currencyFilter:2}}</div>
+	<div>{{item.tileData.TotalAmountIncludingVAT | currencyFilter:2}}</div>
+	<div>{{item.tileData.InvoiceDate| dateViewFilter}}</div>
+	<div>{{item.tileData.ReceivedFromEmailAddress | emptyStringDecorator}}</div>
+	<div>{{item.tileData.AttorneyName | emptyStringDecorator}}</div>
+</div>

@@ -1,0 +1,23 @@
+<connectionStrings>
+	<clear />
+	<add name="SAHL.Common.Web.Properties.Settings.DBConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Web.Properties.Settings.X2ConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=X2;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Web.Properties.Settings.SAHLConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=SAHLDB;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Web.Properties.Settings.ImageIndexConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=ImageIndex;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Web.Properties.Settings.WarehouseConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" />
+	
+	<add name="SAHL.Common.Properties.Settings.DBConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Properties.Settings.X2" connectionString="Data Source=DEVA03;Initial Catalog=X2;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Properties.Settings.SAHLConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=SAHLDB;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Properties.Settings.Warehouse" connectionString="Data Source=DEVA03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Properties.Settings.BatchConnectionString" connectionString="Data Source=SAHLS115a;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Properties.Settings.DataReportConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Properties.Settings.MetricConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Common.Properties.Settings.EWorkConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=e-work;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient"/>
+	<add name="SAHL.Common.Properties.Settings.ImageIndexConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=ImageIndex;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;Timeout=30;" />
+	
+	<add name="SAHL.Batch.Properties.Settings.DBConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Batch.Properties.Settings.SAHLConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=SAHLDB;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Batch.Properties.Settings.ImageIndexConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=ImageIndex;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect" providerName="System.Data.SqlClient" />
+	<add name="SAHL.Batch.Properties.Settings.WarehouseConnectionString" connectionString="Data Source=DEVA03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;" providerName="System.Data.SqlClient" />
+</connectionStrings>

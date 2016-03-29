@@ -1,0 +1,14 @@
+﻿<div id="heading">
+    <h3>Export SVG</h3>
+    <a ng-href="{{exportdata}}" ng-attr-download="{{exportfilename}}" class="button large">Export</a>
+</div>
+<div id="preview-size">
+    <div ng-repeat="imageSize in imageSizes.available" class="input-control radio default-style">
+        <label>
+            <input type="radio" value="{{imageSize}}" name="landscapeSize" ng-model="imageSizes.current" ng-change="updateImageExport()" />
+            <span class="check"></span>
+            {{imageSize}}
+        </label>
+    </div>
+</div>
+<div id="preview"></div>

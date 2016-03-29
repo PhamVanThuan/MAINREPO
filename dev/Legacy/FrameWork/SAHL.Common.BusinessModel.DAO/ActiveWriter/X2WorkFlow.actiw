@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="88191d96-3dfb-44e7-86d2-0b191339a2ba" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="WorkFlow" schema="X2" table="WorkFlow">
+      <targets>
+        <manyToOneRelation Id="3ed5a03e-10ee-4a7b-9ed2-5eee6f804e9d" targetColumnKey="WorkFlowAncestorID" targetTable="WorkFlow" targetPropertyName="WorkFlows" sourceColumn="WorkFlowAncestorID">
+          <modelClassMoniker name="/88191d96-3dfb-44e7-86d2-0b191339a2ba/WorkFlow" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="6bbfd9ab-1194-44ee-b344-eebc91e44414" targetColumnKey="IconID" targetTable="WorkFlow" targetPropertyName="WorkFlows" sourceColumn="IconID">
+          <modelClassMoniker name="/88191d96-3dfb-44e7-86d2-0b191339a2ba/WorkFlowIcon" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="50b68873-626a-4d8c-b6a4-88e115cbabea" name="ProcessID" column="ProcessID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="fd18e850-9df5-449c-bb59-56b42de9c1f8" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="8c8e90e8-02e1-4715-a409-10f5c88dbfd2" name="CreateDate" column="CreateDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="e62cf4ab-41e1-402b-8d39-acf63acea460" name="StorageTable" column="StorageTable" length="0" notNull="true" />
+        <modelProperty Id="76435df0-7163-4df3-b983-b1f330935b7c" name="StorageKey" column="StorageKey" length="0" notNull="true" />
+        <modelProperty Id="bcdec0f1-c0c2-48ee-9586-8409bf5607e8" name="DefaultSubject" column="DefaultSubject" length="0" />
+        <modelProperty Id="726e4478-8782-4452-8d0e-c8934d56c946" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkFlowActivity" schema="X2" table="WorkFlowActivity">
+      <targets>
+        <manyToOneRelation Id="1d310dff-da12-44f6-be92-c24d1af0bf21" targetColumnKey="NextWorkFlowID" targetTable="WorkFlowActivity" targetPropertyName="WorkFlowActivities" sourceColumn="NextWorkFlowID">
+          <modelClassMoniker name="/88191d96-3dfb-44e7-86d2-0b191339a2ba/WorkFlow" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="d186caae-24f4-4635-aa62-8279a6a52dc4" targetColumnKey="WorkFlowID" targetTable="WorkFlowActivity" targetPropertyName="WorkFlowActivities" sourceColumn="WorkFlowID">
+          <modelClassMoniker name="/88191d96-3dfb-44e7-86d2-0b191339a2ba/WorkFlow" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="3402eb28-5b72-4f2f-a1ff-d0bd518bfca5" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="2f1f021d-f6cb-4a1b-b680-dfba27ea1067" name="NextActivityID" column="NextActivityID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="4e041e12-740a-41a1-b6fc-1f361eadab09" name="StateID" column="StateID" columnType="Int32" length="0" />
+        <modelProperty Id="eac93146-79a1-4757-843f-cdf265a657ab" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkFlowIcon" schema="X2" table="WorkFlowIcon">
+      <properties>
+        <modelProperty Id="a944b926-7011-4931-9254-dd7da4abeddf" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="da08ffb6-545e-403c-942f-a5469b3ddba3" name="Icon" column="Icon" columnType="Binary" length="0" />
+        <modelProperty Id="b56fc04b-6a26-430e-87ff-74a6ff78f6fe" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

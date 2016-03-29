@@ -1,0 +1,1 @@
+gulp --gulpfile .\Build\NodeJS\gulpfile.js watch_web_templates

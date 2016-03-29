@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="8e8686d6-e631-4e27-b827-6368af5d1030" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Note" schema="dbo" table="Note">
+      <properties>
+        <modelProperty Id="0c823a7d-5a71-4a97-b531-89d0d2e1f4f3" name="NoteKey" column="NoteKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="ec676a0a-d603-41f1-ae84-9f9b28b9c4f4" name="GenericKeyTypeKey" column="GenericKeyTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="328889e6-f0db-4993-bb3b-a7df2b129a74" name="GenericKey" column="GenericKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="NoteDetail" schema="dbo" table="NoteDetail">
+      <targets>
+        <manyToOneRelation Id="1fe8afb8-3992-4050-9f9d-ce0639608367" targetColumnKey="NoteKey" targetTable="NoteDetail" targetPropertyName="NoteDetails" sourceColumn="NoteKey">
+          <modelClassMoniker name="/8e8686d6-e631-4e27-b827-6368af5d1030/Note" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="405ce443-3379-44dd-bb34-8fcb1220fa07" name="NoteDetailKey" column="NoteDetailKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="e10bdc3d-2a2e-4a2a-bfbe-a53e546bccc7" name="Tag" column="Tag" length="0" />
+        <modelProperty Id="3b98d098-cbf3-49ba-ab11-95edc1118995" name="TagDate" column="TagDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="1e6bb1fa-216d-470b-bd6b-d7f85cc98ffb" name="WorkflowState" column="WorkflowState" length="0" />
+        <modelProperty Id="a2303db5-faa2-4e36-ad92-304fa02700a5" name="InsertedDate" column="InsertedDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="44a00ce6-6356-443d-b92d-018fcd52c5ed" name="Note" column="Note" columnType="StringClob" length="0" notNull="true" />
+        <modelProperty Id="f0cc0c36-2404-4513-9d46-30876ab9fea8" name="ADUserKey" column="ADUserKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LoanServicingTests" GeneratedClassName="TestSuiteSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BrowserVisability" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ShowMaximized</Value>
+    </Setting>
+    <Setting Name="SAHLDataBaseServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sahls203b</Value>
+    </Setting>
+    <Setting Name="WaitTimeOut" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">-1</Value>
+    </Setting>
+    <Setting Name="SQLReportServer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sahls215b</Value>
+    </Setting>
+    <Setting Name="HaloWebServiceURL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://sahls216b/Halo/</Value>
+    </Setting>
+    <Setting Name="EzValWebserviceUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://sahls216b:81/Valuation.svc</Value>
+    </Setting>
+    <Setting Name="EzValPublicWebserviceUrl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://testwebservices.sahomeloans.com:8083/Valuation.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

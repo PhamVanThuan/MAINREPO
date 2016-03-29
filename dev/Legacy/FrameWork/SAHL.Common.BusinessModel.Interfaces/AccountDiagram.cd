@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.4" />
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IAccount" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IAccount.cs</FileName>
+      <HashCode>AEACAoAGADABACwgEAqAAAwAEwEhAAAAADAEAAAkAgQ=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IMortgageLoanAccount">
+    <Position X="8" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <FileName>IMortgageLoanAccount.cs</FileName>
+      <HashCode>AAAAAAAAAAAAARIAAAAAAABAEAAAAEAAAAhACAIAACA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IHOCAccount">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IHOCAccount.cs</FileName>
+      <HashCode>AAAAAAAAAIAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IMortgageLoan" Collapsed="true">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IMortgageLoan.cs</FileName>
+      <HashCode>BAgHEAgABAAQAAAIEAAAGAhAEJUrgAABAhggAIACAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IFinancialService" Collapsed="true">
+    <Position X="1.5" Y="8.75" Width="1.25" />
+    <TypeIdentifier>
+      <FileName>IFinancialService.cs</FileName>
+      <HashCode>AAAAACCAAAAAAARCQICAAAAAAAgAAAAAAAAAAAAACkA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IHOC" Collapsed="true">
+    <Position X="2.5" Y="10.25" Width="1.25" />
+    <TypeIdentifier>
+      <FileName>IHOC.cs</FileName>
+      <HashCode>AAAEKAIIAAAAICAAAAogBChCBACBAAAgEFCECCACBgA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.ILifePolicy" Collapsed="true">
+    <Position X="4.25" Y="10.25" Width="1.25" />
+    <TypeIdentifier>
+      <FileName>ILifePolicy.cs</FileName>
+      <HashCode>CCQACEBAIAAQCAAEEoOADgQQQUwAEAYMAIQAAAAACgQ=</HashCode>
+    </TypeIdentifier>
+    <InheritanceLine Type="SAHL.Common.BusinessModel.Interfaces.IFinancialService" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.125" Y="9.386" />
+        <Point X="2.125" Y="9.875" />
+        <Point X="4.875" Y="9.875" />
+        <Point X="4.875" Y="10.25" />
+      </Path>
+    </InheritanceLine>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IAccountLifePolicy">
+    <Position X="2.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>IAccountLifePolicy.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAgEAAASAEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IAccountNewVariableLoan">
+    <Position X="4.5" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>IAccountNewVariableLoan.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IAccountDefendingDiscountRate">
+    <Position X="7" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>IAccountDefendingDiscountRate.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IAccountSuperLo">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IAccountSuperLo.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IAccountVariableLoan">
+    <Position X="11.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>IAccountVariableLoan.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Interfaces.IAccountVariFixLoan">
+    <Position X="13.75" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <FileName>IAccountVariFixLoan.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

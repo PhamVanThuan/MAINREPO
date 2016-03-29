@@ -1,0 +1,16 @@
+﻿<div spin-loader="saving">
+    <form name="editForm" novalidate>
+        <fieldset ng-disabled="submitting">
+            <div ng-include="editView"></div>
+            <div class="grid fluid">
+                <div class="row">
+                    <div class="span6"></div>
+                    <div class="span6">
+                        <button ng-click="save($event)">save</button>
+                        <button ng-click="cancel()">cancel</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F35B82C-5602-4DC0-A054-F9EA36363180}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Interfaces.FrontEndTest</RootNamespace>
+    <AssemblyName>SAHL.Services.Interfaces.FrontEndTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Exchange">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Exchange.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\InsertAttorneyCommand.cs" />
+    <Compile Include="Commands\InsertCATSPaymentBatchCommand.cs" />
+    <Compile Include="Commands\InsertClientCommand.cs" />
+    <Compile Include="Commands\InsertLegalEntityAddressCommand.cs" />
+    <Compile Include="Commands\InsertLoanDetailCommand.cs" />
+    <Compile Include="Commands\LinkOfferMortgageLoanPropertyCommand.cs" />
+    <Compile Include="Commands\InsertValuationCommand.cs" />
+    <Compile Include="Commands\InsertValuerCommand.cs" />
+    <Compile Include="Commands\PostTransactionCommand.cs" />
+    <Compile Include="Commands\RemoveAccountFromOpenMortgageLoanAccountsCommand.cs" />
+    <Compile Include="Commands\RemoveAttorneyCommand.cs" />
+    <Compile Include="Commands\RemoveCATSPaymentBatchCommand.cs" />
+    <Compile Include="Commands\RemoveEmptyThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Commands\InsertInvoiceLineItemsCommand.cs" />
+    <Compile Include="Commands\RemoveFileByPathCommand.cs" />
+    <Compile Include="Commands\RemoveValuerCommand.cs" />
+    <Compile Include="Commands\UpdateAddressCommand.cs" />
+    <Compile Include="Commands\UpdateAttorneyCommand.cs" />
+    <Compile Include="Commands\UpdateCATSPaymentBatchCommand.cs" />
+    <Compile Include="Commands\UpdateClientCommand.cs" />
+    <Compile Include="Commands\UpdatePropertyCommand.cs" />
+    <Compile Include="Commands\UpdateThirdPartyCommand.cs" />
+    <Compile Include="Commands\UpdateThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Commands\UpdateValuatorCommand.cs" />
+    <Compile Include="Models\Cuttlefish\GetLogMessageParamsForLogMessageQueryResult.cs" />
+    <Compile Include="Models\Cuttlefish\GetLogMessagesInLastDayForMachineQueryResult.cs" />
+    <Compile Include="Models\Cuttlefish\GetMachinesWithLogMessagesInLastDayQueryResult.cs" />
+    <Compile Include="Models\GetClientAddressesQueryResult.cs" />
+    <Compile Include="Models\GetFileNamesOfFilesInDirectoryQueryResult.cs" />
+    <Compile Include="Models\GetFileUsingPathQueryResult.cs" />
+    <Compile Include="Models\GetFinancialTransactionsQueryResult.cs" />
+    <Compile Include="Models\GetImageIndexDataQueryResult.cs" />
+    <Compile Include="Commands\ArchiveEmailCommand.cs" />
+    <Compile Include="Models\GetLossControlAttorneyInvoiceStorDataQueryResult.cs" />
+    <Compile Include="Models\GetThirdPartyInvoicesInstanceDetailsQueryResult.cs" />
+    <Compile Include="Queries\GetFileNamesOfFilesInDirectoryQuery.cs" />
+    <Compile Include="Queries\GetFileUsingPathQuery.cs" />
+    <Compile Include="Queries\GetFinancialTransactionsQuery.cs" />
+    <Compile Include="Queries\GetLossControlAttorneyInvoiceDocumentQuery.cs" />
+    <Compile Include="Commands\SendEmailCommand.cs" />
+    <Compile Include="Models\ExchangeProviderCredentialsModel.cs" />
+    <Compile Include="Models\GetHaloUIConfigurationQueryResult.cs" />
+    <Compile Include="Models\GetRandomGeoLocationQueryResult.cs" />
+    <Compile Include="Queries\Cuttlefish\GetLogMessageParamsForLogMessageQuery.cs" />
+    <Compile Include="Queries\Cuttlefish\GetLogMessagesInLastDayForMachineQuery.cs" />
+    <Compile Include="Queries\Cuttlefish\GetMachinesWithLogMessagesInLastDayQuery.cs" />
+    <Compile Include="Queries\GetAttorneyInvoiceQuery.cs" />
+    <Compile Include="Commands\InsertComcorpOfferPropertyDetailsCommand.cs" />
+    <Compile Include="Commands\InsertDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\RemoveApplicationFromOpenNewBusinessApplicationsCommand.cs" />
+    <Compile Include="Commands\RemoveApplicationMailingAddressCommand.cs" />
+    <Compile Include="Commands\RemoveApplicantFromActiveNewBusinessApplicantsCommand.cs" />
+    <Compile Include="Commands\RemoveDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\RemoveApplicationRoleFromApplicationCommand.cs" />
+    <Compile Include="Commands\SetApplicationEmploymentTypeToUnknownCommand.cs" />
+    <Compile Include="Commands\SetApplicationSPVToZeroCommand.cs" />
+    <Compile Include="Commands\SetClientAddressToInactiveCommand.cs" />
+    <Compile Include="Commands\SetHouseholdIncomeToZeroCommand.cs" />
+    <Compile Include="Commands\UpdateVariableLoanApplicationInformationCommand.cs" />
+    <Compile Include="FrontEndTestServiceClient.cs" />
+    <Compile Include="IFrontEndTestCommand.cs" />
+    <Compile Include="IFrontEndTestQuery.cs" />
+    <Compile Include="IFrontEndTestServiceClient.cs" />
+    <Compile Include="Models\GetAlphaHousingApplicationQueryResult.cs" />
+    <Compile Include="Models\GetApplicantOnActiveApplicationQueryResult.cs" />
+    <Compile Include="Models\GetApplicantWithoutAssetsOrLiabilitiesQueryResult.cs" />
+    <Compile Include="Models\GetApplicationWithApplicantBankAccountQueryResult.cs" />
+    <Compile Include="Models\GetAttorneyInvoiceQueryResult.cs" />
+    <Compile Include="Models\GetClientAssetsAndLiabilitiesQueryResult.cs" />
+    <Compile Include="Models\GetClientsForAccountQueryResult.cs" />
+    <Compile Include="Models\GetComcorpApplicationsWithMultipleApplicantsQueryResult.cs" />
+    <Compile Include="Models\GetEmployerQueryResult.cs" />
+    <Compile Include="Models\GetFirstThirdPartyInvoiceWhereFileExistsQueryResult.cs" />
+    <Compile Include="Models\GetLatestApplicationInformationVariableLoanQueryResult.cs" />
+    <Compile Include="Models\GetNewBusinessApplicantQueryResult.cs" />
+    <Compile Include="Models\GetApplicantWithApplicationCriteriaQueryResult.cs" />
+    <Compile Include="Models\GetOpenApplicationPropertyAndClientQueryResult.cs" />
+    <Compile Include="Models\GetOpenNewBusinessApplicationQueryResult.cs" />
+    <Compile Include="Models\GetRandomOpenApplicationQueryResult.cs" />
+    <Compile Include="Models\GetUnusedIDNumberQueryResult.cs" />
+    <Compile Include="Models\GetUnusedTestBankAccountQueryResult.cs" />
+    <Compile Include="Models\GetWorkflowAssignmentQueryResult.cs" />
+    <Compile Include="Models\GetThirdPartyInvoiceByAccountKeyQueryResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\GetActiveClientAddressByAddressFormatQuery.cs" />
+    <Compile Include="Queries\GetAlphaHousingApplicationQuery.cs" />
+    <Compile Include="Queries\GetExistingAccountQuery.cs" />
+    <Compile Include="Queries\GetApplicantOnActiveApplicationQuery.cs" />
+    <Compile Include="Queries\GetApplicantRolesByIdNumberQuery.cs" />
+    <Compile Include="Queries\GetApplicantsDetailsQuery.cs" />
+    <Compile Include="Queries\GetApplicantWithoutAssetsOrLiabilitiesQuery.cs" />
+    <Compile Include="Queries\GetApplicationWithApplicantBankAccountQuery.cs" />
+    <Compile Include="Queries\GetApplicationWithoutComcorpOfferPropertyDetailsQuery.cs" />
+    <Compile Include="Queries\GetClientAddressesQuery.cs" />
+    <Compile Include="Queries\GetClientAssetsAndLiabilitiesQuery.cs" />
+    <Compile Include="Queries\GetClientByIdNumberQuery.cs" />
+    <Compile Include="Queries\GetClientsForAccountQuery.cs" />
+    <Compile Include="Queries\GetClientWhoIsNotAnApplicantOnApplicationQuery.cs" />
+    <Compile Include="Queries\GetComcorpApplicationsWithMultipleApplicantsQuery.cs" />
+    <Compile Include="Queries\GetComcorpOfferPropertyDetailsQuery.cs" />
+    <Compile Include="Queries\GetDisabilityClaimQuery.cs" />
+    <Compile Include="Queries\GetFirstThirdPartyInvoiceWhereFileExistsQuery.cs" />
+    <Compile Include="Queries\GetHaloUIConfigurationQuery.cs" />
+    <Compile Include="Queries\GetImageIndexDataQuery.cs" />
+    <Compile Include="Queries\GetLoanAccountWithLifeAccountAndAssuredLifeRoleQuery.cs" />
+    <Compile Include="Models\GetLoanAccountWithLifeAccountAndAssuredLifeRoleQueryResult.cs" />
+    <Compile Include="Queries\GetDisabilityPaymentsQuery.cs" />
+    <Compile Include="Queries\GetEmployerQuery.cs" />
+    <Compile Include="Queries\GetInactiveOfferRoleQuery.cs" />
+    <Compile Include="Queries\GetLatestApplicationInformationVariableLoanQuery.cs" />
+    <Compile Include="Queries\GetLossControlAttorneyInvoiceStorDataQuery.cs" />
+    <Compile Include="Queries\GetNaturalPersonClientQuery.cs" />
+    <Compile Include="Queries\GetNewBusinessApplicantQuery.cs" />
+    <Compile Include="Queries\GetApplicantWithApplicationCriteriaQuery.cs" />
+    <Compile Include="Queries\GetOpenApplicationPropertyAndClientQuery.cs" />
+    <Compile Include="Queries\GetOpenNewBusinessApplicationQuery.cs" />
+    <Compile Include="Queries\GetPropertyForAccountQuery.cs" />
+    <Compile Include="Queries\GetPropertyNotLinkedToAnApplicationQuery.cs" />
+    <Compile Include="Queries\GetRandomGeoLocationQuery.cs" />
+    <Compile Include="Queries\GetRandomOpenApplicationQuery.cs" />
+    <Compile Include="Queries\GetLatestEventForGenericKeyTypeQuery.cs" />
+    <Compile Include="Queries\GetThirdPartyInvoiceByAccountKeyQuery.cs" />
+    <Compile Include="Models\GetLatestEventForGenericKeyTypeQueryResult.cs" />
+    <Compile Include="Queries\GetInvoiceLineItemQuery.cs" />
+    <Compile Include="Queries\GetThirdPartyInvoiceQuery.cs" />
+    <Compile Include="Queries\GetThirdPartyInvoicesInstanceDetailsQuery.cs" />
+    <Compile Include="Queries\GetUnusedIDNumberQuery.cs" />
+    <Compile Include="Queries\GetUnusedTestBankAccountQuery.cs" />
+    <Compile Include="Queries\GetWorkflowAssignmentQuery.cs" />
+    <Compile Include="Queries\WaitForMessagesToBeDeliveredQuery.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

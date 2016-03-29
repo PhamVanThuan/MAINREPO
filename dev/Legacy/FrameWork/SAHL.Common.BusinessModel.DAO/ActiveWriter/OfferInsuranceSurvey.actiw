@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="ad0cb7db-4d20-49b3-91a1-935d999e154f" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="OfferMarketingSurveyType" schema="dbo" table="OfferMarketingSurveyType">
+      <targets>
+        <manyToOneRelation Id="f5b9ce33-5333-4597-93a4-16243ebe38f2" targetColumnKey="OfferMarketingSurveyTypeGroupKey" targetTable="OfferMarketingSurveyType" targetPropertyName="OfferMarketingSurveyTypes" sourceColumn="OfferMarketingSurveyTypeGroupKey">
+          <modelClassMoniker name="/ad0cb7db-4d20-49b3-91a1-935d999e154f/OfferMarketingSurveyTypeGroup" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="a6dd898c-cbc6-4687-8a9e-9c2284a67441" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="cc407035-6222-4b8d-b9b4-1098b35e3df0" name="OfferMarketingSurveyTypeKey" column="OfferMarketingSurveyTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferMarketingSurveyTypeGroup" schema="dbo" table="OfferMarketingSurveyTypeGroup">
+      <properties>
+        <modelProperty Id="b58c1e55-56df-41b2-9b9a-91a58131a3f2" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="41b629f4-9fe7-4464-ae11-aef4172c2071" name="OfferMarketingSurveyTypeGroupKey" column="OfferMarketingSurveyTypeGroupKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Offer" schema="dbo" table="Offer">
+      <properties>
+        <modelProperty Id="cc6697fb-cecb-42c6-9cfd-23ff12c4708c" name="OfferTypeKey" column="OfferTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="239cdb22-b943-4c89-a8f1-c6836d4ab623" name="OfferStatusKey" column="OfferStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="2a3d5b6d-92c0-4987-95d7-b409341577e6" name="OfferStartDate" column="OfferStartDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="9fd54584-17f2-4a53-8356-915b23ce2999" name="OfferEndDate" column="OfferEndDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="5ddb89f8-b1e8-4f82-b795-ec431bc61912" name="VoiceRecorded" column="VoiceRecorded" columnType="Boolean" length="0" />
+        <modelProperty Id="03642131-1624-486e-aa28-7063726e9683" name="AccountKey" column="AccountKey" columnType="Int32" length="0" />
+        <modelProperty Id="e299027f-32f5-4076-afc4-b260f4d3ac43" name="Reference" column="Reference" length="0" />
+        <modelProperty Id="73a13eaa-53e8-4fc8-b1c0-c1b0f0e436c1" name="OfferCampaignKey" column="OfferCampaignKey" columnType="Int32" length="0" />
+        <modelProperty Id="ceddbec8-4bc9-4156-bfd0-2035bb2f9e21" name="OfferKey" column="OfferKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+      <manyToManyTargets>
+        <manyToManyRelation Id="130b8e86-8ef3-4b28-b04b-aefe651c2dc0" sourceColumn="OfferKey" schema="dbo" table="OfferMarketingSurvey" targetColumn="OfferMarketingSurveyTypeKey">
+          <modelClassMoniker name="/ad0cb7db-4d20-49b3-91a1-935d999e154f/OfferMarketingSurveyType" />
+        </manyToManyRelation>
+      </manyToManyTargets>
+    </modelClass>
+  </classes>
+</model>

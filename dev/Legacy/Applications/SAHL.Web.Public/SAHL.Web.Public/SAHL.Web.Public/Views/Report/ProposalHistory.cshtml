@@ -1,0 +1,60 @@
+﻿@model SAHL.Web.Public.Models.ProposalListViewModel
+@{
+    ViewBag.Title = "ProposalHistory";
+    Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+<h2>
+    Proposal History</h2>
+<table cellpadding="0" cellspacing="10" style="font-weight: normal; border: 1px solid White">
+    <tr align="left">
+        <th>@Html.Label("Type")
+        </th>
+        <th>@Html.Label("Status")
+        </th>
+        <th>@Html.Label("HOC Inclusive")
+        </th>
+        <th>@Html.Label("Life Inclusive")
+        </th>
+        <th>@Html.Label("Captured By")
+        </th>
+        <th>@Html.Label("Create Date")
+        </th>
+        <th>@Html.Label("Review Date")
+        </th>
+        <th>@Html.Label("Accepted")
+        </th>
+    </tr>
+    @foreach (var item in Model.Proposals)
+    {
+        <tr style="font-size: 1.2em">
+            <td>
+                @(item.ProposalType)
+            </td>
+            <td>
+                @(item.ProposalStatus)
+            </td>
+            <td>
+                @(item.HOCInclusive.HasValue ? item.HOCInclusive.Value ? "Yes" : "No" : "-")
+            </td>
+            <td>
+                @(item.LifeInclusive.HasValue ? item.LifeInclusive.Value ? "Yes" : "No" : "-")
+            </td>
+            <td>
+                @(item.LegalEntityDisplayName)
+            </td>
+            <td>
+                @(item.CreateDate.ToString("yyyy-MM-dd"))
+            </td>
+            <td>
+                @(item.ReviewDate.HasValue ? item.ReviewDate.Value.ToString("yyyy-MM-dd") : "-")
+            </td>
+            <td>
+                @(item.Accepted.HasValue ? item.Accepted.Value ? "Yes" : "No" : "-")
+            </td>
+            <td>
+                @Html.ActionLink("View", "ProposalDetails", "Report", new { reportKey = item.ProposalKey }, new { })
+            </td>
+        </tr>
+    }
+</table>
+</div> 

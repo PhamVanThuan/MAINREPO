@@ -1,0 +1,244 @@
+﻿@import url("../sahl.ui.core/sahl.ui.core.less");
+
+#commonEntity{
+    height:100%;
+    .left{
+        height:100%;
+        .pullLeft();
+        .back{
+            padding:10px 20px;
+            i{
+                cursor:pointer;
+                font-size:40px;
+                &:hover{
+                    color:@orange-charm;
+                }
+            }
+        }
+        .progressTracker{
+            height:100%;
+            background:@grey-lightest;
+            display:inline-block;
+            width:219px;
+            margin-right:10px;
+            ul{
+                .resetBoxProperties();
+                li{
+                    list-style:none;
+                    .resetBoxProperties();
+                    background:@grey-lightest;
+                    padding:10px 10px 10px 10px;
+                    i{
+                        vertical-align:super;
+                    }
+                    div{
+                        width:140px;
+                        display:inline-block;
+                    }
+                    &.active{
+                        background:@grey-lighter;
+                        position:relative;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .buttons{
+        .right { float:right; }
+    }
+
+    .right{
+        margin-right: 20px;
+        padding-left:80px;
+
+        &.narrower{
+            padding-left: 0px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        display:block;
+        .top{
+            vertical-align:middle;
+            padding:10px 0px;
+            h2{
+                font-size:40px;
+                .resetBoxProperties();
+            }
+        }
+        form{
+            input,select{
+                width:400px;
+                &.ng-dirty{
+                    &.ng-invalid{
+                        border-color:@error;
+                    }
+                }
+                + i{
+                    &.leftToolTip{
+                        .tooltipLeft(25px,-8px,5px,250px,@orange-charm,@orange-dark,@grey-darkest);
+                    }
+                    &.rightToolTip{
+                        .tooltipRight(25px,-8px,5px,250px,@orange-charm,@orange-dark,@grey-darkest);
+                    }
+                }
+            }
+        }
+        textarea{
+            &.full{
+                width:100%;
+                resize: none;
+                overflow: none;
+            }
+        }
+    }
+
+    .noTopMargin {
+        margin-top: 0;
+    }
+
+    .smartColumns{
+        div.smartColumn:first-of-type:last-of-type{
+            width: 100%;
+        }
+
+        div.smartColumn:nth-of-type(1):nth-last-of-type(2),
+        div.smartColumn:nth-of-type(2):nth-last-of-type(1) 
+        {
+            width: 40%;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    .transparentBg,.transparentBg:active, .transparentBg:hover, .transparentBg:focus  {
+        background-color: transparent;
+    }
+
+    /***************************invoice capture/amend styles***************************************/
+    #invoice_capture_or_amend_wizard{
+        height:100%;
+
+        .gridTotal {
+            text-align: right; 
+            padding-right: 3px;
+            padding-bottom: 5px; 
+            font-weight: bold; 
+            color: @grey-darker;
+        }
+
+        .grid {
+            height: 250px;
+            
+            .left {
+                width: 100%;
+            }
+        }
+
+        .ui-grid-checkbox {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .left{
+            float:left;
+            height:100%;
+            width:200px;
+            .top{
+                padding-left:10px;
+            }
+        }
+
+        .labels {
+          float: left;
+          margin-right: 12px;
+
+          div {
+            font-weight: bold;
+            height: 20px;
+            line-height: 20px;
+            color: @grey-darker;
+          }
+        }
+
+        .values {
+          div {
+            line-height: 20px;
+            color: @grey-dark;
+          }
+        }
+
+        .datepicker_labels {
+          float: left;
+          margin-right: 5px;
+          width: 94px;
+
+          div {
+            font-weight: bold;
+            height: 20px;
+            line-height: 20px;
+            color: @grey-darker;
+          }
+        }
+
+        #datepicker{
+          width: 300px;
+        }
+
+        .marginB5 {
+            margin-bottom: 5px;
+        }
+
+        .documentHeadContainer{
+
+            background: #ccc;
+            height: 120px; 
+            padding: 10px; 
+            width: 100%; 
+            margin-bottom: 15px;
+
+            .headerText {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .pdfLinkContainer {
+                width: 100px;
+                height: 65px;
+                margin-top: 3px;
+                cursor: pointer;
+            }
+
+        }
+
+        .panel35 {
+            display: block; 
+            float:left;
+            margin: 0 20px 10px 0;
+            width: 35%;
+        }
+
+   
+        .uiCellTextRight{
+            float:right;
+            width:30px;
+        }
+
+        .panelH150 {
+            width: 100%; 
+            height: 150px;
+
+            h2 {
+                font-size: 15px;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+        }
+
+        .field {
+            width: 300px;
+        }
+    }/****************************invoice styles end********************************************/
+}
+    

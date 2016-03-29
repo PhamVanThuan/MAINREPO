@@ -1,0 +1,41 @@
+﻿@model SAHL.Core.UI.Elements.Areas.TileElementArea
+<!DOCTYPE html>
+
+<html>
+<head>
+        <script type="text/javascript">
+            var rootDir = "@Url.Content("~/")";
+            if (rootDir[rootDir.length - 1] != "/")
+                rootDir = rootDir + '/';
+    </script>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SAHL :: Halo</title>
+	<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="~/Content/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="~/Content/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="~/Content/bootstrap/css/datepicker.css" rel="stylesheet" />
+	<link href="~/Content/sahl/less/sahl.less" rel="stylesheet" />
+	<link href="~/Content/sahl/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="~/Scripts/libs/pines/jquery.pnotify.default.css" rel="stylesheet" />
+    <link href="~/Content/sahl/less/sahl-sprites.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="application-container">
+		<div id="user-menu">
+			@Html.Partial("_MenuElementAreaPartial")
+		</div>
+		<div id="application-area">
+			<div id="tile-element-area">
+				@Html.Partial("_TileElementAreaPartial")
+			</div>
+			<div id="summary-area">
+			</div>
+		</div>
+		@RenderBody()
+	</div>
+	<script data-main="@Url.Content("~/Scripts/app")" src="@Url.Content("~/Scripts/libs/require.js")"></script>
+	@Html.Partial("_NotificationsPartial")
+	@RenderSection("scripts", false)
+	@Html.RenderScripts()
+</body>
+</html>

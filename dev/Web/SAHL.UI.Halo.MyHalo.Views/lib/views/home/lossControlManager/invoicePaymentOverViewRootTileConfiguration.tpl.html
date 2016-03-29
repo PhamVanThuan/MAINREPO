@@ -1,0 +1,51 @@
+<div ng-controller="Home_LossControlManager_InvoicePaymentOverViewRootTileConfigurationCtrl">
+	<h2>{{item.name}}</h2>
+	<br />
+	<div spin-loader="paymentOverview">
+		<table class="table striped hovered cell-hovered border bordered" ng-if="dataModel">
+			<tr>
+				<td><b>Paid Invoices Prev Month</b></td>
+				<td class="text-right">{{dataModel.lastMonth.InvoicesPaidAmount | currency : 'R'}}</td>
+			</tr>
+			<tr>
+				<td><b>Paid Invoices MTD</b></td>
+				<td class="text-right">{{dataModel.thisMonth.InvoicesPaidAmount | currency : 'R'}}</td>
+			</tr>
+			<tr>
+				<td colspan="2"><br/></td>
+			</tr>
+			<tr>
+				<td><b>No. Paid Invoices Prev Month</b></td>
+				<td class="text-right">{{dataModel.lastMonth.InvoicesPaidCount}}</td>
+			</tr>
+			<tr>
+				<td><b>No. Paid Invoices MTD</b></td>
+				<td class="text-right">{{dataModel.thisMonth.InvoicesPaidCount}}</td>
+			</tr>
+			<tr>
+				<td colspan="2"><br/></td>
+			</tr>
+			<tr ng-class="{red:dataModel.lastMonth.InvoiceUnprocessed>0}">
+				<td><b>No. Unprocessed Invoices Prev Month</b></td>
+				<td class="text-right">{{dataModel.lastMonth.InvoiceUnprocessed}}</td>
+			</tr>
+			<tr ng-class="{red:dataModel.thisMonth.InvoiceUnpaid>0}">
+				<td><b>No. Unprocessed Invoices MTD</b></td>
+				<td class="text-right">{{dataModel.thisMonth.InvoiceUnprocessed}}</td>
+			</tr>
+			<tr>
+				<td colspan="2"><br/></td>
+			</tr>
+			<tfoot>
+				<tr ng-class="{red:dataModel.totalsToDate.InvoicesUnProcessedCount>0}">
+					<td><b><u>No. Unprocessed Invoices YTD</u></b></td>
+					<td  class="text-right"><u>{{dataModel.totalsToDate.InvoicesUnProcessedCount}}</u></td>
+				</tr>
+				<tr>
+					<td><b><u>Paid Invoices YTD</u></b></td>
+					<td  class="text-right"><u>{{dataModel.totalsToDate.InvoicesPaidAmount | currency : 'R'}}</u></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="5afb26ca-e48f-4f3a-b105-f643b02e6513" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="DisbursementLoanTransaction" schema="dbo" table="DisbursementLoanTransaction">
+      <targets>
+        <manyToOneRelation Id="a65d42f7-9b71-42ba-ad3e-6fcb6379ea79" targetColumnKey="DisbursementKey" targetTable="DisbursementLoanTransaction" targetPropertyName="DisbursementLoanTransactions" sourceColumn="DisbursementKey">
+          <modelClassMoniker name="/5afb26ca-e48f-4f3a-b105-f643b02e6513/Disbursement" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="e65c5802-1b4f-4013-89ce-b3b1524fb0fe" name="LoanTransactionNumber" column="LoanTransactionNumber" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="b0414975-8213-481f-ad3e-48892a0a1f1f" name="DisbursementLoanTransactionKey" column="DisbursementLoanTransactionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Disbursement" schema="dbo" table="Disbursement">
+      <targets>
+        <manyToOneRelation Id="e68045e0-7213-4385-bb3d-06400e856ba9" targetColumnKey="DisbursementStatusKey" targetTable="Disbursement" targetPropertyName="Disbursements" sourceColumn="DisbursementStatusKey">
+          <modelClassMoniker name="/5afb26ca-e48f-4f3a-b105-f643b02e6513/DisbursementStatus" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="36c15879-3de2-4f51-a6af-c3d3ed98a741" targetColumnKey="DisbursementTransactionTypeKey" targetTable="Disbursement" targetPropertyName="Disbursements" sourceColumn="DisbursementTransactionTypeKey">
+          <modelClassMoniker name="/5afb26ca-e48f-4f3a-b105-f643b02e6513/DisbursementTransactionType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="86299eca-6b5d-4f5a-84b9-e0625efaf6d5" name="AccountKey" column="AccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="9781515c-72c1-4778-b36a-4a3cf478d4db" name="ACBBankCode" column="ACBBankCode" columnType="Int32" length="0" />
+        <modelProperty Id="2159776a-93ea-40ee-811f-bc65ac4e539f" name="ACBBranchCode" column="ACBBranchCode" length="0" />
+        <modelProperty Id="be41961c-f1bf-4f3c-b8dc-7ebabb3c287a" name="ACBTypeNumber" column="ACBTypeNumber" columnType="Int32" length="0" />
+        <modelProperty Id="cf980771-6ff2-4f62-b63d-8624d09ce9e4" name="PreparedDate" column="PreparedDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="cf5619d8-2285-4ed7-87df-d3dbc687a313" name="ActionDate" column="ActionDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="d6f40ae8-3e3d-4cb2-981b-c22c973b8464" name="AccountName" column="AccountName" length="0" />
+        <modelProperty Id="16e4c238-edf4-4602-9340-0e122cc731f7" name="AccountNumber" column="AccountNumber" length="0" />
+        <modelProperty Id="dda1e6e5-35f3-4316-ae73-8d195f2b1ec9" name="Amount" column="Amount" columnType="Double" length="0" />
+        <modelProperty Id="9f95772d-9021-49f0-bb4b-6eb83ae4ebd9" name="CapitalAmount" column="CapitalAmount" columnType="Double" length="0" />
+        <modelProperty Id="659b0bcb-c9b4-410e-9167-2003a25aa586" name="GuaranteeAmount" column="GuaranteeAmount" columnType="Double" length="0" />
+        <modelProperty Id="50c90e89-f811-41ef-8255-713e82a95ca5" name="InterestRate" column="InterestRate" columnType="Double" length="0" />
+        <modelProperty Id="3849af27-f370-4080-8d09-bebe1864a9fd" name="InterestStartDate" column="InterestStartDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="1dda775e-da8c-40d5-9000-0202a35f4e01" name="InterestApplied" column="InterestApplied" columnType="AnsiChar" length="0" />
+        <modelProperty Id="533f2a9f-9c04-4122-944b-e9a65bb61e4c" name="PaymentAmount" column="PaymentAmount" columnType="Double" length="0" />
+        <modelProperty Id="cfa23a3a-cd30-4288-aa02-7e7ed82745ec" name="DisbursementKey" column="DisbursementKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementStatus" schema="dbo" table="DisbursementStatus">
+      <properties>
+        <modelProperty Id="c2e8bd1c-02ca-48e7-b646-824fec90098a" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="22151684-b889-4b7c-acff-cd2a670c9de5" name="DisbursementStatusKey" column="DisbursementStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementTransactionType" schema="dbo" table="DisbursementTransactionType">
+      <properties>
+        <modelProperty Id="2d379ddf-0b09-49ae-9d0f-a674c332606f" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="3c870a3c-5a8d-4896-8127-b729c0756500" name="TransactionTypeNumber" column="TransactionTypeNumber" columnType="Int32" length="0" />
+        <modelProperty Id="480d9f4d-db21-458f-b0b2-250a188e850d" name="DisbursementTransactionTypeKey" column="DisbursementTransactionTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementType" schema="dbo" table="DisbursementType">
+      <properties>
+        <modelProperty Id="98fe1c9e-41b0-46dd-8f5c-e6372d582284" name="Description" column="Description" length="0" />
+        <modelProperty Id="2148726e-13e5-4943-bf8d-d29437479e6d" name="DisbursementTypeKey" column="DisbursementTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="DisbursementInterestApplied" schema="dbo" table="DisbursementInterestApplied">
+      <properties>
+        <modelProperty Id="a7999680-a3d9-4cec-b454-177537dc969a" name="Description" column="Description" length="0" />
+        <modelProperty Id="344a855b-3f2d-4aa0-91dd-ae05a17a95ea" name="InterestAppliedTypeKey" column="InterestAppliedTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

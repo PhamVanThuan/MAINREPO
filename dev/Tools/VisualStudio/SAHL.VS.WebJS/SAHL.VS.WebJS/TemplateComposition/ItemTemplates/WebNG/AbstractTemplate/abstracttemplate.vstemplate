@@ -1,0 +1,16 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>htmlTemplate.html</DefaultName>
+    <Name>Abstract HTML File Template</Name>
+    <Description>An empty Abstract HTML File Template, AngularJS file and spec file.</Description>
+    <ProjectType>WebNG</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>abstracttemplate.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.tpl.html" ReplaceParameters="true" SubType="Compile">abstracttemplate.tpl.html</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.tpl.html/$fileinputname$.js" ReplaceParameters="true" SubType="">abstracttemplate.js</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.tpl.html/$fileinputname$.spec.js" ReplaceParameters="true" SubType="">abstracttemplate.spec.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

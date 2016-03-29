@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="LegalEntityOrganisationStructure">
+  <modelMoniker Id="0943ce5a-4ea2-4496-8a5b-01706f1b4053" />
+  <nestedChildShapes>
+    <classShape Id="8834d0fc-f68d-4586-8732-d39eb2ff7480" absoluteBounds="3.75, 1.375, 1.5, 6.7983097330729159">
+      <modelClassMoniker name="/0943ce5a-4ea2-4496-8a5b-01706f1b4053/LegalEntity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93779613-d866-4f1f-9837-36e7034cf1c7" absoluteBounds="3.765, 1.7850000000000001, 1.4700000000000002, 6.2883097330729161" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf844c3f-0d2f-456a-95d7-375bbe980160" absoluteBounds="0.5, 2.25, 1.5, 0.88180582682291675">
+      <modelClassMoniker name="/0943ce5a-4ea2-4496-8a5b-01706f1b4053/LegalEntityOrganisationStructure" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b90f91a6-d033-48f2-bad5-db5fefbe445d" absoluteBounds="0.515, 2.66, 1.4700000000000002, 0.37180582682291663" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea4d55d0-7a85-4149-bb1c-af02cce5dcdf" absoluteBounds="0.75, 3.5, 1.5, 1.7035424804687502">
+      <modelClassMoniker name="/0943ce5a-4ea2-4496-8a5b-01706f1b4053/LegalEntityOrganisationStructureHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a25cb6da-6fa0-4f5f-a875-24d0b281c383" absoluteBounds="0.765, 3.91, 1.4700000000000002, 1.19354248046875" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="685fc916-480e-4a7f-8fa1-b3cab32e6be5" absoluteBounds="5.75, 1.75, 1.5, 1.5391951497395833">
+      <modelClassMoniker name="/0943ce5a-4ea2-4496-8a5b-01706f1b4053/OrganisationStructure" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62da7942-da5f-4461-ada7-2cc90b58a038" absoluteBounds="5.7650000000000006, 2.16, 1.4700000000000002, 1.029195149739583" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(2 : 2.69090291341146); (3.75 : 2.69090291341146)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="024ddbf8-8cc9-4e29-9d6f-9091b7bb6bcb" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="cf844c3f-0d2f-456a-95d7-375bbe980160" />
+        <classShapeMoniker Id="8834d0fc-f68d-4586-8732-d39eb2ff7480" />
+      </nodes>
+    </manyToOneConnector>
+    <manyToOneConnector edgePoints="[(2 : 2.43919945670573); (3.5 : 2.43919945670573); (3.5 : 1.125); (6.5 : 1.125); (6.5 : 1.75)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="02d79c1c-4b4d-4f8a-9b01-d8338dad7a0d" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="cf844c3f-0d2f-456a-95d7-375bbe980160" />
+        <classShapeMoniker Id="685fc916-480e-4a7f-8fa1-b3cab32e6be5" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

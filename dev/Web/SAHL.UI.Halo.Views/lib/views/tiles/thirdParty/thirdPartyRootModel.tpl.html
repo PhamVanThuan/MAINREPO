@@ -1,0 +1,29 @@
+<div class="labels">
+    <div ng-show="item.tileData.LegalEntityType === 2">ID Number:</div>
+    <div ng-show="item.tileData.LegalEntityType > 2">Registration Number:</div>
+    <div>Homephone Number:</div>
+    <div>Workphone Number:</div>
+    <div>Cell Phone Number:</div>
+    <div>Banking Institute:</div>
+    <div>Email Address:</div>
+    
+</div>
+<div class="values">
+    <div ng-show="item.tileData.LegalEntityType === 2">{{item.tileData.IDNumber | emptyStringDecorator}}</div>
+    <div ng-show="item.tileData.LegalEntityType > 2">{{item.tileData.RegistrationNumber| emptyStringDecorator}}</div>
+
+    <div>{{item.tileData.HomephoneNumber | emptyStringDecorator}}</div>
+    <div>{{item.tileData.WorkphoneNumber | emptyStringDecorator}}</div>
+    <div>{{item.tileData.CellPhoneNumber | emptyStringDecorator}}</div>
+    <div>{{item.tileData.BankingInstitute | emptyStringDecorator}}</div>
+    <div>{{item.tileData.EmailAddress | emptyStringDecorator}}</div>
+ 
+    <br/>
+</div>
+<div>
+    <span class="tile-label">Postal Address:</span>
+    <div>{{item.tileData.PostalAddress | emptyStringDecorator}}</div>
+    <br/>
+    <span class="tile-label">Physical Address:</span>
+    <div>{{item.tileData.ResidentialAddress| emptyStringDecorator}}</div>
+</div>

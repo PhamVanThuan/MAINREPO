@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Attorney" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:52059/Attorney.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:52059/Attorney.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:52059/Attorney.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:52059/Attorney.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SAHL.Web.Services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAttorney_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RenderSQLReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenderSQLReport" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RenderSQLReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenderSQLReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_ForgottenPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgottenPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_ForgottenPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgottenPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_TestServiceResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_TestServiceResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestServiceResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_UpdateLE_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLE" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_UpdateLE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAttorney">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/Login" message="tns:IAttorney_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/LoginResponse" message="tns:IAttorney_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/RegisterUser" message="tns:IAttorney_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/RegisterUserResponse" message="tns:IAttorney_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenderSQLReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/RenderSQLReport" message="tns:IAttorney_RenderSQLReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/RenderSQLReportResponse" message="tns:IAttorney_RenderSQLReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgottenPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/ForgottenPassword" message="tns:IAttorney_ForgottenPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/ForgottenPasswordResponse" message="tns:IAttorney_ForgottenPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestServiceResponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/TestServiceResponse" message="tns:IAttorney_TestServiceResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/TestServiceResponseResponse" message="tns:IAttorney_TestServiceResponse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/UpdateLE" message="tns:IAttorney_UpdateLE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/UpdateLEResponse" message="tns:IAttorney_UpdateLE_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAttorney" type="tns:IAttorney">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderSQLReport">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/RenderSQLReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgottenPassword">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/ForgottenPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestServiceResponse">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/TestServiceResponse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLE">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/UpdateLE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Attorney">
+    <wsdl:port name="BasicHttpBinding_IAttorney" binding="tns:BasicHttpBinding_IAttorney">
+      <soap:address location="http://localhost:52059/Attorney.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

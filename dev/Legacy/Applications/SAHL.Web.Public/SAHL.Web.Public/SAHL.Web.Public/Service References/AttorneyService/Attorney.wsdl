@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Attorney" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/Attorney.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/Attorney.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/Attorney.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" />
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/Attorney.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAttorney_GetServiceMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceMessage" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetServiceMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RenderSQLReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenderSQLReport" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_RenderSQLReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenderSQLReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetReportParametersByStatementKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportParametersByStatementKey" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetReportParametersByStatementKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportParametersByStatementKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_ForgottenPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ForgottenPassword" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_ForgottenPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ForgottenPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetNotesByDebtCounselling_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotesByDebtCounselling" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetNotesByDebtCounselling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotesByDebtCounsellingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetDebtCounsellingByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebtCounsellingByKey" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetDebtCounsellingByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDebtCounsellingByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_SearchForCases_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForCases" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_SearchForCases_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchForCasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_SaveNoteDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveNoteDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_SaveNoteDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveNoteDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetProposals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProposals" />
+  </wsdl:message>
+  <wsdl:message name="IAttorney_GetProposals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProposalsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAttorney">
+    <wsdl:operation name="GetServiceMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/GetServiceMessage" message="tns:IAttorney_GetServiceMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/GetServiceMessageResponse" message="tns:IAttorney_GetServiceMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/Login" message="tns:IAttorney_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/LoginResponse" message="tns:IAttorney_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/RegisterUser" message="tns:IAttorney_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/RegisterUserResponse" message="tns:IAttorney_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenderSQLReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/RenderSQLReport" message="tns:IAttorney_RenderSQLReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/RenderSQLReportResponse" message="tns:IAttorney_RenderSQLReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportParametersByStatementKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/GetReportParametersByStatementKey" message="tns:IAttorney_GetReportParametersByStatementKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/GetReportParametersByStatementKeyResponse" message="tns:IAttorney_GetReportParametersByStatementKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ForgottenPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/ForgottenPassword" message="tns:IAttorney_ForgottenPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/ForgottenPasswordResponse" message="tns:IAttorney_ForgottenPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotesByDebtCounselling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/GetNotesByDebtCounselling" message="tns:IAttorney_GetNotesByDebtCounselling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/GetNotesByDebtCounsellingResponse" message="tns:IAttorney_GetNotesByDebtCounselling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDebtCounsellingByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/GetDebtCounsellingByKey" message="tns:IAttorney_GetDebtCounsellingByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/GetDebtCounsellingByKeyResponse" message="tns:IAttorney_GetDebtCounsellingByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchForCases">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/SearchForCases" message="tns:IAttorney_SearchForCases_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/SearchForCasesResponse" message="tns:IAttorney_SearchForCases_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveNoteDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/SaveNoteDetail" message="tns:IAttorney_SaveNoteDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/SaveNoteDetailResponse" message="tns:IAttorney_SaveNoteDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProposals">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAttorney/GetProposals" message="tns:IAttorney_GetProposals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAttorney/GetProposalsResponse" message="tns:IAttorney_GetProposals_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAttorney" type="tns:IAttorney">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceMessage">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/GetServiceMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderSQLReport">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/RenderSQLReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportParametersByStatementKey">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/GetReportParametersByStatementKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ForgottenPassword">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/ForgottenPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotesByDebtCounselling">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/GetNotesByDebtCounselling" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDebtCounsellingByKey">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/GetDebtCounsellingByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchForCases">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/SearchForCases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveNoteDetail">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/SaveNoteDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProposals">
+      <soap:operation soapAction="http://tempuri.org/IAttorney/GetProposals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Attorney">
+    <wsdl:port name="BasicHttpBinding_IAttorney" binding="tns:BasicHttpBinding_IAttorney">
+      <soap:address location="http://localhost/SAHL.Web.Services.Internal/Attorney.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

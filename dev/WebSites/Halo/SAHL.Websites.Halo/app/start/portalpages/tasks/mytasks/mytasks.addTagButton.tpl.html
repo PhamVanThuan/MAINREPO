@@ -1,0 +1,34 @@
+<div>
+    <button class="dropdown-toggle" ng-if="row.entity[col.field].length < 5" style="margin: 0 !important;">
+        <div class="icon-plus addTag" style="padding: 6px 30px 5px 3px;"></div>
+    </button>
+    <ul class="dropdown-menu" data-role="dropdown" init-metro-dropdown style="right: 0px;top: 0px;">
+        <li ng-repeat="savedTag in grid.appScope.allTags"
+            ng-click="newTagDropDownItemSelected($event,row.entity,savedTag)">
+            <a style="padding: 5px 15px !important" href="#">
+                <div class="icon-tag" style="margin-right: 7px ;color: {{savedTag.Style['color']}}"></div>{{savedTag.Caption}}
+            </a>
+        </li>
+        <li ng-hide="grid.appScope.isMaxTagsPerUserReached" class="divider"></li>
+        <li ng-hide="grid.appScope.isMaxTagsPerUserReached" ng-repeat="tag in grid.appScope.defaultSearchTags"
+            ng-click="newTagDropDownItemSelected($event,row.entity,tag)">
+            <a href="#">{{tag.tag}}</a>
+        </li>
+        <li ng-hide="grid.appScope.isMaxTagsPerUserReached" class="divider"></li>
+        <li ng-hide="grid.appScope.isMaxTagsPerUserReached">
+            <div class="tag-entry search-input" ng-click="newTagInputSelected($event)">
+                <input type="text" ng-model="newTagEntry" ng-enter="addNewUserTag(row.entity, $event)" placeholder="Create tag..." />
+            </div>
+        </li>
+        <li ng-hide="grid.appScope.isMaxTagsPerUserReached">
+            <button class="tagAddButton"
+                    ng-click="addNewUserTag(row.entity, $event)">
+                <i class="icon-plus-2"></i>
+            </button>
+        </li>
+        <li ng-if="grid.appScope.isMaxTagsPerUserReached">
+            <a>The maximum number of <br> tags per user has been reached.</a>
+        </li>
+        
+    </ul>
+</div>

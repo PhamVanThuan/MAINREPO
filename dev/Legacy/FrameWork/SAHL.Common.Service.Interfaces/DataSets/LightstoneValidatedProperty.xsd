@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LightstoneValidatedProperty" targetNamespace="http://tempuri.org/LightstoneValidatedProperty.xsd" xmlns:mstns="http://tempuri.org/LightstoneValidatedProperty.xsd" xmlns="http://tempuri.org/LightstoneValidatedProperty.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LightstoneValidatedProperty" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LightstoneValidatedProperty" msprop:Generator_UserDSName="LightstoneValidatedProperty">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PropertyDetails" msprop:Generator_TableClassName="PropertyDetailsDataTable" msprop:Generator_TableVarName="tablePropertyDetails" msprop:Generator_TablePropName="PropertyDetails" msprop:Generator_RowDeletingName="PropertyDetailsRowDeleting" msprop:Generator_UserTableName="PropertyDetails" msprop:Generator_RowChangingName="PropertyDetailsRowChanging" msprop:Generator_RowEvHandlerName="PropertyDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="PropertyDetailsRowDeleted" msprop:Generator_RowEvArgName="PropertyDetailsRowChangeEvent" msprop:Generator_RowChangedName="PropertyDetailsRowChanged" msprop:Generator_RowClassName="PropertyDetailsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UniqueID" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="UniqueID" msprop:Generator_ColumnVarNameInTable="columnUniqueID" msprop:Generator_ColumnPropNameInTable="UniqueIDColumn" msprop:Generator_UserColumnName="UniqueID" type="xs:int" default="0" />
+              <xs:element name="PreviousUniqueID" msprop:Generator_ColumnVarNameInTable="columnPreviousUniqueID" msprop:Generator_ColumnPropNameInRow="PreviousUniqueID" msprop:Generator_ColumnPropNameInTable="PreviousUniqueIDColumn" msprop:Generator_UserColumnName="PreviousUniqueID" type="xs:int" minOccurs="0" />
+              <xs:element name="SAHLUser" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="SAHLUser" msprop:Generator_ColumnVarNameInTable="columnSAHLUser" msprop:Generator_ColumnPropNameInTable="SAHLUserColumn" msprop:Generator_UserColumnName="SAHLUser" type="xs:string" />
+              <xs:element name="LightstonePropertyID" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="LightstonePropertyID" msprop:Generator_ColumnVarNameInTable="columnLightstonePropertyID" msprop:Generator_ColumnPropNameInTable="LightstonePropertyIDColumn" msprop:Generator_UserColumnName="LightstonePropertyID" type="xs:string" />
+              <xs:element name="PropertyTitleType" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="PropertyTitleType" msprop:Generator_ColumnVarNameInTable="columnPropertyTitleType" msprop:Generator_ColumnPropNameInTable="PropertyTitleTypeColumn" msprop:Generator_UserColumnName="PropertyTitleType" type="xs:string" />
+              <xs:element name="ValuationReason" msprop:Generator_ColumnVarNameInTable="columnValuationReason" msprop:Generator_ColumnPropNameInRow="ValuationReason" msprop:Generator_ColumnPropNameInTable="ValuationReasonColumn" msprop:Generator_UserColumnName="ValuationReason" type="xs:string" />
+              <xs:element name="ValuationRequiredDate" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="ValuationRequiredDate" msprop:Generator_ColumnVarNameInTable="columnValuationRequiredDate" msprop:Generator_ColumnPropNameInTable="ValuationRequiredDateColumn" msprop:Generator_UserColumnName="ValuationRequiredDate" type="xs:string" />
+              <xs:element name="ValuationInstructions" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="ValuationInstructions" msprop:Generator_ColumnVarNameInTable="columnValuationInstructions" msprop:Generator_ColumnPropNameInTable="ValuationInstructionsColumn" msprop:Generator_UserColumnName="ValuationInstructions" type="xs:string" minOccurs="0" />
+              <xs:element name="Contact1" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Contact1" msprop:Generator_ColumnVarNameInTable="columnContact1" msprop:Generator_ColumnPropNameInTable="Contact1Column" msprop:Generator_UserColumnName="Contact1" type="xs:string" />
+              <xs:element name="Contact1Phone" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="Contact1Phone" msprop:Generator_ColumnVarNameInTable="columnContact1Phone" msprop:Generator_ColumnPropNameInTable="Contact1PhoneColumn" msprop:Generator_UserColumnName="Contact1Phone" type="xs:string" />
+              <xs:element name="Contact1WorkPhone" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Contact1WorkPhone" msprop:Generator_ColumnVarNameInTable="columnContact1WorkPhone" msprop:Generator_ColumnPropNameInTable="Contact1WorkPhoneColumn" msprop:Generator_UserColumnName="Contact1WorkPhone" type="xs:string" minOccurs="0" />
+              <xs:element name="Contact1MobilePhone" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Contact1MobilePhone" msprop:Generator_ColumnVarNameInTable="columnContact1MobilePhone" msprop:Generator_ColumnPropNameInTable="Contact1MobilePhoneColumn" msprop:Generator_UserColumnName="Contact1MobilePhone" type="xs:string" minOccurs="0" />
+              <xs:element name="Contact2" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Contact2" msprop:Generator_ColumnVarNameInTable="columnContact2" msprop:Generator_ColumnPropNameInTable="Contact2Column" msprop:Generator_UserColumnName="Contact2" type="xs:string" minOccurs="0" />
+              <xs:element name="Contact2Phone" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Contact2Phone" msprop:Generator_ColumnVarNameInTable="columnContact2Phone" msprop:Generator_ColumnPropNameInTable="Contact2PhoneColumn" msprop:Generator_UserColumnName="Contact2Phone" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,182 @@
+﻿.tile {
+    float: left;
+    margin: @tile-margin;
+    color: @tile-content-color;
+    background-color: @tile-background-color;
+    border: @tile-border-thickness solid @tile-border-color;
+    .border-radius(@tile-border-radius);
+    font-size: @tile-font-size;
+    position: relative;
+    .label-model-pair {
+        width: 100%;
+
+        .model-label {
+            font-weight: bold;
+            margin-right: 12px;
+            display: inline-block;
+        }
+
+        .model {
+            display: inline-block;
+        }
+    }
+
+    .icon-3x {
+        font-size: @tile-icon-size * 3;
+    }
+
+    &.Size_1_by_1 {
+        .tileSize();
+    }
+
+    &.Size_2_by_1 {
+        .tileSize(@tile-span-width,2,1,@tile-border-thickness);
+    }
+
+    &.Size_2_by_2 {
+        .tileSize(@tile-span-width,2,2,@tile-border-thickness);
+    }
+
+    &.Size_3_by_1 {
+        .tileSize(@tile-span-width,3,1,@tile-border-thickness);
+    }
+
+    &.Size_3_by_2 {
+        .tileSize(@tile-span-width,3,2,@tile-border-thickness);
+    }
+
+    &.Size_3_by_3 {
+        .tileSize(@tile-span-width,3,3,@tile-border-thickness);
+    }
+
+    &.Size_4_by_1 {
+        .tileSize(@tile-span-width,4,1,@tile-border-thickness);
+    }
+
+    &.Size_4_by_2 {
+        .tileSize(@tile-span-width,4,2,@tile-border-thickness);
+    }
+
+    &.Size_4_by_3 {
+        .tileSize(@tile-span-width,4,3,@tile-border-thickness);
+    }
+
+    &.Size_4_by_4 {
+        .tileSize(@tile-span-width,4,4,@tile-border-thickness);
+    }
+}
+
+    .tile h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        margin: 0;
+        color: @tile-title-color;
+    }
+
+.tile-major {
+    .padding();
+    .tileSize(@tile-span-width,4,4,@tile-border-thickness);
+    font-size: @major-tile-font-size;
+    line-height: @major-tile-font-size * 1.4;
+
+    h1 {
+        margin-bottom: @major-tile-header-font-size;
+        font-size: @major-tile-header-font-size;
+        line-height: @major-tile-header-font-size;
+        color: @major-tile-title-color;
+    }
+
+    h4 {
+        text-align: left;
+        font-size: @major-tile-header-font-size / 2;
+        font-size: @major-tile-header-font-size;
+        margin-bottom: @major-tile-header-font-size;
+    }
+}
+
+.tile-minor {
+    .padding();
+    font-size: @minor-tile-font-size;
+    line-height: @minor-tile-font-size * 1.4;
+
+    h1 {
+        margin-bottom: @minor-tile-header-font-size;
+        text-align: left;
+        font-size: @minor-tile-header-font-size;
+        line-height: @minor-tile-header-font-size;
+    }
+
+    h4 {
+        text-align: left;
+        font-weight: normal;
+        font-size: @minor-tile-header-font-size / 1.2;
+        margin-bottom: @minor-tile-header-font-size;
+    }
+}
+
+.tile-mini {
+    .tileSize();
+    font-size: @mini-tile-font-size;
+    line-height: @mini-tile-font-size * 1.4;
+
+    h1 {
+        margin-bottom: @mini-tile-header-font-size;
+        font-size: @mini-tile-header-font-size;
+        line-height: @mini-tile-header-font-size;
+    }
+
+    h4 {
+        text-align: left;
+        font-weight: normal;
+        font-size: @mini-tile-header-font-size;
+        margin-bottom: @mini-tile-header-font-size;
+    }
+}
+
+.tile-action {
+    color: @tile-title-color;
+    vertical-align: middle;
+    text-align: center;
+
+    h1 {
+        margin-top: @mini-tile-header-font-size;
+        margin-bottom: @mini-tile-header-font-size;
+        font-size: @mini-tile-header-font-size;
+    }
+}
+.tile-icon-container
+{
+    height: 100%;
+    position: relative;
+}
+
+.minor-tile-icon
+{
+    position: absolute;
+    right: 5px;
+    i {
+        margin-left:3px;
+    }
+}
+
+.major-tile-icon
+{
+    position: absolute;
+    left: 5px;
+    i {
+        margin-left:3px;
+    }
+}
+
+#GreyedOutTileArea{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    opacity: 0;
+    background: white;
+    -webkit-transition: opacity 0.5s linear;
+    -moz-transition: opacity 0.5s linear;
+    -o-transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
+    pointer-events: none;   
+    z-index: 50;
+}

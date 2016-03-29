@@ -1,0 +1,37 @@
+<div class="labels">
+    <div ng-show="item.tileData.LegalEntityType === 2 && item.tileData.IDNumber.length > 0">ID Number:</div>
+    <div ng-show="item.tileData.LegalEntityType === 2 && item.tileData.PassportNumber.length > 0">Passport Number:</div>
+	<div ng-show="item.tileData.LegalEntityType > 2">Registration Number:</div>
+    <div>Date Of Birth:</div>
+    <div>Marital Status:</div>
+    <br/>
+    <div>Home Phone:</div>
+    <div>Work Phone:</div>
+    <div>Mobile:</div>
+    <div>Email Address:</div>
+    <br/>
+    <div>Bank:</div>
+    <br/>
+</div>
+<div class="values">
+    <div ng-show="item.tileData.LegalEntityType === 2 && item.tileData.IDNumber.length > 0">{{item.tileData.IDNumber}}</div>
+	<div ng-show="item.tileData.LegalEntityType === 2 && item.tileData.PassportNumber.length > 0">{{item.tileData.PassportNumber}}</div>
+    <div ng-show="item.tileData.LegalEntityType > 2">{{item.tileData.RegistrationNumber}}</div>
+    <div>{{item.tileData.DateOfBirth | dateViewFilter}}</div>
+    <div>{{checkEmpty(item.tileData.MaritalStatus)}}</div>
+    <br/>
+    <div>{{item.tileData.HomephoneNumber}}</div>
+    <div>{{item.tileData.WorkphoneNumber}}</div>
+    <div>{{item.tileData.CellPhoneNumber}}</div>
+    <div>{{item.tileData.EmailAddress}}</div>
+    <br/>
+    <div>{{item.tileData.BankingInstitute}}</div>
+    <br/>
+</div>
+<div>
+    <span class="tile-label">Address:</span>
+    <div>{{item.tileData.Address}}</div>
+    <br/>
+    <span class="tile-label">Domicilium Address:</span>
+    <div>{{item.tileData.DomiciliumAddress}}</div>
+</div>

@@ -1,0 +1,37 @@
+﻿@import url(sizing.less);
+@import url(colors.less);
+
+.icon-home {
+    background-image: url(../assets/img/icon-home.png);
+    .common-icon();
+    background-position-x:9px; // icon is a strange 17px size rather than 16px, making it 16px looks silly and doesn't match capitecs site
+}
+
+.icon-settings {
+    background-image: url(../assets/img/icon-settings.png);
+    .common-icon();
+}
+
+.icon-logout{
+    background-image: url(../assets/img/icon-logout.png);
+    .common-icon();
+}
+
+.icon-menu {
+    background-color:@menu-icon-background-opaque;
+}
+
+.icon-menu-inverted {
+    background-color:@menu-icon-background-inverted-opaque;
+}
+
+.menu-item-icon-repeat() {
+    background-repeat:no-repeat;
+}
+
+.common-icon() {
+    .menu-item-icon-repeat();
+    background-position-x:10px;
+    background-position-y:23px;
+    border:none;
+}

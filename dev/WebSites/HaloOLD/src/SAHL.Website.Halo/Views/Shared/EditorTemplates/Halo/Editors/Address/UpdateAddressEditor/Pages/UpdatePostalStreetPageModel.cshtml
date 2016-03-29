@@ -1,0 +1,25 @@
+﻿@model SAHL.Core.UI.Halo.Editors.Address.UpdateAddressEditor.Pages.UpdatePostalStreetPageModel
+
+@Html.EditorLabelModelPairFor("Effective Date", x => x.EffectiveDate)
+
+@Html.EditorLabelDropdownListPairFor("Status", x => x.SelectedAddressStatusKey, new SelectList(Model.AddressStatuses, "Key", "Name", Model.SelectedAddressStatusKey))
+
+@Html.EditorLabelModelPairFor("Unit Number", x => x.UnitNumber, inputLength:"input-mini")
+
+@using (Html.BeginControlGroup("BuildingNo & Name"))
+{
+	@Html.EditorForModel(x => x.BuildingNo, inputLength: "input-mini");
+	@Html.EditorForModel(x => x.BuildingName);
+}
+
+@using (Html.BeginControlGroup("StreetNo & Name"))
+{
+	@Html.EditorForModel(x => x.StreetNo, inputLength: "input-mini");
+	@Html.EditorForModel(x => x.StreetName);
+}
+
+@Html.EditorLabelDropdownListPairFor("Country", x => x.SelectedCountryKey, new SelectList(Model.Countries, "Key", "Name", Model.SelectedCountryKey))
+@Html.EditorLabelDropdownListPairFor("Provinces", x => x.SelectedProvinceKey, new SelectList(Model.Provinces, "Key", "Name", Model.SelectedProvinceKey))
+@Html.EditorLabelModelPairFor("Suburb", x => x.Suburb)
+@Html.EditorLabelModelPairFor("City", x => x.City)
+@Html.EditorLabelModelPairFor("Postal Code", x => x.PostalCode)

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c32b983b-ab57-4cbb-a8cb-8b0091812491" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="SuperLo" schema="product" table="SuperLo">
+      <properties>
+        <modelProperty Id="08030210-887d-4a33-bc3c-1e1817ec4b12" name="FinancialServiceAttributeKey" column="FinancialServiceAttributeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="293ae316-e45a-41b5-b545-3c9d219b33ae" name="ElectionDate" column="ElectionDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="256f4195-9717-4e98-bc6f-0e3559bc5374" name="ConvertedDate" column="ConvertedDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="f63964f1-8e1d-4fcd-ac57-7fc565a2fb1d" name="NextPaymentDate" column="NextPaymentDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="14e069a5-4783-482c-b098-b15e7127b610" name="PPThresholdYr1" column="PPThresholdYr1" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="9d7f4ce8-a08a-4893-800b-a9650f79651f" name="PPThresholdYr2" column="PPThresholdYr2" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="64f2ae05-bd82-4b51-8572-88e0f13f3d58" name="PPThresholdYr3" column="PPThresholdYr3" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="9a93d62e-db85-431b-a550-64513ec80151" name="PPThresholdYr4" column="PPThresholdYr4" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="a1de21c9-b364-486a-9e54-4892821d05f7" name="PPThresholdYr5" column="PPThresholdYr5" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="b4ecb07e-c19f-498b-94a4-099686c47308" name="MTDLoyaltyBenefit" column="MTDLoyaltyBenefit" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="06ca8973-081e-4c0a-a60f-e13b73090eb3" name="PPAllowed" column="PPAllowed" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="f7aefdf6-91e1-41b1-b27d-6dcb55520af0" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="b62b4780-174b-4088-b894-e386844fa5fc" name="Exclusion" column="Exclusion" length="0" />
+        <modelProperty Id="eeddd165-aa2f-4fb3-bd9c-bdb510e46498" name="ExclusionEndDate" column="ExclusionEndDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="aa2f90bf-3fbb-4428-9bfb-51bc65639691" name="ExclusionReason" column="ExclusionReason" length="0" />
+        <modelProperty Id="b9e3ed0f-fd0c-489b-a3b7-7db606c75a05" name="OverPaymentAmount" column="OverPaymentAmount" columnType="Double" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

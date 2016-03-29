@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ServiceMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServiceMessages" nillable="true" type="tns:ArrayOfMessage" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceMessage" nillable="true" type="tns:ServiceMessage" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageType" type="tns:ServiceMessageType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:simpleType name="ServiceMessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Info" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceMessageType" nillable="true" type="tns:ServiceMessageType" />
+  <xs:complexType name="ArrayOfReportParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportParameter" nillable="true" type="tns:ReportParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportParameter" nillable="true" type="tns:ArrayOfReportParameter" />
+  <xs:complexType name="ReportParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParameterTypeKey" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportParams" nillable="true" type="tns:ArrayOfReportParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportParameter" nillable="true" type="tns:ReportParameter" />
+  <xs:complexType name="ArrayOfNoteDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NoteDetail" nillable="true" type="tns:NoteDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNoteDetail" nillable="true" type="tns:ArrayOfNoteDetail" />
+  <xs:complexType name="NoteDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InsertedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Key" type="xs:int" />
+      <xs:element minOccurs="0" name="LegalEntityDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LegalEntityKey" type="xs:int" />
+      <xs:element minOccurs="0" name="NoteText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tag" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkflowState" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NoteDetail" nillable="true" type="tns:NoteDetail" />
+  <xs:complexType name="DebtCounselling">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountKey" type="xs:int" />
+      <xs:element minOccurs="0" name="DebtCounsellingKey" type="xs:int" />
+      <xs:element minOccurs="0" name="DiaryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LegalEntitiesOnAccount" nillable="true" type="tns:ArrayOfLegalEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DebtCounselling" nillable="true" type="tns:DebtCounselling" />
+  <xs:complexType name="ArrayOfLegalEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LegalEntity" nillable="true" type="tns:LegalEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLegalEntity" nillable="true" type="tns:ArrayOfLegalEntity" />
+  <xs:complexType name="LegalEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LegalEntity" nillable="true" type="tns:LegalEntity" />
+  <xs:complexType name="ArrayOfDebtCounselling">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DebtCounselling" nillable="true" type="tns:DebtCounselling" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDebtCounselling" nillable="true" type="tns:ArrayOfDebtCounselling" />
+  <xs:complexType name="ArrayOfProposal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Proposal" nillable="true" type="tns:Proposal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProposal" nillable="true" type="tns:ArrayOfProposal" />
+  <xs:complexType name="Proposal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Accepted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DebtCounsellingKey" type="xs:int" />
+      <xs:element minOccurs="0" name="HOCInclusive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LegalEntityDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LifeInclusive" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProposalKey" type="xs:int" />
+      <xs:element minOccurs="0" name="ProposalStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProposalType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReviewDate" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Proposal" nillable="true" type="tns:Proposal" />
+</xs:schema>

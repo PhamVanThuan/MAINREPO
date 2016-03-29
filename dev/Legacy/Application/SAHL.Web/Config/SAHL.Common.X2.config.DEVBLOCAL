@@ -1,0 +1,11 @@
+<SAHL.X2.Framework.Properties.Settings>
+  <setting name="X2URL" serializeAs="String">
+    <value>tcp://DEVB14:8089/X2Engine</value>
+  </setting>
+  <setting name="X2WebHost_Url" serializeAs="String">
+    <value>DEVB14/X2EngineService/</value>
+  </setting>
+  <setting name="X2ProviderWeb" serializeAs="String">
+    <value>True</value>
+  </setting>
+</SAHL.X2.Framework.Properties.Settings>

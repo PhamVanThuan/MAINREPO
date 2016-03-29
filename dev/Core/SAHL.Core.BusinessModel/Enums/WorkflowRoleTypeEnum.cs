@@ -1,0 +1,41 @@
+namespace SAHL.Core.BusinessModel.Enums
+{
+    public enum WorkflowRoleType
+    {
+        AdminSupportD = 21,
+        ArrearsConsultantD = 13,
+        ArrearsSupervisorD = 12,
+        ClientLiaisonAdminSupportD = 11,
+        CollectionsandArrearsManagerD = 15,
+        CollectionsConsultantD = 16,
+        CollectionsSupervisorD = 14,
+        DebtCounsellingAdminD = 1,
+        DebtCounsellingConsultantD = 2,
+        DebtCounsellingCourtConsultantD = 3,
+        DebtCounsellingSupervisorD = 5,
+        DeceasedEstateConsultantD = 23,
+        EstateandMarketingConsultantD = 25,
+        FacilitationConsultantD = 17,
+        FeeConsultantD = 26,
+        ForeclosureAssessmentConsultantD = 8,
+        ForeclosureConsultantD = 6,
+        ForeclosureSupportParalegalD = 7,
+        InsolvencyConsultantD = 22,
+        LitigationManagerD = 19,
+        LitigationSupervisorD = 20,
+        LossControlDirectorD = 29,
+        PIPandRecoveriesConsultantD = 27,
+        PLAdminD = 33,
+        PLConsultantD = 30,
+        PLCreditExceptionsManagerD = 35,
+        PLCreditAnalystD = 34,
+        PLManagerD = 31,
+        PLSupervisorD = 32,
+        QuickcashandRecoveriesConsultantD = 28,
+        RecoveriesConsultantD = 10,
+        RecoveriesManagerD = 4,
+        RecoveriesSupervisorD = 9,
+        SPOAMarketingConsultantD = 24,
+        SubsidyConsultantD = 18
+    }
+}

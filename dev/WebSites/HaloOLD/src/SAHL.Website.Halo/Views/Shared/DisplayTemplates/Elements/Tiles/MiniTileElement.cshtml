@@ -1,0 +1,4 @@
+﻿@model SAHL.Core.UI.Elements.Tiles.MiniTileElement
+<div class="tile tile-mini scrollable-item @Model.TileSize" id="@Model.Id" @DataAttributes.attributes(Model)>
+	@Html.DisplayForModel(x => x)
+</div>

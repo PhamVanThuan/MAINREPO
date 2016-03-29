@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="018252d9-9548-418f-947f-47b9b984d728" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="DebtCounselling" schema="DebtCounselling" table="DebtCounselling">
+      <targets>
+        <manyToOneRelation Id="587bb1f0-a8dd-492a-9b5c-dbf2cac2be33" targetColumnKey="AccountKey" targetTable="DebtCounselling" targetPropertyName="DebtCounsellings" sourceColumn="AccountKey">
+          <modelClassMoniker name="/018252d9-9548-418f-947f-47b9b984d728/Account" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="2b668b4e-4aa3-4aa4-b44f-b1f7bc793874" targetColumnKey="GeneralStatusKey" targetTable="DebtCounselling" targetPropertyName="DebtCounsellings" sourceColumn="GeneralStatusKey">
+          <modelClassMoniker name="/018252d9-9548-418f-947f-47b9b984d728/GeneralStatus" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="736e1889-645e-4e97-9255-631f517baab0" name="DebtCounsellingKey" column="DebtCounsellingKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="Account" schema="dbo" table="Account">
+      <properties>
+        <modelProperty Id="68f20ad8-0ff2-4d1a-8124-1d8d98fa3739" name="AccountKey" column="AccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="6d8b1eee-82c0-4467-ba81-3d4495a6e13f" name="FixedPayment" column="FixedPayment" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="70557107-ab1d-42c9-8bd2-20c3c4455aa8" name="AccountStatusKey" column="AccountStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="2016efdc-8235-4b71-85b2-194606a34cf5" name="InsertedDate" column="InsertedDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="9de857e0-46d5-4269-a51a-663c0dceb8a8" name="OriginationSourceProductKey" column="OriginationSourceProductKey" columnType="Int32" length="0" />
+        <modelProperty Id="40ff8309-51bd-466e-988a-004bc179e2d9" name="OpenDate" column="OpenDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="9805bdcc-2bbc-4369-aad8-423bd9ddc66a" name="CloseDate" column="CloseDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="676dccea-6bd1-489e-a87c-05d8a2f619db" name="RrrProductkey" column="RRR_ProductKey" columnType="Int32" length="0" />
+        <modelProperty Id="9676c9c2-e3e0-4ac0-b26f-053ddd45fcc2" name="RrrOriginationsourcekey" column="RRR_OriginationSourceKey" columnType="Int32" length="0" />
+        <modelProperty Id="8bd4ebb8-eff6-41c4-b892-fa3d5119afa6" name="UserID" column="UserID" length="0" />
+        <modelProperty Id="2c163703-876c-4db4-b5db-6d490de64a1a" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="GeneralStatus" schema="dbo" table="GeneralStatus">
+      <properties>
+        <modelProperty Id="a48052e8-1546-44af-b0e5-1022da23170b" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="a3e069bb-e26c-4a46-be21-4c21cd415de2" name="Description" column="Description" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

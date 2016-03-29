@@ -1,0 +1,40 @@
+﻿using Machine.Fakes;
+using Machine.Specifications;
+using SAHL.Common.Collections.Interfaces;
+using X2DomainService.Interface.WorkflowAssignment;
+
+namespace WorkflowMaps.DebtCounselling.Specs.Activities.Reallocate_User.OnComplete
+{
+    [Subject("Activity => Reallocate_User => OnComplete")]
+    internal class when_assign_workflow_role_type_data_property_is_zero : WorkflowSpecDebtCounselling
+    {
+        private static string message;
+        private static bool result;
+        private static IWorkflowAssignment wfa;
+
+        private Establish context = () =>
+        {
+            wfa = An<IWorkflowAssignment>();
+            result = true;
+            workflowData.AssignADUserName = "Test";
+            workflowData.AssignWorkflowRoleTypeKey = 0;
+            domainServiceLoader.RegisterMockForType<IWorkflowAssignment>(wfa);
+        };
+
+        private Because of = () =>
+        {
+            result = workflow.OnCompleteActivity_Reallocate_User(instanceData, workflowData, paramsData, messages, ref message);
+        };
+
+        private It should_return_false = () =>
+        {
+            result.ShouldBeFalse();
+        };
+
+        private It should_not_assign_the_workflow_role = () =>
+        {
+            wfa.WasNotToldTo(x => x.AssignWorkflowRoleForADUser(Param.IsAny<IDomainMessageCollection>(), Param.IsAny<long>(),
+                Param.IsAny<string>(), Param.IsAny<SAHL.Common.Globals.WorkflowRoleTypes>(), Param.IsAny<int>(), Param.IsAny<string>()));
+        };
+    }
+}

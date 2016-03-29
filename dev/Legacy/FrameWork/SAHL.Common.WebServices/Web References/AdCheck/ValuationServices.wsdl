@@ -1,0 +1,1244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://AdcheckMobile/IntegrationService/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://AdcheckMobile/IntegrationService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://AdcheckMobile/IntegrationService/">
+      <s:element name="TestAddress">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestAddressResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserCredentials" type="tns:UserCredentials" />
+      <s:complexType name="UserCredentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strUserPassword" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="LoadAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="aRefNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aStreetNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aStreetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aUnit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aComplex" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aSuburb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aErf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPortion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aSellerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aSellerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NADCheck" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aPropertyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAddressResult" type="tns:Address" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Address">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="ReferenceNumber" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StreetNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UnitNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ComplexName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SuburbName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErfNumber" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Portion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SellerID" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SuburbExtension" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="LegalDescription" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="SellerName" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+              <s:element minOccurs="0" maxOccurs="1" name="NADCheck" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="Prediction" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="Safety" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="Confidence" type="s:double" />
+              <s:element minOccurs="1" maxOccurs="1" name="Validated" type="s:boolean" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ObjectBase" abstract="true">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ConnectionString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="dValuation">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObjectBase">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="val_valuation_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_valuation_state_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_priority_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="requested_perform_date" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_request_reason_type_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="purchase_price" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="purchase_date" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="loan_amount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="balance" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="instructions" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="date_request_completed" type="s:dateTime" />
+              <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="property_description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="complex_details" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="street_number" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="street_name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="suburb_name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="town_name" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="reg_region_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="twn_town_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="sub_suburb_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_area_type_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_property_use_type_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_property_type_id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="legal_stand_number" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="legal_suburb_name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="legal_portion" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="legal_total_portions" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="legal_land_size" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="legal_town" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="conditions_comment" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="alternate_valuation_id" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="language_afrikaans" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="bond_amount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="valuation_amount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="insurance_amount" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="BNPO" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="prev_valuation_date" type="s:dateTime" />
+              <s:element minOccurs="0" maxOccurs="1" name="builder_name" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="builder_contract_price" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="land_value" type="s:decimal" />
+              <s:element minOccurs="0" maxOccurs="1" name="door_no" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="section_no" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="desktop_valuation" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="erf_key" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValuationStandard">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:dValuation">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="complex_number" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_erf_type_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="merged" type="s:boolean" />
+              <s:element minOccurs="1" maxOccurs="1" name="irc_indicator" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="contact1_name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="contact2_name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="contact1_phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="contact2_phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="legal_description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="contact_access_details" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValuationExternal">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ValuationStandard">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="val_company_id" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="val_client_id" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="contact1_phone2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="contact1_phone3" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="UnitsInComplex" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="FloorsInComplex" type="s:int" />
+              <s:element minOccurs="1" maxOccurs="1" name="AreaUsedForCommercial" type="s:double" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ValidateAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myAddress" type="tns:Address" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateAddressResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAddressSync">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aAddressObj" type="tns:Val_Address" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Val_Address">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ReferenceNumber" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ComplexName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SuburbName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErfNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Portion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SuburbExtension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Province" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegalDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellerName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PropertyID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="NADCheck" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Prediction" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Safety" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Confidence" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateAddressSyncResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateAddressSyncResult" type="tns:ArrayOfVal_Address" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVal_Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Val_Address" nillable="true" type="tns:Val_Address" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPendingAVM">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPendingAVMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPendingAVMResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="myRequestID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="aRefNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAddressResult" type="tns:ArrayOfAddress" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoadValuationRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="aReferenceNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="aCompanyID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="aPriority" type="tns:PriorityType" />
+            <s:element minOccurs="1" maxOccurs="1" name="aRequestReason" type="tns:RequestReason" />
+            <s:element minOccurs="1" maxOccurs="1" name="aPurchasePrice" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="aPurchaseDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="aLoanAmount" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="aBalance" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="aContact1Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aContact1Home" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aContact1Work" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aContact1Cell" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aContact2Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aContact2Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aInstructions" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="aSuburbID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="aProperty_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="aAreaType" type="tns:AreaType" />
+            <s:element minOccurs="1" maxOccurs="1" name="aPropertyUseType" type="tns:PropertyUseType" />
+            <s:element minOccurs="1" maxOccurs="1" name="aPropertyType" type="tns:PropertyType" />
+            <s:element minOccurs="1" maxOccurs="1" name="aErfType" type="tns:ErfType" />
+            <s:element minOccurs="0" maxOccurs="1" name="aContactAccessDetails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aOfPortion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aLegalDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="aLandSize" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="PriorityType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Low" />
+          <s:enumeration value="Medium" />
+          <s:enumeration value="High" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="RequestReason">
+        <s:restriction base="s:string">
+          <s:enumeration value="NewPurchase" />
+          <s:enumeration value="SwitchLoan" />
+          <s:enumeration value="FurtherLoan" />
+          <s:enumeration value="Arrears" />
+          <s:enumeration value="AuditValuation" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="AreaType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unknown" />
+          <s:enumeration value="Class1" />
+          <s:enumeration value="Class2" />
+          <s:enumeration value="Class3" />
+          <s:enumeration value="Class4" />
+          <s:enumeration value="Class5" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="PropertyUseType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Residential" />
+          <s:enumeration value="Business" />
+          <s:enumeration value="Other" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="PropertyType">
+        <s:restriction base="s:string">
+          <s:enumeration value="VacantLand" />
+          <s:enumeration value="Residential" />
+          <s:enumeration value="Business" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ErfType">
+        <s:restriction base="s:string">
+          <s:enumeration value="FullTitle" />
+          <s:enumeration value="VacantLand" />
+          <s:enumeration value="SectionalTitleUnit" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="LoadValuationRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadValuationRequestResult" type="tns:ValuationExternal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestValuation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aValuationObj" type="tns:Val_details" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Val_details">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="val_company_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_client_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="contact1_phone2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contact1_phone3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitsInComplex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FloorsInComplex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AreaUsedForCommercial" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="complex_number" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_erf_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="merged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="irc_indicator" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="contact1_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contact2_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contact1_phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contact2_phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legal_description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="contact_access_details" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_valuation_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_valuation_state_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_priority_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="requested_perform_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_request_reason_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="purchase_price" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="purchase_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="loan_amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="balance" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="instructions" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_request_completed" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="property_description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="complex_details" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="street_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="street_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="suburb_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="town_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="reg_region_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="twn_town_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="sub_suburb_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_area_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_property_use_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_property_type_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="legal_stand_number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legal_suburb_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legal_portion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legal_total_portions" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legal_land_size" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="legal_town" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="conditions_comment" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="alternate_valuation_id" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="language_afrikaans" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bond_amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="valuation_amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="insurance_amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="BNPO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="prev_valuation_date" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="builder_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="builder_contract_price" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="land_value" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="door_no" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="section_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="desktop_valuation" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="erf_key" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="property_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RequestValuationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestValuationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WithdrawRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="aRefNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WithdrawRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WithdrawRequestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompletedValuations">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCompletedValuationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCompletedValuationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveValuationDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRefNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveValuationDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveValuationDetailsResult" type="tns:Val_details" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveValuationCaptureDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRefNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveValuationCaptureDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveValuationCaptureDetailsResult" type="tns:Val_capture" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Val_capture">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="val_valuation_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_SMP_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_retention_reason_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_comment_location_type_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="location_comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_comment_property_type_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="property_comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_comment_improvements_type_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="improvement_comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_comment_market_type_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="market_comment" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_sector_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cost_to_complete_value" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Val_Improvements" type="tns:Val_Improvements" />
+          <s:element minOccurs="0" maxOccurs="1" name="val_other_improvements_collection" type="tns:ArrayOfVal_OtherImprovements" />
+          <s:element minOccurs="0" maxOccurs="1" name="Val_Conditions" type="tns:ArrayOfVal_Conditions" />
+          <s:element minOccurs="0" maxOccurs="1" name="val_conditions_collection" type="tns:ArrayOfVal_Conditions" />
+          <s:element minOccurs="0" maxOccurs="1" name="val_condition_comments" type="tns:Val_ConditionComments" />
+          <s:element minOccurs="0" maxOccurs="1" name="val_comparable_sales_collection" type="tns:ArrayOfVal_ComparableSale" />
+          <s:element minOccurs="0" maxOccurs="1" name="Val_Insurance" type="tns:Val_Insurance" />
+          <s:element minOccurs="0" maxOccurs="1" name="Val_MainBuilding" type="tns:Val_MainBuilding" />
+          <s:element minOccurs="0" maxOccurs="1" name="Val_OutBuilding" type="tns:Val_OutBuilding" />
+          <s:element minOccurs="0" maxOccurs="1" name="Val_CottageBuilding" type="tns:Val_CottageBuilding" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_allocation_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="capture_start" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="capture_end" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="retention_amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="current_value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="completed_value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="require_senior_approval" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="additional_comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="identified" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="street_address_confirmed" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnitsInComplex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FloorsInComplex" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_commercial_area" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="HOC_value" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_Improvements">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="other_improvements_value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="swimmingpool_value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="tenniscourt_value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="total_improvements_value" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_improvements_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_swimmingpool_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_tenniscourt_type_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVal_OtherImprovements">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Val_OtherImprovements" nillable="true" type="tns:Val_OtherImprovements" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_OtherImprovements">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="square_meterage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_improvement_item_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_improvements_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_other_improvement_roof_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_roof_type_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVal_Conditions">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Val_Conditions" nillable="true" type="tns:Val_Conditions" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_Conditions">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_conditions_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_conditions_type_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_ConditionComments">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="comment1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comment2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comment3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comment4" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="draws" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="months" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_conditions_comment_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfVal_ComparableSale">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Val_ComparableSale" nillable="true" type="tns:Val_ComparableSale" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_ComparableSale">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="assessment_date" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="purchase_value" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="stand_no" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sub_suburb_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="suburb" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_comparable_sale_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_comment_comparable_sale_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_Insurance">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="cottage_rate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="cottage_roof_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cottage_square_meterage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="main_rate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="main_roof_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="main_square_meterage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="out_rate" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="out_roof_type_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="out_square_meterage" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Percentage" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_insurance_id" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_MainBuilding">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bathroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bedroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="diningroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="entrance_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="familyroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="kitchen_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="laundry_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="lounge_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="other_count" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="other_description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="pantry_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="study_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_mainbuilding_count_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="wc_count" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StructureType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WallType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_OutBuilding">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bathroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bedroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="garage_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="kitchen_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="laundry_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="other_count" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="other_description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="storeroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_outbuilding_count_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="wc_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="workshop_count" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StructureType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WallType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Val_CottageBuilding">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bathroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="bedroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_added" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="date_modified" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="deleted" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="kitchen_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="livingroom_count" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="other_count" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="other_description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="usr_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_cottagebuilding_count_id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="val_capture_id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StructureType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WallType" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateValuation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="aRefNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateValuationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateValuationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhotos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="aRefNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPhotosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPhotosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TestAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:TestAddress" />
+  </wsdl:message>
+  <wsdl:message name="TestAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:TestAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestAddressUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="LoadAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAddress" />
+  </wsdl:message>
+  <wsdl:message name="LoadAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAddressUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAddress" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressSyncSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAddressSync" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressSyncSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAddressSyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAddressSyncUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingAVMSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPendingAVM" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingAVMSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPendingAVMResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPendingAVMUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAddress" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAddressUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="LoadValuationRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadValuationRequest" />
+  </wsdl:message>
+  <wsdl:message name="LoadValuationRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadValuationRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadValuationRequestUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="RequestValuationSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestValuation" />
+  </wsdl:message>
+  <wsdl:message name="RequestValuationSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestValuationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestValuationUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:WithdrawRequest" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:WithdrawRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="WithdrawRequestUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletedValuationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompletedValuations" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletedValuationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompletedValuationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompletedValuationsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveValuationDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveValuationDetails" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveValuationDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveValuationDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveValuationDetailsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveValuationCaptureDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveValuationCaptureDetails" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveValuationCaptureDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveValuationCaptureDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveValuationCaptureDetailsUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValuationSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateValuation" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValuationSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateValuationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValuationUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotosSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPhotos" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotosSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPhotosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPhotosUserCredentials">
+    <wsdl:part name="UserCredentials" element="tns:UserCredentials" />
+  </wsdl:message>
+  <wsdl:portType name="ePropService">
+    <wsdl:operation name="TestAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Test Addressval system</wsdl:documentation>
+      <wsdl:input message="tns:TestAddressSoapIn" />
+      <wsdl:output message="tns:TestAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load Address Object. This method allows the user to populate an Address object with values, acts like a constructor</wsdl:documentation>
+      <wsdl:input message="tns:LoadAddressSoapIn" />
+      <wsdl:output message="tns:LoadAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Address Validation Method. This method allows the caller the ability to validate a given address using the Adcheck Address Validation system. AdCheck Mobile (Pty) Ltd</wsdl:documentation>
+      <wsdl:input message="tns:ValidateAddressSoapIn" />
+      <wsdl:output message="tns:ValidateAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddressSync">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Synchronous Address Validation Method. This method allows the caller the ability to validate a given address using the Adcheck Address Validation system, the response is the matched address/es. AdCheck Mobile (Pty) Ltd</wsdl:documentation>
+      <wsdl:input message="tns:ValidateAddressSyncSoapIn" />
+      <wsdl:output message="tns:ValidateAddressSyncSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingAVM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Select all completed avms. This method allows the user to get a list of all requests that have been processed by Adcheck and are waiting to be sent back</wsdl:documentation>
+      <wsdl:input message="tns:GetPendingAVMSoapIn" />
+      <wsdl:output message="tns:GetPendingAVMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAddress">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns completed Address objects. This method allows the user to pick up completed Address Validations on properties</wsdl:documentation>
+      <wsdl:input message="tns:RetrieveAddressSoapIn" />
+      <wsdl:output message="tns:RetrieveAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadValuationRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Load Valuation Object. This method allows the user to populate a Valuation object with values. Acts like a constructor</wsdl:documentation>
+      <wsdl:input message="tns:LoadValuationRequestSoapIn" />
+      <wsdl:output message="tns:LoadValuationRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestValuation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method allows the caller the ability to insert or update valuations for specific companies in the eProp system. AdCheck Mobile (Pty) Ltd</wsdl:documentation>
+      <wsdl:input message="tns:RequestValuationSoapIn" />
+      <wsdl:output message="tns:RequestValuationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawRequest">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Valuation Withdrawal Method. This method allows the caller the ability to withdraw valuations from the eProp system. AdCheck Mobile (Pty) Ltd</wsdl:documentation>
+      <wsdl:input message="tns:WithdrawRequestSoapIn" />
+      <wsdl:output message="tns:WithdrawRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletedValuations">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Select all completed valuations. This method allows the user to get a list of all requests that have been processed by Adcheck and are waiting to be sent back</wsdl:documentation>
+      <wsdl:input message="tns:GetCompletedValuationsSoapIn" />
+      <wsdl:output message="tns:GetCompletedValuationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveValuationDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns completed Valuation details objects. This method allows the user to pick up completed Address Validations on properties</wsdl:documentation>
+      <wsdl:input message="tns:RetrieveValuationDetailsSoapIn" />
+      <wsdl:output message="tns:RetrieveValuationDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveValuationCaptureDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns completed Valuation capture objects. This method allows the user to pick up completed Address Validations on properties</wsdl:documentation>
+      <wsdl:input message="tns:RetrieveValuationCaptureDetailsSoapIn" />
+      <wsdl:output message="tns:RetrieveValuationCaptureDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValuation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Valuation status. This method allows the user to update the status of the valuation to sent once results have been pulled</wsdl:documentation>
+      <wsdl:input message="tns:UpdateValuationSoapIn" />
+      <wsdl:output message="tns:UpdateValuationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotos">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Select all captured photos for a valuation.</wsdl:documentation>
+      <wsdl:input message="tns:GetPhotosSoapIn" />
+      <wsdl:output message="tns:GetPhotosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ePropService" type="tns:ePropService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestAddress">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/TestAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TestAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAddress">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/LoadAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/ValidateAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddressSync">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/ValidateAddressSync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateAddressSyncUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingAVM">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/GetPendingAVM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPendingAVMUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAddress">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/RetrieveAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RetrieveAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadValuationRequest">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/LoadValuationRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoadValuationRequestUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestValuation">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/RequestValuation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RequestValuationUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawRequest">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/WithdrawRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:WithdrawRequestUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletedValuations">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/GetCompletedValuations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCompletedValuationsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveValuationDetails">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/RetrieveValuationDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RetrieveValuationDetailsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveValuationCaptureDetails">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/RetrieveValuationCaptureDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RetrieveValuationCaptureDetailsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValuation">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/UpdateValuation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateValuationUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotos">
+      <soap:operation soapAction="http://AdcheckMobile/IntegrationService/GetPhotos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPhotosUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ePropService1" type="tns:ePropService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestAddress">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/TestAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TestAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAddress">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/LoadAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddress">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/ValidateAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAddressSync">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/ValidateAddressSync" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateAddressSyncUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingAVM">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/GetPendingAVM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPendingAVMUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAddress">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/RetrieveAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RetrieveAddressUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadValuationRequest">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/LoadValuationRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:LoadValuationRequestUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestValuation">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/RequestValuation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RequestValuationUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WithdrawRequest">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/WithdrawRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:WithdrawRequestUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompletedValuations">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/GetCompletedValuations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCompletedValuationsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveValuationDetails">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/RetrieveValuationDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RetrieveValuationDetailsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveValuationCaptureDetails">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/RetrieveValuationCaptureDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RetrieveValuationCaptureDetailsUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValuation">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/UpdateValuation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateValuationUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPhotos">
+      <soap12:operation soapAction="http://AdcheckMobile/IntegrationService/GetPhotos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPhotosUserCredentials" part="UserCredentials" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ValuationService">
+    <wsdl:port name="ePropService" binding="tns:ePropService">
+      <soap:address location="http://artemis.epharma.co.za/epropSAHLIntegration/ValuationServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ePropService1" binding="tns:ePropService1">
+      <soap12:address location="http://artemis.epharma.co.za/epropSAHLIntegration/ValuationServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

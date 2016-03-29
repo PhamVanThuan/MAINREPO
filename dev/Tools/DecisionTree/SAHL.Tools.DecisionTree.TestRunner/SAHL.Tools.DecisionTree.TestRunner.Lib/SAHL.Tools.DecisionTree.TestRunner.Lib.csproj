@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FABFA099-D85A-4735-B728-3B9672E52327}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Tools.DecisionTree.TestRunner.Lib</RootNamespace>
+    <AssemblyName>SAHL.Tools.DecisionTree.TestRunner.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assertions\AssertionFactory.cs" />
+    <Compile Include="Assertions\AssertionManager.cs" />
+    <Compile Include="Assertions\IAssertionFactory.cs" />
+    <Compile Include="Assertions\IAssertionManager.cs" />
+    <Compile Include="Assertions\Models\Assertion.cs" />
+    <Compile Include="Assertions\Models\CollectionAssertion.cs" />
+    <Compile Include="Interfaces\ITestEngine.cs" />
+    <Compile Include="Interfaces\ITestProcessor.cs" />
+    <Compile Include="Interfaces\ITestRunner.cs" />
+    <Compile Include="Interfaces\ITestRunnerOutput.cs" />
+    <Compile Include="Interfaces\ITreeExecutionManager.cs" />
+    <Compile Include="TestRunner.cs" />
+    <Compile Include="TestRunnerEvents.cs" />
+    <Compile Include="TreeExecutionManager.cs" />
+    <Compile Include="TreeExecutionManagerEventArgs.cs" />
+    <Compile Include="TreeExecutionManagerEvents.cs" />
+    <Compile Include="UnknownAssertionException.cs" />
+    <Compile Include="TestEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestResult\ITestResult.cs" />
+    <Compile Include="ScenarioResult.cs" />
+    <Compile Include="TestResult\SubtreeExpectationResult.cs" />
+    <Compile Include="TestResult\TestMessageResult.cs" />
+    <Compile Include="TestResult\TestOutputResult.cs" />
+    <Compile Include="TestProcessor.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Tools.DecisionTree.TestRunner.Interfaces\SAHL.Tools.DecisionTree.TestRunner.Interfaces.csproj">
+      <Project>{c3166139-ec8d-418b-97a3-d4edfc52728c}</Project>
+      <Name>SAHL.Tools.DecisionTree.TestRunner.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\Tools\DecisionTree\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

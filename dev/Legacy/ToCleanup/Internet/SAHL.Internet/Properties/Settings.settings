@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAHL.Internet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SAHL_Internet_SAHL_Web_Services_Application_Application" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SAHL.Web.Services/Internal/Application.asmx</Value>
+    </Setting>
+    <Setting Name="SAHL_Internet_SAHL_Web_Services_Calculators" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SAHL.Web.Services/Internal/Calculators.asmx</Value>
+    </Setting>
+    <Setting Name="SAHL_Internet_SAHL_Web_Services_Globals_Globals" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SAHL.Web.Services/Common/Globals.asmx</Value>
+    </Setting>
+    <Setting Name="SAHL_Internet_SAHL_Web_Services_Survey_Survey" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/sahl.web.services/internal/survey.asmx</Value>
+    </Setting>
+    <Setting Name="SAHL_Internet_localhost_SendMail" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SAHL.WEB.SERVICES/Internal/SendMail.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

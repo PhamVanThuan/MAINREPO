@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9C857AE-7261-41A3-B87F-504504AF5489}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Common.Service.Specs</RootNamespace>
+    <AssemblyName>SAHL.Common.Service.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.1.5.0\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.1.5.0\lib\net40\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LeadsImporter\when_given_a_collection_of_messages_to_publish.cs" />
+    <Compile Include="LeadsImporter\when_given_a_personal_loan_lead_file.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.Interfaces\SAHL.Common.BusinessModel.Interfaces.csproj">
+      <Project>{73da2a37-4a25-4fe9-98f2-60ed1b2d1cab}</Project>
+      <Name>SAHL.Common.BusinessModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Logging\SAHL.Common.Logging.csproj">
+      <Project>{b73e4f52-b7f1-4001-9762-02db2df14a23}</Project>
+      <Name>SAHL.Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service.Interfaces\SAHL.Common.Service.Interfaces.csproj">
+      <Project>{7180e406-6b7c-44b9-bd02-d3fcccc617bc}</Project>
+      <Name>SAHL.Common.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service\SAHL.Common.Service.csproj">
+      <Project>{7155FE63-0A2E-4022-972E-B703CF223297}</Project>
+      <Name>SAHL.Common.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.X2.BusinessModel.Interfaces\SAHL.Common.X2.BusinessModel.Interfaces.csproj">
+      <Project>{e677295f-5757-4d28-ad66-b82078859e47}</Project>
+      <Name>SAHL.Common.X2.BusinessModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common\SAHL.Common.csproj">
+      <Project>{c8e9a1aa-1b28-4310-92bd-12a52ec3a996}</Project>
+      <Name>SAHL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Communication\SAHL.Communication.csproj">
+      <Project>{DDE953DB-97E9-4EC2-BA7E-81338592D2A4}</Project>
+      <Name>SAHL.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0c1b7b75-8887-4169-a41d-0aacddff3d49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

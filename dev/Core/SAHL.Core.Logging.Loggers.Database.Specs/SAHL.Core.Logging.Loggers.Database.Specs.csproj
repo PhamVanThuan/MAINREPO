@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{57AD3BB5-BDA6-49A2-BF33-2F7AD1058EAD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Logging.Loggers.Database.Specs</RootNamespace>
+    <AssemblyName>SAHL.Core.Logging.Loggers.Database.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net40\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fakes\FakeDbFactoryFunc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_logging_onentermethodexception.cs" />
+    <Compile Include="when_logging_onmethodsuccess.cs" />
+    <Compile Include="when_logging_onexitmethod.cs" />
+    <Compile Include="when_logging_onentermethod.cs" />
+    <Compile Include="when_logging_formatteddebug_no_parameters.cs" />
+    <Compile Include="when_logging_formattederror_no_parameters.cs" />
+    <Compile Include="when_logging_formatteddebug.cs" />
+    <Compile Include="when_logging_formattedwarning.cs" />
+    <Compile Include="when_logging_formattedinfo.cs" />
+    <Compile Include="when_logging_debug.cs" />
+    <Compile Include="when_logging_warning.cs" />
+    <Compile Include="when_logging_info.cs" />
+    <Compile Include="when_logging_formatted_error_with_exception.cs" />
+    <Compile Include="when_logging_error_with_exception.cs" />
+    <Compile Include="when_logging_formattedwarning_no_parameters.cs" />
+    <Compile Include="when_logging_formattederror.cs" />
+    <Compile Include="when_logging_error_no_parameters.cs" />
+    <Compile Include="when_logging_instantaneousvaluemetric_no_parameters.cs" />
+    <Compile Include="when_logging_instantaneousvaluemetric.cs" />
+    <Compile Include="when_logging_error.cs" />
+    <Compile Include="when_logging_throughputmetric_no_parameters.cs" />
+    <Compile Include="when_logging_throughputmetric.cs" />
+    <Compile Include="when_logging_latencymetric.cs" />
+    <Compile Include="when_logging_latencymetric_no_parameters.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.2AM\SAHL.Core.Data.Models.2AM.csproj">
+      <Project>{5ae349cf-67f9-47bd-9aa0-48cda3bbac51}</Project>
+      <Name>SAHL.Core.Data.Models.2AM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Logging.Loggers.Database\SAHL.Core.Logging.Loggers.Database.csproj">
+      <Project>{4947879a-527c-4f2c-9d10-00d9fea910c3}</Project>
+      <Name>SAHL.Core.Logging.Loggers.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Testing.Fakes\SAHL.Core.Testing.Fakes.csproj">
+      <Project>{135f06a4-0426-421c-ae4c-31e0571adc63}</Project>
+      <Name>SAHL.Core.Testing.Fakes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

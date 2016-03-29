@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="http://www.gotdotnet.com/team/fxcop//xsl/1.35/FxCopReport.xsl"?>
+<FxCopReport Version="1.35">
+ <Targets>
+  <Target Name="$(ProjectDir)/../../Internal Binaries/SAHL.Web.dll">
+   <Modules>
+    <Module Name="sahl.web.dll">
+     <Namespaces>
+      <Namespace Name="SAHL.Web.AJAX">
+       <Types>
+        <Type Name="Employment" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="GetEmploymentStatusByType(System.String,System.String):AjaxControlToolkit.CascadingDropDownNameValue[]" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="s" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\AJAX" File="Employment.asmx.cs" Line="65">Employment.GetEmploymentStatusByType(String, String):CascadingDropDownNameValue[] declares a local, 's', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Controls">
+       <Types>
+        <Type Name="EmploymentDetails" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_employmentRepository" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'EmploymentDetails._employmentRepository' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="InstalmentBreakdown" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_employmentRepository" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'InstalmentBreakdown._employmentRepository' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_lookupRepository" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'InstalmentBreakdown._lookupRepository' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Int32BindableObject" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor(System.Int32,System.Object)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1#" TypeName="AvoidTypeNamesInParameters" Category="Microsoft.Naming" CheckId="CA1720" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Controls" File="Int32BindableObject.cs" Line="18">Remove the type identifier from parameter name 'Object'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Administration">
+       <Types>
+        <Type Name="CBOMenu" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindCBOList(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="WTF" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="CBOMenu.aspx.cs" Line="37">CBOMenu.BindCBOList(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32):Void declares a local, 'WTF', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindUIStatement(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableUIStatement&gt;,System.String):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="CBOMenu.aspx.cs" Line="155">Change parameter name 'Statement' of method CBOMenu.BindUIStatement(List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableUIStatement&gt;, String):Void to 'StatementName' in order to match the identifier as it has been declared in IViewCBOMenu.BindUIStatement(List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableUIStatement&gt;, String):Void.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="CBOMenu.aspx.cs" Line="160">Replace the call to String.op_Inequality("") in 'CBOMenu.BindUIStatement(List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableUIStatement&gt;, String):Void' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CBOMenu2" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindFeatureList(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;,System.Int32,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="WTF" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="CBOMenu1.aspx.cs" Line="48">CBOMenu2.BindFeatureList(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32, Int32):Void declares a local, 'WTF', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CBOMenu3" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindCBOList(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;,System.Int32,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="WTF" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="CBOMenu2.aspx.cs" Line="49">CBOMenu3.BindCBOList(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32, Int32):Void declares a local, 'WTF', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ContextMenu" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="AddTopLevelNode(SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem,SAHL.Common.Web.UI.Controls.SAHLTreeView):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="ContextMenu.aspx.cs" Line="91">The 'this' parameter (or 'Me' in VB) of ContextMenu.AddTopLevelNode(IBindableTreeItem, SAHLTreeView):Void is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindFeatures(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableFeature&gt;,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="ContextMenu.aspx.cs" Line="183">The 'this' parameter (or 'Me' in VB) of ContextMenu.BindFeatures(List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableFeature&gt;, Int32):Void is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message Id="Bind" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="ContextMenu.aspx.cs" Line="183">Parameter 'Bind' of ContextMenu.BindFeatures(List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableFeature&gt;, Int32):Void is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+            <Message Id="TopLevelKey" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="ContextMenu.aspx.cs" Line="183">Parameter 'TopLevelKey' of ContextMenu.BindFeatures(List`1&lt;SAHL.Web.Views.Administration.Interfaces.BindableFeature&gt;, Int32):Void is never used. Remove the parameter or use it in the method body.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindFeatures(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="ContextMenu.aspx.cs" Line="55">Change parameter name 'TopLevelTree' of method ContextMenu.BindFeatures(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32):Void to 'TopLevelKey' in order to match the identifier as it has been declared in IViewContextMenu.BindFeatures(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindTree(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;,System.Int32,SAHL.Common.Web.UI.Controls.SAHLTreeView):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="WTF" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="ContextMenu.aspx.cs" Line="60">ContextMenu.BindTree(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32, SAHLTreeView):Void declares a local, 'WTF', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="MapUsersToOrgStructure" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindOrganisationStructure(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="WTF" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="MapUsersToOrgStructure.aspx.cs" Line="59">MapUsersToOrgStructure.BindOrganisationStructure(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32):Void declares a local, 'WTF', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="SelectLastSelectedNode(SAHL.Common.Web.UI.Controls.SAHLTreeNodeCollection,SAHL.Common.Web.UI.Controls.SAHLTreeNode):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="MapUsersToOrgStructure.aspx.cs" Line="131">'MapUsersToOrgStructure.SelectLastSelectedNode(SAHLTreeNodeCollection, SAHLTreeNode):Void' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="OrganisationStructure" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindOrganisationStructure(System.Collections.Generic.List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="WTF" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="OrganisationStructure.aspx.cs" Line="66">OrganisationStructure.BindOrganisationStructure(List`1&lt;SAHL.Web.Views.Administration.Interfaces.IBindableTreeItem&gt;, Int32):Void declares a local, 'WTF', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindParentOrganisationStructure(SAHL.Web.Views.Administration.Interfaces.BindOrganisationStructure,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="node" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="OrganisationStructure.aspx.cs" Line="35">OrganisationStructure.BindParentOrganisationStructure(BindOrganisationStructure, Int32):Void declares a local, 'node', of type SAHL.Common.Web.UI.Controls.SAHLTreeNode, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindSingleOrganisationStructure(SAHL.Web.Views.Administration.Interfaces.BindOrganisationStructure,System.Int32):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="node" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="OrganisationStructure.aspx.cs" Line="48">OrganisationStructure.BindSingleOrganisationStructure(BindOrganisationStructure, Int32):Void declares a local, 'node', of type SAHL.Common.Web.UI.Controls.SAHLTreeNode, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="SelectLastSelectedNode(SAHL.Common.Web.UI.Controls.SAHLTreeNodeCollection,SAHL.Common.Web.UI.Controls.SAHLTreeNode):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="OrganisationStructure.aspx.cs" Line="150">'OrganisationStructure.SelectLastSelectedNode(SAHLTreeNodeCollection, SAHLTreeNode):Void' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Views_BatchProgress" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="CreateRefreshMetaTag():System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="BatchProgress.aspx.cs" Line="212">'Views_BatchProgress.CreateRefreshMetaTag():Void' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Views_BulkTransactionBatch" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="BulkTransactionBatch.aspx.cs" Line="31">Views_BulkTransactionBatch.Views_BulkTransactionBatch() initializes field autoSave of type System.Boolean to false. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="autoSave" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'Views_BulkTransactionBatch.autoSave' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindBatchFields(SAHL.Common.BusinessModel.Interfaces.IBulkBatch,System.String,System.String):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="1#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="BulkTransactionBatch.aspx.cs" Line="437">Change parameter name 'subsidyProvider' of method Views_BulkTransactionBatch.BindBatchFields(IBulkBatch, String, String):Void to 'susbidyProvider' in order to match the identifier as it has been declared in IBulkTransactionBatch.BindBatchFields(IBulkBatch, String, String):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindSubsidyTypes(SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.ISubsidyProviderType&gt;):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="BulkTransactionBatch.aspx.cs" Line="451">Change parameter name 'subsidyProviderype' of method Views_BulkTransactionBatch.BindSubsidyTypes(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.ISubsidyProviderType&gt;):Void to 'subsidyProviderType' in order to match the identifier as it has been declared in IBulkTransactionBatch.BindSubsidyTypes(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.ISubsidyProviderType&gt;):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BulkGrid_RowDataBound(System.Object,System.Web.UI.WebControls.GridViewRowEventArgs):System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="cells" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="BulkTransactionBatch.aspx.cs" Line="233">Views_BulkTransactionBatch.BulkGrid_RowDataBound(Object, GridViewRowEventArgs):Void declares a local, 'cells', of type System.Web.UI.WebControls.TableCellCollection, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="makeSafeNumber(System.String):System.String" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="BulkTransactionBatch.aspx.cs" Line="565">The 'this' parameter (or 'Me' in VB) of Views_BulkTransactionBatch.makeSafeNumber(String):String is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="OnInit(System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="stack0" TypeName="AvoidUnnecessaryStringCreation" Category="Microsoft.Performance" CheckId="CA1807" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="UseStringCompareLocal" Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration" File="BulkTransactionBatch.aspx.cs" Line="36">Views_BulkTransactionBatch.OnInit(EventArgs):Void calls String.op_Equality(String, String):Boolean after converting 'stack0', a local, to upper or lowercase. If possible, eliminate the string creation and call the overload of String.Compare that performs a case-insensitive comparison.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Administration.Interfaces">
+       <Types>
+        <Type Name="BindableCBO" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Interfaces" File="IViewCBOMenu2.cs" Line="22">BindableCBO.BindableCBO() initializes field _ParentKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name=".ctor(SAHL.Common.BusinessModel.Interfaces.ICBOMenu,System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Interfaces" File="IViewCBOMenu2.cs" Line="22">BindableCBO.BindableCBO(ICBOMenu, Boolean) initializes field _ParentKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BindableContextMenu" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_FeatureKey" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BindableContextMenu._FeatureKey' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_ParentDesc" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BindableContextMenu._ParentDesc' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_Sequence" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BindableContextMenu._Sequence' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_URL" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BindableContextMenu._URL' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="CBOKey" Kind="Field" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'BindableContextMenu.CBOKey' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BindableFeature" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="Populate(SAHL.Common.BusinessModel.Interfaces.IFeature,System.Boolean):System.Void" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message Id="s" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Interfaces" File="IFeature.cs" Line="116">BindableFeature.Populate(IFeature, Boolean):Void declares a local, 's', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Administration.Presenters">
+       <Types>
+        <Type Name="Admin_CBOMenuEdit" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindUIStatement():System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_CBOMenuEdit.cs" Line="73">Replace the call to String.op_Inequality("") in 'Admin_CBOMenuEdit.BindUIStatement():Void' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Admin_FeatureAdd" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_view_OnFeatureSelectedItemChanged(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotDecreaseInheritedMemberVisibility" Category="Microsoft.Usage" CheckId="CA2222" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_FeatureAdd.cs" Line="41">Make Admin_FeatureAdd._view_OnFeatureSelectedItemChanged(Object, EventArgs):Void non-private, mark it as final, or seal its declaring type. This method was originally defined in base class 'SAHL.Web.Views.Administration.Presenters.Admin_FeatureBase`1&lt;SAHL.Web.Views.Administration.Interfaces.IViewFeature&gt;'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Admin_FeatureEdit" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_view_OnFeatureSelectedItemChanged(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="DoNotDecreaseInheritedMemberVisibility" Category="Microsoft.Usage" CheckId="CA2222" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_FeatureEdit.cs" Line="41">Make Admin_FeatureEdit._view_OnFeatureSelectedItemChanged(Object, EventArgs):Void non-private, mark it as final, or seal its declaring type. This method was originally defined in base class 'SAHL.Web.Views.Administration.Presenters.Admin_FeatureBase`1&lt;SAHL.Web.Views.Administration.Interfaces.IViewFeature&gt;'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Admin_FeatureGroupView" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_view_OnSubmitClick(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="ADUserGroup" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_FeatureGroupView.cs" Line="82">Admin_FeatureGroupView._view_OnSubmitClick(Object, EventArgs):Void declares a local, 'ADUserGroup', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Admin_FeatureView" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_view_OnTreeSelected(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_FeatureView.cs" Line="56">'Admin_FeatureView._view_OnTreeSelected(Object, EventArgs):Void' appears to have no upstream public or protected callers.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Admin_OrganisationStructureAdd" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_view_OnSubmitClick(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="OSParent" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_OrganisationStructureAdd.cs" Line="45">Admin_OrganisationStructureAdd._view_OnSubmitClick(Object, EventArgs):Void declares a local, 'OSParent', of type SAHL.Common.BusinessModel.Interfaces.IOrganisationStructure, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+            <Message Id="wtf" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_OrganisationStructureAdd.cs" Line="45">Admin_OrganisationStructureAdd._view_OnSubmitClick(Object, EventArgs):Void declares a local, 'wtf', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_view_OnTreeNodeSeleced(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="OrgStruct" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_OrganisationStructureAdd.cs" Line="91">Admin_OrganisationStructureAdd._view_OnTreeNodeSeleced(Object, EventArgs):Void declares a local, 'OrgStruct', of type SAHL.Web.Views.Administration.Interfaces.BindOrganisationStructure, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Admin_OrganisationStructureEdit" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_view_OnSubmitClick(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="wtf" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_OrganisationStructureEdit.cs" Line="45">Admin_OrganisationStructureEdit._view_OnSubmitClick(Object, EventArgs):Void declares a local, 'wtf', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_view_OnTreeNodeSeleced(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="OrgStruct" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="Admin_OrganisationStructureEdit.cs" Line="90">Admin_OrganisationStructureEdit._view_OnTreeNodeSeleced(Object, EventArgs):Void declares a local, 'OrgStruct', of type SAHL.Web.Views.Administration.Interfaces.BindOrganisationStructure, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BatchProgress" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor(SAHL.Web.Views.Administration.Interfaces.IBatchProgress,SAHL.Common.Web.UI.SAHLCommonBaseController)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BatchProgress.cs" Line="38">BatchProgress.BatchProgress(IBatchProgress, SAHLCommonBaseController) initializes field batchGridIndexSelected of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BatchProgress.cs" Line="36">BatchProgress.BatchProgress(IBatchProgress, SAHLCommonBaseController) initializes field genericBatchTypeKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BatchProgress.cs" Line="40">BatchProgress.BatchProgress(IBatchProgress, SAHLCommonBaseController) initializes field genericMessageTypeKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BulkBatchTransactionBase" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor(SAHL.Web.Views.Administration.Interfaces.IBulkTransactionBatch,SAHL.Common.Web.UI.SAHLCommonBaseController)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkBatchTransactionBase.cs" Line="50">BulkBatchTransactionBase.BulkBatchTransactionBase(IBulkTransactionBatch, SAHLCommonBaseController) initializes field batchNumber of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BulkTransactionBatch" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor(SAHL.Web.Views.Administration.Interfaces.IBulkTransactionBatch,SAHL.Common.Web.UI.SAHLCommonBaseController)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatch.cs" Line="28">BulkTransactionBatch.BulkTransactionBatch(IBulkTransactionBatch, SAHLCommonBaseController) initializes field batchStatusKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BulkTransactionBatchAdd" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor(SAHL.Web.Views.Administration.Interfaces.IBulkTransactionBatch,SAHL.Common.Web.UI.SAHLCommonBaseController)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="46">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field BulkBatchKeySaved of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="53">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field amount of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="44">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field savedRecordInd of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="48">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field selectedGridIndex of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="41">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field selectedInd of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="50">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field subsidyProviderTypeKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="45">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field susbidyProviderInd of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="42">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field susbidyProviderKeySelected of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="43">BulkTransactionBatchAdd.BulkTransactionBatchAdd(IBulkTransactionBatch, SAHLCommonBaseController) initializes field transactionTypeSelected of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_view_OnPostButtonClicked(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="dTotalTrnAmount" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchAdd.cs" Line="428">BulkTransactionBatchAdd._view_OnPostButtonClicked(Object, EventArgs):Void declares a local, 'dTotalTrnAmount', of type System.Double, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="BulkTransactionBatchUpdate" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor(SAHL.Web.Views.Administration.Interfaces.IBulkTransactionBatch,SAHL.Common.Web.UI.SAHLCommonBaseController)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchUpdate.cs" Line="30">BulkTransactionBatchUpdate.BulkTransactionBatchUpdate(IBulkTransactionBatch, SAHLCommonBaseController) initializes field amount of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchUpdate.cs" Line="28">BulkTransactionBatchUpdate.BulkTransactionBatchUpdate(IBulkTransactionBatch, SAHLCommonBaseController) initializes field batchStatusKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchUpdate.cs" Line="35">BulkTransactionBatchUpdate.BulkTransactionBatchUpdate(IBulkTransactionBatch, SAHLCommonBaseController) initializes field batchTransactionToSave of type SAHL.Common.BusinessModel.Interfaces.IBatchTransaction to null. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchUpdate.cs" Line="36">BulkTransactionBatchUpdate.BulkTransactionBatchUpdate(IBulkTransactionBatch, SAHLCommonBaseController) initializes field bulkBatchKey of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchUpdate.cs" Line="33">BulkTransactionBatchUpdate.BulkTransactionBatchUpdate(IBulkTransactionBatch, SAHLCommonBaseController) initializes field selectedGridIndex of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Administration\Presenters" File="BulkTransactionBatchUpdate.cs" Line="29">BulkTransactionBatchUpdate.BulkTransactionBatchUpdate(IBulkTransactionBatch, SAHLCommonBaseController) initializes field selectedInd of type System.Int32 to 0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Common">
+       <Types>
+        <Type Name="AccountCorrespondence" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_showLifeWorkFlowHeader" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'AccountCorrespondence._showLifeWorkFlowHeader' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="AffordabilityDetails" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindControls(SAHL.Common.BusinessModel.Interfaces.ILegalEntity):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="lstAffordabilityTypes" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="AffordabilityDetails.aspx.cs" Line="291">AffordabilityDetails.BindControls(ILegalEntity):Void declares a local, 'lstAffordabilityTypes', of type SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IAffordabilityType&gt;, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Applicants" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="grdApplicants_RowDataBound(System.Object,System.Web.UI.WebControls.GridViewRowEventArgs):System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message Id="idCompanyNumber" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="Applicants.aspx.cs" Line="179">Applicants.grdApplicants_RowDataBound(Object, GridViewRowEventArgs):Void declares a local, 'idCompanyNumber', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ClientDetails" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindCompany(SAHL.Common.BusinessModel.Interfaces.ILegalEntity):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="cellPhoneNumber" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="ClientDetails.aspx.cs" Line="95">ClientDetails.BindCompany(ILegalEntity):Void declares a local, 'cellPhoneNumber', of type System.String, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="ClientDetails.aspx.cs" Line="167">Replace the call to String.op_Equality(String.Empty) in 'ClientDetails.BindCompany(ILegalEntity):Void' with a call to String.IsNullOrEmpty.</Issue>
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="ClientDetails.aspx.cs" Line="167">Replace the call to String.op_Equality(String.Empty) in 'ClientDetails.BindCompany(ILegalEntity):Void' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="HOCFSSummary" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="59">HOCFSSummary.HOCFSSummary() initializes field dConventionalPremium of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="58">HOCFSSummary.HOCFSSummary() initializes field dHOCThatchPremium of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="62">HOCFSSummary.HOCFSSummary() initializes field dMonthlyPremium of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="63">HOCFSSummary.HOCFSSummary() initializes field dProrataPremium of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="60">HOCFSSummary.HOCFSSummary() initializes field dShinglePremium of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="61">HOCFSSummary.HOCFSSummary() initializes field dTotalHOCPremium of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindHOCSummaryData(SAHL.Common.BusinessModel.Interfaces.IHOC):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="436">Change parameter name '_HOC' of method HOCFSSummary.BindHOCSummaryData(IHOC):Void to 'HOC' in order to match the identifier as it has been declared in IHOCFSSummary.BindHOCSummaryData(IHOC):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="GetNumeric(System.String):System.Double" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="141">The 'this' parameter (or 'Me' in VB) of HOCFSSummary.GetNumeric(String):Double is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="HOCFSSummary.aspx.cs" Line="149">Replace the call to String.Equals("") in 'HOCFSSummary.GetNumeric(String):Double' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LegalEntityDetails" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="LegalEntityDetails.aspx.cs" Line="78">LegalEntityDetails.LegalEntityDetails() initializes field _legalEntity of type SAHL.Common.BusinessModel.Interfaces.ILegalEntity to null. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_legalEntity" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'LegalEntityDetails._legalEntity' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_lookupRepository" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'LegalEntityDetails._lookupRepository' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Views_RateChange" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name=".ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="42">Views_RateChange.Views_RateChange() initializes field CapBalance of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="41">Views_RateChange.Views_RateChange() initializes field lifeBalance of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="40">Views_RateChange.Views_RateChange() initializes field lifeCapitalizedMonthlyBalance of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+             <Issue Certainty="90" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="39">Views_RateChange.Views_RateChange() initializes field lifeCapitalizedYearlyBalance of type System.Double to 0.0. Remove this initialization as it will be done automatically by the runtime.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindGridInstallmentInterestOnly(SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;,SAHL.Common.BusinessModel.Interfaces.ILifePolicy):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="190">Change parameter name 'mlList' of method Views_RateChange.BindGridInstallmentInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void to 'lstMortgageLoans' in order to match the identifier as it has been declared in IRateChange.BindGridInstallmentInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindGridInstallmentNotInterestOnly(SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;,SAHL.Common.BusinessModel.Interfaces.ILifePolicy):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="169">Change parameter name 'mlList' of method Views_RateChange.BindGridInstallmentNotInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void to 'lstMortgageLoans' in order to match the identifier as it has been declared in IRateChange.BindGridInstallmentNotInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindGridRateChangeInterestOnly(SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;,SAHL.Common.BusinessModel.Interfaces.ILifePolicy):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="211">Change parameter name 'mlList' of method Views_RateChange.BindGridRateChangeInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void to 'lstMortgageLoans' in order to match the identifier as it has been declared in IRateChange.BindGridRateChangeInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindGridRateChangeNotInterestOnly(SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;,SAHL.Common.BusinessModel.Interfaces.ILifePolicy):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="233">Change parameter name 'mlList' of method Views_RateChange.BindGridRateChangeNotInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void to 'lstMortgageLoans' in order to match the identifier as it has been declared in IRateChange.BindGridRateChangeNotInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindGridTermInterestOnly(SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;,SAHL.Common.BusinessModel.Interfaces.ILifePolicy):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="125">Change parameter name 'mlList' of method Views_RateChange.BindGridTermInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void to 'lstMortgageLoans' in order to match the identifier as it has been declared in IRateChange.BindGridTermInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="BindGridTermNotInterestOnly(SAHL.Common.Collections.Interfaces.IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;,SAHL.Common.BusinessModel.Interfaces.ILifePolicy):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="0#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common" File="RateChange.aspx.cs" Line="147">Change parameter name 'mlList' of method Views_RateChange.BindGridTermNotInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void to 'lstMortgageLoans' in order to match the identifier as it has been declared in IRateChange.BindGridTermNotInterestOnly(IEventList`1&lt;SAHL.Common.BusinessModel.Interfaces.IMortgageLoan&gt;, ILifePolicy):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Common.Presenters">
+       <Types>
+        <Type Name="ApplicantsBase" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="LoadApplication():System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="NoArguments" Certainty="95" Level="CriticalError" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common\Presenters" File="ApplicantsBase.cs" Line="117">Call the System.ArgumentNullException constructor that contains a message and/or paramName parameter.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ClientDetailsDisplay" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="OnViewInitialised(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common\Presenters" File="ClientDetailsDisplay.cs" Line="68">Replace the call to String.Equals(String.Empty) in 'ClientDetailsDisplay.OnViewInitialised(Object, EventArgs):Void' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ClientSearch" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_legalEntityRepository" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'ClientSearch._legalEntityRepository' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReOpenAccount" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_cboAccountNode" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'ReOpenAccount._cboAccountNode' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_cboCurrentNode" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'ReOpenAccount._cboCurrentNode' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="StageTransitionHistoryLifeAdmin" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_applicationRepo" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'StageTransitionHistoryLifeAdmin._applicationRepo' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_stageDefinitionRepo" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'StageTransitionHistoryLifeAdmin._stageDefinitionRepo' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="StageTransitionHistoryLifeOrigination" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_stageDefinitionRepo" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'StageTransitionHistoryLifeOrigination._stageDefinitionRepo' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Common.Presenters.Address">
+       <Types>
+        <Type Name="LegalEntityAddressDelete" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_view_DeleteButtonClicked(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message Id="address" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common\Presenters\Address" File="LegalEntityAddressDelete.cs" Line="46">LegalEntityAddressDelete._view_DeleteButtonClicked(Object, EventArgs):Void declares a local, 'address', of type SAHL.Common.BusinessModel.Interfaces.IAddress, which is never used or is only assigned to. Use this local or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Common.Presenters.CommonReason">
+       <Types>
+        <Type Name="CommonReasonBase" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="SelectedReasons" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common\Presenters\CommonReason" File="CommonReasonBase.cs" Line="49">Change 'SelectedReasons' to be read-only by removing the property setter.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Common.Presenters.Employment">
+       <Types>
+        <Type Name="LegalEntityEmploymentBasic" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="GetNavigateTarget(System.String,SAHL.Common.BusinessModel.Interfaces.IEmployment):System.String" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Common\Presenters\Employment" File="LegalEntityEmploymentBasic.cs" Line="50">The 'this' parameter (or 'Me' in VB) of LegalEntityEmploymentBasic.GetNavigateTarget(String, IEmployment):String is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Life">
+       <Types>
+        <Type Name="Account" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindLoanSummaryControls(SAHL.Common.BusinessModel.Interfaces.IAccount,SAHL.Common.BusinessModel.Interfaces.IApplicationMortgageLoan,SAHL.Common.BusinessModel.Interfaces.IApplicationInformationVariableLoan,SAHL.Common.BusinessModel.Interfaces.IMortgageLoan,SAHL.Common.BusinessModel.Interfaces.IMortgageLoan):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="3#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life" File="Account.aspx.cs" Line="69">Change parameter name 'mortgageLoanVariable' of method Account.BindLoanSummaryControls(IAccount, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IMortgageLoan, IMortgageLoan):Void to 'mortgageLoanVariableFS' in order to match the identifier as it has been declared in IAccount.BindLoanSummaryControls(IAccount, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IMortgageLoan, IMortgageLoan):Void.</Issue>
+            </Message>
+            <Message Id="4#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life" File="Account.aspx.cs" Line="69">Change parameter name 'mortgageLoanFixed' of method Account.BindLoanSummaryControls(IAccount, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IMortgageLoan, IMortgageLoan):Void to 'mortgageLoanFixedFS' in order to match the identifier as it has been declared in IAccount.BindLoanSummaryControls(IAccount, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IMortgageLoan, IMortgageLoan):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LOA" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="BindLOADetails(SAHL.Common.BusinessModel.Interfaces.IApplication,SAHL.Common.BusinessModel.Interfaces.IApplicationMortgageLoan,SAHL.Common.BusinessModel.Interfaces.IApplicationInformationVariableLoan,SAHL.Common.BusinessModel.Interfaces.IApplicationInformationVarifixLoan,SAHL.Common.BusinessModel.Interfaces.IMortgageLoan,SAHL.Common.BusinessModel.Interfaces.IMortgageLoan,SAHL.Common.BusinessModel.Interfaces.IHOC):System.Void" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message Id="4#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life" File="LOA.aspx.cs" Line="58">Change parameter name 'mortgageLoanVariable' of method LOA.BindLOADetails(IApplication, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IApplicationInformationVarifixLoan, IMortgageLoan, IMortgageLoan, IHOC):Void to 'mortgageLoanVariableFS' in order to match the identifier as it has been declared in ILOA.BindLOADetails(IApplication, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IApplicationInformationVarifixLoan, IMortgageLoan, IMortgageLoan, IHOC):Void.</Issue>
+            </Message>
+            <Message Id="5#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life" File="LOA.aspx.cs" Line="58">Change parameter name 'mortgageLoanFixed' of method LOA.BindLOADetails(IApplication, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IApplicationInformationVarifixLoan, IMortgageLoan, IMortgageLoan, IHOC):Void to 'mortgageLoanFixedFS' in order to match the identifier as it has been declared in ILOA.BindLOADetails(IApplication, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IApplicationInformationVarifixLoan, IMortgageLoan, IMortgageLoan, IHOC):Void.</Issue>
+            </Message>
+            <Message Id="6#" TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life" File="LOA.aspx.cs" Line="58">Change parameter name 'hoc' of method LOA.BindLOADetails(IApplication, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IApplicationInformationVarifixLoan, IMortgageLoan, IMortgageLoan, IHOC):Void to 'hocFS' in order to match the identifier as it has been declared in ILOA.BindLOADetails(IApplication, IApplicationMortgageLoan, IApplicationInformationVariableLoan, IApplicationInformationVarifixLoan, IMortgageLoan, IMortgageLoan, IHOC):Void.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Life.Helpers">
+       <Types>
+        <Type Name="LifeHelper" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_application" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'LifeHelper._application' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_applicationRepo" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'LifeHelper._applicationRepo' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="_lifeRepo" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'LifeHelper._lifeRepo' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="SAHL.Web.Views.Life.Presenters">
+       <Types>
+        <Type Name="CallBack" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="OnViewInitialised(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life\Presenters" File="CallBack.cs" Line="112">Replace the call to String.op_Inequality("") in 'CallBack.OnViewInitialised(Object, EventArgs):Void' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="CancelPolicy" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="OnViewInitialised(System.Object,System.EventArgs):System.Void" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Name="IsNullOrEmpty" Certainty="95" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life\Presenters" File="CancelPolicy.cs" Line="100">Replace the call to String.op_Inequality("") in 'CancelPolicy.OnViewInitialised(Object, EventArgs):Void' with a call to String.IsNullOrEmpty.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="PolicyBase" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="_legalEntityRepo" Kind="Field" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="Warning">It appears that field 'PolicyBase._legalEntityRepo' is never used or is only ever assigned to. Use this field or remove it.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="x2Data" Kind="Property" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Active" Created="2007-11-21 05:46:58Z" FixCategory="Breaking">
+             <Issue Certainty="75" Level="Warning" Path="C:\Development\SourceCode\Application\SAHL.Web\Views\Life\Presenters" File="PolicyBase.cs" Line="65">Change 'x2Data' to be read-only by removing the property setter.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="AvoidTypeNamesInParameters" Category="Microsoft.Naming" CheckId="CA1720">
+   <Name>Avoid type names in parameters</Name>
+   <Description>Do not use type names to name parameters; use a generic name instead. Types names might not be intuitive for all developers. It is recommended that you select a generic name. If this is not sufficient, be sure to use the type name as it is defined in the .NET Framework Library. For example, use 'Boolean' instead of 'Bool'.</Description>
+   <Resolution Name="Default">Remove the type identifier from parameter name '{0}'.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Naming/AvoidTypeNamesInParameters.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Error</MessageLevel>
+   <File Name="NamingRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+   <Name>Avoid uncalled private code</Name>
+   <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">'{0}' appears to have no upstream public or protected callers.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/AvoidUncalledPrivateCode.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnnecessaryStringCreation" Category="Microsoft.Performance" CheckId="CA1807">
+   <Name>Avoid unnecessary string creation</Name>
+   <Description>Avoid creating strings unnecessarily. When converting strings to upper or lowercase, cache the result when necessary rather than duplicating a previous string creation. Prefer String.Compare over converting strings to upper or lowercase when performing case-insensitive comparisons. Do not create strings that are not subsequently assigned to variables.</Description>
+   <Resolution Name="UseStringCompareLocal">{0} calls {1} after converting '{2}', a local, to upper or lowercase. If possible, eliminate the string creation and call the overload of String.Compare that performs a case-insensitive comparison.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/AvoidUnnecessaryStringCreation.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+   <Name>Avoid unused private fields</Name>
+   <Description>Private fields were detected that do not appear to be accessed within the assembly. If this violation fires in error, please send a problem report to the Visual Studio Code Analysis team.</Description>
+   <Resolution Name="Default">It appears that field '{0}' is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/AvoidUnusedPrivateFields.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+   <Name>Collection properties should be read only</Name>
+   <Description>Properties that return collections should be read-only so that users cannot entirely replace the backing store. Users can still modify the contents of the collection by calling relevant methods on the collection. Note that the XmlSerializer class has special support for deserializing read-only collections. See the XmlSerializer overview for more information.</Description>
+   <Resolution Name="Default">Change '{0}' to be read-only by removing the property setter.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/CollectionPropertiesShouldBeReadOnly.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotDecreaseInheritedMemberVisibility" Category="Microsoft.Usage" CheckId="CA2222">
+   <Name>Do not decrease inherited member visibility</Name>
+   <Description>It is incorrect to override a public method from an inherited class with a private implementation, unless the type is sealed or the method is marked final. It is considered bad form to hide a method signature halfway down an inheritance tree.</Description>
+   <Resolution Name="Default">Make {0} non-private, mark it as final, or seal its declaring type. This method was originally defined in base class '{1}'.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/DoNotDecreaseInheritedMemberVisibility.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+   <Name>Do not initialize unnecessarily</Name>
+   <Description>Do not make initializations that have already been done by the runtime.</Description>
+   <Resolution Name="Default">{0} initializes field {1} of type {2} to {3}. Remove this initialization as it will be done automatically by the runtime.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/DoNotInitializeUnnecessarily.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="90">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="InstantiateArgumentExceptionsCorrectly" Category="Microsoft.Usage" CheckId="CA2208">
+   <Name>Instantiate argument exceptions correctly</Name>
+   <Description>String arguments passed to constructors of ArgumentException and its derived types should be correct. Types derived from ArgumentException have inconsistent constructor overloads with respect to the message and paramName parameters as compared to ArgumentException.</Description>
+   <Resolution Name="NoArguments">Call the {0} constructor that contains a message and/or paramName parameter.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/InstantiateArgumentExceptionsCorrectly.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+   <Name>Mark members as static</Name>
+   <Description>Methods which do not access instance data or call instance methods can be marked as static (Shared in VB). After doing so, the compiler will emit non-virtual call sites to these members which will prevent a check at runtime for each call that insures the current object pointer is non-null. This can result in a measurable performance gain for performance-sensitive code. In some cases, the failure to access the current object instance represents a correctness issue.</Description>
+   <Resolution Name="Default">The 'this' parameter (or 'Me' in VB) of {0} is never used. Mark the member as static (or Shared in VB) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/MarkMembersAsStatic.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="ParameterNamesShouldMatchBaseDeclaration" Category="Microsoft.Naming" CheckId="CA1725">
+   <Name>Parameter names should match base declaration</Name>
+   <Description>For usability reasons, parameter names in overridden methods should match those of the base declaration.</Description>
+   <Resolution Name="Default">Change parameter name '{0}' of method {1} to '{2}' in order to match the identifier as it has been declared in {3}.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Naming/ParameterNamesShouldMatchBaseDeclaration.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="NamingRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+   <Name>Remove unused locals</Name>
+   <Description>Remove locals that are not used or are only assigned to in method implementations.</Description>
+   <Resolution Name="Default">{0} declares a local, '{1}', of type {2}, which is never used or is only assigned to. Use this local or remove it.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/RemoveUnusedLocals.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+   <Name>Review unused parameters</Name>
+   <Description>Review parameters in non-virtual methods that are not used in the method body to insure no correctness exists around failure to access them. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+   <Resolution Name="Default">Parameter '{0}' of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Usage/ReviewUnusedParameters.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="UsageRules.dll" Version="1.35.0.0" />
+  </Rule>
+  <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+   <Name>Test for empty strings using string length</Name>
+   <Description>To test for empty strings, check if String.Length is equal to zero. Constructs such as "".Equals(someString) and String.Empty.Equals(someString) are less efficient than testing the string length. Replace these with checks for someString.Length == 0.</Description>
+   <Resolution Name="IsNullOrEmpty">Replace the call to String.{0}({1}) in '{2}' with a call to String.IsNullOrEmpty.</Resolution>
+   <Owner />
+   <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.35&amp;url=/Performance/TestForEmptyStringsUsingStringLength.html</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Warning</MessageLevel>
+   <File Name="PerformanceRules.dll" Version="1.35.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="Line">Line</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+ <Exceptions>
+  <Exception Keyword="CA0058" Kind="Engine">
+   <Type>Microsoft.FxCop.Sdk.FxCopException</Type>
+   <ExceptionMessage>Missing references were ignored. Results might be compromised or incomplete.</ExceptionMessage>
+  </Exception>
+  <Exception Keyword="CA0001" Kind="Rule" TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Target="SAHL.Web.Controllers.Common.CommonController..ctor(Microsoft.ApplicationBlocks.UIProcess.Navigator)">
+   <Type>System.NullReferenceException</Type>
+   <ExceptionMessage>Object reference not set to an instance of an object.</ExceptionMessage>
+   <StackTrace>   at Microsoft.FxCop.Rules.Usage.DoNotCallOverridableMethodsInConstructors.CheckCallees(Method method, Boolean isCallVirt)
+   at Microsoft.FxCop.Rules.Usage.DoNotCallOverridableMethodsInConstructors.CheckCallees(Method method, Boolean isCallVirt)
+   at Microsoft.FxCop.Rules.Usage.DoNotCallOverridableMethodsInConstructors.Check(Member member)
+   at Microsoft.FxCop.Engines.Introspection.AnalysisVisitor.CheckMember(Member member, NodeBase target)</StackTrace>
+  </Exception>
+ </Exceptions>
+</FxCopReport>

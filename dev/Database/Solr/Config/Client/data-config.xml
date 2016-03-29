@@ -1,0 +1,41 @@
+<dataConfig> 
+    <dataSource type="JdbcDataSource"
+            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            url="jdbc:sqlserver://sahls03:1433;DatabaseName=Process;"
+            user="eworkadmin2"
+            password="W0rdpass"
+            batchSize="5" />
+             		
+    <document name="Client"> 
+        <entity name="ClientList" query="solr.pSolrImportAPI 'Client'" pk='id'
+								deltaImportQuery="SELECT * FROM [2am].solr.Client (NOLOCK)WHERE id = ${dih.delta.id}"
+								deltaQuery="SELECT id FROM [2am].solr.Client (NOLOCK) WHERE LastModifiedDate > CAST('${dih.last_index_time}'as datetime) "	>		
+			<field column="LegalEntityKey"			name="LegalEntityKey"/>
+			<field column="LegalEntityType"			name="LegalEntityType"/>
+			<field column="LegalEntityStatusKey"		name="LegalEntityStatusKey"/>
+			<field column="LegalName"			name="LegalName"/>
+			<field column="FirstNames"			name="FirstNames"/>
+			<field column="Surname"				name="Surname"/>			
+			<field column="LegalIdentity"			name="LegalIdentity"/>
+			<field column="LegalIdentityType"		name="LegalIdentityType"/>
+			<field column="PreferredName"			name="PreferredName"/>			
+			<field column="TaxNumber"			name="TaxNumber"/>
+			<field column="HomePhoneNumber"			name="HomePhoneNumber"/>
+			<field column="WorkPhoneNumber"			name="WorkPhoneNumber"/>
+			<field column="CellPhoneNumber"			name="CellPhoneNumber"/>
+			<field column="EmailAddress"			name="EmailAddress"/>
+			<field column="LegalEntityAddress"		name="LegalEntityAddress"/>
+			<field column="PropertyAddress"			name="PropertyAddress"/>							
+			<field column="FaxNumber"			name="FaxNumber"/>
+			<field column="RoleType"			name="RoleType"/> 
+			<field column="Product"				name="Product"/>
+			<field column="OfferType"			name="OfferType"/>
+			<field column="OfferStatus"			name="OfferStatus"/> 
+			<field column="AccountStatus"			name="AccountStatus"/>
+			<field column="AccountKey"			name="AccountKey"/>
+			<field column="Accounts"			name="Accounts"/>
+			<field column="OfferKey"			name="OfferKey"/>
+			<field column="ClientLead"			name="ClientLead"/>
+        </entity> 
+    </document> 
+</dataConfig> 

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Session[SAHL.Web.Public.Controllers.SessionConstants.AccountKey] != null)
+{
+    <div>
+        <h2>Account Key # @Session[SAHL.Web.Public.Controllers.SessionConstants.AccountKey] </h2>
+    </div>
+    <ul id="menu">
+        <li>
+            @Html.ActionLink("Notes", "Index", "Note")
+            <ul>
+                <li>@Html.ActionLink("Add Note", "Add", "Note")</li>
+            </ul>
+        </li>
+        <li>
+            @Html.ActionLink("Loan Statement", "LoanStatement", "Report")
+        </li>
+        <li>
+            @Html.ActionLink("Proposal History", "ProposalHistory", "Report")
+        </li>
+        <li>
+            @Html.ActionLink("Business Event History", "BusinessEventHistory", "Report")
+        </li>
+    </ul>
+}
+@RenderBody()

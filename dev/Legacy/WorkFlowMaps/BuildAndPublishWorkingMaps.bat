@@ -1,0 +1,1 @@
+powershell.exe %cd%\Task.Common.Workflow.ps1 -mapsFolder %cd%

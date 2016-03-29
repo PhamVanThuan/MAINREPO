@@ -1,0 +1,163 @@
+﻿@model SAHL.Web.Public.Models.IndexNoteViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+@if (Model != null)
+{
+    <h2>
+        Notes</h2>
+    <p>
+        <fieldset>
+            <legend>Filters</legend>
+            <label>
+                User</label>
+            @Html.DropDownList("user", Model.Users, "Please Select")
+            <label>
+                From Date</label>
+            @Html.DropDownList("fromDate", Model.Dates, "Please Select")
+            <label>
+                To Date</label>
+            @Html.DropDownList("toDate", Model.Dates, "Please Select")
+            <label>
+                <input type="button" onclick="return printNotes();" value="Print" /></label>
+        </fieldset>
+    </p>
+    <div id="divNotes" style="height: 380px; overflow: auto;">
+        @Html.HiddenFor(m => m.AccountNumber)
+        @foreach (var noteDetail in Model.NoteDetails)
+        {
+            var rowClass = "le" + @noteDetail.LegalEntityKey + " dte" + @noteDetail.InsertedDate.ToShortDateString();
+            <div class='noteRow @rowClass'>
+                <div class="header">
+                    <label>
+                        Date :</label>
+                    @noteDetail.InsertedDate.ToShortDateString()
+                    <label>
+                        User :</label>
+                    @noteDetail.LegalEntityDisplayName
+                    <label>
+                        Workflow State :</label>
+                    @noteDetail.WorkflowState
+                </div>
+                <div class="detail">
+                    @*Make sure this is what we want*@
+                    @Html.Raw(noteDetail.NoteText)
+                </div>
+            </div>
+        }
+    </div>
+}
+<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+        $("#user").change(function () {
+            filter();
+        });
+
+        $("#fromDate").change(function () {
+            filter();
+        });
+
+        $("#toDate").change(function () {
+            filter();
+        });
+    });
+
+    function filter() {
+        $(".noteRow").each(function () {
+
+            var filterLegalEntity = $("#user").val();
+            var filterDateFrom = $("#fromDate").val();
+            var filterDateTo = $("#toDate").val();
+
+            if (filterLegalEntity == "" && filterDateFrom == "" && filterDateTo == "") {
+                // if no filters are selected then show everything
+                $(this).show();
+            }
+            else {
+                // hide all the rows initially
+                $(this).hide();
+
+                var classNames = $(this).attr("class") // gets the class names assocaited with the row eg: "noteRow le223 dte20110421"
+                var classArray = classNames.split(" "); // split into 3 variables so we can get each individual value
+                var legalentityVal = classArray[1].toString().replace("le", ""); // get legalentity value
+                var dateVal = classArray[2].toString().replace("dte", ""); // get date value
+
+                // determine whether the row matches the legalentity filter
+                var legalentityMatch = true;
+                if (filterLegalEntity != '' && filterLegalEntity != legalentityVal) {
+                    legalentityMatch = false;
+                }
+
+                // determine whether the row matches the dates filter
+                var dateMatch = true;
+                if (filterDateFrom == "") {
+                    filterDateFrom = 11111111;
+                }
+                if (filterDateTo == "") {
+                    filterDateTo = 999999999;
+                }
+                if (dateVal < filterDateFrom || dateVal > filterDateTo) {
+                    dateMatch = false;
+                }
+
+                // if row matches filter then show row
+                if (legalentityMatch == true && dateMatch == true) {
+                    $(this).show();
+                }
+            }
+        });
+    }
+
+    function printNotes() {
+        var head = '<head><style>';
+        head += 'body, html{ font-family:calibri; font-size:0.9em; }';
+            head += 'label';
+            head += '{';
+                head += 'font-weight: bold;';
+                head += 'font-size: 0.9em;';
+            head += '}';
+
+            head += '.list';
+            head += '{';
+                head += 'display: inline;';
+                head += 'list-style: none;';
+            head += '}';
+
+            head += '.header';
+            head += '{';
+                head += 'padding: 2px 2px;';
+                head += 'margin-top: 5px;';
+                head += 'margin-bottom: 5px;';
+                head += 'color: #000000;';
+                head += 'text-indent: 20px;';
+                head += 'background-color: #9f9f9f;';
+                head += 'border-top: 1px solid #ffffff;';
+                head += 'border-bottom: 1px solid #000000;';
+            head += '}';
+
+            head += '.detail';
+            head += '{';
+            head += 'text-indent: 40px;';
+            head += '}</style></head>';
+        var currentTime = new Date();
+        var month = currentTime.getMonth() + 1;
+        var day = currentTime.getDate();
+        var year = currentTime.getFullYear();
+        var header = '<div align="right"><img height="120px" src="http://sahls15/images/SAHL/ReportLogo_Centered.jpg" /></div>'
+        var reportName = '<div align="left"><h2>Notes History for Account #' + $("#AccountNumber").val() + '</h2></div>';
+        var reportDate = '<div align="left"><h2>Report Date : ' + month + "/" + day + "/" + year + '</h2></div>';
+        var notesHtml = '<body>' + $("#divNotes").html() + '</body>';
+        var notesWindow = window.open("about:blank");
+        notesWindow.document.write(head);
+        notesWindow.document.write(header);
+        notesWindow.document.write(reportName);
+        notesWindow.document.write(reportDate);
+        notesWindow.document.write(notesHtml);
+        notesWindow.document.close();
+        notesWindow.focus();
+        notesWindow.print();
+        notesWindow.close();
+        return true;
+    }
+</script>

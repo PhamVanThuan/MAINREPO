@@ -1,0 +1,14 @@
+﻿@model SAHL.Core.UI.Halo.Editors.Address.ChangeDomiciliumAddressEditor.Pages.ChangeDomiciliumAddressEditorPage1Model
+@Html.DisplayLabelModelPairFor("Current Domicilium Address", x => x.CurrentDomiciliumAddress)
+<br />
+@Html.DisplayLabelModelPairFor("Elected Domicilium Address", x => x.ElectedDomiciliumAddress)
+<br />
+@using (Html.BeginControlGroup("Correspondence Options"))
+{
+    <br />
+    @Html.CheckBoxItem("FaxNumber", Model.FaxNumber, "Fax Number")
+    <br />
+    @Html.CheckBoxItem("EmailAddress", Model.EmailAddress, "Email Address")
+    <br />
+    @Html.CheckBoxList("PostalAddresses", Model.PostalAddresses)
+}

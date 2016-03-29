@@ -1,0 +1,76 @@
+﻿<form name="suburbForm" class="twoColumn">
+    <table class="trackResults" ng-hide="!application">
+        <tr>
+            <td class="trackDetails">
+                <table class="trackDetails">
+                    <tr>
+                        <td class="emphasise">Application No :</td>
+                        <td>{{application.ApplicationNumber}}</td>
+                    </tr>
+                    <tr>
+                        <td class="emphasise">Date :</td>
+                        <td>{{formatDateString(application.ApplicationDate)}}</td>
+                    </tr>
+                    <tr><td colspan="2"><br/></td>
+                    <tr>
+                        <td colspan="2" class="emphasise">Applicant(s) :</td>
+                    </tr>
+                    <tr ng-repeat="applicant in application.Applicants">
+                        <td colspan="2">{{applicant.salutation}} {{applicant.firstname}} {{applicant.surname}}, {{applicant.identitynumber}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="emphasise">SAHL Consultant :</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{application.ConsultantName}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="emphasise">Contact :</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">{{application.ConsultantContactNumber}}</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table class="trackResults">
+                    <tr>
+                        <td>
+                            <table class="trackResults">
+                                <tr>
+                                    <td class="trackResultImages">
+                                        <img ng-src="{{'./assets/img/track_stage1.png'}}" alt="Gathering Documentation" ng-show="application.ApplicationStage == 'Gathering Documentation' && application.ApplicationStatus == 'In Progress'" />
+                                        <img ng-src="{{'./assets/img/track_stage1_ntu.png'}}" alt="Gathering Documentation" ng-show="application.ApplicationStage == 'Gathering Documentation' && application.ApplicationStatus == 'NTU'" />
+                                        <img ng-src="{{'./assets/img/track_stage1_decline.png'}}" alt="Gathering Documentation" ng-show="application.ApplicationStage == 'Gathering Documentation' && application.ApplicationStatus == 'Decline'" />
+                                        <img ng-src="{{'./assets/img/track_stage2.png'}}" alt="Application Submitted" ng-show="application.ApplicationStage == 'Application Submitted' && application.ApplicationStatus == 'In Progress'" />
+                                        <img ng-src="{{'./assets/img/track_stage2_ntu.png'}}" alt="Application Submitted" ng-show="application.ApplicationStage == 'Application Submitted' && application.ApplicationStatus == 'NTU'" />
+                                        <img ng-src="{{'./assets/img/track_stage2_decline.png'}}" alt="Application Submitted" ng-show="application.ApplicationStage == 'Application Submitted' && application.ApplicationStatus == 'Decline'" />
+                                        <img ng-src="{{'./assets/img/track_stage3.png'}}" alt="Valuation Complete" ng-show="application.ApplicationStage == 'Valuation Complete' && application.ApplicationStatus == 'In Progress'" />
+                                        <img ng-src="{{'./assets/img/track_stage3_ntu.png'}}" alt="Valuation Complete" ng-show="application.ApplicationStage == 'Valuation Complete' && application.ApplicationStatus == 'NTU'" />
+                                        <img ng-src="{{'./assets/img/track_stage3_decline.png'}}" alt="Valuation Complete" ng-show="application.ApplicationStage == 'Valuation Complete' && application.ApplicationStatus == 'Decline'" />
+                                        <img ng-src="{{'./assets/img/track_stage4.png'}}" alt="Credit Assessment" ng-show="application.ApplicationStage == 'Credit Assessment' && application.ApplicationStatus == 'In Progress'" />
+                                        <img ng-src="{{'./assets/img/track_stage4_ntu.png'}}" alt="Credit Assessment" ng-show="application.ApplicationStage == 'Credit Assessment' && application.ApplicationStatus == 'NTU'" />
+                                        <img ng-src="{{'./assets/img/track_stage4_decline.png'}}" alt="Credit Assessment" ng-show="application.ApplicationStage == 'Credit Assessment' && application.ApplicationStatus == 'Decline'" />
+                                        <img ng-src="{{'./assets/img/track_stage5.png'}}" alt="Loan Approved" ng-show="application.ApplicationStage == 'Loan Approved' && application.ApplicationStatus == 'In Progress'" />
+                                        <img ng-src="{{'./assets/img/track_stage5_ntu.png'}}" alt="Loan Approved" ng-show="application.ApplicationStage == 'Loan Approved' && application.ApplicationStatus == 'NTU'" />
+                                        <img ng-src="{{'./assets/img/track_stage5_decline.png'}}" alt="Loan Approved" ng-show="application.ApplicationStage == 'Loan Approved' && application.ApplicationStatus == 'Decline'" />
+                                        <img ng-src="{{'./assets/img/track_stage6.png'}}" alt="Attorney Instructed" ng-show="application.ApplicationStage == 'Attorney Instructed' && application.ApplicationStatus == 'In Progress'" />
+                                        <img ng-src="{{'./assets/img/track_stage6_ntu.png'}}" alt="Attorney Instructed" ng-show="application.ApplicationStage == 'Attorney Instructed' && application.ApplicationStatus == 'NTU'" />
+                                        <img ng-src="{{'./assets/img/track_stage6_decline.png'}}" alt="Attorney Instructed" ng-show="application.ApplicationStage == 'Attorney Instructed' && application.ApplicationStatus == 'Decline'" />
+                                        <img ng-src="{{'./assets/img/track_stage7.png'}}" alt="Loan Registered" ng-show="application.ApplicationStage == 'Loan Registered' && application.ApplicationStatus == 'In Progress'" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+        <div id="noMatchMessage" ng-show="!application">
+        <p>No matching applications were found.</p>
+    </div>
+    <fieldset class="submitContainer">
+        <button id="back" type="submit" ng-click="back()">Back</button>
+    </fieldset>
+</form>

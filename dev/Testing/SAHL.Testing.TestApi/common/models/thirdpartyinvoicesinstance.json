@@ -1,0 +1,49 @@
+{
+  "name": "thirdpartyinvoicesinstance",
+  "plural": "thirdpartyinvoicesinstance",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "mssql": {
+    "schema": "x2data",
+    "table": "third_party_invoices"
+  },
+  "properties": {
+    "generickey": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "GenericKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "instanceid": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "instanceid",
+        "dataType": "bigint",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

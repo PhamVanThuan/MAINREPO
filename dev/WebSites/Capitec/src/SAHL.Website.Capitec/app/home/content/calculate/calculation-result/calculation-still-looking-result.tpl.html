@@ -1,0 +1,58 @@
+﻿<form class="twoColumn">
+    <div>
+        <strong>A deposit of up to 15% might be required.</strong> For a Property Price of <strong>{{ calculationResult.propertyPriceQualifiedFor | currency }}</strong> 
+        you might require a deposit of up to <strong>{{ (calculationResult.propertyPriceQualifiedFor*15)/100 | currency }}</strong>, 
+        depending on the information provided during the Home Loan application process
+        <br/><br/>
+    </div>
+    <fieldset>
+        <label>The loan amount you can apply for is</label> <br />
+        <label class="emphasise">{{ calculationResult.amountQualifiedFor | currency }}</label>
+    </fieldset>
+    <fieldset>
+        <label>The maximum property price you may qualify for is</label> <br />
+        <label class="emphasise">{{ calculationResult.propertyPriceQualifiedFor  | currency }}</label>
+    </fieldset>
+
+     <fieldset>
+        <label>Monthly instalment (incl Service Fee)</label> <br />
+        <label class="emphasise">{{ calculationResult.instalment  | currency }}</label>
+    </fieldset>
+    <fieldset>
+        <label>Service Fee</label> <br />
+        <label class="emphasise">{{ calculationResult.monthlyServiceFee  | currency }}</label>
+    </fieldset>
+
+    <fieldset>
+        <label>Interest rate</label>  <br />
+        <label class="emphasise">{{ calculationResult.interestRate }}%</label>
+    </fieldset>
+    <fieldset>
+        <label>Loan term</label> <br />
+        <label class="emphasise">{{ calculationResult.termInMonths }} months</label>
+    </fieldset>
+
+
+    <fieldset class="message">
+        <div>
+            Please note that there are additional costs involved as part of the registration of the mortgage loan, such as:
+            <ul>
+                <li>Cancellation Fee</li>
+                <li>Registration Fee (which is discounted by 50%)</li>
+                <li>Initiation Fee</li>
+            </ul>
+        </div>
+        <div>
+            <b>The instalment above excludes:</b>
+            <ul>
+                <li class="liPadded">Home Owners Insurance</li>
+                <li class="liPadded">Optional Life Insurance Cover</li>
+            </ul>
+        </div>
+    </fieldset>
+    <fieldset class="submitContainer">
+        <button id="submit2" type="submit" ng-click="back()">Back</button>
+    </fieldset>
+</form>
+
+

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="03acea5e-3aab-484a-9c08-6e2de110565d" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="CoreBusinessObjectMenu" schema="dbo" table="CoreBusinessObjectMenu">
+      <targets>
+        <manyToOneRelation Id="cd0854b6-f689-4171-81a4-152eed7fa855" targetColumnKey="ParentKey" targetTable="CoreBusinessObjectMenu" targetPropertyName="CoreBusinessObjectMenus" sourceColumn="ParentKey">
+          <modelClassMoniker name="/03acea5e-3aab-484a-9c08-6e2de110565d/CoreBusinessObjectMenu" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="4f141824-5523-4879-bcf8-36da9721f794" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="4784d5cf-1174-4d1d-afcd-6b4c75dbdf61" name="NodeType" column="NodeType" length="0" />
+        <modelProperty Id="d250ccfa-8769-4740-b30c-143343ef3a88" name="URL" column="URL" length="0" />
+        <modelProperty Id="bddca8b6-4811-4236-9b17-814f72e476b8" name="StatementNameKey" column="StatementNameKey" length="0" />
+        <modelProperty Id="49d8a9e6-f029-45a9-b66b-a02cb83e5852" name="Sequence" column="Sequence" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="d7c7edd9-684f-4e35-966c-a58be92b31ef" name="MenuIcon" column="MenuIcon" length="0" />
+        <modelProperty Id="de6a2508-5f69-43f9-ae25-818a769933da" name="FeatureKey" column="FeatureKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="b5746cde-5498-40ff-b892-3dea287935e3" name="GenericTypeKey" column="GenericTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="136bd843-1b75-49f9-a0f4-0f6c46dbd083" name="HasOriginationSource" column="HasOriginationSource" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="239eb43c-580e-4d4a-8686-3fbe1a7a71d1" name="IsRemovable" column="IsRemovable" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="9e07609e-cafd-4318-a4a3-a0f7e9cf49d6" name="ExpandLevel" column="ExpandLevel" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="13a566d8-05ae-4509-b00f-fcd1ad7b8f0c" name="IncludeParentHeaderIcons" column="IncludeParentHeaderIcons" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="f099e083-8512-413b-a80f-6e9d144386a5" name="CoreBusinessObjectKey" column="CoreBusinessObjectKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

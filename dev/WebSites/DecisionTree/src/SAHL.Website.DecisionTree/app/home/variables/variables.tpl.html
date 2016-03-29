@@ -1,0 +1,26 @@
+﻿<div id="filePage">
+    <nav id="fileMenu" class="vertical-menu compact sideBarMenu">
+        <ul>
+            <li>
+                <a href="" class="title" ng-click="close()">
+                    <h1><i id="titleback" class="icon-arrow-left-3 smaller fg-white"></i></h1>
+                </a>
+            </li>
+            <li ng-show="canInfo"><a href="" ng-click="info()">Info</a></li>
+            <li ng-show="canSave"><a href="" ng-click="save()">Save </a></li>
+            <li ng-show="canPublish"><a href="" ng-click="publish()">Publish</a></li>
+            <li ng-show="canClose"><a href="" ng-click="close()">Close</a></li>
+        </ul>
+    </nav>
+    <div id="document-header">
+        <span class="pad-margin">Decision Tree Designer</span>
+        <button ng-click="close()"><i class="icon-close-button"></i></button>
+    </div>
+    <div id="user-box" class="inline">
+        <img class="user-image-small" ng-src="{{userimagesrc}}" />
+        <div class="user-details">
+            <div class="user-name">{{userDisplayName}}</div>
+        </div>
+    </div>
+    <div style="height:100%" ui-view></div>
+</div>

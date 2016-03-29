@@ -1,0 +1,33 @@
+﻿<BureauEnquiry41 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ValidationError xmlns="https://secure.transunion.co.za/TUBureau">false</ValidationError>
+  <SubscriberCode xmlns="https://secure.transunion.co.za/TUBureau">00151</SubscriberCode>
+  <ClientReference xmlns="https://secure.transunion.co.za/TUBureau">Home Loan Enquiry</ClientReference>
+  <SecurityCode xmlns="https://secure.transunion.co.za/TUBureau">SAH51</SecurityCode>
+  <EnquirerContactName xmlns="https://secure.transunion.co.za/TUBureau">SA Home Loans</EnquirerContactName>
+  <EnquirerContactPhoneNo xmlns="https://secure.transunion.co.za/TUBureau">031 560 5300</EnquirerContactPhoneNo>
+  <Surname xmlns="https://secure.transunion.co.za/TUBureau">Appanna</Surname>
+  <Forename1 xmlns="https://secure.transunion.co.za/TUBureau">Seethiah</Forename1>
+  <Forename2 xmlns="https://secure.transunion.co.za/TUBureau">Danny</Forename2>
+  <Forename3 xmlns="https://secure.transunion.co.za/TUBureau" />
+  <BirthDate xmlns="https://secure.transunion.co.za/TUBureau">19490814</BirthDate>
+  <IdentityNo1 xmlns="https://secure.transunion.co.za/TUBureau">4908145134086</IdentityNo1>
+  <Sex xmlns="https://secure.transunion.co.za/TUBureau">M</Sex>
+  <Title xmlns="https://secure.transunion.co.za/TUBureau">Mr</Title>
+  <MaritalStatus xmlns="https://secure.transunion.co.za/TUBureau">Married - Community of Property</MaritalStatus>
+  <AddressLine1 xmlns="https://secure.transunion.co.za/TUBureau" />
+  <AddressLine2 xmlns="https://secure.transunion.co.za/TUBureau">43 Terrace road</AddressLine2>
+  <Suburb xmlns="https://secure.transunion.co.za/TUBureau">Eastleigh</Suburb>
+  <City xmlns="https://secure.transunion.co.za/TUBureau">Edenvale</City>
+  <PostalCode xmlns="https://secure.transunion.co.za/TUBureau">1609</PostalCode>
+  <HomeTelCode xmlns="https://secure.transunion.co.za/TUBureau" />
+  <HomeTelNo xmlns="https://secure.transunion.co.za/TUBureau" />
+  <WorkTelCode xmlns="https://secure.transunion.co.za/TUBureau">011</WorkTelCode>
+  <WorkTelNo xmlns="https://secure.transunion.co.za/TUBureau">3155035</WorkTelNo>
+  <Address2Line1 xmlns="https://secure.transunion.co.za/TUBureau" />
+  <Address2Line2 xmlns="https://secure.transunion.co.za/TUBureau" />
+  <Address2Suburb xmlns="https://secure.transunion.co.za/TUBureau" />
+  <Address2City xmlns="https://secure.transunion.co.za/TUBureau" />
+  <Address2PostalCode xmlns="https://secure.transunion.co.za/TUBureau" />
+  <CellNo xmlns="https://secure.transunion.co.za/TUBureau">0836414368</CellNo>
+  <EmailAddress xmlns="https://secure.transunion.co.za/TUBureau">fm@constantiahotel.co.za</EmailAddress>
+</BureauEnquiry41>

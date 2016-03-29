@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38FFDD1B-2E6E-4DE9-8F34-CD759BCECCC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Batch.Common</RootNamespace>
+    <AssemblyName>SAHL.Batch.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\RabbitMQ.Client\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Communication, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Capitec.Models.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Capitec.Models.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\External Binaries\NuGet\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BatchServiceConfiguration.cs" />
+    <Compile Include="CancellationNotifier.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="ICancellationNotifier.cs" />
+    <Compile Include="IDiposableMessageBus.cs" />
+    <Compile Include="IMessageProcessor.cs" />
+    <Compile Include="IBatchServiceConfiguration.cs" />
+    <Compile Include="IMessageRetryService.cs" />
+    <Compile Include="IQueuedHandler.cs" />
+    <Compile Include="IQueueHandlerService.cs" />
+    <Compile Include="IBatchServiceManager.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="IStartableQueueHandler.cs" />
+    <Compile Include="IStoppableQueueHandler.cs" />
+    <Compile Include="ITimer.cs" />
+    <Compile Include="JsonConversion.cs" />
+    <Compile Include="MessageForwarding\DefaultEasyNetQMessageBusSettings.cs" />
+    <Compile Include="MessageForwarding\ForwardingMessageBus.cs" />
+    <Compile Include="MessageForwarding\IForwardingQueuedHandler.cs" />
+    <Compile Include="MessageForwarding\IMessageBus.cs" />
+    <Compile Include="MessageForwarding\MessageForwardingQueuedHandler.cs" />
+    <Compile Include="DefaultMessageRetryService.cs" />
+    <Compile Include="MessageRetryService.cs" />
+    <Compile Include="MessageQueueHandler.cs" />
+    <Compile Include="Messages\CapitecApplicationMessage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContracts\ICapitecClientService.cs" />
+    <Compile Include="ServiceContracts\IPersonalLoanLeadCreationService.cs" />
+    <Compile Include="Timer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

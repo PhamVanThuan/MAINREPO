@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="75350173-b241-486a-8e0c-5d5ceb67913f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:52059/Attorney.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Attorney.xsd" MetadataType="Schema" ID="a6b59167-ac53-4e13-a926-50b1b5a6cb51" SourceId="1" SourceUrl="http://localhost:52059/Attorney.svc?xsd=xsd3" />
+    <MetadataFile FileName="Attorney.disco" MetadataType="Disco" ID="bd9ae60e-6a89-4235-b724-2ab44487e727" SourceId="1" SourceUrl="http://localhost:52059/Attorney.svc?disco" />
+    <MetadataFile FileName="Attorney1.xsd" MetadataType="Schema" ID="63ccf4a7-3b9b-4b15-9bbc-896f07c552d9" SourceId="1" SourceUrl="http://localhost:52059/Attorney.svc?xsd=xsd1" />
+    <MetadataFile FileName="Attorney2.xsd" MetadataType="Schema" ID="1ded5843-8362-48f5-a83a-e328a5d0c439" SourceId="1" SourceUrl="http://localhost:52059/Attorney.svc?xsd=xsd2" />
+    <MetadataFile FileName="Attorney.wsdl" MetadataType="Wsdl" ID="39ad8ab3-860f-4f14-b329-ac5f992aa916" SourceId="1" SourceUrl="http://localhost:52059/Attorney.svc?wsdl" />
+    <MetadataFile FileName="Attorney3.xsd" MetadataType="Schema" ID="59688836-a6db-4294-96d4-3a4f8beba048" SourceId="1" SourceUrl="http://localhost:52059/Attorney.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

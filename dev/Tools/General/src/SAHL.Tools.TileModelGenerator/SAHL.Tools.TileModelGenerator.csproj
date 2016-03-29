@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B2DBF67-2C0D-4A64-8F62-7E5E9BE99332}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Tools.TileModelGenerator</RootNamespace>
+    <AssemblyName>SAHL.Tools.TileModelGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLine">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\CommandLineParser\lib\net40\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttributeRegistry.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="IOCConfig.cs" />
+    <Compile Include="IResult.cs" />
+    <Compile Include="ITypeScanner.cs" />
+    <Compile Include="IScanConvention.cs" />
+    <Compile Include="Model\AttributeModel.cs" />
+    <Compile Include="Model\PageModel.cs" />
+    <Compile Include="Model\TileModel.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\TileEditorConvention.cs" />
+    <Compile Include="Reflection\TileModelConvention.cs" />
+    <Compile Include="Reflection\TypeScanner.cs" />
+    <Compile Include="ResultProcessor.cs" />
+    <Compile Include="StringHelper.cs" />
+    <Compile Include="Templates\HtmlPageJSTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HtmlPageJSTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\HtmlPageTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HtmlPageTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\HtmlPageJSTemplatePartial.cs" />
+    <Compile Include="Templates\HtmlPageTemplatePartial.cs" />
+    <Compile Include="Templates\TileModelEdit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TileModelEdit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\TileModelView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TileModelView.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\TileModelEditPartial.cs" />
+    <Compile Include="Templates\TileModelViewPartial.cs" />
+    <Compile Include="Reflection\TileToPageConvention.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Templates\HtmlPageJSTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>HtmlPageJSTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\HtmlPageTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>HtmlPageTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\TileModelEdit.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TileModelEdit.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\TileModelView.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TileModelView.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

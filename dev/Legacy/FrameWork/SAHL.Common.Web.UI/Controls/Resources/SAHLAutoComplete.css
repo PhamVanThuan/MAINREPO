@@ -1,0 +1,30 @@
+.SAHLAutoComplete_Default 
+{
+	background-color:White;
+	border: solid 1px #7F9DB9;
+	text-align: left;
+	overflow: visible;
+}
+.SAHLAutoComplete_DefaultItem 
+{
+	font-family:Verdana;
+	color: Black;
+	white-space:nowrap;
+	cursor: pointer;
+	text-align: left;
+	padding: 2px 1px 2px 1px;
+}
+.SAHLAutoComplete_DefaultItemSelected 
+{
+	font-family:Verdana;
+	color: black;
+	background-color: Silver;
+	white-space:nowrap;
+	cursor: pointer;
+	text-align: left;
+	padding: 2px 1px 2px 1px;
+}
+.SAHLAutoComplete_TextBox
+{
+    border-bottom-style: dashed;
+}

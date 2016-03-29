@@ -1,0 +1,41 @@
+﻿@model SAHL.Web.ClientSecure.Models.RequestFundsViewModel
+@{
+    ViewBag.Title = "Request Additional Funds";
+    Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+
+<h2>Request Additional Funds</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table>
+        <tr>
+            <td style="width: 120px">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.AccountKey, "Account Number :")
+                </div>
+            </td>
+            <td style="vertical-align: middle">
+                @Html.DropDownList("AccountKey")
+                @Html.ValidationMessageFor(m => m.AccountKey)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Amount, "Amount :")
+                </div>
+            </td>
+            <td>
+                @Html.EditorFor(m => m.Amount)
+                @Html.ValidationMessageFor(m => m.Amount)
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Create" />
+}

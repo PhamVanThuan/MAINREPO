@@ -1,0 +1,18 @@
+﻿<div ng-hide="$state.current.name != 'home.content.track'">
+    <form id="trackApplicationForm" name="trackApplicationForm"  class="twoColumn" class="twoColumn">
+        <div>
+            <fieldset>
+                <label>Application Number</label>
+                <input type="text" id="applicationNumber" name="applicationNumber" data-validate="number" ng-model="applicationNumber" focus="true" />
+            </fieldset>
+            <fieldset>
+                <label>ID Number</label>
+                <input type="text" id="identityNumber" name="identityNumber" data-validate="number" ng-model="identityNumber" />
+            </fieldset>
+        </div>
+        <fieldset>
+            <button type="submit" id="submitButton" value="Track" spin-click="trackApplication()" spin-keep-width="true">Track</button>
+        </fieldset>
+    </form>
+</div>
+<div ui-view></div>

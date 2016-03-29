@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SuperLo">
+  <modelMoniker Id="c32b983b-ab57-4cbb-a8cb-8b0091812491" />
+  <nestedChildShapes>
+    <classShape Id="d34cbbc6-eda8-4d28-84cf-529bd9a7ff5a" absoluteBounds="1.5, 1.25, 2.125, 3.8362125651041659">
+      <modelClassMoniker name="/c32b983b-ab57-4cbb-a8cb-8b0091812491/SuperLo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02952d5a-352f-4858-87b1-660068741bbb" absoluteBounds="1.5150000000000001, 1.6600000000000001, 2.0949999999999998, 3.3262125651041665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</activeRecordMapping>

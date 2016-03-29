@@ -1,0 +1,1162 @@
+﻿<BureauResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RawData xmlns="https://secure.transunion.co.za/TUBureau" />
+  <ResponseStatus xmlns="https://secure.transunion.co.za/TUBureau">Success</ResponseStatus>
+  <ProcessingStartDate xmlns="https://secure.transunion.co.za/TUBureau">2014-05-22T15:50:29.6506305+02:00</ProcessingStartDate>
+  <ProcessingTimeSecs xmlns="https://secure.transunion.co.za/TUBureau">5.2885694999999995</ProcessingTimeSecs>
+  <UniqueRefGuid xmlns="https://secure.transunion.co.za/TUBureau">11ed55f2-1bd4-461d-bd97-662826c40588</UniqueRefGuid>
+  <V1Segment xmlns="https://secure.transunion.co.za/TUBureau">
+    <v1Segs>
+      <v1Seg>
+        <Code>00</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>01</Code>
+        <Value>02</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NA</Code>
+        <Value>07</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NC</Code>
+        <Value>04</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>D7</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NE</Code>
+        <Value>50</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NJ</Code>
+        <Value>07</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NK</Code>
+        <Value>04</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NM</Code>
+        <Value>04</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NO</Code>
+        <Value>04</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>P7</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NI</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NH</Code>
+        <Value>05</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>FS</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NR</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NN</Code>
+        <Value>08</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>EM</Code>
+        <Value>07</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NT</Code>
+        <Value>06</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>V1</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>DI</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NF</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>DC</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>NX</Code>
+        <Value>09</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>MX</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>MC</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>MY</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>M7</Code>
+        <Value>01</Value>
+      </v1Seg>
+      <v1Seg>
+        <Code>ME</Code>
+        <Value>50</Value>
+      </v1Seg>
+    </v1Segs>
+  </V1Segment>
+  <ConsEnqTransInfo0102 xmlns="https://secure.transunion.co.za/TUBureau">
+    <DefiniteMatchCount>1</DefiniteMatchCount>
+    <PossibleMatchCount>00</PossibleMatchCount>
+    <MatchedConsumerNo>623398630</MatchedConsumerNo>
+    <PossibleConsumerNo />
+    <PossibleAdverseIndicator />
+  </ConsEnqTransInfo0102>
+  <EchoData0001 xmlns="https://secure.transunion.co.za/TUBureau">
+    <SubscriberCode>00151</SubscriberCode>
+    <ClientReference>Home Loan Enqui</ClientReference>
+    <BranchNumber />
+    <BatchNumber />
+  </EchoData0001>
+  <ConsumerInfoNO04 xmlns="https://secure.transunion.co.za/TUBureau">
+    <RecordSeq>01</RecordSeq>
+    <Part>001</Part>
+    <PartSeq>01</PartSeq>
+    <ConsumerNo>623398630</ConsumerNo>
+    <Surname>APPANNA</Surname>
+    <Forename1>SEETHIAH</Forename1>
+    <Forename2 />
+    <Forename3 />
+    <Title>MR</Title>
+    <Gender>M</Gender>
+    <NameInfoDate>20140522</NameInfoDate>
+    <DateOfBirth>19490814</DateOfBirth>
+    <IdentityNo1>4908145134086</IdentityNo1>
+    <IdentityNo2 />
+    <MaritalStatusCode>M</MaritalStatusCode>
+    <MaritalStatusDesc>MARRIED</MaritalStatusDesc>
+    <Dependants>01</Dependants>
+    <SpouseName1>YELLAMAIA</SpouseName1>
+    <SpouseName2 />
+    <TelephoneNumbers>H(011)6094143  B(011)3155035</TelephoneNumbers>
+    <DeceasedDate>00000000</DeceasedDate>
+  </ConsumerInfoNO04>
+  <FraudScoreFS01 xmlns="https://secure.transunion.co.za/TUBureau">
+    <RecordSequence>01</RecordSequence>
+    <Part>001</Part>
+    <PartSequence>01</PartSequence>
+    <ConsumerNo>623398630</ConsumerNo>
+    <Rating>2</Rating>
+    <RatingDescription>MINOR IRREGULARITIES - LOW PROBABILITY OF SUSPICIOUS DATA</RatingDescription>
+    <ReasonCode>
+      <string>BS36</string>
+      <string>BS40</string>
+      <string>BS44</string>
+      <string>BS48</string>
+      <string>BS49</string>
+    </ReasonCode>
+    <ReasonDescription>
+      <string>HOME TEL NUMBER ON BUREAU HEADER AND NO HOME TEL NUMBER ON APPLICATION</string>
+      <string>EMPLOYER NAME ON BUREAU HEADER AND NO EMPLOYER NAME ON APPLICATION</string>
+      <string>ADDRESS1 ON BUREAU HEADER AND NO ADDRESS1 ON APPLICATION</string>
+      <string>Address2 on bureau header and No Address2 on application</string>
+      <string>SERIOUS ALERT - HIGH NUMBER OF ENQUIRIES WITHIN 12 HOURS</string>
+    </ReasonDescription>
+  </FraudScoreFS01>
+  <EmpiricaEM07 xmlns="https://secure.transunion.co.za/TUBureau">
+    <ConsumerNo>623398630</ConsumerNo>
+    <EmpiricaScore>00628</EmpiricaScore>
+    <ExclusionCode />
+    <ExclusionCodeDescription />
+    <ReasonCode>
+      <string>42</string>
+      <string>69</string>
+      <string>17</string>
+      <string>54</string>
+    </ReasonCode>
+    <ReasonDescription>
+      <string>Lack of usable revolving account information</string>
+      <string>Too few accounts with recent payment information</string>
+      <string>Number of recent enquiries</string>
+      <string>Lack of usable retail account information</string>
+    </ReasonDescription>
+    <ExpansionScore />
+    <ExpansionScoreDescription />
+    <EmpiricaVersion>AOV4.0</EmpiricaVersion>
+  </EmpiricaEM07>
+  <ConsumerCountersNC04 xmlns="https://secure.transunion.co.za/TUBureau">
+    <ConsumerNo>623398630</ConsumerNo>
+    <OwnEnquiries1YrBack>006</OwnEnquiries1YrBack>
+    <OwnEnquiries2YrsBack>000</OwnEnquiries2YrsBack>
+    <OwnEnquiriesMoreThen2YrsBack>000</OwnEnquiriesMoreThen2YrsBack>
+    <OtherEnquiries1YrBack>000</OtherEnquiries1YrBack>
+    <OtherEnquiries2YrsBack>008</OtherEnquiries2YrsBack>
+    <OtherEnquiriesMoreThen2YrsBack>000</OtherEnquiriesMoreThen2YrsBack>
+    <Judgements1YrBack>000</Judgements1YrBack>
+    <Judgements2YrsBack>000</Judgements2YrsBack>
+    <JudgementsMoreThen2YrsBack>000</JudgementsMoreThen2YrsBack>
+    <Notices1YrBack>000</Notices1YrBack>
+    <Notices2YrsBack>000</Notices2YrsBack>
+    <NoticesMoreThen2YrsBack>000</NoticesMoreThen2YrsBack>
+    <Defaults1YrBack>000</Defaults1YrBack>
+    <Defaults2YrsBack>000</Defaults2YrsBack>
+    <DefaultsMoreThen2YrsBack>000</DefaultsMoreThen2YrsBack>
+    <PaymentProfiles1YrBack>000</PaymentProfiles1YrBack>
+    <PaymentProfiles2YrsBack>005</PaymentProfiles2YrsBack>
+    <PaymentProfilesMoreThen2YrsBack>000</PaymentProfilesMoreThen2YrsBack>
+    <TraceAlerts1YrBack>000</TraceAlerts1YrBack>
+    <TraceAlerts2YrsBack>000</TraceAlerts2YrsBack>
+    <TraceAlertsMoreThen2YrsBack>000</TraceAlertsMoreThen2YrsBack>
+  </ConsumerCountersNC04>
+  <IdvNI01 xmlns="https://secure.transunion.co.za/TUBureau">
+    <IDVerifiedCode>V0</IDVerifiedCode>
+    <IDVerifiedDesc>ID and Surname Verified</IDVerifiedDesc>
+    <IDWarning />
+    <IDDesc />
+    <VerifiedSurname>APPANNA</VerifiedSurname>
+    <VerifiedForename1>SEETHIAH</VerifiedForename1>
+    <VerifiedForename2 />
+    <DeceasedDate />
+  </IdvNI01>
+  <AddressNA07 xmlns="https://secure.transunion.co.za/TUBureau">
+    <AddressNA07>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>20121128</InformationDate>
+      <Line1>43 TERRECE RD</Line1>
+      <Line2 />
+      <Suburb>EASTLEIGH</Suburb>
+      <City>EDENVALE</City>
+      <PostalCode>1609</PostalCode>
+      <ProvinceCode />
+      <Province />
+      <AddressPeriod>01</AddressPeriod>
+      <OwnerTenant>O</OwnerTenant>
+      <AddressChanged>N</AddressChanged>
+    </AddressNA07>
+    <AddressNA07>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>20030123</InformationDate>
+      <Line1>11 ANTELOPE PLACE</Line1>
+      <Line2 />
+      <Suburb />
+      <City />
+      <PostalCode>0000</PostalCode>
+      <ProvinceCode />
+      <Province />
+      <AddressPeriod>09</AddressPeriod>
+      <OwnerTenant />
+      <AddressChanged>N</AddressChanged>
+    </AddressNA07>
+    <AddressNA07>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>20121128</InformationDate>
+      <Line1>41 TERRACE RD</Line1>
+      <Line2 />
+      <Suburb>EASTLEIGH</Suburb>
+      <City>EDENVALE</City>
+      <PostalCode>1609</PostalCode>
+      <ProvinceCode />
+      <Province />
+      <AddressPeriod>09</AddressPeriod>
+      <OwnerTenant />
+      <AddressChanged>N</AddressChanged>
+    </AddressNA07>
+  </AddressNA07>
+  <EnquiriesNE50 xmlns="https://secure.transunion.co.za/TUBureau">
+    <EnquiryNE50>
+      <ConsumerNo>623398630</ConsumerNo>
+      <DateOfEnquiry>20140522</DateOfEnquiry>
+      <Subscriber>S A HOME LOANS</Subscriber>
+      <Contact>SA HOME LOANS 031 560 5300</Contact>
+      <EnquiryTypeCode>45</EnquiryTypeCode>
+      <EnquiryTypeDescription>OTHER</EnquiryTypeDescription>
+      <OwnAccount>Y</OwnAccount>
+    </EnquiryNE50>
+    <EnquiryNE50>
+      <ConsumerNo>623398630</ConsumerNo>
+      <DateOfEnquiry>20140324</DateOfEnquiry>
+      <Subscriber>S A HOME LOANS</Subscriber>
+      <Contact>SA HOME LOANS 031 560 5300</Contact>
+      <EnquiryTypeCode>45</EnquiryTypeCode>
+      <EnquiryTypeDescription>OTHER</EnquiryTypeDescription>
+      <OwnAccount>Y</OwnAccount>
+    </EnquiryNE50>
+    <EnquiryNE50>
+      <ConsumerNo>623398630</ConsumerNo>
+      <DateOfEnquiry>20140320</DateOfEnquiry>
+      <Subscriber>S A HOME LOANS</Subscriber>
+      <Contact>SA HOME LOANS 031 560 5300</Contact>
+      <EnquiryTypeCode>45</EnquiryTypeCode>
+      <EnquiryTypeDescription>OTHER</EnquiryTypeDescription>
+      <OwnAccount>Y</OwnAccount>
+    </EnquiryNE50>
+    <EnquiryNE50>
+      <ConsumerNo>623398630</ConsumerNo>
+      <DateOfEnquiry>20140217</DateOfEnquiry>
+      <Subscriber>S A HOME LOANS</Subscriber>
+      <Contact>SA HOME LOANS 031 560 5300</Contact>
+      <EnquiryTypeCode>45</EnquiryTypeCode>
+      <EnquiryTypeDescription>OTHER</EnquiryTypeDescription>
+      <OwnAccount>Y</OwnAccount>
+    </EnquiryNE50>
+    <EnquiryNE50>
+      <ConsumerNo>623398630</ConsumerNo>
+      <DateOfEnquiry>20140214</DateOfEnquiry>
+      <Subscriber>S A HOME LOANS</Subscriber>
+      <Contact>SA HOME LOANS 031 560 5300</Contact>
+      <EnquiryTypeCode>45</EnquiryTypeCode>
+      <EnquiryTypeDescription>OTHER</EnquiryTypeDescription>
+      <OwnAccount>Y</OwnAccount>
+    </EnquiryNE50>
+    <EnquiryNE50>
+      <ConsumerNo>623398630</ConsumerNo>
+      <DateOfEnquiry>20140213</DateOfEnquiry>
+      <Subscriber>S A HOME LOANS</Subscriber>
+      <Contact>SA HOME LOANS 031 560 5300</Contact>
+      <EnquiryTypeCode>45</EnquiryTypeCode>
+      <EnquiryTypeDescription>OTHER</EnquiryTypeDescription>
+      <OwnAccount>Y</OwnAccount>
+    </EnquiryNE50>
+  </EnquiriesNE50>
+  <AKANamesNK04 xmlns="https://secure.transunion.co.za/TUBureau">
+    <AKANamesNK04>
+      <RecordSeq>01</RecordSeq>
+      <Part>001</Part>
+      <PartSeq>01</PartSeq>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>20130116</InformationDate>
+      <AKAName>APPANNA,SEETHIAN</AKAName>
+    </AKANamesNK04>
+    <AKANamesNK04>
+      <RecordSeq>02</RecordSeq>
+      <Part>001</Part>
+      <PartSeq>01</PartSeq>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>19960723</InformationDate>
+      <AKAName>APPANNA,SEETHIAIA</AKAName>
+    </AKANamesNK04>
+  </AKANamesNK04>
+  <EmploymentNM04 xmlns="https://secure.transunion.co.za/TUBureau">
+    <EmploymentNM04>
+      <RecordSeq>01</RecordSeq>
+      <Part>001</Part>
+      <PartSeq>01</PartSeq>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>20130116</InformationDate>
+      <Occupation />
+      <EmployerName>CONSTANCIA HOTEL</EmployerName>
+      <EmploymentPeriod>00</EmploymentPeriod>
+    </EmploymentNM04>
+    <EmploymentNM04>
+      <RecordSeq>02</RecordSeq>
+      <Part>001</Part>
+      <PartSeq>01</PartSeq>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>20130114</InformationDate>
+      <Occupation>MANAGER</Occupation>
+      <EmployerName>PROTEA LANDMARK LODGE</EmployerName>
+      <EmploymentPeriod>00</EmploymentPeriod>
+    </EmploymentNM04>
+    <EmploymentNM04>
+      <RecordSeq>03</RecordSeq>
+      <Part>001</Part>
+      <PartSeq>01</PartSeq>
+      <ConsumerNo>623398630</ConsumerNo>
+      <InformationDate>20080824</InformationDate>
+      <Occupation />
+      <EmployerName>SEABOARD HOTEL</EmployerName>
+      <EmploymentPeriod>00</EmploymentPeriod>
+    </EmploymentNM04>
+  </EmploymentNM04>
+  <PaymentProfilesP701 xmlns="https://secure.transunion.co.za/TUBureau">
+    <PaymentProfileP701>
+      <ConsumerNo>623398630</ConsumerNo>
+      <LastUpdateDate>20130121</LastUpdateDate>
+      <SupplierName>TELKOM</SupplierName>
+      <IndustryCode>TE</IndustryCode>
+      <Industry>Telecoms</Industry>
+      <AccountTypeCode>F</AccountTypeCode>
+      <AccountTypeDesc>OPEN ACCOUNT WITHOUT CREDIT LI</AccountTypeDesc>
+      <AccountNumber />
+      <SubAccount />
+      <DateOpened>19820508</DateOpened>
+      <OpeningBalance>000000000</OpeningBalance>
+      <Instalment>000000215</Instalment>
+      <CurrentBalance>000000215</CurrentBalance>
+      <Terms>0000</Terms>
+      <OverdueAmount>000000000</OverdueAmount>
+      <OwnershipType>00</OwnershipType>
+      <NumberOfParticipantsInJointLoan>00</NumberOfParticipantsInJointLoan>
+      <PaymentType>00</PaymentType>
+      <RepaymentFrequency>03</RepaymentFrequency>
+      <DeferredPaymentDate>00000000</DeferredPaymentDate>
+      <AccSoldTo3rdParty>00</AccSoldTo3rdParty>
+      <ThirdPartyName />
+      <PaymentHistories>
+        <PaymentHistory>
+          <Date>201405</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201404</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201403</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201402</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201401</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201312</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201311</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201310</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201309</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201308</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201307</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201306</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201305</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201304</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201303</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201302</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201301</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201212</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201211</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201210</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201209</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201208</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201207</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201206</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+      </PaymentHistories>
+    </PaymentProfileP701>
+    <PaymentProfileP701>
+      <ConsumerNo>623398630</ConsumerNo>
+      <LastUpdateDate>20130125</LastUpdateDate>
+      <SupplierName>THE HUB</SupplierName>
+      <IndustryCode>GR</IndustryCode>
+      <Industry>General Retail</Industry>
+      <AccountTypeCode>R</AccountTypeCode>
+      <AccountTypeDesc>REVOLVING</AccountTypeDesc>
+      <AccountNumber />
+      <SubAccount />
+      <DateOpened>19920101</DateOpened>
+      <OpeningBalance>000002590</OpeningBalance>
+      <Instalment>000000025</Instalment>
+      <CurrentBalance>000000033</CurrentBalance>
+      <Terms />
+      <OverdueAmount>000000000</OverdueAmount>
+      <OwnershipType>00</OwnershipType>
+      <NumberOfParticipantsInJointLoan>00</NumberOfParticipantsInJointLoan>
+      <PaymentType>00</PaymentType>
+      <RepaymentFrequency>03</RepaymentFrequency>
+      <DeferredPaymentDate>00000000</DeferredPaymentDate>
+      <AccSoldTo3rdParty>00</AccSoldTo3rdParty>
+      <ThirdPartyName />
+      <PaymentHistories>
+        <PaymentHistory>
+          <Date>201405</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201404</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201403</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201402</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201401</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201312</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201311</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201310</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201309</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201308</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201307</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201306</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201305</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201304</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201303</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201302</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201301</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201212</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201211</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201210</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201209</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201208</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201207</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201206</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+      </PaymentHistories>
+    </PaymentProfileP701>
+    <PaymentProfileP701>
+      <ConsumerNo>623398630</ConsumerNo>
+      <LastUpdateDate>20130118</LastUpdateDate>
+      <SupplierName>FNB CREDIT CARD</SupplierName>
+      <IndustryCode>CC</IndustryCode>
+      <Industry>Credit Card</Industry>
+      <AccountTypeCode>C</AccountTypeCode>
+      <AccountTypeDesc>CREDIT CARD</AccountTypeDesc>
+      <AccountNumber />
+      <SubAccount />
+      <DateOpened>19900823</DateOpened>
+      <OpeningBalance>000011000</OpeningBalance>
+      <Instalment>000000000</Instalment>
+      <CurrentBalance>000000000</CurrentBalance>
+      <Terms />
+      <OverdueAmount>000000000</OverdueAmount>
+      <OwnershipType>00</OwnershipType>
+      <NumberOfParticipantsInJointLoan>00</NumberOfParticipantsInJointLoan>
+      <PaymentType>00</PaymentType>
+      <RepaymentFrequency>03</RepaymentFrequency>
+      <DeferredPaymentDate>00000000</DeferredPaymentDate>
+      <AccSoldTo3rdParty>00</AccSoldTo3rdParty>
+      <ThirdPartyName />
+      <PaymentHistories>
+        <PaymentHistory>
+          <Date>201405</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201404</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201403</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201402</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201401</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201312</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201311</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201310</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201309</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201308</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201307</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201306</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201305</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201304</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201303</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201302</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201301</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201212</Date>
+          <StatusCode>P</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201211</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201210</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201209</Date>
+          <StatusCode>P</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201208</Date>
+          <StatusCode>P</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201207</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201206</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+      </PaymentHistories>
+    </PaymentProfileP701>
+    <PaymentProfileP701>
+      <ConsumerNo>623398630</ConsumerNo>
+      <LastUpdateDate>20130201</LastUpdateDate>
+      <SupplierName>GLENRAND MIB</SupplierName>
+      <IndustryCode>IN</IndustryCode>
+      <Industry>Insurance</Industry>
+      <AccountTypeCode>S</AccountTypeCode>
+      <AccountTypeDesc>SHORT TERM INSURANCE</AccountTypeDesc>
+      <AccountNumber />
+      <SubAccount />
+      <DateOpened>19920623</DateOpened>
+      <OpeningBalance>000000000</OpeningBalance>
+      <Instalment>000001861</Instalment>
+      <CurrentBalance>000001861</CurrentBalance>
+      <Terms>0000</Terms>
+      <OverdueAmount>000000000</OverdueAmount>
+      <OwnershipType>00</OwnershipType>
+      <NumberOfParticipantsInJointLoan>00</NumberOfParticipantsInJointLoan>
+      <PaymentType>00</PaymentType>
+      <RepaymentFrequency>03</RepaymentFrequency>
+      <DeferredPaymentDate>00000000</DeferredPaymentDate>
+      <AccSoldTo3rdParty>00</AccSoldTo3rdParty>
+      <ThirdPartyName />
+      <PaymentHistories>
+        <PaymentHistory>
+          <Date>201405</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201404</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201403</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201402</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201401</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201312</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201311</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201310</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201309</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201308</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201307</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201306</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201305</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201304</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201303</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201302</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201301</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201212</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201211</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201210</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201209</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201208</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201207</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201206</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+      </PaymentHistories>
+    </PaymentProfileP701>
+    <PaymentProfileP701>
+      <ConsumerNo>623398630</ConsumerNo>
+      <LastUpdateDate>20130118</LastUpdateDate>
+      <SupplierName>VODACOM SP</SupplierName>
+      <IndustryCode>CE</IndustryCode>
+      <Industry>Cellular</Industry>
+      <AccountTypeCode>F</AccountTypeCode>
+      <AccountTypeDesc>OPEN ACCOUNT WITHOUT CREDIT LI</AccountTypeDesc>
+      <AccountNumber />
+      <SubAccount />
+      <DateOpened>20070822</DateOpened>
+      <OpeningBalance>000000000</OpeningBalance>
+      <Instalment>000000241</Instalment>
+      <CurrentBalance>000000241</CurrentBalance>
+      <Terms />
+      <OverdueAmount>000000000</OverdueAmount>
+      <OwnershipType>00</OwnershipType>
+      <NumberOfParticipantsInJointLoan>00</NumberOfParticipantsInJointLoan>
+      <PaymentType>00</PaymentType>
+      <RepaymentFrequency>03</RepaymentFrequency>
+      <DeferredPaymentDate>00000000</DeferredPaymentDate>
+      <AccSoldTo3rdParty>00</AccSoldTo3rdParty>
+      <ThirdPartyName />
+      <PaymentHistories>
+        <PaymentHistory>
+          <Date>201405</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201404</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201403</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201402</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201401</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201312</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201311</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201310</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201309</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201308</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201307</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201306</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201305</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201304</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201303</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201302</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201301</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201212</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201211</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201210</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201209</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201208</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201207</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201206</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+      </PaymentHistories>
+    </PaymentProfileP701>
+    <PaymentProfileP701>
+      <ConsumerNo>623398630</ConsumerNo>
+      <LastUpdateDate>20130118</LastUpdateDate>
+      <SupplierName>FNB HOME LOANS</SupplierName>
+      <IndustryCode>MB</IndustryCode>
+      <Industry>Mortgage Bonds</Industry>
+      <AccountTypeCode>H</AccountTypeCode>
+      <AccountTypeDesc>HOME LOAN</AccountTypeDesc>
+      <AccountNumber />
+      <SubAccount />
+      <DateOpened>20071005</DateOpened>
+      <OpeningBalance>000370000</OpeningBalance>
+      <Instalment>000002947</Instalment>
+      <CurrentBalance>000021349</CurrentBalance>
+      <Terms>0240</Terms>
+      <OverdueAmount>000000000</OverdueAmount>
+      <OwnershipType>02</OwnershipType>
+      <NumberOfParticipantsInJointLoan>03</NumberOfParticipantsInJointLoan>
+      <PaymentType>00</PaymentType>
+      <RepaymentFrequency>03</RepaymentFrequency>
+      <DeferredPaymentDate>00000000</DeferredPaymentDate>
+      <AccSoldTo3rdParty>00</AccSoldTo3rdParty>
+      <ThirdPartyName />
+      <PaymentHistories>
+        <PaymentHistory>
+          <Date>201405</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201404</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201403</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201402</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201401</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201312</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201311</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201310</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201309</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201308</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201307</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201306</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201305</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201304</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201303</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201302</Date>
+          <StatusCode>=</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201301</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201212</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201211</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201210</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201209</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201208</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201207</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+        <PaymentHistory>
+          <Date>201206</Date>
+          <StatusCode>0</StatusCode>
+        </PaymentHistory>
+      </PaymentHistories>
+    </PaymentProfileP701>
+  </PaymentProfilesP701>
+  <NLRCounterSeqmentMC01 xmlns="https://secure.transunion.co.za/TUBureau">
+    <NLRCounterSeqmentMC01>
+      <SegmentCode>MC</SegmentCode>
+      <ConsumerNumber>623398630</ConsumerNumber>
+      <CurrentYearEnquiriesClient>000</CurrentYearEnquiriesClient>
+      <CurrentYearEnquiriesOtherSubscribers>000</CurrentYearEnquiriesOtherSubscribers>
+      <CurrentYearPositiveNLRLoans>000</CurrentYearPositiveNLRLoans>
+      <CurrentYearHighestMonthsInArrears>000</CurrentYearHighestMonthsInArrears>
+      <PreviousYearEnquiriesClient>000</PreviousYearEnquiriesClient>
+      <PreviousYearEnquiriesOtherSubscribers>000</PreviousYearEnquiriesOtherSubscribers>
+      <PreviousYearPositiveNLRLoans>000</PreviousYearPositiveNLRLoans>
+      <PreviousYearHighestMonthsInArrears>000</PreviousYearHighestMonthsInArrears>
+      <AllOtherYearEnquiriesClient>000</AllOtherYearEnquiriesClient>
+      <AllOtherYearEnquiriesOtherSubscribers>000</AllOtherYearEnquiriesOtherSubscribers>
+      <AllOtherYearPositiveNLRLoans>000</AllOtherYearPositiveNLRLoans>
+      <AllOtherYearsHighestMonthsInArrears>000</AllOtherYearsHighestMonthsInArrears>
+      <CumulativeInstalmentValue>000000000</CumulativeInstalmentValue>
+      <CumulativeOutstandingBalance>000000000</CumulativeOutstandingBalance>
+      <WorstMonthInArrearsEver>000</WorstMonthInArrearsEver>
+    </NLRCounterSeqmentMC01>
+  </NLRCounterSeqmentMC01>
+  <AggregateNX09 xmlns="https://secure.transunion.co.za/TUBureau">
+    <ConsumerNo>623398630</ConsumerNo>
+    <PPWorstArrears6Months>0</PPWorstArrears6Months>
+    <PPWorstArrears24Months>0</PPWorstArrears24Months>
+  </AggregateNX09>
+  <CCASummaryMX01 xmlns="https://secure.transunion.co.za/TUBureau">
+    <ConsumerNo>623398630</ConsumerNo>
+    <TotalActiveAccounts>004</TotalActiveAccounts>
+    <TotalClosedAccounts24Mths>001</TotalClosedAccounts24Mths>
+    <TotalAdverseAccounts24Mths>000</TotalAdverseAccounts24Mths>
+    <HighestActualMonths24Mths>000</HighestActualMonths24Mths>
+    <NoRevolvingAccounts>001</NoRevolvingAccounts>
+    <NoCurrentInstallmentAccounts>000</NoCurrentInstallmentAccounts>
+    <NoCurrentOpenAccounts>002</NoCurrentOpenAccounts>
+    <CurrentBalance>000002350</CurrentBalance>
+    <CurrentBalanceInd />
+    <CurrentMonthlyInstallment>000002342</CurrentMonthlyInstallment>
+    <CurrentMonthlyInstallmentBalInd />
+    <CumulativeArrearsAmount>000000000</CumulativeArrearsAmount>
+    <CumulativeArrearsAmountBalanceInd />
+  </CCASummaryMX01>
+</BureauResponse>

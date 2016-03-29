@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="299d22d0-d5ce-405c-817e-c953c00c8ba2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SAHL.Web.Services.Internal/Capitec.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Capitec.xsd" MetadataType="Schema" ID="fd0c0448-6b6d-461e-8867-c18bb877725b" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/Capitec.svc?xsd=xsd0" />
+    <MetadataFile FileName="Capitec2.xsd" MetadataType="Schema" ID="d019ab42-25b3-401b-9e7c-89bf5faadd7d" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/Capitec.svc?xsd=xsd2" />
+    <MetadataFile FileName="Capitec.wsdl" MetadataType="Wsdl" ID="0e924b66-abc1-4ce7-90a1-59f2d6c4b33b" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/Capitec.svc?wsdl" />
+    <MetadataFile FileName="Capitec.disco" MetadataType="Disco" ID="06d0c3ae-db10-4c92-a1b2-9e00c5a3790a" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/Capitec.svc?disco" />
+    <MetadataFile FileName="Capitec1.xsd" MetadataType="Schema" ID="d3224040-687c-422b-85fa-65c0fd129f4c" SourceId="1" SourceUrl="http://localhost/SAHL.Web.Services.Internal/Capitec.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

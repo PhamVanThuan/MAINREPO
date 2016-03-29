@@ -1,0 +1,100 @@
+<div ng-controller="LossControl_Invoices_InvoicesRootTileConfigurationCtrl">
+    <div class="search-body">   
+ 
+<div class="search-header">
+        <div class="search-input">
+            <input type="text" ng-model="searchTerm" placeholder="Search..." ng-change="search()" ng-keypress="keyPressed($event)" />
+            <i ng-if="searchTerm" class="btn-clear" tabindex="-1" type="button" ng-click="clear()"></i>
+        </div><a href="" id="search-button"><i class="icon-search"></i></a>
+    </div>
+
+
+
+
+    <div class="search-types">       
+    <!--Invoice Status Dropdown -->
+        <nav class="horizontal-menu compact no-background small-text no-highlight animate-show" id="search-filter-nav" >  
+
+
+        <nav class="horizontal-menu compact no-background small-text" id="search-nav">
+                <nav class="horizontal-menu compact no-background small-text no-highlight animate-show" id="search-filter-nav">
+            <ul>
+                <li ng-repeat="searchFilter in searchFilters.activeSearchType.filters" ng-if="searchFilter.filterType ==='dropdown'">
+                    <a class="dropdown-toggle" href="" ng-class="{selecteddefault: searchFilters.$isNonDefaultOptionSelected(searchFilter)}">{{searchFilter.selectedFilter}}</a>
+                    <ul class="dropdown-menu" data-role="dropdown">
+                        <li ng-repeat="option in searchFilter.options" 
+                            ng-click="searchFilters.$selectOption(searchFilter, option);search();" 
+                            ng-class="{selected: searchFilters.$isSelectedOption(searchFilter,option)}">
+                            <i ng-if="searchFilters.$isSelectedOption(searchFilter,option)" class="icon-checkmark"></i>{{option}}
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <button id="search-filter-clear" ng-click="resetFilters()" ng-disabled="!searchFilters.$hasActiveFilters">clear</button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <nav class="search-filters" id="searchFilters">
+        <div class="animate-show" id="search-filter-time">
+            <span>Found {{searchResult.numberOfResults}} {{searchFilters.activeSearchType.label.toLowerCase()}} in {{searchResult.queryDuration}}ms</span>
+        </div>
+        
+    </nav>
+
+        
+
+       
+        </nav>
+
+        <br>
+        <!--End Status Dropdown -->
+    </div>
+    <div>
+        <nav class="search-filters" id="searchFilters">
+            <div class="animate-show" id="search-filter-time">
+            </div>
+        </nav>
+        <br>
+    </div>
+      <!-- BEGIN Search Results Div -->
+      <div>
+        <div class="results" spin-loader="searching" style="padding-left: 50px">
+                <!--Invoice List Grid -->  
+                <div ng-show="invoiceListGrid.data.length > 0"
+                    ui-grid="invoiceListGrid"
+                    ui-grid-grouping   
+                    ui-grid-selection                                                                 
+                    ui-grid-pinning
+                    ui-grid-auto-resize
+                    spinner-key="spinnerGrid" spinner-start-active="true" ng-style="getTableHeight()">
+                </div> 
+                 <!--End List Grid -->  
+                <!--Pagination -->
+                <div class="search-footer">
+                    <div class="pagination">
+                    <ul>
+                        <li class="prev" ng-class="{disabled: searchResult.pages.isPrevPageEnabled === false}" 
+                                         ng-click="search(currentPage - 1)" 
+                                         ng-show="searchResult.pages.pages.length > 0">
+                            <a><i class="icon-previous"></i></a>
+                        </li>
+                        <li ng-repeat="page in searchResult.pages.pages" 
+                            ng-click="search(page.pageNum)" 
+                            ng-class="{active: page.isSelected === true }">
+                            <a>{{page.pageNum}}</a>
+                        </li>
+                        <li class="next" ng-class="{disabled: searchResult.pages.isNextPageEnabled === false}" 
+                                         ng-click="search(currentPage + 1)"
+                                         ng-show="searchResult.pages.pages.length > 0">
+                            <a><i class="icon-next"></i></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <!--Pagination -->
+        </div>
+      </div>
+      <!-- END OF Search Results Div -->
+    </div>  
+</div>

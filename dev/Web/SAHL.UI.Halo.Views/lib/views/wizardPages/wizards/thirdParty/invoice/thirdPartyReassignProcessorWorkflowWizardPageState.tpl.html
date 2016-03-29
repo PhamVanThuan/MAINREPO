@@ -1,0 +1,22 @@
+<div ng-controller="Wizards_ThirdParty_Invoice_ThirdPartyReassignProcessorWorkflowWizardPageStateCtrl">
+    <div class="grid">
+        <div class="row">
+            <div class="span6">
+                <strong>Currently assigned to:</strong>
+            </div>
+            <div class="span6">
+                {{curentUserAssignedTo.FullName}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <strong>Re-Assign to:</strong>
+            </div>
+            <div class="span6">
+                <select ng-model="userToReAssignTo" style="width: 300px;" ng-options="user.UserOrganisationStructureKey as user.FullName for user in activeUsersWithCapability">
+                    <option value="">--Select--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

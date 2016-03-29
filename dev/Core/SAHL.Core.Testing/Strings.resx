@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GetTableFields" xml:space="preserve">
+    <value>use [{0}]
+SELECT DISTINCT
+'{0}' as [Catalog],
+a1.TABLE_SCHEMA as [Schema], 
+a1.TABLE_NAME as [TableName],
+a1.NewType as TypeName,
+a1.COLUMN_NAME as PropertyName,
+a1.IsPrimaryKey,
+CASE WHEN a1.IsPrimaryKey = 1 THEN COLUMNPROPERTY(object_id(a1.TABLE_SCHEMA + '.' + a1.TABLE_NAME), a1.COLUMN_NAME, 'IsIdentity') ELSE 0 END as IsIdentitySeed,
+a1.ORDINAL_POSITION
+ FROM 
+(
+/*using top because i'm putting an order by ordinal_position on it. 
+putting a top on it is the only way for a subquery to be ordered*/
+SELECT TOP 100 PERCENT
+
+c.COLUMN_NAME,
+c.TABLE_NAME,
+c.TABLE_SCHEMA,
+c.DATA_TYPE,
+c.IS_NULLABLE,
+c.ORDINAL_POSITION,
+CASE WHEN pk.COLUMN_NAME IS NOT NULL THEN 1 ELSE 0 END as IsPrimaryKey,
+CASE 
+    WHEN DATA_TYPE = 'varchar' THEN 'System.String'
+    WHEN DATA_TYPE = 'nvarchar' THEN 'System.String'
+    WHEN DATA_TYPE = 'datetime' AND IS_NULLABLE = 'NO' THEN 'System.DateTime'
+    WHEN DATA_TYPE = 'datetime' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.DateTime]'                                       WHEN DATA_TYPE = 'datetime2' AND IS_NULLABLE = 'NO' THEN 'System.DateTime'
+    WHEN DATA_TYPE = 'datetime2' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.DateTime]'
+    WHEN DATA_TYPE = 'int' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Int32]'
+    WHEN DATA_TYPE = 'int' AND IS_NULLABLE = 'NO' THEN 'System.Int32'
+    WHEN DATA_TYPE = 'smallint' AND IS_NULLABLE = 'NO' THEN 'System.Int16'
+    WHEN DATA_TYPE = 'smallint' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Int16]'
+    WHEN DATA_TYPE = 'decimal' AND IS_NULLABLE = 'NO' THEN 'System.Decimal'
+    WHEN DATA_TYPE = 'decimal' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Decimal]'
+    WHEN DATA_TYPE = 'numeric' AND IS_NULLABLE = 'NO' THEN 'System.Decimal'
+    WHEN DATA_TYPE = 'numeric' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Decimal]'
+    WHEN DATA_TYPE = 'real' AND IS_NULLABLE = 'NO' THEN 'System.Decimal'
+    WHEN DATA_TYPE = 'real' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Decimal]'    
+    WHEN DATA_TYPE = 'float' AND IS_NULLABLE = 'NO' THEN 'System.Double'
+    WHEN DATA_TYPE = 'float' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Double]'   
+    WHEN DATA_TYPE = 'money' AND IS_NULLABLE = 'NO' THEN 'System.Decimal'
+    WHEN DATA_TYPE = 'money' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Decimal]'
+    WHEN DATA_TYPE = 'bigint' AND IS_NULLABLE = 'NO' THEN 'System.Int64'
+    WHEN DATA_TYPE = 'bigint' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Int64]'
+    WHEN DATA_TYPE = 'tinyint' AND IS_NULLABLE = 'NO' THEN 'System.Byte'
+    WHEN DATA_TYPE = 'tinyint' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Byte]'
+    WHEN DATA_TYPE = 'char' THEN 'System.String'
+    WHEN DATA_TYPE = 'timestamp' THEN 'System.Byte[]'
+    WHEN DATA_TYPE = 'varbinary' THEN 'System.Byte[]'
+    WHEN DATA_TYPE = 'bit' AND IS_NULLABLE = 'NO' THEN 'System.Boolean'
+    WHEN DATA_TYPE = 'bit' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Boolean]'
+    WHEN DATA_TYPE = 'xml' THEN 'System.String'
+    WHEN DATA_TYPE = 'image' THEN 'System.Byte[]'
+    WHEN DATA_TYPE = 'uniqueidentifier' AND IS_NULLABLE = 'NO' THEN 'System.Guid'
+    WHEN DATA_TYPE = 'uniqueidentifier' AND IS_NULLABLE = 'YES' THEN 'System.Nullable`1[System.Guid]'
+    WHEN DATA_TYPE = 'text' THEN 'System.String'
+    WHEN DATA_TYPE = 'byte[]' THEN 'System.Byte[]'
+END AS NewType
+FROM INFORMATION_SCHEMA.COLUMNS c
+LEFT JOIN (
+            SELECT ku.TABLE_CATALOG,ku.TABLE_SCHEMA,ku.TABLE_NAME,ku.COLUMN_NAME
+            FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS tc
+            INNER JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS ku
+                ON tc.CONSTRAINT_TYPE = 'PRIMARY KEY' 
+                AND tc.CONSTRAINT_NAME = ku.CONSTRAINT_NAME
+         )   pk 
+ON  c.TABLE_CATALOG = pk.TABLE_CATALOG
+            AND c.TABLE_SCHEMA = pk.TABLE_SCHEMA
+            AND c.TABLE_NAME = pk.TABLE_NAME
+            AND c.COLUMN_NAME = pk.COLUMN_NAME
+WHERE c.TABLE_NAME = '{1}'
+AND c.TABLE_SCHEMA not in ('mig','archive','hack','report','migration','test','solr')
+AND c.TABLE_CATALOG = '{0}'
+ORDER BY ORDINAL_POSITION
+) AS a1
+order by IsPrimaryKey desc, 
+ORDINAL_POSITION</value>
+  </data>
+</root>

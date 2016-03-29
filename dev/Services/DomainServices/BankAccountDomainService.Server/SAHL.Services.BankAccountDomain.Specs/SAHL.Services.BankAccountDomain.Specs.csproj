@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65730963-CA0D-4ADA-8344-3F9F64BE5CEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.BankAccountDomain.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.BankAccountDomain.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Dapper">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing.Fakes">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.BankAccountDomain, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.BankAccountDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlerSpecs\Internal\AddBankAccount\when_adding_a_bank_account_that_does_not_exist.cs" />
+    <Compile Include="CommandHandlerSpecs\Internal\AddBankAccount\when_adding_a_bank_account_that_exists.cs" />
+    <Compile Include="CommandHandlerSpecs\Internal\AddBankAccount\when_registering_rules.cs" />
+    <Compile Include="CommandHandlerSpecs\LinkBankAccountToClient\when_add_bank_account_returns_error_messages.cs" />
+    <Compile Include="CommandHandlerSpecs\LinkBankAccountToClient\when_no_link_or_bank_account_exists.cs" />
+    <Compile Include="CommandHandlerSpecs\LinkBankAccountToClient\when_no_link_exists_and_the_bank_does_exist.cs" />
+    <Compile Include="CommandHandlerSpecs\LinkBankAccountToClient\when_the_link_exists_and_is_active.cs" />
+    <Compile Include="CommandHandlerSpecs\LinkBankAccountToClient\when_the_link_exists_and_is_inactive.cs" />
+    <Compile Include="Managers\BankAccountData\when_activating_a_client_bank_account.cs" />
+    <Compile Include="Managers\BankAccountData\when_adding_bank_account_to_client.cs" />
+    <Compile Include="Managers\BankAccountData\when_finding_an_existing_bank_account.cs" />
+    <Compile Include="Managers\BankAccountData\when_finding_an_existing_client_bank_account.cs" />
+    <Compile Include="Managers\BankAccountData\when_finding_existing_branch.cs" />
+    <Compile Include="Managers\BankAccountData\when_saving_a_bank_account.cs" />
+    <Compile Include="Managers\CDVValidationData\when_getting_accountIndications.cs" />
+    <Compile Include="Managers\CDVValidationData\when_getting_cdvs.cs" />
+    <Compile Include="Managers\CDVValidationData\when_getting_accounttyperecognitions.cs" />
+    <Compile Include="Managers\CDVValidationData\when_getting_cdv_exceptions_for_cdv.cs" />
+    <Compile Include="Managers\CDVValidationData\when_getting_a_bank_for_a_branch.cs" />
+    <Compile Include="Utils\CDVValidation\CDVConfigData.cs" />
+    <Compile Include="Utils\CDVValidation\when_validating_an_account_with_wrong_account_type.cs" />
+    <Compile Include="Utils\CDVValidation\when_validating_an_invalid_account_number.cs" />
+    <Compile Include="Utils\CDVValidation\when_validating_a_valid_account_number.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\DoesBankAccountPassCDVValidation\when_the_bank_account_fails_cdv_validation.cs" />
+    <Compile Include="Rules\DoesBankAccountPassCDVValidation\when_the_bank_account_passes_cdv_validation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.BankAccountDomain\SAHL.Services.BankAccountDomain.csproj">
+      <Project>{3809b035-1623-4a0d-af64-5b944bed9f5a}</Project>
+      <Name>SAHL.Services.BankAccountDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

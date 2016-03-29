@@ -1,0 +1,152 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAHL.Common.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Application" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RCS</Value>
+    </Setting>
+    <Setting Name="Admin" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;RCSAdmin&lt;/string&gt;
+  &lt;string&gt;IT Developers&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Sales" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;RCSSales&lt;/string&gt;
+  &lt;string&gt;IT Developers&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Supervisor" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;RCSSupervisor&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="Manager" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;RCSManager&lt;/string&gt;
+  &lt;string&gt;IT Developers&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="ADPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="LDAPConnection" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LDAP://DC=RCSHL,DC=COM</Value>
+    </Setting>
+    <Setting Name="ADUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RCSHL\AdriaanAdmin</Value>
+    </Setting>
+    <Setting Name="ReportServerUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAHL\SQLReportUser</Value>
+    </Setting>
+    <Setting Name="ReportServerUserNotPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ssapdr0W</Value>
+    </Setting>
+    <Setting Name="ProxyUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Sqlservice2</Value>
+    </Setting>
+    <Setting Name="ProxyPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">W0rdpass</Value>
+    </Setting>
+    <Setting Name="ProxyDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAHL</Value>
+    </Setting>
+    <Setting Name="Application1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RCS</Value>
+    </Setting>
+    <Setting Name="RepositoryFind" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">select Statement from dbo.uiStatement where Version = 	( select max(Version) from dbo.uiStatement
+	  where ApplicationName = @Application and StatementName = @Statement)
+and ApplicationName = @Application and StatementName = @Statement</Value>
+    </Setting>
+    <Setting Name="ImageIndexConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVA03;Initial Catalog=ImageIndex;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVA03;Initial Catalog=ImageIndex;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect</Value>
+    </Setting>
+    <Setting Name="DBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVS03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVS03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;</Value>
+    </Setting>
+    <Setting Name="X2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVA03;Initial Catalog=X2;Persist Security Info=True;User ID=eworkadmin2;Password=W0rdpass;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVA03;Initial Catalog=X2;Persist Security Info=True;User ID=eworkadmin2;Password=W0rdpass;</Value>
+    </Setting>
+    <Setting Name="SAHLConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVS03;Initial Catalog=SAHLDB;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVS03;Initial Catalog=SAHLDB;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;</Value>
+    </Setting>
+    <Setting Name="Warehouse" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVS03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVS03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;</Value>
+    </Setting>
+    <Setting Name="BatchConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVS03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVS03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;</Value>
+    </Setting>
+    <Setting Name="DataReportConnectionString" Type="(Connection string)" Scope="User">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVS03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVS03;Initial Catalog=2AM;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;</Value>
+    </Setting>
+    <Setting Name="MetricConnectionString" Type="(Connection string)" Scope="User">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVS03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVS03;Initial Catalog=Warehouse;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect;</Value>
+    </Setting>
+    <Setting Name="EWorkConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVS03;Initial Catalog=e-work;Persist Security Info=True;User ID=eworkadmin2;Password=W0rdpass;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVS03;Initial Catalog=e-work;Persist Security Info=True;User ID=eworkadmin2;Password=W0rdpass;</Value>
+    </Setting>
+    <Setting Name="TestWTFConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=DEVA03;Initial Catalog=TestDB_WTF;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=DEVA03;Initial Catalog=TestDB_WTF;Persist Security Info=True;User ID=ServiceArchitect;Password=Service1Architect</Value>
+    </Setting>
+    <Setting Name="UseWindowsIdentity" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UseCurrentPrincipal" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09A8CD6D-50A2-4E65-9213-3999EA132D7F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Tools.Capitec.CSJsonifier</RootNamespace>
+    <AssemblyName>SAHL.Tools.Capitec.CSJsonifier</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommandLine">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\CommandLineParser\lib\net45\CommandLine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileManagement.cs" />
+    <Compile Include="Filters\DecisionTreeGlobalsFilter.cs" />
+    <Compile Include="IBaseTemplate.cs" />
+    <Compile Include="IFakeBaseTemplate.cs" />
+    <Compile Include="IFileManagement.cs" />
+    <Compile Include="INamespaceProvider.cs" />
+    <Compile Include="IOCConfig.cs" />
+    <Compile Include="IScanConvention.cs" />
+    <Compile Include="IScanResult.cs" />
+    <Compile Include="ISharedModelManager.cs" />
+    <Compile Include="ITemplate.cs" />
+    <Compile Include="ITemplateForModel.cs" />
+    <Compile Include="ITemplateManager.cs" />
+    <Compile Include="IScanConventionFilter.cs" />
+    <Compile Include="ITypeScanner.cs" />
+    <Compile Include="IValidationAttributeScanner.cs" />
+    <Compile Include="Models\GlobalsModel.cs" />
+    <Compile Include="Models\SharedModels.cs" />
+    <Compile Include="NamespaceProvider.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\CommandScanConvention.cs" />
+    <Compile Include="Reflection\DecisionTreeGlobalsConvention.cs" />
+    <Compile Include="Reflection\QueryScanConvention.cs" />
+    <Compile Include="Reflection\SearchQueryScanConvention.cs" />
+    <Compile Include="Reflection\TypeScanConventionBase.cs" />
+    <Compile Include="Reflection\TypeScanner.cs" />
+    <Compile Include="SharedModelManager.cs" />
+    <Compile Include="TemplateManager.cs" />
+    <Compile Include="Templates\BaseTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\BaseTemplatePartial.cs" />
+    <Compile Include="Templates\FakeBaseTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FakeBaseTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\FakeBaseTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\CommandQueryTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandQueryTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\CommandQueryTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\CommandTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\CommandTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\DecisionTreeGlobalsTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DecisionTreeGlobalsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\DecisionTreeGlobalsTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\SearchQueryTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchQueryTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\SearchQueryTemplatePartial.cs" />
+    <Compile Include="Templates\Partials\SharedModelsTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SharedModelsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Partials\SharedModelsTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\ArrayValidationAttributeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ArrayValidationAttributeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\ArrayValidationAttributeTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\ComplexValidationAttributeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComplexValidationAttributeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\ComplexValidationAttributeTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\FieldDefinitionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FieldDefinitionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\FieldDefinitionTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\MethodDefinitionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MethodDefinitionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\MethodDefinitionTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\ParameterDefinitionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParameterDefinitionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\ParameterDefinitionTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\PropertyDefinitionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PropertyDefinitionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\PropertyDefinitionTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\RangeValidationAttributeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RangeValidationAttributeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\RangeValidationAttributeTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\TypeDefinitionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeDefinitionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\TypeDefinitionTemplatePartial.cs" />
+    <Compile Include="Templates\Shared\ValidationAttributeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationAttributeTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Shared\ValidationAttributeTemplatePartial.cs" />
+    <Compile Include="TextHelper.cs" />
+    <Compile Include="Validation\ValidationAttribute.cs" />
+    <Compile Include="Validation\ValidationAttributeScanner.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Templates\BaseTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>BaseTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\FakeBaseTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FakeBaseTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\CommandQueryTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CommandQueryTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\CommandTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CommandTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\DecisionTreeGlobalsTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DecisionTreeGlobalsTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\SearchQueryTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SearchQueryTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Partials\SharedModelsTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SharedModelsTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\ArrayValidationAttributeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ArrayValidationAttributeTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\ComplexValidationAttributeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ComplexValidationAttributeTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\FieldDefinitionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FieldDefinitionTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\MethodDefinitionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>MethodDefinitionTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\ParameterDefinitionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ParameterDefinitionTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\PropertyDefinitionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>PropertyDefinitionTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\RangeValidationAttributeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>RangeValidationAttributeTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\TypeDefinitionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>TypeDefinitionTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\Shared\ValidationAttributeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ValidationAttributeTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\Tools\General\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

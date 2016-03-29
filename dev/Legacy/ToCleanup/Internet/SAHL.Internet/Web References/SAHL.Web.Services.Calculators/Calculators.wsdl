@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.sahomeloans.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://webservices.sahomeloans.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is the SA Homeloans Calculator Web Service.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.sahomeloans.com/">
+      <s:element name="CalculatePresentValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dInstallment" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="iTerm" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dLTVRate" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePresentValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculatePresentValueResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateLTV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loanamount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="homevalue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateLTVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateLTVResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePTI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="installment" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="earnings" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePTIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculatePTIResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreditDisqualifications">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="cd" type="tns:CreditDisqualifications" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditDisqualifications">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="calculationdone" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ltv" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="pti" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="householdincome" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="loanamountrequired" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="estimatedproeprtyvalue" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmploymentTypeKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ifFurtherLending" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="term" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CreditDisqualificationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreditDisqualificationsResult" type="tns:CreditDisqualifications" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBaseRate">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReturnBaseRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnBaseRateResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnBaseRateFixed">
+        <s:complexType />
+      </s:element>
+      <s:element name="ReturnBaseRateFixedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnBaseRateFixedResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnApplicationTypeKeyByCalculatorMode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculatorMode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnApplicationTypeKeyByCalculatorModeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReturnApplicationTypeKeyByCalculatorModeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateOriginationFees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="originationfees" type="tns:OriginationFees" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OriginationFees">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="loanamount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="bondrequired" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="appType" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="cashout" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverrideCancelFeeamount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="capitalisefees" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="initiationfee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="registrationfee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="cancellationfee" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="interiminterest" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="bondtoregister" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateOriginationFeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateOriginationFeesResult" type="tns:OriginationFees" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateMinimumIncomeRequired">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="instalmentTotal" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="PTI" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateMinimumIncomeRequiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateMinimumIncomeRequiredResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMinimumPurchasePrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMinimumPurchasePriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMinimumPurchasePriceResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaximumPurchasePrice">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaximumPurchasePriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMaximumPurchasePriceResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMinimumHouseholdIncome">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMinimumHouseholdIncomeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMinimumHouseholdIncomeResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMinimumLTV">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMinimumLTVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMinimumLTVResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaximumSelfEmployedLTV">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaximumSelfEmployedLTVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMaximumSelfEmployedLTVResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaximumPTI">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaximumPTIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMaximumPTIResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMaximumTerm">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaximumTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMaximumTermResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMinimumMarketValue">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMinimumMarketValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMinimumMarketValueResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFlexiMinFixed">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFlexiMinFixedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFlexiMinFixedResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInitialProductKey">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInitialProductKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInitialProductKeyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInitialMarketRateKey">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInitialMarketRateKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetInitialMarketRateKeyResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePTIThroughBusinessModel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loanamount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="marginvalue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="baserate" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Term" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="HouseholdIncome" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculatePTIThroughBusinessModelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculatePTIThroughBusinessModelResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateLTVThroughBusinessModel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TotalLoanAmount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="PropertyValue" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateLTVThroughBusinessModelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateLTVThroughBusinessModelResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetupCreditCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OriginationSourceKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProductKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MortgageLoanPurpose" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmploymentTypeKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loanamount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstimatedPropertyValue" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="baserate" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Term" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="HouseholdIncome" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetupCreditCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetupCreditCriteriaResult" type="tns:CreditCriteria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CreditCriteria">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaPTI" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaPTIValue" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaLTV" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaLTVValue" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaMarginValue" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaMarginKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaCreditMatrixKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditCriteriaCategoryKey" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAffordabilityCreditCriteria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OriginationSourceKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ProductKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MortgageLoanPurpose" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmploymentTypeKey" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="loanamount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAffordabilityCreditCriteriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAffordabilityCreditCriteriaResult" type="tns:CreditCriteria" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateBondAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoanAmount" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateBondAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateBondAmountResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateInstallment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loanamount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="interestrate" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Term" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="InterestOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateInstallmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateInstallmentResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateInterestOverTerm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="loanamount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="interestrate" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Term" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="InterestOnly" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateInterestOverTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateInterestOverTermResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetControlValueByDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetControlValueByDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetControlValueByDescriptionResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculatePresentValueSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePresentValue" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePresentValueSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePresentValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateLTVSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateLTV" />
+  </wsdl:message>
+  <wsdl:message name="CalculateLTVSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateLTVResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePTISoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePTI" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePTISoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePTIResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreditDisqualificationsSoapIn">
+    <wsdl:part name="parameters" element="tns:CreditDisqualifications" />
+  </wsdl:message>
+  <wsdl:message name="CreditDisqualificationsSoapOut">
+    <wsdl:part name="parameters" element="tns:CreditDisqualificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBaseRateSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBaseRate" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBaseRateSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBaseRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBaseRateFixedSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnBaseRateFixed" />
+  </wsdl:message>
+  <wsdl:message name="ReturnBaseRateFixedSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnBaseRateFixedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnApplicationTypeKeyByCalculatorModeSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnApplicationTypeKeyByCalculatorMode" />
+  </wsdl:message>
+  <wsdl:message name="ReturnApplicationTypeKeyByCalculatorModeSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnApplicationTypeKeyByCalculatorModeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateOriginationFeesSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateOriginationFees" />
+  </wsdl:message>
+  <wsdl:message name="CalculateOriginationFeesSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateOriginationFeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateMinimumIncomeRequiredSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateMinimumIncomeRequired" />
+  </wsdl:message>
+  <wsdl:message name="CalculateMinimumIncomeRequiredSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateMinimumIncomeRequiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumPurchasePriceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMinimumPurchasePrice" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumPurchasePriceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMinimumPurchasePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumPurchasePriceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaximumPurchasePrice" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumPurchasePriceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaximumPurchasePriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumHouseholdIncomeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMinimumHouseholdIncome" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumHouseholdIncomeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMinimumHouseholdIncomeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumLTVSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMinimumLTV" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumLTVSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMinimumLTVResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumSelfEmployedLTVSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaximumSelfEmployedLTV" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumSelfEmployedLTVSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaximumSelfEmployedLTVResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumPTISoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaximumPTI" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumPTISoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaximumPTIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumTermSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaximumTerm" />
+  </wsdl:message>
+  <wsdl:message name="GetMaximumTermSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaximumTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumMarketValueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMinimumMarketValue" />
+  </wsdl:message>
+  <wsdl:message name="GetMinimumMarketValueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMinimumMarketValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFlexiMinFixedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFlexiMinFixed" />
+  </wsdl:message>
+  <wsdl:message name="GetFlexiMinFixedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFlexiMinFixedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInitialProductKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetInitialProductKey" />
+  </wsdl:message>
+  <wsdl:message name="GetInitialProductKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetInitialProductKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInitialMarketRateKeySoapIn">
+    <wsdl:part name="parameters" element="tns:GetInitialMarketRateKey" />
+  </wsdl:message>
+  <wsdl:message name="GetInitialMarketRateKeySoapOut">
+    <wsdl:part name="parameters" element="tns:GetInitialMarketRateKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePTIThroughBusinessModelSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculatePTIThroughBusinessModel" />
+  </wsdl:message>
+  <wsdl:message name="CalculatePTIThroughBusinessModelSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculatePTIThroughBusinessModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateLTVThroughBusinessModelSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateLTVThroughBusinessModel" />
+  </wsdl:message>
+  <wsdl:message name="CalculateLTVThroughBusinessModelSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateLTVThroughBusinessModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetupCreditCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:SetupCreditCriteria" />
+  </wsdl:message>
+  <wsdl:message name="SetupCreditCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:SetupCreditCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAffordabilityCreditCriteriaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAffordabilityCreditCriteria" />
+  </wsdl:message>
+  <wsdl:message name="GetAffordabilityCreditCriteriaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAffordabilityCreditCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateBondAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateBondAmount" />
+  </wsdl:message>
+  <wsdl:message name="CalculateBondAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateBondAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateInstallmentSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateInstallment" />
+  </wsdl:message>
+  <wsdl:message name="CalculateInstallmentSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateInstallmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateInterestOverTermSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateInterestOverTerm" />
+  </wsdl:message>
+  <wsdl:message name="CalculateInterestOverTermSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateInterestOverTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetControlValueByDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetControlValueByDescription" />
+  </wsdl:message>
+  <wsdl:message name="GetControlValueByDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetControlValueByDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CalculatorsSoap">
+    <wsdl:operation name="CalculatePresentValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the present value of an investment. The present value is the total amount that a series of future payments is worth now. For example, when you borrow money, the loan amount is the present value to the lender</wsdl:documentation>
+      <wsdl:input message="tns:CalculatePresentValueSoapIn" />
+      <wsdl:output message="tns:CalculatePresentValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLTV">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates &amp; Returns the Loan to Value ratio</wsdl:documentation>
+      <wsdl:input message="tns:CalculateLTVSoapIn" />
+      <wsdl:output message="tns:CalculateLTVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePTI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates &amp; Returns the the Payment to income ratio</wsdl:documentation>
+      <wsdl:input message="tns:CalculatePTISoapIn" />
+      <wsdl:output message="tns:CalculatePTISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditDisqualifications">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Not Quite Sure what this does yet. To be continued....</wsdl:documentation>
+      <wsdl:input message="tns:CreditDisqualificationsSoapIn" />
+      <wsdl:output message="tns:CreditDisqualificationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBaseRate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Current Base Rate</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBaseRateSoapIn" />
+      <wsdl:output message="tns:ReturnBaseRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBaseRateFixed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Current Fixed Base Rate</wsdl:documentation>
+      <wsdl:input message="tns:ReturnBaseRateFixedSoapIn" />
+      <wsdl:output message="tns:ReturnBaseRateFixedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnApplicationTypeKeyByCalculatorMode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the current enumeration value based on the web calculator type</wsdl:documentation>
+      <wsdl:input message="tns:ReturnApplicationTypeKeyByCalculatorModeSoapIn" />
+      <wsdl:output message="tns:ReturnApplicationTypeKeyByCalculatorModeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOriginationFees">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates the Origination Fees</wsdl:documentation>
+      <wsdl:input message="tns:CalculateOriginationFeesSoapIn" />
+      <wsdl:output message="tns:CalculateOriginationFeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMinimumIncomeRequired">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates the Minimum Income Required</wsdl:documentation>
+      <wsdl:input message="tns:CalculateMinimumIncomeRequiredSoapIn" />
+      <wsdl:output message="tns:CalculateMinimumIncomeRequiredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumPurchasePrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Minimum Purchase Price</wsdl:documentation>
+      <wsdl:input message="tns:GetMinimumPurchasePriceSoapIn" />
+      <wsdl:output message="tns:GetMinimumPurchasePriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumPurchasePrice">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Maximum Purchase Price</wsdl:documentation>
+      <wsdl:input message="tns:GetMaximumPurchasePriceSoapIn" />
+      <wsdl:output message="tns:GetMaximumPurchasePriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumHouseholdIncome">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Minimum Household Income</wsdl:documentation>
+      <wsdl:input message="tns:GetMinimumHouseholdIncomeSoapIn" />
+      <wsdl:output message="tns:GetMinimumHouseholdIncomeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumLTV">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Maximum LTV allowed</wsdl:documentation>
+      <wsdl:input message="tns:GetMinimumLTVSoapIn" />
+      <wsdl:output message="tns:GetMinimumLTVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumSelfEmployedLTV">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Maximum LTV allowed for Self Employed applications</wsdl:documentation>
+      <wsdl:input message="tns:GetMaximumSelfEmployedLTVSoapIn" />
+      <wsdl:output message="tns:GetMaximumSelfEmployedLTVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumPTI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Maximum acceptable PTI </wsdl:documentation>
+      <wsdl:input message="tns:GetMaximumPTISoapIn" />
+      <wsdl:output message="tns:GetMaximumPTISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumTerm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Maximum Loan Term for web applications</wsdl:documentation>
+      <wsdl:input message="tns:GetMaximumTermSoapIn" />
+      <wsdl:output message="tns:GetMaximumTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumMarketValue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Minimum purchase price</wsdl:documentation>
+      <wsdl:input message="tns:GetMinimumMarketValueSoapIn" />
+      <wsdl:output message="tns:GetMinimumMarketValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFlexiMinFixed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Minimum Fixed amount on a flexi bond</wsdl:documentation>
+      <wsdl:input message="tns:GetFlexiMinFixedSoapIn" />
+      <wsdl:output message="tns:GetFlexiMinFixedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInitialProductKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Initial Product Key</wsdl:documentation>
+      <wsdl:input message="tns:GetInitialProductKeySoapIn" />
+      <wsdl:output message="tns:GetInitialProductKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInitialMarketRateKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Initial Market Rate key (Web Calculators)</wsdl:documentation>
+      <wsdl:input message="tns:GetInitialMarketRateKeySoapIn" />
+      <wsdl:output message="tns:GetInitialMarketRateKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePTIThroughBusinessModel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates the PTI - Though the Domain Business model</wsdl:documentation>
+      <wsdl:input message="tns:CalculatePTIThroughBusinessModelSoapIn" />
+      <wsdl:output message="tns:CalculatePTIThroughBusinessModelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLTVThroughBusinessModel">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates the LTV - Though the Domain Business model</wsdl:documentation>
+      <wsdl:input message="tns:CalculateLTVThroughBusinessModelSoapIn" />
+      <wsdl:output message="tns:CalculateLTVThroughBusinessModelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetupCreditCriteria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a populated Credit Criteria Object</wsdl:documentation>
+      <wsdl:input message="tns:SetupCreditCriteriaSoapIn" />
+      <wsdl:output message="tns:SetupCreditCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAffordabilityCreditCriteria">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a populated Credit Criteria Object for the Affordability Calculation</wsdl:documentation>
+      <wsdl:input message="tns:GetAffordabilityCreditCriteriaSoapIn" />
+      <wsdl:output message="tns:GetAffordabilityCreditCriteriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBondAmount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates and Returns the Bond Amount</wsdl:documentation>
+      <wsdl:input message="tns:CalculateBondAmountSoapIn" />
+      <wsdl:output message="tns:CalculateBondAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInstallment">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates the installment value via the Business Model</wsdl:documentation>
+      <wsdl:input message="tns:CalculateInstallmentSoapIn" />
+      <wsdl:output message="tns:CalculateInstallmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInterestOverTerm">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Calculates the installment value via the Business Model</wsdl:documentation>
+      <wsdl:input message="tns:CalculateInterestOverTermSoapIn" />
+      <wsdl:output message="tns:CalculateInterestOverTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetControlValueByDescription">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Control Table value by Description</wsdl:documentation>
+      <wsdl:input message="tns:GetControlValueByDescriptionSoapIn" />
+      <wsdl:output message="tns:GetControlValueByDescriptionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorsSoap" type="tns:CalculatorsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculatePresentValue">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculatePresentValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLTV">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculateLTV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePTI">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculatePTI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditDisqualifications">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CreditDisqualifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBaseRate">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ReturnBaseRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBaseRateFixed">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ReturnBaseRateFixed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnApplicationTypeKeyByCalculatorMode">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ReturnApplicationTypeKeyByCalculatorMode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOriginationFees">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculateOriginationFees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMinimumIncomeRequired">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculateMinimumIncomeRequired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumPurchasePrice">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMinimumPurchasePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumPurchasePrice">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMaximumPurchasePrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumHouseholdIncome">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMinimumHouseholdIncome" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumLTV">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMinimumLTV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumSelfEmployedLTV">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMaximumSelfEmployedLTV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumPTI">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMaximumPTI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumTerm">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMaximumTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumMarketValue">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetMinimumMarketValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlexiMinFixed">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetFlexiMinFixed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInitialProductKey">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetInitialProductKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInitialMarketRateKey">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetInitialMarketRateKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePTIThroughBusinessModel">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculatePTIThroughBusinessModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLTVThroughBusinessModel">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculateLTVThroughBusinessModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetupCreditCriteria">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SetupCreditCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAffordabilityCreditCriteria">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetAffordabilityCreditCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBondAmount">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculateBondAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInstallment">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculateInstallment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInterestOverTerm">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CalculateInterestOverTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlValueByDescription">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetControlValueByDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculatorsSoap12" type="tns:CalculatorsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CalculatePresentValue">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculatePresentValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLTV">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculateLTV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePTI">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculatePTI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditDisqualifications">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CreditDisqualifications" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBaseRate">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ReturnBaseRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBaseRateFixed">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ReturnBaseRateFixed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnApplicationTypeKeyByCalculatorMode">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ReturnApplicationTypeKeyByCalculatorMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateOriginationFees">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculateOriginationFees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateMinimumIncomeRequired">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculateMinimumIncomeRequired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumPurchasePrice">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMinimumPurchasePrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumPurchasePrice">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMaximumPurchasePrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumHouseholdIncome">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMinimumHouseholdIncome" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumLTV">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMinimumLTV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumSelfEmployedLTV">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMaximumSelfEmployedLTV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumPTI">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMaximumPTI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaximumTerm">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMaximumTerm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMinimumMarketValue">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetMinimumMarketValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFlexiMinFixed">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetFlexiMinFixed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInitialProductKey">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetInitialProductKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInitialMarketRateKey">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetInitialMarketRateKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculatePTIThroughBusinessModel">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculatePTIThroughBusinessModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateLTVThroughBusinessModel">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculateLTVThroughBusinessModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetupCreditCriteria">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SetupCreditCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAffordabilityCreditCriteria">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetAffordabilityCreditCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateBondAmount">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculateBondAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInstallment">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculateInstallment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateInterestOverTerm">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CalculateInterestOverTerm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetControlValueByDescription">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetControlValueByDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculators">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is the SA Homeloans Calculator Web Service.</wsdl:documentation>
+    <wsdl:port name="CalculatorsSoap" binding="tns:CalculatorsSoap">
+      <soap:address location="http://localhost/SAHL.Web.Services/Internal/Calculators.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CalculatorsSoap12" binding="tns:CalculatorsSoap12">
+      <soap12:address location="http://localhost/SAHL.Web.Services/Internal/Calculators.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

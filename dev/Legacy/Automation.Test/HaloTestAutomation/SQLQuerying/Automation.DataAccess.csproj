@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E5FE702-720A-4E0B-B2AE-6F32D4906D0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Automation.DataAccess</RootNamespace>
+    <AssemblyName>Automation.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Automation.DataAccess.xml</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataHelper\2AM\2AM_AffordabilityAssessment.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Audits.cs" />
+    <Compile Include="DataHelper\2AM\2AM_DisabilityClaim.cs" />
+    <Compile Include="DataHelper\Capitec\ICapitecApplicationDataHelper.cs" />
+    <Compile Include="DataHelper\Capitec\CapitecApplicationDataHelper.cs" />
+    <Compile Include="DataContext\IDataContext.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Account.cs" />
+    <Compile Include="DataHelper\2AM\2AM_ADUser.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Attorney.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Bank.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Bond.cs" />
+    <Compile Include="DataHelper\2AM\2AM_CAP2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataHelper\2AM\2AM_Correspondence.cs" />
+    <Compile Include="DataHelper\2AM\2AM_CreditMatrix.cs" />
+    <Compile Include="DataHelper\2AM\2AM_DetailType.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Disbursement.cs" />
+    <Compile Include="DataHelper\2AM\2AM_ExternalRole.cs" />
+    <Compile Include="DataHelper\2AM\2AM_FutureDatedChange.cs" />
+    <Compile Include="DataHelper\2AM\2AM_HearingDetail.cs" />
+    <Compile Include="DataHelper\2AM\2AM_HOC.cs" />
+    <Compile Include="DataHelper\2AM\2AM_ITC.cs" />
+    <Compile Include="DataHelper\2AM\2AM_LegalEntity.cs" />
+    <Compile Include="DataHelper\2AM\2AM_LegalEntityAffordability.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Employment.cs" />
+    <Compile Include="DataHelper\2AM\2AM_LegalEntityBankAccount.cs" />
+    <Compile Include="DataHelper\2AM\2AM_LegalEntityOrganisationStructure.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Life.cs" />
+    <Compile Include="DataHelper\2AM\2AM_LoanTransaction.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Memo.cs" />
+    <Compile Include="DataHelper\2AM\2AM_MortgageLoan.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Offer.cs" />
+    <Compile Include="DataHelper\2AM\2AM_PersonalLoan.cs" />
+    <Compile Include="DataHelper\2AM\2AM_PropertyValuation.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Proposals.cs" />
+    <Compile Include="DataHelper\2AM\2AM_FinancialAdjustment.cs" />
+    <Compile Include="DataHelper\2AM\Contracts\ApplicationDataHelper.cs" />
+    <Compile Include="DataHelper\2AM\Contracts\IApplicationDataHelper.cs" />
+    <Compile Include="DataHelper\2AM\Contracts\IReasonDataHelper.cs" />
+    <Compile Include="DataHelper\2AM\ReasonDataHelper.cs" />
+    <Compile Include="DataHelper\2AM\2AM_RecoveriesProposal.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Rule.cs" />
+    <Compile Include="DataHelper\2AM\SPVDataHelper.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Valuation.cs" />
+    <Compile Include="DataHelper\2AM\Common.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Address.cs" />
+    <Compile Include="DataHelper\2AM\2AM_DebtCounselling.cs" />
+    <Compile Include="DataHelper\2AM\2AM_TermChange.cs" />
+    <Compile Include="DataHelper\2AM\2AM_EstateAgents.cs" />
+    <Compile Include="DataHelper\2AM\2AM_OrganisationStructure.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Survey.cs" />
+    <Compile Include="DataHelper\2AM\2AM_ArrearTransaction.cs" />
+    <Compile Include="DataHelper\2AM\2AM_ClientCommunication.cs" />
+    <Compile Include="DataHelper\2AM\2AM_ControlTable.cs" />
+    <Compile Include="DataHelper\2AM\2AM_LegalEntityAddress.cs" />
+    <Compile Include="DataHelper\2AM\2AM_DeedsOffice.cs" />
+    <Compile Include="DataHelper\2AM\2AM_StageTransition.cs" />
+    <Compile Include="DataHelper\2AM\2AM_FinancialService.cs" />
+    <Compile Include="DataHelper\2AM\2AM_WorkflowRole.cs" />
+    <Compile Include="DataHelper\2AM\2AM_ContextMenu.cs" />
+    <Compile Include="DataHelper\2AM\2AM_Notes.cs" />
+    <Compile Include="DataHelper\2AM\Contracts\ISPVDataHelper.cs" />
+    <Compile Include="DataHelper\RecordLoader.cs" />
+    <Compile Include="DataHelper\IDataHelper.cs" />
+    <Compile Include="DataHelper\2AM\test.cs" />
+    <Compile Include="DataHelper\eWork\eWork.cs" />
+    <Compile Include="DataHelper\SAHLDB\SAHLDB.cs" />
+    <Compile Include="DataHelper\X2\X2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataHelper\X2\X2_WorkflowRoleAssignment.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLClasses\QueryResultsColumn.cs" />
+    <Compile Include="SQLClasses\QueryResultsRow.cs" />
+    <Compile Include="SQLClasses\QueryResults.cs" />
+    <Compile Include="DataContext\DataContext.cs" />
+    <Compile Include="SQLClasses\SQLStatement.cs" />
+    <Compile Include="SQLClasses\SQLStoredProcedure.cs" />
+    <Compile Include="Dapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Automation.DataModels\Automation.DataModels.csproj">
+      <Project>{6734fbcf-4157-4e0e-b723-85c9443e3b1d}</Project>
+      <Name>Automation.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Automation.Common.csproj">
+      <Project>{E66CA3C2-3B4B-4630-B7C7-03CB7AA54A9B}</Project>
+      <Name>Automation.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\app.config">
+      <Link>app.config</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

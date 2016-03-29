@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF4566BD-5FFE-497C-9D86-E94B06E55B25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Testing.Services.Tests</RootNamespace>
+    <AssemblyName>SAHL.Testing.Services.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssert">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\FluentAssert.1.0.0.11\lib\FluentAssert.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Exchange.WebServices.1.2\lib\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\NUnit\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Data.Dapper">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Events">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Logging">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.AddressDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.AddressDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.ApplicationDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.ApplicationDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.BankAccountDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.BankAccountDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.CATS.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.CATS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.ClientDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.ClientDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.Communications.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.Communications.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.DocumentManager.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.DocumentManager.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.DomainQuery.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.DomainQuery.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.FinanceDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.FinanceDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.FinanicalDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.FinanicalDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.FrontEndTest.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.FrontEndTest.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.ITC.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.ITC.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.LifeDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.LifeDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.PollingManager.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.PollingManager.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.PropertyDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.PropertyDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.Query.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.Query.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.Search.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.Search.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.Web.Auth.SAHL">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.Web.Auth.SAHL.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.WorkflowAssignmentDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.WorkflowAssignmentDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Capitec">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Capitec.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.DecisionTree">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.DecisionTree.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.EventProjection">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.EventProjection.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.EventStore, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.EventStore.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.FETest">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.FETest.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Exchange">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Exchange.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.AddressDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.AddressDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ApplicationDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ApplicationDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.BankAccountDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.BankAccountDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.CATS">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.CATS.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ClientDomain, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ClientDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Communications">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Communications.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DocumentManager">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainQuery">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinanceDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinanceDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinancialDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinancialDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FrontEndTest">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FrontEndTest.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ITC">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ITC.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.LifeDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.LifeDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.PollingManager">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.PollingManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.PropertyDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.PropertyDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Search">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.WorkflowAssignmentDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.WorkflowAssignmentDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared.BusinessModel">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Shared.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Query">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Query.Connector">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Query.Connector.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.9.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\Microsoft.Tpl.Dataflow\lib\portable-net45+win8\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\MailMessageExtensions.cs" />
+    <Compile Include="Helpers\MailboxHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Managers\ClientDomainManager.cs" />
+    <Compile Include="Managers\IClientDomainManager.cs" />
+    <Compile Include="Tests\AddressDomain\when_getting_a_free_text_address_is_linked_to_client.cs" />
+    <Compile Include="Tests\AddressDomain\when_getting_a_street_address_is_linked_to_client.cs" />
+    <Compile Include="Tests\AddressDomain\link_free_text_address_as_postal_address_to_client.cs" />
+    <Compile Include="Tests\AddressDomain\link_free_text_address_as_residential_address_to_client.cs" />
+    <Compile Include="Tests\AddressDomain\when_linking_a_client_address.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_checking_if_client_is_related_to_account.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_an_applicant_to_an_application.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_applicant_affordabilities.cs" />
+    <Compile Include="Tests\AddressDomain\link_street_address_as_postal_address_to_client.cs" />
+    <Compile Include="Tests\AddressDomain\when_linking_a_residential_address_to_a_client.cs" />
+    <Compile Include="Tests\AddressDomain\when_linking_a_street_address_to_a_property.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_applicant_debit_order.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_applicant_declarations.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_application_mailing_address.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_a_new_purchase_application.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_a_refinance_application.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_a_switch_application.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_checking_if_an_open_application_exists_for_a_client_or_property.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_linking_domicilium_address_to_applicant.cs" />
+    <Compile Include="ServiceTestBase.cs" />
+    <Compile Include="Tests\AddressDomain\when_linking_a_postal_address_to_a_client.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_determining_application_household_income.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_linking_a_property_to_an_application.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_making_applicant_an_income_contributor.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_setting_application_employment_type.cs" />
+    <Compile Include="Tests\CATSService\when_adding_cats_payment_batch_item.cs" />
+    <Compile Include="Tests\CATSService\when_checking_for_previous_file_failure.cs" />
+    <Compile Include="Tests\CATSService\when_checking_if_cats_payment_batch_exists_for_today.cs" />
+    <Compile Include="Tests\CATSService\when_checking_if_there_is_a_cats_file_being_processed_for_profile.cs" />
+    <Compile Include="Tests\CATSService\when_creating_a_command_with_invalid_params.cs" />
+    <Compile Include="Tests\CATSService\when_generating_a_CATs_file.cs" />
+    <Compile Include="Tests\BankAccountDomain\when_linking_a_bank_account_to_a_client.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_adding_the_external_originator_attribute.cs" />
+    <Compile Include="Tests\ApplicationDomain\when_linking_an_external_vendor.cs" />
+    <Compile Include="Tests\CATSService\when_marking_cats_payment_batch_as_failed.cs" />
+    <Compile Include="Tests\CATSService\when_processing_a_cats_payment_batch.cs" />
+    <Compile Include="Tests\CATSService\when_notifying_cats_payment_batch_recipients.cs" />
+    <Compile Include="Tests\CATSService\when_retrieving_third_party_payment_batch_reff.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_an_employer.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_an_investment_asset.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_a_fixed_long_term_investment.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_a_fixed_property_asset.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_a_liability_loan.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_a_liability_surety.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_a_natural_person_client.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_life_assurance_asset.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_other_asset_to_client.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_pending_client_domicilium.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_salary_deduction_employment.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_unconfirmed_unemployed_employment.cs" />
+    <Compile Include="Tests\ClientDomain\when_adding_unconfirmed_salaried_employment.cs" />
+    <Compile Include="Tests\ClientDomain\when_checking_for_existing_client_by_id_number.cs" />
+    <Compile Include="Tests\ClientDomain\when_checking_for_existing_client_by_passport_number.cs" />
+    <Compile Include="Tests\ClientDomain\when_updating_an_active_natural_person_client.cs" />
+    <Compile Include="Tests\ClientDomain\when_updating_an_inactive_natural_person_client.cs" />
+    <Compile Include="Tests\CommunicationsService\when_sending_email_with_standard_email_template.cs" />
+    <Compile Include="Tests\CommunicationsService\when_sending_invoice_scheduled_for_payment_email.cs" />
+    <Compile Include="Tests\CommunicationsService\when_sending_invoice_rejected_email.cs" />
+    <Compile Include="Tests\CommunicationsService\when_sending_invoice_submission_successfull_email.cs" />
+    <Compile Include="Tests\CommunicationsService\when_sending_invoice_submission_rejected_email_with_reasons.cs" />
+    <Compile Include="Tests\CommunicationsService\when_sending_invoice_submission_rejected_email_without_reasons.cs" />
+    <Compile Include="Tests\DocumentManager\when_retrieving_a_document.cs" />
+    <Compile Include="Tests\DocumentManager\when_storing_an_attorney_invoice.cs" />
+    <Compile Include="Tests\DocumentManager\when_storing_client_file_documents.cs" />
+    <Compile Include="Tests\DomainQuery\when_checking_if_an_address_is_a_clientaddress.cs" />
+    <Compile Include="Tests\DomainQuery\when_checking_if_an_application_exists.cs" />
+    <Compile Include="Tests\DomainQuery\when_checking_if_a_client_exists.cs" />
+    <Compile Include="Tests\DomainQuery\when_checking_if_a_client_is_a_natural_person.cs" />
+    <Compile Include="Tests\DomainQuery\when_querying_for_applicants.cs" />
+    <Compile Include="Tests\DomainQuery\when_querying_for_a_client.cs" />
+    <Compile Include="Tests\DomainQuery\when_querying_for_a_client_address.cs" />
+    <Compile Include="Tests\DomainQuery\when_querying_for_a_client_bank_account.cs" />
+    <Compile Include="Tests\DomainServiceChecks\when_requires_active_client_role.cs" />
+    <Compile Include="Tests\DomainServiceChecks\when_requires_client.cs" />
+    <Compile Include="Tests\DomainServiceChecks\when_requires_open_application.cs" />
+    <Compile Include="Tests\DomainServiceChecks\when_requires_open_latest_application_information.cs" />
+    <Compile Include="Tests\DomainServiceChecks\when_requires_property.cs" />
+    <Compile Include="Tests\FinanceDomain\when_accepting_a_third_party_invoice.cs" />
+    <Compile Include="Tests\FinanceDomain\when_adding_a_third_party_invoice_to_a_payment_batch.cs" />
+    <Compile Include="Tests\FinanceDomain\when_amending_an_invoice.cs" />
+    <Compile Include="Tests\FinanceDomain\when_approving_third_party_invoice.cs" />
+    <Compile Include="Tests\FinanceDomain\when_capturing_an_invoice.cs" />
+    <Compile Include="Tests\FinanceDomain\when_escalating_an_invoice_for_approval.cs" />
+    <Compile Include="Tests\FinanceDomain\when_processing_transactions_for_a_third_party_invoice_payment.cs" />
+    <Compile Include="Tests\FinanceDomain\when_processing_transactions_for_a_third_party_invoice_payment_reversal.cs" />
+    <Compile Include="Tests\FinanceDomain\when_querying_an_invoice.cs" />
+    <Compile Include="Tests\FinanceDomain\when_rejecting_an_invoice.cs" />
+    <Compile Include="Tests\CATSService\when_removing_an_invoice_from_a_cats_payment_batch.cs" />
+    <Compile Include="Tests\FinanceDomain\when_removing_a_third_party_invoice_payment_batch_item.cs" />
+    <Compile Include="Tests\FinanceDomain\when_retrieving_invoice_approvers_by_invoice_key.cs" />
+    <Compile Include="Tests\FinanceDomain\when_returning_third_party_invoice_to_payment_queue.cs" />
+    <Compile Include="Tests\FinancialDomain\when_funding_an_application.cs" />
+    <Compile Include="Tests\FinancialDomain\when_pricing_an_application.cs" />
+    <Compile Include="Tests\DomainQuery\when_querying_for_a_property_address.cs" />
+    <Compile Include="Tests\ITC\when_performing_a_capitec_ITC_request.cs" />
+    <Compile Include="Tests\ITC\when_performing_itc_check_for_an_existing_client.cs" />
+    <Compile Include="Tests\LifeDomain\when_amending_an_approved_disability_claim.cs" />
+    <Compile Include="Tests\LifeDomain\when_approving_a_disability_claim.cs" />
+    <Compile Include="Tests\LifeDomain\when_capturing_a_disability_claim.cs" />
+    <Compile Include="Tests\LifeDomain\when_compensating_a_disability_claim.cs" />
+    <Compile Include="Tests\LifeDomain\when_lodging_a_disability_claim.cs" />
+    <Compile Include="Tests\LifeDomain\when_repudiating_a_disability_claim.cs" />
+    <Compile Include="Tests\LifeDomain\when_terminating_a_disability_claim.cs" />
+    <Compile Include="Tests\Shared.BusinessModel\when_posting_transaction.cs" />
+    <Compile Include="Tests\QueryService\when_running_queries_given_an_order_filter.cs" />
+    <Compile Include="Tests\QueryService\when_running_queries_given_a_skip_filter.cs" />
+    <Compile Include="Tests\QueryService\when_running_queries_given_an_IncludeRelationship_filter.cs" />
+    <Compile Include="Tests\QueryService\when_running_queries_given_an_IncludeField_filter.cs" />
+    <Compile Include="Tests\QueryService\when_running_queries_given_a_limit_filter.cs" />
+    <Compile Include="Tests\QueryService\when_running_queries_given_a_where_filter.cs" />
+    <Compile Include="Tests\QueryService\when_running_queries_given_paging_filters.cs" />
+    <Compile Include="Tests\ThirdPartyInvoice\when_capturing_attorney_invoice.cs" />
+    <Compile Include="Tests\PropertyDomain\when_adding_comcorp_offer_property_details.cs" />
+    <Compile Include="Tests\PropertyDomain\when_querying_for_a_property_address.cs" />
+    <Compile Include="Tests\WorkflowAssignmentDomain\when_resolving_a_workflow_role.cs" />
+    <Compile Include="Tests\WorkflowAssignmentDomain\when_retrieving_active_users.cs" />
+    <Compile Include="Tests\WorkflowAssignmentDomain\when_returning_an_invoice_from_awaiting_approval_state.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tests\DocumentManager\SampleTiff\ComcorpSampleDoc.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Build\ConfigTransforms\App.config">
+      <Link>App.config</Link>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\SAHL.Testing.Common\Resources\pdf-sample.pdf">
+      <Link>Resources\pdf-sample.pdf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\SHL04_Disbursement">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Testing.Common\SAHL.Testing.Common.csproj">
+      <Project>{db3f7b8d-1780-41ec-ab46-b362c1e9027f}</Project>
+      <Name>SAHL.Testing.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Testing.Config\SAHL.Testing.Config.csproj">
+      <Project>{04eec62e-b148-4a77-a4b9-51ec5aba1f02}</Project>
+      <Name>SAHL.Testing.Config</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

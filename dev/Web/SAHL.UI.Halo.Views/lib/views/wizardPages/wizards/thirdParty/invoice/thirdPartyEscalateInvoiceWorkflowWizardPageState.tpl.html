@@ -1,0 +1,16 @@
+<div ng-controller="Wizards_ThirdParty_Invoice_ThirdPartyEscalateInvoiceWorkflowWizardPageStateCtrl">
+    <div class="grid">
+        <div class="row">
+            <div class="span6">
+                <strong>Escalate to:</strong>
+            </div>
+            <div class="span6">
+                <select type="text" ng-model="selectedItem" ng-options="user.UserOrganisationStructureKey as user.ApproverDescription for user 
+                          in mandatedUserList" style="width: 300px;" ng-change="setSelectedUser(selectedItem)">
+                    <option value="">--Select--</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+</div>

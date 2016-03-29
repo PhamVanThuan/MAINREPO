@@ -1,0 +1,17 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="SAHL.Common.BusinessModel.Test\bin\Debug\SAHL.Common.BusinessModel.Test.dll" />
+    <assembly path="SAHL.Common.Service.Test\bin\Debug\SAHL.Common.Service.Test.dll" />
+    <assembly path="SAHL.Common.Test\bin\Debug\SAHL.Common.Test.dll" />
+    <assembly path="SAHL.Common.X2.BusinessModel.Test\bin\Debug\SAHL.Common.X2.BusinessModel.Test.dll" />
+	<assembly path="SAHL.Common.Web.UI.Test\bin\Debug\SAHL.Common.Web.UI.Test.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="SAHL.Common.BusinessModel.Test\bin\Release\SAHL.Common.BusinessModel.Test.dll" />
+    <assembly path="SAHL.Common.Service.Test\bin\Release\SAHL.Common.Service.Test.dll" />
+    <assembly path="SAHL.Common.Test\bin\Release\SAHL.Common.Test.dll" />
+    <assembly path="SAHL.Common.X2.BusinessModel.Test\bin\Release\SAHL.Common.X2.BusinessModel.Test.dll" />
+	  <assembly path="SAHL.Common.Web.UI.Test\bin\Release\SAHL.Common.Web.UI.Test.dll" />
+  </Config>
+</NUnitProject>

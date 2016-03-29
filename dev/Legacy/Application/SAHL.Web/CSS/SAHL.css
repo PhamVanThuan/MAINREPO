@@ -1,0 +1,836 @@
+/*
+Orange : #F37021
+Light Grey : #dcdcdc
+Dark Gray : #acacac
+Very dark: #5A5A5A
+Light Blue color in grid : #80abe8
+*/
+@import url(reset.css);
+@import url(typography.css);
+
+/********** ELEMENTS START **************************************************/
+
+html { 
+    padding:0px;
+    margin:0px;
+}
+a 
+{
+    color:  Black;
+    text-decoration: none;
+    cursor: pointer;
+}
+a.colored
+{
+    color: #F37021 !important;
+}
+a:Hover 
+{
+    text-decoration: underline;
+}
+body {
+    padding:0px;
+    margin: 0px;
+    font-size: 70%;
+}
+fieldset 
+{
+    padding-left: 10px;
+    padding-bottom:3px;
+}
+legend
+{
+    padding: 2px;
+    padding-right: 7px;
+}
+input, select, textarea
+{
+    font-family: Verdana, Arial, Tahoma;
+    font-size: 8pt;
+}
+ul, ol 
+{
+    margin:0;
+    padding:0 0 1em 0;
+    padding:0 0 1em 2.5em;
+}
+li 
+{
+    margin: 5px 0px 5px 5px;
+}
+ul
+{
+    list-style-type: square;
+}
+
+/********** CLASSES START ***************************************************/
+
+.action
+{
+    cursor: pointer;
+}
+.autoCompleteList
+{  
+    visibility : hidden;
+    margin : 2px!important;
+    background-color : white;
+    color : black;
+    border : solid 1px #999999;
+    overflow : auto;
+    height : 200px;
+    text-align : left; 
+    list-style-type : none;
+    cursor: pointer;
+}
+.autoCompleteItem 
+{
+    background-color : white;
+    color : black;
+    padding : 1px;
+}
+.autoCompleteItemHighlighted
+{
+    background-color: #dcdcdc;
+    color: black;
+    padding: 1px;
+}
+.backgroundError
+{
+    background-color: pink;
+}
+.backgroundLight
+{
+    background-color:       #dcdcdc;
+}
+.backgroundDark
+{
+    background-color:       #acacac;
+}
+.borderAll
+{
+    border: solid 1px #999999;
+}
+.borderBottom 
+{
+    border-bottom: solid 1px #999999;
+}
+.borderLeft
+{
+    border-left: solid 1px #999999;
+}
+.borderLeftBottomRight 
+{
+    border-left: solid 1px #999999;
+    border-bottom: solid 1px #999999;
+    border-right: solid 1px #999999;
+}
+.borderError
+{
+    border: solid 1px red;
+}
+.borderRight 
+{
+    border-right: solid 1px #999999;
+}
+.borderTop 
+{
+    border-top: solid 1px #999999;
+}
+.buttonBar 
+{
+    text-align:right;
+    float: left;
+    padding-top: 5px;
+}
+.buttonSpacer 
+{
+    margin-right:7px;
+}
+.cell 
+{
+    display: inline;
+    float: left;
+}
+.cellDisplay
+{
+    display: inline;
+    float: left;
+    height: 15px;
+}
+.cellInput
+{
+    display: inline;
+    float: left;
+    height: 24px;
+}
+.cellInputLast
+{
+    display: inline;
+    float: right;
+    text-align:left;
+    height: 24px;
+}
+.cellInputText
+{
+    display: inline;
+    float: left;
+    height: 20px;
+    margin-top:4px;
+}
+.cellLast 
+{
+    display: inline;
+    float: right;
+    text-align:left;
+}
+.disabled
+{
+    color:Silver;
+    font-style: italic;
+}
+.error
+{
+    color: Red;
+}
+
+.genericCalcResult
+{  
+    background-color : #dcdcdc;
+    font-weight: bold;
+}
+
+.fontBigger
+{
+    font-size:1.1em;
+}
+.headerPanel
+{
+    background-color: #dcdcdc;
+    font-weight: bold;
+    border: solid 1px #999999 !important;
+    padding: 3px 3px 3px 3px !important;
+}
+.LabelText
+{
+    font-weight:            normal;
+    color:                  #000000;
+}
+.mandatory 
+{
+    background-color: #FBE8C2;
+}
+.progressBar
+{
+    background-image: url(../images/loading.gif);
+    background-position: left middle;
+    background-repeat: no-repeat;
+}
+.row 
+{
+    width: 100%;
+    float: left;
+}
+.SAHLTextBox, .SAHLDropDownList
+{
+    color: #000000;
+    border: solid 1px #A0A0A0;
+}
+.subTotal
+{
+    background-color: #CCFFCC;
+    border: solid 1px #00FF00;
+}
+.titleText, .TitleText
+{
+    font-weight:            bold;
+    color:                  #000000;
+}
+
+.legendText
+{
+    font-weight:            bold;
+    font-style:             italic;
+    color:                  #000000;
+}
+
+.labelError 
+{
+    font-weight:            bold;
+    align-content:          center;
+    color:                   red;
+}
+
+.tableStandard td
+{
+    padding: 2px 1px 2px 1px;
+    vertical-align: top;
+}
+
+.tableStandardMiddle td
+{
+    padding: 2px 1px 2px 1px;
+    vertical-align: middle;
+}
+
+.rowStandardtop
+{
+    border-width: 0px;
+    border-style: none;
+    padding: 0px;
+    margin: -10px;
+    vertical-align: top;
+}
+
+.rowStandard
+{
+    height: 15px;
+}
+.rowSmall
+{
+    height: 13px;
+}
+.total
+{
+    background-color: #99CCFF;
+    border: solid 1px #0033CC;
+}
+
+/********** MASTER SPECIFIC ITEMS START *************************************/
+
+#masterContent 
+{
+    padding:3px;
+    background-color: White;
+    text-align: left;
+}
+.masterContextHeader
+{
+    background-color: #dcdcdc;
+    font-weight: bold;
+    border-top: solid 1px #999999 !important;
+    border-bottom: solid 1px #999999 !important;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+}
+.masterContextHeader span
+{
+    padding-left: 3px !important;
+}
+.masterContextMenu 
+{
+    width:269px;
+    height: 250px;
+    overflow:auto;
+} 
+#masterLeft
+{
+    width: 270px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    padding:0px;
+}
+#masterLogo 
+{
+    background-color:#dcdcdc;
+    height: 75px !important;
+    background-image: url(../images/halo_logo_new.gif);
+    background-position: right top;
+    background-repeat: no-repeat;
+} 
+#masterMain
+{
+    vertical-align: top;
+}
+.masterMainMenu 
+{
+    width:269px;
+    height:240px;
+    overflow:auto;
+}
+#masterOuter
+{
+    width:100%;
+}
+#masterStatusInfo
+{
+    background-color:White;
+    border-bottom: solid 1px #999999 !important;
+    border-right: solid 1px #999999 !important;
+    border-top: solid 1px #999999 !important;
+    width:269px;
+    padding: 5px 0px 0px 0px;
+    height:20px;
+}
+#masterStatusInfoPopup
+{
+    display:none;
+}
+#masterTabsMenu
+{
+    background-color:#dcdcdc;
+    width:270px;
+}
+#masterTabsMenu div 
+{
+    padding: 0px;
+    border: 0px;
+    font-size: 1.0em !important;
+}
+
+/********** LEGACY CLASSES - UNDER REVIEW ************************************/
+.GridHiddenColumn
+{
+    display:                none;
+}
+.TableBorder
+{
+    border:                 1px solid #E5E5E;
+    border-top:             0;
+    background-color:       #FBFBEF;
+    overflow-y:             scroll;
+    width:                  770px;
+    height:                 373px;
+}
+.TableDiv
+{
+    background-color:       #FFFFFB;
+    border-bottom:          1px solid #dcdcdc !important;
+    border-left:          1px solid #dcdcdc !important;
+    padding:                0px;
+    overflow:auto;
+}
+.TableFooterA
+{
+    background-color:       #D5D5D5;
+    border-top:             1px solid #000000;
+    color:                  #000000;
+    cursor:                 default;
+    font-weight: bold;
+    padding: 2px 4px 2px 4px;
+}
+.TableFrame
+{
+    border-left: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+}
+.TableHeaderA
+{
+    background-color:       #5A5A5A;
+    border-bottom:          1px solid #FFFFFF;
+    color:                  white;
+    cursor:                 default;
+    font-weight:            bold;
+    padding:				4px !important;
+    text-align:center;
+    vertical-align:middle;
+}
+.TableHeaderB
+{
+    background-color:       #acacac;
+    border-right:           1px solid #FFFFFF;
+    color:                  white;
+    cursor:                 default;
+    font-weight:            bold;
+    padding:				2px !important;
+}
+.TableHeaderBBack
+{
+    background-color:       #acacac;
+    overflow-y:             scroll;
+}
+.TableNoSelectRowA
+{
+    background-color:       #ffffff; 
+    border-bottom:          1px solid #E5E5E5;
+    border-right:           1px solid #FFFFFF;
+}
+.TableNoSelectRowA td 
+{
+    padding: 2px 4px 2px 4px;
+}
+.TableNoSelectRowA2
+{
+    background-color:       #f0efef; 
+    border-bottom:          1px solid #E5E5E5;
+    border-right:			1px solid #FFFFFF;
+}
+.TableNoSelectRowA2 td
+{
+    padding: 2px 4px 2px 4px;
+}
+.TableRowA
+{
+    background-color:       #dcdcdc;
+    border-bottom:          1px solid #E5E5E5;
+    border-right:           1px solid #FFFFFF;
+    cursor:                 pointer;
+}
+.TableRowA a
+{
+    color: Black;
+}
+.TableRowA a:visited
+{
+    color: Black;
+}
+.TableRowA td 
+{
+    padding: 2px 4px 2px 4px;
+}
+.TableRowA2
+{
+    background-color:       #FDFDF7;
+    border-bottom:          1px solid #E5E5E5;
+    border-right:           1px solid #FFFFFF;
+    color:                  #56230A;
+    cursor:                 pointer;
+}
+.TableRowA2 a
+{
+    color: Black;
+}
+.TableRowA2 a:visited
+{
+    color: Black;
+}
+.TableRowA2 td
+{
+    padding: 2px 4px 2px 4px;
+}
+.TableSelectRowA
+{
+    background-color:       #80abe8;
+    border-bottom:          1px solid #E5E5E5;
+    border-right:           1px solid #FFFFFF;
+    color:                  #FFFFFF;
+    cursor:                 pointer;
+}
+.TableSelectRowA a
+{
+    color: White;
+}
+.TableSelectRowA td
+{
+    padding: 2px 4px 2px 4px;
+}
+
+/********** MODAL POPUP ************************************/
+
+.modalBackground {
+    background-color:White;
+    filter:alpha(opacity=0);
+    opacity:0.6;  
+}
+
+.modalPopup 
+{
+    background-color:#ffffdd;
+    border-width:1px;
+    border-style:solid;
+    border-color:Black;
+    padding:4px !important;
+    width:250px;
+    position:absolute;
+    z-index:1000;
+    width:450px;
+    display:none;
+}
+
+/********** ACCORDION **************************/
+.accordionHeader
+{
+    background-color:       #dcdcdc; 
+    background-color:       #acacac; 
+    background-image: url(../images/arrow_blue_right.gif);
+    background-position: left middle;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    border: solid 1px #999999 !important;
+    padding: 3px 3px 3px 15px !important;
+    margin-bottom: 5px;
+}
+
+.accordionHeaderSelected
+{
+    background-color:       #dcdcdc; 
+    background-image: url(../images/arrow_blue_down.gif);
+    background-position: left middle;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    border: solid 1px #999999 !important;
+    padding: 3px 3px 3px 15px !important;
+    margin-bottom: 5px;
+}
+
+/********** SAHL TREE CONTROL **************************/
+.SelectedNode
+{
+    background-color: #dcdcdc !important;
+    border: #dcdcdc 1px solid !important;  
+}
+
+
+/********** SAHL Survey CONTROL **************************/
+.surveyHeadingTable
+{
+    width:              100%;
+    vertical-align:     middle;
+}
+.surveyHeadingRow
+{
+    height:             20px;
+    background-color:   #acacac;
+    color:              #ffffff;
+    font-weight:        bold;
+    font-size:          larger;
+    vertical-align:     middle;
+}
+.surveyHeadingColLeft
+{
+    width:              50%;
+    text-align:         left;
+    vertical-align:     middle;
+}
+.surveyHeadingColRight
+{
+    width:              50%;
+    text-align:         right;
+    vertical-align:     middle;
+}
+
+.surveyPanel
+{
+    width:              100%;
+    overflow-y:         scroll;
+    overflow-x:         hidden;
+}
+.surveyTable
+{
+    width:              100%;
+    vertical-align:     middle;
+}
+
+.surveyQuestionRow
+{
+    height:             15px;
+    background-color:   #80abe8;
+    color:              #000000;
+    font-weight:        bold;
+    vertical-align:     middle;
+}
+
+.surveyQuestionCell
+{
+}
+
+.surveyAnswerRow
+{
+    height:             15px;
+    background-color:   #dcdcdc;
+    color:              #000000;
+    font-weight:        normal;
+    vertical-align:     middle;
+}
+
+.surveyAnswerCell
+{
+    vertical-align:     middle;
+}
+
+.surveyBlankRow
+{
+    height:             15px;
+    background-color:   #ffffff;
+    color:              #000000;
+    font-weight:        normal;
+}
+
+.surveyBlankCell
+{
+}
+
+.Highlight
+{
+    background-color: #F37021;
+}
+
+.HighlightLightGrey
+{
+    background-color: #dcdcdc;
+    text-decoration:underline;
+    cursor:hand;
+}
+
+/********** Correspondence Grid Options Panel **************************/
+
+.correspondenceGridOptionsPanel
+{
+    border-width: 0px;
+    border-style: none;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 0px;
+    vertical-align: top;
+}
+
+.faxCell1
+{
+    width: 50px;
+}
+.faxCellSpacer
+{
+    width: 10px;
+}
+.faxCell2
+{
+    width: 150px;
+}
+
+.emailCell1
+{
+    width: 60px;
+}
+.emailCellSpacer
+{
+    width: 10px;
+}
+.emailCell2
+{
+    width: 200px;
+}
+
+.postCell1
+{
+    width: 50px;
+}
+.postCellSpacer
+{
+    width: 10px;
+}
+.postCell2
+{
+    width: 200px;
+}
+
+/********** Notes CONTROL **************************/
+.noteFilter
+{
+
+}
+.noteFilterRow
+{
+  height:               40px; 
+}
+.noteFilterCell
+{
+  background-color:     #80abe8; 
+  vertical-align:       middle;
+  text-align:           center;
+}
+.noteTable
+{
+    width:              95%;    
+    vertical-align:     middle;
+    overflow:           auto;
+
+    border-width:       1px;
+    border-style:       solid;
+    border-color:       Black;
+    padding:            5px;
+    height:             350px;
+    overflow-x:         hidden;
+}
+
+.noteHeaderRow
+{
+    height:             15px;
+    background-color:   #acacac;  
+    color:              #000000;
+    vertical-align:     middle;
+}
+
+.noteHeaderCell
+{
+    width:              150px;
+}
+
+.noteDetailRow
+{
+    background-color:   #ffffff;
+    color:              #000000;
+    font-weight:        normal;
+    vertical-align:     middle;
+
+}
+
+.noteDetailCell
+{
+    vertical-align:     middle;
+    width:              90%;
+}
+
+.noteBlankRow
+{
+    height:             5px;
+    background-color:   #ffffff;
+    color:              #000000;
+    font-weight:        normal;
+}
+
+.noteBlankCell
+{
+}
+/*
+Orange : #F37021
+Light Grey : #dcdcdc
+Dark Gray : #acacac
+Very dark: #5A5A5A
+Light Blue color in grid : #80abe8
+*/
+
+/******* Affordability and Expenses ******/
+
+.affordability legend
+{
+    font-weight:bold;
+    padding-right:5px;
+}
+
+.affordability 
+{
+ 
+    padding-right:5px;
+}
+
+.panelLeft
+{
+    float: left; 
+    width: 50%;
+}
+
+.marginLeft
+{
+    margin-left:5px;
+    width:100px;
+}
+
+.alignright 
+{
+    text-align:right;
+}
+
+#amortisationScheduleTable table{
+	font-family:Verdana, Arial, Tahoma;
+	font-size:small;
+	border-collapse: collapse;
+}
+#amortisationScheduleTable table td,
+#amortisationScheduleTable table th{
+	border: 1px solid black;
+	padding:4px;
+	text-align:right;
+}
+#amortisationScheduleTable table thead{
+	text-align:left;
+}

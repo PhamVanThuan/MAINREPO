@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BatchParameters>
+  <File FileName="1 - TABLE_ClientAddresses.sql" />
+  <File FileName="2 - TABLE_ActiveNewBusinessApplicants.sql" />
+  <File FileName="3 - TABLE_AlphaHousingApplications.sql" />
+  <File FileName="4 - TABLE_ForeignNaturalPersonClients.sql" />
+  <File FileName="5 - TABLE_NaturalPersonClient.sql" />
+  <File FileName="6 - TABLE_OpenNewBusinessApplications.sql" />
+  <File FileName="7 - TABLE_CompositeDefinitions.sql" />
+  <File FileName="8 - TABLE_EmptyThirdPartyInvoices.sql" />
+  <File FileName="9 - TABLE_WorkflowSearch.sql" />
+  <File FileName="10 - TABLE_ThirdPartySearch.sql" />
+  <File FileName="11 - TABLE_ClientSearch.sql" />
+  <File FileName="13- TABLE_Users.sql" />
+  <File FileName="14 - TABLE_OpenMortgageLoanAccounts.sql" />
+  <File FileName="15 - TABLE_SPVs.sql" />
+  <File FileName="16 - TABLE_ThirdParties.sql" />
+  <File FileName="1 - PROC_PopulateClientAddresses.sql" />
+  <File FileName="2 - PROC_PopulateNaturalPersonClient.sql" />
+  <File FileName="3 - PROC_PopulateNewBusinessApplications.sql" />
+  <File FileName="4 - PROC_PopulateActiveNewBusinessApplicants.sql" />
+  <File FileName="5 - PROC_PopulateAlphaHousingApplications.sql" />
+  <File FileName="6 - PROC_PopulateForeignNaturalPersonClients.sql" />
+  <File FileName="7 - PROC_PopulateCompositeDefinitions.sql" />
+  <File FileName="8 - PROC_PopulateEmptyThirdPartyInvoices.sql" />
+  <File FileName="9 - PROC_PopulateWorkflowSearch.sql" />
+  <File FileName="10 - PROC_PopulateThirdPartySearch.sql" />
+  <File FileName="11 - PROC_PopulateClientSearch.sql" />
+  <File FileName="12 - PROC_PopulateOpenThirdPartyInvoices.sql" />
+  <File FileName="14 - PROC_PopulateUsers.sql" />
+  <File FileName="15 - PROC_PopulateOpenMortgageLoanAccounts.sql" />
+  <File FileName="16 - PROC_PopulateSPVs.sql" />
+  <File FileName="17 - PROC_PopulateThirdParties.sql" />
+  <File FileName="Create_Job.sql"/>
+</BatchParameters>

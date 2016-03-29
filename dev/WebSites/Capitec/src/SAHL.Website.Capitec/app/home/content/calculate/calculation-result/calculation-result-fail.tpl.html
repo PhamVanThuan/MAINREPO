@@ -1,0 +1,19 @@
+﻿<div ng-controller="CalculationResultFailCtrl" >
+ <form id="switchForm" class="twoColumn"  >
+    <div style="float:left;padding:6px;">
+    <b>Reasons for decline : </b>
+    <ul>
+	    <li ng-repeat="errorMessage in errorMessages">
+            <p>
+    		    {{errorMessage.Message}}
+            </p>
+	    </li>
+     </ul>
+    </div>
+    <div style="width:50%;">
+        <fieldset class="submitContainer">
+            <Button id="submit2" type="submit" ng-click="back()">Back</Button>
+        </fieldset>
+    </div>
+</form>
+</div>

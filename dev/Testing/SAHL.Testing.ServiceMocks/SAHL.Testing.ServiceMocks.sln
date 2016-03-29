@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Testing.Livereplies.Mock", "SAHL.Testing.Livereplies.Mock\SAHL.Testing.Livereplies.Mock.csproj", "{302C062B-2997-4DD4-9102-229F59DF60BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Testing.TransUnion.Mock", "SAHL.Testing.TransUnion.Mock\SAHL.Testing.TransUnion.Mock.csproj", "{E8EC59BF-5D63-4FD1-AA4A-629676716A61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{302C062B-2997-4DD4-9102-229F59DF60BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302C062B-2997-4DD4-9102-229F59DF60BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302C062B-2997-4DD4-9102-229F59DF60BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302C062B-2997-4DD4-9102-229F59DF60BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8EC59BF-5D63-4FD1-AA4A-629676716A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8EC59BF-5D63-4FD1-AA4A-629676716A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8EC59BF-5D63-4FD1-AA4A-629676716A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8EC59BF-5D63-4FD1-AA4A-629676716A61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

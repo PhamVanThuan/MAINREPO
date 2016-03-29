@@ -1,0 +1,13 @@
+﻿'use strict';
+
+angular.module('capitecApp.serviceConfig', [])
+.factory('$serviceConfig', function () {
+    return {
+        SearchService: 'http://SYSBCW/CapitecSearchService/api/QueryHttpHandler/PerformHttpQuery',
+        CommandService: 'http://SYSBCW/CapitecService/api/CommandHttpHandler/performhttpcommand',
+        QueryService: 'http://SYSBCW/CapitecService/api/QueryHttpHandler/PerformHttpQuery',
+        DecisionTreeService: 'http://SYSBCW/DecisionTreeService/api/QueryHttpHandler/PerformHttpQuery',
+        timeout: 1000 *120,
+        timeoutRetryCount: 2
+    }
+});

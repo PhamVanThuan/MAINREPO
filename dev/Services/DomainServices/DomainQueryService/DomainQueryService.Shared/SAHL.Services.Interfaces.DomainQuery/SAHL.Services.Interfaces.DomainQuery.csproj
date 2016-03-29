@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CAAEB04-0E74-4674-B409-5A57E90CF19D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Interfaces.DomainQuery</RootNamespace>
+    <AssemblyName>SAHL.Services.Interfaces.DomainQuery</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainQueryServiceClient.cs" />
+    <Compile Include="IDomainQueryQuery.cs" />
+    <Compile Include="IDomainQueryServiceClient.cs" />
+    <Compile Include="Model\DoesClientExistQueryResult.cs" />
+    <Compile Include="Model\DoesOfferExistQueryResult.cs" />
+    <Compile Include="Model\GetAccountByAccountNumberQueryResult.cs" />
+    <Compile Include="Model\GetClientAddressQueryResult.cs" />
+    <Compile Include="Model\GetClientBankAccountQueryResult.cs" />
+    <Compile Include="Model\GetApplicantDetailsForOfferQueryResult.cs" />
+    <Compile Include="Model\GetMortgageLoanDetailsQueryResult.cs" />
+    <Compile Include="Model\GetClientDetailsQueryResult.cs" />
+    <Compile Include="Model\GetOfferBranchConsultantUsernameQueryResult.cs" />
+    <Compile Include="Model\GetPropertyByAddressQueryResult.cs" />
+    <Compile Include="Model\IsAddressAClientAddressQueryResult.cs" />
+    <Compile Include="Model\IsClientANaturalPersonQueryResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\DoesOfferExistQuery.cs" />
+    <Compile Include="Queries\GetMortgageLoanDetailsQuery.cs" />
+    <Compile Include="Queries\GetAccountByAccountNumberQuery.cs" />
+    <Compile Include="Queries\GetClientDetailsQuery.cs" />
+    <Compile Include="Queries\GetOfferBranchConsultantUsernameQuery.cs" />
+    <Compile Include="Queries\GetPropertyByAddressQuery.cs" />
+    <Compile Include="Queries\IsAddressAClientAddressQuery.cs" />
+    <Compile Include="Queries\GetApplicantDetailsForOfferQuery.cs" />
+    <Compile Include="Queries\IsClientANaturalPersonQuery.cs" />
+    <Compile Include="Queries\DoesClientExistQuery.cs" />
+    <Compile Include="Queries\GetClientAddressQuery.cs" />
+    <Compile Include="Queries\GetClientBankAccountQuery.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

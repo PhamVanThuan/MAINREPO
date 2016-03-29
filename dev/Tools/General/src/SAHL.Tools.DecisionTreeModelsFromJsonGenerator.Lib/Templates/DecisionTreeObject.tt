@@ -1,0 +1,47 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SAHL.Tools.DecisionTreeModelsFromJsonGenerator.Lib" #>
+
+using Microsoft.Scripting.Hosting;
+using SAHL.Core.SystemMessages;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using System.Reflection;
+using System.Dynamic;
+using SAHL.DecisionTree.Shared.Interfaces;
+using SAHL.DecisionTree.Shared.Core;
+using SAHL.DecisionTree.Shared.Helpers;
+
+namespace <#=this.Namespace#>
+{
+    public class <#=this.DecisionTreeClassName#> : IDecisionTree
+    {
+        private int currentNodeId;
+        private bool currentResult;
+        private ScriptScope scope;
+        private bool nodeExecutionResultedInError;
+        private dynamic variablesCollection;
+        private ISystemMessageCollection systemMessageCollection;
+
+        private Dictionary<string, ISystemMessageCollection> SubtreeMessagesDictionary { get; set; }
+        private List<string> SubtreeMessagesToClear { get; set; }
+        
+        public List<Link> NodeLinks {get; private set;}
+        public Dictionary<int, Node> Nodes {get; private set;}
+        public QueryGlobalsVersion GlobalsVersion { get; protected set; }
+
+        public <#=this.DecisionTreeClassName#>(ISystemMessageCollection messages)
+        {
+            this.NodeLinks = new List<Link>() {<#=this.NodeLinksInitializer#>};
+            this.Nodes = new Dictionary<int, Node>() {<#=this.TreeNodesInitializer#>};
+            this.systemMessageCollection = messages;
+            SubtreeMessagesDictionary = new Dictionary<string, ISystemMessageCollection>();
+            SubtreeMessagesToClear = new List<string>();
+        }		
+    }
+}

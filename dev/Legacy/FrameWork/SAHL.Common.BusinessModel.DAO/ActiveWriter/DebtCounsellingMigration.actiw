@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3b835a9b-40a1-4372-8017-ae298be11a31" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="DebtCounselling" schema="migration" table="DebtCounselling">
+      <properties>
+        <modelProperty Id="0346dad2-8016-4a59-87fb-3a852cb22939" name="DebtCounsellingKey" column="DebtCounsellingKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="943cdb88-5098-45c2-861a-5e64cd1a9caa" name="AccountKey" column="AccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="e823fbf1-7e41-4f05-9617-85aa96c5d442" name="DebtCounsellingConsultantKey" column="DebtCounsellingConsultantKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="7ada064c-a582-4eb2-b029-d4d4a75fff4e" name="DebtCounsellorKey" column="DebtCounsellorKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="58523793-f1cd-42ae-86c3-bd274a55a1b8" name="ProposalTypeKey" column="ProposalTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="5f1e5636-6f42-459f-86fe-3ca54d082b36" name="DateOf171" column="DateOf171" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="bee4c365-b3c2-4bfa-be87-c16d953335b2" name="ReviewDate" column="ReviewDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="f238c71d-9d1a-43b7-82ab-9f8bf0b4b744" name="CourtOrderDate" column="CourtOrderDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="5b7db002-27cf-4ea9-8a02-87f03b359ca4" name="TerminateDate" column="TerminateDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="3864f242-1590-4b89-8816-b0dab9017eaf" name="SixtyDaysDate" column="SixtyDaysDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="7de3a0f3-73f2-4dbf-b86b-368fcf847be1" name="ApprovalDate" column="ApprovalDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="dd45fbf8-10db-43f8-92ed-b088c04bd669" name="ApprovalAmount" column="ApprovalAmount" columnType="Decimal" length="0" />
+        <modelProperty Id="33d27552-fe14-427a-8cf4-1eb3cee04020" name="ApprovalUserKey" column="ApprovalUserKey" columnType="Int32" length="0" />
+        <modelProperty Id="3289dcd8-e549-493e-b740-e4484ccfdeba" name="PaymentReceivedDate" column="PaymentReceivedDate" columnType="Timestamp" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="DebtCounsellingProposalItem" schema="migration" table="DebtCounsellingProposalItem">
+      <targets>
+        <manyToOneRelation Id="ad979812-2c73-4e65-bff8-92b7d985b5bc" targetColumnKey="DebtCounsellingProposalKey" targetTable="DebtCounsellingProposalItem" targetPropertyName="DebtCounsellingProposalItems" sourceColumn="DebtCounsellingProposalKey">
+          <modelClassMoniker name="/3b835a9b-40a1-4372-8017-ae298be11a31/DebtCounsellingProposal" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="c6fa4164-2d85-442e-b166-bb2e5ad46bb0" name="DebtCounsellingProposalItemKey" column="DebtCounsellingProposalItemKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="f54963b7-8982-43dc-91b7-919f8fc875f7" name="StartDate" column="StartDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="409dc35b-2105-4671-a3d8-ec0af21ed1f9" name="EndDate" column="EndDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="07eb163a-2506-4bfc-baa6-1ae55844d72c" name="MarketRateKey" column="MarketRateKey" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="f5bd9d97-3665-4c22-9048-9307fd8f184b" name="InterestRate" column="InterestRate" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="eafeda48-b82e-4fa0-9d59-1256a62ca5ee" name="Amount" column="Amount" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="f65d53d4-49d3-467c-bae1-e0a420642414" name="AdditionalAmount" column="AdditionalAmount" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="009182cc-46ae-4513-99a9-e8b524152e3c" name="CreateDate" column="CreateDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="43f4620a-3cc0-4447-8f05-c7c821fa83e3" name="InstalmentPercentage" column="InstalmentPercentage" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="d8021035-705b-46b9-95c0-74bbe379a171" name="AnnualEscalation" column="AnnualEscalation" columnType="Decimal" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="DebtCounsellingExternalRole" schema="migration" table="DebtCounsellingExternalRole">
+      <targets>
+        <manyToOneRelation Id="56f029a5-3d41-470d-812c-8a6538eb2ce3" targetColumnKey="DebtCounsellingKey" targetTable="DebtCounsellingExternalRole" targetPropertyName="DebtCounsellingExternalRoles" sourceColumn="DebtCounsellingKey">
+          <modelClassMoniker name="/3b835a9b-40a1-4372-8017-ae298be11a31/DebtCounselling" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="7459dfd1-13fa-455b-8b48-3092f4bfbae6" name="DebtCounsellingExternalRoleKey" column="DebtCounsellingExternalRoleKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="4ee85895-fa95-4226-9a53-b8a0ad56d1b9" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="573e5d2c-3d66-4acd-8a18-5d031e8e15eb" name="ExternalRoleTypeKey" column="ExternalRoleTypeKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="DebtCounsellingInternalRole" schema="migration" table="DebtCounsellingInternalRole">
+      <targets>
+        <manyToOneRelation Id="c50408d5-a0d8-41a7-89a1-b8e9f92f122b" targetColumnKey="DebtCounsellingKey" targetTable="DebtCounsellingInternalRole" targetPropertyName="DebtCounsellingInternalRoles" sourceColumn="DebtCounsellingKey">
+          <modelClassMoniker name="/3b835a9b-40a1-4372-8017-ae298be11a31/DebtCounselling" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="73a16f65-39a3-48a4-8f80-161181a98e20" name="DebtCounsellingInternalRole" column="DebtCounsellingInternalRole" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="1564172b-56f7-428b-b088-0a4937149d7b" name="UserOrganisationStructureKey" column="UserOrganisationStructureKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="DebtCounsellingProposal" schema="migration" table="DebtCounsellingProposal">
+      <targets>
+        <manyToOneRelation Id="6c4c50be-9134-4eab-b5b1-27b32639b74e" targetColumnKey="DebtCounsellingKey" targetTable="DebtCounsellingProposal" targetPropertyName="DebtCounsellingProposals" sourceColumn="DebtCounsellingKey">
+          <modelClassMoniker name="/3b835a9b-40a1-4372-8017-ae298be11a31/DebtCounselling" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="962f796c-f6f9-44ce-8187-4002c240d1f2" name="DebtCounsellingProposalKey" column="DebtCounsellingProposalKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="794ae6f9-0c1d-4041-9fcc-ae92f685593c" name="ProposalStatusKey" column="ProposalStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="8e6fb905-bcaa-494f-8707-5ef09a1721c2" name="HOCInclusive" column="HOCInclusive" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="d52056a1-af21-4025-ae07-d749f566867d" name="LifeInclusive" column="LifeInclusive" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="f162c4d1-e2f2-46f5-9a4b-f3bb500341af" name="AcceptedProposal" column="AcceptedProposal" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="3a25c910-156f-47eb-b28f-b91469cfcd68" name="ProposalDate" column="ProposalDate" columnType="Timestamp" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

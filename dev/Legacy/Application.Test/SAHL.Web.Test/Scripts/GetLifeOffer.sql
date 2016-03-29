@@ -1,0 +1,1 @@
+select top 1 offerkey from offer where offertypekey = 5 and offerstatuskey = 1

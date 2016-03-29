@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E8401B9-CB26-4478-8225-A8E626CC58D6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.X2.Framework</RootNamespace>
+    <AssemblyName>SAHL.X2.Framework</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SAHL.X2.Framework.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Documentation|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Documentation\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\Documentation\SAHL.X2.Framework.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.X2.Client, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.X2.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Capitec, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Capitec.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.DecisionTree, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.DecisionTree.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.EasyNetQ">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\System.Spatial\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Tpl.Dataflow\lib\portable-net45+win8\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Cors\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.OData\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Tracing\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.WebHost\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Cors\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppDomainManagement\AssemblyLoader.cs" />
+    <Compile Include="Auditing\Auditing.cs" />
+    <Compile Include="Authentication\Authenticator.cs" />
+    <Compile Include="Common\X2EngineProviderFactory.cs" />
+    <Compile Include="Common\X2EngineWebHostProvider.cs" />
+    <Compile Include="Common\ErrorCodes.cs" />
+    <Compile Include="Common\IX2InstanceData.cs" />
+    <Compile Include="Common\IX2Params.cs" />
+    <Compile Include="Common\IX2Process.cs" />
+    <Compile Include="Common\IX2Workflow.cs" />
+    <Compile Include="Common\IX2WorkFlowDataProvider.cs" />
+    <Compile Include="Common\X2EngineCommon.cs" />
+    <Compile Include="Common\X2EngineProvider.cs" />
+    <Compile Include="Common\X2Info.cs" />
+    <Compile Include="Common\X2InstanceData.cs" />
+    <Compile Include="Common\X2Params.cs" />
+    <Compile Include="CoverageExcludeAttribute.cs" />
+    <Compile Include="DataAccess\ActiveDataTransaction.cs" />
+    <Compile Include="DataAccess\Common.cs" />
+    <Compile Include="DataAccess\DBHelper.cs" />
+    <Compile Include="DataAccess\Exceptions\DataAccessException.cs" />
+    <Compile Include="DataAccess\Repository.cs" />
+    <Compile Include="DataAccess\TransactionContext.cs" />
+    <Compile Include="DataAccess\TransactionController.cs" />
+    <Compile Include="DataAccess\UpdateInformation.cs" />
+    <Compile Include="DataAccess\UserMetrics.cs" />
+    <Compile Include="DataAccess\WorkerHelper.cs" />
+    <Compile Include="DataAccess\Workers\CommonWorker.cs" />
+    <Compile Include="DataAccess\X2Worker.cs" />
+    <Compile Include="DataSets\Audits.Designer.cs">
+      <DependentUpon>Audits.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\ControlConstants.Designer.cs">
+      <DependentUpon>ControlConstants.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsProcessAssembly.Designer.cs">
+      <DependentUpon>dsProcessAssembly.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsX2ActivatedExternalActivities.cs">
+      <DependentUpon>dsX2ActivatedExternalActivities.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\dsX2ActivatedExternalActivities.Designer.cs">
+      <DependentUpon>dsX2ActivatedExternalActivities.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsX2ActivityInfo.cs">
+      <DependentUpon>dsX2ActivityInfo.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\dsX2ActivityInfo.Designer.cs">
+      <DependentUpon>dsX2ActivityInfo.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsX2CreateInfo.Designer.cs">
+      <DependentUpon>dsX2CreateInfo.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsX2ExternalActivities.Designer.cs">
+      <DependentUpon>dsX2ExternalActivities.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsX2InstanceData.cs">
+      <DependentUpon>dsX2InstanceData.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\dsX2InstanceData.Designer.cs">
+      <DependentUpon>dsX2InstanceData.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsX2ScheduledActivities.Designer.cs">
+      <DependentUpon>dsX2ScheduledActivities.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\dsX2StateActivities.Designer.cs">
+      <DependentUpon>dsX2StateActivities.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\Rules.Designer.cs">
+      <DependentUpon>Rules.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="DataSets\X2.cs">
+      <DependentUpon>X2.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\X2.Designer.cs">
+      <DependentUpon>X2.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Interfaces\Requests\X2CreateWorkFlowInstanceWithCompleteRequest.cs" />
+    <Compile Include="Interfaces\RequestTypeEnum.cs" />
+    <Compile Include="Interfaces\Responses\X2EngineResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2CommandResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2ErrorResponse.cs" />
+    <Compile Include="Interfaces\IX2Engine.cs" />
+    <Compile Include="Interfaces\IX2EngineProvider.cs" />
+    <Compile Include="Interfaces\IX2Info.cs" />
+    <Compile Include="Interfaces\Messages.cs" />
+    <Compile Include="Interfaces\Requests\X2ActivityCancelRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2ActivityCompleteRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2ActivityStartRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2CommandRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2CreateWorkFlowInstanceRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2ExternalActivityRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2LoginRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2LogoutRequest.cs" />
+    <Compile Include="Interfaces\Requests\X2RebuildWorklistRequest.cs" />
+    <Compile Include="Interfaces\Responses\X2ActivityCancelResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2ActivityCompleteResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2ActivityStartResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2ExternalActivityNotificationResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2LoginResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2LogoutResponse.cs" />
+    <Compile Include="Interfaces\Responses\X2RebuildWorklistResponse.cs" />
+    <Compile Include="Interfaces\Requests\X2RequestBase.cs" />
+    <Compile Include="Interfaces\Responses\X2ResponseBase.cs" />
+    <Compile Include="Interfaces\Responses\X2ResponseException.cs" />
+    <Compile Include="Interfaces\X2SystemRequest.cs" />
+    <Compile Include="Interfaces\X2SystemRequestGroup.cs" />
+    <Compile Include="Logging\X2Logging.cs" />
+    <Compile Include="Logging\LogSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>LogSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceFacade\ServiceFacadeBase.cs" />
+    <Compile Include="ServiceFacade\X2_SFE.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Audits.xsc">
+      <DependentUpon>Audits.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Audits.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Audits.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Audits.xss">
+      <DependentUpon>Audits.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ControlConstants.xsc">
+      <DependentUpon>ControlConstants.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ControlConstants.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ControlConstants.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\ControlConstants.xss">
+      <DependentUpon>ControlConstants.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsProcessAssembly.xsc">
+      <DependentUpon>dsProcessAssembly.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsProcessAssembly.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsProcessAssembly.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsProcessAssembly.xss">
+      <DependentUpon>dsProcessAssembly.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ActivatedExternalActivities.xsc">
+      <DependentUpon>dsX2ActivatedExternalActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ActivatedExternalActivities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsX2ActivatedExternalActivities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsX2ActivatedExternalActivities.xss">
+      <DependentUpon>dsX2ActivatedExternalActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ActivityInfo.xsc">
+      <DependentUpon>dsX2ActivityInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ActivityInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsX2ActivityInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsX2ActivityInfo.xss">
+      <DependentUpon>dsX2ActivityInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2CreateInfo.xsc">
+      <DependentUpon>dsX2CreateInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2CreateInfo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsX2CreateInfo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsX2CreateInfo.xss">
+      <DependentUpon>dsX2CreateInfo.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ExternalActivities.xsc">
+      <DependentUpon>dsX2ExternalActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ExternalActivities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsX2ExternalActivities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsX2ExternalActivities.xss">
+      <DependentUpon>dsX2ExternalActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2InstanceData.xsc">
+      <DependentUpon>dsX2InstanceData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2InstanceData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsX2InstanceData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsX2InstanceData.xss">
+      <DependentUpon>dsX2InstanceData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ScheduledActivities.xsc">
+      <DependentUpon>dsX2ScheduledActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2ScheduledActivities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsX2ScheduledActivities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsX2ScheduledActivities.xss">
+      <DependentUpon>dsX2ScheduledActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2StateActivities.xsc">
+      <DependentUpon>dsX2StateActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsX2StateActivities.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsX2StateActivities.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\dsX2StateActivities.xss">
+      <DependentUpon>dsX2StateActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Rules.xsc">
+      <DependentUpon>Rules.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Rules.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rules.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\Rules.xss">
+      <DependentUpon>Rules.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\X2.xsc">
+      <DependentUpon>X2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\X2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>X2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\X2.xss">
+      <DependentUpon>X2.xsd</DependentUpon>
+    </None>
+    <None Include="Logging\LogSettings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>LogSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.Logging\SAHL.Common.Logging.csproj">
+      <Project>{b73e4f52-b7f1-4001-9762-02db2df14a23}</Project>
+      <Name>SAHL.Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0c1b7b75-8887-4169-a41d-0aacddff3d49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.X2.Common\SAHL.X2.Common.csproj">
+      <Project>{8c75a3eb-47ed-4dce-bc03-b9807a545d43}</Project>
+      <Name>SAHL.X2.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>robocopy "$(ProjectDir)\bin\$(ConfigurationName)" "$(SolutionDir)..\Internal Binaries" $(ProjectName).dll $(ProjectName).pdb /XO /NJH /NP
+if %25errorlevel%25 GEQ 2 goto BuildEventFailed
+if %25errorlevel%25 LEQ 1 goto end
+  :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+  exit 1
+  :end echo FILECOPY for $(ProjectName) COMPLETED OK
+  exit 0</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\External Binaries\NuGet\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\External Binaries\NuGet\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\..\External Binaries\NuGet\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\..\External Binaries\NuGet\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+</Project>

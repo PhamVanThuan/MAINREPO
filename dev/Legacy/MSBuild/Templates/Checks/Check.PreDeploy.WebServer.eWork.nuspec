@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Check.PreDeploy.WebServer.eWork</id>
+    <version>$version$</version>
+    <authors>SA Home Loans</authors>
+    <owners>SA Home Loans</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>PreDeploy checks on the eWork WebServer</description>
+    <copyright>Copyright 2012</copyright>
+  </metadata>
+  <files>
+	<file src="Deploy.ps1"/> 
+	<file src="Check.PreDeploy.WebServer.eWork\Check.PreDeploy.WebServer.eWork.ps1" target="Check.PreDeploy.WebServer.eWork"/>
+	<file src="Check.Common\Common.Misc.ps1" target="Check.Common"/>
+	<file src="Check.Common\Common.ODBC.ps1" target="Check.Common"/>
+	<file src="Check.Common\Common.Output.ps1" target="Check.Common"/>
+	<file src="Check.Common\Common.SQL.ps1" target="Check.Common"/>
+	<file src="Check.Common\Common.Variables.ps1" target="Check.Common"/>
+  </files>
+</package>

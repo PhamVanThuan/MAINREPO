@@ -1,0 +1,134 @@
+
+<html>
+	<head>
+		<title>Address</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<style>
+			.validation {
+				color:orange;
+			}
+			.validation-message {
+				color:red;
+			}
+			
+		</style>
+	</head>
+	<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="span12">
+				<h1>Address Domain Service</h1>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span3">
+				<ul class="nav nav-list well">
+				  <li class="nav-header">Documentation</li>
+				  <li><a href="../index.html">Home</a></li>
+				  <li><a href="../commands.html"">Commands</a></li>
+					<ul class="nav nav-list">
+										<li class="active">
+							<a href="../commands/linkpostaladdresstoclientcommand.html">LinkPostalAddressToClientCommand</a>
+						</li>
+						<li >
+							<a href="../commands/linkstreetaddressasresidentialaddresstoclientcommand.html">LinkStreetAddressAsResidentialAddressToClientCommand</a>
+						</li>
+						<li >
+							<a href="../commands/linkstreetaddressaspostaladdresstoclientcommand.html">LinkStreetAddressAsPostalAddressToClientCommand</a>
+						</li>
+						<li >
+							<a href="../commands/linkstreetaddresstopropertycommand.html">LinkStreetAddressToPropertyCommand</a>
+						</li>
+					</ul>
+				  
+				  <li><a href="../events.html">Events</a></li>
+				  <li><a href="../models.html">Models</a></li>
+				  <li><a href="../queries.html">Queries</a></li>
+				  <li><a href="../rules.html"">Rules</a></li>
+				</ul>
+			</div>
+			<div class="span9">
+				<h2>LinkPostalAddressToClientCommand</h2>
+
+				<h3>Properties</h3>
+					<table class="table table-striped">
+						<thead>
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Validations</th>
+						<tr>
+						</thead>
+						<tbody>
+										<tr>
+							<td>ClientAddressGuid</td>
+											<td>Guid</td>
+									<td>
+								<ul>
+					
+								</ul>
+							</td>
+						</tr>
+								<tr>
+							<td>ClientKey</td>
+											<td>Int32</td>
+									<td>
+								<ul>
+					
+								</ul>
+							</td>
+						</tr>
+								<tr>
+							<td>PostalAddressModel</td>
+											<td><a href="../models/PostalAddressModel.html">PostalAddressModel</td>
+									<td>
+								<ul>
+					
+								</ul>
+							</td>
+						</tr>
+			
+					</-tbody>
+				</table>
+
+				<h3>Events</h3>
+								<a href="../events/PostalAddressLinkedToClientEvent.html">PostalAddressLinkedToClientEvent</a>
+				<h3>Checks</h3>
+					<table class="table table-striped">
+						<thead>
+						<tr>
+							<th>Name</th>
+						<tr>
+						</thead>
+						<tbody>
+												<tr>
+								<td>
+									IRequiresClient
+									<br></br>
+						<table class="table table-striped">
+							<thead>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+							<tr>
+							</thead>
+							<tbody>
+												<tr>
+								<td>ClientKey</td>
+								<td>Int32</td>
+							</tr>
+				
+						</tbody>
+						</table>
+								</td>
+							</tr>
+				
+					</tbody>
+				</table>
+				<h3>Rules</h3>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

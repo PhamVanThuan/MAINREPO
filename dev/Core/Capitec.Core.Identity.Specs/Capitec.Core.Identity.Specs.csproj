@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7778E32-C47F-4D51-B060-C42A3C8F3ED7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Capitec.Core.Identity.Specs</RootNamespace>
+    <AssemblyName>Capitec.Core.Identity.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthenticationManagerSpecs\when_authenticating_with_an_ivalid_token.cs" />
+    <Compile Include="AuthenticationManagerSpecs\when_authenticating_with_a_valid_token.cs" />
+    <Compile Include="AuthenticationManagerSpecs\when_encrypting_and then_decrypting.cs" />
+    <Compile Include="AuthenticationManagerSpecs\when_logging_in_with_invalid_password_credentials.cs" />
+    <Compile Include="AuthenticationManagerSpecs\when_logging_in_with_valid_credentials_but_user_is_inactive.cs" />
+    <Compile Include="AuthenticationManagerSpecs\when_logging_in_with_invalid_username_credentials.cs" />
+    <Compile Include="AuthenticationManagerSpecs\when_logging_in_with_valid_credentials.cs" />
+    <Compile Include="AuthenticationManagerSpecs\when_logging_out.cs" />
+    <Compile Include="PasswordManagerSpecs\when_verifying_a_hashed_password.cs" />
+    <Compile Include="PasswordManagerSpecs\when_verifying_a_hashed_password_from_PasswordManager.cs" />
+    <Compile Include="PasswordManagerSpecs\when_verifying_a_hashed_password_given_an_empty_string.cs" />
+    <Compile Include="PasswordManagerSpecs\when_verifying_a_hashed_password_given_PBKDF2IterCount.cs" />
+    <Compile Include="PasswordManagerSpecs\when_verifying_a_hashed_password_with_a_missing_hashing_iteration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleProviderSpecs\when_retrieving_roles_with_valid_user.cs" />
+    <Compile Include="UserManagerSpecs\when_accepting_a_user_invitation_for_a_user_that_exists.cs" />
+    <Compile Include="UserManagerSpecs\when_changing_a_password_for_a_user_that_does_not_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_changing_a_password_for_a_user_that_exists.cs" />
+    <Compile Include="UserManagerSpecs\when_assigning_roles_from_a_user_that_does_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_assigning_roles_from_a_user_that_does_not_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_removing_roles_from_a_user_that_does_not_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_unlocking_a_user_account_that_does_not_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_removing_roles_from_a_user_that_does_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_unlocking_a_user_account_that_exists.cs" />
+    <Compile Include="UserManagerSpecs\when_locking_a_user_account_that_does_not_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_locking_a_user_account_that_exists.cs" />
+    <Compile Include="UserManagerSpecs\when_deactivating_a_user_account_that_does_not_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_activating_a_user_account_that_does_not_exist.cs" />
+    <Compile Include="UserManagerSpecs\when_deactivating_a_user_account_that_exists.cs" />
+    <Compile Include="UserManagerSpecs\when_activating_a_user_account_that_exists.cs" />
+    <Compile Include="UserManagerSpecs\when_inviting_a_user_that_already_exists.cs" />
+    <Compile Include="UserManagerSpecs\when_inviting_a_user_that_does_not_exist_yet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Capitec.Core.Identity\Capitec.Core.Identity.csproj">
+      <Project>{b90b4e58-afce-41e3-ae49-d623a5243e4f}</Project>
+      <Name>Capitec.Core.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.2AM\SAHL.Core.Data.Models.2AM.csproj">
+      <Project>{5ae349cf-67f9-47bd-9aa0-48cda3bbac51}</Project>
+      <Name>SAHL.Core.Data.Models.2AM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Models.Capitec\SAHL.Core.Data.Models.Capitec.csproj">
+      <Project>{744e4b80-5378-400e-b2ea-99db856006bf}</Project>
+      <Name>SAHL.Core.Data.Models.Capitec</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Testing.Fakes\SAHL.Core.Testing.Fakes.csproj">
+      <Project>{135f06a4-0426-421c-ae4c-31e0571adc63}</Project>
+      <Name>SAHL.Core.Testing.Fakes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Testing\SAHL.Core.Testing.csproj">
+      <Project>{2f21ffe3-ab20-4623-84b5-29d1d93627e6}</Project>
+      <Name>SAHL.Core.Testing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

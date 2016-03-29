@@ -1,0 +1,17 @@
+﻿<ul id="menu">
+    @if (Request.IsAuthenticated)
+    {
+        <li>
+            @Html.ActionLink("Search", "Search", "Case")
+        </li>
+    }
+ else
+ {
+        <li style="float:right;">
+            @Html.ActionLink("Register", "Register", "Account")
+        </li>
+ }
+    <li style="float:right;">
+        @{Html.RenderPartial("_LoginPartial");}
+    </li>
+</ul>

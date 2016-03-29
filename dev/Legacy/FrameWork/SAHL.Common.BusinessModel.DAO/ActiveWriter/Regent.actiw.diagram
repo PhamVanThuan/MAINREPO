@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="Regent">
+  <modelMoniker Id="7a5603d7-ac87-4cad-90fe-e20612c4c868" />
+  <nestedChildShapes>
+    <classShape Id="af862ec2-8e88-4282-afaa-ea3d597aaf3f" absoluteBounds="0.875, 1, 1.5, 1.0549544166525204">
+      <modelClassMoniker name="/7a5603d7-ac87-4cad-90fe-e20612c4c868/RegentStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9cc4370f-06c5-478c-bba2-cfbc947c14e5" absoluteBounds="0.89, 1.4100000000000001, 1.4700000000000002, 0.54495441665252042" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ec68b8a-8cda-4e5b-9aed-e7ac45998948" absoluteBounds="3, 0.5, 1.5, 6.8951235831777247">
+      <modelClassMoniker name="/7a5603d7-ac87-4cad-90fe-e20612c4c868/Regent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cf6fec7-024e-4a3b-93ec-54b54a367306" absoluteBounds="3.015, 0.91000000000000014, 1.4700000000000002, 6.3851235831777249" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</activeRecordMapping>

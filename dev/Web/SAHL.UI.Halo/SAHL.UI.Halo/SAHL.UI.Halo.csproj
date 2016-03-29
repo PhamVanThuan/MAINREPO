@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ECD5EF07-F3EE-4E36-9038-7E0EA36FD4BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.UI.Halo</RootNamespace>
+    <AssemblyName>SAHL.UI.Halo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\FluentValidation\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.UI">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Account\ArrearTransaction\ArrearTransactionsRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\ArrearTransaction\ArrearTransactionsRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\ArrearTransaction\ArrearTransactionsRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\LoanTransaction\LoanTransactionsRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\LoanTransaction\LoanTransactionsRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\LoanTransaction\LoanTransactionsRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Actions\MortgageLoanCloseWizardAction.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Wizards\MortgageLoanCloseWizardConfiguration.cs" />
+    <Compile Include="Configuration\Application\Mortgage\NewPurchaseApplicationRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Application\Mortgage\RefinanceApplicationRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Application\Mortgage\SwitchApplicationRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Application\ApplicationRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationDetails\ApplicationDetailsChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Actions\MortgageLoanDynamicActionProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\BankAccount\BankAccountChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\BankAccount\BankAccountChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\BankAccount\BankAccountChildTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\BankAccount\BankAccountChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsChildTileDrilldown.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\Correspondence\CorrespondenceDetails\CorrespondencesDetailRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\Correspondence\CorrespondenceDetails\CorrespondencesDetailRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\Correspondence\CorrespondenceDetails\CorrespondencesDetailRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\Correspondence\ThirdPartyInvoiceCorrespondencesChildPageDrilldown.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\Correspondence\ThirdPartyInvoiceCorrespondencesChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\Correspondence\ThirdPartyInvoiceCorrespondencesChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\Correspondence\ThirdPartyInvoiceCorrespondencesChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesChildPageDrilldown.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesDetails\ThirdPartyInvoiceQueriesDetailRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesDetails\ThirdPartyInvoiceQueriesDetailRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesDetails\ThirdPartyInvoiceQueriesDetailRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Actions\EscalateApproveInvoiceAlternativeWorkflowAction.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\ConditionalActions\ThirdPartyWorkflowEscalateForApprovalConditionalProvider.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\ConditionalActions\ThirdPartyWorkflowApproveInvoiceConditionalProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceLineItem\ThirdPartyInvoiceLineItemChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceLineItem\ThirdPartyInvoiceLineItemChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceLineItem\ThirdPartyInvoiceLineItemChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ResolveThirdPartyInvoiceQueryWorkflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyAcceptInvoiceWorkflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ResolveThirdPartyInvoiceQueryWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ResolveThirdPartyInvoiceQueryWorkflowWizardPageState.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyApproveInvoiceWorkflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyApproveInvoiceWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyApproveInvoiceWorkflowWizardPageState.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyInvoiceAmendWorflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyAcceptInvoiceWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyInvoiceAmendWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyAcceptInvoiceWorkflowWizardPageState.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyInvoiceAmendWorflowWizardPageState.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyReassignProcessorWorkflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyReassignProcessorWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyReassignProcessorWorkflowWizardPageState.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyRejectInvoiceWorkflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyRejectInvoiceWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyRejectInvoiceWorkflowWizardPageState.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyEscalateInvoiceWorkflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyEscalateInvoiceWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyEscalateInvoiceWorkflowWizardPageState.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyQueryInvoiceWorkflowWizardConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyQueryInvoiceWorkflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyQueryInvoiceWorkflowWizardPageState.cs" />
+    <Compile Include="DataProvider\ThirdParty\BankAccount\BankAccountChildDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\BankAccount\BankAccountChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceCorrespondences\ThirdPartyInvoiceCorrespondencesChildDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceCorrespondences\ThirdPartyInvoiceCorrespondencesChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesChildDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceQueries\ThirdPartyInvoiceQueriesChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceLineItems\ThirdPartyInvoiceLineItemsChildDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceLineItems\ThirdPartyInvoiceLineItemsChildTileContentDataProvider.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceLineItemModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceQueryChildModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceQueryRootModel.cs" />
+    <Compile Include="Pages\Common\Invoices\ThirdPartyInvoiceCapturePageState.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailChildTileDrilldown.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\InvoiceDocument\InvoiceDocumentChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\InvoiceDocument\InvoiceDocumentChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\InvoiceDocument\InvoiceDocumentChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\InvoiceDocument\InvoiceDocumentRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\ThirdPartyInvoicesChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyInvoiceCaptureWorflowWizardPageConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyInvoiceCaptureWorkflowWizardPageState.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceRootTileHeaderTextProvider.cs" />
+    <Compile Include="DataProvider\Application\ApplicationDynamicDataProvider.cs" />
+    <Compile Include="DataProvider\Application\SwitchApplicationRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Application\RefinanceApplicationRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Application\NewPurchaseApplicationRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesDetailsChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\AggregatedThirdPartyInvoicesRootTileDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\ThirdPartyInvoiceDetailRootTileDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\InvoiceDocument\InvoiceDocumentChildDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\InvoiceDocument\InvoiceDocumentChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\AggregatedInvoices\Invoices\Invoice\ThirdPartyInvoiceRootDataProvider.cs" />
+    <Compile Include="Models\Application\RefinanceApplicationRootModel.cs" />
+    <Compile Include="Models\Application\SwitchApplicationRootModel.cs" />
+    <Compile Include="Models\Application\NewPurchaseApplicationRootModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\InvoiceDocumentChildModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\InvoiceDocumentRootModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceCaptureTileModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceDetailRootModel.cs" />
+    <Compile Include="Configuration\Task\ThirdPartyInvoices\ThirdPartyInvoicesLinkedRootTileConfiguration.cs" />
+    <Compile Include="Pages\Common\Invoices\InvoiceDocumentPageState.cs" />
+    <Compile Include="Pages\Common\Invoices\ThirdPartyCorrespondencePageState.cs" />
+    <Compile Include="Pages\Common\Transactions\ArrearTransactionsPageState.cs" />
+    <Compile Include="Pages\Common\Transactions\LoanTransactionsPageState.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\ArrearTransactions\ArrearTransactionsChildPageDrilldown.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\ArrearTransactions\ArrearTransactionsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\ArrearTransactions\ArrearTransactionsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\ArrearTransactions\ArrearTransactionsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\LoanTransactions\LoanTransactionsChildPageDrilldown.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationsChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PropertyDetails\PreviousValuationsRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PropertyDetails\PreviousValuationsRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PropertyDetails\PreviousValuationsRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\TaskHomeConfiguration.cs" />
+    <Compile Include="Configuration\Wizards\ThirdParty\Invoice\ThirdPartyInvoiceCaptureWorkflowWizardConfiguration.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PreviousValuations\PropertyDetails\PreviousValuationsRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationsChildTileDataProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationDetails\PreviousValuationDetailsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationDetails\PreviousValuationDetailsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationDetails\PreviousValuationDetailsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\ActiveValuation\ActiveValuationChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\ActiveValuation\ActiveValuationChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\ActiveValuation\ActiveValuationChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\DeedsOfficeDetails\DeedsOfficeDetailsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\DeedsOfficeDetails\DeedsOfficeDetailsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\DeedsOfficeDetails\DeedsOfficeDetailsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PropertyDetails\PropertyRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PropertyDetails\PropertyRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PropertyDetails\PropertyRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PropertyChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PropertyChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PropertyChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\HOC\HOCRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\HOC\HOCRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\HOC\HOCRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Account\HOC\HOCRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Account\HOC\HOCRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\Life\LifeRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\Life\LifeRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\Life\LifeRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Account\Life\LifeRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Account\Life\LifeRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Life\LifeChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Life\LifeChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Life\LifeChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Life\LifeChildTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Life\LifeChildTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Life\LifeChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\PersonalLoanTransactions\PersonalLoanTransactionsRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\PersonalLoanRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\PersonalLoanRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\PersonalLoanRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\PersonalLoanRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\PersonalLoanRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\ClientRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\Transactions\PersonalLoanTransactionsChildPageDrilldown.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\Transactions\PersonalLoanTransactionsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\Transactions\PersonalLoanTransactionsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\PersonalLoan\Transactions\PersonalLoanTransactionsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsDetails\AggrigatedApplicationsDetailsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsDetails\AggrigatedApplicationsDetailsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsDetails\AggrigatedApplicationsDetailsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\AggrigatedApplications\AggrigatedApplicationsRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Client\Detail\Address\AddressChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\Address\AddressChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\MortgageLoanRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\MortgageLoanRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\MortgageLoanRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\MortgageLoanRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Detail\Address\AddressChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\BankAccount\BankAccountChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\BankAccount\BankAccountChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\BankAccount\BankAccountChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\ClientRootTileDrilldown.cs" />
+    <Compile Include="Configuration\ClientHomeConfiguration.cs" />
+    <Compile Include="Configuration\Client\Correspondence\CorrespondenceChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Correspondence\CorrespondenceChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Correspondence\CorrespondenceChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\DebtCounselling\DebtCounsellingChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\DebtCounselling\DebtCounsellingChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\DebtCounselling\DebtcounsellingChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\BankAccount\BankAccountChildTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\Detail\ClientDetailRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\ClientDetailRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\ClientDetailRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Client\Detail\ClientDetailRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\Detail\ClientDetailRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Detail\EmploymentSummary\EmploymentSummaryChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\EmploymentSummary\EmploymentSummaryChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Detail\EmploymentSummary\EmploymentSummaryChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\Editors\ClientDetailEditorTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\FinancialProfile\FinancialProfileChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\ClientRootTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\ClientRootTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Client\ClientRootTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\ClientRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\FinancialProfile\FinancialProfileChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\FinancialProfile\FinancialProfileChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\ITC\ITCChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\ITC\ITCChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\ITC\ITCChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\LoanTransactions\LoanTransactionsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\LoanTransactions\LoanTransactionsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\LoanTransactions\LoanTransactionsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\HOC\HOCChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\HOC\HOCChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\HOC\HOCChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\HOC\HOCTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\HOC\HOCTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\HOC\HOCTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\MortgageLoanChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\MortgageLoanChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\MortgageLoanChildTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\MortgageLoanChildTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\MortgageLoanChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\MortgageLoan\MortgageLoanChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\MortgageLoanRootTileConfiguration.cs" />
+    <Compile Include="Configuration\Account\MortgageLoan\Property\PropertyChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Client\PersonalLoan\PersonalLoanChildTileDrilldown.cs" />
+    <Compile Include="Configuration\Client\PersonalLoan\PersonalLoanChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\PersonalLoan\PersonalLoanChildTileHeaderLeftIconProvider.cs" />
+    <Compile Include="Configuration\Client\PersonalLoan\PersonalLoanChildTileHeaderRightIconProvider.cs" />
+    <Compile Include="Configuration\Client\PersonalLoan\PersonalLoanChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\PersonalLoan\PersonalLoanChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\RelatedLegalEntities\RelatedLegalEntitiesChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\RelatedLegalEntities\RelatedLegalEntitiesChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\Client\RelatedLegalEntities\RelatedLegalEntitiesChildTileConfiguration.cs" />
+    <Compile Include="Configuration\HomeHaloApplicationConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Instructions\ThirdPartyInstructionsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Instructions\ThirdPartyInstructionsChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\Instructions\ThirdPartyInstructionsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\ThirdPartyInvoicesChildTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\ThirdPartyInvoicesChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\Invoices\ThirdPartyInvoicesChildTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdPartyHomeConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\ThirdPartyRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ThirdParty\ThirdPartyRootTileHeaderTextProvider.cs" />
+    <Compile Include="Configuration\ThirdParty\ThirdPartyRootTileHeaderConfiguration.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationDetails\PreviousValuationDetailsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PreviousValuations\PreviousValuationDetails\PreviousValuationDetailsChildDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\ActiveValuation\ActiveValuationChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\ActiveValuation\ActiveValuationChildDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\DeedsOfficeDetails\DeedsOfficeDetailsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\DeedsOfficeDetails\DeedsOfficeDetailsChildDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PropertyChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PropertyChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\Account\HOC\HOCRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\Life\LifeRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Life\LifeChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Life\LifeChildDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\Property\PropertyDetails\PropertyRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Account\PersonalLoan\PersonalLoanRootTileContentDataProvider.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationDetails\ApplicationDetailsChildTileConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationDetails\ApplicationDetailsChildTileHeaderConfiguration.cs" />
+    <Compile Include="Configuration\Client\Applications\ApplicationDetails\ApplicationDetailsChildTileHeaderTextProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\AggrigatedApplications\AggrigatedApplicationsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\AggrigatedApplications\AggrigatedApplicationsChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\AggrigatedApplications\AggrigatedApplicationsDetails\AggrigatedApplicationsDetailsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\AggrigatedApplications\AggrigatedApplicationsDetails\AggrigatedApplicationsDetailsChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\AggrigatedApplications\AggrigatedApplicationsRootTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\AggrigatedApplications\AggrigatedApplicationsRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\ApplicationsDetails\ApplicationDetailsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\ApplicationsDetails\ApplicationDetailsChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\ApplicationsRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\ApplicationsRootDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\Address\AddressChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\Address\AddressChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\ApplicationsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Applications\ApplicationsChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\ClientRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\ClientRootTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\BankAccount\BankAccountChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\BankAccount\BankAccountChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\EmploymentSummary\EmploymentSummaryChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\EmploymentSummary\EmploymentSummaryChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Editors\ClientRootEditorTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Correspondence\CorrespondenceChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Correspondence\CorrespondenceChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\DebtCounselling\DebtCounsellingChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\DebtCounselling\DebtCounsellingChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\ClientDetailRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\Detail\ClientDetailRootTileDataProvider.cs" />
+    <Compile Include="DataProvider\Client\FinancialProfile\FinancialProfileChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\FinancialProfile\FinancialProfileChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\ITC\ITCChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\ITC\ITCChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\MortgageLoan\HOC\HOCChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\MortgageLoan\HOC\HOCChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\MortgageLoan\MortgageLoanChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\MortgageLoan\MortgageLoanChildDataProvider.cs" />
+    <Compile Include="DataProvider\Account\MortgageLoan\MortgageLoanRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\PersonalLoan\PersonalLoanChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\PersonalLoan\PersonalLoanChildDataProvider.cs" />
+    <Compile Include="DataProvider\Client\RelatedLegalEntities\RelatedLegalEntitiesChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Client\RelatedLegalEntities\RelatedLegalEntitiesChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\Common\ArrearTransactions\ArrearTransactionsChildDataProvider.cs" />
+    <Compile Include="DataProvider\Common\ArrearTransactions\ArrearTransactionsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Common\LoanTransactions\LoanTransactionsChildDataProvider.cs" />
+    <Compile Include="DataProvider\Common\LoanTransactions\LoanTransactionsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\Common\LoanTransactions\PersonalLoanTransactionsChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Instructions\ThirdPartyInstructionsChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Instructions\ThirdPartyInstructionsChildTileDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\ThirdPartyInvoicesChildTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\Invoices\ThirdPartyInvoicesChildDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\ThirdPartyRootTileContentDataProvider.cs" />
+    <Compile Include="DataProvider\ThirdParty\ThirdPartyRootTileDataProvider.cs" />
+    <Compile Include="Models\Account\Property\PreviousValuationModel.cs" />
+    <Compile Include="Models\Account\Property\ActiveValuationModel.cs" />
+    <Compile Include="Models\Account\Property\PreviousValuationsModel.cs" />
+    <Compile Include="Models\Account\Property\PropertyChildModel.cs" />
+    <Compile Include="Models\Account\LifeChildModel.cs" />
+    <Compile Include="Models\Account\LifeRootModel.cs" />
+    <Compile Include="Models\Account\HOCRootModel.cs" />
+    <Compile Include="Models\Account\PersonalLoanRootModel.cs" />
+    <Compile Include="Models\Account\Property\DeedsOfficeDetailsModel.cs" />
+    <Compile Include="Models\Account\Property\PropertyRootModel.cs" />
+    <Compile Include="Models\Client\Applications\AggrigatedApplicationsRootModel.cs" />
+    <Compile Include="Models\Client\Applications\AggrigatedApplicationsModel.cs" />
+    <Compile Include="Models\Client\Applications\AggrigatedApplicationsDetailsModel.cs" />
+    <Compile Include="Models\Client\Applications\ApplicationRootModel.cs" />
+    <Compile Include="Models\Client\Applications\ApplicationDetailsModel.cs" />
+    <Compile Include="Models\Client\Applications\ApplicationsChildModel.cs" />
+    <Compile Include="Models\Client\ClientChildModel.cs" />
+    <Compile Include="Models\Client\ClientRootModel.cs" />
+    <Compile Include="Models\Client\DebtCounselling\DebtCounsellingChildModel.cs" />
+    <Compile Include="Models\Client\Detail\ClientDetailModel.cs" />
+    <Compile Include="Models\Client\Detail\EmploymentSummary\EmploymentSummaryChildModel.cs" />
+    <Compile Include="Models\Client\FinancialProfile\FinancialProfileChildModel.cs" />
+    <Compile Include="Models\Client\HOC\HOCChildModel.cs" />
+    <Compile Include="Models\Client\ITC\ITCChildModel.cs" />
+    <Compile Include="Models\Client\MortgageLoan\MortgageLoanChildModel.cs" />
+    <Compile Include="Models\Account\MortgageLoanRootModel.cs" />
+    <Compile Include="Models\Client\PersonalLoan\PersonalLoanChildModel.cs" />
+    <Compile Include="Models\Common\ArrearTransactions\ArrearTransactionChildModel.cs" />
+    <Compile Include="Models\Common\ArrearTransactions\ArrearTransactionDetailModel.cs" />
+    <Compile Include="Models\Common\BankAccount\BankAccountChildModel.cs" />
+    <Compile Include="Models\Common\Correspondence\CorrespondenceChildModel.cs" />
+    <Compile Include="Models\Common\LegalEntityAddress\LegalEntityAddressChildModel.cs" />
+    <Compile Include="Models\Common\LoanTransaction\LoanTransactionDetailModel.cs" />
+    <Compile Include="Models\Common\LoanTransaction\LoanTransactionTileModel.cs" />
+    <Compile Include="Models\Common\RelatedLegalEntities\RelatedLegalEntitiesChildModel.cs" />
+    <Compile Include="Models\ThirdParty\Instructions\InstructionChildModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\AggregatedThirdPartyInvoiceGroupedModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\AggregatedThirdPartyInvoiceRootModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceChildModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceDetailModel.cs" />
+    <Compile Include="Models\ThirdParty\Invoices\ThirdPartyInvoiceRootModel.cs" />
+    <Compile Include="Models\ThirdParty\ThirdPartyRootModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.UI.Halo.Shared\SAHL.UI.Halo.Shared.csproj">
+      <Project>{f66b07fc-1136-409d-a93a-940553946678}</Project>
+      <Name>SAHL.UI.Halo.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\Client\Actions\" />
+    <Folder Include="DataProvider\Client\Address\" />
+    <Folder Include="DataProvider\Client\Arrears\" />
+    <Folder Include="DataProvider\Common\Correspondence\" />
+    <Folder Include="DataProvider\Common\LegalEntityAddress\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="BankAccount">
+  <modelMoniker Id="849634b4-307c-4efd-b45f-16aa81cc93c7" />
+  <nestedChildShapes>
+    <classShape Id="436b044c-108d-4412-a02a-a40f8205e5ec" absoluteBounds="0.5, 1.375, 1.5, 1.8678898111979168">
+      <modelClassMoniker name="/849634b4-307c-4efd-b45f-16aa81cc93c7/BankAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab86c65e-b3c5-4805-aaf1-67c7cd4b8243" absoluteBounds="0.515, 1.7850000000000001, 1.4700000000000002, 1.3578898111979165" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</activeRecordMapping>

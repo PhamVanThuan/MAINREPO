@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ClientSecure" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" />
+      <xsd:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClientSecure_GetServiceMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceMessage" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_GetServiceMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_RenderSQLReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenderSQLReport" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_RenderSQLReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenderSQLReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_ReportFormats_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportFormats" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_ReportFormats_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportFormatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_GetReportParametersByStatementKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportParametersByStatementKey" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_GetReportParametersByStatementKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportParametersByStatementKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_LegalEntityChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:LegalEntityChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_LegalEntityChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LegalEntityChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_MortgageLoanAccountKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:MortgageLoanAccountKeys" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_MortgageLoanAccountKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MortgageLoanAccountKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_RequestFunds_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestFunds" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_RequestFunds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_GetSubsidyAccountKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubsidyAccountKey" />
+  </wsdl:message>
+  <wsdl:message name="IClientSecure_GetSubsidyAccountKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubsidyAccountKeyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClientSecure">
+    <wsdl:operation name="GetServiceMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/GetServiceMessage" message="tns:IClientSecure_GetServiceMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/GetServiceMessageResponse" message="tns:IClientSecure_GetServiceMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/Login" message="tns:IClientSecure_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/LoginResponse" message="tns:IClientSecure_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenderSQLReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/RenderSQLReport" message="tns:IClientSecure_RenderSQLReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/RenderSQLReportResponse" message="tns:IClientSecure_RenderSQLReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportFormats">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/ReportFormats" message="tns:IClientSecure_ReportFormats_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/ReportFormatsResponse" message="tns:IClientSecure_ReportFormats_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportParametersByStatementKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/GetReportParametersByStatementKey" message="tns:IClientSecure_GetReportParametersByStatementKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/GetReportParametersByStatementKeyResponse" message="tns:IClientSecure_GetReportParametersByStatementKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/ResetPassword" message="tns:IClientSecure_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/ResetPasswordResponse" message="tns:IClientSecure_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LegalEntityChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/LegalEntityChangePassword" message="tns:IClientSecure_LegalEntityChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/LegalEntityChangePasswordResponse" message="tns:IClientSecure_LegalEntityChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanAccountKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/MortgageLoanAccountKeys" message="tns:IClientSecure_MortgageLoanAccountKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/MortgageLoanAccountKeysResponse" message="tns:IClientSecure_MortgageLoanAccountKeys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestFunds">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/RequestFunds" message="tns:IClientSecure_RequestFunds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/RequestFundsResponse" message="tns:IClientSecure_RequestFunds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsidyAccountKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClientSecure/GetSubsidyAccountKey" message="tns:IClientSecure_GetSubsidyAccountKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClientSecure/GetSubsidyAccountKeyResponse" message="tns:IClientSecure_GetSubsidyAccountKey_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IClientSecure" type="tns:IClientSecure">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceMessage">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/GetServiceMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenderSQLReport">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/RenderSQLReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportFormats">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/ReportFormats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportParametersByStatementKey">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/GetReportParametersByStatementKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LegalEntityChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/LegalEntityChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanAccountKeys">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/MortgageLoanAccountKeys" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestFunds">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/RequestFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubsidyAccountKey">
+      <soap:operation soapAction="http://tempuri.org/IClientSecure/GetSubsidyAccountKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientSecure">
+    <wsdl:port name="BasicHttpBinding_IClientSecure" binding="tns:BasicHttpBinding_IClientSecure">
+      <soap:address location="http://localhost/SAHL.Web.Services.Internal/ClientSecure.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

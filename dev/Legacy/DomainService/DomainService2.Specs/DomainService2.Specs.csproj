@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E389AFD-B806-4576-8C91-127C2E6A4C9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainService2.Specs</RootNamespace>
+    <AssemblyName>DomainService2.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BdsSoft.DirectoryServices.Linq">
+      <HintPath>..\..\External Binaries\BdsSoft.DirectoryServices.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ, Version=0.24.0.165, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.0.4\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.0.4\lib\net40\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.5.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4, Version=0.5.12.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.12\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Ninject.3.0.0.15\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\PostSharp.2.1.7.11\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=3.1.5.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\RabbitMQ.Client.3.1.5\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Service.Interfaces, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Service.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.X2.BusinessModel.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.X2.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Communication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Capitec.Models.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Capitec.Models.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework, Version=1.0.8.107, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fakes\FakeMessageBus.cs" />
+    <Compile Include="Hosts\PersonalLoan\When_instantiated_via_ioc.cs" />
+    <Compile Include="LoggingComandHandlerSpecs\DummyCommandHandler.cs" />
+    <Compile Include="RequiresPostSharp.cs" />
+    <Compile Include="RuleSetDomainServiceSpec.cs" />
+    <Compile Include="RuleDomainServiceSpec.cs" />
+    <Compile Include="DomainObjects\StubEventList.cs" />
+    <Compile Include="DomainObjects\StubReadOnlyEventList.cs" />
+    <Compile Include="DomainServiceSpec.cs" />
+    <Compile Include="DomainService\Stubs\Valuation.cs" />
+    <Compile Include="DomainService\When_instantiated_with_a_null_remotingserviceconfigurator.cs" />
+    <Compile Include="DomainService\When_instantiated_with_a_null_activerecordinitialiser.cs" />
+    <Compile Include="DomainService\When_instantiated_with_a_null_ioc.cs" />
+    <Compile Include="DomainService\When_started.cs" />
+    <Compile Include="DomainService\When_stopped.cs" />
+    <Compile Include="Hosts\ApplicationCapture\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\Cap2\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\Common\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\DebtCounselling\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\HelpDesk\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\Life\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\LoanAdjustments\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\Origination\ApplicationCapture\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\Origination\ApplicationManagement\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\Origination\Credit\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\Origination\FurtherLending\When_instantiated_via_ioc.cs" />
+    <Compile Include="Hosts\WorkflowAssignment\When_instantiated_via_ioc.cs" />
+    <Compile Include="IOCHostInstantiationBase.cs" />
+    <Compile Include="LoggingComandHandlerSpecs\When_handling_a_command_with_errors.cs" />
+    <Compile Include="LoggingComandHandlerSpecs\DummyCommand.cs" />
+    <Compile Include="LoggingComandHandlerSpecs\When_handling_a_command_with_no_errors.cs" />
+    <Compile Include="LoggingComandHandlerSpecs\When_instantiated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedServices\Common\AddReasonsCommandHandlerSpecs\When_reasondefinition_exists.cs" />
+    <Compile Include="SharedServices\Common\AddReasonsCommandHandlerSpecs\When_reasondefinition_not_exists.cs" />
+    <Compile Include="SharedServices\Common\CalculateApplicationAndSaveCommandHandlerSpecs\when_there_is_an_application.cs" />
+    <Compile Include="SharedServices\Common\CheckApplicationMinimumIncomeRulesCommandHandlerSpecs\when_there_is_an_application.cs" />
+    <Compile Include="SharedServices\Common\CheckApplicationMinimumIncomeRulesCommandHandlerSpecs\when_there_is_no_application.cs" />
+    <Compile Include="SharedServices\Common\CheckIfUserIsPartOfOrgStructureCommandHandlerSpecs\When_CheckIfUserIsPartOfOrgStructureCommandHandled_Returns_False.cs" />
+    <Compile Include="SharedServices\Common\CheckIfUserIsPartOfOrgStructureCommandHandlerSpecs\When_CheckIfUserIsPartOfOrgStructureCommandHandled_Returns_True.cs" />
+    <Compile Include="SharedServices\Common\CheckUserInMandateCommandHandlerSpecs\When_CheckUserInMandateCommandHandled_Returns_False.cs" />
+    <Compile Include="SharedServices\Common\CheckUserInMandateCommandHandlerSpecs\When_CheckUserInMandateCommandHandled_Returns_True.cs" />
+    <Compile Include="SharedServices\Common\CloneExistsForParentCommandHandlerSpecs\When_clone_exists.cs" />
+    <Compile Include="SharedServices\Common\CloneExistsForParentCommandHandlerSpecs\When_clone_not_exists.cs" />
+    <Compile Include="SharedServices\Common\ConfirmApplicationAffordabilityAssessmentsCommandHandlerSpecs\When_confirming_an_unconfirmed_affordability_assessment.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationKeyFromSourceInstanceIDHandlerSpecs\When_invalid_instance.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationStatusCommandHandlerSpecs\When_application_found_for_applicationkey.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationStatusCommandHandlerSpecs\When_application_not_found_for_applicationkey.cs" />
+    <Compile Include="SharedServices\Common\GetCaseNameCommandHandlerSpecs\When_get_case_name.cs" />
+    <Compile Include="SharedServices\Common\GetComcorpVendorOrgStructureByApplicationCommandHandlerSpecs\When_application_linked_to_comcorp_vendor.cs" />
+    <Compile Include="SharedServices\Common\GetComcorpVendorOrgStructureByApplicationCommandHandlerSpecs\When_application_not_linked_to_comcorp_vendor.cs" />
+    <Compile Include="SharedServices\Common\GetCreditScoreDecisionKeyCommandHandlerSpecs\When_credit_score_exists.cs" />
+    <Compile Include="SharedServices\Common\GetCreditScoreDecisionKeyCommandHandlerSpecs\When_credit_score_not_exists.cs" />
+    <Compile Include="SharedServices\Common\GetFollowupTimeCommandHandlerSpecs\When_getfollowuptime_has_no_reminder_date.cs" />
+    <Compile Include="SharedServices\Common\GetLatestReasonDescriptionKeyForGenericKeyCommandHandlerSpecs\When_get_latest_reason_description_key_for_generic_key.cs" />
+    <Compile Include="SharedServices\Common\GetLegalEntityLegalNameCommandHandlerSpecs\When_get_legal_name.cs" />
+    <Compile Include="SharedServices\Common\GetLightStoneValuationCommandHandlerSpecs\When_GetLightStoneValuationCommand_Handled_and_No_Property.cs" />
+    <Compile Include="SharedServices\Common\GetLightStoneValuationCommandHandlerSpecs\When_GetLightStoneValuationCommand_Handled_and_Has_Property.cs" />
+    <Compile Include="SharedServices\Common\GetnWorkingDaysFromTodayCommandHandlerSpecs\When_GetnWorkingDaysFromToday.cs" />
+    <Compile Include="SharedServices\Common\HasInstancePerformedActivityCommandHandlerSpecs\When_Instance_Has_Not_Performed_Activity.cs" />
+    <Compile Include="SharedServices\Common\HasInstancePerformedActivityCommandHandlerSpecs\When_Instance_Has_Performed_Activity.cs" />
+    <Compile Include="SharedServices\Common\CheckIsComcorpApplicationRuleCommandHandlerSpecs\when_there_is_an_application.cs" />
+    <Compile Include="SharedServices\Common\IsComcorpApplicationCommandHandlerSpecs\when_application_is_comcorp_loan.cs" />
+    <Compile Include="SharedServices\Common\IsComcorpApplicationCommandHandlerSpecs\when_application_is_not_comcorp_loan.cs" />
+    <Compile Include="SharedServices\Common\IsRCSAccountCommandHandlerSpecs\when_account_is_an_rcs_account.cs" />
+    <Compile Include="SharedServices\Common\IsRCSAccountCommandHandlerSpecs\when_account_is_not_an_rcs_account.cs" />
+    <Compile Include="SharedServices\Common\IsValuationInProgressCommandHandlerSpecs\When_Valuation_Is_In_Progress.cs" />
+    <Compile Include="SharedServices\Common\IsValuationInProgressCommandHandlerSpecs\When_Valuation_Is_Not_In_Progress.cs" />
+    <Compile Include="SharedServices\Common\OptOutNonPerformingLoanCommandHandlerSpecs\When_a_non_performing_loan.cs" />
+    <Compile Include="SharedServices\Common\OptOutNonPerformingLoanCommandHandlerSpecs\When_not_a_non_performing_loan.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\PerformEWorkActionCommandHandlerSpecBase.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_able_to_find_ework_action_for_case.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked _to_perform_X2_Client_Won_Over.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_Cancel_RCS_Debt_Counselling_given_case_is_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_Cancel_RCS_Debt_Counselling_given_case_is_not_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_Cancel_RCS_Debt_Counselling_given_the_current_stage_is_null_or_empty.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_Terminate_Debt_Counselling_given_case_is_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_Terminate_Debt_Counselling_given_case_is_not_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_Terminate_Debt_Counselling_given_the_current_stage_is_null_or_empty.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Debt_Counselling_given_case_is_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Debt_Counselling_given_case_is_not_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Debt_Counselling_given_the_current_stage_is_null_or_empty.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Decline_Final.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Disbursement_Timer.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Hold_Over.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Resub.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Return_Debt_Counselling_given_case_is_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Return_Debt_Counselling_given_case_is_not_at_a_Debt_Counselling_stage.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Return_Debt_Counselling_given_the_current_stage_is_null_or_empty.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Rollback_Disbursement.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Archive.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Client_Refused.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_NTU_Advise.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_Re_Instructed.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_asked_to_perform_X2_UnRegister.cs" />
+    <Compile Include="SharedServices\Common\RefreshAllLookupsCommandHandlerSpecs\when_refresh_all_lookups_command_handled.cs" />
+    <Compile Include="SharedServices\Common\RefreshDSCacheCommandHandlerSpecs\when_refresh_ds_command_handled.cs" />
+    <Compile Include="SharedServices\Common\RefreshLookupItemCommandHandlerSpecs\when_refresh_lookup_item_command_handled.cs" />
+    <Compile Include="SharedServices\Common\RefreshUIStatementCacheCommandHandlerSpecs\when_refresh_ui_statement_cache_command_handled.cs" />
+    <Compile Include="SharedServices\Common\RemoveApplicationAttributeCommandHandlerSpecs\when_an_application_exists_given_no_attribute_applied.cs" />
+    <Compile Include="SharedServices\Common\RemoveApplicationAttributeCommandHandlerSpecs\when_an_application_exists_given_attribute_applied.cs" />
+    <Compile Include="SharedServices\Common\SendClientSurveyExternalEmailCommandHandlerSpecs\When_SendClientSurveyExternalEmailCommand_Handled.cs" />
+    <Compile Include="SharedServices\Common\SendClientSurveyInternalEmailCommandHandlerSpecs\When_SendClientSurveyInternalEmailCommand_Handled.cs" />
+    <Compile Include="SharedServices\WorkflowAssignmentServiceSpecs\GetRoundRobinPointerCommandHandlerSpecs\when_roundrobinpointer_does_not_exist.cs" />
+    <Compile Include="SharedServices\WorkflowAssignmentServiceSpecs\GetRoundRobinPointerCommandHandlerSpecs\when_roundrobinpointer_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendNewClientConsultantDetailsSMSCommandHandlerSpecs\base_send_new_client_consultant_details_sms_spec.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendNewClientConsultantDetailsSMSCommandHandlerSpecs\base_send_new_client_consultant_details_sms_spec_for_passing_tests.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendNewClientConsultantDetailsSMSCommandHandlerSpecs\when_consultant_does_not_have_a_cell_number.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendNewClientConsultantDetailsSMSCommandHandlerSpecs\when_no_cell_number_exists_for_main_applicant.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendNewClientConsultantDetailsSMSCommandHandlerSpecs\when_main_applicant_cell_number_exists.cs" />
+    <Compile Include="SharedServices\Common\SendReminderEMailCommandHandlerSpecs\When_email_address_not_null.cs" />
+    <Compile Include="SharedServices\Common\SendReminderEMailCommandHandlerSpecs\When_email_address_null.cs" />
+    <Compile Include="SharedServices\Common\SendSMSToMainApplicantsCommandHandlerSpecs\When_cellnumber_notnull.cs" />
+    <Compile Include="SharedServices\Common\SendSMSToMainApplicantsCommandHandlerSpecs\When_cellumber_null.cs" />
+    <Compile Include="SharedServices\Common\SetOfferEndDateCommandHandlerSpecs\When_valid_application.cs" />
+    <Compile Include="SharedServices\Common\UpdateAccountStatusCommandHandlerSpecs\When_update_account_status_with_no_validation.cs" />
+    <Compile Include="SharedServices\Common\UpdateAssignedUserInIDMCommandHandlerSpecs\When_update_assigned_user_in_idm.cs" />
+    <Compile Include="SharedServices\Common\UpdateOfferStatusCommandHandlerSpecs\When_update_offer_status_with_no_validation.cs" />
+    <Compile Include="SharedServices\WorkflowAssignmentServiceSpecs\IsUserActiveByADUserKeyCommandHandlerSpecs\when_user_active_by_aduserkey.cs" />
+    <Compile Include="SharedServices\Common\GetFollowupTimeCommandHandlerSpecs\When_getfollowuptime.cs" />
+    <Compile Include="SharedServices\WorkflowAssignmentServiceSpecs\RoundRobinAndAssignOtherFLCasesCommandHandlerSpecs\When_round_robin_and_assign_other_fl_cases.cs" />
+    <Compile Include="Workflow\Cap2\OnCompleteActivity_Promotion_ClientCommandHandlerSpecs\When_accept_capoffer.cs" />
+    <Compile Include="Workflow\Cap2\UpdateCapOfferStatusCommandHandlerSpecs\When_update_capofferstatus.cs" />
+    <Compile Include="SharedServices\Common\AddDetailTypeCommandHandlerSpecs\When_furtheradvance.cs" />
+    <Compile Include="SharedServices\Common\AddDetailTypeCommandHandlerSpecs\When_not_furtheradvance.cs" />
+    <Compile Include="SharedServices\Common\ArchiveV3ITCForApplicationCommandHandlerSpecs\When_appkey_not_zero.cs" />
+    <Compile Include="SharedServices\Common\ArchiveV3ITCForApplicationCommandHandlerSpecs\When_appkey_zero.cs" />
+    <Compile Include="SharedServices\Common\CheckLightStoneValuationRulesCommandHandlerSpecs\when_an_application_has_a_property.cs" />
+    <Compile Include="SharedServices\Common\CheckPropertyExistsCommandHandlerSpecs\when_an_application_has_a_property.cs" />
+    <Compile Include="SharedServices\Common\CheckPropertyExistsCommandHandlerSpecs\when_an_application_has_no_property.cs" />
+    <Compile Include="SharedServices\Common\CreateAccountForApplicationCommandHandlerSpecs\When_not_readvance_furtheradvance.cs" />
+    <Compile Include="SharedServices\Common\CreateAccountForApplicationCommandHandlerSpecs\When_readvance_furtheradvance.cs" />
+    <Compile Include="SharedServices\Common\CreateNewRevisionCommandHandlerSpecs\When_valid_application.cs" />
+    <Compile Include="SharedServices\Common\DoCreditScoreCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="SharedServices\Common\DoLightStoneValuationForWorkFlowCommandHandlerSpecs\when_an_application_has_a_property.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationKeyFromSourceInstanceIDHandlerSpecs\When_GetApplicationIDFromSourceInstanceID.cs" />
+    <Compile Include="SharedServices\X2WorkflowServiceSpecs\HasInstancePerformedActivityBefore\When_the_instance_has_not_performed_the_activity_before.cs" />
+    <Compile Include="SharedServices\X2WorkflowServiceSpecs\HasInstancePerformedActivityBefore\When_the_instance_has_performed_the_activity_before.cs" />
+    <Compile Include="SharedServices\X2WorkflowServiceSpecs\X2WorkflowServiceBase.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\When_handling_a_command_with_domainwarningsmessages_and_ignorewarnings_is_false.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\When_handling_a_command_with_domainwarningsmessages_and_ignorewarnings_is_true.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\When_handling_a_command_with_domainerrormessages.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\DummyCommand.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\When_handling_a_command_with_no_errors.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\When_instantiated.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\When_instantiated_with_a_null_innercommandhandler.cs" />
+    <Compile Include="TransactionalCommandHandlerSpecs\When_instantiated_with_a_null_transactionmanager.cs" />
+    <Compile Include="Workflow\Cap2\IsCreditCheckRequiredCommandHandlerSpecs\When_above_ltvthreshold.cs" />
+    <Compile Include="Workflow\Cap2\IsCreditCheckRequiredCommandHandlerSpecs\When_below_ltvthreshold.cs" />
+    <Compile Include="SharedServices\Common\PerformEworkActionCommandHandlerSpecs\When_unable_to_find_ework_action_for_case.cs" />
+    <Compile Include="SharedServices\Common\PricingForRiskCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="SharedServices\Common\PricingForRiskCommandHandlerSpecs\When_pricing_for_risk_fails_for_an_application.cs" />
+    <Compile Include="SharedServices\Common\RecalculateHouseHoldIncomeAndSaveCommandHandlerSpecs\When_valid_application.cs" />
+    <Compile Include="SharedServices\Common\RemoveDetailFromAccountCommandHandlerSpecs\when_an_account_with_details_exists_for_an_application.cs" />
+    <Compile Include="SharedServices\Common\UpdateParentVarsCommandHandlerSpecs\When_valid_instance.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounsellingCommandHandlerSpecs\When_cancel_debt_counselling_ework_action_fail.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounsellingCommandHandlerSpecs\When_cancel_debt_counselling_ework_action_success.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounsellingCommandHandlerSpecs\When_cancel_debt_counselling_no_debt_counselling_case.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounselling_EXTCommandHandlerSpecs\When_debtcounsellor_not_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounselling_EXTCommandHandlerSpecs\When_notification_not_succeed.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounselling_EXTCommandHandlerSpecs\When_not_perform_ework_action.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounselling_EXTCommandHandlerSpecs\When_stagetransition_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CancelDebtCounselling_EXTCommandHandlerSpecs\When_stagetransition_not_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckAcceptProposalRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckAcceptProposalRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckAttorneyToOpposeRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckAttorneyToOpposeRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckFiveDaysTerminationReminderRulesCommandHandlerSpecs\When_the_rule_is_called.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckFortyFiveDayReminderRulesCommandHandlerSpecs\When_the_rule_is_called.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckNoDateNoPayRulesCommandHandlerSpecs\When_the_rule_is_called.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckPaymentReceivedRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckPaymentReceivedRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendCounterProposalRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendCounterProposalRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendDeclineLetterRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendDeclineLetterRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendProposalForApprovalRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendProposalForApprovalRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendTerminationLetterRulesCommandHandlerSpecs\When_the_rule_is_called.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckSendToLitigationRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflow\DebtCounselling\CheckSendToLitigationRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflow\DebtCounselling\CheckTenDaysTerminationReminderRulesCommandHandlerSpecs\When_a_debtcounselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\CheckTenDaysTerminationReminderRulesCommandHandlerSpecs\When_a_debtcounselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\ConvertDebtCounsellingCommandHandlerSpecs\When_convert_debt_counselling.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_variable_loan_and_inactive_defending_cancellations.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_variable_loan_and_inactive_staff.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_opt_out_not_required.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_variable_loan_and_active_staff.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_variable_loan_and_active_defending_cancellations.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_variable_loan_and_interest_only.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_non_variable_loan.cs" />
+    <Compile Include="Workflow\DebtCounselling\DebtCounsellingOptOutRequiredCommandHandlerSpecs\When_no_account_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetEworkDataForLossControlCaseCommandHandlerSpecs\When_an_eworks_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetEworkDataForLossControlCaseCommandHandlerSpecs\When_an_eworks_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetInstanceSubjectCommandHandlerSpecs\When_GetInstanceSubjectCommand_handled.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetReviewDateCommandHandlerSpecs\When_get_reviewDate.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetReviewDateCommandHandlerSpecs\When_get_reviewDate_with_accepted_active_proposal_but_no_reviewDate.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetReviewDateCommandHandlerSpecs\When_get_reviewDate_with_no_accepted_active_proposal.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetSeventeenPointOneDateDaysCommandHandlerSpecs\When_get_SeventeenPointOneDateDays.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetSeventeenPointOneDateDaysCommandHandlerSpecs\When_get_SeventeenPointOneDateDays_with_no_endtransitiondate.cs" />
+    <Compile Include="Workflow\DebtCounselling\GetSeventeenPointOneDateDaysCommandHandlerSpecs\When_get_SeventeenPointOneDateDays_with_no_transitions.cs" />
+    <Compile Include="Workflow\DebtCounselling\NTUOpenPersonalLoanCommandHandlerSpecs\when_debtcounselling_a_client_has_an_open_personalloan.cs" />
+    <Compile Include="Workflow\DebtCounselling\NTUOpenPersonalLoanCommandHandlerSpecs\when_debtcounselling_clients_have_no_personalloan.cs" />
+    <Compile Include="Workflow\DebtCounselling\ProcessDebtCounsellingOptOutCommandHandlerSpecs\When_process_debt_counselling_opt_out.cs" />
+    <Compile Include="Workflow\DebtCounselling\RollbackTransactionCommandHandlerSpecs\When_rollback_is_successful.cs" />
+    <Compile Include="Workflow\DebtCounselling\RollbackTransactionCommandHandlerSpecs\When_rollback_is_unsuccessful.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendLitigationReminderInternalEmailCommandHandlerSpecs\When_email_address_was_not_found_or_invalid.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendLitigationReminderInternalEmailCommandHandlerSpecs\When_debt_counselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendLitigationReminderInternalEmailCommandHandlerSpecs\When_send_litigation_reminder_email_company.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendLitigationReminderInternalEmailCommandHandlerSpecs\When_send_litigation_reminder_email_naturalperson.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationsCancellatonRegistered_EXTCommandHandlerSpecs\When_debtcounsellor_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationsCancellatonRegistered_EXTCommandHandlerSpecs\When_debtcounsellor_not_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationsCancellatonRegistered_EXTCommandHandlerSpecs\When_notification_not_succeed.cs" />
+    <Compile Include="Workflow\DebtCounselling\SendNotificationsCancellatonRegistered_EXTCommandHandlerSpecs\When_recoveriesproposalreceivedstagetransition_not_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\TerminateDebtCounsellingCommandHandlerSpecs\When_terminate_debt_counselling_no_debt_counselling_case.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateActiveAcceptedProposalCommandHandlerSpces\When_active_proposals_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateActiveAcceptedProposalCommandHandlerSpces\When_no_active_proposals_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingDebtReviewArrangementCommandHandlerSpecs\When_update_debt_counselling_debt_review_arrangement_fails.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingDebtReviewArrangementCommandHandlerSpecs\When_update_debt_counselling_debt_review_arrangement_succeeds.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingStatusCommandHandlerSpecs\When_debt_counselling_case_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateDebtCounsellingStatusCommandHandlerSpecs\When_debt_counselling_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateHearingDetailStatusCommandHandlerSpecs\When_active_hearing_detail_case_exists.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateHearingDetailStatusCommandHandlerSpecs\When_hearing_detail_does_not_exist.cs" />
+    <Compile Include="Workflow\DebtCounselling\UpdateHearingDetailStatusCommandHandlerSpecs\When_inactive_hearing_detail_case_exists.cs" />
+    <Compile Include="Workflow\HelpDesk\CreateRequestCommandHandlerSpecs\When_legalentity_not_null.cs" />
+    <Compile Include="Workflow\HelpDesk\CreateRequestCommandHandlerSpecs\When_legalentity_null.cs" />
+    <Compile Include="Workflow\HelpDesk\X2AutoArchive2AM_UpdateCommandHandlerSpecs\When_x2_auto_archive_2am_update.cs" />
+    <Compile Include="Workflow\Life\AcceptBenefitsCommandHandlerSpecs\When_legal_entities_qualify_main_applicant.cs" />
+    <Compile Include="Workflow\Life\AcceptBenefitsCommandHandlerSpecs\When_legal_entities_qualify_not_main_applicant.cs" />
+    <Compile Include="Workflow\Life\AcceptBenefitsCommandHandlerSpecs\When_no_legal_entities_qualify.cs" />
+    <Compile Include="Workflow\Life\ActivateLifePolicyCommandHandlerSpecs\When_life_application_activate_life_policy.cs" />
+    <Compile Include="Workflow\Life\AwaitingConfirmationTimeoutCommandHandlerSpecs\When_no_reason_definitions_returned.cs" />
+    <Compile Include="Workflow\Life\AwaitingConfirmationTimeoutCommandHandlerSpecs\When_reason_definitions_returned.cs" />
+    <Compile Include="Workflow\Life\ContinueSaleCommandHandlerSpecs\When_life_application_complete_callback.cs" />
+    <Compile Include="Workflow\Cap2\IsLANotRequiredCommandHandlerSpecs\When_readvance_above_laa.cs" />
+    <Compile Include="Workflow\Cap2\IsLANotRequiredCommandHandlerSpecs\When_readvance_belowequalto_laa.cs" />
+    <Compile Include="Workflow\Life\CreateInstanceCommandHandlerSpecs\When_assured_life_count_greater_than_zero.cs" />
+    <Compile Include="Workflow\Life\CreateInstanceCommandHandlerSpecs\When_assured_life_count_not_greater_than_zero.cs" />
+    <Compile Include="Workflow\Life\DeclineQuoteCommandHandlerSpecs\When_a_life_application.cs" />
+    <Compile Include="Workflow\Life\GetActivityTimeWaitForCallbackCommandHandlerSpecs\When_life_application_with_callback.cs" />
+    <Compile Include="Workflow\Life\GetActivityTimeWaitForCallbackCommandHandlerSpecs\When_life_application_with_no_callback.cs" />
+    <Compile Include="Workflow\Life\GetPolicyTypeKeyForOfferLifeCommandHandlerSpecs\When_a_life_application.cs" />
+    <Compile Include="Workflow\Life\NTUPolicyCommandHandlerSpecs\When_a_life_application.cs" />
+    <Compile Include="Workflow\Life\PolicyNTUdCommandHandlerSpecs\When_life_application_closed.cs" />
+    <Compile Include="Workflow\Life\ReactivatePolicyCommandHandlerSpecs\When_a_life_application.cs" />
+    <Compile Include="Workflow\Life\ReadyToCallbackCommandHandlerSpecs\When_life_application_complete_callback.cs" />
+    <Compile Include="Workflow\LoanAdjustments\When_approving_term_change_using_invalid_accountkey.cs" />
+    <Compile Include="Workflow\LoanAdjustments\When_approving_term_change_using_invalid_workflow_instance.cs" />
+    <Compile Include="Workflow\Life\OlderThan45DaysCommandHandlerSpecs\When_life_application_declined.cs" />
+    <Compile Include="Workflow\Life\OlderThan45DaysCommandHandlerSpecs\When_life_application_open_complete_callback_fail.cs" />
+    <Compile Include="Workflow\Life\OlderThan45DaysCommandHandlerSpecs\When_life_application_open_complete_callback_success.cs" />
+    <Compile Include="Workflow\LoanAdjustments\When_approving_term_change_with_correct_rule.cs" />
+    <Compile Include="Workflow\LoanAdjustments\When_instantiated_with_null_Params.cs" />
+    <Compile Include="Workflow\LoanAdjustments\When_term_can_be_approved.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckBranchSubmitApplicationRulesCommandHandlerSpecs\When_there_is_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckBranchSubmitApplicationRulesCommandHandlerSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckBranchSubmitApplicationRulesSpecs\When_there_is_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckBranchSubmitApplicationRulesSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionPrimaryITCRulesCommandHandlerSpecs\When_there_is_a_mortgageloan_application_and_primaryITC.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionPrimaryITCRulesCommandHandlerSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionSecondaryITCRulesCommandHandlerSpecs\When_there_is_a_mortgageloan_application_and_secondaryITC.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckCreditSubmissionSecondaryITCRulesCommandHandlerSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckManagerSubmitApplicationRulesCommandHandlerSpecs\When_there_is_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CheckManagerSubmitApplicationRulesCommandHandlerSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateCommissionableConsultantRoleCommandHandlerSpecs\When_fail_to_add_application_role.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateCommissionableConsultantRoleCommandHandlerSpecs\When_the_legal_entity_and_application_was_found.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateCommissionableConsultantRoleCommandHandlerSpecs\When_the_legal_entity_was_not_found.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateCommissionableConsultantRoleCommandHandlerSpecs\When_the_application_was_not_found.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateNetApplicationCommandHandlerSpecs\when_the_internet_application_is_invalid.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateNetApplicationCommandHandlerSpecs\when_the_internet_application_is_valid.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateNetLeadCommandHandlerSpecs\when_the_internet_lead_is_invalid.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\CreateNetLeadCommandHandlerSpecs\when_the_internet_lead_is_valid.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\DemoteMainApplicantToLeadCommandHandlerSpecs\When_there_is_a_mortgage_loan_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\DemoteMainApplicantToLeadCommandHandlerSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentInRoleCommandHandlerSpecs\When_user_is_estate_agent_and_in_role.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentInRoleCommandHandlerSpecs\When_user_is_estate_agent_and_user_not_in_role.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentInRoleCommandHandlerSpecs\When_user_is_not_estate_agent.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentCommandHandlerSpecs\When_user_is_estate_agent.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\IsEstateAgentCommandHandlerSpecs\When_user_is_not_estate_agent.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\PromoteLeadToMainApplicantCommandHandlerSpecs\When_there_is_a_mortgage_loan_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\PromoteLeadToMainApplicantCommandHandlerSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SendReminderEmailCommandHandlerSpecs\When_email_address_was_not_found_or_invalid.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SubmitApplicationToApplicationManagementCommandHandlerSpecs\When_aduser_is_not_found.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SubmitApplicationToApplicationManagementCommandHandlerSpecs\When_an_application_role_and_aduser_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationCapture\SubmitApplicationToApplicationManagementCommandHandlerSpecs\When_application_role_type_is_not_found.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ActivateNTUFromWatchdogTimeHandlerSpecs\When_activating_NTU_from_watchdog_time.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ActivateNTUFromWatchdogTimeHandlerSpecs\When_activating_NTU_from_watchdog_time_invalid_workflow.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ApplicationHas30YearTermCommandHandlerSpecs\when_executed.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ArchiveChildInstancesCommandHandlerSpecs\When_child_instances_exist_for_instance.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ArchiveChildInstancesCommandHandlerSpecs\When_no_child_instances_exist_for_instance.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckADUserInSameBranchCommandHandlerSpecs\When_ad_user_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckADUserInSameBranchCommandHandlerSpecs\When_application_and_aduser_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckADUserInSameBranchCommandHandlerSpecs\When_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckApplicationDebitOrderCollectionRuleCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckApplicationDebitOrderCollectionRuleCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckCreditOverrideRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckCreditOverrideRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckEworkCaseAtCorrectStateHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckEworkCaseAtCorrectStateHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckIfReinstateAllowedByUserCommandHandlerSpecs\When_aduser_is_ConsultantorAdmin_and_previous_state_is_disbursement.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckInstructAttorneyRulesCommandHandlerSpecs\When_the_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckInstructAttorneyRulesCommandHandlerSpecs\When_the_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckQACompleteRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckQACompleteRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckResubOverRideRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckResubOverRideRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckValuationRequiredRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CheckValuationRequiredRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CreateEWorkPipelineCaseCommandHandlerSpecs\When_branch_consultants_and_attorneys_found.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\CreateEWorkPipelineCaseCommandHandlerSpecs\When_unable_to_find_BranchConsultant_or_FLProcessor_offer_role_for_case.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationTypeCommandHandlerSpecs\When_application_found_for_applicationkey.cs" />
+    <Compile Include="SharedServices\Common\GetApplicationTypeCommandHandlerSpecs\When_application_not_found_for_applicationkey.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HasApplicationRoleCommandHandlerSpecs\When_application_has_applicationrole_for_applicationroletype_return_true.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HasApplicationRoleCommandHandlerSpecs\When_application_has_no_applicationrole_for_applicationroletype_return_false.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HelpDeskNTUCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\HelpDeskNTUCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\NTUCaseCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\NTUCaseCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveAccountFromRegMailCommandHandlerSpecs\When_an_account_entry_exists_in_regmail.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveAccountFromRegMailCommandHandlerSpecs\When_deleting_an_account_from_regmail_fails.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveDetailFromApplicationAfterNTUFinalisedCommandHandlerSpecs\When_given_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveRegistrationProcessDetailTypesCommandHandlerSpecs\When_detail_types_exist_for_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\RemoveRegistrationProcessDetailTypesCommandHandlerSpecs\When_no_detail_types_exist_for_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnNonDisbursedLoanToProspectCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnNonDisbursedLoanToProspectCommandHandlerSpecs\When_the_method_fails.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnDisbursedLoanToRegistrationCommandHandlerSpecs\When_application_has_been_disbursed.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\ReturnDisbursedLoanToRegistrationCommandHandlerSpecs\When_rollback_of_a_disbursement_fails.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\Revert30YearTermApplicationToPreviousTermCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\Revert30YearTermApplicationToPreviousTermCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SaveApplicationCommandHandlerSpecs\When_saving_an_application_that_exists_and_validation_fails.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SaveApplicationCommandHandlerSpecs\When_saving_an_application_that_exists_and_validation_passes.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandlerSpecs\when_alpha_survey_housing_deactivated.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandlerSpecs\when_application_is_not_alpha_housing_and_not_new_business.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandlerSpecs\when_application_is_alpha_housing_and_not_new_business.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandlerSpecs\when_application_is_not_alpha_housing.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandlerSpecs\when_application_is_alpha_housing.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandlerSpecs\when_application_is_alpha_housing_with_legalentity_addresses.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendAlphaHousingSurveyEmailCommandHandlerSpecs\when_application_is_alpha_housing_with_mailing_address.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantCommandHandlerSpecs\When_sending_internal_mail_for_an_existing_workflow_case.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantCommandHandlerSpecs\When_sending_internal_mail_for_a_non_existant_workflow_case.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantForValuationDoneCommandHandlerSpecs\When_sending_internal_mail_for_an_application_that_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantForValuationDoneCommandHandlerSpecs\When_sending_internal_mail_for_a_closed_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendEmailToConsultantForValuationDoneCommandHandlerSpecs\When_sending_internal_mail_for_a_non_existant_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendNTUFinalResubMailCommandHandlerSpecs\When_sending_internal_mail_for_an_application_that doesnt_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SendNTUFinalResubMailCommandHandlerSpecs\When_sending_internal_mail_for_an_application_that_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SetAccountStatusToApplicationPriorToInstructAttorneyCommandHandlerSpecs\When_an_account_exists_for_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\SetAccountStatusToApplicationPriorToInstructAttorneyCommandHandlerSpecs\When_not_account_exists_for_an_application.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\AddDetailTypeInstructionSentCommandHandlerSpecs\When_instruction_not_sent_details_dont_exist.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\AddDetailTypeInstructionSentCommandHandlerSpecs\When_instruction_not_sent_details_exists.cs" />
+    <Compile Include="Workflow\Origination\ApplicationManagement\UpdateRegMailDetailToInstructionNotSentCommandHandlerSpecs\When_regmail_exists_for_account.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckApplicationIsNewBusinessRuleCommandHandlerSpecs\when_executed.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckCreditApprovalRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckCreditApprovalRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\Credit\CheckEmploymentTypeConfirmedRuleCommandHandlerSpecs\when_executed.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_credit_exceptions_role_exists.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_credit_manager_exists.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_credit_supervisor_exists.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_credit_underwriter_exists.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_highest_role_type_is_exceptions.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_highest_role_type_is_manager.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_highest_role_type_is_supervisor.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_no_credit_role_exists.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_no_role_exists.cs" />
+    <Compile Include="Workflow\Origination\Credit\CreditResubCommandHandlerSpecs\When_highest_role_type_is_underwriter.cs" />
+    <Compile Include="Workflow\Origination\Credit\DisqualifyApplicationForGEPFCommandHandlerSpecs\when_disqualifying_an_application_for_gepf.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsCreditSecondPassCommandHandlerSpecs\when_instance_has_a_source_instance_in_workflow.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsCreditSecondPassCommandHandlerSpecs\when_instance_has_no_source_instance_in_workflow.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsReviewRequiredCommandHandlerSpecs\When_underwriter_did_not_perform_activity_last.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsReviewRequiredCommandHandlerSpecs\When_underwriter_performed_activity_last.cs" />
+    <Compile Include="Workflow\Origination\Credit\IsValuationApprovalRequiredCommandHandlerSpecs\when_a_valuation_is_required.cs" />
+    <Compile Include="Workflow\Origination\Credit\PerformCreditMandateCheckCommandHandlerSpecs\When_performed.cs" />
+    <Compile Include="Workflow\Origination\Credit\SendCreditDecisionMailCommandHandlerSpecs\when_told_to_send_credit_decision_mail_and_offer_is_invalid.cs" />
+    <Compile Include="Workflow\Origination\Credit\SendCreditDecisionMailCommandHandlerSpecs\when_told_to_send_credit_decision_mail_and_offer_is_valid.cs" />
+    <Compile Include="Workflow\Origination\Credit\SendResubMailCommandHandlerSpecs\When_sending_resub_mail.cs" />
+    <Compile Include="Workflow\Origination\Credit\UpdateConditionsCommandHandlerSpecs\When_updating_conditions.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddAccountMemoMessageOnReceiptOfApplicationCommandHandlerSpecs\When_invalid_cellno.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddAccountMemoMessageOnReceiptOfApplicationCommandHandlerSpecs\When_valid_cellno.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddDetailTypesCommandHandlerSpecs\AddDetailTypesCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddDetailTypesCommandHandlerSpecs\When_furtheradvance.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddDetailTypesCommandHandlerSpecs\When_furtherloan.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AddDetailTypesCommandHandlerSpecs\When_readvance.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AppsInProgOfHigherPriCommandHandlerSpecs\When_state_awaitingapplication.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\AppsInProgOfHigherPriCommandHandlerSpecs\When_state_not_awaitingapplication.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ArchiveFLRelatedCasesCommandHandlerSpecs\ArchiveFLRelatedCasesCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ArchiveFLRelatedCasesCommandHandlerSpecs\When_the_related_case_workflow_state_is_neither_quickcash_nor_valuation_hold.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ArchiveFLRelatedCasesCommandHandlerSpecs\When_the_related_case_workflow_state_is_quickcash_hold.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ArchiveFLRelatedCasesCommandHandlerSpecs\When_the_related_case_workflow_state_is_valuation_hold.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CanRollbackReadvanceCorrectionTransactionHandlerSpecs\CanRollbackReadvanceCorrectionTransactionHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CanRollbackReadvanceCorrectionTransactionHandlerSpecs\When_there_are_no_transactions.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CanRollbackReadvanceCorrectionTransactionHandlerSpecs\When_there_are_valid_transactions_in_the_last_24_hours.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckCanDisburseReadvanceRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckCanDisburseReadvanceRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckInformClientRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckInformClientRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckIsFurtherAdvanceBelowLAARulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckIsFurtherAdvanceBelowLAARulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckNTUDeclineFinalRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckNTUDeclineFinalRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckOptOutSuperLoRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckOptOutSuperLoRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckRapidShouldGotoCreditRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckRapidShouldGotoCreditRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRequiredRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRequiredRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuperLoOptOutRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuretyForReAdvanceRulesCommandHandlerSpecs\When_an_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\CheckSuretyForReAdvanceRulesCommandHandlerSpecs\When_an_application_exists.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\HighestPriorityCommandHandlerSpecs\When_open_furtherloan.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\HighestPriorityCommandHandlerSpecs\When_open_non_furtherloan.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\InitialFLNTUCommandHandlerSpecs\When_not_performed_activity.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommandHandlerSpecs\When_instantiated_with_a_null_applicationrepository.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommandHandlerSpecs\When_a_nonfurtheradvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherAdvanceApplicationCommandHandlerSpecs\When_a_furtheradvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommandHandlerSpecs\When_instantiated_with_a_null_applicationrepository.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommandHandlerSpecs\When_a_furtherloan_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsFurtherLoanApplicationCommandHandlerSpecs\When_a_nonfurtherloan_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommandHandlerSpecs\When_a_nonreadvanceadvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommandHandlerSpecs\When_a_readvanceadvance_application.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\IsReadvanceAdvanceApplicationCommandHandlerSpecs\When_instantiated_with_a_null_applicationrepository.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\FLCompleteUnholdNextApplicationWhereApplicableCommandHandlerSpecs\When_unhold_app.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\LTVForFLCaseCommandHandlerSpecs\When_furtherlending.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\LTVForFLCaseCommandHandlerSpecs\When_non_furtherlending.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\OptOutSuperLoCommandHandlerSpecs\When_opt_out_of_super_lo.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\RemoveDetailTypesCommandHandlerSpecs\When_there_are_valid_detailtypes_to_remove_from_a_readvance.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\RemoveDetailTypesCommandHandlerSpecs\RemoveDetailTypesCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\RemoveDetailTypesCommandHandlerSpecs\When_there_are_valid_detailtypes_to_remove_from_a_furtheradvance.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\RemoveDetailTypesCommandHandlerSpecs\When_there_are_valid_detailtypes_to_remove_from_a_furtherloan.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\SuretySignedConfirmedCommandHandlerSpecs\When_surety_signed_confirmed.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ValuationRequiredCommandHandlerSpecs\When_furtheradvance_valuation_not_rqd.cs" />
+    <Compile Include="Workflow\Origination\FurtherLending\ValuationRequiredCommandHandlerSpecs\When_furtheradvance_valuation_rqd.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckIfCanPerformFurtherValuationHandlerSpecs\CheckIfCanPerformFurtherValuationCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckIfCanPerformFurtherValuationHandlerSpecs\When_case_has_done_further_valuation_before.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckIfCanPerformFurtherValuationHandlerSpecs\When_case_has_not_done_further_valuation.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationExistsRecentHandlerSpecs\CheckValuationExistsRecentRulesCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationExistsRecentHandlerSpecs\When_the_mortgage_loan_application_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationExistsRecentHandlerSpecs\When_the_mortgage_loan_application_exists.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationInOrderHandlerSpecs\When_the_property_valuation_does_not_exist.cs" />
+    <Compile Include="Workflow\Origination\Valuations\CheckValuationInOrderHandlerSpecs\When_the_property_valuation_exists.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\GetValuationDataCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\When_constructed_with_a_null_applicationrepository.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\When_the_application_is_not_a_mortgageloan_application.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\When_the_mortgageloan_application_has_no_property.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\When_the_property_has_latest_complete_valuation_data_from_adcheck.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\When_the_property_has_latest_complete_valuation_data_from_lightstone.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\When_the_property_has_latest_complete_valuation_data_from_unknown_service.cs" />
+    <Compile Include="Workflow\Origination\Valuations\GetValuationDataHandlerSpecs\When_the_property_has_no_latest_complete_valuation_data.cs" />
+    <Compile Include="Workflow\Origination\Valuations\RecalcHOCHandlerSpecs\RecalcHOCCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\Valuations\RecalcHOCHandlerSpecs\When_valuation_is_an_adcheck_physical_valuation.cs" />
+    <Compile Include="Workflow\Origination\Valuations\RecalcHOCHandlerSpecs\When_valuation_is_not_an_adcheck_physical_valuation.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SendEmailToAllOpenApplicationConsultantsForValuationCompleteHandlerSpecs\When_valuation_key_is_not_zero.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SendEmailToAllOpenApplicationConsultantsForValuationCompleteHandlerSpecs\When_valuation_key_is_zero.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationActiveAndSaveHandlerSpecs\SetValuationActiveAndSaveCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationActiveAndSaveHandlerSpecs\When_given_a_valuation.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationIsActiveHandlerSpecs\SetValuationIsActiveCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationIsActiveHandlerSpecs\When_given_a_valuation.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationStatusHandlerSpecs\SetValuationStatusCommandHandlerBase.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationStatusHandlerSpecs\When_valuation_key_exists.cs" />
+    <Compile Include="Workflow\Origination\Valuations\SetValuationStatusHandlerSpecs\When_valuation_key_is_zero.cs" />
+    <Compile Include="Workflow\PersonalLoan\ApplicationHasSAHLLifeAppliedCommandHandlerSpecs\when_application_has_sahl_life_applied.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckAlteredApprovalStageTransitionRuleCommandHandlerSpecs\when_executed.cs" />
+    <Compile Include="Workflow\PersonalLoan\ActivatePendingDomiciliumAddressCommandHandlerSpecs\when_asked_to_activate_pending_domicilium_address_and_passes.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCanEmailPersonalLoanApplicationRuleCommandHandlerSpecs\When_executed.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCededAmountCoversApplicationAmountRuleCommandHandlerSpec\when_executed.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionClientRulesCommandHandlerSpecs\When_the_application_does_not_exist.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionClientRulesCommandHandlerSpecs\When_the_application_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionRulesCommandHandlerSpecs\When_the_application_does_not_exist.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckCreditSubmissionRulesCommandHandlerSpecs\When_the_application_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckExternalPolicyIsCededRuleCommandHandlerSpec\when_executed.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckSendOfferRulesCommandHandlerSpecs\When_the_application_does_not_exist.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckSendOfferRulesCommandHandlerSpecs\When_the_application_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\CheckUnderDebtCounsellingRuleCommandHandlerSpecs\When_executed.cs" />
+    <Compile Include="Workflow\PersonalLoan\CreateAndOpenPersonalLoanCommandHandlerSpecs\When_the_application_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\DisburseFundsCommandHandlerSpecs\When_the_application_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\EmailCorrespondenceReportToApplicationMailingAddressCommandHandlerSpecs\when_post_option_selected_in_applicationMailingAddress.cs" />
+    <Compile Include="Workflow\PersonalLoan\EmailCorrespondenceReportToApplicationMailingAddressCommandHandlerSpecs\when_email_option_selected_in_applicationMailingAddress.cs" />
+    <Compile Include="Workflow\PersonalLoan\GetADUserNameByWorkflowRoleTypeCommandHandlerSpecs\When_workflow_roles_do_not_exist.cs" />
+    <Compile Include="Workflow\PersonalLoan\GetADUserNameByWorkflowRoleTypeCommandHandlerSpecs\When_workflow_roles_exist.cs" />
+    <Compile Include="Workflow\PersonalLoan\GetInstanceSubjectCommandHandlerSpecs\When_GetPersonalLoansInstanceSubject_Handled.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Workflow\PersonalLoan\ReturnDisbursedPersonalLoanToApplicationCommandHandlerSpecs\When_the_application_has_been_disbursed_and_account_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\SendSMSToApplicantUponDisbursementCommandHandlerSpecs\When_application_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\UpdateOfferInformationTypeSpecs\When_application_with_offer_information_exists.cs" />
+    <Compile Include="Workflow\PersonalLoan\UpdateOfferInformationTypeSpecs\When_there_is_no_application.cs" />
+    <Compile Include="Workflow\PersonalLoan\UpdateOfferInformationType\When_handled.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExceptionsCommandHandlerSpecs\" />
+    <Folder Include="Hosts\Origination\Valuations\" />
+    <Folder Include="Workflow\Origination\QuickCash\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainService2.IOC\DomainService2.IOC.csproj">
+      <Project>{A5F17AC0-EC61-4DAC-A076-89237A3D083E}</Project>
+      <Name>DomainService2.IOC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService2\DomainService2.csproj">
+      <Project>{B0BE20BD-9A3E-4F94-8F4B-370169B16C03}</Project>
+      <Name>DomainService2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\EWorkConnector\EWorkConnector.csproj">
+      <Project>{E189851D-1A73-47D2-BCEB-D553426FB280}</Project>
+      <Name>EWorkConnector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Cap2\X2DomainService.Interface.Cap2.csproj">
+      <Project>{21296FF1-818B-4A1F-B780-F07977447465}</Project>
+      <Name>X2DomainService.Interface.Cap2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Common\X2DomainService.Interface.Common.csproj">
+      <Project>{B0A86C70-D332-4125-BFCF-3A4AA69F0F2C}</Project>
+      <Name>X2DomainService.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.DebtCounselling\X2DomainService.Interface.DebtCounselling.csproj">
+      <Project>{2A57916A-D755-47A9-9D40-DAEB1BF48CA2}</Project>
+      <Name>X2DomainService.Interface.DebtCounselling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.HelpDesk\X2DomainService.Interface.HelpDesk.csproj">
+      <Project>{CCED1937-BAF2-43C2-B350-3F643260AAB1}</Project>
+      <Name>X2DomainService.Interface.HelpDesk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Life\X2DomainService.Interface.Life.csproj">
+      <Project>{971C8696-85AE-4C99-B244-B3ADA1AFA329}</Project>
+      <Name>X2DomainService.Interface.Life</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.LoanAdjustments\X2DomainService.Interface.LoanAdjustments.csproj">
+      <Project>{05078A97-CF9F-4FCA-A7C1-D867356DEE9B}</Project>
+      <Name>X2DomainService.Interface.LoanAdjustments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Origination\X2DomainService.Interface.Origination.csproj">
+      <Project>{D43D729E-30FA-4F45-AA6E-DCE900324913}</Project>
+      <Name>X2DomainService.Interface.Origination</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.PersonalLoan\X2DomainService.Interface.PersonalLoan.csproj">
+      <Project>{73F0738E-0918-4681-B8D2-82A1B2FE785E}</Project>
+      <Name>X2DomainService.Interface.PersonalLoan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.WorkflowAssignment\X2DomainService.Interface.WorkflowAssignment.csproj">
+      <Project>{E10206A2-8BDA-44AD-8FBE-02BEF8AD9403}</Project>
+      <Name>X2DomainService.Interface.WorkflowAssignment</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Workflow\Origination\ApplicationManagement\UpdateRegMailDetailToInstructionNotSentCommandHandlerSpecs\When_a_regmail_does_not_exist_for_account.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets" Condition="Exists('..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

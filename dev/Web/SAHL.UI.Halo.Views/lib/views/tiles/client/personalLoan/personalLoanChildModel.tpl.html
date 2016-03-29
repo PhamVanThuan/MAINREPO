@@ -1,0 +1,22 @@
+<div class="tile-data-bottom">
+	<div class="labels">
+		<div>Loan Amount:</div>
+		<div>Open Date:</div>
+		<div>Balance:</div>
+		<div>Arrears:</div>
+		<div>Months In Arrears:</div>
+		<div>Debit Order Day:</div>
+		<div>Instalment:</div>
+		<div>Remaining Term:</div>
+	</div>
+	<div class="values ">
+		<div>{{item.tileData.LoanAmount | currencyFilter:0}}</div>
+		<div>{{item.tileData.OpenDate | dateViewFilter}}</div>
+		<div>{{item.tileData.CurrentBalance | currencyFilter:0}}</div>
+		<div>{{item.tileData.ArrearBalance | currencyFilter:0}}</div>
+		<div>{{item.tileData.MonthsInArrears}}</div>
+		<div>{{item.tileData.DebitOrderDay}}</div>
+		<div>{{item.tileData.InstalmentAmount | currencyFilter:0}}</div>
+		<div>{{item.tileData.RemainingTerm}}</div>
+	</div>
+</div>

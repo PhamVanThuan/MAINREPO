@@ -1,0 +1,16 @@
+<ul id="tabs" ng-show="entitiesModel.entities.length > 0">
+    <li ng-repeat="entity in entitiesModel.entities" ng-class="{active: isEntityViewActive(entity)}">
+              <a href="" ng-click="activateEntity(entity, $event)">{{entity.displayName}}</a>
+              <i class="icon-cancel close-button" ng-click="removeEntity(entity, $event)"></i>
+    </li>        
+</ul>
+<ul id="dropdownTab">
+  <li class="button-dropdown" ng-show="hasCollapsedTabs()">
+    <button class="dropdown-toggle"><img src='{{getCurrentNavbarDropdownIcon()}}' /></button>
+    <ul class="dropdown-menu place-right" data-role="dropdown" id="collapsed">
+      <li ng-repeat="entity in getAllWipEntities() | orderBy:'displayName'" ng-class="{active: isEntityViewActive(entity)}">
+        <a href="" ng-click="activateEntity(entity, $event)">{{entity.displayName}}</a>
+      </li>
+    </ul>
+  </li>
+</ul>

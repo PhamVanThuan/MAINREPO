@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/bundles/bootstrapcss")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrapjs")
+</head>
+<body>
+    @if (IsSectionDefined("header"))
+    {
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@RenderSection("header", required: false)</p>
+                </div>
+            </div>
+        </header>
+    }
+    <div id="body">
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+
+    @if (IsSectionDefined("footer"))
+    {
+        <div id="footer">
+            <section class="content-wrapper main-content clear-fix">
+                @RenderSection("footer", required: false)
+            </section>
+        </div>
+    }
+    @RenderSection("scripts", required: false)
+</body>
+</html>

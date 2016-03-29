@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SAHL.Services.Capitec.Models.Shared" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SAHL.Services.Capitec.Models.Shared" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="NewPurchaseApplication">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CapitecApplication">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NewPurchaseLoanDetails" nillable="true" type="tns:NewPurchaseLoanDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NewPurchaseApplication" nillable="true" type="tns:NewPurchaseApplication" />
+  <xs:complexType name="CapitecApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Applicants" nillable="true" type="tns:ArrayOfApplicant" />
+      <xs:element minOccurs="0" name="ApplicationDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ApplicationStatusKey" type="xs:int" />
+      <xs:element minOccurs="0" name="ConsultantDetails" nillable="true" type="tns:ConsultantDetails" />
+      <xs:element minOccurs="0" name="EmploymentTypeKey" type="xs:int" />
+      <xs:element minOccurs="0" name="ReservedApplicationKey" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CapitecApplication" nillable="true" type="tns:CapitecApplication" />
+  <xs:complexType name="ArrayOfApplicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Applicant" nillable="true" type="tns:Applicant" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApplicant" nillable="true" type="tns:ArrayOfApplicant" />
+  <xs:complexType name="Applicant">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Declarations" nillable="true" type="tns:ApplicantDeclarations" />
+      <xs:element minOccurs="0" name="EmploymentDetails" nillable="true" type="tns:ApplicantEmploymentDetails" />
+      <xs:element minOccurs="0" name="ITC" nillable="true" type="tns:ApplicantITC" />
+      <xs:element minOccurs="0" name="Information" nillable="true" type="tns:ApplicantInformation" />
+      <xs:element minOccurs="0" name="ResidentialAddress" nillable="true" type="tns:ApplicantResidentialAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Applicant" nillable="true" type="tns:Applicant" />
+  <xs:complexType name="ApplicantDeclarations">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowCreditBureauCheck" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DeclarationsDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GivePermissionToShareInformation" type="xs:boolean" />
+      <xs:element minOccurs="0" name="HasCapitecTransactionAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IncomeContributor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MarriedInCommunityOfProperty" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantDeclarations" nillable="true" type="tns:ApplicantDeclarations" />
+  <xs:complexType name="ApplicantEmploymentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Employment" nillable="true" type="tns:EmploymentDetails" />
+      <xs:element minOccurs="0" name="EmploymentTypeKey" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantEmploymentDetails" nillable="true" type="tns:ApplicantEmploymentDetails" />
+  <xs:complexType name="EmploymentDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BasicMonthlyIncome" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmploymentDetails" nillable="true" type="tns:EmploymentDetails" />
+  <xs:complexType name="ApplicantITC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ITCDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantITC" nillable="true" type="tns:ApplicantITC" />
+  <xs:complexType name="ApplicantInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CellPhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EmailAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomePhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdentityNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MainContact" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SalutationTypeKey" type="xs:int" />
+      <xs:element minOccurs="0" name="Surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkPhoneNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantInformation" nillable="true" type="tns:ApplicantInformation" />
+  <xs:complexType name="ApplicantResidentialAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BuildingNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StreetNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Suburb" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuburbKey" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApplicantResidentialAddress" nillable="true" type="tns:ApplicantResidentialAddress" />
+  <xs:complexType name="ConsultantDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConsultantDetails" nillable="true" type="tns:ConsultantDetails" />
+  <xs:complexType name="NewPurchaseLoanDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CapitaliseFees" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Deposit" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EmploymentTypeKey" type="xs:int" />
+      <xs:element minOccurs="0" name="Fees" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HouseholdIncome" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PurchasePrice" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Term" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NewPurchaseLoanDetails" nillable="true" type="tns:NewPurchaseLoanDetails" />
+  <xs:complexType name="SwitchLoanApplication">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:CapitecApplication">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SwitchLoanDetails" nillable="true" type="tns:SwitchLoanDetails" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SwitchLoanApplication" nillable="true" type="tns:SwitchLoanApplication" />
+  <xs:complexType name="SwitchLoanDetails">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CapitaliseFees" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CashRequired" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CurrentBalance" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EmploymentTypeKey" type="xs:int" />
+      <xs:element minOccurs="0" name="EstimatedMarketValueOfTheHome" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HouseholdIncome" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InterimInterest" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Term" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SwitchLoanDetails" nillable="true" type="tns:SwitchLoanDetails" />
+</xs:schema>

@@ -1,0 +1,521 @@
+<% 
+Response.Expires = 0
+  sDatabase =Session("SQLDatabase") 
+  sUid = Session("UserID")
+
+  set oSecurity = Server.CreateObject("MLSSecurity.FunctionClass")
+  i_RunCATSExtract = oSecurity.CheckFunctionAccess("DSN=" & sDatabase & ";uid=" & sUid,"Run CATS Extract",Session("UserName"))
+   
+%>
+<html>
+<head>
+<!--#include virtual="/SAHL-MLSS/miscutils.inc"-->
+<!--#include virtual="/SAHL-MLSS/dateutils.inc"-->
+
+<object classid="clsid:5220cb21-c88d-11cf-b347-00aa00a28331" VIEWASTEXT id="Microsoft_Licensed_Class_Manager_1_0" 1>
+<param NAME="LPKPath" VALUE="APEX.lpk">
+</object>
+<meta name="VI60_DTCScriptingPlatform" content="Server (ASP)">
+<meta name="VI60_defaultClientScript" content="VBScript">
+<meta NAME="GENERATOR" Content="Microsoft Visual Studio 6.0">
+<script ID="clientEventHandlersVBS" LANGUAGE="vbscript">
+<!--
+
+Dim fso
+Dim path
+Dim folder
+Dim file
+Dim rs
+
+Dim TotalCount
+Dim TotalAmount
+Dim Count
+Dim Amount
+Dim FileName
+Dim CountCDI
+Dim AmountCDI
+Dim FileNameCDI
+
+Dim GeneratedFileName
+Dim ExtractFileName
+Dim CATSExtractPath
+Dim i_days
+Dim b_DataLoaded 
+Dim rs_open
+Dim rs1_open
+
+Dim s_Source
+Dim s_Action
+    
+if rs_open <> true then
+  
+   	'Make sure user has logged on properly...if nt redirect him to logon page...
+    sessDSN= "DSN=<%= Session("DSN")%>"
+    
+	if  sessDSN = "DSN=" then
+	   window.top.location.href = "Default.asp"
+	   window.close
+    end if
+
+	 x = "=<%= Session("SQLDatabase")%>"
+
+    if x <> "=" then
+		set conn = createobject("ADODB.Connection")
+		set rs_Run  = createobject("ADODB.Recordset")
+		set rs_temp  = createobject("ADODB.Recordset")
+		
+	    set rs  = createobject("ADODB.Recordset")
+	    set rs1  = createobject("ADODB.Recordset")
+	    set rsloan  = createobject("ADODB.Recordset")
+	    set rsMBS  = createobject("ADODB.Recordset")
+	    set rsloanSPV  = createobject("ADODB.Recordset")
+	    set rsTransaction = createobject("ADODB.Recordset")
+	    set rs3  = createobject("ADODB.Recordset")
+	    set rs4  = createobject("ADODB.Recordset")
+	    set fso = createobject("Scripting.FileSystemObject")
+	    set rs_tmp  = createobject("ADODB.Recordset")
+	'	rs.MaxRecords = 20000
+	 '   rs.CacheSize = 10
+	 
+		'sDSN = "DSN=<%= Session("SQLDatabase") %>;uid=<%= Session("UserID") %>"
+		sDSN = "Provider=SQLOLEDB.1;Application Name='SAHL-MLSS [DisbursementExport.asp 1]';Data Source=<%= Session("SQLDatabase") %>;uid=<%= Session("UserID") %>"
+		conn.Open sDSN
+	end if
+		
+end if
+
+Sub SetAccessLightsServer
+  
+    sRes1 = "<%=i_RunCATSExtract%>"
+    if sRes1 = "Allowed" then
+       window.pic_RunCATSExtract.src = "images/MLSAllowed.bmp"
+       window.pic_RunCATSExtract.title = "1"
+    else
+       window.pic_RunCATSExtract.src = "images/MLSDenied.bmp"
+       window.pic_RunCATSExtract.title = "0"
+	end if 
+	
+end Sub
+
+
+Sub window_onload
+
+    s_Action = "<%=Request.QueryString("Action")%>"
+    i_Nbr = "<%=Request.QueryString("Number")%>"
+	s_Source = "<%=Request.QueryString("returnpage")%>"
+	s_Status = "<%=Request.QueryString("Status")%>"
+	i_Purpose = "<%=Request.QueryString("purpose")%>"
+	s_ReturnPage = "<%=Request.QueryString("source")%>"
+    
+   SetAccessLightsServer
+ 
+	if s_Action = "View" then
+		window.btn_RunCATSExtract.style.visibility = "hidden"
+		window.pic_RunCATSExtract.style.visibility = "hidden"
+	else
+		window.btn_RunCATSExtract.style.visibility = "visible"
+		window.pic_RunCATSExtract.style.visibility = "visible"
+	end if
+
+   
+   rs_tmp.CursorLocation = 3
+   sSQL = "Select ControlText from CONTROL (nolock) where ControlDescription = 'CATS Extract file path'"
+   
+   rs_tmp.Open sSQL,conn,adOpenDynamic
+
+   window.TDBText_CATSExtractPath.Text = rs_tmp.Fields("ControlText").Value
+ 
+    CATSExtractPath = trim( rs_tmp.Fields("ControlText").Value)
+    
+	rs_tmp.close
+
+
+	 ConfigureExportsRunList
+
+  ' ********** CATS *************************************************
+    GetCATSFiles()
+
+    b_DataLoaded = false
+	window.TDBDate_CATSExtractDate.DropDown.Visible = 1
+    window.TDBDate_CATSExtractDate.Spin.Visible = 1
+   
+	s_Source = "<%=Request.QueryString("Source")%>"
+
+ 
+    
+   Dim I 
+	For I = 0 to TrueDBList.Columns.Count - 1
+		TrueDBList.Columns.Remove(0)
+	Next
+   
+    'Create then necessary columns...
+	set tmpCol =  TrueDBList.Columns.Add(0)
+	tmpCol.Width = 220
+	tmpCol.Caption = "Folder"
+	tmpCol.DataField = rs.Fields(0).name
+	tmpCol.Alignment = 2
+	
+	tmpCol.Visible = True
+	set tmpCol =  TrueDBList.Columns.Add(1)
+	tmpCol.Width = 150
+	tmpCol.Caption = "File Name"
+	tmpCol.DataField = rs.Fields(1).name 
+	tmpCol.Alignment = 1
+	tmpCol.Visible = True
+	set tmpCol =  TrueDBList.Columns.Add(2)
+	tmpCol.Width = 190
+	tmpCol.Caption = "Date Created"
+	tmpCol.DataField = rs.Fields(2).name
+	tmpCol.Alignment = 1
+	tmpCol.Visible = True
+	set tmpCol =  TrueDBList.Columns.Add(3)
+	tmpCol.Width = 190
+	tmpCol.Caption = "Date Last Modified"
+	tmpCol.DataField = rs.Fields(3).name
+	tmpCol.Alignment = 1
+	tmpCol.Visible = True
+	set tmpCol =  TrueDBList.Columns.Add(4)
+    tmpCol.Width = 70
+	tmpCol.Caption = "File Size"
+	tmpCol.DataField = rs.Fields(4).name
+	tmpCol.Alignment = 1
+	tmpCol.Visible = True
+    
+	TrueDBList.AlternatingRowStyle = true
+	TrueDBList.OddRowStyle.BackColor = &HC0FFFF
+	TrueDBList.EvenRowStyle.BackColor = &HC0C0C0
+   
+    if rs.RecordCount > 0 then 
+		rs.MoveLast
+		TrueDBList.SelectedItem = TrueDBList.GetBookmark (0)
+	end if
+	
+   
+  window.TDBDate_CATSExtractDate.Value = Now()
+  s_Date = Mid(window.TDBDate_CATSExtractDate.DisplayText,7,4) & Mid(window.TDBDate_CATSExtractDate.DisplayText,4,2)  & Mid(window.TDBDate_CATSExtractDate.DisplayText,1,2) 
+  'window.TDBText_CATSExtractPath.text = CATSExtractPath & s_Date & Mid(FormatDateTime(Now(),4),1,2) & Mid(FormatDateTime(Now(),4),4,2) & ".dis"
+  window.TDBText_CATSExtractPath.text = CATSExtractPath & Mid(s_Date,3,8) & Mid(FormatDateTime(Now(),4),1,2)& ".dis"
+  window.TDBText_CDIFile.Text = CATSExtractPath & Mid(s_Date,3,8) & Mid(FormatDateTime(Now(),4),1,2)& ".cdi"  
+   
+  b_DataLoaded = true
+  
+
+End Sub
+
+
+
+
+Sub ConfigureExportsRunList
+  document.body.style.cursor = "hand"
+    
+  '*** Manually populate the End of Period run list
+  rs_Run.Fields.Append "RunNumber",19
+  rs_Run.Fields.Append "RunDetail",200,180
+  rs_Run.Open
+
+	rs_Run.AddNew 
+	rs_Run.fields("RunNumber").Value = 0 
+	rs_Run.fields("RunDetail").Value = "CATS Disbursement Extract"
+	rs_Run.Update
+	
+	set ExportRunList.RowSource = rs_Run
+	ExportRunList.ListField = rs_Run.Fields("RunDetail").name
+	ExportRunList.BoundColumn = rs_Run.Fields("RunNumber").name
+	ExportRunList.BoundText = rs_Run.Fields("RunNumber").Value
+	ExportRunList.OddRowStyle.BackColor = &HC0FFFF
+	ExportRunList.EvenRowStyle.BackColor = &HC0C0C0
+
+	ExportRunList.Refresh
+    
+	For I = 0 to ExportRunList.Columns.Count - 1
+		ExportRunList.Columns.Remove(0)
+	Next
+  
+    'Create then necessary columns...
+	set tmpCol =  ExportRunList.Columns.Add(0)
+	tmpCol.Width = 80
+	tmpCol.Caption = "Number"
+	tmpCol.DataField = rs_Run.Fields("RunNumber").name
+	tmpCol.Visible = false
+	set tmpCol =  ExportRunList.Columns.Add(1)
+	tmpCol.Caption = "Description"
+	tmpCol.Width = 50
+	tmpCol.DataField = rs_Run.Fields("RunDetail").name 
+	tmpCol.Visible = True
+	
+	ExportRunList.AlternatingRowStyle = True
+	ExportRunList.OddRowStyle.BackColor = &HC0FFFF
+	ExportRunList.EvenRowStyle.BackColor = &HC0C0C0
+	ExportRunList.HoldFields
+   ExportRunList.ReBind
+   document.body.style.cursor = "default"
+   
+	rs_Run.MoveFirst
+   window.ExportRunList.SelBookmarks.add window.ExportRunList.Getbookmark(0)
+   window.ExportRunList.SelectedItem = window.ExportRunList.Getbookmark(0) 
+   ExportRunList.focus
+
+End sub
+
+
+
+Sub GetCATSFiles()
+
+
+	if rs_open = true then
+		rs.close
+		set rs= nothing
+		set rs  = createobject("ADODB.Recordset")
+	end if
+  
+    rs.Fields.Append "ParentFolder",200,100
+    rs.Fields.Append "FileName",200,180
+    rs.Fields.Append "DateCreated",135              'adDBTimeStamp
+    rs.Fields.Append "DateLastModified",135
+    rs.Fields.Append "Size",19
+    rs.Open
+    
+  
+
+	path = CATSExtractPath
+
+
+    if  fso.FolderExists(path) = true then
+       set folder = fso.GetFolder(path)
+       I = 0 
+		for each file in folder.Files
+		
+			if ucase(right(Trim(file.Name),3)) <> "NCF" then
+			  rs.AddNew 
+			  rs.fields("ParentFolder").Value = file.ParentFolder
+			  rs.fields("FileName").Value = file.Name
+			  rs.fields("DateCreated").Value = file.DateCreated
+			  rs.fields("DateLastModified").Value = file.DateLastModified
+			  rs.fields("Size").Value = file.Size
+			  rs.Update
+			  I= I +1
+		  end if
+		next
+    else
+		MsgBox "The CATS Extract Path specified in the System Control file does not exist or is unavailable..." & Chr(13) & chr(10) & "Create a Valid CATS Export path or ensure that it is accessible.."
+		rs.AddNew 
+		rs.fields("ParentFolder").Value = "Unknown"
+		rs.fields("FileName").Value = "unknown.ncd"
+		rs.fields("DateCreated").Value = Date()
+		rs.fields("DateLastModified").Value = Date()
+		rs.fields("Size").Value = 0
+		rs.Update
+		window.TDBDate_CATSExtractDate.Enabled = false
+		window.TDBText_CATSExtractPath.Enabled = false
+		window.btn_RunCATSExtract.disabled = true
+    end if
+     
+     if rs.RecordCount > 0 then
+		rs.MoveFirst
+		rs.Sort = "DateCreated"
+	end if
+	TrueDBList.RowSource = rs
+	TrueDBList.HoldFields
+   
+   
+   
+   rs_open = true
+End Sub
+
+
+Sub ExportRunList_RowChange
+
+ ' window.btn_RunCATSExtract.disabled = false
+  'window.btn_RunCATSExtract.style.visibility = "visible"
+ ' window.pic_RunCATSExtract.style.visibility = "visible"
+    
+	's_Date =   Mid(window.TDBDate_CATSExtractDate.DisplayText,7,4) & Mid(window.TDBDate_CATSExtractDate.DisplayText,4,2)  & Mid(window.TDBDate_CATSExtractDate.DisplayText,1,2) 
+	'window.TDBText_CATSExtractPath.text = CATSExtractPath & s_Date & Mid(FormatDateTime(Now(),4),1,2) & Mid(FormatDateTime(Now(),4),4,2) & ".NCC"
+	
+	
+End Sub
+
+Sub btn_RunCATSExtract_onclick
+		Dim i_res
+
+		if window.pic_RunCATSExtract.title = "0" then
+			   window.status = "Access denied to " & window.btn_RunCATSExtract.title
+			   exit sub
+		end if
+
+    i_Resp = MsgBox("Are you sure you want to run the CATS DISBURSEMENT Extract for the " & window.TDBDate_CATSExtractDate.DisplayText  , 4)
+    if i_Resp= 7 then       
+       exit sub
+    end if 
+    
+    pnl_Message.BackColor = &H00FF0000&
+    pnl_Message.Caption= "Please Wait..... Running the CATS DISBURSEMENT Extract Procedure Procedure..!!"
+  
+    pnl_Message.style.visibility = "visible"
+    i_res = RunCATSDisbursementExtract()
+
+    if i_res = 0 then
+        pnl_Message.Caption= "No records were found for the CATS DISBURSEMENT Extract...!!"
+        pnl_Message.style.visibility = "visible"
+    elseif i_res = -2 then
+        pnl_Message.BackColor = &H000000FF&
+        pnl_Message.Caption= GeneratedFileName
+        pnl_Message.style.visibility = "visible"
+    elseif i_res  < 0 then
+        pnl_Message.BackColor = &H000000FF&
+        pnl_Message.Caption= "An Error occured during the CATS DISBURSEMENT Extract...!!"
+        pnl_Message.style.visibility = "visible"
+    else
+       GetCATSFiles
+	 		 rs.MoveLast
+ 			 TrueDBList.SelectedItem = TrueDBList.GetBookmark (0)
+ 			 pnl_Message.BackColor = &H0000C000&
+       pnl_Message.Caption = "Total: " & TotalCount & " , R" & TotalAmount & "     DIS: " & Count & " , R" & Amount & " to file " & FileName & "     CDI: " & CountCDI & " , R" & AmountCDI & " to file " & FileNameCDI
+       pnl_Message.style.visibility = "visible"
+    end if
+End Sub
+
+Function RunCATSDisbursementExtract()
+    set com = createobject("ADODB.Command")
+    set prm = createobject("ADODB.Parameter")
+    set rs_temp = createobject("ADODB.Recordset")
+   'Cannot use OLE DB Provider as it appears that it does not return a recordset
+    sDSN = "DSN=<%= Session("SQLDatabase") %>;APP=SAHL-MLSS [DisbursementExport.asp 2];uid=<%= Session("UserID")%>"
+		'sDSN = "Provider=SQLOLEDB.1;Application Name='MLS System Version1 [exports.asp]';Data Source=<%= Session("SQLDatabase") %>;uid=<%= Session("UserID") %>"
+
+		com.ActiveConnection = sDSN
+		com.CommandType = 4 'AdCmdStoredPRoc
+		com.CommandTimeout = 0
+
+		sSQL = "f_CreateACBDisbursements"
+	
+    com.CommandText = sSQL
+    
+    's_Date =  Mid(window.TDBDate_CATSExtractDate.DisplayText,4,2) & "/"  & Mid(window.TDBDate_CATSExtractDate.DisplayText,1,2) & "/" &  Mid(window.TDBDate_CATSExtractDate.DisplayText,7,4)
+    s_Date =  Mid(window.TDBDate_CATSExtractDate.DisplayText,4,2) & "/"  & Mid(window.TDBDate_CATSExtractDate.DisplayText,1,2) & "/" &  Mid(window.TDBDate_CATSExtractDate.DisplayText,7,4)
+
+	set prm = com.CreateParameter ( "DisbursementActionDate",200,1,10,s_Date)
+	com.Parameters.Append prm
+
+	com.CommandTimeout = 0    'Ensure that command completes...indefinite timeout
+	set rs_temp = com.Execute 
+ 
+	TotalCount =  rs_temp.Fields(0)
+	TotalAmount = rs_temp.Fields(1)
+	  
+	Count = rs_temp.Fields(2)
+	Amount = rs_temp.Fields(3)
+	FileName = rs_temp.Fields(4)
+	  
+	CountCDI = rs_temp.Fields(5)
+	AmountCDI = rs_temp.Fields(6)
+	FileNameCDI = rs_temp.Fields(7)
+  
+    RunCATSDisbursementExtract = TotalCount
+
+End Function
+
+Sub btn_Exit_onclick
+	
+	window.btn_Exit.style.visibility = "hidden"
+	window.btn_RunCATSExtract.style.visibility = "hidden"
+	window.btn_ViewCATSTextFile.style.visibility = "hidden"
+	window.ExportRunList.style.visibility = "hidden"
+	window.pic_RunCATSExtract.style.visibility = "hidden"
+	window.pnl_Message.style.visibility = "hidden"
+	window.tbl_CATSExtractParms.style.visibility = "hidden"
+	window.TDBDate_CATSExtractDate.style.visibility = "hidden"
+	window.TDBDate_CATSExtractDate.style.visibility = "hidden"
+	window.TDBText_CATSExtractPath.style.visibility = "hidden"
+	window.TDBText_CDIFile.style.visibility = "hidden"
+	window.TrueDBList.style.visibility = "hidden"
+	window.TrueDBList.style.visibility = "hidden"
+	
+	'window.parent.frames("RegistrationPanel").location.href = "RegistrationCATS-old.asp" & "?Number= " & CStr(i_CurrentLoanNbr )
+	 window.parent.frames("RegistrationPanel").location.href = "DisbursementsGenerate.asp?returnpage=DisbursementManage.asp&Number= " & Trim(CStr(i_CurrentLoanNbr) ) & "&purpose=" & CStr(i_purpose) & "&Source=<%=Request.QueryString("Source")%>" & "&RepliesReceived=<%=Request.QueryString("RepliesReceived")%>"  & "&Lodged=<%=Request.QueryString("Lodged")%>" & "&Disbursements=<%=Request.QueryString("Disbursements")%>" & "&Readvances=<%=Request.QueryString("Disbursements")%>"
+	 
+	
+	
+End Sub
+
+
+Sub btn_ViewCATSTextFile_onclick
+
+ set winshell = createObject("WScript.Shell")
+
+set tmpCol1 =  TrueDBList.Columns.Item(0)
+set tmpCol2 =  TrueDBList.Columns.Item(1)
+
+
+ winshell.Run "Notepad.exe " & tmpCol1 & "\" & tmpCol2
+
+ 
+
+End Sub
+
+-->
+</script>
+</head>
+<link href="SAHL-MLSS.css" rel="stylesheet" type="text/css">
+
+
+<body bottomMargin="0" leftMargin="0" rightMargin="0" topMargin="0" class="Generic">
+<OBJECT class=Header1 classid=clsid:0BA686B9-F7D3-101A-993E-0000C0EF6F5E 
+codeBase=OCX/Threed32.ocx id=pnl_Message 
+style="FONT-FAMILY: MS Sans Serif; FONT-SIZE: 14px; HEIGHT: 30px; LEFT: 23px; POSITION: absolute; TOP: 148px; VISIBILITY: visible; WIDTH: 843px; Z-INDEX: 106" 
+VIEWASTEXT><PARAM NAME="_Version" VALUE="65536"><PARAM NAME="_ExtentX" VALUE="22304"><PARAM NAME="_ExtentY" VALUE="794"><PARAM NAME="_StockProps" VALUE="15"><PARAM NAME="Caption" VALUE=""><PARAM NAME="ForeColor" VALUE="16777215"><PARAM NAME="BackColor" VALUE="12632256"><PARAM NAME="BevelWidth" VALUE="1"><PARAM NAME="BorderWidth" VALUE="3"><PARAM NAME="BevelOuter" VALUE="0"><PARAM NAME="BevelInner" VALUE="0"><PARAM NAME="RoundedCorners" VALUE="-1"><PARAM NAME="Outline" VALUE="0"><PARAM NAME="FloodType" VALUE="0"><PARAM NAME="FloodColor" VALUE="16711680"><PARAM NAME="FloodPercent" VALUE="0"><PARAM NAME="FloodShowPct" VALUE="-1"><PARAM NAME="ShadowColor" VALUE="0"><PARAM NAME="Font3D" VALUE="0"><PARAM NAME="Alignment" VALUE="7"><PARAM NAME="Autosize" VALUE="0"><PARAM NAME="MousePointer" VALUE="0"><PARAM NAME="Enabled" VALUE="-1"></OBJECT>
+<OBJECT classid=clsid:0D62356A-DBA2-11D1-B5DF-0060976089D0 
+data=data:application/x-oleobject;base64,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AAAAAAgAAAABAAAAAAAAAAAAAAAEAAAADQAAgA4AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAJAAAAAQAAAIAAAAAAAAAABAAAAMDAwAAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAACgAAAAEAAACAAAAAAAAAAAQAAAD//8YACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAAsAAAABAAAAAAAAAAAAAAAEAAAA96IGAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAMAAAAAgAAAAAAAAAAAAAAFAAAACxkqQD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAADQAAAAMAAAAAAAAAAAAAABQAAAAPAACAEgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAA4AAAAFAAAAAAAAAAAAAAAUAAAADwAAgBIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAPAAAABwAAAAAAAAAAAAAABAAAAPeiBgAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAEAAAAAYAAAAAAAAAAAAAAAQAAAAAgAAADgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABEAAAAIAAAAAAAAAAAAAAAEAAAADQAAgA4AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAASAAAACQAAAAAAAAAAAAAABAAAAMDAwAAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAEwAAAAoAAAAAAAAAAAAAAAQAAAD//8YACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABQAAAAEAAAAAAAAAAAAAAARAAAADwAAgBIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAVAAAADAAAAAAAAAAAAAAAFAAAACxkqQD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAFgAAAA0AAAAAAAAAAAAAABQAAAAPAACAEgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABcAAAAPAAAAAAAAAAAAAAAEAAAA96IGAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAYAAAACwAAAAAAAAAAAAAABAAAAPeiBgAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAGQAAAAwAAAAAAAAAAAAAABQAAAAsZKkA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABoAAAANAAAAAAAAAAAAAAAUAAAADwAAgBIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAbAAAADwAAAAAAAAAAAAAABAAAAPeiBgAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAHAAAAAsAAAAAAAAAAAAAAAQAAAD3ogYACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAB0AAAAAAAAAAAAAAAAAAAAEAAAABQAAgAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAeAAAAHQAAAMACAQAAAgAAFAAAAA8AAIASAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAHwAAAB0AAADAAAEAAAAAABQAAAAPAACAEgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAACAAAAAdAAAAwAAAAAAAAAAEAAAADQAAgA4AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAhAAAAHgAAAAABAAAAAAAAEQAAAA8AAIASAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAIgAAAB0AAADAAAAAAAAAAAQAAAANAACADgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAACMAAAAdAAAAgAAAAAAAAAAEAAAAAP//AAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAkAAAAHQAAAAAAAAAAAAAABAAAAAUAAIAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAHQAAAAAAAAAAAAAAAAAAAAAAAAD//////////wEAAAAAAAAAAAAAAAEAAAD+////BAAAAAAAAAAAAAAABQAAAP3///8CAAAAAAAAAAAAAAACAAAA6v///wMAAAAAAAAAAAAAAAMAAAD8////BQAAAAAAAAAAAAAA//////v///8GAAAAAAAAAAAAAAAEAAAA+v///wcAAAAAAAAAAAAAAP/////x////CAAAAAAAAAAAAAAABgAAAO////8JAAAAAAAAAAAAAAAHAAAA7v///woAAAAAAAAAAAAAAAgAAAD5////CwAAAAEAAAAAAAAA/////+v///8UAAAAAQAAAAAAAAD/////+P///wwAAAABAAAAAAAAAP/////p////DQAAAAEAAAAAAAAA//////f///8OAAAAAQAAAAAAAAD/////9v///xAAAAABAAAAAAAAAP/////1////DwAAAAEAAAAAAAAA//////D///8RAAAAAQAAAAAAAAD/////7f///xIAAAABAAAAAAAAAP/////s////EwAAAAEAAAAAAAAA//////T///8YAAAAAQAAAAEAAAD/////8////xUAAAABAAAAAQAAAP/////o////FgAAAAEAAAABAAAA//////L///8XAAAAAQAAAAEAAAD/////9P///xwAAAABAAAAAgAAAP/////z////GQAAAAEAAAACAAAA/////+j///8aAAAAAQAAAAIAAAD/////8v///xsAAAABAAAAAgAAAP////8IAAAATm9ybWFsAP+QAAAAAAAAAFwljgZcJY4GMQAAAEAAAAAdAAAASGVhZGluZwDAfZAGoH2QBoB9kAYAAAAAQAAAADEAAAAeAAAARm9vdGluZwAxAAAAsAAAAHQljgZ0JY4GAAAAAAAAAAAfAAAAU2VsZWN0ZWQAAAAAMQAAAAA6PQhQQZAGAwAAAA0AAAAgAAAAQ2FwdGlvbgAAAAAAAAAAAAAAAAAAAAAAAAAAACA6PQghAAAASGlnaGxpZ2h0Um93AAAAAAAAAAD/////IAAAAAAAAAAiAAAARXZlblJvdwAAAAAAIDo9CAAAjgYQOj0IAQAAAAACAAAjAAAAT2RkUm93AAYBAACASB2RBBAAAAAAAAAAIQAAAKACAAAkAAAAAwAAAAAAAAAeAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAADAAAAAAAAAAsAAAD//wAAAwAAAAAAAAAeAAAAAQAAAAAAAAAeAAAAAQAAAAAAAAALAAAAAAAAAAQAAAAAAAAAAwAAAOgDAAAeAAAAAQAAAAAAAAADAAAAAAAAAAMAAAAAAAAAAwAAANAHAAADAAAAAAAAAAMAAAAAAAAAAwAAAMgAAAADAAAAAAAAAAMAAAAAAAAAHgAAADIAAABEcmFnIGEgY29sdW1uIGhlYWRlciBoZXJlIHRvIGdyb3VwIGJ5IHRoYXQgY29sdW1uAAAALQAAAAAAAAALAAAAVHJ1ZURCTGlzdAC9AAAADgAAAEFuaW1hdGVXaW5kb3cAwAAAABMAAABBbmltYXRlV2luZG93Q2xvc2UAvgAAABcAAABBbmltYXRlV2luZG93RGlyZWN0aW9uAL8AAAASAAAAQW5pbWF0ZVdpbmRvd1RpbWUA+P3//wsAAABBcHBlYXJhbmNlAAj+//8MAAAAQm9yZGVyU3R5bGUAcwAAAAwAAABCb3VuZENvbHVtbgD6/f//CAAAAENhcHRpb24AYAAAAAkAAABDZWxsVGlwcwB+AAAADgAAAENlbGxUaXBzRGVsYXkAfQAAAA4AAABDZWxsVGlwc1dpZHRoAI8AAAAOAAAAQ29sdW1uRm9vdGVycwAHAAAADgAAAENvbHVtbkhlYWRlcnMACAAAAAgAAABDb2x1bW5zACUAAAAJAAAARGF0YU1vZGUAuwAAAAkAAABEYXRhVmlldwAKAAAADAAAAERlZkNvbFdpZHRoAF8AAAAKAAAARW1wdHlSb3dzAP79//8IAAAARW5hYmxlZAAwAAAADwAAAEV4cG9zZUNlbGxNb2RlAJEAAAAKAAAARm9vdExpbmVzAMIAAAAPAAAAR3JvdXBCeUNhcHRpb24ADAAAAAoAAABIZWFkTGluZXMAZQAAAA8AAABJbnRlZ3JhbEhlaWdodABdAAAADwAAAExheW91dEZpbGVOYW1lAFwAAAALAAAATGF5b3V0TmFtZQCxAAAACgAAAExheW91dFVybABjAAAACgAAAExpc3RGaWVsZACAAAAACwAAAE1hdGNoRW50cnkAvAAAABIAAABNYXRjaEVudHJ5VGltZW91dACjAAAACgAAAE1vdXNlSWNvbgCkAAAADQAAAE1vdXNlUG9pbnRlcgCEAAAADAAAAE11bHRpU2VsZWN0AGEAAAAOAAAATXVsdGlwbGVMaW5lcwC0AAAACwAAAFByaW50SW5mb3MADwAAABAAAABSb3dEaXZpZGVyU3R5bGUAnAAAAAoAAABSb3dNZW1iZXIAIwAAAAcAAABTcGxpdHMA0wcAAAkAAABfRXh0ZW50WADUBwAACQAAAF9FeHRlbnRZAAACAAAMAAAAX0xheW91dFR5cGUAEAAAAAsAAABfUm93SGVpZ2h0AAECAAALAAAAX1N0eWxlRGVmcwAEAgAAFgAAAF9XYXNQZXJzaXN0ZWRBc1BpeGVscwA= 
+height=263 id=TrueDBList 
+style="HEIGHT: 263px; LEFT: 20px; POSITION: absolute; TOP: 258px; WIDTH: 847px; Z-INDEX: 99"></OBJECT>
+<p>
+<table border="0" cellPadding="1" cellSpacing="1" id="tbl_CATSExtractParms" style="HEIGHT:  91px; LEFT: 291px; POSITION: absolute; TOP: 13px; VISIBILITY: visible; WIDTH: 574px; Z-INDEX: 114" width="75%" class="Table1">
+   
+  <tr>
+    <td align="right" noWrap> Action&nbsp; Date</td>
+    <td noWrap>
+      <OBJECT classid=clsid:A49CE0E4-C0F9-11D2-B0EA-00A024695830 
+      id=TDBDate_CATSExtractDate 
+      style="HEIGHT: 25px; LEFT: 1px; TOP: 1px; WIDTH: 128px" tabIndex=1><PARAM NAME="_Version" VALUE="65536"><PARAM NAME="_ExtentX" VALUE="3387"><PARAM NAME="_ExtentY" VALUE="661"><PARAM NAME="AlignHorizontal" VALUE="0"><PARAM NAME="AlignVertical" VALUE="0"><PARAM NAME="Appearance" VALUE="1"><PARAM NAME="BackColor" VALUE="-2147483643"><PARAM NAME="BorderStyle" VALUE="1"><PARAM NAME="BtnPositioning" VALUE="0"><PARAM NAME="ClipMode" VALUE="0"><PARAM NAME="CursorPosition" VALUE="0"><PARAM NAME="DataProperty" VALUE="0"><PARAM NAME="DisplayFormat" VALUE="dd/mm/yyyy"><PARAM NAME="EditMode" VALUE="0"><PARAM NAME="Enabled" VALUE="0"><PARAM NAME="ErrorBeep" VALUE="0"><PARAM NAME="FirstMonth" VALUE="4"><PARAM NAME="ForeColor" VALUE="-2147483640"><PARAM NAME="Format" VALUE="dd/mm/yyyy"><PARAM NAME="HighlightText" VALUE="0"><PARAM NAME="IMEMode" VALUE="3"><PARAM NAME="MarginBottom" VALUE="1"><PARAM NAME="MarginLeft" VALUE="1"><PARAM NAME="MarginRight" VALUE="1"><PARAM NAME="MarginTop" VALUE="1"><PARAM NAME="MaxDate" VALUE="2958465"><PARAM NAME="MinDate" VALUE="-657434"><PARAM NAME="MousePointer" VALUE="0"><PARAM NAME="MoveOnLRKey" VALUE="0"><PARAM NAME="OLEDragMode" VALUE="0"><PARAM NAME="OLEDropMode" VALUE="0"><PARAM NAME="PromptChar" VALUE="_"><PARAM NAME="ReadOnly" VALUE="0"><PARAM NAME="ShowContextMenu" VALUE="-1"><PARAM NAME="ShowLiterals" VALUE="0"><PARAM NAME="TabAction" VALUE="0"><PARAM NAME="Text" VALUE="__/__/____"><PARAM NAME="ValidateMode" VALUE="0"><PARAM NAME="ValueVT" VALUE="1179649"><PARAM NAME="Value" VALUE="2.63417926253582E-308"><PARAM NAME="CenturyMode" VALUE="0"></OBJECT>
+</td></tr>
+  <tr>
+    <td align="right" noWrap> Disbursement File</td>
+    <td noWrap>
+      <OBJECT classid=clsid:E2D000D6-2DA1-11D2-B358-00104B59D73D 
+      id=TDBText_CATSExtractPath 
+      style="HEIGHT: 26px; LEFT: 1px; TOP: 1px; WIDTH: 429px" tabIndex=1><PARAM NAME="_Version" VALUE="65536"><PARAM NAME="_ExtentX" VALUE="11350"><PARAM NAME="_ExtentY" VALUE="688"><PARAM NAME="BackColor" VALUE="-2147483643"><PARAM NAME="EditMode" VALUE="0"><PARAM NAME="ForeColor" VALUE="-2147483640"><PARAM NAME="ReadOnly" VALUE="0"><PARAM NAME="ShowContextMenu" VALUE="-1"><PARAM NAME="MarginLeft" VALUE="1"><PARAM NAME="MarginRight" VALUE="1"><PARAM NAME="MarginTop" VALUE="1"><PARAM NAME="MarginBottom" VALUE="1"><PARAM NAME="Enabled" VALUE="0"><PARAM NAME="MousePointer" VALUE="0"><PARAM NAME="Appearance" VALUE="1"><PARAM NAME="BorderStyle" VALUE="1"><PARAM NAME="AlignHorizontal" VALUE="0"><PARAM NAME="AlignVertical" VALUE="0"><PARAM NAME="MultiLine" VALUE="0"><PARAM NAME="ScrollBars" VALUE="0"><PARAM NAME="PasswordChar" VALUE=""><PARAM NAME="AllowSpace" VALUE="-1"><PARAM NAME="Format" VALUE=""><PARAM NAME="FormatMode" VALUE="1"><PARAM NAME="AutoConvert" VALUE="-1"><PARAM NAME="ErrorBeep" VALUE="0"><PARAM NAME="MaxLength" VALUE="0"><PARAM NAME="LengthAsByte" VALUE="0"><PARAM NAME="Text" VALUE=""><PARAM NAME="Furigana" VALUE="0"><PARAM NAME="HighlightText" VALUE="0"><PARAM NAME="IMEMode" VALUE="0"><PARAM NAME="IMEStatus" VALUE="0"><PARAM NAME="DropWndWidth" VALUE="0"><PARAM NAME="DropWndHeight" VALUE="0"><PARAM NAME="ScrollBarMode" VALUE="0"><PARAM NAME="MoveOnLRKey" VALUE="0"><PARAM NAME="OLEDragMode" VALUE="0"><PARAM NAME="OLEDropMode" VALUE="0"></OBJECT>
+</td></tr>
+<tr>
+    <td align="right" noWrap> CDI File</td>
+    <td noWrap>
+      <OBJECT classid=clsid:E2D000D6-2DA1-11D2-B358-00104B59D73D 
+      id=TDBText_CDIFile style="HEIGHT: 26px; LEFT: 1px; TOP: 1px; WIDTH: 429px" 
+      tabIndex=1><PARAM NAME="_Version" VALUE="65536"><PARAM NAME="_ExtentX" VALUE="11350"><PARAM NAME="_ExtentY" VALUE="688"><PARAM NAME="BackColor" VALUE="-2147483643"><PARAM NAME="EditMode" VALUE="0"><PARAM NAME="ForeColor" VALUE="-2147483640"><PARAM NAME="ReadOnly" VALUE="0"><PARAM NAME="ShowContextMenu" VALUE="-1"><PARAM NAME="MarginLeft" VALUE="1"><PARAM NAME="MarginRight" VALUE="1"><PARAM NAME="MarginTop" VALUE="1"><PARAM NAME="MarginBottom" VALUE="1"><PARAM NAME="Enabled" VALUE="0"><PARAM NAME="MousePointer" VALUE="0"><PARAM NAME="Appearance" VALUE="1"><PARAM NAME="BorderStyle" VALUE="1"><PARAM NAME="AlignHorizontal" VALUE="0"><PARAM NAME="AlignVertical" VALUE="0"><PARAM NAME="MultiLine" VALUE="0"><PARAM NAME="ScrollBars" VALUE="0"><PARAM NAME="PasswordChar" VALUE=""><PARAM NAME="AllowSpace" VALUE="-1"><PARAM NAME="Format" VALUE=""><PARAM NAME="FormatMode" VALUE="1"><PARAM NAME="AutoConvert" VALUE="-1"><PARAM NAME="ErrorBeep" VALUE="0"><PARAM NAME="MaxLength" VALUE="0"><PARAM NAME="LengthAsByte" VALUE="0"><PARAM NAME="Text" VALUE=""><PARAM NAME="Furigana" VALUE="0"><PARAM NAME="HighlightText" VALUE="0"><PARAM NAME="IMEMode" VALUE="0"><PARAM NAME="IMEStatus" VALUE="0"><PARAM NAME="DropWndWidth" VALUE="0"><PARAM NAME="DropWndHeight" VALUE="0"><PARAM NAME="ScrollBarMode" VALUE="0"><PARAM NAME="MoveOnLRKey" VALUE="0"><PARAM NAME="OLEDragMode" VALUE="0"><PARAM NAME="OLEDropMode" VALUE="0"></OBJECT>
+</td></tr>
+</table>
+    
+    </p><input id="btn_RunCATSExtract" name="btn_RunCATSExtract" style="CURSOR: hand; HEIGHT: 61px; LEFT: 21px; PADDING-TOP: 12px; POSITION: absolute; TOP: 185px; VERTICAL-ALIGN: sub; VISIBILITY: hidden; WIDTH: 172px; Z-INDEX:            115" title="Run CATS Extract" type="button" value="Run CATS Extract" height="48" width="132" class="button3"><img height="23" id="pic_RunCATSExtract" src="http://sahlnet/SAHL-MLSS/images/MLSDenied.bmp" style="HEIGHT: 23px; LEFT: 98px; POSITION: absolute; TOP: 188px; VISIBILITY: hidden; WIDTH: 21px; Z-INDEX: 120" title="0" width="21" alt ="" border="0" hspace="0" useMap=""> 
+
+<input id="btn_ViewCATSTextFile" style ="CURSOR: hand; HEIGHT: 55px; LEFT: 367px; POSITION: absolute; TOP: 185px; VISIBILITY: visible; WIDTH: 136px; Z-INDEX: 121" title="View CATS Text File" type="button" value="View CATS Text File" class="button2"> 
+
+
+<table border="0" cellPadding="1" cellSpacing="1" style="HEIGHT: 27px; LEFT: 30px; POSITION: absolute; TOP: 147px; WIDTH: 864px; Z-INDEX: 105" width="75%">
+  
+  <tr>
+    <td id="Message" noWrap></td></tr></table>
+<p></p>
+<p>
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;
+<OBJECT classid=clsid:0D62356A-DBA2-11D1-B5DF-0060976089D0 
+data=data:application/x-oleobject;base64,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//////////8AAAAACAAAAAEAAAAAAAAAAAAAAAQAAAANAACADgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAAkAAAABAAAAgAAAAAAAAAAEAAAAwMDAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAKAAAAAQAAAIAAAAAAAAAABAAAAP//xgAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAACwAAAAEAAAAAAAAAAAAAAAQAAAAFAACACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAAwAAAACAAAAAAAAAAAAAAAUAAAAMn3JAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAANAAAAAwAAAAAAAAAAAAAAFAAAAA8AAIASAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAADgAAAAUAAAAAAAAAAAAAABQAAAAPAACAEgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAA8AAAAHAAAAAAAAAAAAAAAEAAAABQAAgAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAQAAAABgAAAAAAAAAAAAAABAAAAA0AAIAOAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAEQAAAAgAAAAAAAAAAAAAAAQAAAANAACADgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABIAAAAJAAAAAAAAAAAAAAAEAAAAwMDAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAATAAAACgAAAAAAAAAAAAAABAAAAP//xgAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAFAAAAAQAAAAAAAAAAAAAABEAAAAAgAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABUAAAAMAAAAAAAAAAAAAAAUAAAAMn3JAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAWAAAADQAAAAAAAAAAAAAAFAAAAA8AAIASAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAFwAAAA8AAAAAAAAAAAAAAAQAAAAFAACACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABgAAAALAAAAAAAAAAAAAAAEAAAABQAAgAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAZAAAADAAAAAAAAAAAAAAAFAAAADJ9yQD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAGgAAAA0AAAAAAAAAAAAAABQAAAAPAACAEgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAABsAAAAPAAAAAAAAAAAAAAAEAAAABQAAgAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAcAAAACwAAAAAAAAAAAAAABAAAAAUAAIAIAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAHQAAAAAAAAAAAAAAAAAAAAQAAAAFAACACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAAB4AAAAdAAAAwAIBAAACAAAUAAAADwAAgBIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAfAAAAHQAAAMAAAQAAAAAAFAAAAA8AAIASAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAIAAAAB0AAADAAAAAAAAAAAQAAAANAACADgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAACEAAAAeAAAAAAEAAAAAAAARAAAADwAAgBIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAiAAAAHQAAAMAAAAAAAAAABAAAAA0AAIAOAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////8AAAAAIwAAAB0AAACAAAAAAAAAAAQAAAAA//8ACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AAAAACQAAAAdAAAAAAAAAAAAAAAEAAAABQAAgAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////wAAAAAdAAAAAAAAAAAAAAAAAAAAAAAAAP//////////AQAAAAAAAAAAAAAAAQAAAP7///8EAAAAAAAAAAAAAAAFAAAA/f///wIAAAAAAAAAAAAAAAIAAADq////AwAAAAAAAAAAAAAAAwAAAPz///8FAAAAAAAAAAAAAAD/////+////wYAAAAAAAAAAAAAAAQAAAD6////BwAAAAAAAAAAAAAA//////H///8IAAAAAAAAAAAAAAAGAAAA7////wkAAAAAAAAAAAAAAAcAAADu////CgAAAAAAAAAAAAAACAAAAPn///8LAAAAAQAAAAAAAAD/////6////xQAAAABAAAAAAAAAP/////4////DAAAAAEAAAAAAAAA/////+n///8NAAAAAQAAAAAAAAD/////9////w4AAAABAAAAAAAAAP/////2////EAAAAAEAAAAAAAAA//////X///8PAAAAAQAAAAAAAAD/////8P///xEAAAABAAAAAAAAAP/////t////EgAAAAEAAAAAAAAA/////+z///8TAAAAAQAAAAAAAAD/////9P///xgAAAABAAAAAQAAAP/////z////FQAAAAEAAAABAAAA/////+j///8WAAAAAQAAAAEAAAD/////8v///xcAAAABAAAAAQAAAP/////0////HAAAAAEAAAACAAAA//////P///8ZAAAAAQAAAAIAAAD/////6P///xoAAAABAAAAAgAAAP/////y////GwAAAAEAAAACAAAA/////wgAAABOb3JtYWwAAAcCAAAAAAAAAAAAAAAAAAAxAAAAkAEAAB0AAABIZWFkaW5nAAAAAAAEAAAAAAAAAAAAAABgAAAAMQAAAB4AAABGb290aW5nAAAAAAAPAAAAAAAAAAAAAAAxAAAAMAAAAB8AAABTZWxlY3RlZADokAYAAAAAAAAAAAAAAABhAAAAIAIAACAAAABDYXB0aW9uAODokAZQ6JAGgOiQBvDnkAbA55AG4OyQBiEAAABIaWdobGlnaHRSb3cAAAAAAAEAAAUAAAAgAQAAYQAAACIAAABFdmVuUm93ACUAAAAAAAAACwAAAAAAAAAxAAAAMAAAACMAAABPZGRSb3cA/yUAAAAAAAAACgAAAAAnjgYxAAAAYAAAACQAAAADAAAAAAAAAB4AAAABAAAAAAAAAB4AAAABAAAAAAAAAB4AAAABAAAAAAAAAAMAAAAAAAAACwAAAP//AAADAAAAAAAAAB4AAAAYAAAARW1wbG95ZWVUZWFtRGVzY3JpcHRpb24AHgAAABMAAABFbXBsb3llZVRlYW1OdW1iZXIAAAsAAAAAAAAABAAAAAAAAAADAAAA6AMAAB4AAAABAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAADAAAA0AcAAAMAAAAAAAAAAwAAAAAAAAADAAAAyAAAAAMAAAAAAAAAAwAAAAAAAAAeAAAAMgAAAERyYWcgYSBjb2x1bW4gaGVhZGVyIGhlcmUgdG8gZ3JvdXAgYnkgdGhhdCBjb2x1bW4AAAAtAAAAAAAAAA4AAABFeHBvcnRSdW5MaXN0AL0AAAAOAAAAQW5pbWF0ZVdpbmRvdwDAAAAAEwAAAEFuaW1hdGVXaW5kb3dDbG9zZQC+AAAAFwAAAEFuaW1hdGVXaW5kb3dEaXJlY3Rpb24AvwAAABIAAABBbmltYXRlV2luZG93VGltZQD4/f//CwAAAEFwcGVhcmFuY2UACP7//wwAAABCb3JkZXJTdHlsZQBzAAAADAAAAEJvdW5kQ29sdW1uAPr9//8IAAAAQ2FwdGlvbgBgAAAACQAAAENlbGxUaXBzAH4AAAAOAAAAQ2VsbFRpcHNEZWxheQB9AAAADgAAAENlbGxUaXBzV2lkdGgAjwAAAA4AAABDb2x1bW5Gb290ZXJzAAcAAAAOAAAAQ29sdW1uSGVhZGVycwAIAAAACAAAAENvbHVtbnMAJQAAAAkAAABEYXRhTW9kZQC7AAAACQAAAERhdGFWaWV3AAoAAAAMAAAARGVmQ29sV2lkdGgAXwAAAAoAAABFbXB0eVJvd3MA/v3//wgAAABFbmFibGVkADAAAAAPAAAARXhwb3NlQ2VsbE1vZGUAkQAAAAoAAABGb290TGluZXMAwgAAAA8AAABHcm91cEJ5Q2FwdGlvbgAMAAAACgAAAEhlYWRMaW5lcwBlAAAADwAAAEludGVncmFsSGVpZ2h0AF0AAAAPAAAATGF5b3V0RmlsZU5hbWUAXAAAAAsAAABMYXlvdXROYW1lALEAAAAKAAAATGF5b3V0VXJsAGMAAAAKAAAATGlzdEZpZWxkAIAAAAALAAAATWF0Y2hFbnRyeQC8AAAAEgAAAE1hdGNoRW50cnlUaW1lb3V0AKMAAAAKAAAATW91c2VJY29uAKQAAAANAAAATW91c2VQb2ludGVyAIQAAAAMAAAATXVsdGlTZWxlY3QAYQAAAA4AAABNdWx0aXBsZUxpbmVzALQAAAALAAAAUHJpbnRJbmZvcwAPAAAAEAAAAFJvd0RpdmlkZXJTdHlsZQCcAAAACgAAAFJvd01lbWJlcgAjAAAABwAAAFNwbGl0cwDTBwAACQAAAF9FeHRlbnRYANQHAAAJAAAAX0V4dGVudFkAAAIAAAwAAABfTGF5b3V0VHlwZQAQAAAACwAAAF9Sb3dIZWlnaHQAAQIAAAsAAABfU3R5bGVEZWZzAAQCAAAWAAAAX1dhc1BlcnNpc3RlZEFzUGl4ZWxzAA== 
+height=123 id=ExportRunList 
+style="HEIGHT: 140px; LEFT: 20px; POSITION: absolute; TOP: 4px; WIDTH: 265px; Z-INDEX: 111"></OBJECT>
+<input class="button2" id="btn_Exit" title="Exit" style="CURSOR: hand; HEIGHT: 55px; LEFT: 729px; POSITION: absolute; TOP: 185px; VISIBILITY: visible; WIDTH: 136px; Z-INDEX: 121" type="button" value="Exit" name="btn_Exit">
+</p>
+
+</body>
+</html>

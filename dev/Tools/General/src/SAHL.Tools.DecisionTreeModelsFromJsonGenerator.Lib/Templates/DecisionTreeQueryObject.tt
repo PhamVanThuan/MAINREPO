@@ -1,0 +1,30 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using SAHL.Core.Data;
+using SAHL.Core.Services;
+using SAHL.Core.Services.Attributes;
+using SAHL.Services.Interfaces.DecisionTree.Models;
+using SAHL.DecisionTree.Shared;
+using SAHL.DecisionTree.Shared.Interfaces;
+using SAHL.DecisionTree.Shared.Core;
+using SAHL.DecisionTree.Shared.Helpers;
+using System;
+
+namespace <#=this.Namespace#>
+{
+    public class <#=this.DecisionTreeQueryClassName#> : ServiceQuery<<#=this.DecisionTreeQueryClassName#>Result>, IDecisionTreeServiceQuery<<#=this.DecisionTreeQueryClassName#>Result>
+    {
+        public string TreeName { get { return "<#=Utilities.ToPascalCase(this.TreeName)#>"; }}
+        public int TreeVersion { get { return <#=this.TreeVersion#>; }}
+        public QueryGlobalsVersion GlobalsVersion { get;protected set;}
+        <#=this.BuildInputProperties()#>
+        public <#=this.DecisionTreeQueryClassName#> (<#=this.BuildQueryConstructorArguments()#>QueryGlobalsVersion globalsVersion = null)
+        {
+            <#=this.BuildPropertyInitializers()#>
+            this.GlobalsVersion = globalsVersion == null ? new QueryGlobalsVersion(<#= this.VersionInfo.MaxVariableVersion #>,<#= this.VersionInfo.MaxMessageVersion #>,<#= this.VersionInfo.MaxEnumerationVersion #>) : globalsVersion;
+        }
+    }
+}

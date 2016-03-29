@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<!--framework, domain service, client, application, workflow maps should then compile, deploy/start domain service, ensure engine running, publish maps - start app and voila HALO on X2 on steriods-->
+	<PropertyGroup>
+		<!-- The root directory containing the build file -->	
+		<RootPath>$(MSBuildProjectDirectory)\..\..</RootPath>
+		<LocalPath>$(MSBuildProjectDirectory)</LocalPath>
+		
+		<!-- The workflowmaps directory -->
+		<WorkflowMapsPath>$(RootPath)\WorkFlowMaps</WorkflowMapsPath>
+		<!-- The workflow compiler tool path -->
+		<WorkflowMapsBuildToolPath>$(WorkflowMapsPath)\BuildTools\WorkflowTools.Builder.exe</WorkflowMapsBuildToolPath>
+		
+		<WorkflowName>PersonalLoan</WorkflowName>
+		<WorkflowClassName>PersonalLoan</WorkflowClassName>
+		<WorkflowSafeClassName>Personal_Loans</WorkflowSafeClassName>
+		
+		<!-- External Bins Path -->
+		<ExternalBinsPath>$(RootPath)\External Binaries</ExternalBinsPath>
+		
+		<!-- Internal Bins Path -->
+		<InternalBinsPath>$(RootPath)\Internal Binaries</InternalBinsPath>
+		
+		<!-- NuGet Bins Path -->
+		<NuGetPath>$(ExternalBinsPath)\NuGet</NuGetPath>
+		
+		<!-- MSpec -->
+		<!-- The tools path for MSpec -->
+		<MSpecPath>$(NuGetPath)\Machine.Specifications.0.5.6.0\tools</MSpecPath>
+		<MSpecExecutable>mspec-clr4.exe</MSpecExecutable>
+		
+		<!-- OpenCover -->
+		<!-- The tools path for OpenCover -->
+		<OpenCoverPath>$(NuGetPath)\OpenCover.4.0.301</OpenCoverPath>
+		<OpenCoverReportGenPath>$(NuGetPath)\ReportGenerator.1.3.0.0</OpenCoverReportGenPath>
+		
+		<ReportsPath>$(LocalPath)\Reports</ReportsPath>
+		<ReportsCoveragePath>$(ReportsPath)\Coverage</ReportsCoveragePath>
+		<ReportsMSpecPath>$(ReportsPath)\MSpec</ReportsMSpecPath>
+		<MSpecReportOutputFile>$(ReportsMSpecPath)\$(WorkflowName).Specs.html</MSpecReportOutputFile>
+		
+		<!-- OpenCover report name and location -->
+		<OpenCoverOuputFileForWorkflowMaps>$(ReportsCoveragePath)\workflowmaps-coverage-output.xml</OpenCoverOuputFileForWorkflowMaps>
+		<OpenCoverTmpOuputFileForWorkflowMaps>$(ReportsCoveragePath)\workflowmaps-coverage-tmp-output.xml</OpenCoverTmpOuputFileForWorkflowMaps>		
+		
+	</PropertyGroup>
+
+	<Target Name="Generate">
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Cap2 Offers.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Cap2"/>
+<!--		
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Debt Counselling.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Debt Counselling"/>		
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Delete Debit Order.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Delete Debit Order"/>
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Help Desk.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Help Desk"/>
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;IT.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\IT"/>
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Life.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Life"/>
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Loan Adjustments.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Loan Adjustments"/>
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Origination.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Origination"/>
+		<Exec Command="$(WorkflowMapsBuildToolPath) -m &quot;Personal Loan.x2p&quot;" WorkingDirectory="$(WorkflowMapsPath)\Personal Loans"/>
+-->		
+	</Target>
+	
+	<Target Name="CodeCoverage" >
+		<PropertyGroup>
+			<MAP>$(LocalPath)\WorkflowMaps.$(WorkflowName).Specs\bin\Debug\WorkflowMaps.$(WorkflowName).Specs.dll</MAP>
+		</PropertyGroup>
+		<MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" /> 
+		<MakeDir Directories = "$(ReportsCoveragePath)" Condition = "!Exists('$(ReportsCoveragePath)')" /> 
+		<MakeDir Directories = "$(ReportsMSpecPath)" Condition = "!Exists('$(ReportsMSpecPath)')" /> 
+		
+		<!-- Execute opencover -->
+		<Exec Command="&quot;$(OpenCoverPath)\OpenCover.Console.exe&quot; -register:user -output:&quot;$(OpenCoverTmpOuputFileForWorkflowMaps)&quot; -target:&quot;$(MSpecPath)\$(MSpecExecutable)&quot; -filter:&quot;-[*.Specs]* +[PersonalLoan*]X2* -[PersonalLoan*]X2*Data&quot; -excludebyattribute:*.CoverageExcludeAttribute* -targetargs:&quot;\&quot;$(MAP)\&quot; --html \&quot;$(MSpecReportOutputFile)&quot;" />
+			<!-- Use ReportGenerator Tool to build an xml Summary -->
+		<Exec Command="&quot;$(OpenCoverReportGenPath)\ReportGenerator.exe&quot; &quot;$(OpenCoverTmpOuputFileForWorkflowMaps)&quot; &quot;$(ReportsCoveragePath)&quot;"/>
+
+		<Delete Files="$(OpenCoverTmpOuputFileForWorkflowMaps)" />
+
+	</Target>
+</Project>

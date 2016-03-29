@@ -1,0 +1,19 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Target Name="ScriptenatorCheck">
+  <PropertyGroup>
+    <RootPath>$(MSBuildProjectDirectory)</RootPath>
+    <ScriptenatorCoverageToolPath>$(RootPath)\Tools\SAHL.Tools\Tool Binaries\SAHL.Tools.Scriptenator.CoverageCheck.exe</ScriptenatorCoverageToolPath>
+
+    <ScriptsPath>$(RootPath)\Scripts</ScriptsPath>
+    <ScriptenatorFileName>Scriptenator.xml</ScriptenatorFileName>
+    
+    <OutputFile>$(BuildOutputPath)\ScriptenatorCheck.txt</OutputFile>
+  </PropertyGroup>
+  <MakeDir Directories = "$(BuildOutputPath)" Condition = "!Exists('$(BuildOutputPath)')" />
+  <Exec Command="&quot;$(ScriptenatorCoverageToolPath)&quot; -p &quot;$(ScriptsPath)&quot; -s $(ScriptenatorFileName)" />
+  <ReadLinesFromFile File="$(OutputFile)">
+    <Output TaskParameter="Lines" ItemName="OutputLines"/>
+  </ReadLinesFromFile>
+  <Message Text="@(OutputLines)" />
+</Target>
+</Project>

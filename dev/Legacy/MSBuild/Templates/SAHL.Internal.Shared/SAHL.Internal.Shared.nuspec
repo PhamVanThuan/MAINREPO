@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SAHL.Internal.Shared</id>
+    <version>$version$</version>
+    <authors>SA Home Loans</authors>
+    <owners>SA Home Loans</owners>
+    <description>SAHL Shared from the legacy framework</description>
+    <copyright>Copyright SA Homeloans 2013</copyright>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="[5.0.6.0]" />
+    </dependencies>
+  </metadata>
+  <files>
+	<file src="SAHL.Shared.dll" target="lib" />
+  </files>
+</package>

@@ -1,0 +1,35 @@
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Data" Assembly="DevExpress.Data.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="dxwtl" Namespace="DevExpress.Web.ASPxTreeList" Assembly="DevExpress.Web.ASPxTreeList.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" %>
+<%@ Register TagPrefix="SAHL" Namespace="SAHL.Common.Web.UI.Controls" Assembly="SAHL.Common.Web.UI" %>
+
+<SAHL:DXTreeList runat="server">
+    <Styles CssFilePath="{0}/styles.css" CssPostfix="SoftOrange">
+        <Cell HorizontalAlign="Left">
+            <Paddings Padding="1px" />
+        </Cell>
+        <AlternatingNode Enabled="true" />
+    </Styles>
+    <Images SpriteCssFilePath="{0}/sprite.css">
+        <LoadingPanel Url="TreeList/Loading.gif"></LoadingPanel>
+    </Images>
+    <Settings SuppressOuterGridLines="true" />
+    <SettingsLoadingPanel ImagePosition="Top" />
+	<SettingsPager CurrentPageNumberFormat="{0}"/>
+</SAHL:DXTreeList>
+
+<dxwtl:ASPxTreeList runat="server">
+    <Styles CssFilePath="{0}/styles.css" CssPostfix="SoftOrange">
+        <Cell HorizontalAlign="Left">
+            <Paddings Padding="1px" />
+        </Cell>
+        <AlternatingNode Enabled="true" />
+    </Styles>
+    <Images SpriteCssFilePath="{0}/sprite.css">
+        <LoadingPanel Url="TreeList/Loading.gif"></LoadingPanel>
+    </Images>
+    <Settings SuppressOuterGridLines="true" />
+    <SettingsLoadingPanel ImagePosition="Top" />
+	<SettingsPager CurrentPageNumberFormat="{0}"/>
+</dxwtl:ASPxTreeList>
+
+

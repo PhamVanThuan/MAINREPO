@@ -1,0 +1,1 @@
+gulp --gulpfile .\Build\NodeJS\gulpfile.js release

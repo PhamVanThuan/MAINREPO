@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SAHL.WCFServices.ComcorpConnector.Server.SAHLIntegrationService, SAHL.WCFServices.ComcorpConnector.Server" CodeBehind="SAHLIntegrationService.svc.cs" Factory="SAHL.WCFServices.ComcorpConnector.Server.StructureMapServiceHostFactory" %>

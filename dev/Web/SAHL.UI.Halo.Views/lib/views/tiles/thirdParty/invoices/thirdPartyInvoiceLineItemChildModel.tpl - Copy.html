@@ -1,0 +1,21 @@
+<br>
+<table class="table bordered">
+<thead>
+	<tr>
+		<th style="font-size:12px; text-align:left">Type</th>
+		<th style="font-size:12px; text-align:left">Description</th>
+		<th style="font-size:12px; text-align:left">Amount Excluding VAT</th>
+		<th style="font-size:12px; text-align:left">VAT</th>
+		<th style="font-size:12px; text-align:left">Amount Including VAT</th>
+	</tr>
+</thead>
+<tbody>
+	<tr id="transactions" ng-repeat="invoiceLineItem in item.tileDataItems.$values">
+		<td style="font-size:12px; text-align:left">{{invoiceLineItem.lineItemType}}</td>
+		<td style="font-size:12px; text-align:left">{{invoiceLineItem.lineItemDesc}}</td>
+		<td style="font-size:12px; text-align:right">{{invoiceLineItem.lineItemAmount | currencyFilter:2}}
+		<td style="font-size:12px; text-align:right">{{invoiceLineItem.lineItemVatAmount | currencyFilter:2}}
+		<td style="font-size:12px; text-align:right">{{invoiceLineItem.lineItemTotalAmtInclVAT | currencyFilter:2}}
+	</tr>
+</tbody>
+</table>

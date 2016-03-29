@@ -1,0 +1,9 @@
+﻿@model SAHL.Core.UI.Elements.Menus.StaticRibbonMenuItemElement
+<li id="@Model.Id" class="static-ribbon-menu-item ribbon-menu-item @(Model.Selected ? "active" : String.Empty)" @DataAttributes.attributes(Model)>
+	<a href="@(Url.Action(Model.Url.Split('/')[1], Model.Url.Split('/')[0]))">
+		@foreach(var part in Model.Parts)
+		{
+			@Html.DisplayForModel(x => part)
+		}
+	</a>
+</li>

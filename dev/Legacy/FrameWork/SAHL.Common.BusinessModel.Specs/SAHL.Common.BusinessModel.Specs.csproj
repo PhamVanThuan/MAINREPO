@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCFD22F2-AEE4-4832-9F32-E5955134BFBF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Common.BusinessModel.Specs</RootNamespace>
+    <AssemblyName>SAHL.Common.BusinessModel.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\FrameWork\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.0.3.5\lib\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.0.3.5\lib\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Communication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared, Version=0.1.2034.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Capitec.Models.Shared, Version=0.1.1047.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Capitec.Models.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Logging\When_LogErrorWithException_IsCalled_AddExceptionToParamsCollection_And_publishMessage_Onto_Bus.cs" />
+    <Compile Include="Logging\When_LogError_IsCalled_Publish_Message_Onto_MessageBus.cs" />
+    <Compile Include="Logging\When_LogInfo_IsCalled_Publish_InfoMessage_Onto_Bus.cs" />
+    <Compile Include="Logging\When_LogOnEnterMethod_IsCalled_Publish_Message_Onto_Bus.cs" />
+    <Compile Include="Logging\When_LogOnExitMethod_IsCalled_Publish_Message_Onto_Bus.cs" />
+    <Compile Include="Logging\When_LogOnMethodException_IsCalled_Publish_Onto_Bus.cs" />
+    <Compile Include="Logging\When_LogOnMethodSuccess_IsCalled_Publish_Onto_Bus.cs" />
+    <Compile Include="Logging\When_LogWarning_IsCalled_Publish_Message_Onto_MessageBus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Account\CloseLoanAccount\when_HaloApi_CloseLoanAccount_called_with_Correct_Parameters.cs" />
+    <Compile Include="Repositories\Account\ClosePersonalLoanAccount\when_HaloApi_ClosePersonalLoanAccount_called_with_Correct_Parameters.cs" />
+    <Compile Include="Repositories\Application\DetermineApplicationAttributeTypes\when_getOfferAttributesTypes_has_no_offerAttributeTypes.cs" />
+    <Compile Include="Repositories\Application\DetermineApplicationAttributeTypes\when_getOfferAttributesTypes_has_offerAttributeTypes.cs" />
+    <Compile Include="Repositories\Life\GetMonthyPremium\when_get_monthly_premium.cs" />
+    <Compile Include="Repositories\Life\LifeRepositoryWithFakesBase.cs" />
+    <Compile Include="Repositories\ManualDebitOrder\GetCollectedManualDebitOrdersByFinancialServiceKey\when_get_collected_manual_debit_orders_by_financialservicekey.cs" />
+    <Compile Include="Repositories\ManualDebitOrder\GetPendingManualDebitOrdersByFinancialServiceKey\when_get_pending_manual_debit_orders_by_financialservicekey.cs" />
+    <Compile Include="Repositories\ManualDebitOrder\ManualDebitOrderRepositoryWithFakesBase.cs" />
+    <Compile Include="Repositories\PersonalLoan\ChangeTerm\when_should_ChangeTerm.cs" />
+    <Compile Include="Repositories\PersonalLoan\CreatingCampaignLeads\when_creating_a_lead_given_idnumber_of_natural_person_who_has_an_existing_lead.cs" />
+    <Compile Include="Repositories\PersonalLoan\CreatingCampaignLeads\when_creating_lead_given_idnumber_of_natural_person_who_has_no_other_existing_lead.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\Caching\Offer\When_loading_the_cached_dataset_for_the_first_time.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\Caching\Offer\When_loading_the_cached_dataset_for_the_second_time.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\Caching\Workflow\When_loading_the_cached_dataset_for_the_first_time.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\Caching\Workflow\When_loading_the_cached_dataset_for_the_second_time.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\GetConsultantForInstanceAndRole\when_get_consultant_for_instance_and_role.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\IsUserActive\when_user_is_active.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\IsUserActive\when_user_is_inactive.cs" />
+    <Compile Include="Repositories\WorkflowAssignment\WorkflowAssignmentRepositoryWithFakesBase.cs" />
+    <Compile Include="Repositories\WorkflowRoleAssignment\ReactivateUserOrRoundRobin\assign_user_when_no_workflowroleassignment_exists.cs" />
+    <Compile Include="Repositories\WorkflowRoleAssignment\ReactivateUserOrRoundRobin\assign_user_when_workflowroleassignment_exists_and_user_inactive.cs" />
+    <Compile Include="Repositories\WorkflowRoleAssignment\ReactivateUserOrRoundRobin\assign_user_when_workflowroleassignment_exists_and_user_not_in_org_struct.cs" />
+    <Compile Include="Repositories\WorkflowRoleAssignment\ReactivateUserOrRoundRobin\reactivate_active_user_when_wfroleassignment_exists_and_user_in_org_struct.cs" />
+    <Compile Include="Repositories\WorkflowRoleAssignment\WorkflowRoleAssignmentRepositoryWithFakesBase.cs" />
+    <Compile Include="Rules\Account\AccountIsAffordableHousing\When_account_has_affordable_housing_details.cs" />
+    <Compile Include="Rules\Account\AccountIsAffordableHousing\When_account_has_no_affordable_housing_details.cs" />
+    <Compile Include="Rules\Account\AccountIsAffordableHousing\When_account_has_no_details.cs" />
+    <Compile Include="Rules\AffordabilityAssessment\AffordabilityAssessmentMandatorySpecs\when_application_has_an_active_affordability_assessment.cs" />
+    <Compile Include="Rules\AffordabilityAssessment\CanRemoveClientFromApplicationLinkedAffordabilityAssessmentCheckSpec\when_the_legal_entity_is_linked_to_affordability_assessment.cs" />
+    <Compile Include="Rules\AffordabilityAssessment\CanRemoveClientFromApplicationLinkedAffordabilityAssessmentCheckSpec\when_the_legal_entity_is_not_linked_to_affordability_assessment.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityAtLeastOneIncome\when_affordability_has_at_least_one_income.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityAtLeastOneIncome\when_affordability_has_at_least_one_income_and_application_is_null.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityAtLeastOneIncome\when_affordability_has_at_least_one_income_and_application_keys_dont_match.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityAtLeastOneIncome\when_affordability_has_at_least_one_income_and_legalEntityAffordability_has_zero_entries.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityAtLeastOneIncome\when_affordability_has_at_least_one_income_and_legalEntityAffordability_is_null.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityAtLeastOneIncome\when_affordability_has_at_least_one_income_and_no_affordability_type.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityAtLeastOneIncome\when_affordability_has_at_least_one_income_and_only_expenses.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityDescriptionMandatory\when_affordability_description_Mandatory.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityDescriptionMandatory\when_affordability_description_Mandatory_and_affordability_type_is_null.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityDescriptionMandatory\when_affordability_description_Mandatory_and_legalentity_affordability_is_wrong_type.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityDescriptionMandatory\when_affordability_description_Mandatory_and_description_is_missing.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityNegativeValue\when_affordability_amount_cant_be_negative_and_amount_is_negative.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityNegativeValue\when_affordability_amount_cant_be_negative_and_amount_is_positive.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityNegativeValue\when_affordability_amount_cant_be_negative_and_legalentity_affordability_is_wrong_type.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityStatementMandatory\when_affordability_statement_mandatory.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityStatementMandatory\when_affordability_statement_mandatory_and_applicationMortgageLoan_is_null.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityStatementMandatory\when_affordability_statement_mandatory_and_LegalEntityAffordabilities_is_null_LeadMainApplicant.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityStatementMandatory\when_affordability_statement_mandatory_and_LegalEntityAffordabilities_is_null_LeadSuretor.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityStatementMandatory\when_affordability_statement_mandatory_and_LegalEntityAffordabilities_is_null_MainApplicant.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityStatementMandatory\when_affordability_statement_mandatory_and_LegalEntityAffordabilities_is_null_Suretor.cs" />
+    <Compile Include="Rules\Affordability\AffordabilityStatementMandatory\when_affordability_statement_mandatory_and_zero_LegalEntityAffordabilities.cs" />
+    <Compile Include="Rules\Application\Application\AlphaHousingMustBeNewVariable\when_application_is_alpha_housing_and_is_not_new_variable_product_rule_should_fail.cs" />
+    <Compile Include="Rules\Application\Application\AlphaHousingMustBeNewVariable\when_application_is_a_further_lending_application.cs" />
+    <Compile Include="Rules\Application\Application\AlphaHousingMustBeNewVariable\when_application_is_not_alpha_housing_and_is_new_variable_product_rule_should_pass.cs" />
+    <Compile Include="Rules\Application\Application\AphaHousingMustNotBeInterestOnly\when_application_is_alpha_housing_and_has_interest_only.cs" />
+    <Compile Include="Rules\Application\Application\AphaHousingMustNotBeInterestOnly\when_application_is_alpha_housing_and_does_not_have_interest_only.cs" />
+    <Compile Include="Rules\Application\Application\AphaHousingMustNotBeInterestOnly\when_application_is_a_further_lending_application.cs" />
+    <Compile Include="Rules\Application\Application\ApplicationHas30YearTerm\when_application_does_not_hav3_30yr_attribute.cs" />
+    <Compile Include="Rules\Application\Application\ApplicationHas30YearTerm\when_application_has_30yr_attribute.cs" />
+    <Compile Include="Rules\Application\Application\CalculatorAphaHousingMustNotBeInterestOnly\when_loan_qualifies_as_alpha_housing_and_does_not_have_interest_only.cs" />
+    <Compile Include="Rules\Application\Application\CalculatorAphaHousingMustNotBeInterestOnly\when_loan_qualifies_as_alpha_housing_and_has_interest_only.cs" />
+    <Compile Include="Rules\Application\Application\ApplicationIsAffordableHousing\when_application_has_affordable_housing_attribute.cs" />
+    <Compile Include="Rules\Application\Application\ApplicationIsAffordableHousing\when_application_has_no_affordable_housing_attribute.cs" />
+    <Compile Include="Rules\Application\Application\ApplicationIsAffordableHousing\when_application_has_no_attributes.cs" />
+    <Compile Include="Rules\Application\Application\CalculatorAlphaHousingLoanMustBeNewVariableLoan\when_loan_does_not_qualify_as_alpha_housing_product_can_be_anything.cs" />
+    <Compile Include="Rules\Application\Application\CalculatorAlphaHousingLoanMustBeNewVariableLoan\when_loan_qualifies_as_alpha_housing_should_be_new_variable_loan.cs" />
+    <Compile Include="Rules\Application\Application\CapitaliseInitiationFee\when_application_has_the_capitalise_initiation_fee_attribute_with_too_high_ltv.cs" />
+    <Compile Include="Rules\Application\Application\CapitaliseInitiationFee\when_application_has_the_capitalise_initiation_fee_attribute_with_acceptable_ltv.cs" />
+    <Compile Include="Rules\Application\Application\CapitaliseInitiationFee\when_application_is_a_further_lending_application.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllHouseHoldIncomesHaveBeenConfirmed\when_application_has_multiple_income_contributors_with_at_least_one_non_confirmed_income.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllLegalEntitiesOnApplicationHasDomicilium\when_application_is_further_lending.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllLegalEntitiesOnApplicationHasDomicilium\when_more_than_one_legal_entity_on_application_doesnt_have_domicilium.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllLegalEntitiesOnApplicationHasDomicilium\when_more_than_one_legal_entity_on_application_has_a_domicilium.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllLegalEntitiesOnApplicationHasDomicilium\when_one_legal_entity_has_domicilium_and_another_doesnt.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllLegalEntitiesOnApplicationHasDomicilium\when_one_legal_entity_on_application_has_a_domicilium.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllLegalEntitiesOnApplicationHasDomicilium\when_one_legal_entity_on_application_has_no_domicilium.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllHouseHoldIncomesHaveBeenConfirmed\when_application_has_an_income_contributor_without_current_employment.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllHouseHoldIncomesHaveBeenConfirmed\when_application_has_a_multiple_income_contributor_with_all_incomes_confirmed.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllHouseHoldIncomesHaveBeenConfirmed\when_application_has_multiple_income_contributors_whose_incomes_are_confirmed.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllHouseHoldIncomesHaveBeenConfirmed\when_application_has_a_single_income_contributor_whose_income_is_confirmed.cs" />
+    <Compile Include="Rules\Application\Application\FLApplicationIsAlphaHousing\when_application_is_further_lending_and_alpha_housing.cs" />
+    <Compile Include="Rules\Application\Application\FLApplicationIsAlphaHousing\when_application_is_further_lending_and_not_alpha_housing.cs" />
+    <Compile Include="Rules\Application\Application\FLApplicationIsAlphaHousing\when_application_is_not_further_lending.cs" />
+    <Compile Include="Rules\Application\Application\Has30YearTermDisqualification\when_application_has_no_disqualification.cs" />
+    <Compile Include="Rules\Application\Application\Has30YearTermDisqualification\when_application_has_a_disqualification.cs" />
+    <Compile Include="Rules\Application\Application\Previous30YearTermDisqualification\when_application_has_no_disqualification.cs" />
+    <Compile Include="Rules\Application\Application\Previous30YearTermDisqualification\when_application_has_a_current_disqualification.cs" />
+    <Compile Include="Rules\Application\Application\Previous30YearTermDisqualification\when_application_has_previous_disqualification.cs" />
+    <Compile Include="Rules\Application\FurtherLending\AccountDetailTypeCheck\when_the_account_contains_one_of_the_detail_types.cs" />
+    <Compile Include="Rules\Application\FurtherLending\AccountDetailTypeCheck\when_the_account_does_not_contain_any_of_the_detail_types.cs" />
+    <Compile Include="Rules\Application\FurtherLending\AccountDetailTypeVarifixOptOut90DayPendingHoldCheck\when_the_account_has_total_app_amt_greater_than_laa_and_doesnt_contain_detail_type.cs" />
+    <Compile Include="Rules\Application\FurtherLending\AccountDetailTypeVarifixOptOut90DayPendingHoldCheck\when_total_app_amt_is_greater_than_the_account_laa_and_contains_detail_type.cs" />
+    <Compile Include="Rules\Application\FurtherLending\AccountDetailTypeWarning\when_the_account_does_not_contain_any_of_the_detail_types.cs" />
+    <Compile Include="Rules\Application\FurtherLending\AccountDetailTypeWarning\when_the_account_contains_one_of_the_detail_types.cs" />
+    <Compile Include="Rules\Account\ActiveSubsidyAndSalaryStopOrderConditionExistsCheck\when_the_account_has_an_active_subsidy_and_conditions_222_223.cs" />
+    <Compile Include="Rules\Account\ActiveSubsidyAndSalaryStopOrderConditionExistsCheck\when_the_account_has_no_active_subsidy.cs" />
+    <Compile Include="Rules\Account\ActiveSubsidyAndSalaryStopOrderConditionExistsCheck\when_the_account_has_an_active_subsidy_and_condition_222.cs" />
+    <Compile Include="Rules\Account\ActiveSubsidyAndSalaryStopOrderConditionExistsCheck\when_the_account_has_an_active_subsidy_and_condition_223.cs" />
+    <Compile Include="Rules\Account\ActiveSubsidyAndSalaryStopOrderConditionExistsCheck\when_the_account_has_an_active_subsidy_and_no_conditions.cs" />
+    <Compile Include="Rules\Application\FurtherLending\Has30YearTermCheck\when_the_loan_has_30_year_term_check.cs" />
+    <Compile Include="Rules\Application\FurtherLending\PreventAlphaHousingLinkRateBeingLowerForFurtherLending\when_the_newly_selected_linkrate_is_equal_to_the_existing_linkrate.cs" />
+    <Compile Include="Rules\Application\FurtherLending\PreventAlphaHousingLinkRateBeingLowerForFurtherLending\when_the_newly_selected_linkrate_is_greater_than_the_existing_linkrate.cs" />
+    <Compile Include="Rules\Application\FurtherLending\PreventAlphaHousingLinkRateBeingLowerForFurtherLending\when_the_newly_selected_linkrate_is_lower_than_the_existing_linkrate.cs" />
+    <Compile Include="Rules\Application\FurtherLending\PreventPayingwithHOCPaidUpwithNoHOCSpecs\when_their_is_a_paid_up_with_no_hoc_detail_type.cs" />
+    <Compile Include="Rules\Application\FurtherLending\PreventPayingwithHOCPaidUpwithNoHOCSpecs\when_the_hoc_insurer_is_set_to_paid_up_with_no_hoc.cs" />
+    <Compile Include="Rules\Application\FurtherLending\PreventPayingwithHOCPaidUpwithNoHOCSpecs\when_the_hoc_status_is_set_to_paid_up_with_no_hoc.cs" />
+    <Compile Include="Rules\CalculatorValidation\CalcCreditDisqualificationMinLAA\when_loan_amount_is_above_minimum_loan_amount.cs" />
+    <Compile Include="Rules\CalculatorValidation\CalcCreditDisqualificationMinLAA\when_loan_amount_is_less_than_minimum_loan_amount.cs" />
+    <Compile Include="Rules\CalculatorValidation\CalcCreditDisqualificationMinValuation\when_valuation_amount_is_above_minimum_valuation_amount.cs" />
+    <Compile Include="Rules\CalculatorValidation\CalcCreditDisqualificationMinValuation\when_valuation_amount_is_below_minimum_valuation_amount.cs" />
+    <Compile Include="Rules\Calculator\CalcCreditDisqualificationMinIncome\when_minimum_income_above_threshold_with_exceptions.cs" />
+    <Compile Include="Rules\Calculator\CalcCreditDisqualificationMinIncome\when_minimum_income_below_threshold.cs" />
+    <Compile Include="Rules\Calculator\CalcCreditDisqualificationMinIncome\when_minimum_income_above_threshold.cs" />
+    <Compile Include="Rules\Credit\ApplicationEmploymentTypeConfirmation\when_an_application_employment_type_has_been_confirmed_for_given_instance.cs" />
+    <Compile Include="Rules\Credit\ApplicationEmploymentTypeConfirmation\when_an_application_employment_type_has_not_been_confirmed_for_given_instance.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinIncome\when_no_application_information_exists.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinIncome\when_minimum_income_below_threshold.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinIncome\when_minimum_income_above_threshold.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinLoanAgreeAmount\when_application_is_further_lending.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinLoanAgreeAmount\when_application_loan_amount_is_above_minimum_loan_agreement_amount.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinLoanAgreeAmount\when_application_loan_amount_is_below_minimum_loan_agreement_amount.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinValuation\when_application_information_is_above_minimum_for_category.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinValuation\when_application_information_is_below_minimum_for_category.cs" />
+    <Compile Include="Rules\Credit\CreditDisqualificationMinValuation\when_application_has_no_application_information.cs" />
+    <Compile Include="Rules\DebtCounselling\DomiciliumAddress\LegalEntitiesAllHaveDomiciliumOnDebtCounsellingCase\when_all_clients_do_not_have_an_active_domicilium_on_a_debt_counselling_case.cs" />
+    <Compile Include="Rules\DebtCounselling\DomiciliumAddress\LegalEntitiesAllHaveDomiciliumOnDebtCounsellingCase\when_all_clients_have_an_active_domicilium_on_a_debt_counselling_case.cs" />
+    <Compile Include="Rules\Disbursement\DisbursementCutOffTimeCheckSpecs\when_disbursement_is_done_after_the_cut_off_time.cs" />
+    <Compile Include="Rules\Disbursement\DisbursementCutOffTimeCheckSpecs\when_disbursement_is_done_before_the_cut_off_time.cs" />
+    <Compile Include="Rules\Employment\SalaryPayDayMandatory\When_paymentday_null_should_fail.cs" />
+    <Compile Include="Rules\Employment\SalaryPayDayMandatory\When_unemployed_should_pass.cs" />
+    <Compile Include="Rules\FinancialTransaction\PostTransactionNonPerformingLoan236_967\when_account_has_no_suspended_interest_financial_services.cs" />
+    <Compile Include="Rules\FinancialTransaction\PostTransactionNonPerformingLoan236_967\when_no_account_is_passed.cs" />
+    <Compile Include="Rules\FinancialTransaction\PostTransactionNonPerformingLoan236_967\when_no_loan_transaction_amount_is_passed.cs" />
+    <Compile Include="Rules\FinancialTransaction\PostTransactionNonPerformingLoan236_967\when_supended_interest_with_balance_of_0_and_transaction_amount_0.cs" />
+    <Compile Include="Rules\FinancialTransaction\PostTransactionNonPerformingLoan236_967\when_supended_interest_with_balance_of_1000_and_transaction_amount_2000.cs" />
+    <Compile Include="Rules\FinancialTransaction\PostTransactionNonPerformingLoan236_967\when_supended_interest_with_balance_of_2000_and_transaction_amount_1000.cs" />
+    <Compile Include="Rules\FixedDebitOrder\FinancialServiceBankAccount\FinancialServiceBankAccountUpdateDebitOrderAmount\when_finservice_bank_acc_update_debit_order_amt_fail.cs" />
+    <Compile Include="Rules\FixedDebitOrder\FinancialServiceBankAccount\FinancialServiceBankAccountUpdateDebitOrderAmount\when_finservice_bank_acc_update_debit_order_amt_pass.cs" />
+    <Compile Include="Rules\FixedDebitOrder\FinancialServiceBankAccount\FinancialServiceBankAccountUpdateDebitOrderAmount\when_finservice_bank_acc_update_debit_order_amt_with_subsidy_fail.cs" />
+    <Compile Include="Rules\FixedDebitOrder\FinancialServiceBankAccount\FinancialServiceBankAccountUpdateDebitOrderAmount\when_finservice_bank_acc_update_debit_order_amt_with_subsidy_pass.cs" />
+    <Compile Include="Rules\HOC\HOCNonHOCCessionDetailTypeToSAHLHOC\When_NonSAHL_Has_Cession_Commercial_Use.cs" />
+    <Compile Include="Rules\HOC\HOCNonHOCCessionDetailTypeToSAHLHOC\When_NonSAHL_Has_Cession_Policy.cs" />
+    <Compile Include="Rules\HOC\HOCNonHOCCessionDetailTypeToSAHLHOC\When_NonSAHL_Has_Cession_Policy_Cession_Commerial_Use.cs" />
+    <Compile Include="Rules\HOC\HOCNonHOCCessionDetailTypeToSAHLHOC\When_NonSAHL_Has_No_Cession.cs" />
+    <Compile Include="Rules\HOC\HOCNonHOCCessionDetailTypeToSAHLHOC\When_Non_Hoc_Account_is_Passed.cs" />
+    <Compile Include="Rules\HOC\HOCNonHOCCessionDetailTypeToSAHLHOC\When_Null_Parameters_Passed_In.cs" />
+    <Compile Include="Rules\HOC\HOCRoofDescriptionConventionalSpecs\when_insurer_is_not_sahomeloans.cs" />
+    <Compile Include="Rules\HOC\HOCRoofDescriptionConventionalSpecs\when_conventional_amount_0_and_valuation_is_active.cs" />
+    <Compile Include="Rules\HOC\HOCRoofDescriptionConventionalSpecs\when_valuation_is_workflow_lightstone_valuation.cs" />
+    <Compile Include="Rules\HOC\HOCRoofDescriptionConventionalSpecs\when_no_valuation_exists.cs" />
+    <Compile Include="Rules\HOC\HOCRoofDescriptionConventionalSpecs\when_valuation_is_physical_lightstone_valuation.cs" />
+    <Compile Include="Rules\LegalEntity\ActiveDomiciliumAddressIsUsedOnOpenApplications\when_active_domicilium_is_used_on_application_that_is_closed.cs" />
+    <Compile Include="Rules\LegalEntity\ActiveDomiciliumAddressIsUsedOnOpenApplications\when_active_domicilium_is_not_used_on_application.cs" />
+    <Compile Include="Rules\LegalEntity\ActiveDomiciliumAddressIsUsedOnOpenApplications\when_active_domicilium_is_used_on_open_application.cs" />
+    <Compile Include="Rules\LegalEntity\ActiveDomiciliumAddressIsUsedOnOpenApplications\when_legal_entity_does_not_have_domicilium.cs" />
+    <Compile Include="Rules\LegalEntity\DeactiveateLegalEntityAddressThatIsActiveDomiciliumAddress\when_trying_to_deactiveate_legalentityaddress_that_is_LegalEntityDomicilium.cs" />
+    <Compile Include="Rules\LegalEntity\DeactiveateLegalEntityAddressThatIsActiveDomiciliumAddress\when_trying_to_deactiveate_legalentityaddress_that_is_not_LegalEntityDomicilium.cs" />
+    <Compile Include="Rules\Application\Application\EnsureAllHouseHoldIncomesHaveBeenConfirmed\when_application_has_a_multiple_income_contributor_with_at_least_one_unconfirmed_income.cs" />
+    <Compile Include="Rules\LegalEntity\HasAccountInArrearsInLast6Months\when_legal_entity_has_loan_in_arrears_in_last_6_months.cs" />
+    <Compile Include="Rules\LegalEntity\HasAccountInArrearsInLast6Months\when_legal_entity_has_no_loan_in_arrears.cs" />
+    <Compile Include="Rules\LegalEntity\HasAccountInArrearsInLast6Months\when_legal_entity_has_no_mortgage_loans.cs" />
+    <Compile Include="Rules\LegalEntity\AddressActiveLegalEntityDomiciliumCanNotBeDeleted\when_trying_to_delete_a_legalEntityAddress_linked_to_inactive_domicilium.cs" />
+    <Compile Include="Rules\LegalEntity\AddressActiveLegalEntityDomiciliumCanNotBeDeleted\when_trying_to_delete_a_legalEntityAddress_with_a_shared_address.cs" />
+    <Compile Include="Rules\LegalEntity\AddressActiveLegalEntityDomiciliumCanNotBeDeleted\when_trying_to_delete_legalentityaddress_that_is_the_active_legalentitydomicilium.cs" />
+    <Compile Include="Rules\LegalEntity\AddressChangesWillUpdateActiveDomicilium\when_trying_to_update_legalentityaddress_linked_to_inactive_domicilium.cs" />
+    <Compile Include="Rules\LegalEntity\AddressChangesWillUpdateActiveDomicilium\when_trying_to_update_legalentityaddress_that_is_the_active_legalentitydomicilium.cs" />
+    <Compile Include="Rules\LegalEntity\AddressChangesWillUpdateActiveDomicilium\when_trying_to_update_legalentityaddress_with_a_shared_address.cs" />
+    <Compile Include="Rules\LegalEntity\AddressChangesWillUpdatePendingDomicilium\when_updating_domicilium_having_multiple_applications.cs" />
+    <Compile Include="Rules\LegalEntity\AddressChangesWillUpdatePendingDomicilium\when_updating_domicilium_will_update_pending_domicilium.cs" />
+    <Compile Include="Rules\LegalEntity\OpenFurtherLendingSpecs\when_legalEntity_does_not_have_fl_apps.cs" />
+    <Compile Include="Rules\LegalEntity\OpenFurtherLendingSpecs\when_legalEntity_has_fl_apps.cs" />
+    <Compile Include="Rules\Products\Edge\IApplicationProductEdge_IApplicationMortgageLoan.cs" />
+    <Compile Include="Rules\Products\Edge\when_ltv_greater_than_80_percent.cs" />
+    <Compile Include="Rules\Products\Edge\when_ltv_equals_80_percent.cs" />
+    <Compile Include="Rules\Products\Edge\when_ltv_less_than_80_percent.cs" />
+    <Compile Include="Rules\Property\LightStonePropertyIDExists\when_an_id_exists.cs" />
+    <Compile Include="Rules\Property\LightStonePropertyIDExists\when_no_id_exists.cs" />
+    <Compile Include="Rules\Property\WhenChangingPropertyAddressDetailsWarnUserOfLegalEntitiesUsingAsDomicilium\when_updating_propertyaddress_that_is_a_legalentitydomicilium.cs" />
+    <Compile Include="Rules\RulesServiceSpecs\can_instantiate_rules_with_rulesservice_ioc.cs" />
+    <Compile Include="Rules\RulesBaseWithFakes.cs" />
+    <Compile Include="Rules\AffordabilityAssessment\AffordabilityAssessmentMandatorySpecs\when_application_does_not_have_an_active_affordability_assessment.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckAlteredApprovalStageTransitionSpecs\when_application_does_not_have_Altered_Approval_stage_transition_as_the_latest_stage_transition.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckAlteredApprovalStageTransitionSpecs\when_application_has_Altered_Approval_stage_transition_as_latest_stage_transition.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckCededAmountCoversApplicationAmountSpecs\when_ceded_amount_covers_personal_loan_application_amount.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckCededAmountCoversApplicationAmountSpecs\when_ceded_amount_is_not_enough_to_cover_personal_loan_application_amount.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckChangeTermStageTranistion\when_Change_Term_Stage_Transition_has_Not_fired.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckChangeTermStageTranistion\when_Change_Term_Stage_Transition_was_empty_parameters.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckChangeTermStageTranistion\when_Change_Term_Stage_Transition_was_not_passed_an_account.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckChangeTermStageTranistion\when_Change_Term_Stage_Transition_was_passed_a_null_account.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckExternalPolicyIsCededSpecs\when_external_life_is_not_fully_captured.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckExternalPolicyIsCededSpecs\when_fully_captured_external_life_policy_is_ceded.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckExternalPolicyIsCededSpecs\when_fully_captured_external_life_policy_is_not_ceded.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckPersonalLoanAmountSpecs\when_amount_exceeds_maximum_loan_amount.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckPersonalLoanAmountSpecs\when_amount_is_below_maximum_loan_amount.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckPersonalLoanAmountSpecs\when_amount_is_below_minimum_loan_amount.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckPersonalLoanTermSpecs\when_requested_term_is_the_same_as_the_personal_loan_term.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckPersonalLoanTermSpecs\when_term_exceeds_maximum_loan_term.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckPersonalLoanTermSpecs\when_term_is_below_maximum_loan_term.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckPersonalLoanTermSpecs\when_term_is_below_minimum_loan_term.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckChangeTermStageTranistion\when_Change_Term_Stage_Transition_has_fired.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckUniquePersonalLoanApplicationSpecs\when_legalentity_already_has_personal_loan_lead.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckUniquePersonalLoanApplicationSpecs\when_legalentity_has_an_ntu_case.cs" />
+    <Compile Include="Rules\UnsecuredLending\CheckUniquePersonalLoanApplicationSpecs\when_legalentity_has_no_personal_loan_leads.cs" />
+    <Compile Include="Rules\UnsecuredLending\ITCUnsecuredLendingSpecs\When_legalentity_does_not_have_a_valid_ITC_enquiry.cs" />
+    <Compile Include="Rules\UnsecuredLending\ITCUnsecuredLendingSpecs\When_legalentity_has_a_valid_ITC_enquiry.cs" />
+    <Compile Include="Rules\UnsecuredLending\UnsecuredLendingApplicationMailingAddressSpecs\When_application_has_no_mailing_address.cs" />
+    <Compile Include="Rules\UnsecuredLending\UnsecuredLendingApplicationMailingAddressSpecs\When_application_has_one_or_more_mailing_addresses.cs" />
+    <Compile Include="Rules\UnsecuredLending\UnsecuredLendingConfirmIncomeSpecs\UnsecuredLendingConfirmIncomeSpecBase.cs" />
+    <Compile Include="Rules\UnsecuredLending\UnsecuredLendingConfirmIncomeSpecs\When_legalentitys_income_is_confirmed.cs" />
+    <Compile Include="Rules\UnsecuredLending\UnsecuredLendingConfirmIncomeSpecs\When_legalentitys_income_is_not_confirmed.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12MonthsWarning\when_application_is_further_lending.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12MonthsWarning\when_there_is_an_active_valuation_more_than_12months_ago.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12MonthsWarning\when_there_is_an_active_valuation_within_12months.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12MonthsWarning\when_there_is_an_inactive_valuation_more_than_12months_ago.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12MonthsWarning\when_there_is_an_inactive_valuation_within_12months.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12MonthsWarning\when_there_is_no_active_valuation.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12Months\when_application_is_further_lending.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12Months\when_there_is_an_inactive_valuation_within_12months.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12Months\when_there_is_an_inactive_valuation_more_than_12months_ago.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12Months\when_there_is_no_active_valuation.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12Months\when_there_is_an_active_valuation_within_12months.cs" />
+    <Compile Include="Rules\Valuations\CheckActiveValuation12Months\when_there_is_an_active_valuation_more_than_12months_ago.cs" />
+    <Compile Include="Rules\Valuations\ValuationRequestPendingSpecs\when_a_pending_valuation_case_exists.cs" />
+    <Compile Include="Rules\Valuations\ValuationRequestPendingSpecs\when_multiple_valuation_cases_exist_without_any_of_them_pending.cs" />
+    <Compile Include="Rules\Valuations\ValuationRequestPendingSpecs\when_multiple_valuation_cases_exist_with_at_least_one_pending.cs" />
+    <Compile Include="Rules\Valuations\ValuationRequestPendingSpecs\when_no_pending_valuation_case_exists.cs" />
+    <Compile Include="Rules\Valuations\ValuationRequestPendingSpecs\when_no_valuation_case_exists.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\LegalEntity\" />
+    <Folder Include="Repositories\WorkfowSecurity\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Rules\Application\Application\CapitaliseInitiationFee\when_application_does_not_have_capitalise_initiation_fee_attribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.DAO\SAHL.Common.BusinessModel.DAO.csproj">
+      <Project>{609a7113-a7dd-4e72-98fd-2b07d13550b8}</Project>
+      <Name>SAHL.Common.BusinessModel.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.Interfaces\SAHL.Common.BusinessModel.Interfaces.csproj">
+      <Project>{73DA2A37-4A25-4FE9-98F2-60ED1B2D1CAB}</Project>
+      <Name>SAHL.Common.BusinessModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel\SAHL.Common.BusinessModel.csproj">
+      <Project>{A516D7D1-4CF0-4A5B-82CF-1CFB099E8363}</Project>
+      <Name>SAHL.Common.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service.Interfaces\SAHL.Common.Service.Interfaces.csproj">
+      <Project>{7180E406-6B7C-44B9-BD02-D3FCCCC617BC}</Project>
+      <Name>SAHL.Common.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service\SAHL.Common.Service.csproj">
+      <Project>{7155FE63-0A2E-4022-972E-B703CF223297}</Project>
+      <Name>SAHL.Common.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0C1B7B75-8887-4169-A41D-0AACDDFF3D49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Test\SAHL.Test.csproj">
+      <Project>{976B41A4-82A2-4873-B472-7BF08D1A393C}</Project>
+      <Name>SAHL.Test</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

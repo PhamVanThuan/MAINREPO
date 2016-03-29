@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<!--framework, domain service, client, application, workflow maps should then compile, deploy/start domain service, ensure engine running, publish maps - start app and voila HALO on X2 on steriods-->
+	<PropertyGroup>
+		<!-- The root directory containing the build file -->	
+		<RootPath>$(MSBuildProjectDirectory)\..</RootPath>
+		<LocalPath>$(MSBuildProjectDirectory)</LocalPath>
+		
+		<ProjectName>SAHL.Common.BusinessModel.Specs</ProjectName>
+			
+		<WorkflowName>Cap2</WorkflowName>
+		<WorkflowClassName>CAP2Offers</WorkflowClassName>
+		<WorkflowSafeClassName>CAP2_Offers</WorkflowSafeClassName>
+		
+		<!-- External Bins Path -->
+		<ExternalBinsPath>$(RootPath)\External Binaries</ExternalBinsPath>
+		
+		<!-- Internal Bins Path -->
+		<InternalBinsPath>$(RootPath)\Internal Binaries</InternalBinsPath>
+		
+		<!-- NuGet Bins Path -->
+		<NuGetPath>$(ExternalBinsPath)\NuGet</NuGetPath>
+		
+		<!-- MSpec -->
+		<!-- The tools path for MSpec -->
+		<MSpecPath>$(NuGetPath)\Machine.Specifications.0.5.6.0\tools</MSpecPath>
+		<MSpecExecutable>mspec-clr4.exe</MSpecExecutable>
+		
+		<!-- OpenCover -->
+		<!-- The tools path for OpenCover -->
+		<OpenCoverPath>$(NuGetPath)\OpenCover.4.0.301</OpenCoverPath>
+		<OpenCoverReportGenPath>$(NuGetPath)\ReportGenerator.1.3.0.0</OpenCoverReportGenPath>
+		
+		<ReportsPath>$(LocalPath)\CodeCoverageReports</ReportsPath>
+		<ReportsCoveragePath>$(ReportsPath)\Coverage</ReportsCoveragePath>
+		<ReportsMSpecPath>$(ReportsPath)\MSpec</ReportsMSpecPath>
+		<MSpecReportOutputFile>$(ReportsMSpecPath)\$(ProjectName).html</MSpecReportOutputFile>
+		
+		<!-- OpenCover report name and location -->
+		<OpenCoverOuputFileForWorkflowMaps>$(ReportsCoveragePath)\coverage-output.xml</OpenCoverOuputFileForWorkflowMaps>
+		<OpenCoverTmpOuputFile>$(ReportsCoveragePath)\coverage-tmp-output.xml</OpenCoverTmpOuputFile>		
+		
+	</PropertyGroup>
+
+	
+	<Target Name="CodeCoverage" >
+		<PropertyGroup>
+			<MAP>$(LocalPath)\$(ProjectName)\bin\Debug\$(ProjectName).dll</MAP>
+		</PropertyGroup>
+		<MakeDir Directories = "$(ReportsPath)" Condition = "!Exists('$(ReportsPath)')" /> 
+		<MakeDir Directories = "$(ReportsCoveragePath)" Condition = "!Exists('$(ReportsCoveragePath)')" /> 
+		<MakeDir Directories = "$(ReportsMSpecPath)" Condition = "!Exists('$(ReportsMSpecPath)')" /> 
+		
+		<!-- Execute opencover -->
+		<Exec Command="&quot;$(OpenCoverPath)\OpenCover.Console.exe&quot; -register:user -output:&quot;$(OpenCoverTmpOuputFile)&quot; -target:&quot;$(MSpecPath)\$(MSpecExecutable)&quot; -excludebyattribute:*.CoverageExcludeAttribute* -targetargs:&quot;\&quot;$(MAP)\&quot; --html \&quot;$(MSpecReportOutputFile)&quot;" />
+			<!-- Use ReportGenerator Tool to build an xml Summary -->
+		<Exec Command="&quot;$(OpenCoverReportGenPath)\ReportGenerator.exe&quot; &quot;$(OpenCoverTmpOuputFile)&quot; &quot;$(ReportsCoveragePath)&quot;"/>
+
+		
+
+	</Target>
+</Project>

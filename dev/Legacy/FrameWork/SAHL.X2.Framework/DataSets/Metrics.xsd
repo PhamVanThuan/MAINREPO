@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Metrics" targetNamespace="http://tempuri.org/Metrics.xsd" xmlns:mstns="http://tempuri.org/Metrics.xsd" xmlns="http://tempuri.org/Metrics.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Metrics" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Metrics" msprop:Generator_DataSetName="Metrics">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Metrics" msprop:Generator_UserTableName="Metrics" msprop:Generator_RowDeletedName="MetricsRowDeleted" msprop:Generator_TableClassName="MetricsDataTable" msprop:Generator_RowChangedName="MetricsRowChanged" msprop:Generator_RowClassName="MetricsRow" msprop:Generator_RowChangingName="MetricsRowChanging" msprop:Generator_RowEvArgName="MetricsRowChangeEvent" msprop:Generator_RowEvHandlerName="MetricsRowChangeEventHandler" msprop:Generator_TablePropName="_Metrics" msprop:Generator_TableVarName="tableMetrics" msprop:Generator_RowDeletingName="MetricsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MetricKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="MetricKey" msprop:Generator_ColumnPropNameInRow="MetricKey" msprop:Generator_ColumnVarNameInTable="columnMetricKey" msprop:Generator_ColumnPropNameInTable="MetricKeyColumn" type="xs:int" />
+              <xs:element name="MetricDate" msprop:Generator_UserColumnName="MetricDate" msprop:Generator_ColumnPropNameInRow="MetricDate" msprop:Generator_ColumnVarNameInTable="columnMetricDate" msprop:Generator_ColumnPropNameInTable="MetricDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApplicationName" msprop:Generator_UserColumnName="ApplicationName" msprop:Generator_ColumnPropNameInRow="ApplicationName" msprop:Generator_ColumnVarNameInTable="columnApplicationName" msprop:Generator_ColumnPropNameInTable="ApplicationNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HostName" msprop:Generator_UserColumnName="HostName" msprop:Generator_ColumnPropNameInRow="HostName" msprop:Generator_ColumnVarNameInTable="columnHostName" msprop:Generator_ColumnPropNameInTable="HostNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkStationID" msprop:Generator_UserColumnName="WorkStationID" msprop:Generator_ColumnPropNameInRow="WorkStationID" msprop:Generator_ColumnVarNameInTable="columnWorkStationID" msprop:Generator_ColumnPropNameInTable="WorkStationIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WindowsLogon" msprop:Generator_UserColumnName="WindowsLogon" msprop:Generator_ColumnPropNameInRow="WindowsLogon" msprop:Generator_ColumnVarNameInTable="columnWindowsLogon" msprop:Generator_ColumnPropNameInTable="WindowsLogonColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormName" msprop:Generator_UserColumnName="FormName" msprop:Generator_ColumnPropNameInRow="FormName" msprop:Generator_ColumnVarNameInTable="columnFormName" msprop:Generator_ColumnPropNameInTable="FormNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MetricFrom" msprop:Generator_UserColumnName="MetricFrom" msprop:Generator_ColumnPropNameInRow="MetricFrom" msprop:Generator_ColumnVarNameInTable="columnMetricFrom" msprop:Generator_ColumnPropNameInTable="MetricFromColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MetricTo" msprop:Generator_UserColumnName="MetricTo" msprop:Generator_ColumnPropNameInRow="MetricTo" msprop:Generator_ColumnVarNameInTable="columnMetricTo" msprop:Generator_ColumnPropNameInTable="MetricToColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MetricAction" msprop:Generator_UserColumnName="MetricAction" msprop:Generator_ColumnPropNameInRow="MetricAction" msprop:Generator_ColumnVarNameInTable="columnMetricAction" msprop:Generator_ColumnPropNameInTable="MetricActionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MetricInformation" msprop:Generator_UserColumnName="MetricInformation" msprop:Generator_ColumnPropNameInRow="MetricInformation" msprop:Generator_ColumnVarNameInTable="columnMetricInformation" msprop:Generator_ColumnPropNameInTable="MetricInformationColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Metrics" />
+      <xs:field xpath="mstns:MetricKey" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

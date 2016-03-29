@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainService", "DomainService\DomainService\DomainService.csproj", "{13A6DFAB-30EF-4BB0-BEBE-E2ABA75C53EA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E189851D-1A73-47D2-BCEB-D553426FB280} = {E189851D-1A73-47D2-BCEB-D553426FB280}
+		{D43D729E-30FA-4F45-AA6E-DCE900324913} = {D43D729E-30FA-4F45-AA6E-DCE900324913}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EWorkConnector", "DomainService\EWorkConnector\EWorkConnector.csproj", "{E189851D-1A73-47D2-BCEB-D553426FB280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X2DomainService.ServiceTest", "DomainService\X2DomainService.ServiceTest\X2DomainService.ServiceTest.csproj", "{BD5220F4-538B-4706-83E7-6DAF65A3BC4A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E189851D-1A73-47D2-BCEB-D553426FB280} = {E189851D-1A73-47D2-BCEB-D553426FB280}
+		{DC2F655B-2411-4DE4-B313-4F6197368D72} = {DC2F655B-2411-4DE4-B313-4F6197368D72}
+		{D43D729E-30FA-4F45-AA6E-DCE900324913} = {D43D729E-30FA-4F45-AA6E-DCE900324913}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHLDomainService", "DomainService\SAHLDomainService\SAHLDomainService.csproj", "{DC2F655B-2411-4DE4-B313-4F6197368D72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X2DomainService.Interface.WTFSimpleTest", "DomainService\X2DomainService.Interface.WTFSimpleTest\X2DomainService.Interface.WTFSimpleTest.csproj", "{65F0E8A5-9F23-45B3-A30F-0F0056F34FCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X2DomainService.Interface.X2EngineTest", "DomainService\X2DomainService.Interface.X2EngineTest\X2DomainService.Interface.X2EngineTest.csproj", "{62A42D4F-27A8-461F-8781-A32F1854DA42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X2DomainService.Interface.Origination", "DomainService\X2DomainService.Interface.Origination\X2DomainService.Interface.Origination.csproj", "{D43D729E-30FA-4F45-AA6E-DCE900324913}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13A6DFAB-30EF-4BB0-BEBE-E2ABA75C53EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13A6DFAB-30EF-4BB0-BEBE-E2ABA75C53EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13A6DFAB-30EF-4BB0-BEBE-E2ABA75C53EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13A6DFAB-30EF-4BB0-BEBE-E2ABA75C53EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E189851D-1A73-47D2-BCEB-D553426FB280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E189851D-1A73-47D2-BCEB-D553426FB280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E189851D-1A73-47D2-BCEB-D553426FB280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E189851D-1A73-47D2-BCEB-D553426FB280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5220F4-538B-4706-83E7-6DAF65A3BC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5220F4-538B-4706-83E7-6DAF65A3BC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5220F4-538B-4706-83E7-6DAF65A3BC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5220F4-538B-4706-83E7-6DAF65A3BC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC2F655B-2411-4DE4-B313-4F6197368D72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC2F655B-2411-4DE4-B313-4F6197368D72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC2F655B-2411-4DE4-B313-4F6197368D72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC2F655B-2411-4DE4-B313-4F6197368D72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F0E8A5-9F23-45B3-A30F-0F0056F34FCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F0E8A5-9F23-45B3-A30F-0F0056F34FCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F0E8A5-9F23-45B3-A30F-0F0056F34FCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F0E8A5-9F23-45B3-A30F-0F0056F34FCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62A42D4F-27A8-461F-8781-A32F1854DA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62A42D4F-27A8-461F-8781-A32F1854DA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62A42D4F-27A8-461F-8781-A32F1854DA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62A42D4F-27A8-461F-8781-A32F1854DA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D43D729E-30FA-4F45-AA6E-DCE900324913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D43D729E-30FA-4F45-AA6E-DCE900324913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D43D729E-30FA-4F45-AA6E-DCE900324913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D43D729E-30FA-4F45-AA6E-DCE900324913}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

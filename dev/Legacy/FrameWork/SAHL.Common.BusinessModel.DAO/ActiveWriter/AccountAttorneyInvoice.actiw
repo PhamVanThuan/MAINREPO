@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="f1d145c9-eab1-4e47-b383-5f58a31f6538" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="AccountAttorneyInvoice" schema="dbo" table="AccountAttorneyInvoice">
+      <properties>
+        <modelProperty Id="d3f5a056-69b5-4918-8f92-8f6a9dbed281" name="AccountAttorneyInvoiceKey" column="AccountAttorneyInvoiceKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="c436c97b-3e18-4584-978e-a4d40003c824" name="AccountKey" column="AccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="c196de25-cf90-4745-abd1-bcda8cdf4740" name="AttorneyKey" column="AttorneyKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1e904ec2-501e-4971-ab9e-df5136cefdfa" name="InvoiceNumber" column="InvoiceNumber" length="0" notNull="true" />
+        <modelProperty Id="1d142768-53fd-4520-b027-4a488dc2e9e4" name="Amount" column="Amount" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="fe6eb294-a61c-4cfe-a9bc-7f9cdcb4e6ea" name="Comment" column="Comment" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

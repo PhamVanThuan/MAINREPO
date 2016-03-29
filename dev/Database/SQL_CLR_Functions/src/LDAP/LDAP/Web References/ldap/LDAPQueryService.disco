@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://sahls115/SAHL.Reporting.WebServices/Services/LDAPQueryService.asmx?wsdl" docRef="http://sahls115/SAHL.Reporting.WebServices/Services/LDAPQueryService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://sahls115/SAHL.Reporting.WebServices/Services/LDAPQueryService.asmx" xmlns:q1="http://SAHL.Reporting.WebServices/" binding="q1:LDAPQueryServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://sahls115/SAHL.Reporting.WebServices/Services/LDAPQueryService.asmx" xmlns:q2="http://SAHL.Reporting.WebServices/" binding="q2:LDAPQueryServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

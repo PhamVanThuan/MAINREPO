@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SAHL.External.Binaries</id>
+    <version>$version$</version>
+    <authors>SA Home Loans</authors>
+    <owners>SA Home Loans</owners>
+    <description>SAHL External Binaries</description>
+    <copyright>Copyright SA Homeloans 2013</copyright>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+	<file src="*.dll" target="lib" />
+	<file src="*.pdb" target="lib" />
+  </files>
+</package>

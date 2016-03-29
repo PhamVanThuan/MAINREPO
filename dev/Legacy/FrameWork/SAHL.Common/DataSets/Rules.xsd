@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Rules" targetNamespace="http://tempuri.org/Rules.xsd" xmlns:mstns="http://tempuri.org/Rules.xsd" xmlns="http://tempuri.org/Rules.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_2AMConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="_2AMConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.Common.Datasets.Properties.Settings.GlobalReference.Default._2AMConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Rules" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Rules" msprop:Generator_DataSetName="Rules">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RuleItem" msprop:Generator_UserTableName="RuleItem" msprop:Generator_RowDeletedName="RuleItemRowDeleted" msprop:Generator_TableClassName="RuleItemDataTable" msprop:Generator_RowChangedName="RuleItemRowChanged" msprop:Generator_RowClassName="RuleItemRow" msprop:Generator_RowChangingName="RuleItemRowChanging" msprop:Generator_RowEvArgName="RuleItemRowChangeEvent" msprop:Generator_RowEvHandlerName="RuleItemRowChangeEventHandler" msprop:Generator_TablePropName="RuleItem" msprop:Generator_TableVarName="tableRuleItem" msprop:Generator_RowDeletingName="RuleItemRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RuleItemKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="RuleItemKey" msprop:Generator_ColumnPropNameInRow="RuleItemKey" msprop:Generator_ColumnVarNameInTable="columnRuleItemKey" msprop:Generator_ColumnPropNameInTable="RuleItemKeyColumn" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RuleSetRule" msprop:Generator_UserTableName="RuleSetRule" msprop:Generator_RowDeletedName="RuleSetRuleRowDeleted" msprop:Generator_TableClassName="RuleSetRuleDataTable" msprop:Generator_RowChangedName="RuleSetRuleRowChanged" msprop:Generator_RowClassName="RuleSetRuleRow" msprop:Generator_RowChangingName="RuleSetRuleRowChanging" msprop:Generator_RowEvArgName="RuleSetRuleRowChangeEvent" msprop:Generator_RowEvHandlerName="RuleSetRuleRowChangeEventHandler" msprop:Generator_TablePropName="RuleSetRule" msprop:Generator_TableVarName="tableRuleSetRule" msprop:Generator_RowDeletingName="RuleSetRuleRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RuleSetRuleKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="RuleSetRuleKey" msprop:Generator_ColumnPropNameInRow="RuleSetRuleKey" msprop:Generator_ColumnVarNameInTable="columnRuleSetRuleKey" msprop:Generator_ColumnPropNameInTable="RuleSetRuleKeyColumn" type="xs:int" />
+              <xs:element name="RuleSetKey" msprop:Generator_UserColumnName="RuleSetKey" msprop:Generator_ColumnPropNameInRow="RuleSetKey" msprop:Generator_ColumnVarNameInTable="columnRuleSetKey" msprop:Generator_ColumnPropNameInTable="RuleSetKeyColumn" type="xs:int" />
+              <xs:element name="RuleItemKey" msprop:Generator_UserColumnName="RuleItemKey" msprop:Generator_ColumnPropNameInRow="RuleItemKey" msprop:Generator_ColumnVarNameInTable="columnRuleItemKey" msprop:Generator_ColumnPropNameInTable="RuleItemKeyColumn" type="xs:int" />
+              <xs:element name="EnForceRule" msprop:Generator_UserColumnName="EnForceRule" msprop:Generator_ColumnPropNameInRow="EnForceRule" msprop:Generator_ColumnVarNameInTable="columnEnForceRule" msprop:Generator_ColumnPropNameInTable="EnForceRuleColumn" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RuleParameter" msprop:Generator_UserTableName="RuleParameter" msprop:Generator_RowDeletedName="RuleParameterRowDeleted" msprop:Generator_TableClassName="RuleParameterDataTable" msprop:Generator_RowChangedName="RuleParameterRowChanged" msprop:Generator_RowClassName="RuleParameterRow" msprop:Generator_RowChangingName="RuleParameterRowChanging" msprop:Generator_RowEvArgName="RuleParameterRowChangeEvent" msprop:Generator_RowEvHandlerName="RuleParameterRowChangeEventHandler" msprop:Generator_TablePropName="RuleParameter" msprop:Generator_TableVarName="tableRuleParameter" msprop:Generator_RowDeletingName="RuleParameterRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RuleParameterKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="RuleParameterKey" msprop:Generator_ColumnPropNameInRow="RuleParameterKey" msprop:Generator_ColumnVarNameInTable="columnRuleParameterKey" msprop:Generator_ColumnPropNameInTable="RuleParameterKeyColumn" type="xs:int" />
+              <xs:element name="RuleItemKey" msprop:Generator_UserColumnName="RuleItemKey" msprop:Generator_ColumnPropNameInRow="RuleItemKey" msprop:Generator_ColumnVarNameInTable="columnRuleItemKey" msprop:Generator_ColumnPropNameInTable="RuleItemKeyColumn" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RuleParameterTypeKey" msprop:Generator_UserColumnName="RuleParameterTypeKey" msprop:Generator_ColumnPropNameInRow="RuleParameterTypeKey" msprop:Generator_ColumnVarNameInTable="columnRuleParameterTypeKey" msprop:Generator_ColumnPropNameInTable="RuleParameterTypeKeyColumn" type="xs:int" />
+              <xs:element name="Value" msprop:Generator_UserColumnName="Value" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInTable="ValueColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RuleParameterType" msprop:Generator_UserTableName="RuleParameterType" msprop:Generator_RowDeletedName="RuleParameterTypeRowDeleted" msprop:Generator_TableClassName="RuleParameterTypeDataTable" msprop:Generator_RowChangedName="RuleParameterTypeRowChanged" msprop:Generator_RowClassName="RuleParameterTypeRow" msprop:Generator_RowChangingName="RuleParameterTypeRowChanging" msprop:Generator_RowEvArgName="RuleParameterTypeRowChangeEvent" msprop:Generator_RowEvHandlerName="RuleParameterTypeRowChangeEventHandler" msprop:Generator_TablePropName="RuleParameterType" msprop:Generator_TableVarName="tableRuleParameterType" msprop:Generator_RowDeletingName="RuleParameterTypeRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RuleParameterTypeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="RuleParameterTypeKey" msprop:Generator_ColumnPropNameInRow="RuleParameterTypeKey" msprop:Generator_ColumnVarNameInTable="columnRuleParameterTypeKey" msprop:Generator_ColumnPropNameInTable="RuleParameterTypeKeyColumn" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RuleSet" msprop:Generator_UserTableName="RuleSet" msprop:Generator_RowDeletedName="RuleSetRowDeleted" msprop:Generator_TableClassName="RuleSetDataTable" msprop:Generator_RowChangedName="RuleSetRowChanged" msprop:Generator_RowClassName="RuleSetRow" msprop:Generator_RowChangingName="RuleSetRowChanging" msprop:Generator_RowEvArgName="RuleSetRowChangeEvent" msprop:Generator_RowEvHandlerName="RuleSetRowChangeEventHandler" msprop:Generator_TablePropName="RuleSet" msprop:Generator_TableVarName="tableRuleSet" msprop:Generator_RowDeletingName="RuleSetRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RuleSetKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="RuleSetKey" msprop:Generator_ColumnPropNameInRow="RuleSetKey" msprop:Generator_ColumnVarNameInTable="columnRuleSetKey" msprop:Generator_ColumnPropNameInTable="RuleSetKeyColumn" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RuleItem" />
+      <xs:field xpath="mstns:RuleItemKey" />
+    </xs:unique>
+    <xs:unique name="RuleSetRule_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RuleSetRule" />
+      <xs:field xpath="mstns:RuleSetRuleKey" />
+    </xs:unique>
+    <xs:unique name="RuleParameter_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RuleParameter" />
+      <xs:field xpath="mstns:RuleParameterKey" />
+    </xs:unique>
+    <xs:unique name="RuleParameterType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RuleParameterType" />
+      <xs:field xpath="mstns:RuleParameterTypeKey" />
+    </xs:unique>
+    <xs:unique name="RuleSet_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RuleSet" />
+      <xs:field xpath="mstns:RuleSetKey" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_RuleSetRule_RuleItem" msdata:parent="RuleItem" msdata:child="RuleSetRule" msdata:parentkey="RuleItemKey" msdata:childkey="RuleItemKey" msprop:Generator_UserRelationName="FK_RuleSetRule_RuleItem" msprop:Generator_RelationVarName="relationFK_RuleSetRule_RuleItem" msprop:Generator_UserChildTable="RuleSetRule" msprop:Generator_UserParentTable="RuleItem" msprop:Generator_ParentPropName="RuleItemRow" msprop:Generator_ChildPropName="GetRuleSetRuleRows" />
+      <msdata:Relationship name="FK_RuleSetRule_RuleSet" msdata:parent="RuleSet" msdata:child="RuleSetRule" msdata:parentkey="RuleSetKey" msdata:childkey="RuleSetKey" msprop:Generator_UserRelationName="FK_RuleSetRule_RuleSet" msprop:Generator_RelationVarName="relationFK_RuleSetRule_RuleSet" msprop:Generator_UserChildTable="RuleSetRule" msprop:Generator_UserParentTable="RuleSet" msprop:Generator_ParentPropName="RuleSetRow" msprop:Generator_ChildPropName="GetRuleSetRuleRows" />
+      <msdata:Relationship name="FK_RuleParameter_RuleItem" msdata:parent="RuleItem" msdata:child="RuleParameter" msdata:parentkey="RuleItemKey" msdata:childkey="RuleItemKey" msprop:Generator_UserRelationName="FK_RuleParameter_RuleItem" msprop:Generator_RelationVarName="relationFK_RuleParameter_RuleItem" msprop:Generator_UserChildTable="RuleParameter" msprop:Generator_UserParentTable="RuleItem" msprop:Generator_ParentPropName="RuleItemRow" msprop:Generator_ChildPropName="GetRuleParameterRows" />
+      <msdata:Relationship name="FK_RuleParameter_RuleParameterType" msdata:parent="RuleParameterType" msdata:child="RuleParameter" msdata:parentkey="RuleParameterTypeKey" msdata:childkey="RuleParameterTypeKey" msprop:Generator_UserRelationName="FK_RuleParameter_RuleParameterType" msprop:Generator_RelationVarName="relationFK_RuleParameter_RuleParameterType" msprop:Generator_UserChildTable="RuleParameter" msprop:Generator_UserParentTable="RuleParameterType" msprop:Generator_ParentPropName="RuleParameterTypeRow" msprop:Generator_ChildPropName="GetRuleParameterRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

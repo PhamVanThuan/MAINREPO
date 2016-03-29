@@ -1,0 +1,27 @@
+using System;
+using System.Text;
+using System.Collections.Generic;
+using SAHL.Common.BusinessModel.Validation;
+using SAHL.Common.BusinessModel.Base;
+using SAHL.Common.BusinessModel.Interfaces.Repositories;
+using SAHL.Common.BusinessModel.DAO;
+using SAHL.Common.Factories;
+using SAHL.Common.Collections;
+using SAHL.Common.Collections.Interfaces;
+using SAHL.Common.BusinessModel.Interfaces;
+namespace SAHL.Common.BusinessModel
+{
+	/// <summary>
+	/// This is derived from Valuation_DAO. When instantiated it represents an RCS Physical Valuation.
+	/// </summary>
+	public partial class ValuationDiscriminatedRCSPhysical : Valuation, IValuationDiscriminatedRCSPhysical
+	{
+		protected new SAHL.Common.BusinessModel.DAO.ValuationDiscriminatedRCSPhysical_DAO _DAO;
+		public ValuationDiscriminatedRCSPhysical(SAHL.Common.BusinessModel.DAO.ValuationDiscriminatedRCSPhysical_DAO ValuationDiscriminatedRCSPhysical) : base(ValuationDiscriminatedRCSPhysical)
+		{
+			this._DAO = ValuationDiscriminatedRCSPhysical;
+		}
+	}
+}
+
+

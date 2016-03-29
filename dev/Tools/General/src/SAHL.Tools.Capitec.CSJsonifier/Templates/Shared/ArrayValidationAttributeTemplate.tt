@@ -1,0 +1,21 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+if(Object.prototype.toString.call(this.<#=this.Model.PropertyName#>)!== '[object Array]'){
+							results.push({'<#=this.Model.PropertyName#>': '<#=String.IsNullOrWhiteSpace(this.Model.ErrorMessage)? this.Model.PropertyNameText + " must be of type [object Array]": this.Model.ErrorMessage#>'});
+						} else if (!this.<#=this.Model.PropertyName#> && this.<#=this.Model.PropertyName#>.length !== 0) {
+							results.push({'<#=this.Model.PropertyName#>': '<#=String.IsNullOrWhiteSpace(this.Model.ErrorMessage)? this.Model.PropertyNameText + " is required": this.Model.ErrorMessage#>'});
+						} <# if(this.Model.IsComplex){ #> else {
+							var arr = [];
+							for(var index in this.<#=this.Model.PropertyName#>){
+								if(!this.<#=this.Model.PropertyName#>[index]['name'] || this.<#=this.Model.PropertyName#>[index].name !== '<#= this.Model.FullName #>'){
+									arr.push({'<#=this.Model.PropertyName#>': index + ' <#=this.Model.PropertyNameText#> must be of type <#= this.Model.FullName #>'});
+								} else {
+									arr.push(this.<#=this.Model.PropertyName#>[index].Validate());
+								}
+							}
+							results.push({'<#=this.Model.PropertyName#>':arr});
+						}
+						<# } #>

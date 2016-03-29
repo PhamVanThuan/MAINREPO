@@ -1,0 +1,21 @@
+<div tool-tip="item.tileData.PropertyAddress.trim()">{{item.tileData.PropertyAddress | characters:55 :true}}</div>
+<div class="tile-data-bottom">
+	<div class="labels">
+		<div>Open Date:</div>
+		<div>Loan Agreement:</div>
+		<div>Current Balance:</div>
+		<div>Arrear Balance:</div>
+		<div>Debit Order Day:</div>
+		<div>Instalment:</div>
+		<div>Remaining Term:</div>
+	</div>
+	<div class="values">
+		<div>{{item.tileData.OpenDate | dateViewFilter}}</div>
+		<div>{{item.tileData.LoanAgreementAmount | currencyFilter:0}}</div>
+		<div>{{item.tileData.LoanCurrentBalance | currencyFilter:0}}</div>
+		<div>{{item.tileData.LoanArrearBalance | currencyFilter:0}}</div>
+		<div>{{item.tileData.DebitOrderDay}}</div>
+		<div>{{item.tileData.InstalmentAmount | currencyFilter:0}}</div>
+		<div>{{item.tileData.RemainingInstalments}} {{item.tileData.RemainingInstalments>1?'Months' : 'Month'}}</div>
+	</div>
+<div>

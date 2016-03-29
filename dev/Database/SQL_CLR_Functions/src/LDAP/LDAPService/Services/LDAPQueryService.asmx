@@ -1,0 +1,1 @@
+<%@ WebService Language="C#" CodeBehind="LDAPQueryService.asmx.cs" Class="SAHL.Reporting.WebServices.Services.LDAPQueryService" %>

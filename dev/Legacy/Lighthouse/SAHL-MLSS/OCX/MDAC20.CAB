@@ -1,0 +1,6 @@
+MDAC20.cab is no longer available.  Please use MDAC_TYP.EXE instead.  
+This file can be found in the MDAC 2.0 SDK and on the Visual Studio 98 CD.
+
+MDAC_TYP.CAB is provided for the use of the VB Setup Wizard.
+MDAC_TYP.CAB is not intended to work from the codebase tag in an HTML page.	
+Users needing the functionality of MDAC 2.0 on their workstation should run the MDAC_TYP.EXE file to install those components.   

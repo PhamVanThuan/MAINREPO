@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65730963-CA0D-4ADA-8344-3F9F64BE5CEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.WorkflowAssignmentDomain.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.WorkflowAssignmentDomain.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing.Fakes">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.WorkflowAssignmentDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.WorkflowAssignmentDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_last_user_is_null.cs" />
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_last_user_is_no_longer_active.cs" />
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_no_other_user_can_be_found_for_capability.cs" />
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_last_user_no_longer_has_capability.cs" />
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_no_user_with_capability_acted_on_the_instance.cs" />
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_last_user_still_has_capability.cs" />
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_creating_a_ReturnInstanceToLastUserInCapabilityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\when_creating_an_AssignWorkflowCaseCommandHandler.cs" />
+    <Compile Include="CommandHandlers\when_assigning_a_workflow_case_when_rule_manager_returns_errors.cs" />
+    <Compile Include="CommandHandlers\ReturnInstanceToLastUserInCapability\when_assigning_a_workflow_case.cs" />
+    <Compile Include="CommandHandlers\when_notifying_of_static_assignment.cs" />
+    <Compile Include="Managers\when_assigning_a_workflow_case.cs" />
+    <Compile Include="Managers\when_retrieving_ad_user_by_user_organisation_structure_key.cs" />
+    <Compile Include="Managers\when_retrieving_last_user_to_act_on_a_case_with_capability.cs" />
+    <Compile Include="Managers\when_retrieving_capabilities_for_a_user_organisation_structure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\CapabilityMustHavePreviouslyWorkedOnTheInstanceSpecs\when_a_user_has_been_previously_assigned.cs" />
+    <Compile Include="Rules\UserOrganisationStructureKeyShouldBelongToActiveADUserSpecs\when_uos_key_is_linked_to_an_active_user.cs" />
+    <Compile Include="Rules\UserOrganisationStructureKeyShouldBelongToActiveADUserSpecs\when_uos_key_is_linked_to_an_inactive_user.cs" />
+    <Compile Include="Rules\CapabilityMustHavePreviouslyWorkedOnTheInstanceSpecs\when_a_user_hasnt_been_previously_assigned.cs" />
+    <Compile Include="Rules\UserOrganisationStructureMustHaveCapabilitySpecs\when_user_does_not_have_capability.cs" />
+    <Compile Include="Rules\UserOrganisationStructureMustHaveCapabilitySpecs\when_user_has_capability.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.WorkflowAssignmentDomain\SAHL.Services.WorkflowAssignmentDomain.csproj">
+      <Project>{3809b035-1623-4a0d-af64-5b944bed9f5a}</Project>
+      <Name>SAHL.Services.WorkflowAssignmentDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="QueryHandlers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

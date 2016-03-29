@@ -1,0 +1,10 @@
+﻿@iterations: 6;
+
+.h(@index) when (@index > 0) { 
+	h@{index} {
+        .resetBoxProperties();
+		font-size: 60px*(1/@index);
+	} .h(@index - 1); 
+} .h(0){}
+
+.h(@iterations);

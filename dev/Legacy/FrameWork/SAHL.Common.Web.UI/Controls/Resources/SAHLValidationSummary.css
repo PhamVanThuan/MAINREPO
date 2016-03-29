@@ -1,0 +1,49 @@
+.SAHLValidationSummary 
+{
+    position: absolute;
+    top: 20px;
+    width:450px;
+    border:solid 1px black;
+    z-index:10;
+
+}
+.SAHLValidationSummary .SAHLValidationSummaryHeader
+{
+    cursor:move;
+    font-weight:bold;
+    border-bottom:solid 1px black;
+    padding:5px;
+    height:20px;
+}
+.SAHLValidationSummary .SAHLValidationSummaryHeader .minimiseImage
+{
+    position:absolute;
+    border:solid 1px black;
+    right:5px;
+    top:6px;
+    cursor:pointer;
+}
+.SAHLValidationSummary .SAHLValidationSummaryHeader span
+{
+    margin-left:7px;
+    margin-top:2px;
+    float:left;
+}
+.SAHLValidationSummary .SAHLValidationSummaryHeader a:Hover
+{
+    border:solid 1px brown;
+}
+.SAHLValidationSummary .SAHLValidationSummaryBody
+{
+    background-color:white;
+    padding:5px;
+}
+.SAHLValidationSummary .SAHLValidationButtons
+{
+    text-align:right;
+}
+.SAHLValidationSummary .SAHLButton
+{
+    margin-right:5px;
+    margin-bottom:2px;
+}  

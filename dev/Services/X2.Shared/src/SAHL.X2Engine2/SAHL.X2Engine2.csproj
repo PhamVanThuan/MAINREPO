@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB5140C5-6737-4839-8A59-BAB8CD42835E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.X2Engine2</RootNamespace>
+    <AssemblyName>SAHL.X2Engine2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.XmlTransform">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Web.Xdt\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Nuget.Core\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Capitec">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Capitec.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.DecisionTree">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.DecisionTree.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.RabbitMQ">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.RabbitMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\System.IO.Abstractions\lib\net40\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Tpl.Dataflow\lib\portable-net45+win8\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builders\ProcessBuilder.cs" />
+    <Compile Include="CommandHandlers\CheckCreationActivityAccessCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CheckActivityIsValidForStateCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CheckCreateActivityHasOnlyStaticRoleCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CheckInstanceIsLockedForUserCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CheckInstanceIsNotLockedCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CheckRuleResultCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ClearWorkListCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Decorators\X2MetricCommandHandlerDecorator.cs" />
+    <Compile Include="CommandHandlers\DeleteActiveExternalActivityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ExternalActivityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HandleMapReturnCommandHandler.cs" />
+    <Compile Include="CommandHandlers\NotificationOfNewFutureScheduledActivityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RebuildInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RefreshCacheCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RemoveCloneInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RecordStageTransitionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\SaveStageTransitionCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UserRequestCompleteCreateCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UserRequestCreateInstanceWithCompleteCommandHandler.cs" />
+    <Compile Include="CommandHandlers\X2ServiceCommandRouter.cs" />
+    <Compile Include="CommandHandlers\IX2ServiceCommandRouter.cs" />
+    <Compile Include="CommandHandlers\PublishBundledRequestCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CreateContextualDataCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CreateInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CreateWorkListCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DeleteInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DeleteAllScheduleActivitiesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DeleteScheduledActivityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\WakeUpSourceInstanceAndPerformReturnActivityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\InsertScheduledActivityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\LockInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\QueueUpExternalActivitiesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\BuildSystemRequestToProcessCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RebuildUserWorkListCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RefreshInstanceActivitySecurityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RefreshWorklistCommandHandler.cs" />
+    <Compile Include="CommandHandlers\SaveWorkflowHistoryCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HandleSystemRequestThatIsAnAutoForwardCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HandleSystemRequestWithNoSplitNoWorkflowActivitiesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HandleSystemRequestWithNoSplitWithWorkflowActivitiesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\HandleSystemRequestWithSplitWithNoWorkflowActivitiesCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UnlockInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UserRequestCancelActivityCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UserRequestCreateInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UserRequestStartActivityWithoutSplitCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CreateChildInstanceCommandHandler.cs" />
+    <Compile Include="CommandHandlers\UserRequestCompleteActivityCommandHandler.cs" />
+    <Compile Include="Commands\CheckCreationActivityAccessCommand.cs" />
+    <Compile Include="Commands\CheckActivityIsValidForStateCommand.cs" />
+    <Compile Include="Commands\CheckCreateActivityHasOnlyStaticRoleCommand.cs" />
+    <Compile Include="Commands\CheckInstanceIsLockedForUserCommand.cs" />
+    <Compile Include="Commands\CheckInstanceIsNotLockedCommand.cs" />
+    <Compile Include="Commands\CheckRuleResultCommand.cs" />
+    <Compile Include="Commands\ClearWorkListCommand.cs" />
+    <Compile Include="Commands\CreateChildInstanceCommand.cs" />
+    <Compile Include="Commands\CreateContextualDataCommand.cs" />
+    <Compile Include="Commands\CreateInstanceCommand.cs" />
+    <Compile Include="Commands\CreateWorkListCommand.cs" />
+    <Compile Include="Commands\DeleteActiveExternalActivityCommand.cs" />
+    <Compile Include="Commands\DeleteInstanceCommand.cs" />
+    <Compile Include="Commands\DeleteAllScheduleActivitiesCommand.cs" />
+    <Compile Include="Commands\DeleteScheduledActivityCommand.cs" />
+    <Compile Include="Commands\ExternalActivityCommand.cs" />
+    <Compile Include="Commands\HandleMapReturnCommand.cs" />
+    <Compile Include="Commands\ICanIgnoreWarningsCommand.cs" />
+    <Compile Include="Commands\IContinueWithCommands.cs" />
+    <Compile Include="Commands\IIgnoreWarnings.cs" />
+    <Compile Include="Commands\ISplittable.cs" />
+    <Compile Include="Commands\NotificationOfNewAutoForwardCommand.cs" />
+    <Compile Include="Commands\NotificationOfNewFutureScheduledActivityCommand.cs" />
+    <Compile Include="Commands\NotificationOfNewScheduledActivityCommand.cs" />
+    <Compile Include="Commands\NotificationOfNewSystemRequestGroupCommand.cs" />
+    <Compile Include="Commands\NotificationOfNewWorkflowActivityCommand.cs" />
+    <Compile Include="Commands\PublishBundledRequestCommand.cs" />
+    <Compile Include="Commands\RebuildInstanceCommand.cs" />
+    <Compile Include="Commands\RefreshCacheCommand.cs" />
+    <Compile Include="Commands\RemoveCloneInstanceCommand.cs" />
+    <Compile Include="Commands\RecordStageTransitionCommand.cs" />
+    <Compile Include="Commands\SaveStageTransitionCommand.cs" />
+    <Compile Include="Commands\UserRequestCompleteCreateCommand.cs" />
+    <Compile Include="Commands\UserRequestCreateInstanceWithCompleteCommand.cs" />
+    <Compile Include="Commands\WakeUpSourceInstanceAndPerformReturnActivityCommand.cs" />
+    <Compile Include="Commands\InsertScheduledActivityCommand.cs" />
+    <Compile Include="Commands\IRuleCommand.cs" />
+    <Compile Include="Commands\LockInstanceCommand.cs" />
+    <Compile Include="Commands\QueueUpExternalActivitiesCommand.cs" />
+    <Compile Include="Commands\BuildSystemRequestToProcessCommand.cs" />
+    <Compile Include="Commands\RebuildUserWorkListCommand.cs" />
+    <Compile Include="Commands\RefreshInstanceActivitySecurityCommand.cs" />
+    <Compile Include="Commands\RefreshWorklistCommand.cs" />
+    <Compile Include="Commands\RuleCommand.cs" />
+    <Compile Include="Commands\SaveWorkflowHistoryCommand.cs" />
+    <Compile Include="Commands\HandleSystemRequestBaseCommand.cs" />
+    <Compile Include="Commands\HandleSystemRequestThatIsAnAutoForwardCommand.cs" />
+    <Compile Include="Commands\HandleSystemRequestWithNoSplitNoWorkflowActivitiesCommand.cs" />
+    <Compile Include="Commands\HandleSystemRequestWithNoSplitWithWorkflowActivitiesCommand.cs" />
+    <Compile Include="Commands\HandleSystemRequestWithSplitWithNoWorkflowActivitiesCommand.cs" />
+    <Compile Include="Commands\UnlockInstanceCommand.cs" />
+    <Compile Include="Commands\UserRequestCancelActivityCommand.cs" />
+    <Compile Include="Commands\UserRequestCompleteActivityCommand.cs" />
+    <Compile Include="Commands\UserRequestCreateInstanceCommand.cs" />
+    <Compile Include="Commands\UserRequestStartActivityWithoutSplitCommand.cs" />
+    <Compile Include="Commands\X2BundledNotificationCommandType.cs" />
+    <Compile Include="Communication\IX2ConsumerManager.cs" />
+    <Compile Include="Communication\IX2ConsumerMonitor.cs" />
+    <Compile Include="Communication\IX2ConsumerConfigurationProvider.cs" />
+    <Compile Include="Communication\IX2NodeManagementMessageProcessor.cs" />
+    <Compile Include="Communication\IX2NodeManagementPublisher.cs" />
+    <Compile Include="Communication\IX2NodeManagementSubscriber.cs" />
+    <Compile Include="Communication\IX2QueueManager.cs" />
+    <Compile Include="Communication\IX2QueueNameBuilder.cs" />
+    <Compile Include="Communication\X2ConsumerMonitor.cs" />
+    <Compile Include="Communication\X2NodeRequestMessageProcessor.cs" />
+    <Compile Include="Communication\X2NodeRequestProcessorProvider.cs" />
+    <Compile Include="Communication\X2PublishException.cs" />
+    <Compile Include="Communication\X2QueueManager.cs" />
+    <Compile Include="Communication\X2QueueNameBuilder.cs" />
+    <Compile Include="Communication\X2QueueType.cs" />
+    <Compile Include="Factories\CommandFactory.cs" />
+    <Compile Include="Factories\ICommandFactory.cs" />
+    <Compile Include="Factories\IManagementCommandFactory.cs" />
+    <Compile Include="Factories\IRequestFactory.cs" />
+    <Compile Include="Factories\ITimerFactory.cs" />
+    <Compile Include="Factories\IX2ScheduledActivityTimerFactory.cs" />
+    <Compile Include="Factories\ManagementCommandFactory.cs" />
+    <Compile Include="Factories\RequestFactory.cs" />
+    <Compile Include="Factories\TimerFactory.cs" />
+    <Compile Include="Factories\X2ScheduledActivityTimerFactory.cs" />
+    <Compile Include="IX2BundledNotificationCommand.cs" />
+    <Compile Include="IX2TLSLegacyProcess.cs" />
+    <Compile Include="IX2TLSProcess.cs" />
+    <Compile Include="Node\AppDomain\AppDomainFactory.cs" />
+    <Compile Include="Node\AppDomain\AppDomainProcessProxyCache.cs" />
+    <Compile Include="IX2ActivityScheduler.cs" />
+    <Compile Include="IX2SoonestActivityScheduleSelector.cs" />
+    <Compile Include="Node\AppDomain\AppDomainFileManager.cs" />
+    <Compile Include="Node\AppDomain\IAppDomainFileManager.cs" />
+    <Compile Include="Node\AppDomain\ProcessInstantiator.cs" />
+    <Compile Include="Node\Providers\X2ProcessConfiguration.cs" />
+    <Compile Include="Node\Providers\X2WorkflowConfiguration.cs" />
+    <Compile Include="Node\X2NodeManagementMessageProcessor.cs" />
+    <Compile Include="Providers\INugetRetriever.cs" />
+    <Compile Include="Providers\IWorkflowDataProvider.cs" />
+    <Compile Include="Commands\SaveContextualDataCommand.cs" />
+    <Compile Include="CommandHandlers\SaveContextualDataCommandHandler.cs" />
+    <Compile Include="Commands\SaveInstanceCommand.cs" />
+    <Compile Include="CommandHandlers\SaveInstanceCommandHandler.cs" />
+    <Compile Include="Commands\UserRequestStartActivityWithSplitCommand.cs" />
+    <Compile Include="CommandHandlers\UserRequestStartActivityWithSplitCommandHandler.cs" />
+    <Compile Include="Communication\InMemoryMessageBus.cs" />
+    <Compile Include="Communication\ITopicNameBuilder.cs" />
+    <Compile Include="Communication\IX2ManagementMessageInterrogator.cs" />
+    <Compile Include="Communication\IX2RequestCallback.cs" />
+    <Compile Include="Communication\X2RequestMonitor.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Hosts\X2EngineHost.cs" />
+    <Compile Include="Communication\IAdvancedMessageBus.cs" />
+    <Compile Include="IRouteRequest.cs" />
+    <Compile Include="IResponseThreadWaiterManager.cs" />
+    <Compile Include="ITimer.cs" />
+    <Compile Include="IX2Engine.cs" />
+    <Compile Include="IX2RequestMonitorFactory.cs" />
+    <Compile Include="Factories\IX2ResponseFactory.cs" />
+    <Compile Include="Node\IX2EngineNode.cs" />
+    <Compile Include="Communication\IX2ManagementMonitorCallback.cs" />
+    <Compile Include="Communication\IX2ManagementSubscriber.cs" />
+    <Compile Include="IResponseThreadWaiter.cs" />
+    <Compile Include="IX2EngineHost.cs" />
+    <Compile Include="Node\IX2EngineNodeHost.cs" />
+    <Compile Include="IX2WorkflowRequestHandler.cs" />
+    <Compile Include="IX2RouteEndpoint.cs" />
+    <Compile Include="MessageHandlers\IX2MessageHandler.cs" />
+    <Compile Include="Providers\ISerializationProvider.cs" />
+    <Compile Include="Providers\IX2EngineConfigurationProvider.cs" />
+    <Compile Include="IX2RequestInterrogator.cs" />
+    <Compile Include="Communication\IX2RequestMonitor.cs" />
+    <Compile Include="Communication\IX2RequestMonitorCallback.cs" />
+    <Compile Include="Communication\IX2RequestPublisher.cs" />
+    <Compile Include="IX2RequestRouter.cs" />
+    <Compile Include="IX2RequestStore.cs" />
+    <Compile Include="Communication\IX2RequestSubscriber.cs" />
+    <Compile Include="Communication\IX2ResponsePublisher.cs" />
+    <Compile Include="Communication\IX2ResponseSubscriber.cs" />
+    <Compile Include="IX2RoutePlanner.cs" />
+    <Compile Include="Node\Providers\IX2NodeConfigurationProvider.cs" />
+    <Compile Include="Providers\JsonSerializationProvider.cs" />
+    <Compile Include="Providers\NugetRetriever.cs" />
+    <Compile Include="Providers\WorkflowDataProvider.cs" />
+    <Compile Include="Providers\X2EngineConfigurationProvider.cs" />
+    <Compile Include="Node\X2EngineNode.cs" />
+    <Compile Include="Node\X2EngineNodeHost.cs" />
+    <Compile Include="Providers\X2ProcessProvider.cs" />
+    <Compile Include="Services\ITimeoutService.cs" />
+    <Compile Include="Services\ITimeoutServiceFactory.cs" />
+    <Compile Include="Services\IX2ScheduledActivityTimer.cs" />
+    <Compile Include="Services\TimeoutService.cs" />
+    <Compile Include="Services\TimeoutServiceFactory.cs" />
+    <Compile Include="Services\X2ScheduledActivityTimer.cs" />
+    <Compile Include="WorkflowMapCodeSectionEnum.cs" />
+    <Compile Include="X2ActivityScheduler.cs" />
+    <Compile Include="X2RequestMonitorFactory.cs" />
+    <Compile Include="ResponseThreadWaiterManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="X2Engine.cs" />
+    <Compile Include="X2RequestInterrogator.cs" />
+    <Compile Include="X2RequestRouter.cs" />
+    <Compile Include="X2RequestStore.cs" />
+    <Compile Include="Factories\X2ResponseFactory.cs" />
+    <Compile Include="Node\Providers\X2NodeConfigurationProvider.cs" />
+    <Compile Include="X2RouteEndpoint.cs" />
+    <Compile Include="X2RoutePlanner.cs" />
+    <Compile Include="ResponseThreadWaiter.cs" />
+    <Compile Include="Node\X2WorkflowRequestHandler.cs" />
+    <Compile Include="X2SoonestActivityScheduleSelector.cs" />
+    <Compile Include="X2Timer.cs" />
+    <Compile Include="X2TLSLegacyProcess.cs" />
+    <Compile Include="X2TLSProcess.cs" />
+    <Compile Include="X2TLSProcessBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.Interfaces.X2\SAHL.Services.Interfaces.X2.csproj">
+      <Project>{5209e47a-2935-45a4-9631-55f8aa40fe69}</Project>
+      <Name>SAHL.Services.Interfaces.X2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.X2Engine2.ViewModels\SAHL.X2Engine2.ViewModels.csproj">
+      <Project>{d9c2ee11-9ffd-4134-97ee-7d7eaed7da22}</Project>
+      <Name>SAHL.X2Engine2.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

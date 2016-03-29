@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html ng-app="intergrationTests">
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib\json-formatter.min.css" />
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/jquery/jquery-2.1.1.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib\json-formatter.min.js"></script>
+    <script src="mocks/global.mock.js"></script>
+    <script src="mocks/app.config.mock.js"></script>
+    <script src="mocks/webservices.config.mock.js"></script>
+    <script src="mocks/workflowManagerDecoration.mock.js"></script>
+    <script src="mocks//guid.js"></script>
+    <script src="app.js"></script>
+    <script src="scenarioMaps/createInstance.app.js"></script>
+    <script src="scenarioMaps/createInstanceComplete.app.js"></script>
+    <script src="scenarioMaps/startActivity.app.js"></script>
+    <script src="scenarioMaps/completeActivity.app.js"></script>
+    <script src="scenarioMaps/cancelActivity.app.js"></script>
+    <script src="scenarioMaps/startActivityMoveApplication.app.js"></script>
+    <script src="lib/sahl.js.core/sahl.js.core.min.js"></script>
+    <script src="lib/sahl.services.interfaces.x2service/sahl.services.interfaces.x2service.min.js"></script>
+    <script src="lib/workflowManager/workflowManager.js"></script>
+    <!-- <script src="lib/workflowManager/workflowActivityManager.js"></script> -->
+    <title>X2 Service Integration Tests</title>
+    <style type="text/css">
+    .title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+    
+    a {
+        color: rgb(51, 51, 51);
+    }
+    
+    a.text-success {
+        color: #3c763d;
+    }
+    
+    a.text-danger {
+        color: #a94442;
+    }
+    </style>
+</head>
+
+<body class="ng-cloak">
+    <div class="container">
+        <div ng-controller="createInstanceCtrl">
+            <div class="panel-group" id="{{describe}}_{{it}}_accordion" role="tablist">
+                <div class="panel panel-default" id="{{describe}}_{{it}}">
+                    <div class="panel-heading">
+                        <div class="title">
+                            <a ng-class="{'text-danger':error!='', 'text-success': success!=''}" data-toggle="collapse" data-parent="#accordion" href="#{{describe}}_{{it}}_details">{{testTitle}}</a>
+                            <a ng-click="because()" id="{{describe}}_{{it}}_because" class="btn btn-default alert-link">Run Test</a>
+                        </div>
+                    </div>
+                    <div id="{{describe}}_{{it}}_details" class="panel-collapse collapse" role="tabpanel">
+                        <span class="hide" id="{{describe}}_{{it}}_error">
+                            {{error}}
+                        </span>
+                        <span class="hide" id="{{describe}}_{{it}}_success">
+                            {{success}}
+                        </span>
+                        <div class="panel-body bg-danger" ng-hide="error==''">Details:
+                            <json-formatter json="error" open="1"></json-formatter>
+                        </div>
+                        <div class="panel-body bg-success" ng-hide="success==''">Details:
+                            <json-formatter json="success" open="1"></json-formatter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-controller="completeCreateInstanceActivityCtrl">
+            <div class="panel-group" id="{{describe}}_{{it}}_accordion" role="tablist">
+                <div class="panel panel-default" id="{{describe}}_{{it}}">
+                    <div class="panel-heading">
+                        <div class="title">
+                            <a ng-class="{'text-danger':error!='', 'text-success': success!=''}" data-toggle="collapse" data-parent="#accordion" href="#{{describe}}_{{it}}_details">{{testTitle}}</a>
+                            <a ng-click="because()" id="{{describe}}_{{it}}_because" class="btn btn-default alert-link">Run Test</a>
+                        </div>
+                    </div>
+                    <div id="{{describe}}_{{it}}_details" class="panel-collapse collapse" role="tabpanel">
+                        <span class="hide" id="{{describe}}_{{it}}_error">
+                            {{error}}
+                        </span>
+                        <span class="hide" id="{{describe}}_{{it}}_success">
+                            {{success}}
+                        </span>
+                        <div class="panel-body bg-danger" ng-hide="error==''">Details:
+                            <json-formatter json="error" open="1"></json-formatter>
+                        </div>
+                        <div class="panel-body bg-success" ng-hide="success==''">Details:
+                            <json-formatter json="success" open="1"></json-formatter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-controller="startActivityCtrl">
+            <div class="panel-group" id="{{describe}}_{{it}}_accordion" role="tablist">
+                <div class="panel panel-default" id="{{describe}}_{{it}}">
+                    <div class="panel-heading">
+                        <div class="title">
+                            <a ng-class="{'text-danger':error!='', 'text-success': success!=''}" data-toggle="collapse" data-parent="#accordion" href="#{{describe}}_{{it}}_details">{{testTitle}}</a>
+                            <a ng-click="because()" id="{{describe}}_{{it}}_because" class="btn btn-default alert-link">Run Test</a>
+                        </div>
+                    </div>
+                    <div id="{{describe}}_{{it}}_details" class="panel-collapse collapse" role="tabpanel">
+                        <span class="hide" id="{{describe}}_{{it}}_error">
+                            {{error}}
+                        </span>
+                        <span class="hide" id="{{describe}}_{{it}}_success">
+                            {{success}}
+                        </span>
+                        <div class="panel-body bg-danger" ng-hide="error==''">Details:
+                            <json-formatter json="error" open="1"></json-formatter>
+                        </div>
+                        <div class="panel-body bg-success" ng-hide="success==''">Details:
+                            <json-formatter json="success" open="1"></json-formatter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-controller="cancelActivityCtrl">
+            <div class="panel-group" id="{{describe}}_{{it}}_accordion" role="tablist">
+                <div class="panel panel-default" id="{{describe}}_{{it}}">
+                    <div class="panel-heading">
+                        <div class="title">
+                            <a ng-class="{'text-danger':error!='', 'text-success': success!=''}" data-toggle="collapse" data-parent="#accordion" href="#{{describe}}_{{it}}_details">{{testTitle}}</a>
+                            <a ng-click="because()" id="{{describe}}_{{it}}_because" class="btn btn-default alert-link">Run Test</a>
+                        </div>
+                    </div>
+                    <div id="{{describe}}_{{it}}_details" class="panel-collapse collapse" role="tabpanel">
+                        <span class="hide" id="{{describe}}_{{it}}_error">
+                            {{error}}
+                        </span>
+                        <span class="hide" id="{{describe}}_{{it}}_success">
+                            {{success}}
+                        </span>
+                        <div class="panel-body bg-danger" ng-hide="error==''">Details:
+                            <json-formatter json="error" open="1"></json-formatter>
+                        </div>
+                        <div class="panel-body bg-success" ng-hide="success==''">Details:
+                            <json-formatter json="success" open="1"></json-formatter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-controller="startActivityMoveApplicationCtrl">
+            <div class="panel-group" id="{{describe}}_{{it}}_accordion" role="tablist">
+                <div class="panel panel-default" id="{{describe}}_{{it}}">
+                    <div class="panel-heading">
+                        <div class="title">
+                            <a ng-class="{'text-danger':error!='', 'text-success': success!=''}" data-toggle="collapse" data-parent="#accordion" href="#{{describe}}_{{it}}_details">{{testTitle}}</a>
+                            <a ng-click="because()" id="{{describe}}_{{it}}_because" class="btn btn-default alert-link">Run Test</a>
+                        </div>
+                    </div>
+                    <div id="{{describe}}_{{it}}_details" class="panel-collapse collapse" role="tabpanel">
+                        <span class="hide" id="{{describe}}_{{it}}_error">
+                            {{error}}
+                        </span>
+                        <span class="hide" id="{{describe}}_{{it}}_success">
+                            {{success}}
+                        </span>
+                        <div class="panel-body bg-danger" ng-hide="error==''">Details:
+                            <json-formatter json="error" open="1"></json-formatter>
+                        </div>
+                        <div class="panel-body bg-success" ng-hide="success==''">Details:
+                            <json-formatter json="success" open="1"></json-formatter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-controller="completeActivityCtrl">
+            <div class="panel-group" id="{{describe}}_{{it}}_accordion" role="tablist">
+                <div class="panel panel-default" id="{{describe}}_{{it}}">
+                    <div class="panel-heading">
+                        <div class="title">
+                            <a ng-class="{'text-danger':error!='', 'text-success': success!=''}" data-toggle="collapse" data-parent="#accordion" href="#{{describe}}_{{it}}_details">{{testTitle}}</a>
+                            <a ng-click="because()" id="{{describe}}_{{it}}_because" class="btn btn-default alert-link">Run Test</a>
+                        </div>
+                    </div>
+                    <div id="{{describe}}_{{it}}_details" class="panel-collapse collapse" role="tabpanel">
+                        <span class="hide" id="{{describe}}_{{it}}_error">
+                            {{error}}
+                        </span>
+                        <span class="hide" id="{{describe}}_{{it}}_success">
+                            {{success}}
+                        </span>
+                        <div class="panel-body bg-danger" ng-hide="error==''">Details:
+                            <json-formatter json="error" open="1"></json-formatter>
+                        </div>
+                        <div class="panel-body bg-success" ng-hide="success==''">Details:
+                            <json-formatter json="success" open="1"></json-formatter>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39C80B95-704A-406E-8A26-8AA377CB9B87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.V3.Framework</RootNamespace>
+    <AssemblyName>SAHL.V3.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\PostSharp.2.1.7.11\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Data.Dapper">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Logging">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.ApplicationDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.ApplicationDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.DecisionTree.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.DecisionTree.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.LifeDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.LifeDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.MortgageLoanDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.MortgageLoanDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Dapper">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Logging.Loggers.Database">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Logging.Loggers.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DecisionTree.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.DecisionTree.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ApplicationDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ApplicationDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Communications, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Communications.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DecisionTree">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DecisionTree.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.LifeDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.LifeDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.MortgageLoanDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.MortgageLoanDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DependencyResolution\BootStrapper.cs" />
+    <Compile Include="DomainServices\ApplicationDomainService.cs" />
+    <Compile Include="DomainServices\DomainServiceClientBase.cs" />
+    <Compile Include="DomainServices\IApplicationDomainService.cs" />
+    <Compile Include="DomainServices\ILifeDomainService.cs" />
+    <Compile Include="DomainServices\IMortgageLoanDomainService.cs" />
+    <Compile Include="DomainServices\LifeDomainService.cs" />
+    <Compile Include="DomainServices\MortgageLoanDomainService.cs" />
+    <Compile Include="IV3ServiceCommon.cs" />
+    <Compile Include="IV3ServiceManager.cs" />
+    <Compile Include="IV3Service.cs" />
+    <Compile Include="Model\ApplicationLoanDetail.cs" />
+    <Compile Include="Model\DetermineNCRGuidelineMinMonthlyFixedExpensesQuery.cs" />
+    <Compile Include="Model\QualifyHighestIncomeContributorFor30YearLoanTermQuery.cs" />
+    <Compile Include="Model\QualifyApplicationFor30YearLoanTermQuery.cs" />
+    <Compile Include="Model\QualifyApplicationFor30YearLoanTermResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registries\SpecificConfig.cs" />
+    <Compile Include="Repositories\DecisionTreeRepository.cs" />
+    <Compile Include="Repositories\IDecisionTreeRepository.cs" />
+    <Compile Include="Services\DecisionTreeService.cs" />
+    <Compile Include="Services\CommunicationService.cs" />
+    <Compile Include="Services\IDecisionTreeService.cs" />
+    <Compile Include="Services\ICommunicationService.cs" />
+    <Compile Include="V3ServiceCommon.cs" />
+    <Compile Include="V3ServiceManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.DAO\SAHL.Common.BusinessModel.DAO.csproj">
+      <Project>{609a7113-a7dd-4e72-98fd-2b07d13550b8}</Project>
+      <Name>SAHL.Common.BusinessModel.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel.Interfaces\SAHL.Common.BusinessModel.Interfaces.csproj">
+      <Project>{73da2a37-4a25-4fe9-98f2-60ed1b2d1cab}</Project>
+      <Name>SAHL.Common.BusinessModel.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.BusinessModel\SAHL.Common.BusinessModel.csproj">
+      <Project>{a516d7d1-4cf0-4a5b-82cf-1cfb099e8363}</Project>
+      <Name>SAHL.Common.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Logging\SAHL.Common.Logging.csproj">
+      <Project>{b73e4f52-b7f1-4001-9762-02db2df14a23}</Project>
+      <Name>SAHL.Common.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service.Interfaces\SAHL.Common.Service.Interfaces.csproj">
+      <Project>{7180e406-6b7c-44b9-bd02-d3fcccc617bc}</Project>
+      <Name>SAHL.Common.Service.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common.Service\SAHL.Common.Service.csproj">
+      <Project>{7155fe63-0a2e-4022-972e-b703cf223297}</Project>
+      <Name>SAHL.Common.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Common\SAHL.Common.csproj">
+      <Project>{c8e9a1aa-1b28-4310-92bd-12a52ec3a996}</Project>
+      <Name>SAHL.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Shared\SAHL.Shared.csproj">
+      <Project>{0c1b7b75-8887-4169-a41d-0aacddff3d49}</Project>
+      <Name>SAHL.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.X2.Framework\SAHL.X2.Framework.csproj">
+      <Project>{3e8401b9-cb26-4478-8225-a8e626cc58d6}</Project>
+      <Name>SAHL.X2.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>robocopy "$(ProjectDir)bin\$(ConfigurationName)" "$(SolutionDir)..\Internal Binaries" $(ProjectName).dll $(ProjectName).pdb /XO /NJH /NP
+if %25errorlevel%25 GEQ 2 goto BuildEventFailed
+if %25errorlevel%25 LEQ 1 goto end
+  :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+  exit 1
+  :end echo FILECOPY for $(ProjectName) COMPLETED OK
+  exit 0
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

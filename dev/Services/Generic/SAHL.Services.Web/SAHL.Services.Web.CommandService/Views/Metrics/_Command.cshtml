@@ -1,0 +1,20 @@
+﻿@model SAHL.Services.Web.CommandService.Models.Command
+<div id="container" data-count="@this.Model.CommandServiceMetrics.TotalRequestsCount">
+    <h4 class="middle">Command Name: @this.Model.CommandName</h4>
+    <ul class="metrics">
+        <li><div class="dough" data-field="@this.Model.CommandServiceMetrics.CommandLatencyForLastMinute[this.Model.CommandName].Count"></div>
+            <b>@this.Model.CommandServiceMetrics.CommandLatencyForLastMinute[this.Model.CommandName].Count</b> Requests Made
+        </li>
+        <li>@MetricData.Latency(this.Model.CommandServiceMetrics.CommandLatencyForLastMinute[this.Model.CommandName].Max,"Max")<br /><br />
+            @MetricData.AverageRequests(this.Model.CommandServiceMetrics.CommandLatencyForLastMinute[this.Model.CommandName],"Minute")</li>
+        <li>@MetricData.Latency(this.Model.CommandServiceMetrics.CommandLatencyForLastMinute[this.Model.CommandName].Min,"Min")<br /><br />
+            @MetricData.AverageRequests(this.Model.CommandServiceMetrics.CommandLatencyForLastHour[this.Model.CommandName],"Hour")</li>
+        <li>@MetricData.Latency(this.Model.CommandServiceMetrics.CommandLatencyForLastMinute[this.Model.CommandName].Mean,"Average")<br /><br />
+            @MetricData.AverageRequests(this.Model.CommandServiceMetrics.CommandLatencyForLastDay[this.Model.CommandName],"Day")</li>
+    </ul>
+    <ul class="metrics center">
+        <li>@MetricData.Analytics(this.Model.CommandServiceMetrics.CommandLatencyForLastMinute[this.Model.CommandName].Histogram,"Minute")</li>
+        <li>@MetricData.Analytics(this.Model.CommandServiceMetrics.CommandLatencyForLastHour[this.Model.CommandName].Histogram,"Hour")</li>
+        <li>@MetricData.Analytics(this.Model.CommandServiceMetrics.CommandLatencyForLastDay[this.Model.CommandName].Histogram,"Day")</li>
+    </ul>
+</div>

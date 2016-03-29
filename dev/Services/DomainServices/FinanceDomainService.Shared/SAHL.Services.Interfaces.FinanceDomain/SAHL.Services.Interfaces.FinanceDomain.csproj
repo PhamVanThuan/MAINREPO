@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CAAEB04-0E74-4674-B409-5A57E90CF19D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Interfaces.FinanceDomain</RootNamespace>
+    <AssemblyName>SAHL.Services.Interfaces.FinanceDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.EventProjection">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.EventProjection.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AcceptThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Commands\AddThirdPartyInvoiceToPaymentBatchCommand.cs" />
+    <Compile Include="Commands\ApproveThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Commands\AmendThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Commands\CaptureThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Commands\EscalateThirdPartyInvoiceForApprovalCommand.cs" />
+    <Compile Include="Commands\ProcessThirdPartyInvoicePaymentCommand.cs" />
+    <Compile Include="Commands\ReturnThirdPartyInvoiceToPaymentQueueCommand.cs" />
+    <Compile Include="Commands\Internal\AddThirdPartyInvoiceLineItemsCommand.cs" />
+    <Compile Include="Commands\Internal\RemoveThirdPartyInvoiceLineItemsCommand.cs" />
+    <Compile Include="Commands\Internal\AmendThirdPartyInvoiceLineItemsCommand.cs" />
+    <Compile Include="Commands\Internal\CompensateAddInvoiceAttachmentCommand.cs" />
+    <Compile Include="Commands\Internal\CreateEmptyInvoiceCommand.cs" />
+    <Compile Include="Commands\Internal\CreateThirdPartyInvoiceWorkflowCaseCommand.cs" />
+    <Compile Include="Commands\Internal\AddInvoiceAttachmentCommand.cs" />
+    <Compile Include="Commands\QueryThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Commands\MarkThirdPartyInvoiceAsPaidCommand.cs" />
+    <Compile Include="Commands\ProcessTransactionsForThirdPartyInvoicePaymentReversalCommand.cs" />
+    <Compile Include="Commands\ProcessTransactionsForThirdPartyInvoicePaymentCommand.cs" />
+    <Compile Include="Commands\RemoveThirdPartyInvoiceFromPaymentBatchCommand.cs" />
+    <Compile Include="Enum\FinancialServiceTypeEnum.cs" />
+    <Compile Include="Enum\LoanTransactionTypeEnum.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceEscalatedForApprovalEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceMarkedAsPaidEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoicePaymentProcessedEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceRejectedEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceRejectedPostApprovalEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceRejectedPreApprovalEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceQueriedPostApprovalEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceQueriedEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceRemovedFromBatchEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceReturnedToPaymentQueueEvent.cs" />
+    <Compile Include="Events\TransactionProcessedForThirdPartyInvoicePaymentReversalEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceApprovedEvent.cs" />
+    <Compile Include="Commands\RejectThirdPartyInvoiceCommand.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceAmendedEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceCapturedEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceQueriedPreApprovalEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceAddedToBatchEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceSubmissionAcceptedEvent.cs" />
+    <Compile Include="Events\ThirdPartyInvoiceSubmissionRejectedEvent.cs" />
+    <Compile Include="Events\TransactionsProcessedForThirdPartyInvoicePaymentEvent.cs" />
+    <Compile Include="IFinanceDomainCommand.cs" />
+    <Compile Include="IFinanceDomainInternalCommand.cs" />
+    <Compile Include="IFinanceDomainQuery.cs" />
+    <Compile Include="IFinanceDomainServiceClient.cs" />
+    <Compile Include="Model\AttorneyInvoiceDocumentModel.cs" />
+    <Compile Include="Model\GetMandatedUsersForThirdPartyInvoiceEscalationQueryResult.cs" />
+    <Compile Include="Model\GetThirdPartyInvoiceCorrespondenceQueryResult.cs" />
+    <Compile Include="Model\GetThirdPartyInvoiceQueryResult.cs" />
+    <Compile Include="Model\InvoiceLineItemModel.cs" />
+    <Compile Include="Model\IThirdPartyInvoiceRuleModel.cs" />
+    <Compile Include="Model\ThirdPartyEmailSubjectModel.cs" />
+    <Compile Include="Model\ThirdPartyInvoiceModel.cs" />
+    <Compile Include="Model\IAccountRuleModel.cs" />
+    <Compile Include="Model\InvoiceAttachment.cs" />
+    <Compile Include="Model\ThirdPartyInvoicePaymentBatchItem.cs" />
+    <Compile Include="Model\ThirdPartyInvoicePaymentModel.cs" />
+    <Compile Include="Model\ThirdPartyInvoiceRuleModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FinanceDomainServiceClient.cs" />
+    <Compile Include="Queries\GetAttorneyInvoiceMonthlyBreakDownQuery.cs" />
+    <Compile Include="Queries\GetAttorneyInvoicesNotProcessedThisMonthBreakDownQuery.cs" />
+    <Compile Include="Queries\GetAttorneyInvoicesPaidPreviousMonthBreakDownQuery.cs" />
+    <Compile Include="Queries\GetAttorneyInvoicesPaidThisMonthBreakDownQuery.cs" />
+    <Compile Include="Queries\GetAttorneyInvoicesNotProcessedThisYearBreakDownQuery.cs" />
+    <Compile Include="Queries\GetAttorneyInvoicesPaidThisYearBreakDownQuery.cs" />
+    <Compile Include="Queries\GetAttorneyInvoicesNotProcessedPreviousMonthBreakDownQuery.cs" />
+    <Compile Include="Queries\GetMandatedUsersForThirdPartyInvoiceEscalationQuery.cs" />
+    <Compile Include="Queries\GetThirdPartyInvoiceCorrespondenceQuery.cs" />
+    <Compile Include="Queries\GetThirdPartyInvoiceQuery.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <AssemblyName>SAHL.Halo.App.DomainDocumentation</AssemblyName>
+    <Name>SAHL.Halo.App.DomainDocumentation</Name>
+    <RootNamespace>SAHL.Halo.App.DomainDocumentation</RootNamespace>
+    <SAHLSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="app\start" />
+    <Folder Include="assets" />
+    <Folder Include="app" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\images" />
+    <Folder Include="css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\start\start.js">
+      <SubType>Content</SubType>
+      <DependentUpon>app\start\start.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\start\start.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>app\start\start.tpl.html</DependentUpon>
+    </Content>
+    <Content Include="app\start\start.tpl.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\domainDocumentationApp.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\domainDocumentationApp.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>app\domainDocumentationApp.js</DependentUpon>
+    </Content>
+    <Content Include="assets\images\icon.png">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SAHomeloans\SAHL.VS.WebJS.targets" />
+</Project>

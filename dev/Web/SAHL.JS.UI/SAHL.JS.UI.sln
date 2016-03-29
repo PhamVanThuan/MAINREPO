@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{88CC3D12-EB0F-11E3-AC10-0800200C9A66}") = "SAHL.JS.UI", "SAHL.JS.UI.webjsproj", "{A19C4D17-CA03-4326-916A-553D3BB087CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A19C4D17-CA03-4326-916A-553D3BB087CB}.Debug|x86.ActiveCfg = Debug|x86
+		{A19C4D17-CA03-4326-916A-553D3BB087CB}.Debug|x86.Build.0 = Debug|x86
+		{A19C4D17-CA03-4326-916A-553D3BB087CB}.Release|x86.ActiveCfg = Release|x86
+		{A19C4D17-CA03-4326-916A-553D3BB087CB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

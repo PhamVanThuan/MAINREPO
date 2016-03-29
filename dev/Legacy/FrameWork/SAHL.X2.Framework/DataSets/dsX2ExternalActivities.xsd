@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsX2ExternalActivities" targetNamespace="http://tempuri.org/dsX2ExternalActivities.xsd" xmlns:mstns="http://tempuri.org/dsX2ExternalActivities.xsd" xmlns="http://tempuri.org/dsX2ExternalActivities.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="X2ConnectionString2" IsAppSettingsProperty="True" Modifier="Assembly" Name="X2ConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.X2ConnectionString2" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsX2ExternalActivities" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsX2ExternalActivities" msprop:Generator_DataSetName="dsX2ExternalActivities">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ActiveExternalActivity" msprop:Generator_UserTableName="ActiveExternalActivity" msprop:Generator_RowDeletedName="ActiveExternalActivityRowDeleted" msprop:Generator_RowChangedName="ActiveExternalActivityRowChanged" msprop:Generator_RowClassName="ActiveExternalActivityRow" msprop:Generator_RowChangingName="ActiveExternalActivityRowChanging" msprop:Generator_RowEvArgName="ActiveExternalActivityRowChangeEvent" msprop:Generator_RowEvHandlerName="ActiveExternalActivityRowChangeEventHandler" msprop:Generator_TableClassName="ActiveExternalActivityDataTable" msprop:Generator_TableVarName="tableActiveExternalActivity" msprop:Generator_RowDeletingName="ActiveExternalActivityRowDeleting" msprop:Generator_TablePropName="ActiveExternalActivity">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
+              <xs:element name="ExternalActivityID" msprop:Generator_UserColumnName="ExternalActivityID" msprop:Generator_ColumnPropNameInRow="ExternalActivityID" msprop:Generator_ColumnVarNameInTable="columnExternalActivityID" msprop:Generator_ColumnPropNameInTable="ExternalActivityIDColumn" type="xs:int" />
+              <xs:element name="WorkFlowID" msprop:Generator_UserColumnName="WorkFlowID" msprop:Generator_ColumnPropNameInRow="WorkFlowID" msprop:Generator_ColumnVarNameInTable="columnWorkFlowID" msprop:Generator_ColumnPropNameInTable="WorkFlowIDColumn" type="xs:int" />
+              <xs:element name="ActivatingInstanceID" msprop:Generator_UserColumnName="ActivatingInstanceID" msprop:Generator_ColumnPropNameInRow="ActivatingInstanceID" msprop:Generator_ColumnVarNameInTable="columnActivatingInstanceID" msprop:Generator_ColumnPropNameInTable="ActivatingInstanceIDColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="ActivationTime" msprop:Generator_UserColumnName="ActivationTime" msprop:Generator_ColumnPropNameInRow="ActivationTime" msprop:Generator_ColumnVarNameInTable="columnActivationTime" msprop:Generator_ColumnPropNameInTable="ActivationTimeColumn" type="xs:dateTime" />
+              <xs:element name="ActivityXMLData" msprop:Generator_UserColumnName="ActivityXMLData" msprop:Generator_ColumnPropNameInRow="ActivityXMLData" msprop:Generator_ColumnVarNameInTable="columnActivityXMLData" msprop:Generator_ColumnPropNameInTable="ActivityXMLDataColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkFlowProviderName" msprop:Generator_UserColumnName="WorkFlowProviderName" msprop:Generator_ColumnPropNameInRow="WorkFlowProviderName" msprop:Generator_ColumnVarNameInTable="columnWorkFlowProviderName" msprop:Generator_ColumnPropNameInTable="WorkFlowProviderNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SourceInstanceID" msprop:Generator_UserColumnName="SourceInstanceID" msprop:Generator_ColumnPropNameInRow="SourceInstanceID" msprop:Generator_ColumnVarNameInTable="columnSourceInstanceID" msprop:Generator_ColumnPropNameInTable="SourceInstanceIDColumn" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ActiveExternalActivity" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

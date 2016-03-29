@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="0943ce5a-4ea2-4496-8a5b-01706f1b4053" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="LegalEntity" schema="dbo" table="LegalEntity">
+      <properties>
+        <modelProperty Id="6d563107-6668-4ba8-a4a0-c63af0ffb8a5" name="LegalEntityTypeKey" column="LegalEntityTypeKey" columnType="Int32" length="0" />
+        <modelProperty Id="eaf089e9-9685-430e-bf0c-cbaab46ae11f" name="MaritalStatusKey" column="MaritalStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="77227705-e640-47b6-9508-4d3cb346d05d" name="GenderKey" column="GenderKey" columnType="Int32" length="0" />
+        <modelProperty Id="f5281a9d-9575-48ad-a8ff-0ff45e5b8c94" name="PopulationGroupKey" column="PopulationGroupKey" columnType="Int32" length="0" />
+        <modelProperty Id="5141e96e-d526-434c-9135-46d5a09d920c" name="IntroductionDate" column="IntroductionDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="c02df815-10d6-483c-ac49-bb173a89c620" name="Salutationkey" column="Salutationkey" columnType="Int32" length="0" />
+        <modelProperty Id="68692e8d-896d-4c7f-9b1f-d8bb325c26dd" name="FirstNames" column="FirstNames" length="0" />
+        <modelProperty Id="6889051c-3070-41b4-b535-d7af38708de0" name="Initials" column="Initials" length="0" />
+        <modelProperty Id="15b149c4-bf12-430a-b9fe-ffb401cc4f51" name="Surname" column="Surname" length="0" />
+        <modelProperty Id="f17f9f4e-5396-43af-9b18-746bb9d9b507" name="PreferredName" column="PreferredName" length="0" />
+        <modelProperty Id="b5a5d1b2-6abd-46aa-8916-b160549ea7c7" name="IDNumber" column="IDNumber" length="0" />
+        <modelProperty Id="ef284ca4-4bb4-45d5-a2c2-e2dccd3f430e" name="PassportNumber" column="PassportNumber" length="0" />
+        <modelProperty Id="c69dcad4-329c-45e6-a32f-fe0b2831df6e" name="TaxNumber" column="TaxNumber" length="0" />
+        <modelProperty Id="64c7d1f2-d634-474c-9eee-47d4d9bdceeb" name="RegistrationNumber" column="RegistrationNumber" length="0" />
+        <modelProperty Id="b2d91972-40b8-496e-8fca-3f632f0f6ae5" name="RegisteredName" column="RegisteredName" length="0" />
+        <modelProperty Id="5e8af5f2-e91a-4124-8761-ca52b77d72a8" name="TradingName" column="TradingName" length="0" />
+        <modelProperty Id="b62b4825-1ad9-42ec-b3e8-918407b7d457" name="DateOfBirth" column="DateOfBirth" columnType="Timestamp" length="0" />
+        <modelProperty Id="026d30ea-4348-47d2-82f4-025a0decfcb5" name="HomePhoneCode" column="HomePhoneCode" length="0" />
+        <modelProperty Id="de9f557d-4551-4fb3-8583-9d0306111538" name="HomePhoneNumber" column="HomePhoneNumber" length="0" />
+        <modelProperty Id="fc5910d4-2fc7-438b-aa53-e9bf8175790a" name="WorkPhoneCode" column="WorkPhoneCode" length="0" />
+        <modelProperty Id="3ed58ea6-9521-4870-97e6-8c1f69ae47ca" name="WorkPhoneNumber" column="WorkPhoneNumber" length="0" />
+        <modelProperty Id="8cac235c-f125-4902-be26-1a2344a692d9" name="CellPhoneNumber" column="CellPhoneNumber" length="0" />
+        <modelProperty Id="8737ae0d-b36d-42d6-92d7-92338d2fa0d9" name="EmailAddress" column="EmailAddress" length="0" />
+        <modelProperty Id="50fdd9e1-a2c6-4bbd-a186-00ecedcb16fd" name="FaxCode" column="FaxCode" length="0" />
+        <modelProperty Id="dd243e45-affc-401c-8155-0327efb40d45" name="FaxNumber" column="FaxNumber" length="0" />
+        <modelProperty Id="ed0787ed-df18-40a2-94d3-c3ff6c3ff5ed" name="Password" column="Password" length="0" />
+        <modelProperty Id="a2823e9e-5502-446a-96b4-d8fd31200d31" name="CitizenTypeKey" column="CitizenTypeKey" columnType="Int32" length="0" />
+        <modelProperty Id="b5521ac3-802d-4a66-bf39-8e23a501b89a" name="LegalEntityStatusKey" column="LegalEntityStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="e0d41f44-943b-4c7a-97a8-c9a62bc33212" name="Comments" column="Comments" length="0" />
+        <modelProperty Id="6fd2b006-783d-451c-a3dc-555ae5dd371f" name="LegalEntityExceptionStatusKey" column="LegalEntityExceptionStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="b9d7b615-57f1-4273-a426-fe73e029f6e1" name="UserID" column="UserID" length="0" />
+        <modelProperty Id="e6e37597-baff-44bb-929c-93db90bbd17d" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="bc38f7cd-4ae2-4090-a713-1e17acb366c3" name="EducationKey" column="EducationKey" columnType="Int32" length="0" />
+        <modelProperty Id="7fd22a32-f8e5-4454-8426-200eb0409e80" name="HomeLanguageKey" column="HomeLanguageKey" columnType="Int32" length="0" />
+        <modelProperty Id="d38feab4-3276-4a50-a6cd-155e1f59b0ce" name="DocumentLanguageKey" column="DocumentLanguageKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="9aba4728-0648-4f67-86ba-6702b19fe704" name="ResidenceStatusKey" column="ResidenceStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="f27363c6-e5a6-4788-b109-5a8182f05820" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityOrganisationStructure" schema="dbo" table="LegalEntityOrganisationStructure">
+      <targets>
+        <manyToOneRelation Id="024ddbf8-8cc9-4e29-9d6f-9091b7bb6bcb" targetColumnKey="LegalEntityKey" targetTable="LegalEntityOrganisationStructure" targetPropertyName="LegalEntityOrganisationStructures" sourceColumn="LegalEntityKey">
+          <modelClassMoniker name="/0943ce5a-4ea2-4496-8a5b-01706f1b4053/LegalEntity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="02d79c1c-4b4d-4f8a-9b01-d8338dad7a0d" targetColumnKey="OrganisationStructureKey" targetTable="LegalEntityOrganisationStructure" targetPropertyName="LegalEntityOrganisationStructures" sourceColumn="OrganisationStructureKey">
+          <modelClassMoniker name="/0943ce5a-4ea2-4496-8a5b-01706f1b4053/OrganisationStructure" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="c078ef49-72ba-400e-8d09-3bd7e2a2934d" name="LegalEntityOrganisationStructureKey" column="LegalEntityOrganisationStructureKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="LegalEntityOrganisationStructureHistory" schema="dbo" table="LegalEntityOrganisationStructureHistory">
+      <properties>
+        <modelProperty Id="fb1c49d8-57c4-4a32-885d-b12c583ea2cc" name="LegalEntityOrganisationStructureKey" column="LegalEntityOrganisationStructureKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="fc91d522-44e9-4184-9dc1-b6027c75edae" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="85b0fe61-becf-494a-ac0a-78f07e9801a8" name="OrganisationStructureKey" column="OrganisationStructureKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0b8d5924-8e9e-4e3e-801f-f25ae0e56584" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="38317c9e-887c-4ca2-ac27-adf966544958" name="Action" column="Action" length="0" notNull="true" />
+        <modelProperty Id="e3874b39-a5f2-4d18-8bcb-d7178f2c811b" name="LegalEntityOrganisationStructureHistoryKey" column="LegalEntityOrganisationStructureHistoryKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OrganisationStructure" schema="dbo" table="OrganisationStructure">
+      <properties>
+        <modelProperty Id="3d8943a1-1e77-4933-b599-985cf532d3a9" name="ParentKey" column="ParentKey" columnType="Int32" length="0" />
+        <modelProperty Id="5b701db7-9ec7-4616-92cf-7473c7280161" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="3f3a4bdb-dbb1-4cb8-a88d-fed89a1915c1" name="OrganisationTypeKey" column="OrganisationTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="cafe41f8-b489-4af0-8060-b6ed3e35c1bb" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="71488c36-ddbc-4181-9ec9-af3cb6ed7324" name="OrganisationStructureKey" column="OrganisationStructureKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

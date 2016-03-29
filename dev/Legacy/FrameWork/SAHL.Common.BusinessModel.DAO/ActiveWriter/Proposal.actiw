@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0ebd6748-43ce-49d3-aa59-687254a596ca" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Proposal" schema="debtcounselling" table="Proposal">
+      <targets>
+        <manyToOneRelation Id="3b8debb9-6458-4532-8ebc-ebb5ffdcff1e" targetColumnKey="ProposalStatusKey" targetTable="Proposal" targetPropertyName="Proposals" sourceColumn="ProposalStatusKey">
+          <modelClassMoniker name="/0ebd6748-43ce-49d3-aa59-687254a596ca/ProposalStatus" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="5e14e6c2-291e-48d8-a61e-687182c0f069" name="ProposalKey" column="ProposalKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="2b6712bb-b8f2-4693-b48e-017975c9107b" name="DebtCounsellingKey" column="DebtCounsellingKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="54a9f48d-4cdb-4660-9f4b-a28b7ab36852" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="4b6e9e5e-51ea-43df-9b9a-b2e43eeb6365" name="UserName" column="UserName" length="0" notNull="true" />
+        <modelProperty Id="b8d996d5-67e9-48af-8079-e7b635e32a19" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="ProposalItem" schema="debtcounselling" table="ProposalItem">
+      <targets>
+        <manyToOneRelation Id="fbffd9c6-93dc-4d81-93e3-61f5d6dcc2fe" targetColumnKey="ProposalKey" targetTable="ProposalItem" targetPropertyName="ProposalItems" sourceColumn="ProposalKey">
+          <modelClassMoniker name="/0ebd6748-43ce-49d3-aa59-687254a596ca/Proposal" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="97da05f2-d3d6-4146-8e45-fd881eb74558" name="ProposalItemKey" column="ProposalItemKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="5b83577e-990c-4477-aa9d-86463da75c77" name="Description" column="Description" length="0" />
+        <modelProperty Id="6de4a66d-f5ce-4906-b579-4eca1cf11407" name="StartDate" column="StartDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="b4d4004b-88e8-4ad2-83b9-6bd4a44598d4" name="EndDate" column="EndDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="e467eb44-ceb0-4dad-b7b1-75498e7da271" name="InterstRate" column="InterstRate" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="b6899f76-45d1-4409-9527-1938d4eb16c5" name="Amount" column="Amount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="1349bc91-f3df-45d5-90e3-2888a9daee6d" name="AdditionalAmount" column="AdditionalAmount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="ba6ee8c6-1379-4542-bc83-07869ed2cbca" name="UserName" column="UserName" length="0" notNull="true" />
+        <modelProperty Id="a708718e-0b24-46a3-a3cf-415675acd05b" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="83250bd5-70a6-4436-8e78-50f6024e94e2" name="StartPeriod" column="StartPeriod" columnType="Int16" length="0" />
+        <modelProperty Id="347f88ba-4a86-451d-a658-35f9f3f48f49" name="EndPeriod" column="EndPeriod" columnType="Int16" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="ProposalStatus" schema="debtcounselling" table="ProposalStatus">
+      <properties>
+        <modelProperty Id="bf3e644b-d1cd-4f0f-a881-4669b2482aff" name="ProposalStatusKey" column="ProposalStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="ba05cc01-11cf-4f2d-a895-fdf54ceccb07" name="Description" column="Description" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

@@ -1,0 +1,78 @@
+﻿<div class="childView-container" ng-hide="$state.current.name !='home.messages.editor'" spin-loader="loadMessages">
+    <div class="childView">
+        <div class="row1">
+            <h1>Messages <span ng-if="lockedByUser"> - Locked By : {{lockedByUser}}</span></h1>
+            <h2 ng-show="isLatestVersion">Latest Version : {{latestVersion}}</h2>
+            <h2 ng-hide="isLatestVersion">Version: {{version}}</h2>
+            <h3 ng-hide="isLatestVersion">Latest Version : {{latestVersion}}</h3>
+        </div>
+        <div class="row2">
+            <div id="scrollBox">
+                <div>
+                    <div class="breadcrumbsContainer">
+                        <nav class="breadcrumbs" style="margin-left:0px;">
+                            <ul>
+                                <li ng-repeat="bc in breadcrumbs"><a href="" ng-click="GoToGroupItem($index)">{{bc.name}}</a></li>
+                            </ul>
+                        </nav>
+                        <div class="button-set place-right">
+                            <button class="last-column" ng-show="isLatestVersion" ng-click="addNewGroup()">Add Group</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tableContainer">
+                    <form name="messageSet">
+                        <table class="table bordered hovered">
+                            <tbody ng-repeat="group in currentContext.groups">
+                                <tr class="groupRow">
+                                    <th class="text-left" ng-click="SelectGroupInContext($index)" colspan="2">
+                                        <span contenteditable class="editableGroupName" ng-model="group.name" strip-br="true" />
+                                        <div class="place-right"><a href="" title="Delete this group" ng-show="isLatestVersion" ng-click="deleteGroup($index)"><span class="icon-remove fg-black"></span> Delete</a></div>
+                                    </th>
+                                    <th class="text-center last-column">
+                                        <a href="" title="Add message to group." ng-show="isLatestVersion" ng-click="addNewMessage($index)"><span class="icon-plus fg-black"></span> Add</a>
+                                    </th>
+                                </tr>
+                                <tr ng-show="group.messages.length > 0 && $index == GetSelectedIndexInContext()">
+                                    <th class="text-left">Name</th>
+                                    <th class="text-left">Message</th>
+                                    <th></th>
+                                </tr>
+                                <tr ng-repeat-start="item in group.messages" ng-show="$parent.$index == GetSelectedIndexInContext()">
+                                    <td>
+                                        <div class="input-control text"><input type="text" ng-model="item.name" ng-required="true" ng-disabled="!isLatestVersion" id=" {{getid($parent.$index,$index)}}" ng-change="validateMessageItem($parent.$index,$index)" /></div>
+                                    </td>
+                                    <td>
+                                        <div class="input-control text"><input type="text" ng-model="item.value" ng-required="true" ng-disabled="!isLatestVersion" /></div>
+                                    </td>
+                                    <td class="text-center" rowspan="2"><a href="" ng-show="isLatestVersion" ng-click="deleteMessageItem($parent.$index,$index)"><span class="icon-cancel fg-red"></span> Delete</a></td>
+                                </tr>
+                                <tr ng-repeat-end ng-show="$parent.$index == GetSelectedIndexInContext()">
+                                    <td colspan="2">
+                                        <label>Message Definition</label>
+                                        <div class="input-control textarea"><textarea ng-model="item.definition" ng-required="true"></textarea></div>
+                                    </td>
+                                </tr>
+                                <tr class="subgroupRow" ng-repeat="subGroup in group.groups" ng-show="$parent.$index == GetSelectedIndexInContext()">
+                                    <th class="text-left" colspan="2"><a href="" ng-click="SelectSubGroupInContext($parent.$index,$index)">{{subGroup.name}}</a></th>
+                                    <th>
+                                        <a href="" title="Delete" ng-show="isLatestVersion" ng-click="deleteSubGroup($parent.$index,$index)"><span class="icon-cancel fg-red"></span> Delete</a>
+                                    </th>
+                                </tr>
+                                <tr class="subgroupRow" ng-show="$index == GetSelectedIndexInContext()">
+                                    <th class="text-left" colspan="3" ng-show="isLatestVersion" ng-click="addNewSubGroup($index)"><span class="icon-plus fg-black"></span> Create subgroup...</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="bottomButtonsContainer">
+                    <div class="button-set place-right">
+                        <button class="last-column" ng-show="isLatestVersion" ng-click="addNewGroup()">Add Group</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

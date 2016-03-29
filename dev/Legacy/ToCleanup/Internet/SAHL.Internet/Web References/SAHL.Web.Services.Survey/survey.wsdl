@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.sahomeloans.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://webservices.sahomeloans.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is the SA Homeloans Survey Web Service.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.sahomeloans.com/">
+      <s:element name="GetClientQuestionnaireByGUID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GUID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientQuestionnaireByGUIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetClientQuestionnaireByGUIDResult" type="tns:ClientQuestionnaire" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ClientQuestionnaire">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GUID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateReceived" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuestionnaireQuestions" type="tns:ArrayOfQuestionnaireQuestion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuestionnaireQuestion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuestionnaireQuestion" type="tns:QuestionnaireQuestion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuestionnaireQuestion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Key" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Sequence" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="QuestionAnswers" type="tns:ArrayOfQuestionnaireAnswer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfQuestionnaireAnswer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="QuestionnaireAnswer" type="tns:QuestionnaireAnswer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="QuestionnaireAnswer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AnswerKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnswerTypeKey" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnswerDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveClientQuestionnaire">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="surveyResult" type="tns:SurveyResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SurveyResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GUID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurveyQuestionAnswers" type="tns:ArrayOfSurveyQuestionAnswer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSurveyQuestionAnswer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SurveyQuestionAnswer" type="tns:SurveyQuestionAnswer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SurveyQuestionAnswer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AnswerKey" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnswerTypeKey" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AnswerValue" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuestionnaireQuestionKey" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SaveClientQuestionnaireResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveClientQuestionnaireResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetClientQuestionnaireByGUIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClientQuestionnaireByGUID" />
+  </wsdl:message>
+  <wsdl:message name="GetClientQuestionnaireByGUIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClientQuestionnaireByGUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveClientQuestionnaireSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveClientQuestionnaire" />
+  </wsdl:message>
+  <wsdl:message name="SaveClientQuestionnaireSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveClientQuestionnaireResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SurveySoap">
+    <wsdl:operation name="GetClientQuestionnaireByGUID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets the ClientQuestionnaire by GUID</wsdl:documentation>
+      <wsdl:input message="tns:GetClientQuestionnaireByGUIDSoapIn" />
+      <wsdl:output message="tns:GetClientQuestionnaireByGUIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveClientQuestionnaire">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Saves the ClientQuestionnaire</wsdl:documentation>
+      <wsdl:input message="tns:SaveClientQuestionnaireSoapIn" />
+      <wsdl:output message="tns:SaveClientQuestionnaireSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SurveySoap" type="tns:SurveySoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientQuestionnaireByGUID">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetClientQuestionnaireByGUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClientQuestionnaire">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SaveClientQuestionnaire" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SurveySoap12" type="tns:SurveySoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientQuestionnaireByGUID">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetClientQuestionnaireByGUID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClientQuestionnaire">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SaveClientQuestionnaire" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Survey">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is the SA Homeloans Survey Web Service.</wsdl:documentation>
+    <wsdl:port name="SurveySoap" binding="tns:SurveySoap">
+      <soap:address location="http://localhost/sahl.web.services/internal/survey.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SurveySoap12" binding="tns:SurveySoap12">
+      <soap12:address location="http://localhost/sahl.web.services/internal/survey.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

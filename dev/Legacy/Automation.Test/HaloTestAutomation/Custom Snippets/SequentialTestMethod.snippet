@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Create Sequential Test Method</Title>
+			<Description>Code snippet for creating an NUnit sequential test method</Description>
+			<Author>AndrewK</Author>
+			<Shortcut>sequential</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+        </Header>
+        <Snippet>
+			<Declarations>
+				<Literal>
+					<ID>methodname</ID>
+					<Default>TestName</Default>
+				</Literal>
+				<Literal>
+					<ID>class</ID>
+				</Literal>
+				<Literal>
+					<ID>columnname</ID>
+				</Literal>
+				<Literal>
+					<ID>type</ID>
+					<Default>string</Default>
+				</Literal>
+				<Literal>
+					<ID>variablename</ID>
+					<Default>variableName</Default>
+				</Literal>
+			</Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+[Test, Sequential, Description("")]
+public void $methodname$(
+	[ValueSource(typeof($class$), "$columnname$")] $type$ $variablename$
+	)
+{
+$selected$ $end$
+}
+				]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

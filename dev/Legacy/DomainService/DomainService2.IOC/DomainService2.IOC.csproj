@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5F17AC0-EC61-4DAC-A076-89237A3D083E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainService2.IOC</RootNamespace>
+    <AssemblyName>DomainService2.IOC</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BdsSoft.DirectoryServices.Linq">
+      <HintPath>..\..\External Binaries\BdsSoft.DirectoryServices.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net">
+      <HintPath>..\..\External Binaries\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.UIProcess">
+      <HintPath>..\..\External Binaries\Microsoft.ApplicationBlocks.UIProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Ninject.3.0.0.15\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\PostSharp.2.1.7.11\lib\net20\PostSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\RabbitMQ.Client\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Service">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Service.Interfaces, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Service.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.X2.BusinessModel.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Common.X2.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Communication">
+      <HintPath>..\..\Internal Binaries\SAHL.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework, Version=1.0.8.107, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainServiceLoader.cs" />
+    <Compile Include="DomainServiceStartable.cs" />
+    <Compile Include="Extensions\DomainServiceExtensions.cs" />
+    <Compile Include="Extensions\Ninject.cs" />
+    <Compile Include="Extensions\NinjectDomainIOC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequiresPostSharp.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainService2.V3.Client\DomainService2.V3.Client.csproj">
+      <Project>{c2fb33f0-39cb-4b44-835f-b5ae160d0207}</Project>
+      <Name>DomainService2.V3.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService2\DomainService2.csproj">
+      <Project>{B0BE20BD-9A3E-4F94-8F4B-370169B16C03}</Project>
+      <Name>DomainService2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\EWorkConnector\EWorkConnector.csproj">
+      <Project>{E189851D-1A73-47D2-BCEB-D553426FB280}</Project>
+      <Name>EWorkConnector</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Cap2\X2DomainService.Interface.Cap2.csproj">
+      <Project>{21296FF1-818B-4A1F-B780-F07977447465}</Project>
+      <Name>X2DomainService.Interface.Cap2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Common\X2DomainService.Interface.Common.csproj">
+      <Project>{B0A86C70-D332-4125-BFCF-3A4AA69F0F2C}</Project>
+      <Name>X2DomainService.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.DebtCounselling\X2DomainService.Interface.DebtCounselling.csproj">
+      <Project>{2A57916A-D755-47A9-9D40-DAEB1BF48CA2}</Project>
+      <Name>X2DomainService.Interface.DebtCounselling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.HelpDesk\X2DomainService.Interface.HelpDesk.csproj">
+      <Project>{CCED1937-BAF2-43C2-B350-3F643260AAB1}</Project>
+      <Name>X2DomainService.Interface.HelpDesk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Life\X2DomainService.Interface.Life.csproj">
+      <Project>{971C8696-85AE-4C99-B244-B3ADA1AFA329}</Project>
+      <Name>X2DomainService.Interface.Life</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.LoanAdjustments\X2DomainService.Interface.LoanAdjustments.csproj">
+      <Project>{05078A97-CF9F-4FCA-A7C1-D867356DEE9B}</Project>
+      <Name>X2DomainService.Interface.LoanAdjustments</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.Origination\X2DomainService.Interface.Origination.csproj">
+      <Project>{D43D729E-30FA-4F45-AA6E-DCE900324913}</Project>
+      <Name>X2DomainService.Interface.Origination</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainService\X2DomainService.Interface.PersonalLoan\X2DomainService.Interface.PersonalLoan.csproj">
+      <Project>{73F0738E-0918-4681-B8D2-82A1B2FE785E}</Project>
+      <Name>X2DomainService.Interface.PersonalLoan</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+      robocopy "$(ProjectDir)bin\$(ConfigurationName)" "$(SolutionDir)\DomainServiceBinaries" $(ProjectName).dll $(ProjectName).pdb /XO /NJH /NP
+      if %25errorlevel%25 GEQ 2 goto BuildEventFailed
+      if %25errorlevel%25 LEQ 1 goto end
+      :BuildEventFailed echo FILECOPY for $(ProjectName) FAILED
+      exit 1
+      :end echo FILECOPY for $(ProjectName) COMPLETED OK
+      exit 0
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets" Condition="Exists('..\..\External%20Binaries\NuGet\PostSharp.2.1.7.11\tools\PostSharp.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

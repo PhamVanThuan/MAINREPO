@@ -1,0 +1,1 @@
+powershell.exe %cd%\BuildWorkingMaps.ps1 -BuildServerMode "false" -NugetPullApiUrl "F:\git\dev-g\DeployPackages"

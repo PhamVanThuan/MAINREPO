@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="837541f6-8abb-4afb-bd1b-305e9281e734" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9001/SAHL/Services/DomainProcessManager" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DomainProcessManagerService.wsdl" MetadataType="Wsdl" ID="ab727360-9077-4dfa-b8f8-aaef6f5aaaff" SourceId="1" SourceUrl="http://localhost:9001/SAHL/Services/DomainProcessManager?wsdl" />
+    <MetadataFile FileName="DomainProcessManager.xsd" MetadataType="Schema" ID="2fde04c6-52d4-4c72-bdf4-5238dc85e1f9" SourceId="1" SourceUrl="http://localhost:9001/SAHL/Services/DomainProcessManager?xsd=xsd2" />
+    <MetadataFile FileName="DomainProcessManager1.xsd" MetadataType="Schema" ID="9fd89ec1-f520-4598-b1a8-ab0880c43b2a" SourceId="1" SourceUrl="http://localhost:9001/SAHL/Services/DomainProcessManager?xsd=xsd3" />
+    <MetadataFile FileName="DomainProcessManager2.xsd" MetadataType="Schema" ID="64fe0f0e-abe0-48fd-876f-fa2bd5a6bcbb" SourceId="1" SourceUrl="http://localhost:9001/SAHL/Services/DomainProcessManager?xsd=xsd0" />
+    <MetadataFile FileName="DomainProcessManager3.xsd" MetadataType="Schema" ID="5476ae56-bd4e-4ba1-88d0-a9391b224613" SourceId="1" SourceUrl="http://localhost:9001/SAHL/Services/DomainProcessManager?xsd=xsd1" />
+    <MetadataFile FileName="DomainProcessManager4.xsd" MetadataType="Schema" ID="51c976ab-6535-45d5-9ea2-ad359f658482" SourceId="1" SourceUrl="http://localhost:9001/SAHL/Services/DomainProcessManager?xsd=xsd4" />
+    <MetadataFile FileName="DomainProcessManager.disco" MetadataType="Disco" ID="9b9bf0d3-333d-4044-964e-bfbb44434bcb" SourceId="1" SourceUrl="http://localhost:9001/SAHL/Services/DomainProcessManager?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,22 @@
+﻿@model SAHL.Core.UI.Elements.Menus.MenuBarRibbonElement
+<div class="menu-bar scrollable-container" id="@Model.Id">
+    <div class="scrollable-wrapper">
+        <div class="scrollable-inner-container scrollable-inner-container-right scrollable-inner-container-left container-left container-right">
+            <ul class="nav nav-pills scrollable-contents">
+
+                @foreach (var ribbonMenuItemElement in Model.RibbonMenuItemElements)
+                {
+                    @Html.DisplayForModel(x => ribbonMenuItemElement)
+                }
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="scrollable-controls scrollable-controls-left">
+        <i class="scrollable-back  scrollable-control icon-angle-left"></i>
+    </div>
+    <div class="scrollable-controls  scrollable-controls-right ">
+        <i class="scrollable-forward scrollable-control icon-angle-right"></i>
+    </div>
+</div>

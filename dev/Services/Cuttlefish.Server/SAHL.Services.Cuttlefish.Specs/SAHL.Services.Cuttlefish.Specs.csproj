@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84D93170-9B1B-4565-B4F0-0DF0C7D21D58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Cuttlefish.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.Cuttlefish.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\RabbitMQ.Client\lib\net40\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsumerFactorySpecs\when_creating_a_consumer.cs" />
+    <Compile Include="Fakes\FakeConnection.cs" />
+    <Compile Include="Fakes\FakeConsumer.cs" />
+    <Compile Include="Fakes\FakeConsumerFactory.cs" />
+    <Compile Include="Fakes\FakeConsumerWorker.cs" />
+    <Compile Include="Fakes\FakeCuttlefishServiceConfiguration.cs" />
+    <Compile Include="Fakes\FakeDataAccessConfigurationProvider.cs" />
+    <Compile Include="Fakes\FakeConnectionFactory.cs" />
+    <Compile Include="Fakes\FakeMessageBusConfigurationProvider.cs" />
+    <Compile Include="LogMessageTypeConvertorSpecs\when_converting_logmessage_type_that_is_unknown.cs" />
+    <Compile Include="LogMessageTypeConvertorSpecs\when_converting_logmessage_type_4.cs" />
+    <Compile Include="LogMessageTypeConvertorSpecs\when_converting_logmessage_type_3.cs" />
+    <Compile Include="LogMessageTypeConvertorSpecs\when_converting_logmessage_type_2.cs" />
+    <Compile Include="LogMessageTypeConvertorSpecs\when_converting_logmessage_type_1.cs" />
+    <Compile Include="LogMessageWorkerSpecs\when_processing_a_log_message_without_parameters.cs" />
+    <Compile Include="LogMessageWriterSpecs\when_writing_a_log_message_with_two_parameters.cs" />
+    <Compile Include="LogMessageWriterSpecs\when_writing_a_log_message_with_no_parameters.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ConsumerManagerSpecs\when_starting_a_number_of_consumers_of_multiple_types.cs" />
+    <Compile Include="ConsumerManagerSpecs\when_starting_a_number_of_consumers_of_one_type.cs" />
+    <Compile Include="ConsumerManagerSpecs\when_stopping_all_consumers_of_multiple_types.cs" />
+    <Compile Include="ConsumerManagerSpecs\when_stopping_all_consumers_of_one_type.cs" />
+    <Compile Include="QueueConsumerSpecs\when_consuming_a_queue_message_with_errors.cs" />
+    <Compile Include="QueueConsumerSpecs\when_consuming_a_queue_message_without_errors.cs" />
+    <Compile Include="ServiceSpecs\when_stopping_the_service.cs" />
+    <Compile Include="ServiceSpecs\when_starting_the_service.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.Cuttlefish\SAHL.Services.Cuttlefish.csproj">
+      <Project>{ddb8acab-10e0-467d-8815-6ab09deb40d4}</Project>
+      <Name>SAHL.Services.Cuttlefish</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ConfigurationProviderSpecs\" />
+    <Folder Include="QueueInstanceFactorySpecs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

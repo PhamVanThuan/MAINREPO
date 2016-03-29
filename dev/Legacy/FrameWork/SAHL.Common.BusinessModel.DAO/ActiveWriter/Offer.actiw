@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="2b51cd84-84ef-4953-8183-e1ca111339ce" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Offer" lazy="true" schema="dbo" table="Offer">
+      <targets>
+        <manyToOneRelation Id="f35ae603-70d6-4089-825c-9e13c5adf1f7" targetColumnKey="OfferCampaignKey" targetTable="Offer" targetPropertyName="Offers" sourceColumn="OfferCampaignKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferCampaign" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="f1e6e0d1-6e3e-4ae8-b2f0-421dfb2ef3b6" targetColumnKey="OfferStatusKey" targetTable="Offer" targetPropertyName="Offers" sourceColumn="OfferStatusKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferStatus" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="ec3e8bf2-53c8-48cb-b203-b40db53b84e8" targetColumnKey="OfferTypeKey" targetTable="Offer" targetPropertyName="Offers" sourceColumn="OfferTypeKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="8ccdab8b-e401-499e-9571-9896aa2067ca" name="OfferStartDate" column="OfferStartDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="96863106-66b7-405c-8f87-35f58a0d4f19" name="OfferEndDate" column="OfferEndDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="ba7f0da9-4898-4faa-b15b-bec49443b872" name="VoiceRecorded" column="VoiceRecorded" columnType="Boolean" length="0" />
+        <modelProperty Id="05ce9a9b-85e7-4247-a51d-a0bd844aca6c" name="AccountKey" column="AccountKey" columnType="Int32" length="0" />
+        <modelProperty Id="2995fcf2-0585-4df7-9501-ab4c64ae5e6d" name="Reference" column="Reference" length="0" />
+        <modelProperty Id="774d22ad-1a17-472f-8280-87b4f75d9cde" name="OfferKey" column="OfferKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferAttribute" lazy="true" schema="dbo" table="OfferAttribute">
+      <targets>
+        <manyToOneRelation Id="ee3df92f-c246-4629-a659-da950e61eaee" targetColumnKey="OfferAttributeTypeKey" targetTable="OfferAttribute" targetPropertyName="OfferAttributes" sourceColumn="OfferAttributeTypeKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferAttributeType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="9457f250-007d-48d6-963e-4b79312efc3a" name="OfferKey" column="OfferKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="ee0320ae-b839-48cd-afff-8504c0e53068" name="OfferAttributeKey" column="OfferAttributeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferAttributeType" lazy="true" schema="dbo" table="OfferAttributeType">
+      <properties>
+        <modelProperty Id="462ea01d-3641-46c4-9024-97be78458ee8" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="c4d46081-4239-4cb4-9779-ea701965029c" name="OfferAttributeTypeKey" column="OfferAttributeTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferCampaign" lazy="true" schema="dbo" table="OfferCampaign">
+      <properties>
+        <modelProperty Id="70554a8c-b5b7-428e-aa33-132bf14efb6f" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="b0230e80-6b09-4436-8405-1b1e7023212e" name="StartDate" column="StartDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="64318b8a-5e3c-48a8-bd59-df01174fd7d9" name="OfferCampaignKey" column="OfferCampaignKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferCampaignDetail" lazy="true" schema="dbo" table="OfferCampaignDetail">
+      <targets>
+        <manyToOneRelation Id="5b985378-ae01-4b0a-b714-ec47f339ed76" targetColumnKey="OfferKey" targetTable="OfferCampaignDetail" targetPropertyName="OfferCampaignDetails" sourceColumn="OfferKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/Offer" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="4314f560-d93e-4fec-a576-a0712c74c6e4" name="ContactName" column="ContactName" length="0" />
+        <modelProperty Id="90fba057-d83e-43a9-8ecb-bf32c9a26e10" name="ContactNumber" column="ContactNumber" length="0" />
+        <modelProperty Id="5acd3d6d-8b4c-4f48-8a13-6acb2632c242" name="IDNumber" column="IDNumber" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferCondition" lazy="true" schema="dbo" table="OfferCondition">
+      <targets>
+        <manyToOneRelation Id="00e294ac-2677-4019-a59d-782b1fc0dbf8" targetColumnKey="OfferKey" targetTable="OfferCondition" targetPropertyName="OfferConditions" sourceColumn="OfferKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/Offer" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="1d45b2f5-56ab-437c-ad2d-483cc58ff6d4" name="ConditionKey" column="ConditionKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="50e9d729-d647-4b7e-b69e-9f2091c52326" name="TranslatableItemKey" column="TranslatableItemKey" columnType="Int32" length="0" />
+        <modelProperty Id="6473e9a9-ca5e-488d-988f-79e12823a405" name="OfferConditionKey" column="OfferConditionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferConditionToken" lazy="true" schema="dbo" table="OfferConditionToken">
+      <targets>
+        <manyToOneRelation Id="bd872a25-4cc7-4f4b-b3ea-e252137c63c6" targetColumnKey="OfferConditionKey" targetTable="OfferConditionToken" targetPropertyName="OfferConditionTokens" sourceColumn="OfferConditionKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferCondition" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="c4d43aac-9937-4ff4-bf91-06eaf3e13b81" name="TokenKey" column="TokenKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="d115bb36-c314-446d-9374-c3d37bd08a6a" name="TranslatableItemKey" column="TranslatableItemKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="6c3154b3-e771-4e9c-b6b5-59c6d51c0d88" name="TokenValue" column="TokenValue" length="0" />
+        <modelProperty Id="0fde89bd-16d7-4fc1-b849-83ae283b9915" name="OfferConditionTokenKey" column="OfferConditionTokenKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferException" lazy="true" schema="dbo" table="OfferException">
+      <targets>
+        <manyToOneRelation Id="4b91458c-ac64-4e8f-8f09-35226f8aebf7" targetColumnKey="OfferExceptionTypeKey" targetTable="OfferException" targetPropertyName="OfferExceptions" sourceColumn="OfferExceptionTypeKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferExceptionType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="9318fd84-5e9f-4a2d-bc58-c74ec7da6b3e" name="OfferKey" column="OfferKey" columnType="Int32" length="0" />
+        <modelProperty Id="33bf2717-0b7f-4829-bbea-58d95df5cb47" name="OverRidden" column="OverRidden" columnType="Boolean" length="0" />
+        <modelProperty Id="e7880e40-4c78-45ff-a387-c4b9f0306d6e" name="OfferExceptionKey" column="OfferExceptionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferExceptionType" lazy="true" schema="dbo" table="OfferExceptionType">
+      <targets>
+        <manyToOneRelation Id="d1a25453-bb3a-48e0-9fbc-e9342e653c9e" targetColumnKey="OfferExceptionTypeGroupKey" targetTable="OfferExceptionType" targetPropertyName="OfferExceptionTypes" sourceColumn="OfferExceptionTypeGroupKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferExceptionTypeGroup" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="ac2af964-5e6f-4cda-b2b7-39ab5fc5cd75" name="Description" column="Description" length="0" />
+        <modelProperty Id="b947aa1e-ee02-4719-824d-76972ba0e5dc" name="OfferExceptionTypeKey" column="OfferExceptionTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferExceptionTypeGroup" lazy="true" schema="dbo" table="OfferExceptionTypeGroup">
+      <properties>
+        <modelProperty Id="1fa3b6b1-3856-41e2-902d-e4e5b1ece72a" name="Description" column="Description" length="0" />
+        <modelProperty Id="35e7bd04-3a35-4c88-9eba-d24bb667387a" name="OfferExceptionTypeGroupKey" column="OfferExceptionTypeGroupKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferInformation" lazy="true" schema="dbo" table="OfferInformation">
+      <targets>
+        <manyToOneRelation Id="00f32bdc-9d77-4534-8fd0-02052370de24" targetColumnKey="OfferInformationTypeKey" targetTable="OfferInformation" targetPropertyName="OfferInformations" sourceColumn="OfferInformationTypeKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferInformationType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="175acca3-dd4c-4f9a-8a79-8183d2dfd2d8" name="OfferInsertDate" column="OfferInsertDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="ee711515-7c16-4d4f-90eb-e55ea506edc4" name="OfferKey" column="OfferKey" columnType="Int32" length="0" />
+        <modelProperty Id="7cfbd451-0006-4d7d-ad54-3fdca86d0e7a" name="SPVKey" column="SPVKey" columnType="Int32" length="0" />
+        <modelProperty Id="9e76c46a-f64b-4845-aaa1-9d55d0bb5781" name="CreditApprovedQuickCash" column="CreditApprovedQuickCash" columnType="Double" length="0" />
+        <modelProperty Id="2622c828-d0e5-4682-8a58-1614dee6554c" name="Memo" column="Memo" length="0" />
+        <modelProperty Id="eb99e9fd-b2ba-4edd-a7f5-1446045fb706" name="EmploymentTypeKey" column="EmploymentTypeKey" columnType="Int32" length="0" />
+        <modelProperty Id="2011d975-3ecf-4082-adac-d9ef1ae752f7" name="UserName" column="UserName" length="0" />
+        <modelProperty Id="03dfdaa4-9b4b-4c95-9913-50eb50d0cd49" name="OfferInformationKey" column="OfferInformationKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferInformationCashUpFront" lazy="true" schema="dbo" table="OfferInformationCashUpFront">
+      <targets>
+        <manyToOneRelation Id="c8d5622a-e1bf-4083-a8af-d33f3a2ad75f" targetColumnKey="OfferInformationKey" targetTable="OfferInformationCashUpFront" targetPropertyName="OfferInformationCashUpFronts" sourceColumn="OfferInformationKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferInformation" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="4b42c3b8-3746-4bdf-a8ff-13cf8ecdcca7" name="InterestRate" column="InterestRate" columnType="Double" length="0" />
+        <modelProperty Id="4df84180-1621-4840-860c-96e9c407c6c5" name="Term" column="Term" columnType="Int32" length="0" />
+        <modelProperty Id="4aa41666-b544-4856-ae58-f048f7e734e1" name="MarginKey" column="MarginKey" columnType="Int32" length="0" />
+        <modelProperty Id="5f22037a-9425-4d91-a3fa-d5223137f855" name="MarketRateKey" column="MarketRateKey" columnType="Int32" length="0" />
+        <modelProperty Id="2a3380de-ceb9-4808-98f7-c09b206f6db3" name="CreditApprovedAmount" column="CreditApprovedAmount" columnType="Double" length="0" />
+        <modelProperty Id="7874b76e-722d-4c85-a8f9-ef4943069ce8" name="RequestedAmount" column="RequestedAmount" columnType="Double" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferInformationQuickCash" lazy="true" schema="dbo" table="OfferInformationQuickCash">
+      <targets>
+        <manyToOneRelation Id="690f4951-4ba8-46f6-a654-edd699b5af18" targetColumnKey="OfferInformationKey" targetTable="OfferInformationQuickCash" targetPropertyName="OfferInformationQuickCashes" sourceColumn="OfferInformationKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferInformation" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="453a1241-429f-4efd-91f8-f7324cb78378" name="InterestRate" column="InterestRate" columnType="Double" length="0" />
+        <modelProperty Id="bd2fc5b3-4f9b-495f-813d-a55c05c0dbdd" name="Term" column="Term" columnType="Int32" length="0" />
+        <modelProperty Id="f707a57f-4ded-46d6-9033-f0f9d5e3a1d3" name="MarginKey" column="MarginKey" columnType="Int32" length="0" />
+        <modelProperty Id="a9bf3d0e-3ec8-4f45-a6f9-326f6082d70f" name="MarketRateKey" column="MarketRateKey" columnType="Int32" length="0" />
+        <modelProperty Id="356a419a-20d6-42af-b76a-8c1f01e15f98" name="CreditApprovedAmount" column="CreditApprovedAmount" columnType="Double" length="0" />
+        <modelProperty Id="12cd5aaa-abf7-4ec6-a8b2-2c57c3818028" name="RequestedAmount" column="RequestedAmount" columnType="Double" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferInformationRateOverride" lazy="true" schema="dbo" table="OfferInformationRateOverride">
+      <targets>
+        <manyToOneRelation Id="1a03d134-8160-4418-9bfe-862f67378274" targetColumnKey="OfferInformationKey" targetTable="OfferInformationRateOverride" targetPropertyName="OfferInformationRateOverrides" sourceColumn="OfferInformationKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferInformation" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="bb45b8cc-e365-406e-9f87-dc6f243c50c8" name="FromDate" column="FromDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="1cb604b6-59cf-4e54-887b-4b32968a3455" name="Term" column="Term" columnType="Int32" length="0" />
+        <modelProperty Id="286ec018-ef5c-4c42-866a-d1a9d9d0b6d8" name="CapRate" column="CapRate" columnType="Double" length="0" />
+        <modelProperty Id="b8208676-1547-499e-9683-97dc25ee9fa4" name="FloorRate" column="FloorRate" columnType="Double" length="0" />
+        <modelProperty Id="565dd1ef-f1df-461d-9d6b-c00086cd60d2" name="FixedRate" column="FixedRate" columnType="Double" length="0" />
+        <modelProperty Id="ec256186-839a-4d94-8551-af5e9e741e96" name="Discount" column="Discount" columnType="Double" length="0" />
+        <modelProperty Id="ef0e8c44-0931-4a2e-8d05-b75754b164c2" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="146b3ff0-7cda-4596-9378-9099cf1b0edb" name="OfferInformationRateOverrideKey" column="OfferInformationRateOverrideKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferInformationType" lazy="true" schema="dbo" table="OfferInformationType">
+      <properties>
+        <modelProperty Id="a6afd887-5362-4513-9f18-b5adfa347cd2" name="Description" column="Description" length="0" />
+        <modelProperty Id="ec332ac5-64c8-4a0b-9590-c10ba1f02afe" name="OfferInformationTypeKey" column="OfferInformationTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferInformationVariableLoan" lazy="true" schema="dbo" table="OfferInformationVariableLoan">
+      <targets>
+        <manyToOneRelation Id="2ac05b6c-dae4-481c-9ee2-6471c9baf705" targetColumnKey="OfferInformationKey" targetTable="OfferInformationVariableLoan" targetPropertyName="OfferInformationVariableLoans" sourceColumn="OfferInformationKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferInformation" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="60761cc0-a591-40ff-9ba6-482d1ec3dcb3" name="CategoryKey" column="CategoryKey" columnType="Int32" length="0" />
+        <modelProperty Id="a100b023-bd96-48a6-8234-88f068fc3810" name="Term" column="Term" columnType="Int32" length="0" />
+        <modelProperty Id="f6d8c683-831e-48ae-ad66-7dd03fa7575d" name="MarginKey" column="MarginKey" columnType="Int32" length="0" />
+        <modelProperty Id="b421b9dc-9b34-4fd0-8fe2-ef36e50956fa" name="MarketRateKey" column="MarketRateKey" columnType="Int32" length="0" />
+        <modelProperty Id="0ba70ab8-49f2-421e-831e-bf69c332cfaf" name="ExistingLoan" column="ExistingLoan" columnType="Double" length="0" />
+        <modelProperty Id="964cb3b8-9cef-476e-ab30-6861764c404c" name="CashDeposit" column="CashDeposit" columnType="Double" length="0" />
+        <modelProperty Id="4feef386-6b39-4acb-a44b-4131a57720cd" name="PropertyValuation" column="PropertyValuation" columnType="Double" length="0" />
+        <modelProperty Id="cd1ec382-99fe-4717-bcd3-5e61cb5184a8" name="HouseholdIncome" column="HouseholdIncome" columnType="Double" length="0" />
+        <modelProperty Id="701c1d6e-088d-4fc7-b1c1-bf4cf5627dea" name="FeesTotal" column="FeesTotal" columnType="Double" length="0" />
+        <modelProperty Id="83fe9afc-10cc-47f8-ba7e-8bbf63a3cb07" name="InterimInterest" column="InterimInterest" columnType="Double" length="0" />
+        <modelProperty Id="2f9565ff-0483-4f8c-ad34-061862fe96e3" name="MonthlyInstalment" column="MonthlyInstalment" columnType="Double" length="0" />
+        <modelProperty Id="9298da20-e38a-4070-afac-77c679a85c69" name="LifePremium" column="LifePremium" columnType="Double" length="0" />
+        <modelProperty Id="ba9113e7-d2cf-4d2d-ae2f-f02a06695ff9" name="HOCPremium" column="HOCPremium" columnType="Double" length="0" />
+        <modelProperty Id="687c560b-3335-4e84-b832-90a21153db08" name="MinLoanRequired" column="MinLoanRequired" columnType="Double" length="0" />
+        <modelProperty Id="ac6af2ab-4049-4ea4-b5f0-0d505fbf7fdf" name="MinBondRequired" column="MinBondRequired" columnType="Double" length="0" />
+        <modelProperty Id="e2bca62c-2e82-46ae-8e8b-67dcc93844fb" name="PreApprovedAmount" column="PreApprovedAmount" columnType="Double" length="0" />
+        <modelProperty Id="b1ff0dc6-87ea-42af-9a93-74e106366145" name="MinCashAllowed" column="MinCashAllowed" columnType="Double" length="0" />
+        <modelProperty Id="1cb12dda-2805-4257-bf37-6f69a8c98112" name="MaxCashAllowed" column="MaxCashAllowed" columnType="Double" length="0" />
+        <modelProperty Id="2bc56221-23ec-499c-b420-6dfb35df390b" name="RequestedCashAmount" column="RequestedCashAmount" columnType="Double" length="0" />
+        <modelProperty Id="0357d77b-ecd5-429e-8378-bc31388d3c33" name="LoanAgreementAmount" column="LoanAgreementAmount" columnType="Double" length="0" />
+        <modelProperty Id="57590ba3-e23e-4baa-aee5-2b44fafe0a69" name="BondToRegister" column="BondToRegister" columnType="Double" length="0" />
+        <modelProperty Id="98d2d218-ed26-4fdb-813f-4fa3d41cd49d" name="LTV" column="LTV" columnType="Double" length="0" />
+        <modelProperty Id="1af0e7a2-a508-4329-9c60-32be19482cc2" name="PTI" column="PTI" columnType="Double" length="0" />
+        <modelProperty Id="c3ffdf26-63f0-4d85-8091-9a7eb3fbcef9" name="MarketRate" column="MarketRate" columnType="Double" length="0" />
+        <modelProperty Id="af604f7c-a1aa-4ff0-ac33-24069d122b8c" name="SPVKey" column="SPVKey" columnType="Int32" length="0" />
+        <modelProperty Id="d1e9754b-1627-485f-a75d-51c9a6c767f6" name="EmploymentTypeKey" column="EmploymentTypeKey" columnType="Int32" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferMortgageLoan" lazy="true" schema="dbo" table="OfferMortgageLoan">
+      <targets>
+        <manyToOneRelation Id="fdafb53d-6925-42a9-9c4f-6102352eafb0" targetColumnKey="OfferKey" targetTable="OfferMortgageLoan" targetPropertyName="OfferMortgageLoans" sourceColumn="OfferKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/Offer" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="c3bdd307-642a-423b-bfc0-ae0289f986dd" name="OfferAmount" column="OfferAmount" columnType="Double" length="0" />
+        <modelProperty Id="d1157ae4-9122-41e5-a397-0ea1b8afac72" name="MortgageLoanPurposeKey" column="MortgageLoanPurposeKey" columnType="Int32" length="0" />
+        <modelProperty Id="2dbce56d-43d8-4183-a4d5-d2b46f618909" name="ApplicantTypeKey" column="ApplicantTypeKey" columnType="Int32" length="0" />
+        <modelProperty Id="428fcb4a-0ec7-4d06-b970-db1421d7cbcf" name="NumApplicants" column="NumApplicants" columnType="Int32" length="0" />
+        <modelProperty Id="9d01e3e9-984f-4cbc-95e5-a50e88b84206" name="CreditVerification" column="CreditVerification" columnType="Boolean" length="0" />
+        <modelProperty Id="1747c34b-6f4b-453e-b76b-a7efef81e5a9" name="HomePurchaseDate" column="HomePurchaseDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="5399f9ff-62cd-4a6c-b931-53fac103f2b7" name="BondRegistrationDate" column="BondRegistrationDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="59d8f509-4210-48d3-bd94-9774e806dd2d" name="CurrentBondValue" column="CurrentBondValue" columnType="Double" length="0" />
+        <modelProperty Id="e43ed33f-f052-46d5-b3b4-5d2d5a9ec164" name="DeedsOfficeDate" column="DeedsOfficeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="e0ebb0b5-d433-4f51-a402-58c4369da3da" name="BondFinancialInstitution" column="BondFinancialInstitution" length="0" />
+        <modelProperty Id="95feb44c-99ab-48fc-b87d-d03f53d5c18f" name="PurchasePrice" column="PurchasePrice" columnType="Double" length="0" />
+        <modelProperty Id="5cf7a196-aa3e-498d-977e-bd302b0ac92f" name="ResetConfigurationKey" column="ResetConfigurationKey" columnType="Int32" length="0" />
+        <modelProperty Id="f5b6f8d1-1558-4f0a-858f-bfea7edfa50b" name="AttorneyKey" column="AttorneyKey" columnType="Int32" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferStatus" lazy="true" schema="dbo" table="OfferStatus">
+      <properties>
+        <modelProperty Id="fa0c34e3-14be-4ae8-a243-a5355fe51455" name="Description" column="Description" length="0" />
+        <modelProperty Id="4ec8acf5-6652-4c6c-8079-dd8e667f7ecf" name="OfferStatusKey" column="OfferStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferType" lazy="true" schema="dbo" table="OfferType">
+      <properties>
+        <modelProperty Id="08211add-640b-431a-8933-e501d18c5306" name="Description" column="Description" length="0" />
+        <modelProperty Id="1e449880-bcf9-419b-b096-fa9e9485f4fb" name="OfferTypeKey" column="OfferTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferLife" schema="dbo" table="OfferLife">
+      <targets>
+        <manyToOneRelation Id="3dea6d81-ca69-4680-a78a-0798a4ce723c" targetColumnKey="OfferKey" sourceColumn="OfferKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/Offer" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="4f01e0c2-40fd-42d4-8131-d036741c2c9a" name="OfferKey" column="OfferKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="ac911117-22ec-4d03-b6ad-2283ddf866d9" name="DeathBenefit" column="DeathBenefit" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="3c9e97bd-e428-41c6-a3a9-fe5a8a135ea6" name="InstallmentProtectionBenefit" column="InstallmentProtectionBenefit" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="9cfb8a13-aa52-452c-b975-9c4b39f2e544" name="DeathBenefitPremium" column="DeathBenefitPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="33891816-e75f-4e79-9763-71bcc490aee5" name="InstallmentProtectionPremium" column="InstallmentProtectionPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="a20d5662-198d-4d8e-9aa3-c90573c7208d" name="DateOfExpiry" column="DateOfExpiry" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="44cbf711-d00b-40b7-beec-3c262c0f3589" name="UpliftFactor" column="UpliftFactor" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="cd07af34-0a0c-4b53-9ed7-e9903155bb03" name="JointDiscountFactor" column="JointDiscountFactor" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="005fd3f7-b948-4567-8ebd-7c97cb725e75" name="MonthlyPremium" column="MonthlyPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="b4d04592-b311-47c5-873e-8cabcf883076" name="YearlyPremium" column="YearlyPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="c04a5ac6-d99e-4234-99a2-7cff54554cc1" name="SumAssured" column="SumAssured" columnType="Double" length="0" />
+        <modelProperty Id="669e65b7-d2a1-47bd-9837-e4155bea23ec" name="DateLastUpdated" column="DateLastUpdated" columnType="Timestamp" length="0" />
+        <modelProperty Id="7d2cabab-ffee-4c3f-a368-dd73ff9db57d" name="Consultant" column="Consultant" length="0" />
+        <modelProperty Id="bf9d88df-25a4-4c57-88db-ed8460591f15" name="CurrentSumAssured" column="CurrentSumAssured" columnType="Double" length="0" />
+        <modelProperty Id="b149b37d-0847-4189-b5db-9edc6c0c74d0" name="PremiumShortfall" column="PremiumShortfall" columnType="Double" length="0" />
+        <modelProperty Id="d2d55969-b842-4f41-9837-984948bd64bc" name="InsurerKey" column="InsurerKey" columnType="Int32" length="0" />
+        <modelProperty Id="59ed85c5-cbaa-490f-a419-67541a40a0f3" name="ExternalPolicyNumber" column="ExternalPolicyNumber" length="0" />
+        <modelProperty Id="af0ec5ad-6926-44eb-9bb9-5853b123041f" name="DateCeded" column="DateCeded" columnType="Timestamp" length="0" />
+        <modelProperty Id="a6775907-6e06-42aa-891d-6e9b348579f9" name="PriorityKey" column="PriorityKey" columnType="Int32" length="0" />
+        <modelProperty Id="d619fed6-da38-4c94-a8dd-19b2073ec7fe" name="PolicyHolderLEKey" column="PolicyHolderLEKey" columnType="Int32" length="0" />
+        <modelProperty Id="830ff9e6-a70c-41c1-957f-d23a28d4f93f" name="RPARInsurer" column="RPARInsurer" length="0" />
+        <modelProperty Id="a41b634e-c80a-4371-a2c2-867ad5522103" name="RPARPolicyNumber" column="RPARPolicyNumber" length="0" />
+        <modelProperty Id="bbd3d65f-a84e-4c43-bc35-bda300ba89a7" name="BrokerKey" column="BrokerKey" columnType="Int32" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="ApplicantType" schema="dbo" table="ApplicantType">
+      <properties>
+        <modelProperty Id="68b4d8fb-7af7-4270-9027-f172c92bdaf9" name="Description" column="Description" length="0" />
+        <modelProperty Id="c7a402f9-df19-408d-8eaf-7053fe62d884" name="ApplicantTypeKey" column="ApplicantTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferSource" schema="dbo" table="OfferSource">
+      <properties>
+        <modelProperty Id="7e517f84-6698-4c28-ac2b-f829a2d2db79" name="Description" column="Description" length="0" />
+        <modelProperty Id="f2467b98-3166-493d-aca1-db33f1d558a8" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="7aa4f891-8f61-4e1a-9eb7-3afefed2a266" name="OfferSourceKey" column="OfferSourceKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferMailingAddress" schema="dbo" table="OfferMailingAddress">
+      <properties>
+        <modelProperty Id="a3713cf0-1118-4c92-98be-ddbbfc638dd1" name="OfferKey" column="OfferKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1b0fa7a3-e3c7-4202-ba31-76acdaf96a40" name="AddressKey" column="AddressKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="83963766-3417-442d-b274-1bbdc5d8473b" name="OnlineStatement" column="OnlineStatement" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="e3e3276b-f208-4fe7-86d3-dd5a0516cd5a" name="OnlineStatementFormatKey" column="OnlineStatementFormatKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="830d0928-fc4c-484a-807d-bd63f056fa34" name="LanguageKey" column="LanguageKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="99bf80c5-9543-4134-b70d-4a80375477e9" name="OfferMailingAddressKey" column="OfferMailingAddressKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferRole" schema="dbo" table="OfferRole">
+      <properties>
+        <modelProperty Id="bac75e9d-9458-4dc4-9b28-d92a7a8f14c3" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="215dab8f-f4f5-4c50-891f-cc50677f01a7" name="OfferKey" column="OfferKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="b12856ba-8d11-41e3-993c-c83c67f726ad" name="OfferRoleTypeKey" column="OfferRoleTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="05fea306-e9df-4120-bac5-987dc1febe16" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="8c89c73c-64cf-433c-a81d-f50ad2731831" name="StatusChangeDate" column="StatusChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="3dc4ef83-0c7c-4446-9120-8e7a37dd41b3" name="OfferRoleKey" column="OfferRoleKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferRoleAttribute" schema="dbo" table="OfferRoleAttribute">
+      <targets>
+        <manyToOneRelation Id="e410358a-1b90-4824-96c7-e639a4955eca" targetColumnKey="OfferRoleKey" targetTable="OfferRoleAttribute" targetPropertyName="OfferRoleAttributes" sourceColumn="OfferRoleKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferRole" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="57263528-1e8e-46ed-a1bd-15ce5cc82313" targetColumnKey="OfferRoleAttributeTypeKey" targetTable="OfferRoleAttribute" targetPropertyName="OfferRoleAttributes" sourceColumn="OfferRoleAttributeTypeKey">
+          <modelClassMoniker name="/2b51cd84-84ef-4953-8183-e1ca111339ce/OfferRoleAttributeType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="f669056a-8ab2-4f52-b46c-796ef86ba235" name="OfferRoleAttributeKey" column="OfferRoleAttributeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="OfferRoleAttributeType" schema="dbo" table="OfferRoleAttributeType">
+      <properties>
+        <modelProperty Id="96c6747c-8a13-4d35-a658-35812928d942" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="108c6399-12e9-45e5-82c7-ce2bc851d3d9" name="OfferRoleAttributeTypeKey" column="OfferRoleAttributeTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

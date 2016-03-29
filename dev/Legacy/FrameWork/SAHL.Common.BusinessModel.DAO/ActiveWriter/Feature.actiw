@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="c4d5ff49-ae6c-40ad-8622-cc19b8b3a5e6" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Feature" schema="dbo" table="Feature">
+      <targets>
+        <manyToOneRelation Id="6827b11b-93a7-4bfb-9684-7002681f27cb" targetColumnKey="ParentKey" targetTable="Feature" targetPropertyName="Features" sourceColumn="ParentKey">
+          <modelClassMoniker name="/c4d5ff49-ae6c-40ad-8622-cc19b8b3a5e6/Feature" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="e0dd0301-c1e8-4ecd-99ef-0d1dfc7c3cf9" name="ShortName" column="ShortName" length="0" notNull="true" />
+        <modelProperty Id="ae9f831c-0cc3-4945-a789-67b26e544150" name="LongName" column="LongName" length="0" notNull="true" />
+        <modelProperty Id="0160a1f0-6253-4989-9ed7-7fc385530b3d" name="HasAccess" column="HasAccess" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="bb481524-997f-49c8-9dc4-4b0ee11ac7c9" name="Sequence" column="Sequence" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="fbbfb85d-748f-40c2-9846-603a1228bbf3" name="FeatureKey" column="FeatureKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

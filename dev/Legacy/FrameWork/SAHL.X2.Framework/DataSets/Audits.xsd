@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Audits" targetNamespace="http://tempuri.org/Audits.xsd" xmlns:mstns="http://tempuri.org/Audits.xsd" xmlns="http://tempuri.org/Audits.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AuditsConnectionString" IsAppSettingsProperty="True" Modifier="Assembly" Name="AuditsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SAHL.X2.Framework.Properties.Settings.GlobalReference.Default.WarehouseConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Audits" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Audits" msprop:Generator_DataSetName="Audits">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Audits" msprop:Generator_UserTableName="Audits" msprop:Generator_RowDeletedName="AuditsRowDeleted" msprop:Generator_RowChangedName="AuditsRowChanged" msprop:Generator_RowClassName="AuditsRow" msprop:Generator_RowChangingName="AuditsRowChanging" msprop:Generator_RowEvArgName="AuditsRowChangeEvent" msprop:Generator_RowEvHandlerName="AuditsRowChangeEventHandler" msprop:Generator_TableClassName="AuditsDataTable" msprop:Generator_TableVarName="tableAudits" msprop:Generator_RowDeletingName="AuditsRowDeleting" msprop:Generator_TablePropName="_Audits">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AuditKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="AuditKey" msprop:Generator_ColumnPropNameInRow="AuditKey" msprop:Generator_ColumnVarNameInTable="columnAuditKey" msprop:Generator_ColumnPropNameInTable="AuditKeyColumn" type="xs:int" />
+              <xs:element name="AuditDate" msprop:Generator_UserColumnName="AuditDate" msprop:Generator_ColumnPropNameInRow="AuditDate" msprop:Generator_ColumnVarNameInTable="columnAuditDate" msprop:Generator_ColumnPropNameInTable="AuditDateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ApplicationName" msprop:Generator_UserColumnName="ApplicationName" msprop:Generator_ColumnPropNameInRow="ApplicationName" msprop:Generator_ColumnVarNameInTable="columnApplicationName" msprop:Generator_ColumnPropNameInTable="ApplicationNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HostName" msprop:Generator_UserColumnName="HostName" msprop:Generator_ColumnPropNameInRow="HostName" msprop:Generator_ColumnVarNameInTable="columnHostName" msprop:Generator_ColumnPropNameInTable="HostNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WorkStationID" msprop:Generator_UserColumnName="WorkStationID" msprop:Generator_ColumnPropNameInRow="WorkStationID" msprop:Generator_ColumnVarNameInTable="columnWorkStationID" msprop:Generator_ColumnPropNameInTable="WorkStationIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WindowsLogon" msprop:Generator_UserColumnName="WindowsLogon" msprop:Generator_ColumnPropNameInRow="WindowsLogon" msprop:Generator_ColumnVarNameInTable="columnWindowsLogon" msprop:Generator_ColumnPropNameInTable="WindowsLogonColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormName" msprop:Generator_UserColumnName="FormName" msprop:Generator_ColumnPropNameInRow="FormName" msprop:Generator_ColumnVarNameInTable="columnFormName" msprop:Generator_ColumnPropNameInTable="FormNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TableName" msprop:Generator_UserColumnName="TableName" msprop:Generator_ColumnPropNameInRow="TableName" msprop:Generator_ColumnVarNameInTable="columnTableName" msprop:Generator_ColumnPropNameInTable="TableNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrimaryKeyName" msprop:Generator_UserColumnName="PrimaryKeyName" msprop:Generator_ColumnPropNameInRow="PrimaryKeyName" msprop:Generator_ColumnVarNameInTable="columnPrimaryKeyName" msprop:Generator_ColumnPropNameInTable="PrimaryKeyNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrimaryKeyValue" msprop:Generator_UserColumnName="PrimaryKeyValue" msprop:Generator_ColumnPropNameInRow="PrimaryKeyValue" msprop:Generator_ColumnVarNameInTable="columnPrimaryKeyValue" msprop:Generator_ColumnPropNameInTable="PrimaryKeyValueColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AuditData" msprop:Generator_UserColumnName="AuditData" msprop:Generator_ColumnPropNameInRow="AuditData" msprop:Generator_ColumnVarNameInTable="columnAuditData" msprop:Generator_ColumnPropNameInTable="AuditDataColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Audits" />
+      <xs:field xpath="mstns:AuditKey" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

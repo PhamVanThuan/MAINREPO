@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Mspec Test</Title>
+			<Shortcut>mspec</Shortcut>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType> 
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+			<Declarations>
+				<Literal>
+					<ID>when</ID>
+					<Default>when_</Default>
+				</Literal>
+				<Literal>
+					<ID>withfakes</ID>
+					<Default>WithFakes</Default>
+				</Literal>
+				<Literal>
+					<ID>establish</ID>
+					<Default>Establish</Default>
+				</Literal>
+				<Literal>
+					<ID>should</ID>
+					<Default>should_</Default>
+				</Literal>
+			</Declarations>
+            <Code Language="CSharp">
+                <![CDATA[public class $when$ : $withfakes$
+    {
+        $establish$ context = () =>
+        {
+			
+        };
+
+        Because of = () =>
+        {
+			$end$
+        };
+
+        It $should$ = () =>
+        {
+			
+        };
+    }]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Mspec Establish</Title>
+			<Shortcut>est</Shortcut>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType> 
+                <SnippetType>SurroundsWith</SnippetType> 
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[Establish$end$ context = () =>
+        {
+			$selected$
+        };
+		]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Mspec Because</Title>
+			<Shortcut>bec</Shortcut>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType> 
+                <SnippetType>SurroundsWith</SnippetType> 
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="CSharp">
+                <![CDATA[Because of = () =>
+        {
+			$selected$$end$
+        };
+		]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Mspec It</Title>
+			<Shortcut>it</Shortcut>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType> 
+                <SnippetType>SurroundsWith</SnippetType> 
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+			<Declarations>
+				<Literal>
+					<ID>should</ID>
+					<Default>should_</Default>
+				</Literal>
+			</Declarations>
+            <Code Language="CSharp">
+                <![CDATA[It $should$ = () =>
+        {
+			$selected$$end$
+        };
+		]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

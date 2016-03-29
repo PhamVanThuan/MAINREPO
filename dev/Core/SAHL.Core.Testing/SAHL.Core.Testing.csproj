@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F21FFE3-AB20-4623-84B5-29D1D93627E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Testing</RootNamespace>
+    <AssemblyName>SAHL.Core.Testing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil, Version=0.9.5.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Binaries\ExternalBinaries\Mono.Cecil\lib\net40\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\Binaries\ExternalBinaries\NUnit\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\Workflows\ThirdPartyInvoices.cs" />
+    <Compile Include="FileConventions\IFileConvention.cs" />
+    <Compile Include="FileConventions\SAHLTestingAssemblyConvention.cs" />
+    <Compile Include="FileConventions\IAssemblyScannerConvention.cs" />
+    <Compile Include="Fluent\FluentTestContext.cs" />
+    <Compile Include="Fluent\FluentTest.cs" />
+    <Compile Include="Fluent\FluentTestAssert.cs" />
+    <Compile Include="Fluent\FluentTestParameters.cs" />
+    <Compile Include="Fluent\FluentTestSetup.cs" />
+    <Compile Include="Fluent\FluentTestExecute.cs" />
+    <Compile Include="Ioc\ITestingIoc.cs" />
+    <Compile Include="Ioc\ITestingIocContainer.cs" />
+    <Compile Include="ConstructorTestUtils.cs" />
+    <Compile Include="FileConventions\HaloUIAssemblyConvention.cs" />
+    <Compile Include="FileConventions\SAHLDataModelsAssemblyConvention.cs" />
+    <Compile Include="FileConventions\SAHLServiceAssemblyConvention.cs" />
+    <Compile Include="FileConventions\SAHLSpecsAssemblyConvention.cs" />
+    <Compile Include="FileConventions\SAHLTestsAssemblyConvention.cs" />
+    <Compile Include="FileConventions\ComcorpAssemblyConvention.cs" />
+    <Compile Include="Ioc\Registration\DomainDataManagerConvention.cs" />
+    <Compile Include="Ioc\Registration\DomainProcessManagerModelConvention.cs" />
+    <Compile Include="Ioc\Registration\DomainRuleConvention.cs" />
+    <Compile Include="Ioc\Registration\DomainServiceCommandHandlerConvention.cs" />
+    <Compile Include="Ioc\Registration\InternalServiceCommandHandlerForDomainConvention.cs" />
+    <Compile Include="Ioc\Registration\LegacyEventConvention.cs" />
+    <Compile Include="Ioc\Registration\LegacyEventQueryConvention.cs" />
+    <Compile Include="Ioc\Registration\LegacyEventQueryHandlerConvention.cs" />
+    <Compile Include="Ioc\Registration\SAHLTypesConvention.cs" />
+    <Compile Include="Ioc\Registration\EventConvention.cs" />
+    <Compile Include="Ioc\Registration\ServiceCommandConvention.cs" />
+    <Compile Include="Ioc\Registration\ServiceCommandHandlerConvention.cs" />
+    <Compile Include="Ioc\Registration\ServiceDataManagerConvention.cs" />
+    <Compile Include="Ioc\Registration\ServiceManagerConvention.cs" />
+    <Compile Include="Ioc\Registration\ServiceQueryConvention.cs" />
+    <Compile Include="Ioc\Registration\ServiceQuerySqlStatementConvention.cs" />
+    <Compile Include="Ioc\Registration\SqlStatementConvention.cs" />
+    <Compile Include="HaloUIConfigFactory.cs" />
+    <Compile Include="ConventionTestSuite.cs" />
+    <None Include="ConventionTests.cs" />
+    <None Include="DataModelTests.cs" />
+    <Compile Include="GenericEqualityComparer.cs" />
+    <Compile Include="IConventionTestSuite.cs" />
+    <Compile Include="Ioc\SolrRegistry.cs" />
+    <Compile Include="Ioc\TestingRegistry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Providers\ITestParamsProvider.cs" />
+    <Compile Include="SqlStatementInfo.cs" />
+    <Compile Include="Ioc\TestingIocContainer.cs" />
+    <Compile Include="ITestParams.cs" />
+    <Compile Include="Ioc\TestingIoc.cs" />
+    <Compile Include="TestApiClient.cs" />
+    <Compile Include="TestParams.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\TestParamsProvider.cs" />
+    <Compile Include="FileConventions\SAHLFileConvention.cs" />
+    <Compile Include="Ioc\DefaultExplicitArguments.cs" />
+    <Compile Include="StatementRunner.cs" />
+    <Compile Include="SqlStatementType.cs" />
+    <Compile Include="Strings.Designer.cs" />
+    <Compile Include="TestServiceUrlConfigurationProvider.cs" />
+    <Compile Include="Config\UI\HaloUIConfig.cs" />
+    <Compile Include="Config\UI\HaloUIConfigItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.BusinessModel\SAHL.Core.BusinessModel.csproj">
+      <Project>{6d54e795-84d4-4282-83a7-ba2810521964}</Project>
+      <Name>SAHL.Core.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data.Dapper\SAHL.Core.Data.Dapper.csproj">
+      <Project>{e65c3d29-c6d7-4e01-b20c-f3fd74201e21}</Project>
+      <Name>SAHL.Core.Data.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Logging.Loggers.Database\SAHL.Core.Logging.Loggers.Database.csproj">
+      <Project>{4947879a-527c-4f2c-9d10-00d9fea910c3}</Project>
+      <Name>SAHL.Core.Logging.Loggers.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Messaging.Shared\SAHL.Core.Messaging.Shared.csproj">
+      <Project>{5b05aefb-2351-4393-8f9b-1ab0aa926d45}</Project>
+      <Name>SAHL.Core.Messaging.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.TextSearch.Solr\SAHL.Core.TextSearch.Solr.csproj">
+      <Project>{643011a0-057e-49b7-9e9a-72b5a59a1ae7}</Project>
+      <Name>SAHL.Core.TextSearch.Solr</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Web\SAHL.Core.Web.csproj">
+      <Project>{90afd6bd-b9e2-4197-9de9-7b3ed398b471}</Project>
+      <Name>SAHL.Core.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

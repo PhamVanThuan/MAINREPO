@@ -1,0 +1,100 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAHL.Common.Service.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BypassProxy" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ClientReference" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Home Loan Enquiry</Value>
+    </Setting>
+    <Setting Name="ContactName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SA Home Loans</Value>
+    </Setting>
+    <Setting Name="ContactNumber" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">031 560 5300</Value>
+    </Setting>
+    <Setting Name="Destination" Type="SAHL.Common.WebServices.ITC.Destination" Scope="Application">
+      <Value Profile="(Default)">Test</Value>
+    </Setting>
+    <Setting Name="InternalTestEmailFilterPhrases" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;This is a reminder that case&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="InternalTestEmailRecipients" Type="System.Collections.Specialized.StringCollection" Scope="Application">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Value>
+    </Setting>
+    <Setting Name="ITCProxyDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAHLX</Value>
+    </Setting>
+    <Setting Name="ITCProxyIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.11.27</Value>
+    </Setting>
+    <Setting Name="ITCProxyPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">W0rdpass</Value>
+    </Setting>
+    <Setting Name="ITCProxyPort" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">8080</Value>
+    </Setting>
+    <Setting Name="ITCProxyUsername" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Sqlservice2</Value>
+    </Setting>
+    <Setting Name="PluginPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ReportExecutionURL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://sahls103/reportserver/reportexecution2005.asmx</Value>
+    </Setting>
+    <Setting Name="SecurityCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAH51</Value>
+    </Setting>
+    <Setting Name="ServiceDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAHLX</Value>
+    </Setting>
+    <Setting Name="ServicePassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">W0rdpassX</Value>
+    </Setting>
+    <Setting Name="ServiceUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sqlservice2X</Value>
+    </Setting>
+    <Setting Name="SubscriberCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">00151</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_ProxyDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAHL</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_ProxyIP" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">192.168.11.27</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_ProxyPass" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">W0rdpass</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_ProxyPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8080</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_ProxyUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Sqlservice2</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_UseProxy" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_UserID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">d23304fc-07d9-4c7d-af81-d22d1be76175</Value>
+    </Setting>
+    <Setting Name="X2Catalog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">X2</Value>
+    </Setting>
+    <Setting Name="SAHL_Common_WebServices_ITC_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://secure.transunion.co.za/TUBureau111Test/consumer.asmx</Value>
+    </Setting>
+    <Setting Name="WebServices_Lightstone_URL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://www.lightstone.co.za/avm/webservices/sahl.asmx</Value>
+    </Setting>
+    <Setting Name="CommunicationsWebHost_Url" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost/CommunicationsService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

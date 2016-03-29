@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58DECCCB-7B1F-4AAA-9AB0-DE126CFE6D39}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.WorkflowMaps.LifeClaims.Specs</RootNamespace>
+    <AssemblyName>SAHL.WorkflowMaps.LifeClaims.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="LifeClaims">
+      <HintPath>..\Binaries\LifeClaims.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.LifeDomain.Client">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.LifeDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.LifeDomain">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.LifeDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Workflow.LifeClaims">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Workflow.LifeClaims.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Workflow.Maps.Config, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Workflow.Maps.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="EasyNetQ">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\EasyNetQ\lib\net40\EasyNetQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\Approve\OnComplete\when_approve.cs" />
+    <Compile Include="Activities\Approve\OnGetActivityMessage\when_approve.cs" />
+    <Compile Include="Activities\Approve\OnGetStageTransition\when_approve.cs" />
+    <Compile Include="Activities\Approve\OnStart\when_approve.cs" />
+    <Compile Include="Activities\Capture Details\OnComplete\when_capture_details.cs" />
+    <Compile Include="Activities\Capture Details\OnGetActivityMessage\when_capture_details.cs" />
+    <Compile Include="Activities\Capture Details\OnGetStageTransition\when_capture_details.cs" />
+    <Compile Include="Activities\Capture Details\OnStart\when_capture_details.cs" />
+    <Compile Include="Activities\Create Disability Claim\OnComplete\when_create_disability_claim.cs" />
+    <Compile Include="Activities\Create Disability Claim\OnGetActivityMessage\when_create_disability_claim.cs" />
+    <Compile Include="Activities\Create Disability Claim\OnGetStageTransition\when_create_disability_claim.cs" />
+    <Compile Include="Activities\Create Disability Claim\OnStart\when_create_disability_claim.cs" />
+    <Compile Include="Activities\EXT Claim Settled\OnComplete\when_ext_claim_settled.cs" />
+    <Compile Include="Activities\EXT Claim Settled\OnGetStageTransition\when_ext_claim_settled.cs" />
+    <Compile Include="Activities\EXT Claim Settled\OnStart\when_ext_claim_settled.cs" />
+    <Compile Include="Activities\Repudiate\OnComplete\when_repudiate.cs" />
+    <Compile Include="Activities\Repudiate\OnGetActivityMessage\when_repudiate.cs" />
+    <Compile Include="Activities\Repudiate\OnGetStageTransition\when_repudiate.cs" />
+    <Compile Include="Activities\Repudiate\OnStart\when_repudiate.cs" />
+    <Compile Include="Activities\Terminate\OnComplete\when_terminate.cs" />
+    <Compile Include="Activities\Terminate\OnGetActivityMessage\when_terminate..cs" />
+    <Compile Include="Activities\Terminate\OnGetStageTransition\when_terminate..cs" />
+    <Compile Include="Activities\Terminate\OnStart\when_terminate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Approved Claim\OnEnter\when_approved_claim.cs" />
+    <Compile Include="States\Approved Claim\OnExit\when_approved_claim.cs" />
+    <Compile Include="States\Assess Claim\OnEnter\when_assess_claim.cs" />
+    <Compile Include="States\Assess Claim\OnExit\when_assess_claim.cs" />
+    <Compile Include="States\Claim Details\OnEnter\when_claim_details.cs" />
+    <Compile Include="States\Claim Details\OnExit\when_claim_details.cs" />
+    <Compile Include="WorkflowSpecLifeClaims.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\SAHL.WorkflowMaps.Specs.Common\SAHL.WorkflowMaps.Specs.Common.csproj">
+      <Project>{d9859384-0b48-4902-b241-4fa95390ac10}</Project>
+      <Name>SAHL.WorkflowMaps.Specs.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

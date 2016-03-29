@@ -1,0 +1,130 @@
+﻿<!doctype html>
+<html lang="en" ng-app="sahl.tools.app" ng-controller="AppCtrl">
+<head>
+    <base href="/decisiontree/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Decision Tree Designer</title>
+
+    <link rel="stylesheet" href="css/metro/metro-bootstrap.css" type="text/css" />
+
+    <!-- build:css ./less/app.min.[timestamp].css -->
+    <link rel="stylesheet" href="less/app.css" type="text/css" />
+    <!-- endbuild-->
+
+    <!-- build:css ./lib/css.min.[timestamp].css -->
+    <link rel="stylesheet" href="css/codemirror/codemirror.css">
+    <link rel="stylesheet" href="css/codemirror/show-hint.css" />
+    <!-- endbuild-->
+    
+    <script src="./lib/modernizr/modernizr-latest.min.js"></script>
+
+    <link href="./assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body class="metro">
+    <div class="bodyContent" ui-view></div>
+
+    <script src="lib/spin/spin.min.js"></script>
+    <script src="lib/gojs/go.js"></script>
+    <script src="lib/jquery/jquery-2.1.0.min.js"></script>
+    <script src="lib/jquery-ui/jquery-ui-1.10.4.min.js"></script>
+    <script src="lib/layoutpanels/jquery.layout-latest.min.js"></script>
+    <script src="lib/jquery/plugins/jQuery-throttle.min.js"></script>
+    <script src="lib/metro/metro.min.js"></script>
+    <script src="lib/pnotify/jquery.pnotify.min.js"></script>
+
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/angular-ui-router/angular-ui-router.min.js"></script>
+
+    <script src="./lib/codemirror/codemirror.min.js"></script>
+    <script src="./lib/codemirror/trailingspace.js"></script>
+    <script src="./lib/codemirror/ruby.min.js"></script>
+    <script src="./lib/codemirror/show-hint.min.js"></script>
+    <script src="./lib/codemirror/autocomplete.min.js"></script>
+    <script src="./lib/codemirror/matchbrackets.min.js"></script>
+
+    <script src="./lib/jspdf/jspdf.min.js"></script>
+    <script src="./lib/signalR/jquery.signalR-2.0.1.js"></script>
+
+    <!-- build:js ./app/app.min.[timestamp].js -->
+    <script src="./app/home/variables/variables.js"></script>
+    <script src="./app/home/variables/editor/editor.js"></script>
+    <script src="./app/home/variables/info/info.js"></script>
+    <script src="./app/home/enumerations/enumerations.js"></script>
+    <script src="./app/home/enumerations/editor/editor.js"></script>
+    <script src="./app/home/enumerations/info/info.js"></script>
+    <script src="./app/home/messages/messages.js"></script>
+    <script src="./app/home/messages/editor/editor.js"></script>
+    <script src="./app/home/messages/info/info.js"></script>
+    <script src="./app/home/design/design.js"></script>
+    <script src="./app/home/design/file-menu/file-menu.js"></script>
+    <script src="./app/home/design/file-menu/info/info.js"></script>
+    <script src="./app/home/design/file-menu/new/new.js"></script>
+    <script src="./app/home/design/file-menu/open/open.js"></script>
+    <script src="./app/home/design/file-menu/open/recent/recent.js"></script>
+    <script src="./app/home/design/file-menu/open/all/all.js"></script>
+    <script src="./app/home/design/file-menu/print/print.js"></script>
+    <script src="./app/home/design/file-menu/export/export.js"></script>
+    <script src="./app/home/design/file-menu/export/pdf/pdf.js"></script>
+    <script src="./app/home/design/file-menu/export/png/png.js"></script>
+    <script src="./app/home/design/file-menu/export/svg/svg.js"></script>
+    <script src="./app/home/design/file-menu/test/test.js"></script>
+    <script src="./app/home/design/dockpanels/code-panel/code-panel.js"></script>
+    <script src="./app/home/design/dockpanels/properties-panel/properties-panel.js"></script>
+    <script src="./app/home/design/dockpanels/output/output.js"></script>
+    <script src="./app/home/design/dockpanels/find-results/find-results.js"></script>
+    <script src="./app/home/design/dockpanels/debug-variables/debug-variables.js"></script>
+    <script src="./app/home/design/dockpanels/debug-breakpoints/debug-breakpoints.js"></script>
+    <script src="./app/home/design/statuspanels/zoom-panel.js"></script>
+    <script src="./app/home/start-page/start-page.js"></script>
+    <script src="./app/home/notauthenticated/notauthenticated.js"></script>
+    <script src="./app/home/home.js"></script>
+    <script src="./app/modals/modalDialog.js"></script>
+    <script src="./app/services.js"></script>
+    <script src="./app/services/applicationService.js"></script>
+    <script src="./app/services/breakpointService.js"></script>
+    <script src="./app/services/documentManager.js"></script>
+    <script src="./app/services/documentVersionManager.js"></script>
+    <script src="./app/services/documentVersionProviders/version_0_1.js"></script>
+    <script src="./app/services/documentVersionProviders/version_0_2.js"></script>
+    <script src="./app/services/documentVersionProviders/version_0_3.js"></script>
+    <script src="./app/services/documentVersionProviders/version_0_4.js"></script>
+    <script src="./app/services/designSurfaceManager.js"></script>
+    <script src="./app/services/clipboardManager.js"></script>
+    <script src="./app/services/codemirrorVariablesService.js"></script>
+    <script src="./app/services/codeMirrorService3.js"></script>
+    <script src="./app/services/enumerationDataManager.js"></script>
+    <script src="./app/services/highlightingService.js"></script>
+    <script src="./app/services/keyboardManager.js"></script>
+    <script src="./app/services/selectionManager.js"></script>
+    <script src="./app/services/undoManager.js"></script>
+    <script src="./app/services/searchManager.js"></script>
+    <script src="./app/services/variableDataManager.js"></script>
+    <script src="./app/services/messageDataManager.js"></script>
+    <script src="./app/services/testDataManager.js"></script>
+    <script src="./app/services/eventAggregatorService.js"></script>
+    <script src="./app/services/eventDefinitions.js"></script>
+    <script src="./app/services/notificationService.js"></script>
+    <script src="./app/services/recentDocumentsService.js"></script>
+    <script src="./app/services/statusbarManager.js"></script>
+    <script src="./app/services/signalRService.js"></script>
+    <script src="./app/services/debugService.js"></script>
+    <script src="./app/services/sessionLockService.js"></script>
+    <script src="./app/services/startables.js"></script>
+    <script src="./app/services/rubyCodeValidatorService.js"></script>
+    <script src="./app/services/queryGlobalsVersionService.js"></script>
+    <script src="./app/services/globalDataManager.js"></script>
+    <script src="./app/services/wordSearchSerivce.js"></script>
+    <script src="./app/services/utils.js"></script>
+    <script src="./app/filters.js"></script>
+    <script src="./app/directives.js"></script>
+    <script src="./app/app.js"></script>    
+    <script src="./app/SAHL.Services.Interfaces.DecisionTreeDesign.Queries.js"></script>
+    <script src="./app/SAHL.Services.Interfaces.DecisionTreeDesign.Commands.js"></script>
+    <!-- endbuild-->
+
+    <script src="./app/serviceConfig.js"></script>
+
+</body>
+</html>

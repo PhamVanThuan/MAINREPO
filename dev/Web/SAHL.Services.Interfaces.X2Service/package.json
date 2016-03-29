@@ -1,0 +1,18 @@
+{
+    "name": "SAHL.Services.Interfaces.X2Service",
+    "metadata": "SAHL.Services.Interfaces.X2Service",
+    "version": "1.0.0",
+    "description": "SA Homeloans X2 Service",
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "angular": "~1.0.0"
+    }
+}

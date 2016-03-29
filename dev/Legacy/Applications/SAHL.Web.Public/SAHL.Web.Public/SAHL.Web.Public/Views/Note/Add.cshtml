@@ -1,0 +1,53 @@
+﻿@model SAHL.Web.Public.Models.AddNoteDetailViewModel
+@{
+    ViewBag.Title = "Add Note";
+    Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+
+<h2>
+    Add Note
+</h2>
+    
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+//    function OnAddClick() 
+//    {
+//        NoteText.Synchronize();
+//        var noteText = $('#txtNoteText').parent().find('#txtNoteText_Html').val();
+//        alert(noteText);
+//    }
+</script>
+
+@using DevExpress.Web.Mvc.UI;
+@using DevExpress.Web.ASPxHtmlEditor;
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Note Details</legend>
+        <br />
+        <div>
+            @Html.LabelFor(m => m.NoteText)
+        </div>
+        <div>
+            @Html.DevExpress().HtmlEditor(settings =>
+            {
+                settings.EncodeHtml = true;
+                settings.Name = "txtNoteText";
+                settings.Toolbars.Add(HtmlEditorToolbar.CreateStandardToolbar1());
+                settings.Toolbars["StandardToolbar1"].Visible = false;
+                settings.Toolbars.Add(HtmlEditorToolbar.CreateStandardToolbar2());
+                settings.Settings.AllowHtmlView = false;
+                settings.Settings.AllowDesignView = true;
+                settings.Settings.AllowPreview = false;
+                settings.Html = ViewBag.PostedHtml;
+            }).GetHtml()
+
+        </div>
+        <p>
+            <input type="submit" value="Add" onclick="OnAddClick()" />
+        </p>
+    </fieldset>
+}

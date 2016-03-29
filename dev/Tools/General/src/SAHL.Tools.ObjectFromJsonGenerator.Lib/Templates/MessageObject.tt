@@ -1,0 +1,59 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+using SAHL.Core.SystemMessages;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace <#=this.Namespace#>.Globals
+{
+    public class Messages<#= this.Version #>
+    {
+        private ISystemMessageCollection messages;
+        public ISystemMessageCollection SystemMessages
+        {
+            get { return messages; }
+        } 
+        
+        public Messages<#= this.Version #>(ISystemMessageCollection messagesCollection)
+        {
+            this.messages = messagesCollection;
+        }
+
+        public void AddError(string errorMessage)
+        {
+            if(!SystemMessages.ErrorMessages().Any(e => e.Message.Equals(errorMessage)))
+            {
+                this.messages.AddMessage(new SystemMessage(errorMessage, SystemMessageSeverityEnum.Error));
+            }
+        }
+
+        public void AddWarning(string warningMessage)
+        {
+            if(!SystemMessages.WarningMessages().Any(w => w.Message.Equals(warningMessage)))
+            {
+                this.messages.AddMessage(new SystemMessage(warningMessage, SystemMessageSeverityEnum.Warning));
+            }
+        }
+
+        public void AddInfo(string infoMessage)
+        {
+            if(!SystemMessages.InfoMessages().Any(i => i.Message.Equals(infoMessage)))
+            {
+                this.messages.AddMessage(new SystemMessage(infoMessage, SystemMessageSeverityEnum.Info));
+            }
+        }
+
+        public void AddDebugInfo(string debugMessage)
+        {
+            if(!SystemMessages.DebugMessages().Any(d => d.Message.Equals(debugMessage)))
+            {
+                this.messages.AddMessage(new SystemMessage(debugMessage, SystemMessageSeverityEnum.Debug));
+            }
+        }
+
+<#RecurseJObject(this.BaseObject,"\t\t");#>
+    }
+}

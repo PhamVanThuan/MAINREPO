@@ -1,0 +1,38 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+namespace SAHL.DecisionTree.Shared
+{
+    public class <#=this.DecisionTreeVariablesClassName#>
+    {
+        public <#=this.InputsClassName#> inputs = new <#=this.InputsClassName#>();
+        public <#=this.OutputsClassName#> outputs;
+
+        private dynamic Enumerations;
+        public <#=this.DecisionTreeVariablesClassName#>(dynamic enumerations)
+        {
+            Enumerations = enumerations;
+            outputs  = new <#=this.OutputsClassName#>(Enumerations);
+        }
+
+        public class <#=this.InputsClassName#>
+        {
+            <#=BuildCompleteTreeProperties("input")#>
+        }
+
+        public class <#=this.OutputsClassName#>
+        {
+            <#=BuildCompleteTreeProperties("output")#>
+            public bool NodeResult { get; set; }
+            private dynamic Enumerations;
+
+            public <#=this.OutputsClassName#>(dynamic enumerations)
+            {
+                Enumerations = enumerations;
+                <#=InitializeOutputsWithUserSpecifiedDefaults()#>
+            }
+        }
+    }
+}

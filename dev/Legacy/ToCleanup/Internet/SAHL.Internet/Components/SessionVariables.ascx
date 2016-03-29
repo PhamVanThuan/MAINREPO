@@ -1,0 +1,1 @@
+<%@ Control Language="C#" CodeBehind="SessionVariables.ascx.cs" Inherits="SAHL.Internet.Components.SessionVariables" %>

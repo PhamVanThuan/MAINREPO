@@ -1,0 +1,84 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SAHL.Master.cs" Inherits="SAHL.Web.SAHLMaster" %>
+<%@ Register Assembly="SAHL.Common.Web.UI" Namespace="SAHL.Common.Web.UI.Controls" TagPrefix="SAHL" %>
+<%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="masterHead" runat="server">
+    <title>HALO</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <link rel="shortcut icon" id="favIcon" runat="server" />
+    <!-- CSS included via base page -->
+</head>
+<body>
+    <form id="frmMain" runat="server">
+    <ajaxToolkit:ToolkitScriptManager EnablePageMethods="false" CombineScripts="true" ScriptMode="Auto" ID="scriptManager" runat="server" />
+    <table id="masterOuter" cellpadding="0" cellspacing="0">
+        <tr>
+            <td id="masterLeft">
+                <div id="masterTabsMenu">
+                    <ajaxToolkit:TabContainer runat="server" ID="tabsMenu" AutoPostBack="false">
+                        <ajaxToolkit:TabPanel runat="Server" ID="pnlMenu" HeaderText="Menu">
+                            <ContentTemplate>
+                                <SAHL:SAHLMenuCBO id="mnuCBO" runat="server" CssClassCBO="masterMainMenu" CssClassContext="masterContextMenu" CssClassContextHeader="masterContextHeader" ContextHeaderText="Actions" />
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+                        <ajaxToolkit:TabPanel runat="Server" ID="pnlTasks" HeaderText="Tasks">
+                            <ContentTemplate>
+                                <SAHL:SAHLMenuWorkflow id="mnuWorkFlow" runat="server" CssClassCBO="masterMainMenu" CssClassContext="masterContextMenu" ContextHeaderText="Actions" CssClassContextHeader="masterContextHeader" />
+                            </ContentTemplate>
+                        </ajaxToolkit:TabPanel>
+                    </ajaxToolkit:TabContainer>
+                </div>
+                <div id="masterStatusInfo">
+                    <span class="fontSmall" style="padding-left: 5px;margin-top:2px;float:left;"><strong>Status</strong>: Loading...</span>
+                    <asp:LinkButton ID="lbMore" runat="server">
+                        <span style="cursor:pointer;float:right;margin-right:3px;" onclick="masterToggleStatusInfo(true);return false;">
+                            <asp:Image ID="imgInfo" runat="server" ImageUrl="~/Images/information.png" AlternateText="More..." ToolTip="Additional information" />
+                        </span>
+                    </asp:LinkButton>
+                </div>
+                <div id="masterStatusInfoPopup" class="modalPopup">
+                    <div class="row" style="padding:2px;">
+                        <div class="cell" style="width:35%"><strong>User:</strong>&nbsp;</div>
+                        <div class="cell"><asp:Label ID="lblInfoUser" runat="server" /></div>
+                    </div>
+                    <div class="row" style="padding:2px;">
+                        <div class="cell" style="width:35%"><strong>Version:</strong>&nbsp;</div>
+                        <div class="cell"><asp:Label ID="lblInfoVersion" runat="server" /></div>
+                    </div>
+                    <div class="row" style="padding:2px;">
+                        <div class="cell" style="width:35%"><strong>Page Load Time:</strong>&nbsp;</div>
+                        <div class="cell"><asp:Label ID="lblInfoPageLoadTime" runat="server" /></div>
+                    </div>
+                    <div class="row" style="padding:2px;">
+                        <div class="cell" style="width:35%"><strong>View:</strong>&nbsp;</div>
+                        <div class="cell"><asp:Label ID="lblCurrentView" runat="server" /></div>
+                    </div>
+                    <div class="row" style="padding:2px;">
+                        <div class="cell" style="width:35%"><strong>Presenter:</strong>&nbsp;</div>
+                        <div class="cell"><asp:Label ID="lblCurrentPresenter" runat="server" /></div>
+                    </div>
+                    <div style="text-align:center;padding-top:10px;">
+                        <input type="button" onclick="masterToggleStatusInfo(false)" value=" Ok " />
+                    </div>
+                </div>
+            </td>
+            <td id="masterMain">
+                <div id="masterLogo">
+                </div>
+                <div id="masterContent">
+                    <asp:ContentPlaceHolder ID="Main" runat="server" Visible="true">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </td>
+         </tr>
+    </table>
+    <SAHL:SAHLValidationSummary ID="valSummary" runat="server" />
+    </form>
+    <div id="masterUnloading" class="progressBar" style="position:absolute;z-index:100;width:108px;height:62px;display:none;"></div>
+    <div id="masterModalBackground" class="modalBackground" style="position:absolute;z-index:20;left:0px;top:0px;display:none;"></div>
+</body>
+</html>

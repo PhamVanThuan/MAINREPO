@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SAHLIntegrationService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects" />
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects.Document" />
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd3" namespace="http://localhost/ImagingApplicationRequest.xsd" />
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd4" namespace="http://localhost/ImagingMainApplicantRequest.xsd" />
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd5" namespace="http://localhost/ImagingReplyStatus.xsd" />
+      <xsd:import schemaLocation="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd7" namespace="http://localhost/ImagingCoApplicantRequest.xsd" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SAHLRequest">
+    <wsdl:part name="parameters" element="tns:SAHLRequest" />
+  </wsdl:message>
+  <wsdl:message name="SAHLResponse">
+    <wsdl:part name="parameters" element="tns:SAHLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLIntegrationService_Submit_SAHLFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects" name="detail" element="q1:SAHLFault" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessApplicationMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessApplicationMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessApplicationMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessApplicationMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessApplicationMessage_SAHLDocumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects.Document" name="detail" element="q2:SAHLDocumentFault" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessMainApplicantMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessMainApplicantMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessMainApplicantMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessMainApplicantMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessMainApplicantMessage_SAHLDocumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects.Document" name="detail" element="q3:SAHLDocumentFault" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessCoApplicantMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCoApplicantMessage" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessCoApplicantMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCoApplicantMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISAHLDocumentService_ProcessCoApplicantMessage_SAHLDocumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects.Document" name="detail" element="q4:SAHLDocumentFault" />
+  </wsdl:message>
+  <wsdl:portType name="ISAHLIntegrationService">
+    <wsdl:operation name="Submit">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISAHLIntegrationService/Submit" name="SAHLRequest" message="tns:SAHLRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISAHLIntegrationService/SubmitResponse" name="SAHLResponse" message="tns:SAHLResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISAHLIntegrationService/SubmitSAHLFaultFault" name="SAHLFaultFault" message="tns:ISAHLIntegrationService_Submit_SAHLFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISAHLDocumentService">
+    <wsdl:operation name="ProcessApplicationMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessApplicationMessage" message="tns:ISAHLDocumentService_ProcessApplicationMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessApplicationMessageResponse" message="tns:ISAHLDocumentService_ProcessApplicationMessage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessApplicationMessageSAHLDocumentFaultFault" name="SAHLDocumentFaultFault" message="tns:ISAHLDocumentService_ProcessApplicationMessage_SAHLDocumentFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessMainApplicantMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessMainApplicantMessage" message="tns:ISAHLDocumentService_ProcessMainApplicantMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessMainApplicantMessageResponse" message="tns:ISAHLDocumentService_ProcessMainApplicantMessage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessMainApplicantMessageSAHLDocumentFaultFault" name="SAHLDocumentFaultFault" message="tns:ISAHLDocumentService_ProcessMainApplicantMessage_SAHLDocumentFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCoApplicantMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessCoApplicantMessage" message="tns:ISAHLDocumentService_ProcessCoApplicantMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessCoApplicantMessageResponse" message="tns:ISAHLDocumentService_ProcessCoApplicantMessage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ISAHLDocumentService/ProcessCoApplicantMessageSAHLDocumentFaultFault" name="SAHLDocumentFaultFault" message="tns:ISAHLDocumentService_ProcessCoApplicantMessage_SAHLDocumentFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SAHL.WCFServices.ComcorpConnector.Server.SAHLIntegrationService" type="tns:ISAHLIntegrationService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Submit">
+      <soap:operation soapAction="http://tempuri.org/ISAHLIntegrationService/Submit" style="document" />
+      <wsdl:input name="SAHLRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="SAHLResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SAHLFaultFault">
+        <soap:fault use="literal" name="SAHLFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SAHLDocumentService" type="tns:ISAHLDocumentService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessApplicationMessage">
+      <soap:operation soapAction="http://tempuri.org/ISAHLDocumentService/ProcessApplicationMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SAHLDocumentFaultFault">
+        <soap:fault use="literal" name="SAHLDocumentFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessMainApplicantMessage">
+      <soap:operation soapAction="http://tempuri.org/ISAHLDocumentService/ProcessMainApplicantMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SAHLDocumentFaultFault">
+        <soap:fault use="literal" name="SAHLDocumentFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCoApplicantMessage">
+      <soap:operation soapAction="http://tempuri.org/ISAHLDocumentService/ProcessCoApplicantMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SAHLDocumentFaultFault">
+        <soap:fault use="literal" name="SAHLDocumentFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SAHLIntegrationService">
+    <wsdl:port name="SAHL.WCFServices.ComcorpConnector.Server.SAHLIntegrationService" binding="tns:SAHL.WCFServices.ComcorpConnector.Server.SAHLIntegrationService">
+      <soap:address location="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc/integration" />
+    </wsdl:port>
+    <wsdl:port name="SAHLDocumentService" binding="tns:SAHLDocumentService">
+      <soap:address location="http://localhost/ComcorpConnectorService/SAHLIntegrationService.svc/document" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

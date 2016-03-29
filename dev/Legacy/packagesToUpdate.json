@@ -1,0 +1,21 @@
+{
+	"NugetExeLocation" : "External Binaries\\NuGet\\NuGet.CommandLine.2.7.0\\tools\\Nuget.exe",
+	"RepositoryLocation" : "External Binaries\\NuGet",
+	"ProjectsToUpdate":[
+		{"Name":"Framework.sln",
+		 "Location":"Framework",
+		 "PackagesToUpdate":["SAHL.Core.ForLegacy"]},
+		{"Name":"Application.sln",
+		 "Location":"Application",
+		 "PackagesToUpdate":["SAHL.Core.ForLegacy", "SAHL.Internal.Shared"]},
+		{"Name":"SAHL.Batch.Service.sln",
+		 "Location":"Services\\SAHL.Batch.Service",
+		 "PackagesToUpdate":["SAHL.Core"]},
+		{"Name":"DomainService.sln",
+		 "Location":"DomainService",
+		 "PackagesToUpdate":["SAHL.Core.X2.Shared"]},
+		{"Name":"ApplicationBatches.sln",
+		 "Location":"Application",
+		 "PackagesToUpdate":["SAHL.Config.Services.X2.Client"]}
+		 ]
+}

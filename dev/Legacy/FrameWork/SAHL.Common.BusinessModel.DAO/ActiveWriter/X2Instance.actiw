@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="3994c595-7b93-494b-b8e4-6335c67ba7d7" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Instance" schema="X2" table="Instance">
+      <targets>
+        <manyToOneRelation Id="ea6c0006-ff9e-4625-9825-a9f6efb74f40" targetColumnKey="ParentInstanceID" targetTable="Instance" targetPropertyName="Instances" sourceColumn="ParentInstanceID">
+          <modelClassMoniker name="/3994c595-7b93-494b-b8e4-6335c67ba7d7/Instance" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="1438f353-3d4b-48e7-9142-2026fda37545" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="7dd92465-61b7-41f4-9daa-fae346a75e34" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="d5a3ab53-28e0-431b-b851-e6d4b91bee27" name="Subject" column="Subject" length="0" />
+        <modelProperty Id="a6a45b6d-850a-48a7-b903-33e6e1f8ab49" name="WorkFlowProvider" column="WorkFlowProvider" length="0" notNull="true" />
+        <modelProperty Id="7fe8036c-834a-41f9-b2e1-55a1a6979603" name="StateID" column="StateID" columnType="Int32" length="0" />
+        <modelProperty Id="764f25e5-2f46-4d1d-988c-d69dd6bf84ad" name="CreatorADUserName" column="CreatorADUserName" length="0" notNull="true" />
+        <modelProperty Id="68053796-89ae-44d5-88de-dbcfe947596f" name="CreationDate" column="CreationDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="59f388eb-30b5-47da-8245-cb2898aa7bee" name="StateChangeDate" column="StateChangeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="12815196-2d83-410f-8bf8-bf0e824b6b36" name="DeadlineDate" column="DeadlineDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="a0bcbd1a-92cb-488b-b3ba-725611298f57" name="ActivityDate" column="ActivityDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="168fc341-59f2-4272-952e-a2e728396411" name="ActivityADUserName" column="ActivityADUserName" length="0" />
+        <modelProperty Id="04ef3f90-5ded-4490-b84e-58f629a955ec" name="ActivityID" column="ActivityID" columnType="Int32" length="0" />
+        <modelProperty Id="d5e04dee-bb5b-422a-9324-656dce52abea" name="Priority" column="Priority" columnType="Int32" length="0" />
+        <modelProperty Id="aa7caf8e-5a03-428e-bd0a-3be359c5ae2d" name="ID" column="ID" columnType="Int64" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkList" schema="X2" table="WorkList">
+      <targets>
+        <manyToOneRelation Id="15c1d87b-a991-42b0-a9ed-af279423551b" targetColumnKey="InstanceID" targetTable="WorkList" targetPropertyName="WorkLists" sourceColumn="InstanceID">
+          <modelClassMoniker name="/3994c595-7b93-494b-b8e4-6335c67ba7d7/Instance" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="a62dd110-813e-4674-8f63-6eb1323c6319" name="ID" column="ID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="13187310-c717-4574-b565-f212b103ce08" name="ADUserName" column="ADUserName" length="0" notNull="true" />
+        <modelProperty Id="8a8413f1-51f2-4693-ac90-0f1bea75bb81" name="ListDate" column="ListDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="91c49d5b-0ce7-4c96-a495-7a2d3693d87f" name="Message" column="Message" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="InstanceActivitySecurity" schema="X2" table="InstanceActivitySecurity">
+      <targets>
+        <manyToOneRelation Id="da24ad9f-640a-4209-9ee4-978ff035b814" targetColumnKey="InstanceID" targetTable="InstanceActivitySecurity" targetPropertyName="InstanceActivitySecurities" sourceColumn="InstanceID">
+          <modelClassMoniker name="/3994c595-7b93-494b-b8e4-6335c67ba7d7/Instance" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="8307c026-fa31-458a-9283-8e452b52ea81" name="ID" column="ID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="26972afb-faaf-449d-b412-a94e015ae4b6" name="ActivityID" column="ActivityID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="10fd9105-d897-4bd7-a735-87fb73c0e195" name="ADUserName" column="ADUserName" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

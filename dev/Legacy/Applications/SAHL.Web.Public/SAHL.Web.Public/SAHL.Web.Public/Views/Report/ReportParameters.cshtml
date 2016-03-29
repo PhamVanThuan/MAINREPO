@@ -1,0 +1,40 @@
+﻿@model SAHL.Web.Public.Models.ReportViewModel
+@{
+	ViewBag.Title = "ReportParameters";
+	Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+<h2>
+	ReportParameters</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm("RunReport", "Report"))
+{
+	@Html.ValidationSummary(true)
+	<fieldset>
+		<legend>ReportViewModel</legend>
+		<div class="display-field">
+			@Html.Hidden("ReportName", Model.ReportName)
+		</div>
+		@foreach (var param in Model.ReportParameters)
+  {
+	  		
+			<div class="display-field">
+				@Html.DisplayFor(model => param.ReportParameterName)
+			</div>
+			<div class="editor-field">
+				@Html.Editor(param.ReportParameterName)
+				@Html.ValidationMessageFor(model => param.ReportParameterValue)
+			</div>
+
+      <div>
+      @Html.Editor(
+      </div>
+  }
+		<p>
+			<input type="submit" value="Save" />
+		</p>
+	</fieldset>
+}
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>

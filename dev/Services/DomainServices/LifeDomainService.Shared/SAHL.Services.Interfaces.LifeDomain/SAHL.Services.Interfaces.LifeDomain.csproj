@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{36ECA715-009A-4894-8EBC-F4FDAED7E70E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Interfaces.LifeDomain</RootNamespace>
+    <AssemblyName>SAHL.Services.Interfaces.LifeDomain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\SendDisabilityClaimManualApprovalLetterCommand.cs" />
+    <Compile Include="Commands\AmendApprovedDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\CapturePendingDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\CompensateLodgeDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\RepudiateDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\TerminateDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\ApproveDisabilityClaimCommand.cs" />
+    <Compile Include="Commands\LodgeDisabilityClaimCommand.cs" />
+    <Compile Include="Events\CompensateLodgeDisabilityClaimEvent.cs" />
+    <Compile Include="Events\DisabilityClaimApproveAmendedEvent.cs" />
+    <Compile Include="Events\DisabilityClaimManualApprovalLetterSentEvent.cs" />
+    <Compile Include="Events\DisabilityClaimRepudiatedEvent.cs" />
+    <Compile Include="Events\DisabilityClaimTerminatedEvent.cs" />
+    <Compile Include="Events\DisabilityClaimApprovedEvent.cs" />
+    <Compile Include="Events\DisabilityClaimCapturedEvent.cs" />
+    <Compile Include="Events\DisabilityClaimLodgedEvent.cs" />
+    <Compile Include="ILifeDomainCommand.cs" />
+    <Compile Include="ILifeDomainQuery.cs" />
+    <Compile Include="ILifeDomainServiceClient.cs" />
+    <Compile Include="LifeDomainServiceClient.cs" />
+    <Compile Include="Models\DisabilityClaimDetailModel.cs" />
+    <Compile Include="Models\DisabilityClaimModel.cs" />
+    <Compile Include="Models\IDisabilityClaimLifeAccountModel.cs" />
+    <Compile Include="Models\IDisabilityClaimRuleModel.cs" />
+    <Compile Include="Models\IDisabilityClaimApproveModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\GetDisabilityClaimByKeyQuery.cs" />
+    <Compile Include="Models\DisabilityClaimFurtherLendingExclusionModel.cs" />
+    <Compile Include="Queries\GetFurtherLendingExclusionsByDisabilityClaimKeyQuery.cs" />
+    <Compile Include="Queries\GetDisabilityClaimStatusQuery.cs" />
+    <Compile Include="Queries\GetDisabilityClaimInstanceSubjectQuery.cs" />
+    <Compile Include="Queries\GetDisabilityClaimHistoryForAccountQuery.cs" />
+    <Compile Include="Queries\GetPendingDisabilityClaimByAccountQuery.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

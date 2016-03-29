@@ -1,0 +1,19 @@
+<dataConfig> 
+    <dataSource type="JdbcDataSource"
+            driver="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+            url="jdbc:sqlserver://sahls03:1433;DatabaseName=Process;"
+            user="eworkadmin2"
+            password="W0rdpass"
+            batchSize="5" />
+             		
+    <document name="ThirdPartyInvoice"> 
+        <entity name="ThirdPartyInvoiceList" query="solr.pSolrImportAPI 'ThirdPartyInvoice'" pk='id'
+								deltaImportQuery="SELECT * FROM [2am].solr.ThirdPartyInvoice (NOLOCK) WHERE id = ${dih.delta.id}"
+								deltaQuery="SELECT id FROM [2am].solr.ThirdPartyInvoice (NOLOCK) WHERE LastModifiedDate > CAST('${dih.last_index_time}'as datetime) "	>
+			<field column="ThirdPartyInvoiceKey" 		name="ThirdPartyInvoiceKey" />
+			<field column="SAHLReference"		name="SAHLReference"	/>
+			<field column="InvoiceStatusKey"		name="InvoiceStatusKey"	/>
+			
+		</entity> 
+    </document> 
+</dataConfig>

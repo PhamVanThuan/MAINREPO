@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="9.75" />
+  <Class Name="SAHL.Common.BusinessModel.ACBBank">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ACBBank_DAO.cs</FileName>
+      <HashCode>AAAAAgCAAAAAAAQAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ACBBranch">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ACBBranch_DAO.cs</FileName>
+      <HashCode>AAAJAAAABAAAAAQAgACAAAAAAAAAAgQAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ACBType">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ACBType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAgAAAAAQAAACAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Account">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Account_DAO.cs</FileName>
+      <HashCode>CAECAAAAACABAgwgAAiAAAgAEAgBAIAAAJAEAAAAAgQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.AccountStatus">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>AccountStatus_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ADUser">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ADUser_DAO.cs</FileName>
+      <HashCode>CCQAAAAAgAAAAIYgAACAAQIAAAAAKEASAAgAAgQAQAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.BankAccount" BaseTypeListCollapsed="true">
+    <Position X="18.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>BankAccount_DAO.cs</FileName>
+      <HashCode>AAAAAIAAAwAQAgUAgACAAAgAAAgBAAAAIAQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.CBOMenu">
+    <Position X="20" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CBOMenu_DAO.cs</FileName>
+      <HashCode>AAAIECAIACAyAAQEICCHBAAACCAAAMAAAwABaCkCAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.CitizenType">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>CitizenType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Condition">
+    <Position X="23.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Condition_DAO.cs</FileName>
+      <HashCode>IAAAAAEACAgIAAQBQQCEAAAAAAAKAAgCAAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ConditionConfiguration">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConditionConfiguration_DAO.cs</FileName>
+      <HashCode>AAAAAABAAAgAAAQABACAAAAAIAAIACAAAAAAACAAAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ConditionSet">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConditionSet_DAO.cs</FileName>
+      <HashCode>AAAAAACAAAggAQQEAACAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ConditionSetCondition">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConditionSetCondition_DAO.cs</FileName>
+      <HashCode>AAAgAABAAACAAAQAIACAAAAAAAgAAAAgAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ConditionToken">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConditionToken_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAACACAQAAACAAAAAAAgAAAAAAAAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ConditionType">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConditionType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ContextMenu">
+    <Position X="16.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ContextMenu_DAO.cs</FileName>
+      <HashCode>AAAIAAABAAAgAAQEIACABAAAACAAAAIAAgAAKAECAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Education">
+    <Position X="18.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Education.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Feature">
+    <Position X="20" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Feature_DAO.cs</FileName>
+      <HashCode>AACIAAAAAAEAAAYAIECAFAACAAAAAIAAAAAAAAEIAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.FeatureGroup">
+    <Position X="21.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FeatureGroup.cs</FileName>
+      <HashCode>AAAAAAAAACAACAQAAACAAAAAAAAAAAAAAAAEKAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Gender">
+    <Position X="23.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Gender_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.GeneralStatus">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GeneralStatus_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.GenericColumnDefinition">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GenericColumnDefinition_DAO.cs</FileName>
+      <HashCode>AAAAAABAAAAgIAQEAADAAAAAAAAAACAAAAAAAQAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.GenericKeyType">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GenericKeyType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAgAgAAQEAACAACAAAAAAAAAAAAEAAQAACIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.GenericType">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GenericType_DAO.cs</FileName>
+      <HashCode>AAAAEAAAAABgAAQEAACAAAAAAAAAAJAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.InputGenericType">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>InputGenericType.cs</FileName>
+      <HashCode>AAAAAAAAEAECAAQAAACAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Language">
+    <Position X="16.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Language_DAO.cs</FileName>
+      <HashCode>AAAAAQAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntity">
+    <Position X="1.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntity_DAO.cs</FileName>
+      <HashCode>iGYAmIIQVwBQw66yAACAA8zMBgkRpEBSGkAkowCUYYg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityAddress">
+    <Position X="18.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityAddress.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgYAAACSAAEAAAIACBAEAAAAAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityAffordabilityExpense">
+    <Position X="20" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityAffordabilityExpense.cs</FileName>
+      <HashCode>AAAQAAAAAAAgAgQEAACAAACAAAAACAAQAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityAssetLiability">
+    <Position X="21.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityAssetLiability.cs</FileName>
+      <HashCode>AAgAAAAAAAAAAgYAAACAAAAAAAAACAAAAAAAAAQAAAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityBankAccount">
+    <Position X="23.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityBankAccount.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAgYAAACAAAgAAAgBCAAAAAAAAgQAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityCompany">
+    <Position X="0.5" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityCompany.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityExceptionReason">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityExceptionReason.cs</FileName>
+      <HashCode>AQAAAABAAAAgAAQEAACAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityExceptionStatus">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityExceptionStatus.cs</FileName>
+      <HashCode>AAAAAIAAAAAgAAQEAACAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityMarketingOption">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityMarketingOption.cs</FileName>
+      <HashCode>AAABAAAAAAAAAgQAAACACAgAAAgBCAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityMarketingOptionHistory">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityMarketingOptionHistory.cs</FileName>
+      <HashCode>AAABAAAAAAAAAgQACACACAgAAhgBCABAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityMemo">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityMemo.cs</FileName>
+      <HashCode>AAAEAAAAAAQAkgRAAAGAAAiAEAgBCAACAAAAAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityNaturalPerson">
+    <Position X="2.75" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityNaturalPerson.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityRelationship">
+    <Position X="16.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityRelationship_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAQAAACBAAAAAAAACAAAAAAAACAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityRelationshipType">
+    <Position X="18.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityRelationshipType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAQAIgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.LegalEntityStatus">
+    <Position X="20" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>LegalEntityStatus.cs</FileName>
+      <HashCode>AAAAAIAAAAAgAAQEAACAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Lookups">
+    <Position X="21.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Lookups.cs</FileName>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAACQAAAAAAEAAAAAQAMCIwA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.MaritalStatus">
+    <Position X="23.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MaritalStatus_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Offer">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Offer_DAO.cs</FileName>
+      <HashCode>BgAAAACAQAggQAQBAgGAgAACAAAIAAGQAAAALAgoAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferAttribute">
+    <Position X="9.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferAttribute_DAO.cs</FileName>
+      <HashCode>QAAAAAACAAAAAAQAAACEAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferAttributeType">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferAttributeType_DAO.cs</FileName>
+      <HashCode>AAABAAAAAAAgAAQEAACAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferCampaign">
+    <Position X="13" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferCampaign_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAwIAQEAACABAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferCampaignDetail">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferCampaignDetail_DAO.cs</FileName>
+      <HashCode>AAAAAJAiAAAQQAAAAAAkAAAAAAAAAABQAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferCondition">
+    <Position X="16.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferCondition_DAO.cs</FileName>
+      <HashCode>AAAAAIEAAAAQIAQAAACEAEAAAAAAAgAAAAAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferConditionToken">
+    <Position X="18.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferConditionToken_DAO.cs</FileName>
+      <HashCode>AAAAAAEAAAAACAQAAgCEAAAAAQAEAAAAAAAAAAABAAE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferException">
+    <Position X="20" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferException.cs</FileName>
+      <HashCode>AAAIAAACAACAAAQAAACEAAAAAAAAAAAAAAAgAAAAgAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferExceptionType">
+    <Position X="21.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferExceptionType_DAO.cs</FileName>
+      <HashCode>IAAAAEAAAAAgAAQEAECAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferExceptionTypeGroup">
+    <Position X="23.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferExceptionTypeGroup.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAABAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferInformation">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferInformation_DAO.cs</FileName>
+      <HashCode>CAAAIIAAQAAAAiQAAAiEAAgAAAhRAQEAAAAAAAACAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferInformationCashUpFront">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferInformationCashUpFront_DAO.cs</FileName>
+      <HashCode>AAAAAAAQAgACAAAAABAAABgBEAEAAAAAEAAMAQIACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferInformationQuickCash">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferInformationQuickCash_DAO.cs</FileName>
+      <HashCode>AAAAAAAQAgACAAAAABAAABgBEAEAAAAAEAAMAQIACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferInformationRateOverride">
+    <Position X="13" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferInformationRateOverride_DAO.cs</FileName>
+      <HashCode>AAEAAAgQAAAABAwAAACAAAAAAAAABUAAEgEKAQIBAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferInformationType">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferInformationType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAgAAAAAAAAAAAAAIAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferInformationVariableLoan">
+    <Position X="16.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferInformationVariableLoan_DAO.cs</FileName>
+      <HashCode>BCgAAABQiASCABgTAEAMsJBBXwAAoAwAECEEAQ5FSAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferMortgageLoan">
+    <Position X="18.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferMortgageLoan_DAO.cs</FileName>
+      <HashCode>TAAAAIACACAcABQAAQpOAAAAAAAADhAAAgAgECAAADA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferSource">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferSource_DAO.cs</FileName>
+      <HashCode>CAAEAAAAAAFAAAQAAACAAAAAgAAAACQAAAAAAQABAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferSourceConfiguration">
+    <Position X="21.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferSourceConfiguration_DAO.cs</FileName>
+      <HashCode>AAAAAQIAAAAAAAQAAACQAAAAAAQAAAEAAAQAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferStatus">
+    <Position X="23.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferStatus_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OfferType">
+    <Position X="7.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OfferType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEACCAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OrganisationStructure">
+    <Position X="9.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrganisationStructure_DAO.cs</FileName>
+      <HashCode>ACAABAAAAAAgAAYEAACAQAARAAAEAAAAAAAAAAQAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OrganisationStructureOriginationSource">
+    <Position X="11.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrganisationStructureOriginationSource_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAwAAACAAAAAAAABAAAAAAAAAAAAgBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OrganisationType">
+    <Position X="13" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OrganisationType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OriginationSource">
+    <Position X="14.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OriginationSource_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OriginationSourceIcon">
+    <Position X="16.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OriginationSourceIcon.cs</FileName>
+      <HashCode>AAAAAAAAAAAAACQAAACAAAAAAAAAAACAAAABAAEAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.OriginationSourceProduct">
+    <Position X="18.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>OriginationSourceProduct_DAO.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAwAAACAAAAAAAABAAAAAIAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ParameterType">
+    <Position X="20" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ParameterType_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgBIQEAACAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.PopulationGroup">
+    <Position X="21.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>PopulationGroup_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Product">
+    <Position X="7.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Product_DAO.cs</FileName>
+      <HashCode>AAAAAAQAAAAgEAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.ResidenceStatus">
+    <Position X="9.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ResidenceStatus.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Salutation">
+    <Position X="11.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Salutation_DAO.cs</FileName>
+      <HashCode>AAAAAAEAAAAgAAQEAACEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.StatementDefinition">
+    <Position X="13" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>StatementDefinition_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAkIAQEAECBEAAAIAQAAAAAAAAAAAABAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.StatementParameter">
+    <Position X="14.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>StatementParameter_DAO.cs</FileName>
+      <HashCode>AAAAEAAAAAFIAAQAEACAARQAAAAAAJAAAAAAAABAAQA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Token">
+    <Position X="16.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Token_DAO.cs</FileName>
+      <HashCode>IAgAEAAAAABgAASFAACAAQAAAAAAAAAAAAAAAAFAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.TokenType">
+    <Position X="18.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TokenType_DAO.cs</FileName>
+      <HashCode>AQAAAAAAAAAgAAQEAACAAAgIAAgAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.TranslatableItem">
+    <Position X="20" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TranslatableItem_DAO.cs</FileName>
+      <HashCode>AAAAAAAAAAAgAAQEAACAAABABAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.TranslatedText">
+    <Position X="21.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>TranslatedText_DAO.cs</FileName>
+      <HashCode>AAAAQAEACAAAAAQAAACEAAAAAAAAAAAAAgAACAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.UserOrganisationStructure">
+    <Position X="7.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>UserOrganisationStructure_DAO.cs</FileName>
+      <HashCode>AAABAAAAAAAAAAQAAACAAAAIAAAAAAAAAAAAAAAAgBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.DomainMessages.DomainMessage">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DomainMessages\DomainMessage.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAACAEAAAIAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.DomainMessages.Error">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DomainMessages\Error.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.DomainMessages.Information">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DomainMessages\Information.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.DomainMessages.Warning">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DomainMessages\Warning.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Security.PrincipalHelper">
+    <Position X="23.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Security\PrincipalHelper.cs</FileName>
+      <HashCode>AAAAAIAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SAHL.Common.BusinessModel.Validation.ValidationHelper">
+    <Position X="9.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Validation\ValidationHelper.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SAHL.Common.BusinessModel.Repositories.IUnitOfWork">
+    <Position X="9.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Repositories\IUnitOfWork.cs</FileName>
+      <HashCode>AAAACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SAHL.Common.BusinessModel.Validation.IEntityValidation">
+    <Position X="7.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Validation\IEntityValidation.cs</FileName>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

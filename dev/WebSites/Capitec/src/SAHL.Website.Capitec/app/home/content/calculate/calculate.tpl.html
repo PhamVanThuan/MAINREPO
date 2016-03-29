@@ -1,0 +1,16 @@
+﻿<div id="pageContent" class="splashMenu" ng-controller="CalculateCtrl" ng-hide="$state.current.name != 'home.content.apply.calculate'">
+    <div class="splashbody" style="width:500px">
+        <div class="splashbox tile">
+            <a ui-sref="home.content.calculate.new-home" target="_self">
+                <img id="calculate" src="~/../assets/img/calctype_newpurchase.png" alt="new home" />
+            </a>
+        </div>
+        <div class="splashbox tile">
+            <a ui-sref="home.content.calculate.switch" target="_self">
+                <img id="track" src="~/../assets/img/calctype_switch.png" alt="switch" />
+            </a>
+        </div>
+    </div>
+</div>
+<div ui-view >
+</div>

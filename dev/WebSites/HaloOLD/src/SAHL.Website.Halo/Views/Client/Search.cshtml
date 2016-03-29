@@ -1,0 +1,111 @@
+﻿@model SAHL.Services.Interfaces.Search.Models.ClientQuery
+@{
+  Layout = "~/Views/Shared/Layouts/_PageLayout.cshtml";
+}
+<div class="row search" style="padding:24px;">
+  <div class="span4 searchcriteria">
+    <h3>Search for a client</h3>
+    <table class="unstyled">
+      <tr>
+        <td><div class="tile tile-mini"><h1>Person</h1></div></td>
+        <td><div class="tile tile-mini"><h1>Business or Trust</h1></div></td>
+      </tr>
+      <tr style="text-align:center;">
+        <td><input type="checkbox" name="person" class="person" value="Person" checked></td>
+        <td><input type="checkbox" name="businessortrust" class="businessortrust" value="Business or Trust"></td>
+      </tr>
+    </table>
+    @using (Html.BeginForm("Search", "Client", null, FormMethod.Post, new { @class = "form-horizontal", id="client-search-form"}))
+    {
+      <fieldset>
+        <legend>Basic Details</legend>
+        <div class="person">
+          @Html.EditorLabelModelPairFor("First Name", x => x.QueryModel.Firstname)
+          @Html.EditorLabelModelPairFor("Surname", x => x.QueryModel.Surname)
+          @Html.EditorLabelModelPairFor("Identity No.", x => x.QueryModel.SAIDNumber)
+          @Html.EditorLabelModelPairFor("Account No", x => x.QueryModel.AccountKey)
+        </div>
+        <div class="businessortrust" style="display:none;">
+          @Html.EditorLabelModelPairFor("Registration Name", x => x.QueryModel.RegisteredName)
+          @Html.EditorLabelModelPairFor("Registered No", x => x.QueryModel.RegistrationNumber)
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Contact Details</legend>
+        @Html.EditorLabelModelPairFor("Telephone Number", x => x.QueryModel.HomeTelephone)
+        @Html.EditorLabelModelPairFor("Email Address", x => x.QueryModel.EmailAddress)
+      </fieldset>
+      <fieldset>
+        <legend>Employment Details</legend>
+        @Html.EditorLabelModelPairFor("Employer", x => x.QueryModel.PersalEmployerRegisteredName)
+        @Html.EditorLabelModelPairFor("Employee No", x => x.QueryModel.PersalEmployeeNumber)
+      </fieldset>
+      <fieldset>
+        <legend>Address Details</legend>
+        @Html.EditorLabelModelPairFor("", x => x.QueryModel.PropertyAddress, inputLength: "xxlarge")
+      </fieldset>
+      <input type="submit" class="btn btn-primary" value="Search"/>
+  }
+  </div>
+  <div class="span8 results">
+  </div>
+</div>
+@section Scripts{
+  <script src="~/Scripts/libs/jquery.js"></script>
+  <script>
+      (function () {
+          $(":checkbox").change(function () {
+              var isChecked = $(this).is(':checked');
+              var classOfElementToToggle = $(this).attr('class');
+              if (isChecked) {
+                  $("div." + classOfElementToToggle).show();
+              } else {
+                  $("div." + classOfElementToToggle).hide();
+              }
+          });
+      }());
+      (function () {
+          $('.btn-primary').click(function (event) {
+              event.preventDefault();
+              var clientQuery = getClientQuery();
+              $.ajax({
+                  type: 'POST',
+                  contentType: 'application/json; charset=utf-8',
+                  data: JSON.stringify(clientQuery),
+                  url: '@Url.Action("Search", "Client")',
+                  success: function (result) {
+                      $('.results').html(result);
+                      attachPagingHandler();
+                  },
+                  error: function () {
+                      $('.results').html("An error occurred while trying to retrieve your search results.");
+                  }
+              });
+          });
+      }());
+
+      function getClientQuery() {
+          var queryObj = {};
+          queryObj.PageIndex = $('.pagination').data('pageindex') > 0 ? $('.pagination').data('pageindex') - 1 : 0;
+          queryObj.PageSize = 10;
+          var formInputs = $('#client-search-form').serializeArray();
+          $.each(formInputs, function (_, kv) {
+              var nestedObjs = kv.name.split(',');
+              if (nestedObjs.length == 2) {
+                  queryObj[kv.name[0]] = {};
+                  queryObj[kv.name[0]][kv.name[1]] = kv.value;
+              }
+              else if (nestedObjs.length == 1) {
+                  queryObj[kv.name] = kv.value;
+              }
+          });
+          return queryObj;
+      }
+      function attachPagingHandler() {
+          $('.pagination').on('click', 'a', (function (event) {
+              $('.pagination').attr('data-pageindex', $(this).text());
+              $('.btn-primary').click();
+          }));
+      }
+  </script>
+}

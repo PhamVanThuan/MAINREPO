@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F99C2440-5ADB-4B08-9A41-9083961F4B36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkflowMaps.Cap2.Specs</RootNamespace>
+    <AssemblyName>WorkflowMaps.Cap2.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CAP2Offers">
+      <HintPath>..\Binaries\CAP2Offers.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\External Binaries\NuGet\Dapper.1.12.1\lib\net40\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2.IOC">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.0.3.5\lib\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.0.3.5\lib\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common">
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework">
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2Engine2.Factories, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.X2Engine2.Factories.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="X2DomainService.Interface.Cap2">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Cap2.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.Common">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\Cancel CAP2 Offer\OnComplete\when_cancel_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cancel CAP2 Offer\OnGetActivityMessage\when_cancel_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cancel CAP2 Offer\OnGetStageTransition\when_cancel_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cancel CAP2 Offer\OnStart\when_cancel_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment Verified\OnComplete\when_cash_payment_verified.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment Verified\OnGetActivityMessage\when_cash_payment_verified.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment Verified\OnGetStageTransition\when_cash_payment_verified.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment Verified\OnStart\when_cash_payment_verified.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment\OnComplete\when_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment\OnGetActivityMessage\when_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment\OnGetStageTransition\when_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Cash Payment\OnStart\when_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Change Payment Option\OnComplete\when_change_payment_option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Change Payment Option\OnGetActivityMessage\when_change_payment_option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Change Payment Option\OnGetStageTransition\when_change_payment_option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Change Payment Option\OnStart\when_change_payment_option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Clear Cache\OnComplete\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnGetActivityMessage\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnStart\when_clear_cache.cs" />
+    <Compile Include="Activities\Completed Expired\OnComplete\when_completed_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Completed Expired\OnGetActivityTime\when_getting_activity_time.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Completed Expired\OnGetStageTransition\when_completed_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Completed Expired\OnStart\when_completed_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Cancellation\OnComplete\when_confirm_cancellation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Cancellation\OnGetActivityMessage\when_confirm_cancellation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Cancellation\OnGetStageTransition\when_confirm_cancellation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Confirm Cancellation\OnStart\when_confirm_cancellation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue Sale\OnComplete\when_continue_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue Sale\OnGetActivityMessage\when_continue_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue Sale\OnGetStageTransition\when_continue_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue Sale\OnStart\when_continue_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnComplete\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnGetActivityMessage\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnGetStageTransition\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Continue with Sale\OnStart\when_continue_with_sale.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Callback\OnComplete\when_create_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Callback\OnGetActivityMessage\when_create_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Callback\OnGetStageTransition\when_create_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Callback\OnStart\when_create_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Cap2 Lead\OnComplete\When_the_legal_entity_name_is_less_than_128_chars.cs" />
+    <Compile Include="Activities\Create Cap2 Lead\OnComplete\When_the_legal_entity_name_is_longer_than_128_chars.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Cap2 Lead\OnGetActivityMessage\when_create_cap2_lead.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Cap2 Lead\OnGetStageTransition\when_create_cap2_lead.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Cap2 Lead\OnStart\when_create_cap2_lead.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Create Cap2 Lead\OnStart\when_creating_an_instance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Credit Approval\OnComplete\when_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Credit Approval\OnGetActivityMessage\when_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Credit Approval\OnGetStageTransition\when_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Credit Approval\OnStart\when_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Decline CAP2\OnComplete\when_decline_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Decline CAP2\OnGetActivityMessage\when_decline_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Decline CAP2\OnGetStageTransition\when_decline_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Decline CAP2\OnStart\when_decline_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Declined\OnComplete\when_declined_timer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Declined\OnGetActivityTime\when_getting_activity_time.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Declined\OnGetStageTransition\when_declined.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Declined\OnStart\when_declined.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Dont Send to Credit\OnComplete\when_credit_check_is_not_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Dont Send to Credit\OnComplete\when_credit_check_is_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Dont Send to Credit\OnComplete\when_dont_send_to_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Dont Send to Credit\OnGetStageTransition\when_dont_send_to_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Forms Sent\OnComplete\when_forms_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Forms Sent\OnGetActivityMessage\when_forms_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Forms Sent\OnGetStageTransition\when_forms_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Forms Sent\OnStart\when_forms_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Further Advance Decision\OnComplete\when_further_advance_decision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Further Advance Decision\OnGetActivityMessage\when_further_advance_decision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Further Advance Decision\OnGetStageTransition\when_further_advance_decision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Further Advance Decision\OnStart\when_further_advance_decision.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Grant CAP2 Offer\OnComplete\when_grant_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Grant CAP2 Offer\OnGetActivityMessage\when_grant_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Grant CAP2 Offer\OnGetStageTransition\when_grant_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Grant CAP2 Offer\OnStart\when_grant_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\LA Sent\OnComplete\when_la_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\LA Sent\OnGetActivityMessage\when_la_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\LA Sent\OnGetStageTransition\when_la_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\LA Sent\OnStart\when_la_sent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\LAnotRequired\OnComplete\when_lanotrequired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\LAnotRequired\OnGetStageTransition\when_lanotrequired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\LAnotRequired\OnStart\when_an_la_is_not_required.cs" />
+    <Compile Include="Activities\LAnotRequired\OnStart\when_an_LA_is_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU CAP2 Offer\OnComplete\when_ntu_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU CAP2 Offer\OnGetActivityMessage\when_ntu_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU CAP2 Offer\OnGetStageTransition\when_ntu_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU CAP2 Offer\OnStart\when_ntu_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU Offer\OnComplete\when_ntu_offer_timer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU Offer\OnGetStageTransition\when_ntu_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU Offer\OnStart\when_ntu_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\NTU Offer\OnTimed\When_getting_activity_time.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Offer Expired\OnComplete\when_offer_expired_timer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Offer Expired\OnGetActivityTime\when_getting_activity_time.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Offer Expired\OnGetStageTransition\when_offer_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Offer Expired\OnStart\when_offer_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Print Cap Letter\OnComplete\when_printing_cap_letter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Print Cap Letter\OnComplete\when_print_cap_letter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Print Cap Letter\OnGetActivityMessage\when_print_cap_letter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Print Cap Letter\OnGetStageTransition\when_print_cap_letter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Print Cap Letter\OnStart\when_print_cap_letter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Promotion Client\OnComplete\when_promotion_client.cs" />
+    <Compile Include="Activities\Promotion Client\OnGetActivityMessage\when_promotion_client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Promotion Client\OnGetStageTransition\when_promotion_client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Promotion Client\OnStart\when_promotion_client.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Done\OnComplete\when_readvance_has_been_posted.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Done\OnComplete\when_readvance_has_not_been_posted.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Done\OnGetActivityMessage\when_readvance_done.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Done\OnGetStageTransition\when_readvance_done.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Done\OnStart\when_readvance_done.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Required\OnComplete\when_readvance_required.cs" />
+    <Compile Include="Activities\Readvance Required\OnGetActivityMessage\when_readvance_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Required\OnGetStageTransition\when_readvance_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Readvance Required\OnStart\when_readvance_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Ready For Readvance\OnComplete\when_ready_for_readvance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Ready For Readvance\OnGetActivityMessage\when_ready_for_readvance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Ready For Readvance\OnGetStageTransition\when_ready_for_readvance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Ready For Readvance\OnStart\when_ready_for_readvance.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Recalculate CAP2\OnComplete\when_recalculate_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Recalculate CAP2\OnComplete\when_recalculating_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Recalculate CAP2\OnGetActivityMessage\when_recalculate_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Recalculate CAP2\OnGetActivityMessage\when_recalculating_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Recalculate CAP2\OnGetStageTransition\when_recalculate_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Recalculate CAP2\OnStart\when_recalculate_cap2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Rework Offer\OnComplete\when_reworking_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Rework Offer\OnComplete\when_rework_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Rework Offer\OnGetActivityMessage\when_rework_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Rework Offer\OnGetStageTransition\when_rework_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Rework Offer\OnStart\when_reworking_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Rework Offer\OnStart\when_rework_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send to Credit\OnComplete\when_send_to_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send to Credit\OnGetStageTransition\when_send_to_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send to Credit\OnStart\when_credit_check_is_not_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Send to Credit\OnStart\when_credit_check_is_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Wait for Callback\OnComplete\when_wait_for_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Wait for Callback\OnGetActivityTime\when_getting_activity_time.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Wait for Callback\OnGetStageTransition\when_wait_for_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activities\Wait for Callback\OnStart\when_wait_for_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="States\Awaiting Forms\OnEnter\when_entering_awaiting_forms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Awaiting Forms\OnExit\when_exiting_awaiting_forms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Awaiting LA\OnEnter\when_entering_awaiting_la.cs" />
+    <Compile Include="States\Awaiting LA\OnExit\when_exiting_awaiting_la.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Cache Archive\OnEnter\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnExit\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnReturn\when_cache_archive.cs" />
+    <Compile Include="States\Callback Hold\OnEnter\when_entering_callback_hold.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Callback Hold\OnExit\when_callback_hold.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Cancelled CAP2 Offer\OnEnter\when_cancelled_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Cancelled CAP2 Offer\OnEnter\when_entering_cancelled_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Cancelled CAP2 Offer\OnExit\when_cancelled_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Cancelled CAP2 Offer\OnExit\when_exiting_cancelled_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\CAP2 Expired\OnEnter\when_cap2_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\CAP2 Expired\OnExit\when_cap2_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\CAP2 Expired\OnReturn\when_cap2_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\CAP2 Offer Declined\OnEnter\when_cap2_offer_declined.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\CAP2 Offer Declined\OnExit\when_cap2_offer_declined.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Check Cash Payment\OnEnter\when_check_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Check Cash Payment\OnEnter\when_entering_check_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Check Cash Payment\OnExit\when_check_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Check Cash Payment\OnExit\when_exiting_check_cash_payment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Callback\OnEnter\when_common_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Callback\OnExit\when_common_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Change Payment Option\OnEnter\when_common_change_payment_option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Change Payment Option\OnExit\when_common_change_payment_option.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Decline\OnEnter\when_common_decline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Decline\OnExit\when_common_decline.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common NTU\OnEnter\when_common_ntu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common NTU\OnExit\when_common_ntu.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Rework\OnEnter\when_common_rework.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Common Rework\OnExit\when_common_rework.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Completed CAP2 Offer\OnEnter\when_completed_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Completed CAP2 Offer\OnEnter\when_entering_completed_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Completed CAP2 Offer\OnExit\when_completed_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Completed CAP2 Offer\OnExit\when_exiting_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Credit Approval\OnEnter\when_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Credit Approval\OnEnter\when_entering_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Credit Approval\OnExit\when_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Credit Approval\OnExit\when_exiting_credit_approval.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Forward to last State\OnAutoForward\when_auto_forward.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Forward to last State\OnEnter\when_forward_to_last_state.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Forward to last State\OnExit\when_forward_to_last_state.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Granted CAP2 Offer\OnEnter\when_entering_granted_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Granted CAP2 Offer\OnEnter\when_granted_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Granted CAP2 Offer\OnExit\when_exiting_granted_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Granted CAP2 Offer\OnExit\when_granted_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\NTU Offer\OnEnter\when_ntu_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\NTU Offer\OnExit\when_ntu_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Open CAP2 Offer\OnEnter\When_entering_open_cap2_offer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Open CAP2 Offer\OnExit\When_exiting_open_cape2_offers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Period Expired\OnEnter\when_period_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Period Expired\OnExit\when_period_expired.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Prepare For Credit\OnEnter\when_entering_prepare_for_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Prepare For Credit\OnEnter\when_prepare_for_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Prepare For Credit\OnExit\when_exiting_prepare_for_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Prepare For Credit\OnExit\when_prepare_for_credit.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Readvance Credit Check\OnEnter\when_readvance_credit_check.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Readvance Credit Check\OnExit\when_readvance_credit_check.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Readvance Required\OnEnter\when_readvance_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Readvance Required\OnExit\when_readvance_required.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Ready to Callback\OnEnter\when_entering_ready_to_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="States\Ready to Callback\OnExit\when_ready_to_callback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\when_getting_cap_broker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\when_getting_cap_credit_broker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\when_the_cap_broker_is_null.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\when_the_cap_credit_broker_is_null.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorkflowSpecCap2.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Activities\Clear Cache\OnGetStageTransition\" />
+    <Folder Include="Activities\Dont Send to Credit\OnStart\" />
+    <Folder Include="Activities\NTU Offer\OnGetActivityTime\" />
+    <Folder Include="States\CAP2 Expired\OnReturn\CAP2 Offer Declined\OnEnter\" />
+    <Folder Include="States\CAP2 Expired\OnReturn\CAP2 Offer Declined\OnExit\" />
+    <Folder Include="States\Readvance Credit Check\OnAutoForward\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WorkflowMaps.Specs.Common\WorkflowMaps.Specs.Common.csproj">
+      <Project>{AE22CAB1-D3AB-43EC-A840-B23B4050F880}</Project>
+      <Name>WorkflowMaps.Specs.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

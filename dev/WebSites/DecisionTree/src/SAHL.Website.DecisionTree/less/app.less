@@ -1,0 +1,110 @@
+@import url(branding.less);
+@import url(colors.less);
+@import url(fonts.less);
+@import url(mixins.less);
+@import url(sizing.less);
+@import url(structure.less);
+@import url(icons.less);
+
+.dockcontainer {
+    position: relative;
+    top: 0;    
+    bottom: 0;
+    left: 0;
+    right: 0;     
+    overflow: hidden;
+}
+   
+.dockmain { 
+    float: left;                 
+    height: 100%;  
+    width: 100%;  
+}
+ 
+.dockright {
+    float: right; 
+    width: 20%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    top: 0;  
+    padding: 5px;
+    bottom: 0;
+    background: #ffffff;
+}
+
+.dockcontent {
+    height: 100%;
+}
+
+#siteContent {
+    display: block;
+    clear: both;
+    height: 100%;
+}
+
+#contentColumn,
+.bodyContent {
+    height: 100%;
+}
+
+canvas:focus {
+    outline: none;
+}
+
+.metro .fluent-menu .tabs-holder li.special {
+    background-color: @sahl-orange;
+    border: 1px @sahl-orange solid;
+
+    &:hover {
+        background-color: fade(@sahl-orange, 80%);
+        border: 1px fade(@sahl-orange, 80%) solid;
+    }
+}
+
+.metro .fluent-menu .tabs-holder li.active a {
+    color: @sahl-orange;
+
+    &:hover {
+        color: @sahl-orange;
+    }
+}
+
+.metro .fluent-menu .tabs-holder li a {
+    &:hover {
+        color: @sahl-orange;
+    }
+}
+
+.metro button:disabled, .metro button.disabled {
+    color: #bebebe !important;
+    background-color: transparent !important;
+    cursor: not-allowed !important;
+
+    span {
+        color: #bebebe !important;
+        cursor: not-allowed !important;
+    }
+}
+
+.metro .CodeMirror {
+    text-align: left;
+}
+.metro .cm-errorunderline {
+        background-image: url(../assets/img/redline.png);
+        background-position: bottom left;
+        background-repeat: repeat-x;
+    }
+
+.metro .CodeMirror-hints {
+    padding: 0px;
+}
+
+.metro .window.flat .caption {
+    padding:0px;
+}
+
+.metro .CodeMirror-selected {
+    padding:0px;
+    height:auto;
+}

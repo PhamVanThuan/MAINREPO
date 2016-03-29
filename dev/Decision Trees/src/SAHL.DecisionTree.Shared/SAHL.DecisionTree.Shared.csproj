@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3FB45A76-258E-4870-8D3A-F7AE0A81DB56}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.DecisionTree.Shared</RootNamespace>
+    <AssemblyName>SAHL.DecisionTree.Shared</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Common.Logging\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Common.Logging.Core\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="IronRuby">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\IronRuby\Lib\IronRuby.dll</HintPath>
+    </Reference>
+    <Reference Include="IronRuby.Libraries">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\IronRuby\Lib\IronRuby.Libraries.dll</HintPath>
+    </Reference>
+    <Reference Include="IronRuby.Libraries.Yaml">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\IronRuby\Lib\IronRuby.Libraries.Yaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Dynamic">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\IronRuby\Lib\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\IronRuby\Lib\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\IronRuby\Lib\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Roslyn.Compilers.Common\lib\net45\Roslyn.Compilers.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Compilers.CSharp">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Roslyn.Compilers.CSharp\lib\net45\Roslyn.Compilers.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Roslyn.Services.Common\lib\net45\Roslyn.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Services.CSharp">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Roslyn.Services.CSharp\lib\net45\Roslyn.Services.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Roslyn.Utilities">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Roslyn.Services.Common\lib\net45\Roslyn.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Tools.ObjectFromJsonGenerator.Lib">
+      <HintPath>..\..\..\Binaries\Tools\General\SAHL.Tools.ObjectFromJsonGenerator.Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptCs.Contracts">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\ScriptCs.Contracts\lib\net45\ScriptCs.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptCs.Core">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\ScriptCs.Core\lib\net45\ScriptCs.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ScriptCs.Engine.Roslyn">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\ScriptCs.Engine.Roslyn\lib\net45\ScriptCs.Engine.Roslyn.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ClearMessages.cs" />
+    <Compile Include="Interfaces\IProcessingEngine.cs" />
+    <Compile Include="Interfaces\IRoutingEngine.cs" />
+    <Compile Include="Interfaces\ISubTreeContextManager.cs" />
+    <Compile Include="Core\NodeEvents.cs" />
+    <Compile Include="Core\ProcessingEngine.cs" />
+    <Compile Include="Core\RoutingEngine.cs" />
+    <Compile Include="Helpers\RubyCompilerServices.cs" />
+    <Compile Include="Core\SubTreeContextManager.cs" />
+    <Compile Include="Core\SubtreeEvents.cs" />
+    <Compile Include="Core\TreeProcessingContextEvents.cs" />
+    <Compile Include="Helpers\Utilities.cs" />
+    <Compile Include="Trees\CapitecAffordabilityInterestRate_1.cs" />
+    <Compile Include="Trees\CapitecAffordabilityInterestRate_1Variables.cs" />
+    <Compile Include="Trees\CapitecAlphaCreditPricing_1.cs" />
+    <Compile Include="Trees\CapitecAlphaCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\CapitecApplicationCreditPolicy_1.cs" />
+    <Compile Include="Trees\CapitecApplicationCreditPolicy_1Variables.cs" />
+    <Compile Include="Trees\CapitecClientCreditBureauAssessment_1.cs" />
+    <Compile Include="Trees\CapitecClientCreditBureauAssessment_1Variables.cs" />
+    <Compile Include="Trees\CapitecOriginationCreditPricing_1.cs" />
+    <Compile Include="Trees\CapitecOriginationCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\CapitecOriginationPricingforRisk_1.cs" />
+    <Compile Include="Trees\CapitecOriginationPricingforRisk_1Variables.cs" />
+    <Compile Include="Trees\CapitecOriginationPricingforRisk_2.cs" />
+    <Compile Include="Trees\CapitecOriginationPricingforRisk_2Variables.cs" />
+    <Compile Include="Trees\CapitecSalariedCreditPricing_1.cs" />
+    <Compile Include="Trees\CapitecSalariedCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\CapitecSalariedwithDeductionCreditPricing_1.cs" />
+    <Compile Include="Trees\CapitecSalariedwithDeductionCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\CapitecSelfEmployedCreditPricing_1.cs" />
+    <Compile Include="Trees\CapitecSelfEmployedCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\NCRAffordabilityAssessment_1.cs" />
+    <Compile Include="Trees\NCRAffordabilityAssessment_1Variables.cs" />
+    <Compile Include="Trees\OriginationNewBusinessSPVDetermination_1.cs" />
+    <Compile Include="Trees\OriginationNewBusinessSPVDetermination_1Variables.cs" />
+    <Compile Include="Trees\SAHLAlphaCreditPricing_1.cs" />
+    <Compile Include="Trees\SAHLAlphaCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\SAHLApplicationCreditPolicy_1.cs" />
+    <Compile Include="Trees\SAHLApplicationCreditPolicy_1Variables.cs" />
+    <Compile Include="Trees\SAHLClientCreditBureauAssessment_1.cs" />
+    <Compile Include="Trees\SAHLClientCreditBureauAssessment_1Variables.cs" />
+    <Compile Include="Trees\SAHLOriginationCreditPricing_1.cs" />
+    <Compile Include="Trees\SAHLOriginationCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\SAHLOriginationPricingforRisk_1.cs" />
+    <Compile Include="Trees\SAHLOriginationPricingforRisk_1Variables.cs" />
+    <Compile Include="Trees\SAHLSalariedCreditPricing_1.cs" />
+    <Compile Include="Trees\SAHLSalariedCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\SAHLSalariedwithDeductionCreditPricing_1.cs" />
+    <Compile Include="Trees\SAHLSalariedwithDeductionCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\SAHLSelfEmployedCreditPricing_1.cs" />
+    <Compile Include="Trees\SAHLSelfEmployedCreditPricing_1Variables.cs" />
+    <Compile Include="Trees\SAHomeLoansBCCScorecard_1.cs" />
+    <Compile Include="Trees\SAHomeLoansBCCScorecard_1Variables.cs" />
+    <Compile Include="Trees\ThirtyYearMortgageLoanEligibility_1.cs" />
+    <Compile Include="Trees\ThirtyYearMortgageLoanEligibility_1Variables.cs" />
+    <Compile Include="Globals\Enumerations.cs" />
+    <Compile Include="Globals\Enumerations_1.cs" />
+    <Compile Include="Globals\Enumerations_2.cs" />
+    <Compile Include="Globals\Messages.cs" />
+    <Compile Include="Globals\Messages_1.cs" />
+    <Compile Include="Globals\Messages_2.cs" />
+    <Compile Include="Globals\Variables.cs" />
+    <Compile Include="Globals\Variables_1.cs" />
+    <Compile Include="Globals\Variables_2.cs" />
+    <Compile Include="Globals\Variables_3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\CSharpREPLCompilerService.cs" />
+    <Compile Include="Helpers\DynamicExtensions.cs" />
+    <Compile Include="Interfaces\ITreeQueryResult.cs" />
+    <Compile Include="Helpers\QueryGlobalsVersion.cs" />
+    <Compile Include="Core\TreeProcessingContext.cs" />
+    <Compile Include="Interfaces\IDecisionTree.cs" />
+    <Compile Include="Core\Link.cs" />
+    <Compile Include="Core\Node.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\SubTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Trees\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

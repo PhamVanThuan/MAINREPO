@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ServiceMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ServiceMessages" nillable="true" type="tns:ArrayOfMessage" />
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceMessage" nillable="true" type="tns:ServiceMessage" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MessageType" type="tns:ServiceMessageType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:simpleType name="ServiceMessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Info" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Warning" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ServiceMessageType" nillable="true" type="tns:ServiceMessageType" />
+  <xs:complexType name="ArrayOfReportParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReportParameter" nillable="true" type="tns:ReportParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReportParameter" nillable="true" type="tns:ArrayOfReportParameter" />
+  <xs:complexType name="ReportParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ParameterTypeKey" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportParameterName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportParams" nillable="true" type="tns:ArrayOfReportParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReportParameter" nillable="true" type="tns:ReportParameter" />
+</xs:schema>

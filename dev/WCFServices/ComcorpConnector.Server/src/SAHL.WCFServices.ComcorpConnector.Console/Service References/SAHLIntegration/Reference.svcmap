@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ee3a53f4-8292-444d-968f-f79da3c325eb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SAHLIntegrationService.wsdl" MetadataType="Wsdl" ID="8698ddf2-7cd5-4a91-996d-56051aee0172" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?wsdl" />
+    <MetadataFile FileName="SAHLIntegrationService.xsd" MetadataType="Schema" ID="90058eb7-8872-414f-9e61-f49720f774cc" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd5" />
+    <MetadataFile FileName="SAHLIntegrationService1.xsd" MetadataType="Schema" ID="c17ba594-1af7-4c76-9ec4-0126d552f8cd" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SAHLIntegrationService2.xsd" MetadataType="Schema" ID="b97b0fbe-85af-4f8e-af92-4a5e99564f28" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SAHLIntegrationService3.xsd" MetadataType="Schema" ID="7f12bd85-5ddf-4d3c-b614-9cfb8f693429" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd7" />
+    <MetadataFile FileName="SAHLIntegrationService.disco" MetadataType="Disco" ID="e7599275-f3e8-4d47-aef9-218a268f72fa" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?disco" />
+    <MetadataFile FileName="SAHLIntegrationService4.xsd" MetadataType="Schema" ID="e68aaf51-8e7a-4e3a-9ee2-febcbbf24806" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SAHLIntegrationService5.xsd" MetadataType="Schema" ID="9117546e-4eee-4551-9720-8eb78377d649" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd6" />
+    <MetadataFile FileName="SAHLIntegrationService6.xsd" MetadataType="Schema" ID="de49582a-abcf-496c-8b56-247688cbb3b0" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SAHLIntegrationService7.xsd" MetadataType="Schema" ID="a601fb58-e2fc-40a0-9991-3ae7c099fd9b" SourceId="1" SourceUrl="http://localhost/SAHLComcorpConnectorService/SAHLIntegrationService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

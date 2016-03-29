@@ -1,0 +1,11 @@
+﻿<nav class="vertical-menu compact place-left domain-menu">
+    <ul>
+        <li class="title">Domain Services</li>
+        <li ng-repeat="(key, domainService) in domainServices">
+            <a href="#" ng-click="viewDomainDocumentation(key)">{{domainService.name}}</a>
+        </li>
+    </ul>
+</nav>
+<div class="iframe-container">
+    <iframe src="{{getUrl(domainServices[currentDomainService].url)}}"></iframe>
+</div>

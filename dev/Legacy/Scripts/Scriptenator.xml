@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BatchParameters>
+  <File FileName="fb3462_Alter_Table_X2_X2_Process_Add_Column_ViewableOnUserInterfaceVersion.sql" /> 
+  <File FileName="fb4250_Add_IsLegacy_Column_To_X2_X2_Process_Table.sql" />	
+</BatchParameters>

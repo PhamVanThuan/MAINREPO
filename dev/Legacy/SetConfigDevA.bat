@@ -1,0 +1,1 @@
+powershell -noexit "& ".\SetConfigFiles.ps1" -replaceString "DEVA"

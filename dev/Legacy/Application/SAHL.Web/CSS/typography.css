@@ -1,0 +1,66 @@
+﻿/*--- START CROSS-BROWSER FIXES - DO NOT MODIFY ---*/
+body
+{
+	font-family: Verdana, Arial, Tahoma;
+}
+small {
+ font-size: smaller;
+ }
+big {
+ font-size: larger;
+ }
+h1 {
+ font-size: xx-large;
+ font-weight:normal;
+ }
+h2 {
+ font-size: x-large;
+ }
+h3 {
+ font-size: large;
+ }
+h4 {
+ font-size: medium;
+ }
+h5 {
+ font-size: small;
+ }
+h6 {
+ font-size: xx-small;
+ }
+font[size=1] {
+ font-size: xx-small;
+ }
+font[size=2] {
+ font-size: small;
+ }
+font[size=3] {
+ font-size: medium;
+ }
+font[size=4] {
+ font-size: large;
+ }
+font[size=5] {
+ font-size: x-large;
+ }
+font[size=6] {
+ font-size: xx-large;
+ }
+font[size=7] {
+ font-size: 300%;
+ }
+font[size=-1] {
+ font-size: smaller;
+ }
+/*--- END CROSS-BROWSER FIXES - DO NOT MODIFY ---*/
+
+/*--- START SAHL FONT DECLARATIONS - THESE CAN BE MODIFIED ---*/
+.fontSmaller
+{
+	font-size: 0.85em;
+}
+/*--- END SAHL FONT DECLARATIONS ---*/
+.SearchLable
+{
+	font-weight:bold;
+}

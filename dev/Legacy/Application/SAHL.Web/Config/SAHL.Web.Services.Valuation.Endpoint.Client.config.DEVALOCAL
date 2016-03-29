@@ -1,0 +1,5 @@
+		<client>
+			<endpoint address="http://DEVAFE01:81/Valuation.svc"
+			  binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IValuation"
+			  contract="ValuationServiceInternal.IValuation" name="BasicHttpBinding_IValuation" />
+		</client>

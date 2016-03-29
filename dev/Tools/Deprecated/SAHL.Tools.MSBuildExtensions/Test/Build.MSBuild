@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<UsingTask AssemblyFile="$(MSBuildProjectDirectory)\..\SAHL.Tools.MSBuildExtensions\bin\Debug\SAHL.Tools.MSBuildExtensions.dll" TaskName="SAHL.Tools.MSBuildExtensions.GetLatestVersion"/>
+	<PropertyGroup>
+		<Version></Version>
+		<Other>$(Version)</Other>
+	</PropertyGroup>
+
+  <Target Name="Default" DependsOnTargets="glv">
+    <Message Text="default output : $(Version)"></Message>
+    <Message Text="output : $(Other)"></Message>
+  </Target>
+
+  <Target Name="glv">
+		<GetLatestVersion  HgFolder="I:\WORK\HGBranch\SAHL-Core" NugetUrl="http://sahldeploy/sahldevnugetgallery/dataservices/v2feed.svc/" Project = "SAHL.Core">
+			<Output TaskParameter="VersionNumber" PropertyName="Version"/>
+		</GetLatestVersion>
+	</Target>
+</Project>  

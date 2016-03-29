@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/Attorney.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" />
+  <xs:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/Attorney.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetServiceMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="legalEntityKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetServiceMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" minOccurs="0" name="GetServiceMessageResult" nillable="true" type="q1:ServiceMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="leKey" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="emailAddress" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RegisterUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenderSQLReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reportkey" type="xs:int" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="sqlReportParameters" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RenderSQLReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RenderSQLReportResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportParametersByStatementKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReportStatementKey" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportParametersByStatementKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" minOccurs="0" name="GetReportParametersByStatementKeyResult" nillable="true" type="q3:ArrayOfReportParameter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgottenPassword">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ForgottenPasswordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ForgottenPasswordResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotesByDebtCounselling">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="debtCounsellingKey" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotesByDebtCounsellingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" minOccurs="0" name="GetNotesByDebtCounsellingResult" nillable="true" type="q4:ArrayOfNoteDetail" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebtCounsellingByKey">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="debtCounsellingKey" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDebtCounsellingByKeyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" minOccurs="0" name="GetDebtCounsellingByKeyResult" nillable="true" type="q5:DebtCounselling" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForCases">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="legalEntityKey" type="xs:int" />
+        <xs:element minOccurs="0" name="accountNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="idNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="legalEntityName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchForCasesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" minOccurs="0" name="SearchForCasesResult" nillable="true" type="q6:ArrayOfDebtCounselling" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveNoteDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" minOccurs="0" name="noteDetail" nillable="true" type="q7:NoteDetail" />
+        <xs:element minOccurs="0" name="legalEntityKey" type="xs:int" />
+        <xs:element minOccurs="0" name="debtCounsellingKey" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveNoteDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveNoteDetailResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProposals">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="debtCounsellingKey" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProposalsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/SAHL.Web.Services.Internal.DataModel" minOccurs="0" name="GetProposalsResult" nillable="true" type="q8:ArrayOfProposal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

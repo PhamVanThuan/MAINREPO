@@ -1,0 +1,14 @@
+<label class="tile-strong-text">{{item.tileData.Address}}</label>
+<br/>
+<div class="tile-data-bottom">
+    <div class="labels">
+        <div>Effective Date:</div>
+        <div>Is Domicilium:</div>
+        <div ng-if="item.tileData.Notification">Notification:</div>
+    </div>
+    <div class="values">
+        <div>{{item.tileData.EffectiveDate | dateViewFilter}}</div>
+        <div>{{item.tileData.IsDomicilium}}</div>
+        <div ng-if="item.tileData.Notification">{{item.tileData.Notification | characters:13}}</div>
+    </div>
+</div>

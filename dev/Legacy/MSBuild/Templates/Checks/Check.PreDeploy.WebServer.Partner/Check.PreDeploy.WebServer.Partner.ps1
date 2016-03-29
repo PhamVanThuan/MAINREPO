@@ -1,0 +1,6 @@
+function PerformChecks()
+{
+	<# BEGIN WEBSERVER PARTNER CHECKS #>
+	
+	<# END WEBSERVER PARTNER CHECKS #>
+}

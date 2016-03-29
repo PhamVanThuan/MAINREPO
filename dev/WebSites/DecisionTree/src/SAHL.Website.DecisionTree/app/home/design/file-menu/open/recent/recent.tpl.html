@@ -1,0 +1,16 @@
+﻿<div id="heading">
+    <h3>Recent Decision Trees</h3>
+</div>
+
+<div ng-hide="trees.length != 0">You haven't opened any decision trees recently.</div>
+<div class="tile" data-ng-repeat="tree in trees">
+    <a ng-click="openTree(tree.DecisionTreeId, tree.DecisionTreeVersionId, tree.IsPublished)" ng-attr-title="{{tree.Description}}">
+        <img ng-show="tree.CurrentlyOpenBy" class="tile-corner-badge" ng-src="{{tree.CurrentlyOpenByImageSrc}}" title="Locked by {{tree.CurrentlyOpenBy}}" alt="{{tree.CurrentlyOpenBy}}" /> 
+        <div class=" tile-content image icon-tree-thumbnail " style="padding:6px;"> <img src="{{tree.Thumbnail}}" ng-show="tree.Thumbnail" /></div>
+        <div class="brand bg-dark opacity">
+            <span class="text">
+                {{tree.Name}}
+            </span>
+        </div>
+    </a>
+</div>

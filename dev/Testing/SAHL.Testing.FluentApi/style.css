@@ -1,0 +1,19 @@
+body{
+    font-size: 25px;
+    font: 15px arial, sans-serif;
+}
+input["text"]{
+    margin-left: 10px;
+    width: 500px;
+}
+a{
+    text-decoration:none;
+}
+ul {
+    list-style-type: none;
+}
+img{
+    cursor: pointer;
+    height="11";
+    width="5"; 
+}

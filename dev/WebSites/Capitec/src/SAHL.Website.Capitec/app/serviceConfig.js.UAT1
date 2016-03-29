@@ -1,0 +1,13 @@
+﻿'use strict';
+
+angular.module('capitecApp.serviceConfig', [])
+.factory('$serviceConfig', function () {
+    return {
+        SearchService: 'https://Sahomeloans.ext.capinet:5443/CapitecSearchService/api/QueryHttpHandler/PerformHttpQuery',
+        CommandService: 'https://Sahomeloans.ext.capinet:5443/CapitecService/api/CommandHttpHandler/performhttpcommand',
+        QueryService: 'https://Sahomeloans.ext.capinet:5443/CapitecService/api/QueryHttpHandler/PerformHttpQuery',
+        DecisionTreeService: 'https://Sahomeloans.ext.capinet:5443/DecisionTreeService/api/QueryHttpHandler/PerformHttpQuery',
+        timeout: 1000 *120,
+        timeoutRetryCount: 2
+    }
+});

@@ -1,0 +1,121 @@
+<schema name="ThirdParty" version="3.5">
+
+<types>
+	<fieldType name="string" class="solr.StrField" />
+	<fieldType name="int" class="solr.TrieIntField" />
+	 <analyzer>
+	   <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+         </analyzer>
+	<fieldType name="text" class="solr.TextField" />
+	<fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+	 <analyzer>
+	   <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+	   <filter class="solr.LowerCaseFilterFactory"/>
+	    <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+	 </analyzer>
+	</fieldType>
+	<fieldType name="text_st" class="solr.TextField" positionIncrementGap="100">
+	 <analyzer>
+	   <tokenizer class="solr.StandardTokenizerFactory"/>
+	   <filter class="solr.LowerCaseFilterFactory"/>
+	    <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+	 </analyzer>
+	</fieldType>
+	  <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.StandardTokenizerFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt" />
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+
+	<fieldType name="text_suggest_ngram" class="solr.TextField" positionIncrementGap="100">
+		<analyzer type="index">
+			<tokenizer class="solr.UAX29URLEmailTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.ASCIIFoldingFilterFactory"/>
+			<filter class="solr.EnglishPossessiveFilterFactory"/>
+			<filter class="solr.EdgeNGramFilterFactory" maxGramSize="50" minGramSize="2"/>
+		</analyzer>
+		<analyzer type="query">
+			<tokenizer class="solr.UAX29URLEmailTokenizerFactory"/>
+			<filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+			<filter class="solr.LowerCaseFilterFactory"/>
+			<filter class="solr.ASCIIFoldingFilterFactory"/>
+			<filter class="solr.EnglishPossessiveFilterFactory"/>
+		</analyzer>
+	</fieldType>
+			
+	 <fieldType name="text_email" class="solr.TextField" sortMissingLast="true" omitNorms="true" autoGeneratePhraseQueries="true">			
+	 </fieldType>
+	
+</types>
+
+<fields>
+	<field name="LegalEntityKey" type="int" indexed="true" stored="true" required="true"/>
+	<field name="_version_" type="string" indexed="true" stored="true" multiValued="false"/>
+	<field name="LegalEntityType" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="ThirdPartyType" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="ThirdPartySubType" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="LegalName" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="TradingName" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="LegalIdentityType" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="LegalIdentity" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="TaxNumber" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="Contact" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="WorkPhoneNumber" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="CellPhoneNumber" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="EmailAddress" type="text_email" indexed="true" stored="true" required="false"/>
+	<field name="FaxNumber" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="AccountKey" type="text_st" indexed="true" stored="true" required="false" multiValued="true"/>
+	<field name="OfferKey" type="text_st" indexed="true" stored="true" required="false" multiValued="true"/>
+	<field name="Address" type="text_st" indexed="true" stored="true" required="false"/>
+	<field name="IndexText" type="text_suggest_ngram" indexed="true" stored="true" multiValued="true"/>	
+</fields>
+
+<uniqueKey>LegalEntityKey</uniqueKey>
+
+	<copyField source="LegalEntityKey" dest="IndexText"/>
+	<copyField source="LegalEntityType" dest="IndexText"/>
+	<copyField source="ThirdPartyType" dest="IndexText"/>
+	<copyField source="ThirdPartySubType" dest="IndexText"/>
+	<copyField source="LegalName" dest="IndexText"/>
+	<copyField source="TradingName" dest="IndexText"/>
+	<copyField source="Address" dest="IndexText"/>
+	<copyField source="LegalIdentityType" dest="IndexText"/>
+	<copyField source="LegalIdentity" dest="IndexText"/>
+	<copyField source="TaxNumber" dest="IndexText"/>   
+	<copyField source="Contact" dest="IndexText"/>
+	<copyField source="WorkPhoneNumber" dest="IndexText"/>
+	<copyField source="CellPhoneNumber" dest="IndexText"/>
+	<copyField source="EmailAddress" dest="IndexText"/>
+	<copyField source="FaxNumber" dest="IndexText"/>
+	<copyField source="AccountKey" dest="IndexText"/> 
+	<copyField source="OfferKey" dest="IndexText"/> 	
+   
+</schema>   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

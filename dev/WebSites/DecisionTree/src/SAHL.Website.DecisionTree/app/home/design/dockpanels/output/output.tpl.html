@@ -1,0 +1,61 @@
+﻿<div ng-controller="OutputPanelCtrl">
+    <div class="toolbar toolbarMenu button-set">
+        <button ng-class="{true:'active',false:''}[outputMessages.errors.active]" ng-click="outputMessages.toggleErrors()">
+            <span class="button-label">
+                <span class="icon-cancel" ></span> {{(outputMessages.view | filter:{type:'error'}).length}} errors
+            </span>
+        </button>
+        <span class="divider"></span>
+        <button ng-class="{true:'active',false:''}[outputMessages.warnings.active]" ng-click="outputMessages.toggleWarnings()">
+            <span class="button-label">
+                <span class="icon-warning" ></span> {{(outputMessages.view | filter:{type:'warning'}).length}} warnings
+            </span>
+        </button>
+        <span class="divider"></span>
+        <button ng-class="{true:'active',false:''}[outputMessages.info.active]" ng-click="outputMessages.toggleInfo()">
+            <span class="button-label">
+                <span class="icon-info" ></span> {{(outputMessages.view | filter:{type:'info'}).length}} info
+            </span>
+        </button>
+    </div>
+    <div>
+        <form name="debugOutputMessages">
+            <table class="table bordered ">
+                <tbody>
+                    <tr>
+                        <th style="width:5%;">type</th>                        
+                        <th style="width:40%;">message</th>                    
+                        <th style="width:2.5%;">line</th>
+                        <th style="width:2.5%;">node</th>
+                        <th style="width:5%;">exception</th>
+                        <th style="width:50%;">source</th>
+                    </tr>
+                    <tr ng-repeat="message in outputMessages.view | filter:{type:'error'} | orderBy:'line'" ng-show="outputMessages.errors.active" ng-click="msgSelected(message.node,message.line,message.source)" style="cursor:pointer;">
+                        <td><span class="icon-cancel"></span> error</td>                        
+                        <td>{{message.message}}</td>
+                        <td>{{message.line}}</td>
+                        <td>{{message.node}}</td>
+                        <td>{{message.errortype}}</td>
+                        <td>{{message.source}}</td>
+                    </tr>
+                    <tr ng-repeat="message in outputMessages.view | filter:{type:'warning'} | orderBy:'line'" ng-show="outputMessages.warnings.active">
+                        <td><span class="icon-warning"></span> warning</td>                        
+                        <td>{{message.message}}</td>
+                        <td>{{message.line}}</td>
+                        <td>{{message.node}}</td>
+                        <td>{{message.errortype}}</td>
+                        <td>{{message.source}}</td>
+                    </tr>
+                    <tr ng-repeat="message in outputMessages.view | filter:{type:'info'} | orderBy:'line'" ng-show="outputMessages.info.active">
+                        <td><span class="icon-info"></span> info</td>                        
+                        <td>{{message.message}}</td>
+                        <td>{{message.line}}</td>
+                        <td>{{message.node}}</td>
+                        <td>{{message.errortype}}</td>
+                        <td>{{message.source}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>

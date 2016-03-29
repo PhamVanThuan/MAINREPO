@@ -1,0 +1,15 @@
+Stop Compo Pump
+Stop HALO App Pool
+Run DB Scripts
+Deploy SQL Reports -- not done
+Install X2 Engine
+Resart X2 Service - Publish Only Mode
+Deploy HALO Web App
+Deploy Web Services (Calc, Survey etc)
+Deploy Internal Web Services (Attorney + Lightstone)
+Deploy Public Web Services (Lightstone)
+Deploy Attorney Web
+Deploy batch Apps
+Restart Halo App Pool
+Restart Compo Pump
+Restart X2 Engine Real Mode

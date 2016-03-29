@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="70071b6d-547b-48cf-bbc1-ab20bb543158" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="MarketingOptionRelevance" schema="dbo" table="MarketingOptionRelevance">
+      <properties>
+        <modelProperty Id="40475b9f-8a03-4ca5-b577-8900b618324c" name="MarketingOptionRelevanceKey" column="MarketingOptionRelevanceKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="788af2ce-10e4-4e66-9fbc-0ec2d77c944e" name="Description" column="Description" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CampaignDefinition" schema="dbo" table="CampaignDefinition">
+      <targets>
+        <manyToOneRelation Id="4385b47f-5094-46bb-8734-28ac56b2a3ba" targetColumnKey="MarketingOptionRelevanceKey" targetTable="CampaignDefinition" targetPropertyName="CampaignDefinitions" sourceColumn="MarketingOptionRelevanceKey">
+          <modelClassMoniker name="/70071b6d-547b-48cf-bbc1-ab20bb543158/MarketingOptionRelevance" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="f5bcd418-3bbb-4b9c-9746-4ec8af64a06e" targetColumnKey="CampaignDefinitionParentKey" targetTable="CampaignDefinition" targetPropertyName="CampaignDefinitions" sourceColumn="CampaignDefinitionParentKey">
+          <modelClassMoniker name="/70071b6d-547b-48cf-bbc1-ab20bb543158/CampaignDefinition" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="9b2808d5-3d3f-4250-b827-2581dd68348d" name="CampaignDefinitionKey" column="CampaignDefinitionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="4c4630cb-0710-4a3b-a25d-0272f51236d6" name="CampaignName" column="CampaignName" length="0" notNull="true" />
+        <modelProperty Id="ad0b29f2-784e-4f66-87ed-fafa847a4ceb" name="CampaignReference" column="CampaignReference" length="0" notNull="true" />
+        <modelProperty Id="cb68753e-ced0-42c7-884b-6bf4165702a3" name="Startdate" column="Startdate" columnType="Timestamp" length="0" />
+        <modelProperty Id="1eb8a730-e3e5-4cb6-bb5a-db06e40ac937" name="EndDate" column="EndDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="84a8868d-9dbc-447f-8bdc-cefcaad67eb3" name="MarketingOptionKey" column="MarketingOptionKey" columnType="Int32" length="0" />
+        <modelProperty Id="06036ef4-7b0c-48bf-bfaa-84ab127abbd2" name="OrganisationStructureKey" column="OrganisationStructureKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="48e1b9af-ffb1-4c4f-b1d1-12a57df39819" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0ad75fb9-4411-476e-b294-4a4fe90f6d9c" name="ReportStatementKey" column="ReportStatementKey" columnType="Int32" length="0" />
+        <modelProperty Id="a005f104-f063-4adc-97ae-ad8efe726b91" name="ADUserKey" column="ADUserKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="cc09ecd0-8eb6-464b-beb9-ae6cbed0cc19" name="DataProviderDataServiceKey" column="DataProviderDataServiceKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CampaignTarget" schema="dbo" table="CampaignTarget">
+      <targets>
+        <manyToOneRelation Id="8cdae8ec-c45f-4f5b-a940-f9f6f82a7dc4" targetColumnKey="CampaignDefinitionKey" targetTable="CampaignTarget" targetPropertyName="CampaignTargets" sourceColumn="CampaignDefinitionKey">
+          <modelClassMoniker name="/70071b6d-547b-48cf-bbc1-ab20bb543158/CampaignDefinition" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="84b92cb8-fc1f-4abd-9ddb-f92af676487d" name="CampaignTargetKey" column="CampaignTargetKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="e4de5b16-d2d1-48b7-9824-58e8972f80cc" name="GenericKey" column="GenericKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="21277c85-3a2c-4e6d-bef8-c508802cd5df" name="ADUserKey" column="ADUserKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="fde956a2-d8a3-4410-8a12-609d36c5dacf" name="GenericKeyTypeKey" column="GenericKeyTypeKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CampaignTargetContact" schema="dbo" table="CampaignTargetContact">
+      <targets>
+        <manyToOneRelation Id="7b357d95-8d95-4dc2-9dda-1ef69f4cdb67" targetColumnKey="CampaignTargetKey" targetTable="CampaignTargetContact" targetPropertyName="CampaignTargetContacts" sourceColumn="CampaignTargetKey">
+          <modelClassMoniker name="/70071b6d-547b-48cf-bbc1-ab20bb543158/CampaignTarget" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="70d2d1e2-81d2-4227-9599-3245ac2c6a3d" targetColumnKey="CampaignTargetResponseKey" targetTable="CampaignTargetContact" targetPropertyName="CampaignTargetContacts" sourceColumn="CampaignTargetResponseKey">
+          <modelClassMoniker name="/70071b6d-547b-48cf-bbc1-ab20bb543158/CampaignTargetResponse" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="4c232232-6649-4467-a5f9-7ea4ce1c15d5" name="CampaignTargetContactKey" column="CampaignTargetContactKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="cc72eb28-7bff-4d45-a8aa-ae654951123f" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="37a35e73-d8d5-49d0-bef2-7665373c81b4" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="bafac59e-1387-4374-8cf0-d810c7bb15d6" name="AdUserKey" column="AdUserKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CampaignTargetResponse" schema="dbo" table="CampaignTargetResponse">
+      <properties>
+        <modelProperty Id="022b153e-b10a-497b-b229-37aa2488fc14" name="CampaignTargetResponseKey" column="CampaignTargetResponseKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="8618e521-c8b9-4155-995d-9ed21bb1b368" name="Description" column="Description" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

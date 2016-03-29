@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client\Client.csproj", "{2F81FF58-1F0F-4D84-8FBE-97D76CD54F75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WTFSimpleTestClient", "Client\WTFSimpleTestClient\WTFSimpleTestClient.csproj", "{84D2FD7C-C861-4059-8CC5-5D23EF46D593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X2EngineTestClient", "Client\X2EngineTestClient\X2EngineTestClient.csproj", "{54E653F9-E8B3-4FED-BB9B-D239E0006E04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F81FF58-1F0F-4D84-8FBE-97D76CD54F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F81FF58-1F0F-4D84-8FBE-97D76CD54F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F81FF58-1F0F-4D84-8FBE-97D76CD54F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F81FF58-1F0F-4D84-8FBE-97D76CD54F75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84D2FD7C-C861-4059-8CC5-5D23EF46D593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84D2FD7C-C861-4059-8CC5-5D23EF46D593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84D2FD7C-C861-4059-8CC5-5D23EF46D593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84D2FD7C-C861-4059-8CC5-5D23EF46D593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E653F9-E8B3-4FED-BB9B-D239E0006E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E653F9-E8B3-4FED-BB9B-D239E0006E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E653F9-E8B3-4FED-BB9B-D239E0006E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E653F9-E8B3-4FED-BB9B-D239E0006E04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+EndGlobal

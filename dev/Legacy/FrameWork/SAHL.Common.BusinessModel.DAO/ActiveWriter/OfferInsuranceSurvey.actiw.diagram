@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="OfferInsuranceSurvey">
+  <modelMoniker Id="ad0cb7db-4d20-49b3-91a1-935d999e154f" />
+  <nestedChildShapes>
+    <classShape Id="8d80901f-902f-444f-a15b-91404289f2c0" absoluteBounds="0.75, 4.375, 2.875, 1.0549544166525204">
+      <modelClassMoniker name="/ad0cb7db-4d20-49b3-91a1-935d999e154f/OfferMarketingSurveyType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c58c5f07-804f-450b-bca6-03cf8bddf135" absoluteBounds="0.76500000000000057, 4.785, 2.8449999999999998, 0.54495441665252042" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="28c7f115-ca9e-400b-b104-240ae38b586a" absoluteBounds="5, 2.875, 2.375, 1.0549544166525204">
+      <modelClassMoniker name="/ad0cb7db-4d20-49b3-91a1-935d999e154f/OfferMarketingSurveyTypeGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8992edee-edaa-4561-949b-e3bdfd20a86a" absoluteBounds="5.015, 3.285, 2.3449999999999998, 0.54495441665252042" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bec8b299-9b97-4040-810d-c6b7ba5bbbe4" absoluteBounds="0.875, 1.125, 1.5, 2.2229882499575617">
+      <modelClassMoniker name="/ad0cb7db-4d20-49b3-91a1-935d999e154f/Offer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34d33f6f-783e-4713-91fe-feeaa893c0fe" absoluteBounds="0.89000000000000012, 1.5350000000000001, 1.4700000000000002, 1.7129882499575615" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToManyConnector edgePoints="[(1.625 : 3.34798824995756); (1.625 : 4.375)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToManyRelationMoniker Id="130b8e86-8ef3-4b28-b04b-aefe651c2dc0" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="bec8b299-9b97-4040-810d-c6b7ba5bbbe4" />
+        <classShapeMoniker Id="8d80901f-902f-444f-a15b-91404289f2c0" />
+      </nodes>
+    </manyToManyConnector>
+    <manyToOneConnector edgePoints="[(3.625 : 4.90247720832626); (6.1875 : 4.90247720832626); (6.1875 : 3.92995441665252)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="f5b9ce33-5333-4597-93a4-16243ebe38f2" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="8d80901f-902f-444f-a15b-91404289f2c0" />
+        <classShapeMoniker Id="28c7f115-ca9e-400b-b104-240ae38b586a" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

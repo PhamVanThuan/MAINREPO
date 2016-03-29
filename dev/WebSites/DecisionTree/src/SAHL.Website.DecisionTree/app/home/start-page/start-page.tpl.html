@@ -1,0 +1,103 @@
+﻿<nav id="startPageMenu" class="vertical-menu sideBarMenu">
+    <ul>
+        <li class="title">
+            <h1 class="fg-white">Decision Trees</h1>
+            <h2 class="fg-white" ng-hide="recenttrees.length == 0">Recent</h2>
+        </li>
+
+        <li class="recentItems" data-ng-repeat="tree in recenttreespinned">
+            <a class="recenta" ng-click="openTree(tree.DecisionTreeId, tree.DecisionTreeVersionId, tree.IsPublished)" ng-attr-title="{{tree.Description}}">{{tree.Name}}</a>
+            <label class="recentlabel">Version {{tree.Version}}</label>
+            <img class="recentimg"  src="assets/img/horizontal-pin.png" src="assets/img/vertical-pin.png" ng-show="tree.Pinned" ng-click="saveTreePinStatus(tree.DecisionTreeVersionId, tree.Pinned)"></img>
+        </li>
+        <li ng-show="hasPin"><span class="separator"></span></li>
+        <li class="recentItems" data-ng-repeat="tree in recenttrees">
+            <a class="recenta" ng-click="openTree(tree.DecisionTreeId, tree.DecisionTreeVersionId, tree.IsPublished)" ng-attr-title="{{tree.Description}}">{{tree.Name}}</a>
+            <label class="recentlabel">Version {{tree.Version}}</label>
+            <img class="recentimg" src="assets/img/vertical-pin.png" src="assets/img/vertical-pin.png" ng-show="tree.Pinned" ng-click="saveTreePinStatus(tree.DecisionTreeVersionId, tree.Pinned)"></img>
+        </li>
+        <li ng-hide="recenttrees.length == 0"><span class="separator"></span></li>
+        <li class="startPageItem">
+            <a ui-sref="home.messages.editor" target="_self">
+                <div>
+                    Messages
+                    <span class="place-right" ng-if="documentsLocked.MessageSet">locked by {{documentsLocked.MessageSet}} <img ng-src="{{documentsLocked.MessageSetImg}}" title="Locked by {{documentsLocked.MessageSet}}" alt="{{documentsLocked.MessageSet}}" /></span>
+                </div>
+            </a>
+        </li>
+        <li class="startPageItem">
+            <a ui-sref="home.variables.editor" target="_self">
+                <div>
+                    Variables
+                    <span class="place-right" ng-if="documentsLocked.VariableSet">locked by {{documentsLocked.VariableSet}} <img ng-src="{{documentsLocked.VariableSetImg}}" title="Locked by {{documentsLocked.MessageSet}}" alt="{{documentsLocked.VariableSet}}" /></span>
+                </div>
+            </a>
+        </li>
+        <li class="startPageItem">
+            <a ui-sref="home.enumerations.editor" target="_self">
+                <div>
+                    Enumerations
+                    <span class="place-right" ng-if="documentsLocked.EnumerationSet">locked by {{documentsLocked.EnumerationSet}} <img ng-src="{{documentsLocked.EnumerationSetImg}}" title="Locked by {{documentsLocked.EnumerationSet}}" alt="{{documentsLocked.EnumerationSet}}" /></span>
+                </div>
+            </a>
+        </li>
+        <!--<li class="startPageItem"><a ui-sref="home.scratchpad">Scratchpad</a></li>
+        <li class="startPageItem"><a ui-sref="home.scratchpad2">Scratchpad2</a></li>-->
+    </ul>
+</nav>
+<div class="startPageContent">
+    <div id="startHeader">
+        <div class="searchBox">
+            <input id="decisionTreeSearch" type="text" ng-model="searchString" placeholder="Search for a decision tree by name"></input>
+        </div>
+        <div id="user-box">
+            <img ng-hide="username !== ''" class="user-image" src=".\assets\img\user.png"><!---->
+            <img ng-hide="username === ''" class="user-image" ng-src="{{userimagesrc}}">
+            <div class="user-details">
+                <div class="user-name">{{userDisplayName}}</div>
+                <div class="user-email">{{userEmailAddress}}</div>
+            </div>
+        </div>
+    </div>
+    <div id="startContainer" spin-loader="loadTrees">
+        <div id="scrollBox">
+            <div class="scrollContainer">
+                <div class="tile tile-new-tree showbox slidezoom" >
+                    <a ng-click="newTree()" class="fg-dark opacity" title="Create a new decision tree">
+                        <i class="icon-plus-2">
+
+                        </i>
+                    </a>
+                </div>
+                <div class="tile showbox slidezoom" data-ng-repeat="tree in unpublishedTrees | searchFor:searchString">
+                    <img ng-show="tree.CurrentlyOpenBy" class="tile-corner-badge" ng-src="{{tree.CurrentlyOpenByImageSrc}}" title="Locked by {{tree.CurrentlyOpenBy}}" alt="{{tree.CurrentlyOpenBy}}"/>
+                    <a ng-click="openTree(tree.DecisionTreeId, tree.DecisionTreeVersionId, tree.IsPublished)" ng-attr-title="{{tree.Description}}">
+                        <div class=" tile-content image icon-tree-thumbnail " style="padding:6px;"> <img src="{{tree.Thumbnail}}" ng-show="tree.Thumbnail" /></div>
+                        <div class="brand bg-dark opacity">
+                            <span class="text">
+                                {{tree.Name}} (v{{tree.ThisVersion}})
+                            </span>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <br />
+            <div id="startSpacer" style="margin-left:-5px; margin-right:20px;" class="padding5"></div>
+            <br />
+            <div class="scrollContainer">
+                <h1>Published Trees</h1>
+                <div class="tile showbox slidezoom" data-ng-repeat="tree in publishedTrees | searchFor:searchString">
+                    <a ng-click="openTree(tree.DecisionTreeId, tree.DecisionTreeVersionId, tree.IsPublished)" ng-attr-title="{{tree.Description}}">
+                        <div class=" tile-content image icon-tree-thumbnail" style="padding:6px;"><img src="{{tree.Thumbnail}}" ng-show="tree.Thumbnail" /></div>
+                        <div class="brand bg-dark opacity">
+                            <span class="text">
+                                {{tree.Name}} (v{{tree.ThisVersion}})
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

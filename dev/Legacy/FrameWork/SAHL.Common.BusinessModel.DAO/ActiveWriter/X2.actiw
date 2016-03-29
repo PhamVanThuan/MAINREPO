@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="c03963bb-f38e-4611-9c96-e6035977a244" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="ActiveExternalActivity" lazy="true" schema="X2" table="ActiveExternalActivity">
+      <targets>
+        <manyToOneRelation Id="b5bdabec-ae07-47c1-b233-25629412a9f1" targetColumnKey="ExternalActivityID" targetTable="ActiveExternalActivity" targetPropertyName="ActiveExternalActivities" sourceColumn="ExternalActivityID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/ExternalActivity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="643f1d7c-079b-4c33-b6ad-3296e13756ef" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0a165fa8-01a2-4e57-bd2b-9c724938d20f" name="ActivatingInstanceID" column="ActivatingInstanceID" columnType="Int64" length="0" />
+        <modelProperty Id="38d18c41-1960-4e74-ac46-8f0b6f8f3e00" name="ActivationTime" column="ActivationTime" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="0ef3ab4f-c6b9-4f00-b9c1-20ecdf46a406" name="ActivityXMLData" column="ActivityXMLData" columnType="StringClob" length="0" />
+        <modelProperty Id="e0bf63e5-33e1-428e-8f78-a5582e57e7cc" name="WorkFlowProviderName" column="WorkFlowProviderName" length="0" />
+        <modelProperty Id="f1acb618-b02e-4012-9a2c-8355b1f592b5" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Activity" lazy="true" schema="X2" table="Activity">
+      <targets>
+        <manyToOneRelation Id="8379a4c1-4eba-4827-9524-e0c7929ce2de" targetColumnKey="Type" targetTable="Activity" targetPropertyName="Activities" sourceColumn="Type">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/ActivityType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="cfa9f79e-4057-4d10-a6fd-1b801040405e" targetColumnKey="RaiseExternalActivity" targetTable="Activity" targetPropertyName="Activities" sourceColumn="RaiseExternalActivity">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/ExternalActivity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="254dc4f0-93e7-43f7-8e01-254d5d37c0c7" targetColumnKey="ExternalActivityTarget" targetTable="Activity" targetPropertyName="Activities" sourceColumn="ExternalActivityTarget">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/ExternalActivityTarget" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="1b688212-7612-40eb-941c-bb2b592cd76d" targetColumnKey="FormID" targetTable="Activity" targetPropertyName="Activities" sourceColumn="FormID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Form" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="c43fff3a-b0de-448f-89a3-de25f376194e" targetColumnKey="NextStateID" targetTable="Activity" targetPropertyName="Activities" sourceColumn="NextStateID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/State" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="f69dc89b-c0c3-4d14-af20-8c31d5912637" targetColumnKey="StateID" targetTable="Activity" targetPropertyName="Activities" sourceColumn="StateID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/State" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="a6866a2b-f7cb-4965-acce-91d10b38ba59" targetColumnKey="WorkFlowID" targetTable="Activity" targetPropertyName="Activities" sourceColumn="WorkFlowID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="7a2b710b-fc4d-41d8-b63b-6850fb4aa6e0" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="c961d1a4-8ca0-4813-9af3-0ccec35748ae" name="SplitWorkFlow" column="SplitWorkFlow" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="52b26b2e-38f7-4c1d-be51-de9db7afb64c" name="Priority" column="Priority" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="32e6612c-65a7-4341-8bf7-e27587584633" name="ActivityMessage" column="ActivityMessage" length="0" />
+        <modelProperty Id="98792848-f7fc-455a-a273-d2941c491870" name="ActivatedByExternalActivity" column="ActivatedByExternalActivity" columnType="Int32" length="0" />
+        <modelProperty Id="0716a772-6c90-4c6b-bb27-008fc6f07535" name="ChainedActivityName" column="ChainedActivityName" length="0" />
+        <modelProperty Id="d7f65522-497c-4ab7-867c-8f75ded5b1bb" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+      <manyToManyTargets>
+        <manyToManyRelation Id="97a3b73e-6aec-4b1f-95ae-4e0fd3865a3b" sourceColumn="ActivityID" sourceLazy="true" schema="X2" table="ActivitySecurity" targetColumn="SecurityGroupID" targetLazy="true">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/SecurityGroup" />
+        </manyToManyRelation>
+      </manyToManyTargets>
+    </modelClass>
+    <modelClass name="ActivityType" lazy="true" schema="X2" table="ActivityType">
+      <properties>
+        <modelProperty Id="1570aed4-f22e-4ee0-b2b8-20b6e9c6cda5" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="13095dfc-92a9-4098-b3e8-0ea1deee1731" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ExternalActivity" lazy="true" schema="X2" table="ExternalActivity">
+      <properties>
+        <modelProperty Id="6f798e09-c436-4f77-b065-f8f322fce5dc" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="1af9cd5b-b4a0-427b-b982-b92665378974" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="28bff613-3455-427e-b645-30b2d85f0636" name="Description" column="Description" length="0" />
+        <modelProperty Id="333976d4-ae7b-4d88-987a-c743172ce91f" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ExternalActivityTarget" lazy="true" schema="X2" table="ExternalActivityTarget">
+      <properties>
+        <modelProperty Id="8dfe3ffc-9654-4d22-a852-09f70f215155" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="9b283390-d183-431e-a341-a859e9ca4bac" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Form" lazy="true" schema="X2" table="Form">
+      <targets>
+        <manyToOneRelation Id="a8a28fe1-a16a-42db-8049-280eea0d03ee" targetColumnKey="WorkFlowID" targetTable="Form" targetPropertyName="Forms" sourceColumn="WorkFlowID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="3ddfc25a-5ddf-43ca-a30a-1132e0ed030e" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="c612114e-f999-426e-97be-8cdb5fd262d3" name="Description" column="Description" length="0" />
+        <modelProperty Id="68e0c4c9-0909-4d9a-897a-53a325832f3d" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+      <manyToManyTargets>
+        <manyToManyRelation Id="07f91c96-6cbe-4978-9b79-ecc342bcb823" sourceColumn="FormID" sourceLazy="true" schema="X2" table="StateForm" targetColumn="StateID" targetLazy="true">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/State" />
+        </manyToManyRelation>
+      </manyToManyTargets>
+    </modelClass>
+    <modelClass name="Instance" lazy="true" schema="X2" table="Instance">
+      <targets>
+        <manyToOneRelation Id="1907a06b-777d-4fe9-a1dc-363ce1065fda" targetColumnKey="ParentInstanceID" targetTable="Instance" targetPropertyName="Instances" sourceColumn="ParentInstanceID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Instance" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="a872a963-7144-4f79-ac45-7cc469c2d767" targetColumnKey="StateID" targetTable="Instance" targetPropertyName="Instances" sourceColumn="StateID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/State" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="99af4975-6341-43c6-97fd-008e71733792" targetColumnKey="WorkFlowID" targetTable="Instance" targetPropertyName="Instances" sourceColumn="WorkFlowID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="add0cc14-5c26-40cc-9e9d-a0e7b32f376a" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="14f29fc8-529e-4c2d-abee-36fe1eb04b26" name="Subject" column="Subject" length="0" />
+        <modelProperty Id="2233a746-e066-4fac-b171-a29a5aac525d" name="WorkFlowProvider" column="WorkFlowProvider" length="0" notNull="true" />
+        <modelProperty Id="e42e98e3-b019-48fc-a654-c02c46f47b38" name="CreatorADUserName" column="CreatorADUserName" length="0" notNull="true" />
+        <modelProperty Id="69324915-b65e-455c-b400-0ab5d539e182" name="CreationDate" column="CreationDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="91c041a5-f2d6-407f-9baa-ac0cfa2546a0" name="StateChangeDate" column="StateChangeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="291029ea-f30d-4f1a-8aa1-7c2ba80e0746" name="DeadlineDate" column="DeadlineDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="24ffcec4-b2fc-44b2-99f0-de7a92d9d32f" name="ActivityDate" column="ActivityDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="2c138437-1790-4dda-80aa-3b5cc89322b0" name="ActivityADUserName" column="ActivityADUserName" length="0" />
+        <modelProperty Id="2a5ecf69-60f5-4239-9fc6-2565c5e8922d" name="ActivityID" column="ActivityID" columnType="Int32" length="0" />
+        <modelProperty Id="bdcf5802-16e6-4642-9342-bef53dc9f48b" name="Priority" column="Priority" columnType="Int32" length="0" />
+        <modelProperty Id="5e1da4d9-821c-4170-8b3f-37fa86cc03dd" name="ID" column="ID" columnType="Int64" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="InstanceActivitySecurity" lazy="true" schema="X2" table="InstanceActivitySecurity">
+      <targets>
+        <manyToOneRelation Id="8261c5c9-0f7c-4f5a-a762-f3d4a6f7a6e1" targetColumnKey="ActivityID" targetTable="InstanceActivitySecurity" targetPropertyName="InstanceActivitySecurities" sourceColumn="ActivityID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Activity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="bd605d33-331a-4a44-9c09-79ab042a675e" targetColumnKey="InstanceID" targetTable="InstanceActivitySecurity" targetPropertyName="InstanceActivitySecurities" sourceColumn="InstanceID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Instance" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="f4641d75-cc0f-40c1-8983-f1cb463423e2" name="ID" column="ID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="a578104e-53f9-43d7-8d51-058d4fb383a3" name="ADUserName" column="ADUserName" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="Log" lazy="true" schema="X2" table="Log">
+      <targets>
+        <manyToOneRelation Id="017fd93b-ffbb-417d-828a-da5ca18e10b0" targetColumnKey="ActivityID" targetTable="Log" targetPropertyName="Logs" sourceColumn="ActivityID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Activity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="a969ce72-b4ba-4b16-a9dc-95d458997b6c" targetColumnKey="StateID" targetTable="Log" targetPropertyName="Logs" sourceColumn="StateID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/State" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="bd2bb058-318f-4628-af28-b772e54db3c5" name="Date" column="Date" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="442f26bc-2255-4c8b-8efa-4718c511b7d1" name="ProcessID" column="ProcessID" columnType="Int32" length="0" />
+        <modelProperty Id="6488eaf4-a953-412a-8b88-6ae2d14c0fba" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" />
+        <modelProperty Id="6ff6a7de-7e1d-4e73-981c-496caf2a47a1" name="InstanceID" column="InstanceID" columnType="Int32" length="0" />
+        <modelProperty Id="2e72bbf0-5a43-40af-84db-b42e114d5ba3" name="ADUserName" column="ADUserName" length="0" />
+        <modelProperty Id="d5f1a9c2-e638-4265-9f78-3864b49e871f" name="Message" column="Message" columnType="StringClob" length="0" />
+        <modelProperty Id="d153b744-66ad-4f79-9c07-94bbd49ab234" name="StackTrace" column="StackTrace" columnType="StringClob" length="0" />
+        <modelProperty Id="7bedb922-be92-447e-8329-f42b74f80b2d" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Process" lazy="true" schema="X2" table="Process">
+      <targets>
+        <manyToOneRelation Id="c583079a-2429-4ac8-aeb1-89cc56dd89a1" targetColumnKey="ProcessAncestorID" targetTable="Process" targetPropertyName="Processes" sourceColumn="ProcessAncestorID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Process" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="f85bf981-acca-4555-b3a7-cc10da922808" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="84d17403-b3db-41a8-afe1-bc8c5bc28f27" name="Version" column="Version" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="870b5d28-5a73-49dd-86d9-a173ba357856" name="DesignerData" column="DesignerData" columnType="Binary" length="0" />
+        <modelProperty Id="e93d31af-f89a-4508-ba33-ceccc29aedff" name="CreateDate" column="CreateDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="0c1340b4-c964-417e-a572-ac55876ff7ff" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ScheduledActivity" schema="X2" table="ScheduledActivity">
+      <properties>
+        <modelProperty Id="97f91613-8839-43de-951e-352b691c151f" name="Priority" column="Priority" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="84c2e6cc-cf02-45fa-9e7e-e1daebd71e02" name="WorkFlowProviderName" column="WorkFlowProviderName" length="0" />
+        <modelProperty Id="7e53629f-97f9-4c4e-8d10-f469e0aa0179" name="InstanceID" column="InstanceID" columnType="Int64" length="0" notNull="true" keyType="CompositeKey" compositeKeyName="ScheduledActivityCompositeKey" />
+        <modelProperty Id="c222ed76-78f9-44d3-bdb7-232126485ec0" name="Time" column="Time" columnType="Timestamp" length="0" notNull="true" keyType="CompositeKey" compositeKeyName="ScheduledActivityCompositeKey" />
+        <modelProperty Id="9c9e244b-5589-4bda-a439-7589d40f2b56" name="ActivityID" column="ActivityID" columnType="Int32" length="0" notNull="true" keyType="CompositeKey" compositeKeyName="ScheduledActivityCompositeKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="SecurityGroup" lazy="true" schema="X2" table="SecurityGroup">
+      <targets>
+        <manyToOneRelation Id="2ab8ed8b-4ade-474f-9231-b8364771607b" targetColumnKey="ProcessID" targetTable="SecurityGroup" targetPropertyName="SecurityGroups" sourceColumn="ProcessID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Process" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="ed609961-d4d8-47de-b711-6a7578448914" targetColumnKey="WorkFlowID" targetTable="SecurityGroup" targetPropertyName="SecurityGroups" sourceColumn="WorkFlowID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="2133ebd5-1e16-493b-a467-7c60e5461376" name="IsDynamic" column="IsDynamic" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="cbc11fda-a469-4b82-be96-7b85d0da34fc" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="a304c318-9b13-43f6-82e4-4c92cc7ae6c2" name="Description" column="Description" length="0" />
+        <modelProperty Id="b4dcdb8a-3904-44a8-94da-44a88b23555f" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="StageActivity" lazy="true" schema="X2" table="StageActivity">
+      <targets>
+        <manyToOneRelation Id="2511f768-38e1-47ae-ac87-4cc2aad1e3f4" targetColumnKey="ActivityID" targetTable="StageActivity" targetPropertyName="StageActivities" sourceColumn="ActivityID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Activity" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="67cbfff9-20fd-4635-b45f-ac640dff0f01" name="StageDefinitionKey" column="StageDefinitionKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="a71c575d-5a3d-407d-879a-367aac950352" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="State" lazy="true" schema="X2" table="State">
+      <targets>
+        <manyToOneRelation Id="79fdaea7-92ce-4d04-82bc-f1cf6799bb7c" targetColumnKey="ID" targetTable="State" targetPropertyName="States" sourceColumn="ID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/State" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="d54d51ea-6547-4e97-bd10-64454036a8f4" targetColumnKey="Type" targetTable="State" targetPropertyName="States" sourceColumn="Type">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/StateType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="90378350-6282-4c44-9aea-5e1d5f42e2c8" targetColumnKey="WorkFlowID" targetTable="State" targetPropertyName="States" sourceColumn="WorkFlowID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="3aa582c3-8e98-4934-9e6c-8179cb036afa" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="fc4c73eb-d855-47a0-86a5-60b5e3c1f617" name="ForwardState" column="ForwardState" columnType="Boolean" length="0" notNull="true" />
+      </properties>
+      <manyToManyTargets>
+        <manyToManyRelation Id="0d3c4965-b437-4b26-8c54-3992ef0c8933" sourceColumn="StateID" sourceLazy="true" schema="X2" table="StateWorkList" targetColumn="SecurityGroupID" targetLazy="true">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/SecurityGroup" />
+        </manyToManyRelation>
+      </manyToManyTargets>
+    </modelClass>
+    <modelClass name="StateType" schema="X2" table="StateType">
+      <properties>
+        <modelProperty Id="21ab7bb1-5130-4cda-9fad-333362c24214" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="0ca942d0-fef7-4c36-9d69-7474644fdfac" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkFlow" lazy="true" schema="X2" table="WorkFlow">
+      <targets>
+        <manyToOneRelation Id="221b8aa0-fb9d-4a2a-a101-18b340016070" targetColumnKey="ProcessID" targetTable="WorkFlow" targetPropertyName="WorkFlows" sourceColumn="ProcessID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Process" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="cff3f29e-7a46-401a-a955-d5f48515dc7f" targetColumnKey="WorkFlowAncestorID" targetTable="WorkFlow" targetPropertyName="WorkFlows" sourceColumn="WorkFlowAncestorID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="2d2b7363-9a0d-43cb-bce7-a2a167b84d04" targetColumnKey="IconID" targetTable="WorkFlow" targetPropertyName="WorkFlows" sourceColumn="IconID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlowIcon" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="6b650e7c-cead-4dde-b89b-0a70e3f371da" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="4f2de8d4-d20d-4ceb-9fce-5b5c9905d376" name="CreateDate" column="CreateDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="93ccfa4e-605b-422b-90d6-daa814859a94" name="StorageTable" column="StorageTable" length="0" notNull="true" />
+        <modelProperty Id="24bf199a-2b29-4d3f-8555-5c5b6bb67a6a" name="StorageKey" column="StorageKey" length="0" notNull="true" />
+        <modelProperty Id="262cce80-218c-4a80-8479-85f6508c5625" name="DefaultSubject" column="DefaultSubject" length="0" />
+        <modelProperty Id="10f17a9b-f2ed-485e-bb76-097e86d137c0" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+      <manyToManyTargets>
+        <manyToManyRelation Id="ebb09886-aea2-4f8e-a8da-2fb7a6868742" sourceColumn="WorkFlowID" sourceLazy="true" schema="X2" table="WorkFlowSecurity" targetColumn="SecurityGroupID" targetLazy="true">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/SecurityGroup" />
+        </manyToManyRelation>
+      </manyToManyTargets>
+    </modelClass>
+    <modelClass name="WorkFlowActivity" lazy="true" schema="X2" table="WorkFlowActivity">
+      <targets>
+        <manyToOneRelation Id="bc80448c-c904-42c1-a2bd-e60faf92fb99" targetColumnKey="NextActivityID" targetTable="WorkFlowActivity" targetPropertyName="WorkFlowActivities" sourceColumn="NextActivityID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Activity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="23121dda-8d6a-4793-a763-58ac31c944be" targetColumnKey="NextWorkFlowID" targetTable="WorkFlowActivity" targetPropertyName="WorkFlowActivities" sourceColumn="NextWorkFlowID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="c70f9d1d-fb28-43aa-bdb3-0adc46b06bac" targetColumnKey="WorkFlowID" targetTable="WorkFlowActivity" targetPropertyName="WorkFlowActivities" sourceColumn="WorkFlowID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/WorkFlow" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="eb48afe8-97bb-45ff-9985-cdc772ef2712" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="ad72fb74-6e5f-43eb-80d0-c91e5403bf4b" name="StateID" column="StateID" columnType="Int32" length="0" />
+        <modelProperty Id="aff74692-3610-4deb-9880-415947bfd4c9" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkFlowHistory" lazy="true" schema="X2" table="WorkFlowHistory">
+      <targets>
+        <manyToOneRelation Id="b5633fcf-99d2-442e-984a-d54d09a056d8" targetColumnKey="ActivityID" targetTable="WorkFlowHistory" targetPropertyName="WorkFlowHistories" sourceColumn="ActivityID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Activity" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="171c00f9-0207-4d11-8f06-5cd4bcaf0837" targetColumnKey="StateID" targetTable="WorkFlowHistory" targetPropertyName="WorkFlowHistories" sourceColumn="StateID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/State" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="0fe91967-a894-4e4c-bbc1-0a6447f21ef6" name="InstanceID" column="InstanceID" columnType="Int64" length="0" notNull="true" />
+        <modelProperty Id="bf892a04-f17b-4a9b-8e9f-8a477ef391fa" name="CreatorADUserName" column="CreatorADUserName" length="0" notNull="true" />
+        <modelProperty Id="3c5dbd8e-58f2-4d90-ab5f-76580f07e094" name="CreationDate" column="CreationDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="557b9949-629f-43ff-87a6-363fbc2c5145" name="StateChangeDate" column="StateChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="feb8c268-88b1-4297-8511-88eeb276f4b8" name="DeadlineDate" column="DeadlineDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="08c8c517-5a6c-4a3f-82cd-0b3b9a5b29b2" name="ActivityDate" column="ActivityDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="a09707e6-274c-41eb-b0ec-47e1cd2434fc" name="ADUserName" column="ADUserName" length="0" notNull="true" />
+        <modelProperty Id="98fe283d-5468-4472-a72a-c75fa1f5215c" name="Priority" column="Priority" columnType="Int32" length="0" />
+        <modelProperty Id="b321bc13-837f-40c2-ad00-40f7a436357a" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkFlowIcon" lazy="true" schema="X2" table="WorkFlowIcon">
+      <properties>
+        <modelProperty Id="c9464a55-31e4-400a-8f6a-34640676accd" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="304660ea-2297-416a-9182-00344b32886d" name="Icon" column="Icon" columnType="Binary" length="0" />
+        <modelProperty Id="184f06de-ca8e-4e02-9318-93101000a32d" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="WorkList" lazy="true" schema="X2" table="WorkList">
+      <targets>
+        <manyToOneRelation Id="800e3db8-994a-4f53-97cc-37d7e74e5d87" targetColumnKey="InstanceID" targetTable="WorkList" targetPropertyName="WorkLists" sourceColumn="InstanceID">
+          <modelClassMoniker name="/c03963bb-f38e-4611-9c96-e6035977a244/Instance" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="7d5eb3a1-3d2a-40e9-bd86-24ee33813263" name="ID" column="ID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="29f74a29-b616-466b-a5a5-fe1334132ba8" name="ADUserName" column="ADUserName" length="0" notNull="true" />
+        <modelProperty Id="92686af5-dedd-45fe-a6f5-b68835e8bbe7" name="ListDate" column="ListDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="5891331e-9c45-4e9b-b675-cca6630a0070" name="Message" column="Message" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

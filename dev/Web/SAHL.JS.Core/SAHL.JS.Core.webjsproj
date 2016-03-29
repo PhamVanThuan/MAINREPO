@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <AssemblyName>SAHL.JS.Core</AssemblyName>
+    <Name>SAHL.JS.Core</Name>
+    <RootNamespace>sahl.js.core</RootNamespace>
+    <SAHLSourceRoot>..\..\</SAHLSourceRoot>
+    <ProjectGuid>{3635e429-d7be-4c81-a7f7-44badb75c464}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="assets" />
+    <Folder Include="assets\fonts\" />
+    <Folder Include="assets\img\" />
+    <Folder Include="lib\activityManagement" />
+    <Folder Include="lib\applicationManagement" />
+    <Folder Include="lib\applicationManagement\documentApplications" />
+    <Folder Include="lib\applicationModules" />
+    <Folder Include="lib\eventAggregation" />
+    <Folder Include="lib\messaging" />
+    <Folder Include="lib\fluentDecorator" />
+    <Folder Include="lib\arrays" />
+    <Folder Include="lib\logging" />
+    <Folder Include="lib\primitives" />
+    <Folder Include="lib\routing" />
+    <Folder Include="lib\templating" />
+    <Folder Include="lib\servicesConfig" />
+    <Folder Include="lib\userManagement" />
+    <Folder Include="lib\userInterface" />
+    <Folder Include="lib\serviceManagement" />
+    <Folder Include="lib\portalPageManagement" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\activityManagement\activityManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\activityManagement\activityManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\activityManagement\activityManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\applicationManagement\applicationManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\applicationManagement\applicationManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\applicationManagement\applicationManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\applicationManagement\documentApplicationService.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\applicationManagement\documentApplicationService.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\applicationManagement\documentApplicationService.js</DependentUpon>
+    </Content>
+    <Content Include="lib\applicationModules\charmManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\applicationModules\charmManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\applicationModules\charmManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\applicationManagement\documentApplications\documentManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\applicationManagement\documentApplications\documentManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\applicationManagement\documentApplications\documentManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\applicationManagement\navigation.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\applicationManagement\navigation.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\applicationManagement\navigation.js</DependentUpon>
+    </Content>
+    <Content Include="lib\applicationManagement\_module.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\arrays\arrayHelper.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\arrays\arrayHelper.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\arrays\arrayHelper.js</DependentUpon>
+    </Content>
+    <Content Include="lib\eventAggregation\eventAggregator.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\eventAggregation\eventAggregator.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\eventAggregation\eventAggregator.js</DependentUpon>
+    </Content>
+    <Content Include="lib\fluentDecorator\fluentDecoratorProvider.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\fluentDecorator\fluentDecoratorProvider.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\fluentDecorator\fluentDecoratorProvider.js</DependentUpon>
+    </Content>
+    <Content Include="lib\logging\globalLogger.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\logging\globalLogger.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\logging\globalLogger.js</DependentUpon>
+    </Content>
+    <Content Include="lib\logging\logger.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\logging\logger.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\logging\logger.js</DependentUpon>
+    </Content>
+    <Content Include="lib\logging\loggingService.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\logging\loggingService.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\logging\loggingService.js</DependentUpon>
+    </Content>
+    <Content Include="lib\logging\_module.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\messaging\activityDecoratorProvider.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\messaging\activityDecoratorProvider.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\messaging\activityDecoratorProvider.js</DependentUpon>
+    </Content>
+    <Content Include="lib\messaging\authInterceptor.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\messaging\authInterceptor.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\messaging\authInterceptor.js</DependentUpon>
+    </Content>
+    <Content Include="lib\messaging\messageManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\messaging\messageManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\messaging\messageManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\messaging\signalRManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\messaging\signalRManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\messaging\signalRManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\messaging\_module.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\portalPageManagement\portalPageManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\portalPageManagement\portalPageManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\portalPageManagement\portalPageManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\primitives\Guid.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\primitives\Guid.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\primitives\Guid.js</DependentUpon>
+    </Content>
+    <Content Include="lib\routing\uiStateManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\routing\uiStateManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\routing\uiStateManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\routing\uiStateDecorator.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\routing\uiStateDecorator.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\routing\uiStateDecorator.js</DependentUpon>
+    </Content>
+    <Content Include="lib\serviceManagement\startableManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\serviceManagement\startableManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\serviceManagement\startableManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\servicesConfig\servicesConfigModule.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\servicesConfig\servicesConfigModule.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\servicesConfig\servicesConfigModule.js</DependentUpon>
+    </Content>
+    <Content Include="lib\templating\templateManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\templating\templateManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\templating\templateManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\templating\_module.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\userInterface\notificationManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\userInterface\notificationManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\userInterface\notificationManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\userManagement\authenticatedUser.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\userManagement\userManager.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\userManagement\userManager.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\userManagement\userManager.js</DependentUpon>
+    </Content>
+    <Content Include="lib\userManagement\_module.js">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SAHomeloans\SAHL.VS.WebJS.targets" />
+</Project>

@@ -1,0 +1,9 @@
+﻿@model SAHL.Core.UI.Elements.Menus.DynamicRibbonMenuItemElement
+<li id="@Model.Id" class="ribbon-menu-item dynamic-ribbon-menu-item scrollable-item @(Model.Selected ? "active" : String.Empty)" @DataAttributes.attributes(Model)>
+    <a href="@Model.Url">
+        @foreach (var part in Model.Parts)
+        {
+            @Html.DisplayForModel(x => part)
+        }
+    </a>
+</li>

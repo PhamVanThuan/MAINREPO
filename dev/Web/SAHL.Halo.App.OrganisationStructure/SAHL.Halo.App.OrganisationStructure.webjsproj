@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <AssemblyName>SAHL.Halo.App.OrganisationalStructure</AssemblyName>
+    <Name>SAHL.Halo.App.OrganisationStructure</Name>
+    <RootNamespace>sahl.Halo.App.OrganisationStructure</RootNamespace>
+    <ProjectGuid>{5cb42d6e-ce83-402d-87b3-28cdaf2755d2}</ProjectGuid>
+    <SAHLSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="app\start" />
+    <Folder Include="assets" />
+    <Folder Include="app" />
+    <Folder Include="lib\OrganisationStructureQueryService" />
+    <Folder Include="lib\organisationStructureChart" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\images" />
+    <Folder Include="css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\start\organisationStructureChart.tpl.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\start\start.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\start\start.spec.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\start\start.tpl.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\organisationStructureApp.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\organisationStructureApp.spec.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="assets\images\icon.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\organisationStructureChart\organisationStructure.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\organisationStructureChart\organisationStructure.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\organisationStructureChart\organisationStructure.js</DependentUpon>
+    </Content>
+    <Content Include="lib\OrganisationStructureQueryService\OrganisationStructureQueryService.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="lib\OrganisationStructureQueryService\OrganisationStructureQueryService.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>lib\OrganisationStructureQueryService\OrganisationStructureQueryService.js</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SAHomeloans\SAHL.VS.WebJS.targets" />
+</Project>

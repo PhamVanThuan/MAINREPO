@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Restore.RestoreDB.SAHLDB</id>
+    <version>$version$</version>
+    <authors>SA Home Loans</authors>
+    <owners>SA Home Loans</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Execute PostDeploy Scripts</description>
+    <copyright>Copyright 2012</copyright>
+  </metadata>
+</package>

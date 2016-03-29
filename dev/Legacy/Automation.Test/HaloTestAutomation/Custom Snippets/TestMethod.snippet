@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Create Test Method</Title>
+			<Description>Code snippet for creating an NUnit test method</Description>
+			<Author>AndrewK</Author>
+			<Shortcut>test</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+        </Header>
+        <Snippet>
+			<Declarations>
+				<Literal>
+					<ID>methodname</ID>
+					<Default>TestName</Default>
+				</Literal>
+			</Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+[Test]
+public void $methodname$()
+{
+$selected$ $end$
+}
+				]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

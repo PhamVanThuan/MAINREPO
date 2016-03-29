@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://localhost/ImagingCoApplicantRequest.xsd" elementFormDefault="qualified" targetNamespace="http://localhost/ImagingCoApplicantRequest.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:4711/SAHLIntegrationService.svc?xsd=xsd4" namespace="http://localhost/ImagingMainApplicantRequest.xsd" />
+  <xs:element name="Request.Header" type="tns:CoApplicantHeaderType" />
+  <xs:complexType name="CoApplicantHeaderType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:headerType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="headerType">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://localhost/ImagingMainApplicantRequest.xsd" minOccurs="1" maxOccurs="1" name="Request.Action" type="q1:headerTypeRequestAction" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Request.Mac" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Application.Reference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bank.Reference" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Imaging.Reference" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Request.Messages" type="xs:decimal" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Request.DateTime" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Service.Version" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bank.Custom" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Supporting.Documents" type="tns:CoApplicantSupportingDocuments" />
+  <xs:complexType name="CoApplicantSupportingDocuments">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Co.Applicant.Documents" type="tns:CoApplicantType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CoApplicantType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:applicantType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Supporting.Document" type="tns:CoApplicantDocumentType" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Spouse.Documents" type="tns:CoApplicantSpouseType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="applicantType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Applicant.Reference" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.FirstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.Surname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.IdentityNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.PassportNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bank.Custom" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CoApplicantDocumentType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:documentType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="documentType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Document.Reference" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Document.Type" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Document.Description" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Document.Comments" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Document.Image" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CoApplicantSpouseType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:spouseType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Supporting.Document" type="tns:CoApplicantDocumentType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="spouseType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Applicant.Reference" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.FirstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.Surname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.IdentityNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Applicant.PassportNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Bank.Custom" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Config.Services.EventProjection.Server", "SAHL.Config.Services.EventProjection.Server\SAHL.Config.Services.EventProjection.Server.csproj", "{0B2018B9-6287-43B4-B1AC-EE305FFABA4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.EventProjection", "SAHL.Services.EventProjection\SAHL.Services.EventProjection.csproj", "{CD370F38-F54B-4D7D-BE17-D60E5CD5328C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.EventProjection.Specs", "SAHL.Services.EventProjection.Specs\SAHL.Services.EventProjection.Specs.csproj", "{36D925DC-5A7A-4A95-9878-B037DFF89C2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.EventProjection.Tests", "SAHL.Services.EventProjection.Tests\SAHL.Services.EventProjection.Tests.csproj", "{F805D3EB-D5E7-4705-B26E-3C5DD704043B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.EventProjection.Console", "SAHL.Services.EventProjection.Console\SAHL.Services.EventProjection.Console.csproj", "{DB1C926A-D7CC-4DF1-8D14-688E43931B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.EventProjection.Player", "SAHL.Services.EventProjection.Player\SAHL.Services.EventProjection.Player.csproj", "{238C5617-C872-485E-87DC-4F0D6E68366C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B2018B9-6287-43B4-B1AC-EE305FFABA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2018B9-6287-43B4-B1AC-EE305FFABA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2018B9-6287-43B4-B1AC-EE305FFABA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2018B9-6287-43B4-B1AC-EE305FFABA4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD370F38-F54B-4D7D-BE17-D60E5CD5328C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD370F38-F54B-4D7D-BE17-D60E5CD5328C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD370F38-F54B-4D7D-BE17-D60E5CD5328C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD370F38-F54B-4D7D-BE17-D60E5CD5328C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36D925DC-5A7A-4A95-9878-B037DFF89C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36D925DC-5A7A-4A95-9878-B037DFF89C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36D925DC-5A7A-4A95-9878-B037DFF89C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36D925DC-5A7A-4A95-9878-B037DFF89C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F805D3EB-D5E7-4705-B26E-3C5DD704043B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F805D3EB-D5E7-4705-B26E-3C5DD704043B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F805D3EB-D5E7-4705-B26E-3C5DD704043B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F805D3EB-D5E7-4705-B26E-3C5DD704043B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1C926A-D7CC-4DF1-8D14-688E43931B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1C926A-D7CC-4DF1-8D14-688E43931B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1C926A-D7CC-4DF1-8D14-688E43931B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1C926A-D7CC-4DF1-8D14-688E43931B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{238C5617-C872-485E-87DC-4F0D6E68366C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{238C5617-C872-485E-87DC-4F0D6E68366C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{238C5617-C872-485E-87DC-4F0D6E68366C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{238C5617-C872-485E-87DC-4F0D6E68366C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

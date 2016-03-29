@@ -1,0 +1,19 @@
+{
+    "Framework": "jasmine",
+    "References": [
+        { "Path": "lib/angular", "Include": "*.js" },
+        { "Path": "lib/angular-mocks", "Include": "*.js" },
+        { "Path": "lib/angular-ui-router", "Include": "*.js" },
+        { "Path": "lib/sahl.js.core", "Include": "*.js" },
+        { "Path": "lib/sahl.js.ui", "Include": "*.js" },
+        { "Path": "lib/underscore", "Include": "*.js" },
+        { "Path": "app", "Include": "*.js", "Exclude": "*.spec.js" },
+        { "Path": "services", "Include": "*.js", "Exclude": "*.spec.js" },
+        { "Path": "events", "Include": "*.js", "Exclude": "*.spec.js" }
+    ],
+    "Tests": [
+        { "Path": "app", "Include": "*.spec.js" },
+        { "Path": "services", "Include": "*.spec.js" },
+        { "Path": "events", "Include": "*.spec.js" }
+    ]
+}

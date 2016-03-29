@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="SAHL.V3.Framework.Test\bin\Debug\SAHL.V3.Framework.Test.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="SAHL.V3.Framework.Test\bin\Release\SAHL.V3.Framework.Test.dll" />
+  </Config>
+</NUnitProject>

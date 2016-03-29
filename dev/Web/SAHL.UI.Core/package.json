@@ -1,0 +1,17 @@
+{
+  "name": "SAHL.UI.Core",
+  "metadata": "SAHL.UI.Core",
+  "version": "1.0.0",
+  "description": "UI Core styling",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+   "dependencies": {
+  }
+}

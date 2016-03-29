@@ -1,0 +1,18 @@
+﻿@model SAHL.Web.Public.Models.CaseDetailViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+<fieldset>
+    <legend>Debt Counselling Case Detail</legend>
+    <div class="display-label">
+        CaseNumber</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CaseNumber)
+    </div>
+    <div class="display-label">
+        CaseDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CaseDescription)
+    </div>
+</fieldset>

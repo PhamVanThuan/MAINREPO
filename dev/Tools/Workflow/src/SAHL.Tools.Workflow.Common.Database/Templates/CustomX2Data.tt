@@ -1,0 +1,25 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[X2DATA].[<#=workflow.SafeName#>]') AND type in (N'U'))
+BEGIN
+	create table [X2DATA].[<#=workflow.SafeName#>]
+	(
+		[InstanceID] [bigint] NOT NULL,
+		PRIMARY KEY CLUSTERED (InstanceID ASC) WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+	)
+
+	GRANT SELECT ON [X2DATA].[<#=workflow.SafeName#>] TO [X2User]
+	GRANT INSERT ON [X2DATA].[<#=workflow.SafeName#>] TO [X2User]
+END
+
+<# foreach(var acv in workflow.CustomVariables)
+{
+#>
+
+IF NOT EXISTS(SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '<#=workflow.SafeName#>' AND  COLUMN_NAME = '<#=acv.SafeName#>')
+BEGIN
+	ALTER TABLE [X2DATA].[<#=workflow.SafeName#>]
+	ADD [<#=acv.SafeName#>] <#=GetSqlDataType(acv)#>
+END
+<#
+}
+#>

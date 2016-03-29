@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ActionMailerNext.Standalone</name>
+    </assembly>
+    <members>
+        <member name="T:ActionMailerNext.Standalone.MailMethod">
+            <summary>
+                Enum to choose which method the email should be sent with.
+            </summary>
+        </member>
+        <member name="F:ActionMailerNext.Standalone.MailMethod.SMTP">
+            <summary>
+                SMTP Method
+            </summary>
+        </member>
+        <member name="F:ActionMailerNext.Standalone.MailMethod.Mandrill">
+            <summary>
+                Mandrill HTTP Method
+            </summary>
+        </member>
+        <member name="T:ActionMailerNext.Standalone.RazorEmailResult">
+            <summary>
+                An container for MailMessage with the appropriate body rendered by Razor.
+            </summary>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorEmailResult.#ctor(ActionMailerNext.Interfaces.IMailInterceptor,ActionMailerNext.Interfaces.IMailSender,ActionMailerNext.Interfaces.IMailAttributes,System.String,System.Text.Encoding,System.String,RazorEngine.Templating.ITemplateService,RazorEngine.Templating.DynamicViewBag)">
+            <summary>
+                Creates a new EmailResult.  You must call Compile() before this result
+                can be successfully delivered.
+            </summary>
+            <param name="interceptor">The IMailInterceptor that we will call when delivering mail.</param>
+            <param name="sender">The IMailSender that we will use to send mail.</param>
+            <param name="mail">The mail message who's body needs populating.</param>
+            <param name="viewName">The view to use when rendering the message body.</param>
+            <param name="viewPath">The path where we should search for the view.</param>
+            <param name="templateService">The template service defining a ITemplateResolver and a TemplateBase</param>
+            <param name="viewBag">The viewBag is a dynamic object that can transfer data to the view</param>
+            <param name="messageEncoding"></param>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorEmailResult.Deliver">
+            <summary>
+                Sends your message.  This call will block while the message is being sent. (not recommended)
+            </summary>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorEmailResult.DeliverAsync">
+            <summary>
+                Sends your message asynchronously.  This method does not block.  If you need to know
+                when the message has been sent, then override the OnMailSent method in MailerBase which
+                will not fire until the asyonchronous send operation is complete.
+            </summary>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorEmailResult.Compile``1(``0,System.Boolean)">
+            <summary>
+                Compiles the email body using the specified Razor view and model.
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorEmailResult.Mail">
+            <summary>
+                The underlying MailMessage object that was passed to this object's constructor.
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorEmailResult.MailSender">
+            <summary>
+                The IMailSender instance that is used to deliver mail.
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorEmailResult.MessageEncoding">
+            <summary>
+                The default encoding used to send a messageBase.
+            </summary>
+        </member>
+        <member name="T:ActionMailerNext.Standalone.RazorMailerBase">
+            <summary>
+                This is a standalone MailerBase that relies on RazorEngine to generate emails.
+            </summary>
+        </member>
+        <member name="F:ActionMailerNext.Standalone.RazorMailerBase.MailAttributes">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorMailerBase.#ctor(ActionMailerNext.Interfaces.IMailAttributes,ActionMailerNext.Interfaces.IMailSender)">
+            <summary>
+                Initializes MailerBase using the default SmtpMailSender and system Encoding.
+            </summary>
+            <param name="mailAttributes"></param>
+            <param name="mailSender">The underlying mail sender to use for delivering mail.</param>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorMailerBase.ActionMailerNext#Interfaces#IMailInterceptor#OnMailSending(ActionMailerNext.MailSendingContext)">
+            <summary>
+                This method is called before each mail is sent
+            </summary>
+            <param name="context">
+                A simple context containing the mail
+                and a boolean value that can be toggled to prevent this
+                mail from being sent.
+            </param>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorMailerBase.ActionMailerNext#Interfaces#IMailInterceptor#OnMailSent(ActionMailerNext.Interfaces.IMailAttributes)">
+            <summary>
+                This method is called after each mail is sent.
+            </summary>
+            <param name="mail">The mail that was sent.</param>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorMailerBase.OnMailSent(ActionMailerNext.Interfaces.IMailAttributes)">
+            <summary>
+                This method is called when onMailsent is fired.
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorMailerBase.Email(System.String,System.Boolean)">
+            <summary>
+                Constructs your mail message ready for delivery.
+            </summary>
+            <param name="viewName">The view to use when rendering the message body.</param>
+            <param name="trimBody">Whether or not we should trim whitespace from the beginning and end of the message body.</param>
+            <returns>An EmailResult that you can Deliver();</returns>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorMailerBase.Email``1(System.String,``0,System.Boolean)">
+            <summary>
+                Constructs your mail message ready for delivery.
+            </summary>
+            <param name="viewName">The view to use when rendering the message body.</param>
+            <param name="model">The model object used while rendering the message body.</param>
+            <param name="trimBody">Whether or not we should trim whitespace from the beginning and end of the message body.</param>
+            <returns>An EmailResult that you can Deliver();</returns>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorMailerBase.ViewPath">
+            <summary>
+                The path to the folder containing your Razor views.
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorMailerBase.MailSender">
+            <summary>
+                The underlying IMailSender to use for outgoing messages.
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorMailerBase.TemplateResolver">
+            <summary>
+                A template resolver that is used to find the appropriate templates
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorMailerBase.TemplateBaseType">
+            <summary>
+                A template base that can add more features to RazorEngine
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.RazorMailerBase.ViewBag">
+            <summary>
+                Used to add needed variable
+            </summary>
+        </member>
+        <member name="T:ActionMailerNext.Standalone.RazorTemplateResolver">
+            <summary>
+                The RazorTemplateResolver tries to locate the templates using the standard search pattern of MVC
+                and reads their content.
+            </summary>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorTemplateResolver.#ctor(System.String)">
+            <summary>
+                Creates a template resolver using the specified path.  If no path is given, this defaults to "Views"
+            </summary>
+            <param name="viewPath">The path containing your views</param>
+        </member>
+        <member name="M:ActionMailerNext.Standalone.RazorTemplateResolver.Resolve(System.String)">
+            <summary>
+                Searches the view path for the given template and returns the contents of the view.
+                Throws a TemplateResolvingException if no views could be found.
+            </summary>
+            <param name="name">The name of the view to search for</param>
+            <returns>The contents of any views found.</returns>
+        </member>
+        <member name="T:ActionMailerNext.Standalone.TemplateResolvingException">
+            <summary>
+                Exception thrown when a template could not be resolved
+            </summary>
+        </member>
+        <member name="P:ActionMailerNext.Standalone.TemplateResolvingException.SearchPaths">
+            <summary>
+                A list of paths that were checked when searching for a template.
+            </summary>
+        </member>
+    </members>
+</doc>

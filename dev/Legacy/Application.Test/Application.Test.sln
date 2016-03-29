@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Web.Test", "SAHL.Web.Test\SAHL.Web.Test.csproj", "{FE378363-F20A-4522-8BF2-7C3C3A4E8F62}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE378363-F20A-4522-8BF2-7C3C3A4E8F62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE378363-F20A-4522-8BF2-7C3C3A4E8F62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE378363-F20A-4522-8BF2-7C3C3A4E8F62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE378363-F20A-4522-8BF2-7C3C3A4E8F62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+EndGlobal

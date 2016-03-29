@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Config.Services.CapitecFailedMessageProcessor.Server", "SAHL.Config.Services.CapitecFailedMessageProcessor.Server\SAHL.Config.Services.CapitecFailedMessageProcessor.Server.csproj", "{82767FC7-3AA3-42FA-B055-41D2E74E192A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Config.Services.CapitecFailedMessageProcessor.Server.Console", "SAHL.Config.Services.CapitecFailedMessageProcessor.Server.Console\SAHL.Config.Services.CapitecFailedMessageProcessor.Server.Console.csproj", "{794EB908-3E8E-47E3-BF93-64002AFC76BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.CapitecFailedMessageProcessor.Tests", "SAHL.Services.CapitecFailedMessageProcessor.Tests\SAHL.Services.CapitecFailedMessageProcessor.Tests.csproj", "{C9A381CD-AF96-4261-AB99-8D90B875CB24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.Interfaces.CapitecFailedMessageProcessor", "SAHL.Services.Interfaces.CapitecFailedMessageProcessor\SAHL.Services.Interfaces.CapitecFailedMessageProcessor.csproj", "{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.Services.Interfaces.CapitecFailedMessageProcessor.Specs", "SAHL.Services.Interfaces.CapitecFailedMessageProcessor.Specs\SAHL.Services.Interfaces.CapitecFailedMessageProcessor.Specs.csproj", "{0E9AB033-3EA2-45C4-AF46-F881FC6D5E8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82767FC7-3AA3-42FA-B055-41D2E74E192A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82767FC7-3AA3-42FA-B055-41D2E74E192A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82767FC7-3AA3-42FA-B055-41D2E74E192A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82767FC7-3AA3-42FA-B055-41D2E74E192A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{794EB908-3E8E-47E3-BF93-64002AFC76BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794EB908-3E8E-47E3-BF93-64002AFC76BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794EB908-3E8E-47E3-BF93-64002AFC76BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794EB908-3E8E-47E3-BF93-64002AFC76BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9A381CD-AF96-4261-AB99-8D90B875CB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9A381CD-AF96-4261-AB99-8D90B875CB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9A381CD-AF96-4261-AB99-8D90B875CB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9A381CD-AF96-4261-AB99-8D90B875CB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4A8A27-DE90-4CDA-B69F-1AECE375D90D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E9AB033-3EA2-45C4-AF46-F881FC6D5E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9AB033-3EA2-45C4-AF46-F881FC6D5E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9AB033-3EA2-45C4-AF46-F881FC6D5E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9AB033-3EA2-45C4-AF46-F881FC6D5E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

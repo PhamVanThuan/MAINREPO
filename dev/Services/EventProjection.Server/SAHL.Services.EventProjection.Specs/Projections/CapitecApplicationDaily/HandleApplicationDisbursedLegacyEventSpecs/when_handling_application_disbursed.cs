@@ -1,0 +1,75 @@
+﻿using Machine.Fakes;
+using Machine.Specifications;
+using SAHL.Core.Data;
+using SAHL.Core.Data.Models._2AM;
+using SAHL.Core.Data.Models.Capitec;
+using SAHL.Core.Services;
+using SAHL.Core.Testing.Fakes;
+using SAHL.Services.EventProjection.Projections.CapitecApplicationDaily;
+using SAHL.Services.EventProjection.Projections.CapitecApplicationDaily.Models;
+using SAHL.Services.EventProjection.Projections.CapitecApplicationDaily.Statements;
+using SAHL.Services.Interfaces.LegacyEventGenerator.Events.Workflow.Origination.ApplicationProgress;
+using System;
+
+namespace SAHL.Services.EventProjection.Specs.Projections.CapitecApplicationDaily.HandleApplicationDisbursedLegacyEventSpecs
+{
+    [Subject("SAHL.Services.EventProjection.Projections.CapitecApplicationDaily.CapitecApplicationDaily.HandleApplicationDisbursedLegacyEvent")]
+    public class when_handling_application_disbursed : WithFakes
+    {
+        private static CapitecApplicationDailyReport projection;
+        private static AppProgressDisbursedLegacyEvent appProgressDisbursedLegacyEvent;
+        private static FakeDbFactory dbFactory;
+        private static IServiceRequestMetadata metadata;
+
+        private Establish context = () =>
+        {
+            metadata = An<IServiceRequestMetadata>();
+            dbFactory = new FakeDbFactory();
+            dbFactory.FakedDb.DbReadOnlyContext
+                .WhenToldTo(x => x.Select<OfferAttributeDataModel>(Param<GetOfferAttributeStatment>.IsAnything))
+                .Return(new OfferAttributeDataModel[] { new OfferAttributeDataModel(0, 30) });
+
+            dbFactory.FakedDb.DbContext
+                .WhenToldTo(x => x.SelectOne<ConsultantInfoDataModel>(Param<GetConsultantLegalEntityDetailsStatement>.IsAnything))
+                .Return(new ConsultantInfoDataModel("", ""));
+
+            appProgressDisbursedLegacyEvent = new AppProgressDisbursedLegacyEvent(
+                Param<Guid>.IsAnything,
+                Param<DateTime>.IsAnything,
+                Param<int>.IsAnything,
+                Param<string>.IsAnything,
+                Param<int>.IsAnything,
+                Param<int>.IsAnything,
+                Param<string>.IsAnything,
+                Param<string>.IsAnything
+            );
+
+            projection = new CapitecApplicationDailyReport(dbFactory);
+        };
+
+        private Because of = () =>
+        {
+            projection.Handle(appProgressDisbursedLegacyEvent, metadata);
+        };
+
+        private It should_check_if_application_is_capitec = () =>
+        {
+            dbFactory.FakedDb.DbReadOnlyContext.WasToldTo(x => x.Select<OfferAttributeDataModel>(Param<GetOfferAttributeStatment>.IsAnything));
+        };
+
+        private It should_get_commissionable_consultants_phone_number = () =>
+        {
+            dbFactory.FakedDb.DbReadOnlyContext.WasToldTo(x => x.SelectOne<ConsultantInfoDataModel>(Param<GetConsultantLegalEntityDetailsStatement>.IsAnything));
+        };
+
+        private It should_project_changes_to_capitec_db = () =>
+        {
+            dbFactory.FakedDb.DbContext.WasToldTo(x => x.Update(Param<ISqlStatement<ApplicationDataModel>>.IsAnything));
+        };
+
+        private It should_complete_db_changes = () =>
+        {
+            dbFactory.FakedDb.DbContext.WasToldTo(x => x.Complete());
+        };
+    }
+}

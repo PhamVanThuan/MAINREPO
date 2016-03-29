@@ -1,0 +1,15 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>service.js</DefaultName>
+    <Name>AngularJS Service</Name>
+    <Description>AngularJs Service File and Spec.</Description>
+    <ProjectType>WebNG</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>service.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.js" ReplaceParameters="true" SubType="Compile">service.js</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.js/$fileinputname$.spec.js" ReplaceParameters="true" SubType="">service.spec.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Basel">
+  <modelMoniker Id="b6da9ab0-5197-4f2d-92af-931338d4e711" />
+  <nestedChildShapes>
+    <classShape Id="0bfa2f85-b29e-46ab-9376-0ad4bc53920b" absoluteBounds="0.5, 2.25, 1.5, 1.1439925130208333">
+      <modelClassMoniker name="/b6da9ab0-5197-4f2d-92af-931338d4e711/PDCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b27909bc-885c-47a9-836f-2fa614ea8be6" absoluteBounds="0.515, 2.66, 1.4700000000000002, 0.63399251302083315" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c3b02ba-bea8-41f2-94f6-e0e210d0ac78" absoluteBounds="3.625, 0.5, 1.5, 2.8747054036458333">
+      <modelClassMoniker name="/b6da9ab0-5197-4f2d-92af-931338d4e711/Account" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47c3dd8b-c67c-4232-aa25-7c38ba917f7d" absoluteBounds="3.64, 0.91, 1.4700000000000002, 2.364705403645833" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b266057-e83e-4c3b-b5af-4a3646835342" absoluteBounds="0.75, 3.375, 1.5, 2.1054996744791667">
+      <modelClassMoniker name="/b6da9ab0-5197-4f2d-92af-931338d4e711/BaselImport" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aea33296-c185-447b-a790-cb45a68f910f" absoluteBounds="0.765, 3.785, 1.4700000000000002, 1.5954996744791665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(2.25 : 4.42774983723958); (4.375 : 4.42774983723958); (4.375 : 3.37470540364583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="3f58aa0b-d3b8-4052-918c-30e0af50da03" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="6b266057-e83e-4c3b-b5af-4a3646835342" />
+        <classShapeMoniker Id="7c3b02ba-bea8-41f2-94f6-e0e210d0ac78" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

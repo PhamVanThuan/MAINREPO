@@ -1,0 +1,17 @@
+<br>
+<table class="table bordered">
+<thead>
+	<tr>
+		<th style="font-size:12px; text-align:left">Date</th>
+		<th style="font-size:12px; text-align:left">Transaction Type</th>
+		<th style="font-size:12px; text-align:left">Amount</th>
+	</tr>
+</thead>
+<tbody>
+	<tr id="transactions" ng-repeat="trans in item.tileDataItems.$values">
+		<td style="font-size:12px; text-align:left">{{trans.InsertDate | dateViewFilter}}</td>
+		<td style="font-size:12px; text-align:left">{{trans.TransactionTypeDescription}}</td>
+		<td style="font-size:12px; text-align:right">{{trans.Amount | currencyFilter : 0}}</td>
+	</tr>
+</tbody>
+</table>

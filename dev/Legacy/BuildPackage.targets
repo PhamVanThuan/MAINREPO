@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+
+    <!-- Output Locations -->
+    <PACKAGE_ROOT>$(Rootpath)\BuildOutput\Target</PACKAGE_ROOT>
+    <Package_ConfigFiles>Config Files</Package_ConfigFiles>
+    <Package_InternalBins>Internal Binaries</Package_InternalBins>
+    <Package_InternalBinsShared>Internal Binaries</Package_InternalBinsShared>
+    <Package_ExternalBins>External Binaries</Package_ExternalBins>
+    <Package_DomainServiceBins>DomainService/DomainServiceBinaries</Package_DomainServiceBins>
+    <!-- Maps -> WorkflowMaps -->
+    <Package_WorkflowMaps>Maps</Package_WorkflowMaps>
+    <Package_WorkflowRecalc>SecurityRecalc</Package_WorkflowRecalc>
+    <!-- Engine -> Service.X2Engine -->
+    <Package_ServiceX2Engine>Engine</Package_ServiceX2Engine>
+    <Package_ServiceX2EngineInstaller>Engine.Installer</Package_ServiceX2EngineInstaller>
+    <!-- SAHL.Batches -> App.Batch -->
+    <Package_AppBatch>SAHL.Batches</Package_AppBatch>
+    <!-- SAHL.Web.Services ->  Webservice.Public.Website -->
+    <Package_WebservicePublicWebsite>SAHL.Web.Services</Package_WebservicePublicWebsite>
+    <!-- SAHL.Web.Public ->  Website.Attorney -->
+    <Package_WebsiteAttoney>SAHL.Web.Public</Package_WebsiteAttoney>
+    <!-- SAHL.Web.ClientSecure ->  Website.ClientSecure -->
+    <Package_WebsiteClientSecure>SAHL.Web.ClientSecure</Package_WebsiteClientSecure>
+    <!-- SAHL.Web.Services.Internal ->  Webservice.Internal-->
+    <Package_WebserviceInternal>SAHL.Web.Services.Internal</Package_WebserviceInternal>
+    <!-- SAHL.Web.Services.Public -> Webservice.Public  -->
+    <Package_WebservicePublic>SAHL.Web.Services.Public</Package_WebservicePublic>
+    <!-- Web.Release  -> Website.Halo -->
+    <Package_WebsiteHalo>Web.Release</Package_WebsiteHalo>
+    <Package_WebsiteLighthouse>Website.Lighthouse</Package_WebsiteLighthouse>
+    <Package_Scripts>Scripts</Package_Scripts>
+    <Package_Reports>Reports</Package_Reports>
+    <Package_Restore>Restore</Package_Restore>
+    <Package_Checks>Checks</Package_Checks>
+    <Package_Tasks>Tasks</Package_Tasks>
+    <Package_SharedTools>Shared.Tools</Package_SharedTools>
+	<Package_BatchService>Batch.Service</Package_BatchService>
+
+    <Package_CheckCommon>Check.Common</Package_CheckCommon>
+
+    <Package_CheckPreDeployDatabase>Check.PreDeploy.Database</Package_CheckPreDeployDatabase>
+    <Package_CheckPostDeployDatabase>Check.PostDeploy.Database</Package_CheckPostDeployDatabase>
+
+    <Package_CheckPreDeployEWorkServer>Check.PreDeploy.eWorkServer</Package_CheckPreDeployEWorkServer>
+    <Package_CheckPostDeployEWorkServer>Check.PostDeploy.eWorkServer</Package_CheckPostDeployEWorkServer>
+
+    <Package_CheckPreDeployReportServer>Check.PreDeploy.ReportServer</Package_CheckPreDeployReportServer>
+    <Package_CheckPostDeployReportServer>Check.PostDeploy.ReportServer</Package_CheckPostDeployReportServer>
+
+    <Package_CheckPreDeployWebServerApplication>Check.PreDeploy.WebServer.Application</Package_CheckPreDeployWebServerApplication>
+    <Package_CheckPostDeployWebServerApplication>Check.PostDeploy.WebServer.Application</Package_CheckPostDeployWebServerApplication>
+
+    <Package_CheckPreDeployWebServerEWork>Check.PreDeploy.WebServer.eWork</Package_CheckPreDeployWebServerEWork>
+    <Package_CheckPostDeployWebServerEWork>Check.PostDeploy.WebServer.eWork</Package_CheckPostDeployWebServerEWork>
+
+    <Package_CheckPreDeployWebServerPartner>Check.PreDeploy.WebServer.Partner</Package_CheckPreDeployWebServerPartner>
+    <Package_CheckPostDeployWebServerPartner>Check.PostDeploy.WebServer.Partner</Package_CheckPostDeployWebServerPartner>
+
+    <Package_CheckPreDeployWebServerPublic>Check.PreDeploy.WebServer.Public</Package_CheckPreDeployWebServerPublic>
+    <Package_CheckPostDeployWebServerPublic>Check.PostDeploy.WebServer.Public</Package_CheckPostDeployWebServerPublic>
+
+    <Package_CheckPreDeployX2Server>Check.PreDeploy.X2Server</Package_CheckPreDeployX2Server>
+    <Package_CheckPostDeployX2Server>Check.PostDeploy.X2Server</Package_CheckPostDeployX2Server>
+
+    <Package_PreDeployTaskAppPools>Task.PreDeploy.AppPools</Package_PreDeployTaskAppPools>
+    <Package_PostDeployTaskAppPools>Task.PostDeploy.AppPools</Package_PostDeployTaskAppPools>
+
+    <Package_PreDeployTaskCompoPump>Task.PreDeploy.CompoPump</Package_PreDeployTaskCompoPump>
+    <Package_PostDeployTaskCompoPump>Task.PostDeploy.CompoPump</Package_PostDeployTaskCompoPump>
+
+    <Package_PreDeployTaskMSDTC>Task.PreDeploy.MSDTC</Package_PreDeployTaskMSDTC>
+    <Package_PostDeployTaskMSDTC>Task.PostDeploy.MSDTC</Package_PostDeployTaskMSDTC>
+
+    <Package_PreDeployTaskX2Engine>Task.PreDeploy.X2Engine</Package_PreDeployTaskX2Engine>
+    <Package_PostDeployTaskX2Engine>Task.PostDeploy.X2Engine</Package_PostDeployTaskX2Engine>
+
+    <Package_Temp>Temp</Package_Temp>
+
+    <Version>$(AssemblyVersion)</Version>
+    <RecalcToolVersion>$(RecalcToolVersion)</RecalcToolVersion>
+
+    <!-- Locations -->
+    <WebAppSourceLocation>$(RootPath)\Application\SAHL.Web</WebAppSourceLocation>
+    <LighhouseSourceLocation>$(RootPath)\Lighthouse</LighhouseSourceLocation>
+    <WebsiteAttorneyLocation>$(RootPath)\Applications\SAHL.Web.Public\SAHL.Web.Public\SAHL.Web.Public</WebsiteAttorneyLocation>
+    <WebsiteClientSecureLocation>$(RootPath)\Applications\SAHL.Web.Public\SAHL.Web.ClientSecure\SAHL.Web.ClientSecure</WebsiteClientSecureLocation>
+    <WebservicePublicWebsiteLocation>$(RootPath)\Application\SAHL.Web.Services\SAHL.Web.Services</WebservicePublicWebsiteLocation>
+    <WebservicePublicLocation>$(RootPath)\Applications\SAHL.Web.Services\SAHL.Web.Services.Public\SAHL.Web.Services.Public</WebservicePublicLocation>
+    <WebserviceInternalLocation>$(RootPath)\Applications\SAHL.Web.Services\SAHL.Web.Services.Internal\SAHL.Web.Services.Internal</WebserviceInternalLocation>
+    <ToolsLocation>$(RootPath)\Tools\SAHL.Tools\Tool Binaries</ToolsLocation>
+    <DomainServiceLocation>$(RootPath)\DomainService\DomainServiceBinaries</DomainServiceLocation>
+    <InternalBinsLocation>$(RootPath)\Internal Binaries</InternalBinsLocation>
+    <ExternalBinsLocation>$(RootPath)\External Binaries</ExternalBinsLocation>
+    <X2EngineLocation>$(RootPath)\X2Engine\SAHL.X2EngineService\bin\$(Configuration)</X2EngineLocation>
+    <X2EngineSolutionLocation>$(RootPath)\X2Engine</X2EngineSolutionLocation>
+    <WorkflowMapsLocation>$(RootPath)\WorkflowMaps</WorkflowMapsLocation>
+    <SAHLBatchLocation>$(RootPath)\Application\SAHL.Batch\bin\$(Configuration)</SAHLBatchLocation>
+	<BatchServiceConfigLocation>$(RootPath)\Services\SAHL.Batch.Service\SAHL.Batch.Service\Config</BatchServiceConfigLocation>
+    <BatchServiceLocation>$(RootPath)\Services\SAHL.Batch.Service\SAHL.Batch.Service\bin\$(Configuration)</BatchServiceLocation>
+
+    <DeployTemplates_ChecksLocation>$(RootPath)\MSBuild\Templates\Checks</DeployTemplates_ChecksLocation>
+    <DeployTemplates_TaskLocation>$(RootPath)\MSBuild\Templates\Tasks</DeployTemplates_TaskLocation>
+    <DeployTemplates_ServiceX2EngineLocation>$(RootPath)\MSBuild\Templates\Service.X2Engine</DeployTemplates_ServiceX2EngineLocation>
+    <DeployTemplates_HaloLocation>$(RootPath)\MSBuild\Templates\Website.Halo</DeployTemplates_HaloLocation>
+    <DeployTemplates_LighthouseLocation>$(RootPath)\MSBuild\Templates\Website.Lighthouse</DeployTemplates_LighthouseLocation>
+    <DeployTemplates_LighthouseAccountManagementLocation>$(RootPath)\MSBuild\Templates\Website.Lighthouse.AccountManagement</DeployTemplates_LighthouseAccountManagementLocation>
+    <DeployTemplates_LighthouseMiscellaneousLocation>$(RootPath)\MSBuild\Templates\Website.Lighthouse.Miscellaneous</DeployTemplates_LighthouseMiscellaneousLocation>
+    <DeployTemplates_PreDeployTaskLocation>$(RootPath)\MSBuild\Templates\PreDeployTasks</DeployTemplates_PreDeployTaskLocation>
+    <DeployTemplates_PostDeployTaskLocation>$(RootPath)\MSBuild\Templates\PostDeployTasks</DeployTemplates_PostDeployTaskLocation>
+    <DeployTemplates_AttorneyLocation>$(RootPath)\MSBuild\Templates\Website.Attorney</DeployTemplates_AttorneyLocation>
+    <DeployTemplates_WebsiteClientSecureLocation>$(RootPath)\MSBuild\Templates\Website.ClientSecure</DeployTemplates_WebsiteClientSecureLocation>
+    <DeployTemplates_WebservicePublicWebsiteLocation>$(RootPath)\MSBuild\Templates\Webservice.Public.Website</DeployTemplates_WebservicePublicWebsiteLocation>
+    <DeployTemplates_RestoreReleasesLocation>$(RootPath)\MSBuild\Templates\Restore</DeployTemplates_RestoreReleasesLocation>
+    <DeployTemplates_WebServicesPublicLocation>$(RootPath)\MSBuild\Templates\Webservice.Public</DeployTemplates_WebServicesPublicLocation>
+    <DeployTemplates_WebServicesInternalLocation>$(RootPath)\MSBuild\Templates\Webservice.Internal</DeployTemplates_WebServicesInternalLocation>
+    <DeployTemplates_ScriptsReleasesLocation>$(RootPath)\MSBuild\Templates\Scripts</DeployTemplates_ScriptsReleasesLocation>
+    <DeployTemplates_ReportsReleasesLocation>$(RootPath)\MSBuild\Templates\Reports</DeployTemplates_ReportsReleasesLocation>
+    <DeployTemplates_AppBatchesLocation>$(RootPath)\MSBuild\Templates\App.Batch</DeployTemplates_AppBatchesLocation>
+    <DeployTemplates_WorkflowMapsLocation>$(RootPath)\MSBuild\Templates\Workflow.Maps</DeployTemplates_WorkflowMapsLocation>
+    <DeployTemplates_WorkflowRecalcLocation>$(RootPath)\MSBuild\Templates\Workflow.RecalcSecurity</DeployTemplates_WorkflowRecalcLocation>
+
+    <DeployTemplates_ExternalBinariesLocation>$(RootPath)\MSBuild\Templates\SAHL.External.Binaries</DeployTemplates_ExternalBinariesLocation>
+    <DeployTemplates_InternalBinariesLocation>$(RootPath)\MSBuild\Templates\SAHL.Internal.Binaries</DeployTemplates_InternalBinariesLocation>
+    <DeployTemplates_DomainServiceBinariesLocation>$(RootPath)\MSBuild\Templates\SAHL.DomainService.Binaries</DeployTemplates_DomainServiceBinariesLocation>
+    <DeployTemplates_InternalSharedLocation>$(RootPath)\MSBuild\Templates\SAHL.Internal.Shared</DeployTemplates_InternalSharedLocation>
+
+    <!-- External Bins Path -->
+    <ExternalBinsPath>$(RootPath)\External Binaries</ExternalBinsPath>
+
+    <!-- Internal Bins Path -->
+    <InternalBinsPath>$(RootPath)\Internal Binaries</InternalBinsPath>
+
+    <!-- NuGet Bins Path -->
+    <NuGetPath>$(ExternalBinsPath)\NuGet</NuGetPath>
+    <NugetExePath>$(NuGetPath)\NuGet.CommandLine.2.0.0\tools\NuGet.exe</NugetExePath>
+    <OctoExePath>$(NuGetPath)\OctopusTools.2.5.10.39\Octo.exe</OctoExePath>
+    <DevNugetRepositoryLocation>http://SAHLDEPLOY/sahldevnugetgallery/api/v2/package</DevNugetRepositoryLocation>
+    <DevNugetPackageKey>00e5e3c7-ec57-486a-9c7a-97cb5c0d4e4a</DevNugetPackageKey>
+    <!-- NugetPackageKey>09c9a08c-7003-41b8-8b9c-28951688e1f0</NugetPackageKey -->
+    <!-- Octo 1 -->
+    <!--
+    <OctoAPIKey>V1NJL3XKAACZIIADRVKC4L8MNB8</OctoAPIKey>
+    <OctopusServerURL>http://SAHLDeploy:99/api</OctopusServerURL>
+    -->
+    <!-- Octo 2 -->
+    <OctoAPIKey>API-PQ4EV9SAQU01TEPJWUWVECU5CO</OctoAPIKey>
+    <OctopusServerURL>http://sahl-dt02:99/api</OctopusServerURL>
+
+	<symbol_source>http://sahldeploy/SAHLSymbolSource/NuGet</symbol_source>
+	<sahlpackagekey>09c9a08c-7003-41b8-8b9c-28951688e1f0</sahlpackagekey>
+
+    <NuGet_RestorePackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)</NuGet_RestorePackageDeployPath>
+    <NuGet_HaloPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)</NuGet_HaloPackageDeployPath>
+    <NuGet_LighthousePackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)</NuGet_LighthousePackageDeployPath>
+    <Nuget_ScriptsPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_Scripts)</Nuget_ScriptsPackageDeployPath>
+    <NuGet_ReportsPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_Reports)</NuGet_ReportsPackageDeployPath>
+    <NuGet_X2EnginePackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2Engine)</NuGet_X2EnginePackageDeployPath>
+    <NuGet_WorkflowMapsPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)</NuGet_WorkflowMapsPackageDeployPath>
+    <NuGet_WorkflowRecalcPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowRecalc)</NuGet_WorkflowRecalcPackageDeployPath>
+    <NuGet_AppBatchesPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)</NuGet_AppBatchesPackageDeployPath>
+    <NuGet_WebPublicPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)</NuGet_WebPublicPackageDeployPath>
+    <NuGet_WebPublicClientSecurePackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)</NuGet_WebPublicClientSecurePackageDeployPath>
+    <NuGet_InternalWebServicesPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)</NuGet_InternalWebServicesPackageDeployPath>
+    <NuGet_PublicWebServicesPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)</NuGet_PublicWebServicesPackageDeployPath>
+    <NuGet_WebServicesPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)</NuGet_WebServicesPackageDeployPath>
+    <NuGet_ToolsPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_SharedTools)</NuGet_ToolsPackageDeployPath>
+    <NuGet_BatchServiceDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_BatchService)</NuGet_BatchServiceDeployPath>
+
+    <NuGet_ExternalBinariesPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_ExternalBins)</NuGet_ExternalBinariesPackageDeployPath>
+    <NuGet_InternalBinariesPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)</NuGet_InternalBinariesPackageDeployPath>
+    <NuGet_DomainServiceBinariesPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_DomainServiceBins)</NuGet_DomainServiceBinariesPackageDeployPath>
+
+    <NuGet_PreDeployCheckPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)</NuGet_PreDeployCheckPackageDeployPath>
+    <NuGet_PreDeployTaskPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)</NuGet_PreDeployTaskPackageDeployPath>
+    <NuGet_PostDeployTaskPackageDeployPath>$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)</NuGet_PostDeployTaskPackageDeployPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalBins Include="$(InternalBinsLocation)\*.dll;$(InternalBinsLocation)\*.pdb" />
+    <ExternalBins Include="$(ExternalBinsLocation)\*.dll;$(ExternalBinsLocation)\NuGet\NuGet*\**\*.*" Exclude="$(ExternalBinsLocation)\System.Data.SQLite.*" />
+    <DomainServiceBins Include="$(DomainServiceLocation)\*.dll;$(DomainServiceLocation)\*.pdb" />
+  </ItemGroup>
+  <Target Name="PrePackage" DependsOnTargets="PrePackage_ConfigFiles;PrePackage_CheckTemplates;PrePackage_DeployTasks;PrePackage_SharedTools;PrePackage_ServiceX2Engine;PrePackage_WorkflowMaps;PrePackage_WorkflowRecalc;PrePackage_AppBatch;PrePackage_Reports;PrePackage_Scripts;PrePackage_WebsiteHalo;PrePackage_WebsiteLighthouse;PrePackage_WebsiteAttorney;PrePackage_WebservicePublicWebsite;	PrePackage_WebservicePublic;PrePackage_WebserviceInternal;PrePackage_Restore;PrePackage_WebsiteClientSecure;PrePackage_BatchService">
+  </Target>
+
+  <Target Name="NuGetPackage" DependsOnTargets="NuGet_SharedTools;NuGet_Scripts;NuGet_Reports;NuGet_ServiceX2Engine;NuGet_Website_Halo;NuGet_Website_Lighthouse;NuGet_WebservicePublicWebsite;NuGet_WebserviceInternal;NuGet_WebsiteAttorney;NuGet_AppBatch;NuGet_WorkflowMaps;NuGet_WorkflowRecalc;NuGet_WebservicePublic;NuGet_Reports;NuGet_PreDeployChecks;Nuget_PreDeployTasks;NuGet_Restore;NuGet_WebsiteClientSecure;NuGet_BatchService">
+  </Target>
+
+  <Target Name="NuGetPackageBinaries" DependsOnTargets="PrePackage_Binaries;NuGetBinaries">
+  </Target>
+
+  <Target Name="Package" DependsOnTargets="PrePackage;NuGetPackage">
+  </Target>
+
+  <Target Name="PrePackage_ConfigFiles">
+    <ItemGroup>
+      <Configs Include="$(WebAppSourceLocation)\Config\*.config.*;$(WebAppSourceLocation)\Config\*.bat;$(WebAppSourceLocation)\Config\UIPConfigSchema.xsd" />
+      <Configs Include="$(WebservicePublicWebsiteLocation)\Config\*.config.*" />
+    </ItemGroup>
+
+    <!-- Copy the config files -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ConfigFiles)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ConfigFiles)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ConfigFiles)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ConfigFiles)')" />
+    <Copy SourceFiles="@(Configs)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_ConfigFiles)"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_CheckTemplates">
+    <ItemGroup>
+      <DeployTemplates_ChecksPrePost Include="$(DeployTemplates_ChecksLocation)\Check.Pre*\*.*;$(DeployTemplates_ChecksLocation)\Check.Post*\*.*;$(DeployTemplates_ChecksLocation)\*.*" />
+      <DeployTemplates_ChecksCommon Include="$(DeployTemplates_ChecksLocation)\Check.Common*\*.*" />
+    </ItemGroup>
+    <!-- Copy Pre and Post Check Templates -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)')" />
+    <Copy SourceFiles="@(DeployTemplates_ChecksPrePost)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)\%(RecursiveDir)\%(RecursiveDir)"></Copy>
+
+    <Copy SourceFiles="@(DeployTemplates_ChecksCommon)"
+        DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)\%(DeployTemplates_ChecksPrePost.RecursiveDir)\Check.Common"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_CheckTemplatesMoveItems" AfterTargets="PrePackage_CheckTemplates">
+    <ItemGroup>
+      <CheckTemplate_Nuspec Include="$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)\*.nuspec;" />
+      <CheckTemplate_Ps Include="$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)\Check.*.ps1" />
+    </ItemGroup>
+
+    <MSBuild.Community.Tasks.Move SourceFiles="@(CheckTemplate_Nuspec)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)\%(CheckTemplate_Nuspec.FileName)" />
+    <MSBuild.Community.Tasks.Move SourceFiles="$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)\%(CheckTemplate_Ps.FileName)%(CheckTemplate_Ps.Extension)"  DestinationFiles="$(PACKAGE_ROOT)\$(Version)\$(Package_Checks)\%(CheckTemplate_Ps.FileName)\Deploy.ps1" />
+  </Target>
+
+  <Target Name="PrePackage_DeployTasks">
+    <ItemGroup>
+      <DeployTemplates_PrePostDeployTask Include="$(DeployTemplates_TaskLocation)\Task.Pre*\*.*;$(DeployTemplates_TaskLocation)\Task.Post*\*.*;$(DeployTemplates_TaskLocation)\*.*;$(DeployTemplates_TaskLocation)\Task.Start*\*.*;$(DeployTemplates_TaskLocation)\Task.Stop*\*.*" />
+      <DeployTemplates_TaskCommon Include="$(DeployTemplates_TaskLocation)\Task.Common*\*.*" />
+    </ItemGroup>
+    <!-- Copy Pre and Post Deploy Tasks -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)')" />
+    <Copy SourceFiles="@(DeployTemplates_PrePostDeployTask)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)\%(RecursiveDir)\%(RecursiveDir)"></Copy>
+
+    <Copy SourceFiles="@(DeployTemplates_TaskCommon)"
+        DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)\%(DeployTemplates_PrePostDeployTask.RecursiveDir)\Task.Common"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_TaskTemplatesMoveItems" AfterTargets="PrePackage_DeployTasks">
+    <ItemGroup>
+      <TaskTemplate_Nuspec Include="$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)\*.nuspec;" />
+      <TaskTemplate_Ps Include="$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)\Task.*.ps1" />
+    </ItemGroup>
+
+    <MSBuild.Community.Tasks.Move SourceFiles="@(TaskTemplate_Nuspec)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)\%(TaskTemplate_Nuspec.FileName)" />
+    <MSBuild.Community.Tasks.Move SourceFiles="$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)\%(TaskTemplate_Ps.FileName)%(TaskTemplate_Ps.Extension)"  DestinationFiles="$(PACKAGE_ROOT)\$(Version)\$(Package_Tasks)\%(TaskTemplate_Ps.FileName)\Deploy.ps1" />
+  </Target>
+
+  <Target Name="PrePackage_Binaries" DependsOnTargets="PrePackage_DomainServiceBinaries;PrePackage_ExternalBinaries;PrePackage_InternalBinaries">
+  </Target>
+
+  <Target Name="PrePackage_DomainServiceBinaries">
+    <ItemGroup>
+      <DeployTemplates_DomainServiceBinaries Include="$(DeployTemplates_DomainServiceBinariesLocation)\*.*" />
+    </ItemGroup>
+
+    <!-- Copy Domain Service bins -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_DomainServiceBins)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_DomainServiceBins)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_DomainServiceBins)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_DomainServiceBins)')" />
+    <Copy SourceFiles="@(DomainServiceBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_DomainServiceBins)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_DomainServiceBinaries)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_DomainServiceBins)"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_ExternalBinaries">
+    <ItemGroup>
+      <DeployTemplates_ExternalBinaries Include="$(DeployTemplates_ExternalBinariesLocation)\*.*" />
+    </ItemGroup>
+    <!-- External Binaries -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ExternalBins)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ExternalBins)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ExternalBins)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ExternalBins)')" />
+    <Copy SourceFiles="@(ExternalBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_ExternalBins)\%(RecursiveDir)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_ExternalBinaries)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_ExternalBins)"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_InternalBinaries">
+    <ItemGroup>
+      <DeployTemplates_InternalBinaries Include="$(DeployTemplates_InternalBinariesLocation)\*.*" />
+      <DeployTemplates_InternalBinariesShared Include="$(DeployTemplates_InternalSharedLocation)\*.*" />
+    </ItemGroup>
+    <!-- Internal Binaries -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)')" />
+    <Copy SourceFiles="@(InternalBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_InternalBinaries)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_InternalBinariesShared)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_InternalBins)"></Copy>
+
+  </Target>
+
+  <Target Name="PrePackage_ServiceX2Engine">
+    <PropertyGroup>
+      <DevEnv>$(ProgramFiles)\Microsoft Visual Studio 10.0\Common7\IDE\devenv.com</DevEnv>
+      <SolutionFile>$(X2EngineSolutionLocation)\SAHL.X2.sln</SolutionFile>
+      <ProjectFile>$(X2EngineSolutionLocation)\SAHL.X2EngineSetup\SAHL.X2EngineSetup.vdproj</ProjectFile>
+    </PropertyGroup>
+    <ItemGroup>
+      <X2EngineFiles Include="$(X2EngineLocation)\*.*;
+   $(X2EngineLocation)\..\..\Config Files\*.*;
+   $(X2EngineLocation)\..\..\Installer Files\*.*"
+       Exclude =  "$(X2EngineLocation)\*.pdb;
+   $(X2EngineLocation)\*.xml;
+   $(X2EngineLocation)\*.pssym;
+   $(X2EngineLocation)\..\..\Config Files\*.config;
+   $(X2EngineLocation)\..\..\Config Files\*.103*;
+   $(X2EngineLocation)\..\..\Installer Files\*.bmp" />
+
+      <DeployTemplates_ServiceX2Engine Include="$(DeployTemplates_ServiceX2EngineLocation)\*.*" />
+      <X2EngineDeployFiles Include="$(X2EngineSolutionLocation)\SAHL.X2EngineSetup\$(Configuration)\*.*" />
+    </ItemGroup>
+
+    <!-- Copy Engine Installer -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2Engine)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2Engine)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2Engine)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2Engine)')" />
+    <Copy SourceFiles="@(X2EngineFiles)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2Engine)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_ServiceX2Engine)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2Engine)"></Copy>
+
+    <!--
+  <Exec Command="&quot;$(DevEnv)&quot; &quot;$(SolutionFile)&quot; /Rebuild &quot;$(Configuration)&quot; /Project &quot;$(ProjectFile)&quot; /ProjectConfig &quot;$(Configuration)&quot; /Log"
+      ContinueOnError="false"
+            IgnoreExitCode="false"
+            WorkingDirectory="$(X2EngineSolutionLocation)" />
+          -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2EngineInstaller)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2EngineInstaller)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2EngineInstaller)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2EngineInstaller)')" />
+    <Copy  SourceFiles="@(X2EngineDeployFiles)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_ServiceX2EngineInstaller)"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_WorkflowMaps">
+    <ItemGroup>
+      <EworkMaps Include ="$(WorkflowMapsLocation)\eWorks\*.xep" />
+      <DeployTemplates_WorkflowMaps Include="$(DeployTemplates_WorkflowMapsLocation)\*.*" />
+    </ItemGroup>
+
+    <!-- Workflow Maps -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)')" />
+
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Internal Binaries" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Internal Binaries')" />
+    <Copy SourceFiles="@(InternalBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Internal Binaries"></Copy>
+
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\External Binaries" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\External Binaries')" />
+    <Copy SourceFiles="@(ExternalBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\External Binaries"></Copy>
+
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\DomainService Binaries" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\DomainService Binaries')" />
+    <Copy SourceFiles="@(DomainServiceBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\DomainService Binaries"></Copy>
+
+    <Copy SourceFiles="$(WorkflowMapsLocation)\CAP2\CAP2 Offers.x2p" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\CAP2"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\CAP2\Binaries\CAP2Offers.dll" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\CAP2"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\CAP2\CAP2 Offers.config" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\CAP2"></Copy>
+
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Debt Counselling\Debt Counselling.x2p" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Debt Counselling"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Debt Counselling\Binaries\DebtCounselling.dll" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Debt Counselling"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Debt Counselling\Debt Counselling.config" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Debt Counselling"></Copy>
+
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Help Desk\Help Desk.x2p" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Help Desk"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Help Desk\Binaries\HelpDesk.dll" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Help Desk"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Help Desk\Help Desk.config" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Help Desk"></Copy>
+
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Life\Life.x2p" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Life"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Life\Binaries\Life.dll" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Life"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Life\Life.config" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Life"></Copy>
+
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Loan Adjustments\Loan Adjustments.x2p" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Loan Adjustments"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Loan Adjustments\Binaries\LoanAdjustments.dll" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Loan Adjustments"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Loan Adjustments\Loan Adjustments.config" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Loan Adjustments"></Copy>
+
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Origination\Origination.x2p" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Origination"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Origination\Binaries\Origination.dll" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Origination"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Origination\Origination.config" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Origination"></Copy>
+
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Personal Loan\Personal Loan.x2p" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Personal Loan"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Personal Loan\Binaries\PersonalLoan.dll" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Personal Loan"></Copy>
+    <Copy SourceFiles="$(WorkflowMapsLocation)\Personal Loan\Personal Loan.config" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\Personal Loan"></Copy>
+
+    <!--<Copy SourceFiles="@(EworkMaps)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)\eWorks"></Copy>-->
+    <Copy SourceFiles="@(DeployTemplates_WorkflowMaps)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowMaps)"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_WorkflowRecalc">
+    <ItemGroup>
+      <DeployTemplates_WorkflowRecalc Include="$(DeployTemplates_WorkflowRecalcLocation)\*.*" />
+    </ItemGroup>
+
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowRecalc)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowRecalc)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowRecalc)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowRecalc)')" />
+
+    <Copy SourceFiles="@(DeployTemplates_WorkflowRecalc)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WorkflowRecalc)"></Copy>
+
+  </Target>
+
+  <Target Name="PrePackage_AppBatch">
+    <ItemGroup>
+      <Configs Include="$(WebAppSourceLocation)\Config\*.config.*;$(WebAppSourceLocation)\Config\*.bat" />
+      <SAHLBatchFiles Include =  "$(SAHLBatchLocation)\*.*"
+       Exclude =  "$(SAHLBatchLocation)\*.xml;
+                         $(SAHLBatchLocation)\*.pdb;
+                         $(SAHLBatchLocation)\*vshost.*;
+                         $(SAHLBatchLocation)\*.pssym;
+                         " />
+      <DeployTemplates_AppBatches Include="$(DeployTemplates_AppBatchesLocation)\*.*" />
+    </ItemGroup>
+
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)\Config" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)\Config')" />
+
+    <Copy SourceFiles="@(SAHLBatchFiles)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)" />
+    <Copy SourceFiles="@(DeployTemplates_AppBatches)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)" />
+    <Copy SourceFiles="@(Configs)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_AppBatch)\Config" />
+  </Target>
+
+  <Target Name="PrePackage_WebsiteHalo">
+    <ItemGroup>
+      <ConfigsWebApp Include="$(WebAppSourceLocation)\Config\*.config.*;$(WebAppSourceLocation)\Config\*.bat;$(WebAppSourceLocation)\Config\UIPConfigSchema.xsd" />
+      <DeployTemplates_Halo Include="$(DeployTemplates_HaloLocation)\*.*" />
+    </ItemGroup>
+    <!-- SAHL.Web -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)')" />
+    <!-- First thing we need to do is execute the ConfigureDEVA.bat file to get a baseline for configuration -->
+    <Exec WorkingDirectory="$(WebAppSourceLocation)\Config" Command="$(WebAppSourceLocation)\Config\ConfigureDEVA.bat" />
+    <MSBuild Projects="$(WebAppSourceLocation)\SAHL.Web.csproj" Targets="ResolveReferences;_WPPCopyWebApplication"
+      Properties="Configuration=$(Configuration); OutDir=$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)\; WebProjectOutputDir=$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)\;TransformWebConfigEnabled=False; AutoParameterizationWebConfigConnectionStrings=False" />
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)')" />
+    <Copy SourceFiles="@(DeployTemplates_Halo)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)"></Copy>
+    <Copy SourceFiles="@(ConfigsWebApp)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)\Config"></Copy>
+
+    <Copy SourceFiles="@(ExternalBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)\bin"
+     Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)\bin\%(RecursiveDir)%(Filename)%(Extension)')"></Copy>
+    <Copy SourceFiles="@(InternalBins)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)\bin"
+      Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteHalo)\bin\%(RecursiveDir)%(Filename)%(Extension)')"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_WebsiteLighthouse">
+    <ItemGroup>
+      <DeployTemplates_Lighthouse Include="$(DeployTemplates_LighthouseLocation)\*.*" />
+      <DeployTemplates_LighthouseAccountManagementLocation Include="$(DeployTemplates_LighthouseAccountManagementLocation)\*.*" />
+      <DeployTemplates_LighthouseMiscellaneousLocation Include="$(DeployTemplates_LighthouseMiscellaneousLocation)\*.*" />
+    </ItemGroup>
+    <!-- Lighthouse -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)')" />
+
+    <MSBuild Projects="$(LighhouseSourceLocation)\Lighthouse.sln" Properties="Configuration=$(Configuration);" />
+
+    <!-- now copy the precompiled webs across -->
+    <ItemGroup>
+      <SAHLMLSSFiles Include="$(LighhouseSourceLocation)\PreCompiledWeb\SAHL-MLSS\**\*.*" Exclude="$(LighhouseSourceLocation)\PreCompiledWeb\SAHL-MLSS\**\Thumbs.db"/>
+      <AccountManagementFiles Include="$(LighhouseSourceLocation)\PreCompiledWeb\AccountManagement\**\*.*" Exclude="$(LighhouseSourceLocation)\PreCompiledWeb\AccountManagement\web.config" />
+      <MiscellaneousFiles Include="$(LighhouseSourceLocation)\PreCompiledWeb\Miscellaneous\**\*.*" Exclude="$(LighhouseSourceLocation)\PreCompiledWeb\Miscellaneous\web.config" />
+    </ItemGroup>
+    <Copy SourceFiles="@(SAHLMLSSFiles)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)\SAHL-MLSS\%(RecursiveDir)"></Copy>
+    <Copy SourceFiles="@(AccountManagementFiles)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)\AccountManagement\%(RecursiveDir)"></Copy>
+    <Copy SourceFiles="@(MiscellaneousFiles)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)\Miscellaneous\%(RecursiveDir)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_Lighthouse)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)\SAHL-MLSS"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_LighthouseAccountManagementLocation)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)\AccountManagement"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_LighthouseMiscellaneousLocation)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteLighthouse)\Miscellaneous"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_WebsiteAttorney">
+    <ItemGroup>
+      <ConfigsAtt Include="$(WebAppSourceLocation)\Config\*.config.*;$(WebAppSourceLocation)\Config\*.bat" />
+      <DeployTemplates_WebsiteAttorney Include="$(DeployTemplates_AttorneyLocation)\*.*" />
+    </ItemGroup>
+    <!-- SAHL.Web.Public -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)\Config" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)\Config')" />
+    <MSBuild Projects="$(WebsiteAttorneyLocation)\SAHL.Web.Public.csproj" Targets="ResolveReferences;_WPPCopyWebApplication"
+     Properties="Configuration=$(Configuration); OutDir=$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)\; WebProjectOutputDir=$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)\; UseWPP_CopyWebApplication=False" />
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)')" />
+    <Copy SourceFiles="@(DeployTemplates_WebsiteAttorney)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)"></Copy>
+    <Copy SourceFiles="@(ConfigsAtt)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteAttoney)\Config"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_WebsiteClientSecure">
+    <ItemGroup>
+      <!--
+      <ConfigsAtt Include="$(WebAppSourceLocation)\Config\*.ClientSecure.Endpoint.Client.config.*;$(WebAppSourceLocation)\Config\*.bat" />
+  -->
+      <DeployTemplates_WebsiteClientSecure Include="$(DeployTemplates_WebsiteClientSecureLocation)\*.*" />
+    </ItemGroup>
+    <!-- SAHL.Web.Public -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)')" />
+    <!--
+  <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)\Config" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)\Config')" />
+  -->
+    <MSBuild Projects="$(WebsiteClientSecureLocation)\SAHL.Web.ClientSecure.csproj" Targets="ResolveReferences;_WPPCopyWebApplication"
+     Properties="Configuration=$(Configuration); OutDir=$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)\; WebProjectOutputDir=$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)\; UseWPP_CopyWebApplication=False" />
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)')" />
+    <Copy SourceFiles="@(DeployTemplates_WebsiteClientSecure)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)"></Copy>
+    <!--
+  <Copy SourceFiles="@(ConfigsAtt)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebsiteClientSecure)\Config"></Copy>
+  -->
+  </Target>
+
+  <Target Name="PrePackage_WebserviceInternal">
+    <ItemGroup>
+      <ConfigsWebInt
+        Include="$(WebAppSourceLocation)\Config\*.config.*;$(WebAppSourceLocation)\Config\*.bat" />
+      <DeployTemplates_WebServicesInternal Include="$(DeployTemplates_WebServicesInternalLocation)\*.*" />
+    </ItemGroup>
+    <!-- SAHL.Web.Services.Internal -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)')" />
+
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)\Config" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)\Config')" />
+
+    <MSBuild Projects="$(WebserviceInternalLocation)\SAHL.Web.Services.Internal.csproj" Targets="ResolveReferences;_WPPCopyWebApplication"
+      Properties="Configuration=$(Configuration); OutDir=$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)\; WebProjectOutputDir=$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)\" />
+
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)')" />
+
+    <Copy SourceFiles="@(DeployTemplates_WebServicesInternal)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)"></Copy>
+    <Copy SourceFiles="@(ConfigsWebInt)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebserviceInternal)\Config"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_WebservicePublic">
+    <ItemGroup>
+      <ConfigsWebPub
+        Include="$(WebAppSourceLocation)\Config\*.config.*;$(WebAppSourceLocation)\Config\*.bat" />
+      <DeployTemplates_WebServicesPublic Include="$(DeployTemplates_WebServicesPublicLocation)\*.*" />
+    </ItemGroup>
+    <!-- SAHL.Web.Services.Public -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)')" />
+
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)\Config" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)\Config')" />
+
+    <MSBuild Projects="$(WebservicePublicLocation)\SAHL.Web.Services.Public.csproj" Targets="ResolveReferences;_WPPCopyWebApplication"
+     Properties="Configuration=$(Configuration); OutDir=$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)\; WebProjectOutputDir=$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)\" />
+
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)')" />
+
+    <Copy SourceFiles="@(DeployTemplates_WebServicesPublic)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)"></Copy>
+    <Copy SourceFiles="@(ConfigsWebPub)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublic)\Config"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_WebservicePublicWebsite">
+    <ItemGroup>
+      <DeployTemplates_WebservicePublicWebsite Include="$(DeployTemplates_WebservicePublicWebsiteLocation)\*.*" />
+      <ConfigPubWeb
+       Include="$(WebAppSourceLocation)\Config\*.config.*;$(WebAppSourceLocation)\Config\*.bat" />
+    </ItemGroup>
+    <!-- SAHL.Web.Services -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)')" />
+    <MSBuild Projects="$(WebservicePublicWebsiteLocation)\SAHL.Web.Services.csproj" Targets="ResolveReferences;_CopyWebApplication"
+     Properties="Configuration=$(Configuration); OutDir=$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)\; WebProjectOutputDir=$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)\" />
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Temp)')" />
+    <Copy SourceFiles="@(DeployTemplates_WebservicePublicWebsite)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)"></Copy>
+    <Copy SourceFiles="@(ConfigPubWeb)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_WebservicePublicWebsite)\Config"></Copy>
+  </Target>
+
+    <Target Name="PrePackage_BatchService">
+    <ItemGroup>
+		<ConfigsBatchService Include="$(BatchServiceConfigLocation)\*.config.*" />
+      <DeployTemplates_BatchService Include="$(BatchServiceLocation)\*.*;$(RootPath)\MSBuild\Templates\Batch.Service\*.*" />
+    </ItemGroup>
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_BatchService)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_BatchService)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_BatchService)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_BatchService)')" />
+    <Copy SourceFiles="@(DeployTemplates_BatchService)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_BatchService)"></Copy>
+	<Copy SourceFiles="@(ConfigsBatchService)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_BatchService)\Config" />
+  </Target>
+
+  <Target Name="PrePackage_Scripts">
+    <ItemGroup>
+      <ScriptsToDeploy Include="$(RootPath)\Scripts\*.*" />
+      <DeployTemplates_ScriptsReleases Include="$(DeployTemplates_ScriptsReleasesLocation)\*.*" />
+    </ItemGroup>
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Scripts)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Scripts)')" />
+    <Copy SourceFiles="@(ScriptsToDeploy)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Scripts)"></Copy>
+    <Copy SourceFiles="@(BuildToolsPath)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Scripts)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_ScriptsReleases)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Scripts)"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_Reports">
+    <ItemGroup>
+      <ReportsToDeploy Include="$(RootPath)\Reports\*.*" />
+      <DeployTemplates_ReportsReleases Include="$(DeployTemplates_ReportsReleasesLocation)\*.*" />
+    </ItemGroup>
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Reports)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Reports)')" />
+    <!--<MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Reports)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Reports)')" />-->
+    <Copy SourceFiles="@(ReportsToDeploy)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Reports)"></Copy>
+    <Copy SourceFiles="@(DeployTemplates_ReportsReleases)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Reports)"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_Restore">
+    <ItemGroup>
+      <DeployTemplates_RestoreReleases Include="$(DeployTemplates_RestoreReleasesLocation)\Restore*\*.*;$(DeployTemplates_RestoreReleasesLocation)\Restore*.*;" />
+      <DeployTemplates_RestoreCommon Include="$(DeployTemplates_RestoreReleasesLocation)\Restore.Common*\*.*" />
+    </ItemGroup>
+    <!-- Copy Pre and Post Deploy Tasks -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)')" />
+    <Copy SourceFiles="@(DeployTemplates_RestoreReleases)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)\%(RecursiveDir)\%(RecursiveDir)"></Copy>
+
+    <Copy SourceFiles="@(DeployTemplates_RestoreCommon)"
+        DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)\%(DeployTemplates_RestoreReleases.RecursiveDir)\Restore.Common"></Copy>
+  </Target>
+
+  <Target Name="PrePackage_RestoreTemplatesMoveItems" AfterTargets="PrePackage_Restore">
+    <ItemGroup>
+      <RestoreTemplate_Nuspec Include="$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)\*.nuspec;" />
+      <RestoreTemplate_Ps Include="$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)\*.ps1" />
+    </ItemGroup>
+
+    <MSBuild.Community.Tasks.Move SourceFiles="@(RestoreTemplate_Nuspec)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)\%(RestoreTemplate_Nuspec.FileName)" />
+    <MSBuild.Community.Tasks.Move SourceFiles="$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)\%(RestoreTemplate_Ps.FileName)%(RestoreTemplate_Ps.Extension)"  DestinationFiles="$(PACKAGE_ROOT)\$(Version)\$(Package_Restore)\%(RestoreTemplate_Ps.FileName)\Deploy.ps1" />
+  </Target>
+
+  <Target Name="PrePackage_SharedTools">
+    <ItemGroup>
+      <DeployTemplates_SharedTools Include="$(ToolsLocation)\*.*;$(RootPath)\MSBuild\Templates\Shared.Tools\*.*" />
+    </ItemGroup>
+    <!-- Tools -->
+    <RemoveDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_SharedTools)" Condition = "Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_SharedTools)')" />
+    <MakeDir Directories = "$(PACKAGE_ROOT)\$(Version)\$(Package_SharedTools)" Condition = "!Exists('$(PACKAGE_ROOT)\$(Version)\$(Package_SharedTools)')" />
+    <Copy SourceFiles="@(DeployTemplates_SharedTools)" DestinationFolder="$(PACKAGE_ROOT)\$(Version)\$(Package_SharedTools)"></Copy>
+    <!--<MSBuild.Community.Tasks.Subversion.SvnExport RepositoryPath="svn://sahls31/SAHL/Scripts/Data Restore/FrontEndDeveloperRestore" LocalPath="$(PACKAGE_ROOT)\$(Version)\$(Package_SharedTools)\$(Package_Scripts)" UserName="nazirj" Password="svn"/>-->
+  </Target>
+
+  <Target Name="NuGetBinaries" DependsOnTargets="NuGet_ExternalBinaries;NuGet_InternalBinaries;NuGet_DomainServiceBinaries">
+  </Target>
+
+  <Target Name="NuGet_ExternalBinaries">
+    <Exec WorkingDirectory="$(NuGet_ExternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.External.Binaries.nuspec -version $(Version) "></Exec>
+	<Exec WorkingDirectory="$(NuGet_ExternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.External.Binaries.Symbols.nuspec -version $(Version) -Symbols"></Exec>
+	<Exec WorkingDirectory="$(NuGet_ExternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.External.Binaries.$(Version).symbols.nupkg -s $(symbol_source) $(sahlpackagekey)"></Exec>
+    <Exec WorkingDirectory="$(NuGet_ExternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.External.Binaries.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_InternalBinaries">
+    <Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.Internal.Binaries.nuspec -version $(Version) "></Exec>
+	<Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.Internal.Binaries.Symbols.nuspec -version $(Version) -Symbols "></Exec>
+	<Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.Internal.Binaries.$(Version).symbols.nupkg -s $(symbol_source) $(sahlpackagekey)"></Exec>
+    <Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.Internal.Binaries.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+
+    <Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.Internal.Shared.nuspec -version $(Version) "></Exec>
+	<Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.Internal.Shared.Symbols.nuspec -version $(Version) -Symbols"></Exec>
+    <Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.Internal.Shared.$(Version).symbols.nupkg -s $(symbol_source) $(sahlpackagekey)"></Exec>
+	<Exec WorkingDirectory="$(NuGet_InternalBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.Internal.Shared.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_DomainServiceBinaries">
+    <Exec WorkingDirectory="$(NuGet_DomainServiceBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.DomainService.Binaries.nuspec -version $(Version) "></Exec>
+	<Exec WorkingDirectory="$(NuGet_DomainServiceBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack SAHL.DomainService.Binaries.Symbols.nuspec -version $(Version)  -Symbols"></Exec>
+	<Exec WorkingDirectory="$(NuGet_DomainServiceBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.DomainService.Binaries.$(Version).symbols.nupkg -s $(symbol_source) $(sahlpackagekey)"></Exec>
+    <Exec WorkingDirectory="$(NuGet_DomainServiceBinariesPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push SAHL.DomainService.Binaries.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_SharedTools">
+    <Exec WorkingDirectory="$(NuGet_ToolsPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack Shared.Tools.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_ToolsPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push Shared.Tools.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_Scripts">
+    <!-- Scripts -->
+    <Exec WorkingDirectory="$(Nuget_ScriptsPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack Scripts.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(Nuget_ScriptsPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push Scripts.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_Reports">
+    <!-- Scripts -->
+    <Exec WorkingDirectory="$(NuGet_ReportsPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack Reports.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_ReportsPackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push Reports.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_Restore">
+    <ItemGroup>
+      <Restores Include="$(NuGet_RestorePackageDeployPath)\Restore.*\*.nuspec*" />
+    </ItemGroup>
+    <Exec WorkingDirectory="$(NuGet_RestorePackageDeployPath)\%(Restores.RecursiveDir)"  Command="&quot;$(NugetExePath)&quot; pack &quot;%(Restores.FullPath)&quot; -version $(Version)"></Exec>
+    <Exec WorkingDirectory="$(NuGet_RestorePackageDeployPath)\%(Restores.RecursiveDir)"  Command="&quot;$(NugetExePath)&quot; push &quot;%(Restores.RelativeDir)%(Restores.FileName).$(Version).nupkg&quot; -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_ServiceX2Engine">
+
+    <Exec WorkingDirectory="$(NuGet_X2EnginePackageDeployPath)" Command="&quot;$(NugetExePath)&quot; pack Service.X2Engine.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_X2EnginePackageDeployPath)" Command="&quot;$(NugetExePath)&quot; push Service.X2Engine.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_Website_Halo">
+    <!-- Halo -->
+    <Exec WorkingDirectory="$(NuGet_HaloPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; pack Website.Halo.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_HaloPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Website.Halo.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_Website_Lighthouse">
+    <!-- Lighthouse Primary Website -->
+    <Exec WorkingDirectory="$(NuGet_LighthousePackageDeployPath)\SAHL-MLSS"
+      Command="&quot;$(NugetExePath)&quot; pack Website.Lighthouse.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_LighthousePackageDeployPath)\SAHL-MLSS"
+      Command="&quot;$(NugetExePath)&quot; push Website.Lighthouse.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+
+    <!-- Lighthouse AccountManagement Plugin -->
+    <Exec WorkingDirectory="$(NuGet_LighthousePackageDeployPath)\AccountManagement"
+      Command="&quot;$(NugetExePath)&quot; pack Website.Lighthouse.AccountManagement.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_LighthousePackageDeployPath)\AccountManagement"
+     Command="&quot;$(NugetExePath)&quot; push Website.Lighthouse.AccountManagement.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+
+    <!-- Lighthouse Miscellaneous Plugin -->
+    <Exec WorkingDirectory="$(NuGet_LighthousePackageDeployPath)\Miscellaneous"
+      Command="&quot;$(NugetExePath)&quot; pack Website.Lighthouse.Miscellaneous.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_LighthousePackageDeployPath)\Miscellaneous"
+      Command="&quot;$(NugetExePath)&quot; push Website.Lighthouse.Miscellaneous.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_WebservicePublicWebsite">
+
+    <Exec WorkingDirectory="$(NuGet_WebServicesPackageDeployPath)"
+     Command="&quot;$(NugetExePath)&quot; pack Webservice.Public.Website.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_WebServicesPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Webservice.Public.Website.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_WebserviceInternal">
+    <Exec WorkingDirectory="$(NuGet_InternalWebServicesPackageDeployPath)"
+     Command="&quot;$(NugetExePath)&quot; pack Webservice.Internal.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_InternalWebServicesPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Webservice.Internal.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_WebsiteAttorney">
+
+    <Exec WorkingDirectory="$(NuGet_WebPublicPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; pack Website.Attorney.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_WebPublicPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Website.Attorney.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_WebsiteClientSecure">
+    <Exec WorkingDirectory="$(NuGet_WebPublicClientSecurePackageDeployPath)"
+        Command="&quot;$(NugetExePath)&quot; pack Website.ClientSecure.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_WebPublicClientSecurePackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Website.ClientSecure.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_AppBatch">
+    <Exec WorkingDirectory="$(NuGet_AppBatchesPackageDeployPath)"
+     Command="&quot;$(NugetExePath)&quot; pack App.Batch.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_AppBatchesPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push App.Batch.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_WorkflowMaps">
+    <Exec WorkingDirectory="$(NuGet_WorkflowMapsPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; pack Workflow.Maps.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_WorkflowMapsPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Workflow.Maps.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_WorkflowRecalc">
+    <Exec WorkingDirectory="$(NuGet_WorkflowRecalcPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; pack Workflow.RecalcSecurity.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_WorkflowRecalcPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Workflow.RecalcSecurity.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_WebservicePublic">
+
+    <Exec WorkingDirectory="$(NuGet_PublicWebServicesPackageDeployPath)"
+     Command="&quot;$(NugetExePath)&quot; pack Webservice.Public.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_PublicWebServicesPackageDeployPath)"
+      Command="&quot;$(NugetExePath)&quot; push Webservice.Public.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+
+  <Target Name="NuGet_BatchService">
+
+    <Exec WorkingDirectory="$(NuGet_BatchServiceDeployPath)" Command="&quot;$(NugetExePath)&quot; pack Batch.Service.nuspec -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_BatchServiceDeployPath)" Command="&quot;$(NugetExePath)&quot; push Batch.Service.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_PreDeployChecks">
+    <ItemGroup>
+      <Checks Include="$(NuGet_PreDeployCheckPackageDeployPath)\**\*.nuspec" />
+    </ItemGroup>
+    <Exec WorkingDirectory="$(NuGet_PreDeployCheckPackageDeployPath)\%(Checks.RecursiveDir)" Command="&quot;$(NugetExePath)&quot; pack &quot;%(Checks.FullPath)&quot; -version $(Version) "></Exec>
+    <Exec WorkingDirectory="$(NuGet_PreDeployCheckPackageDeployPath)\%(Checks.RecursiveDir)" Command="&quot;$(NugetExePath)&quot; push &quot;%(Checks.RelativeDir)%(Checks.FileName).$(Version).nupkg&quot; -s $(DevNugetRepositoryLocation)  $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="NuGet_BatchService">
+    <Exec WorkingDirectory="$(NuGet_BatchServiceDeployPath)" Command="&quot;$(NugetExePath)&quot; pack Batch.Service.nuspec -version $(Version) "></Exec>
+	<Exec WorkingDirectory="$(NuGet_BatchServiceDeployPath)" Command="&quot;$(NugetExePath)&quot; pack Batch.Service.nuspec -version $(Version) -Symbols"></Exec>
+    <Exec WorkingDirectory="$(NuGet_BatchServiceDeployPath)" Command="&quot;$(NugetExePath)&quot; push Batch.Service.$(Version).nupkg -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+
+  <Target Name="Nuget_PreDeployTasks">
+    <ItemGroup>
+      <PreDeployTasks Include="$(NuGet_PreDeployTaskPackageDeployPath)\Task.PreDeploy*\*.nuspec*;$(NuGet_PreDeployTaskPackageDeployPath)\Task.Stop*\*.nuspec*" />
+      <PostDeployTasks Include="$(NuGet_PostDeployTaskPackageDeployPath)\Task.PostDeploy*\*.nuspec;$(NuGet_PreDeployTaskPackageDeployPath)\Task.Start*\*.nuspec*" />
+    </ItemGroup>
+
+    <!-- Pre Deploy Task -->
+    <Exec WorkingDirectory="$(NuGet_PreDeployTaskPackageDeployPath)\%(PreDeployTasks.RecursiveDir)"  Command="&quot;$(NugetExePath)&quot; pack &quot;%(PreDeployTasks.FullPath)&quot; -version $(Version)"></Exec>
+    <Exec WorkingDirectory="$(NuGet_PreDeployTaskPackageDeployPath)\%(PreDeployTasks.RecursiveDir)"  Command="&quot;$(NugetExePath)&quot; push &quot;%(PreDeployTasks.RelativeDir)%(PreDeployTasks.FileName).$(Version).nupkg&quot; -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+
+    <!-- Post Deploy Task -->
+    <Exec WorkingDirectory="$(NuGet_PostDeployTaskPackageDeployPath)\%(PostDeployTasks.RecursiveDir)" Command="&quot;$(NugetExePath)&quot; pack &quot;%(PostDeployTasks.FullPath)&quot; -version $(Version)"></Exec>
+    <Exec WorkingDirectory="$(NuGet_PostDeployTaskPackageDeployPath)\%(PostDeployTasks.RecursiveDir)" Command="&quot;$(NugetExePath)&quot; push &quot;%(PostDeployTasks.RelativeDir)%(PostDeployTasks.FileName).$(Version).nupkg&quot; -s $(DevNugetRepositoryLocation) $(DevNugetPackageKey)"></Exec>
+  </Target>
+
+  <Target Name="CreateOctopusReleases">
+    <Exec Command="&quot;$(OctoExePath)&quot; create-release --server=$(OctopusServerURL) --project=Halo.Release --apikey=$(OctoAPIKey) --version=$(Version) --packageversion=$(Version) --package=Workflow.RecalcSecurity:$(RecalcToolVersion)" />
+  </Target>
+
+	<Target Name="CreateOctopus-DevReleases">
+    <Exec Command="&quot;$(OctoExePath)&quot; create-release --server=$(OctopusServerURL) --project=Halo.Development --apikey=$(OctoAPIKey) --version=$(Version) --packageversion=$(Version) --package=Workflow.RecalcSecurity:$(RecalcToolVersion)" />
+  </Target>
+
+
+</Project>

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C9B5CEC-C829-4056-A651-9A441F362568}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkflowMaps.Tests</RootNamespace>
+    <AssemblyName>WorkflowMaps.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\External Binaries\NuGet\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="BdsSoft.DirectoryServices.Linq">
+      <HintPath>..\..\External Binaries\BdsSoft.DirectoryServices.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="CAP2Offers">
+      <HintPath>..\CAP2\Binaries\CAP2Offers.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.ActiveRecord.Web">
+      <HintPath>..\..\External Binaries\Castle.ActiveRecord.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Components.Validator">
+      <HintPath>..\..\External Binaries\Castle.Components.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\External Binaries\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DebtCounselling">
+      <HintPath>..\Debt Counselling\Binaries\DebtCounselling.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\DomainService2.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2.IOC">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\DomainService2.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="EWorkConnector">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\EWorkConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="HelpDesk">
+      <HintPath>..\Help Desk\Binaries\HelpDesk.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\External Binaries\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="IT">
+      <HintPath>..\IT\Binaries\IT.dll</HintPath>
+    </Reference>
+    <Reference Include="Life">
+      <HintPath>..\Life\Binaries\Life.dll</HintPath>
+    </Reference>
+    <Reference Include="LoanAdjustments">
+      <HintPath>..\Loan Adjustments\Binaries\LoanAdjustments.dll</HintPath>
+    </Reference>
+    <Reference Include="Magnum, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\Magnum.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit, Version=2.7.2.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\MassTransit.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.Transports.MSMQ, Version=2.7.2.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\MassTransit.Transports.MSMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="MassTransit.Transports.RabbitMq, Version=2.7.2.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\MassTransit.Transports.RabbitMq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\..\External Binaries\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.UIProcess">
+      <HintPath>..\..\External Binaries\Microsoft.ApplicationBlocks.UIProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design">
+      <HintPath>..\..\External Binaries\Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\External Binaries\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\External Binaries\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Search">
+      <HintPath>..\..\External Binaries\NHibernate.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\NuGet\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External Binaries\NuGet\NUnit.2.6.0.12054\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Origination">
+      <HintPath>..\Origination\Binaries\Origination.dll</HintPath>
+    </Reference>
+    <Reference Include="PersonalLoan">
+      <HintPath>..\Personal Loan\Binaries\PersonalLoan.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client, Version=2.8.7.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\External Binaries\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\External Binaries\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.DAO">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Service">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Service.Interfaces">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Service.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.UI">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Web">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Web.UI">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.WebServices">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.WebServices.XmlSerializers">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.WebServices.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.X2.BusinessModel">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.X2.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.X2.BusinessModel.DAO">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.X2.BusinessModel.DAO.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.X2.BusinessModel.Interfaces">
+      <HintPath>..\..\Internal Binaries\SAHL.Common.X2.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Test">
+      <HintPath>..\..\Internal Binaries\SAHL.Test.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common">
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework">
+      <HintPath>..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="X2DomainService.Interface.Cap2">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Cap2.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.Common">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.DebtCounselling">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.DebtCounselling.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.HelpDesk">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.HelpDesk.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.Life">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Life.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.LoanAdjustments">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.LoanAdjustments.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.Origination">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Origination.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.PersonalLoan">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.PersonalLoan.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.WorkflowAssignment">
+      <HintPath>..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.WorkflowAssignment.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MapIntegrationTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+STEPS FOR COMPILING PROJECT HELP WITH SANDCASTLE
+
+1. Install SandCastle and SandCastleBuilder (\\sahls04\Software$\Applications\DevTools\SandCastle)
+
+2. You may need to install HTML Help
+
+3. Run SandCastle builder, and add selected assemblies
+
+4. Assemblies exhibiting "unknown xml" will need to be recompiled.  Open the project in Visual 
+   Studio and open the project properties.  Click the "Build" tab, and enable the 
+   "XML Documentation file" option and specify the creation of the XML file in the bin/Debug folder 
+   (if not automatically done).
+
+5. You will need to add the System assemblies to the dependencies.  Click the Dependencies option, 
+   and add a folder dependency to "C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727" (or whatever 
+   version you are working with!).  
+
+6. Add dependencies for any other assemblies that need to be included when compiling - the option 
+   to select assemblies from the GAC does work.
+
+
+COMPILING SAHL HELP
+
+1. Open SAHL_Build.bat for editing - check that the paths are correct and edit if necessary
+
+2. Double-click SAHL_Build.bat so it runs, it should compile all the projects in the Documentation build mode
+
+3. Check Build.log to ensure everything compiled correctly (Search for "Compile complete" and check there are no    errors after each compile.
+
+4. You can compile the following documentation projects:
+	- SAHL.Docs.Application - SAHL.Web
+	- SAHL.Docs.BusinessModels - the business models
+	- SAHL.Docs.Framework - the SAHL Framework
+   Alternatively, you can run SAHL_Build_Help.bat which will build all of these for you

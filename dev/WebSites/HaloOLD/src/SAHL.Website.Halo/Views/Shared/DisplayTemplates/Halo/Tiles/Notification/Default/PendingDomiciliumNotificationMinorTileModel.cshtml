@@ -1,0 +1,12 @@
+﻿@model SAHL.Core.UI.Halo.Tiles.Notification.Default.PendingDomiciliumNotificationMinorTileModel
+
+<span class="badge badge-warning minor-tile-icon">
+    <i class="icon icon-warning-sign"></i>
+</span>
+<br />
+<br />
+@Html.Title("Follow up with client about pending domicilium address")
+@Html.DisplayLabelModelPairFor("Client", x=>x.ClientName)
+@Html.DisplayLabelModelPairFor("Client ID", x=>x.ClientID)
+@Html.DisplayLabelModelPairFor("Expires", x=>x.ExpiryDate)
+@Html.DisplayLabelModelPairFor("Days Left", x=>x.DaysLeft)

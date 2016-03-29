@@ -1,0 +1,29 @@
+﻿<div class="childView-container" ng-hide="$state.current.name !='home.variables.info'">
+    <div class="childView">
+        <div class="row1">
+            <h1>Info</h1>
+            <br />
+        </div>
+        <br />
+        <div class="row2">
+            <div id="scrollBox" spin-loader="loadVariableVersions">
+                <table class="table bordered hovered">
+                    <tbody>
+                        <tr class="groupRow">
+                            <th class="text-left"><span>Version</span></th>
+                            <th class="text-left"><span>Publish Date</span></th>
+                            <th class="text-left"><span>Publisher</span></th>
+                            <th class="text-left"><span>Is Published</span></th>
+                        </tr>
+                        <tr ng-repeat="version in variableSetVersions" ng-click="setSelectedVariableSetID(version.Id)" style="cursor:pointer">
+                            <td>{{version.Version}}</td>
+                            <td>{{version.FormattedDate}}</td>
+                            <td>{{version.Publisher}}</td>
+                            <td>{{version.IsPublished}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

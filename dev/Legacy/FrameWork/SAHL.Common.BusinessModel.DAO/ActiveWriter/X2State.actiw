@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="6b424de6-9349-4a55-95a9-e25424efe985" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="State" schema="X2" table="State">
+      <targets>
+        <manyToOneRelation Id="52e9dc99-f332-4e76-a774-2b21ed89644d" targetColumnKey="ID" targetTable="State" targetPropertyName="States" sourceColumn="ID">
+          <modelClassMoniker name="/6b424de6-9349-4a55-95a9-e25424efe985/State" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="90a9705c-6bbd-4161-9e87-18a0332b1f0e" targetColumnKey="Type" targetTable="State" targetPropertyName="States" sourceColumn="Type">
+          <modelClassMoniker name="/6b424de6-9349-4a55-95a9-e25424efe985/StateType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="d147a268-672d-4c45-9488-fd55966a0987" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0688246d-7d30-4d68-aa78-bcecf1cb554d" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="29abb0dd-913b-47f9-8b2b-5a5cb0f60799" name="ForwardState" column="ForwardState" columnType="Boolean" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="StateType" schema="X2" table="StateType">
+      <properties>
+        <modelProperty Id="dd045e77-55be-4051-a330-bcad0b0ece94" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="8c6adebb-3f4c-4a50-af32-223ea41ba44e" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

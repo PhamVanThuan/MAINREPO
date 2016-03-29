@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="410e9271-cf53-483c-9f27-8c42dbd9836e" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="CAP" schema="product" table="CAP">
+      <targets>
+        <manyToOneRelation Id="dac66d43-8dac-40fa-bb79-33481e5abf27" targetColumnKey="CapOfferDetailKey" targetTable="CAP" targetPropertyName="CAPs" sourceColumn="CapOfferDetailKey">
+          <modelClassMoniker name="/410e9271-cf53-483c-9f27-8c42dbd9836e/CapOfferDetail" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="594e8a48-18f4-4c60-9f8a-479997c2170d" targetColumnKey="CAPPaymentOptionKey" targetTable="CAP" targetPropertyName="CAPs" sourceColumn="CAPPaymentOptionKey">
+          <modelClassMoniker name="/410e9271-cf53-483c-9f27-8c42dbd9836e/CAPPaymentOption" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="5d605cd8-2214-4e45-a849-2595299244bd" targetColumnKey="FinancialServiceAttributeKey" targetTable="CAP" targetPropertyName="CAPs" sourceColumn="FinancialServiceAttributeKey">
+          <modelClassMoniker name="/410e9271-cf53-483c-9f27-8c42dbd9836e/FinancialServiceAttribute" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="d5bd1e5d-6349-4285-ba62-bf4ee6bc7e76" name="TradeKey" column="TradeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0d98c774-796b-4005-95fe-956faa67ebcf" name="CancellationDate" column="CancellationDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="56c938b2-5f28-46cb-b6a4-9721bb241db0" name="CancellationReasonKey" column="CancellationReasonKey" columnType="Int32" length="0" />
+        <modelProperty Id="b8698a80-8b92-4086-a6e1-c6c76a486e7e" name="CAPBalance" column="CAPBalance" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="b4e65d07-5c5d-4267-8bd7-775537fc2fdd" name="CAPPrePaymentAmount" column="CAPPrePaymentAmount" columnType="Double" length="0" />
+        <modelProperty Id="7cfd9a28-ff7f-46db-a29b-6d7e58d92b08" name="MTDCAPPrePaymentAmount" column="MTDCAPPrePaymentAmount" columnType="Double" length="0" />
+        <modelProperty Id="2aa70a92-07f9-4bc8-9ccb-b98f52d10055" name="Invoked" column="Invoked" columnType="Boolean" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="FinancialServiceAttribute" schema="product" table="FinancialServiceAttribute">
+      <properties>
+        <modelProperty Id="11326d12-4749-4a0f-a272-0ba74d46dc05" name="FinancialServiceAttributeKey" column="FinancialServiceAttributeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="e58aeeef-5068-48ec-aa58-4f41d642c382" name="FinancialServiceKey" column="FinancialServiceKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="3799a0ab-d6a2-49f1-bf7b-42af5d49ea57" name="FinancialServiceAttributeTypeKey" column="FinancialServiceAttributeTypeKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="60f1ee74-3202-46c4-a19f-a772ebbdafe0" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CAPPaymentOption" schema="dbo" table="CAPPaymentOption">
+      <properties>
+        <modelProperty Id="72aa707e-0dca-49da-a377-39002960ee66" name="CAPPaymentOptionKey" column="CAPPaymentOptionKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="7ad6dde5-9149-4318-b9ca-a2446032eaf6" name="Description" column="Description" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="CapOfferDetail" schema="dbo" table="CapOfferDetail">
+      <properties>
+        <modelProperty Id="6c55fa32-e9f8-4af7-8a91-ef59c9382fa7" name="CapOfferDetailKey" column="CapOfferDetailKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="f02c0224-dd8c-4046-9cf6-437502ebf1be" name="CapOfferKey" column="CapOfferKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="122df4e6-c347-4be7-8562-3ab93483616f" name="CapTypeConfigurationDetailKey" column="CapTypeConfigurationDetailKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="e8918b58-333a-4026-a13c-b5521ebfdbe3" name="EffectiveRate" column="EffectiveRate" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="7c333bf9-da01-49d3-a400-9c416aa2bfb7" name="Payment" column="Payment" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="fd3ba1ee-b9cb-4506-80ae-0163fa2c7fee" name="Fee" column="Fee" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="2e5cc903-7dfe-4a43-9493-c5a6b7b02072" name="CapStatusKey" column="CapStatusKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="bdef457e-f112-4620-8263-1262461ee1e8" name="AcceptanceDate" column="AcceptanceDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="7b8751c9-2055-4846-b7db-2fb846048560" name="CapNTUReasonKey" column="CapNTUReasonKey" columnType="Int32" length="0" />
+        <modelProperty Id="329bbdc4-ca1b-41c9-b801-c339a7eed96f" name="CapNTUReasonDate" column="CapNTUReasonDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="120b0135-afd5-4ac9-9501-574f928bbd8f" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="79b3984c-025f-427d-aae3-9f3684d7a3fd" name="UserID" column="UserID" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

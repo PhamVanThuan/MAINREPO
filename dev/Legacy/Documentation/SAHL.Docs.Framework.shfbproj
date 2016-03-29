@@ -1,0 +1,474 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <!-- The configuration and platform will be used to determine which
+         assemblies to include from solution and project documentation
+         sources -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91e275cd-64ac-4f4a-a576-6cb861f09665}</ProjectGuid>
+    <SHFBSchemaVersion>1.9.3.0</SHFBSchemaVersion>
+    <!-- AssemblyName, Name, and RootNamespace are not used by SHFB but Visual
+         Studio adds them anyway -->
+    <AssemblyName>Documentation</AssemblyName>
+    <RootNamespace>Documentation</RootNamespace>
+    <Name>Documentation</Name>
+    <!-- SHFB properties -->
+    <OutputPath>.\</OutputPath>
+    <HtmlHelpName>SAHL.Docs.Framework</HtmlHelpName>
+    <ProjectSummary>General documentation for SAHL code.</ProjectSummary>
+    <MissingTags>Summary, Namespace, TypeParameter</MissingTags>
+    <VisibleItems>Attributes, Protected, SealedProtected</VisibleItems>
+    <HtmlHelp1xCompilerPath>
+    </HtmlHelp1xCompilerPath>
+    <HtmlHelp2xCompilerPath>
+    </HtmlHelp2xCompilerPath>
+    <SandcastlePath>
+    </SandcastlePath>
+    <WorkingPath>
+    </WorkingPath>
+    <BuildLogFile>
+    </BuildLogFile>
+    <FrameworkVersion>.NET 4.0.30319</FrameworkVersion>
+    <RootNamespaceContainer>True</RootNamespaceContainer>
+    <HelpTitle>SA Home Loans Framework Documentation</HelpTitle>
+    <FeedbackEMailAddress>garyd%40sahomeloans.com</FeedbackEMailAddress>
+    <SdkLinkType>None</SdkLinkType>
+    <PresentationStyle>Prototype</PresentationStyle>
+    <SyntaxFilters>CSharp</SyntaxFilters>
+    <DocumentationSources>
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.BusinessModel.DAO.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.BusinessModel.DAO.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.BusinessModel.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.BusinessModel.Interfaces.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.BusinessModel.Interfaces.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.BusinessModel.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Service.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Service.Interfaces.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Service.Interfaces.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Service.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.UI.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.UI.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Web.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Web.UI.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Web.UI.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.Web.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.WebServices.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.WebServices.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.X2.BusinessModel.DAO.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.X2.BusinessModel.DAO.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.X2.BusinessModel.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.X2.BusinessModel.Interfaces.dll" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.X2.BusinessModel.Interfaces.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.X2.BusinessModel.xml" />
+      <DocumentationSource sourceFile="..\FrameWork\SAHL.Test\bin\Debug\SAHL.Common.xml" />
+    </DocumentationSources>
+  </PropertyGroup>
+  <!-- There are no properties for these two groups but they need to appear in
+       order for Visual Studio to perform the build. -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Accessibility.dll</HintPath>
+    </Reference>
+    <Reference Include="AdoNetDiag">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\AdoNetDiag.dll</HintPath>
+    </Reference>
+    <Reference Include="al">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\al.exe</HintPath>
+    </Reference>
+    <Reference Include="alink">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\alink.dll</HintPath>
+    </Reference>
+    <Reference Include="AppLaunch">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\AppLaunch.exe</HintPath>
+    </Reference>
+    <Reference Include="AspNetMMCExt">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\AspNetMMCExt.dll</HintPath>
+    </Reference>
+    <Reference Include="aspnet_compiler">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_compiler.exe</HintPath>
+    </Reference>
+    <Reference Include="aspnet_filter">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_filter.dll</HintPath>
+    </Reference>
+    <Reference Include="aspnet_isapi">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_isapi.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspnet_perf">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Aspnet_perf.dll</HintPath>
+    </Reference>
+    <Reference Include="aspnet_rc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_rc.dll</HintPath>
+    </Reference>
+    <Reference Include="aspnet_regbrowsers">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_regbrowsers.exe</HintPath>
+    </Reference>
+    <Reference Include="aspnet_regiis">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_regiis.exe</HintPath>
+    </Reference>
+    <Reference Include="aspnet_regsql">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_regsql.exe</HintPath>
+    </Reference>
+    <Reference Include="aspnet_state">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_state.exe</HintPath>
+    </Reference>
+    <Reference Include="aspnet_wp">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\aspnet_wp.exe</HintPath>
+    </Reference>
+    <Reference Include="CasPol">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\CasPol.exe</HintPath>
+    </Reference>
+    <Reference Include="CORPerfMonExt">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\CORPerfMonExt.dll</HintPath>
+    </Reference>
+    <Reference Include="csc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\csc.exe</HintPath>
+    </Reference>
+    <Reference Include="cscomp">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\cscomp.dll</HintPath>
+    </Reference>
+    <Reference Include="cscompmgd">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\cscompmgd.dll</HintPath>
+    </Reference>
+    <Reference Include="Culture">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Culture.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomMarshalers">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\CustomMarshalers.dll</HintPath>
+    </Reference>
+    <Reference Include="cvtres">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\cvtres.exe</HintPath>
+    </Reference>
+    <Reference Include="dfdll">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\dfdll.dll</HintPath>
+    </Reference>
+    <Reference Include="dfsvc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\dfsvc.exe</HintPath>
+    </Reference>
+    <Reference Include="diasymreader">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\diasymreader.dll</HintPath>
+    </Reference>
+    <Reference Include="dw20">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\dw20.exe</HintPath>
+    </Reference>
+    <Reference Include="EventLogMessages">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\EventLogMessages.dll</HintPath>
+    </Reference>
+    <Reference Include="fusion">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\fusion.dll</HintPath>
+    </Reference>
+    <Reference Include="IEExec">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\IEExec.exe</HintPath>
+    </Reference>
+    <Reference Include="IEExecRemote">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\IEExecRemote.dll</HintPath>
+    </Reference>
+    <Reference Include="IEHost">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\IEHost.dll</HintPath>
+    </Reference>
+    <Reference Include="IIEHost">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\IIEHost.dll</HintPath>
+    </Reference>
+    <Reference Include="ilasm">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ilasm.exe</HintPath>
+    </Reference>
+    <Reference Include="InstallUtil">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\InstallUtil.exe</HintPath>
+    </Reference>
+    <Reference Include="InstallUtilLib">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\InstallUtilLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ISymWrapper">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ISymWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="jsc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\jsc.exe</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Conversion">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Build.Conversion.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Engine">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Build.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Build.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Tasks">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Build.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Utilities">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Build.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.VisualJSharp">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Build.VisualJSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CompactFramework.Build.Tasks">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.CompactFramework.Build.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.JScript">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.JScript.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.VisualBasic">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.VisualBasic.Compatibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.VisualBasic.Compatibility.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Vsa">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.VisualBasic.Vsa.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualC">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.VisualC.Dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vsa">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Vsa.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vsa.Vb.CodeDOMProcessor">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft.Vsa.Vb.CodeDOMProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft_VsaVb">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Microsoft_VsaVb.dll</HintPath>
+    </Reference>
+    <Reference Include="MmcAspExt">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\MmcAspExt.dll</HintPath>
+    </Reference>
+    <Reference Include="MSBuild">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\MSBuild.exe</HintPath>
+    </Reference>
+    <Reference Include="mscordacwks">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscordacwks.dll</HintPath>
+    </Reference>
+    <Reference Include="mscordbc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscordbc.dll</HintPath>
+    </Reference>
+    <Reference Include="mscordbi">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscordbi.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorie">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorie.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorjit">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorjit.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorld">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorld.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorpe">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorpe.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorrc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorrc.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorsec">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorsec.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorsn">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorsn.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorsvc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorsvc.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorsvw">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorsvw.exe</HintPath>
+    </Reference>
+    <Reference Include="mscortim">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscortim.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorwks">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\mscorwks.dll</HintPath>
+    </Reference>
+    <Reference Include="ngen">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ngen.exe</HintPath>
+    </Reference>
+    <Reference Include="normalization">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\normalization.dll</HintPath>
+    </Reference>
+    <Reference Include="PerfCounter">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\PerfCounter.dll</HintPath>
+    </Reference>
+    <Reference Include="peverify">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\peverify.dll</HintPath>
+    </Reference>
+    <Reference Include="RegAsm">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\RegAsm.exe</HintPath>
+    </Reference>
+    <Reference Include="RegSvcs">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\RegSvcs.exe</HintPath>
+    </Reference>
+    <Reference Include="sbscmp20_mscorlib">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\sbscmp20_mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="shfusion">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\shfusion.dll</HintPath>
+    </Reference>
+    <Reference Include="ShFusRes">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\ShFusRes.dll</HintPath>
+    </Reference>
+    <Reference Include="SOS">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\SOS.dll</HintPath>
+    </Reference>
+    <Reference Include="sysglobl">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\sysglobl.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.configuration">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Configuration.Install.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Data.OracleClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlXml">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Data.SqlXml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.DirectoryServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices.Protocols">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.DirectoryServices.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Drawing.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.EnterpriseServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices.Thunk">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.EnterpriseServices.Thunk.dll</HintPath>
+    </Reference>
+    <Reference Include="System.EnterpriseServices.Wrapper">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.EnterpriseServices.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Messaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Runtime.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.ServiceProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mobile">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Web.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.RegularExpressions">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Web.RegularExpressions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.XML">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</HintPath>
+    </Reference>
+    <Reference Include="TLBREF">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\TLBREF.DLL</HintPath>
+    </Reference>
+    <Reference Include="vbc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vbc.exe</HintPath>
+    </Reference>
+    <Reference Include="vjc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjc.exe</HintPath>
+    </Reference>
+    <Reference Include="vjsc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjsc.dll</HintPath>
+    </Reference>
+    <Reference Include="vjscor">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjscor.dll</HintPath>
+    </Reference>
+    <Reference Include="VJSharpCodeProvider">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\VJSharpCodeProvider.DLL</HintPath>
+    </Reference>
+    <Reference Include="vjsjbc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjsjbc.dll</HintPath>
+    </Reference>
+    <Reference Include="vjslib">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjslib.dll</HintPath>
+    </Reference>
+    <Reference Include="vjslibcw">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjslibcw.dll</HintPath>
+    </Reference>
+    <Reference Include="vjsnativ">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjsnativ.dll</HintPath>
+    </Reference>
+    <Reference Include="vjssupuilib">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjssupuilib.dll</HintPath>
+    </Reference>
+    <Reference Include="vjsvwaux">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjsvwaux.dll</HintPath>
+    </Reference>
+    <Reference Include="vjswfc">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjswfc.dll</HintPath>
+    </Reference>
+    <Reference Include="VJSWfcBrowserStubLib">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\VJSWfcBrowserStubLib.dll</HintPath>
+    </Reference>
+    <Reference Include="vjswfccw">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjswfccw.dll</HintPath>
+    </Reference>
+    <Reference Include="vjswfchtml">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\vjswfchtml.dll</HintPath>
+    </Reference>
+    <Reference Include="VsaVb7rt">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\VsaVb7rt.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDev.WebServer">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\WebDev.WebServer.EXE</HintPath>
+    </Reference>
+    <Reference Include="webengine">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\webengine.dll</HintPath>
+    </Reference>
+    <Reference Include="WMINet_Utils">
+      <HintPath>C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\WMINet_Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <!-- Import the SHFB build targets -->
+  <Import Project="$(SHFBROOT)\SandcastleHelpFileBuilder.targets" />
+</Project>

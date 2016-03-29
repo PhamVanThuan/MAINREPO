@@ -1,0 +1,297 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "activenewbusinessapplicants": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "alphahousingapplications": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "foreignnaturalpersonclients": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "naturalpersonclient": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "opennewbusinessapplications": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "legalentity": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "clientaddresses": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "compositedefinitions": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "address": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "employer": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offer": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "bankaccount": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerinformationvariableloan": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerinformationinterestonly": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerdebitorder": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "legalentitybankaccount": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offermortgageloan": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offermailingaddress": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerdeclaration": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "vendor": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "employment": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "legalentitydomicilium": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerattribute": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerroleattribute": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "legalentityassetliability": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "legalentityaffordability": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerrole": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "account": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "legalentityaddress": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "offerroledomicilium": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "property": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "data": {
+    "dataSource": "imageindex",
+    "public": true
+  },
+  "emptythirdpartyinvoices": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "invoicelineitem": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "invoicelineitemcategory": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "invoicelineitemdescription": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "thirdpartyinvoice": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "thirdpartyinvoicesstor": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "thirdpartytype": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "thirdparty": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "financialservice": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "instance": {
+    "dataSource": "x2",
+    "public": true
+  },
+  "thirdpartyinvoicesinstance": {
+    "dataSource": "x2",
+    "public": true
+  },
+  "state": {
+    "dataSource": "x2",
+    "public": true
+  },
+  "applicationmanagementinstance": {
+    "dataSource": "x2",
+    "public": true
+  },
+  "workflow": {
+    "dataSource": "x2",
+    "public": true
+  },
+  "workflowsearch": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "thirdpartysearch": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "clientsearch": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "foreclosureattorneydetailtypemapping": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "valuator": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "attorney": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "openthirdpartyinvoices": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "halousers": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "openmortgageloanaccounts": {
+    "dataSource": "fetest",
+    "public": true
+  },
+  "assignment": {
+    "dataSource": "x2",
+    "public": true
+  },
+  "catspaymentbatchitem": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "catspaymentbatchtype": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "thirdpartypaymentbankaccount": {
+    "dataSource": "twoam",
+    "public": true
+  },
+    "catspaymentbatch": {
+    "dataSource": "twoam",
+    "public": true
+  },
+    "spvs": {
+    "dataSource": "fetest",
+    "public": true
+  },
+    "thirdparties": {
+    "dataSource": "fetest",
+    "public": true
+  },
+    "event": {
+    "dataSource": "eventstore",
+    "public": true
+  },
+  "itcrequest": {
+    "dataSource": "twoam",
+    "public": true
+  },
+  "correspondence": {
+    "dataSource": "eventprojection",
+    "public": true
+  },
+  "attorneyinvoicemonthlybreakdown": {
+    "dataSource": "eventprojection",
+    "public": true
+  },
+  "control": {
+    "dataSource": "twoam",
+    "public": true
+  }
+}

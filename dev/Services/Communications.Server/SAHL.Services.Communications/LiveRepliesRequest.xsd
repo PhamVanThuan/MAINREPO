@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://localhost/schemas/LiveReplies.xsd" targetNamespace="http://localhost/schemas/LiveReplies.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="ProcessBankLiveReplies.Request">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Service.Header">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Application.Mac">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1" />
+										<xs:maxLength value="172" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Bank.Id">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger">
+                          <xs:enumeration value="29" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Request.DateTime">
+								<xs:simpleType>
+									<xs:restriction base="xs:dateTime" />
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Service.Version">
+								<xs:simpleType>
+									<xs:restriction base="xs:nonNegativeInteger" />
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="LiveReplies" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="LiveReply" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="BankReference">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1" />
+													<xs:maxLength value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ComcorpReference">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="1" />
+													<xs:maxLength value="10" />
+													<xs:pattern value="^[0-9]{10}$|^$" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="EventId">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger">
+											        	<xs:enumeration value="1" />
+											        	<xs:enumeration value="2" />
+											        	<xs:enumeration value="3" />
+											        	<xs:enumeration value="4" />
+											        	<xs:enumeration value="5" />
+											        	<xs:enumeration value="6" />
+											        	<xs:enumeration value="7" />
+											        	<xs:enumeration value="8" />
+											        	<xs:enumeration value="9" />
+											        	<xs:enumeration value="10" />
+											        	<xs:enumeration value="11" />
+											        	<xs:enumeration value="12" />
+											        	<xs:enumeration value="13" />
+											        	<xs:enumeration value="14" />
+											        	<xs:enumeration value="15" />
+											        	<xs:enumeration value="16" />
+											        	<xs:enumeration value="17" />
+											        	<xs:enumeration value="18" />
+											        	<xs:enumeration value="19" />
+											        	<xs:enumeration value="20" />
+											        	<xs:enumeration value="21" />
+											        	<xs:enumeration value="22" />
+											        	<xs:enumeration value="23" />
+											        	<xs:enumeration value="24" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="EventDate">
+											<xs:simpleType>
+												<xs:restriction base="xs:date" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="EventComment" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="250" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="BondAccountNo" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0" />
+													<xs:maxLength value="25" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OfferedAmount" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="RequestedAmount" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger" />
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="RegisteredAmount" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:nonNegativeInteger" />
+											</xs:simpleType>
+										</xs:element>
+									</xs:all>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

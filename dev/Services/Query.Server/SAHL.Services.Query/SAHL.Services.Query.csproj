@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90B01065-3D0B-47CC-8154-E5016E05D166}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.Query</RootNamespace>
+    <AssemblyName>SAHL.Services.Query</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\SAHL.Services.Query.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Expando">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Expando\Expando.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.ValueInjecter">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\valueinjecter\lib\net35\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Web.Mvc">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Query">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Query.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.9.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Tpl.Dataflow\lib\portable-net45+win8\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Cors, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Cors\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.OData\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Tracing\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.WebHost\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Mvc\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Web.Optimization\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Providers.Core\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Razor\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebApi.Hal, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\WebApi.Hal\lib\net45\WebApi.Hal.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Builders\Core\Filter.cs" />
+    <Compile Include="Builders\Core\Where.cs" />
+    <Compile Include="Builders\WhereBuilder.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Account\AccountProcessController.cs" />
+    <Compile Include="Controllers\Account\AccountSpvController.cs" />
+    <Compile Include="Controllers\DataManagerQueryResult.cs" />
+    <Compile Include="Controllers\DataManagerRetriever.cs" />
+    <Compile Include="Controllers\Finance\FinanceController.cs" />
+    <Compile Include="Controllers\Treasury\TreasuryController.cs" />
+    <Compile Include="IDoNotRequireAnIdProperty.cs" />
+    <Compile Include="Resources\Finance\FinanceRepresentation.cs" />
+    <Compile Include="Controllers\Finance\InvoiceLineItemDescriptionController.cs" />
+    <Compile Include="Controllers\Finance\ThirdPartyInvoiceAccountSPVController.cs" />
+    <Compile Include="Controllers\OrganisationController.cs" />
+    <Compile Include="Resources\Finance\TreasuryRepresentation.cs" />
+    <Compile Include="Resources\OrganisationRepresentation.cs" />
+    <Compile Include="Resources\RootRepresentation.cs" />
+    <Compile Include="Controllers\Finance\ThirdPartyInvoiceAccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ThirdParty\Attorney\ThirdPartyAttorneyController.cs" />
+    <Compile Include="DataManagers\Statements\Account\GetAccountSpvStatement.cs" />
+    <Compile Include="DataManagers\Statements\Finance\GetThirdPartyInvoiceAccountStatement.cs" />
+    <Compile Include="DataManagers\Statements\Lookup\GetInvoiceLineItemDescriptionStatement.cs" />
+    <Compile Include="Controllers\DoNotRouteParametersInQueryStringAttribute.cs" />
+    <Compile Include="Controllers\IDataManagerRetriever.cs" />
+    <Compile Include="DataManagers\Statements\Process\GetProcessStatement.cs" />
+    <Compile Include="DataManagers\Statements\ThirdParty\Attorney\GetThirdPartyAttorneyStatement.cs" />
+    <Compile Include="Models\Account\AccountSpvDataModel.cs" />
+    <Compile Include="Models\Core\RelationshipDefinitionNavigation.cs" />
+    <Compile Include="Models\Core\RelationshipDefinitionNavigationEqualityComparer.cs" />
+    <Compile Include="Models\Finance\ThirdPartyInvoiceAccountDataModel.cs" />
+    <Compile Include="Models\Lookup\InvoiceLineItemDescriptionDataModel.cs" />
+    <Compile Include="Models\Process\ProcessDataModel.cs" />
+    <Compile Include="Models\ThirdParty\Attorney\ThirdPartyAttorneyDataModel.cs" />
+    <Compile Include="Resources\Account\AccountSPVRepresentation.cs" />
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceAccountListRepresentation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceAccountRepresentation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Resources\Lookup\InvoiceLineItemDescriptionListRepresentation.cs" />
+    <Compile Include="Resources\Lookup\InvoiceLineItemDescriptionRepresentation.cs" />
+    <Compile Include="Resources\Process\ProcessRepresentation.cs" />
+    <Compile Include="Controllers\Attorney\AttorneyContactInformationController.cs" />
+    <Compile Include="Controllers\Finance\ThirdPartyInvoiceLineItemsController.cs" />
+    <Compile Include="Controllers\QueryServiceBaseController.cs" />
+    <Compile Include="Resources\ThirdParty\Attorney\ThirdPartyAttorneyRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\Attorney\ThirdPartyAttorneyListRepresentation.cs" />
+    <Compile Include="Controllers\RootController.cs" />
+    <Compile Include="Controllers\ThirdParty\ThirdPartyBankAccountController.cs" />
+    <Compile Include="Controllers\ThirdParty\ThirdPartyContactInformationController.cs" />
+    <Compile Include="Controllers\Finance\ThirdPartyInvoiceController.cs" />
+    <Compile Include="Controllers\Finance\ThirdPartyInvoiceDocumentController.cs" />
+    <Compile Include="Controllers\ThirdParty\ThirdPartyController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ThirdParty\ThirdPartyPaymentBankAccountController.cs" />
+    <Compile Include="Controllers\Treasury\SPVController.cs" />
+    <Compile Include="Coordinators\PagingCoordinator.cs" />
+    <Compile Include="Coordinators\PagingLinksCoordinator.cs" />
+    <Compile Include="Coordinators\IQueryCoordinator.cs" />
+    <Compile Include="Coordinators\QueryCoordinator.cs" />
+    <Compile Include="Coordinators\RepresentationSerialisationAction.cs" />
+    <Compile Include="Core\IListRepresentation.cs" />
+    <Compile Include="Core\IRepresentation.cs" />
+    <Compile Include="DataManagers\QueryServiceDataManager.cs" />
+    <Compile Include="DataManagers\Statements\Account\GetAccountStatement.cs" />
+    <Compile Include="DataManagers\Statements\Attorney\GetAttorneyContactInformationStatement.cs" />
+    <Compile Include="DataManagers\Statements\Attorney\GetAttorneyContactStatement .cs" />
+    <Compile Include="DataManagers\Statements\Finance\GetThirdPartyInvoiceLineItemsStatement.cs" />
+    <Compile Include="DataManagers\Statements\ThirdParty\GetThirdPartyContactInformationStatement.cs" />
+    <Compile Include="DataManagers\Statements\Finance\GetThirdPartyInvoiceStatement.cs" />
+    <Compile Include="DataManagers\Statements\Finance\GetThirdPartyInvoiceDocumentStatement.cs" />
+    <Compile Include="DataManagers\Statements\ThirdParty\GetThirdPartyPaymentBankAccountStatement.cs" />
+    <Compile Include="DataManagers\Statements\ThirdParty\GetThirdPartyStatement.cs" />
+    <Compile Include="DataManagers\Statements\ThirdParty\GetThirdPartyBankAccountStatement.cs" />
+    <Compile Include="DataManagers\Statements\Treasury\GetSPVStatement.cs" />
+    <Compile Include="Metadata\DataManagerCollection.cs" />
+    <Compile Include="Metadata\IDataManagerCollection.cs" />
+    <Compile Include="Metadata\IRepresentationDataModelMapCollection.cs" />
+    <Compile Include="Metadata\RepresentationDataModelMapCollection.cs" />
+    <Compile Include="Models\Account\AccountDataModel.cs" />
+    <Compile Include="Models\Finance\ThirdPartyInvoiceDataModel.cs" />
+    <Compile Include="Models\Finance\ThirdPartyInvoiceLineItemsDataModel.cs" />
+    <Compile Include="Models\ThirdParty\ThirdPartyPaymentBankAccountDataModel.cs" />
+    <Compile Include="Models\ThirdParty\ThirdPartyBankAccountDataModel.cs" />
+    <Compile Include="Models\ThirdParty\ThirdPartyContactInformationDataModel.cs" />
+    <Compile Include="Models\ThirdParty\ThirdPartyDataModel.cs" />
+    <Compile Include="Factories\DictionaryFactory.cs" />
+    <Compile Include="Interfaces\IDataModelToRepresentationMapper.cs" />
+    <Compile Include="Mappers\DataModelToRepresentationMapper.cs" />
+    <Compile Include="Models\Attorney\AttorneyContactInformationDataModel.cs" />
+    <Compile Include="Models\Finance\ThirdPartyInvoiceDocumentDataModel.cs" />
+    <Compile Include="Models\Treasury\SPVDataModel.cs" />
+    <Compile Include="Parsers\Elemets\PagedPart.cs" />
+    <Compile Include="Parsers\Elemets\Paging.cs" />
+    <Compile Include="Parsers\IPagingParser.cs" />
+    <Compile Include="Parsers\PagingParser.cs" />
+    <Compile Include="QueryHandlers\QueryServiceQueryHandler.cs" />
+    <Compile Include="RepresentationCoordinator\AttorneyContactInformationRepresentationCoordinator.cs" />
+    <Compile Include="RepresentationRootAttribute.cs" />
+    <Compile Include="Resources\Account\AccountListRepresentation.cs" />
+    <Compile Include="Resources\Account\AccountRepresentation.cs" />
+    <Compile Include="Resources\Account\AccountSpvListRepresentation.cs" />
+    <Compile Include="Resources\Attorney\AttorneyContactInformationListRepresentation.cs" />
+    <Compile Include="Resources\Attorney\AttorneyContactInformationRepresentation.cs" />
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceLineItemsListRepresentation.cs" />
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceLineItemsRepresentation.cs" />
+    <Compile Include="Resources\PagingRepresentation.cs" />
+    <Compile Include="Resources\Process\ProcessListRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyBankAccountListRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyBankAccountRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyContactInformationListRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyContactInformationRepresentation.cs" />
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceListRepresentation.cs" />
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceRepresentation.cs" />
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceDocumentRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyListRepresentation.cs" />
+    <Compile Include="Resources\Finance\ThirdPartyInvoiceDocumentListRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyPaymentBankAccountListRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyPaymentBankAccountRepresentation.cs" />
+    <Compile Include="Resources\ThirdParty\ThirdPartyRepresentation.cs" />
+    <Compile Include="Resources\Treasury\SPVListRepresentation.cs" />
+    <Compile Include="Resources\Treasury\SPVRepresentation.cs" />
+    <Compile Include="ServiceGenerationToolExclude.cs" />
+    <Compile Include="Url\AbsoluteUrlBuilder.cs" />
+    <Compile Include="Compilers\CustomSqlCompiler.cs" />
+    <Compile Include="Controllers\Attorney\AttorneyContactsController.cs" />
+    <Compile Include="Controllers\Attorney\AttorneyController.cs" />
+    <Compile Include="Controllers\Lookup\LookupsRootController.cs" />
+    <Compile Include="Controllers\OrganisationTypeController.cs" />
+    <Compile Include="DataManagers\Statements\Lookup\GetLookupStatement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataManagers\SupportedLookupDataManager.cs" />
+    <Compile Include="Coordinators\IIncludeRelationshipCoordinator.cs" />
+    <Compile Include="Coordinators\IncludeRelationshipCoordinator.cs" />
+    <Compile Include="Coordinators\LinkQuery.cs" />
+    <Compile Include="Factories\IStreamResultReaderFactory.cs" />
+    <Compile Include="Factories\IWebRequestFactory.cs" />
+    <Compile Include="Factories\StreamResultReaderFactory.cs" />
+    <Compile Include="Factories\WebRequestFactory.cs" />
+    <Compile Include="ProjectExtensions.cs" />
+    <Compile Include="Url\IAbsoluteUrlBuilder.cs" />
+    <Compile Include="IRepresentationTemplateCache.cs" />
+    <Compile Include="Models\Attorney\AttorneyContactDataModel.cs" />
+    <Compile Include="Models\Core\RelatedField.cs" />
+    <Compile Include="RepresentationCoordinator\AttorneyContactsRepresentationCoordinator.cs" />
+    <Compile Include="RepresentationTemplateCache.cs" />
+    <Compile Include="RepresentationRouteAttribute.cs" />
+    <Compile Include="Controllers\Test\QueryResult.cs" />
+    <Compile Include="Controllers\Test\Test2Representation.cs" />
+    <Compile Include="Controllers\Test\TestDynamicController.cs" />
+    <Compile Include="Controllers\Test\TestListRepresentation.cs" />
+    <Compile Include="Controllers\Test\TestRepresentation.cs" />
+    <Compile Include="Models\Core\RelationshipDefinition.cs" />
+    <Compile Include="Factories\QueryFactory.cs" />
+    <Compile Include="Mappers\OperatorMapper.cs" />
+    <Compile Include="Metadata\ILinkMetadataCollection.cs" />
+    <Compile Include="Metadata\LinkMetadata.cs" />
+    <Compile Include="Metadata\LinkMetadataCollection.cs" />
+    <Compile Include="Metadata\Representations.cs" />
+    <Compile Include="Parsers\IJsonQueryParser.cs" />
+    <Compile Include="Parsers\IQueryStringQueryParser.cs" />
+    <Compile Include="Parsers\JsonQueryParser.cs" />
+    <Compile Include="Resources\Attorney\AttorneyContactListRepresentation.cs" />
+    <Compile Include="Resources\Attorney\AttorneyListRepresentation.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ILinkResolver.cs" />
+    <Compile Include="LinkResolver.cs" />
+    <Compile Include="Resources\Attorney\AttorneyContactRepresentation.cs" />
+    <Compile Include="Resources\OrganisationStructure\OrganisationTypeListRepresentation.cs" />
+    <Compile Include="Resources\OrganisationStructure\OrganisationTypeRepresentation.cs" />
+    <Compile Include="Controllers\Test\TestDummyController.cs" />
+    <Compile Include="Controllers\Test\TestController.cs" />
+    <Compile Include="Controllers\OrganisationStructureController.cs" />
+    <Compile Include="Controllers\Lookup\LookupController.cs" />
+    <Compile Include="DataManagers\Statements\Attorney\GetAttorneyStatement.cs" />
+    <Compile Include="Coordinators\FieldExclusionCoordinator.cs" />
+    <Compile Include="Coordinators\DataModelCoordinator.cs" />
+    <Compile Include="LinkTemplates\AttorneyLinkTemplates.cs" />
+    <Compile Include="Models\Attorney\AttorneyDataModel.cs" />
+    <Compile Include="DataManagers\OrganisationStructure\IOrganisationStructureDataManager.cs" />
+    <Compile Include="DataManagers\OrganisationStructure\OrganisationStructureDataManager.cs" />
+    <Compile Include="DataManagers\OrganisationStructure\Statements\GetOrganisationStructureStatement.cs" />
+    <Compile Include="DataManagers\OrganisationStructure\Statements\GetOrganisationTypesStatement.cs" />
+    <Compile Include="DataManagers\OrganisationStructure\Statements\GetOrganisationTypeStatement.cs" />
+    <Compile Include="DataManagers\Statements\Lookup\GetLookupsStatement.cs" />
+    <Compile Include="DataManagers\LookupDataManager.cs" />
+    <Compile Include="DataManagers\OrganisationStructure\Statements\GetOrganisationStructureByParentKeyStatement.cs" />
+    <Compile Include="DataManagers\Statements\Lookup\GetSchemaStatement.cs" />
+    <Compile Include="DataManagers\Statements\Lookup\GetSupportedLookupsStatement.cs" />
+    <Compile Include="Helper\LookupRepresentationHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\LookupTypesHelper.cs" />
+    <Compile Include="Helper\MetaDataHelper.cs" />
+    <Compile Include="Interfaces\ILookupRepresentationHelper.cs" />
+    <Compile Include="LinkTemplates\LookupLinkTemplate.cs" />
+    <Compile Include="Models\Lookup\LookupDataModel.cs" />
+    <Compile Include="Models\Lookup\LookupMetaDataModel.cs" />
+    <Compile Include="Parsers\Elemets\OrderDirection.cs" />
+    <Compile Include="Parsers\Elemets\LimitPart.cs" />
+    <Compile Include="Parsers\Elemets\FindManyQuery.cs" />
+    <Compile Include="Models\Lookup\SupportedLookup.cs" />
+    <Compile Include="Models\Lookup\SupportedLookupModel.cs" />
+    <Compile Include="Parsers\Elemets\OrderPart.cs" />
+    <Compile Include="Parsers\Elemets\SkipPart.cs" />
+    <Compile Include="Parsers\QueryStringQueryParser.cs" />
+    <Compile Include="Parsers\Elemets\WherePart.cs" />
+    <Compile Include="Models\OrganisationStructure\OrganisationStructureDataModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepresentationCoordinator\AttorneyRepresentationCoordinator.cs" />
+    <Compile Include="Resources\Attorney\AttorneyRepresentation.cs" />
+    <Compile Include="Resources\Lookup\LookupListRepresentation.cs" />
+    <Compile Include="Resources\Lookup\LookupRepresentation.cs" />
+    <Compile Include="Resources\Lookup\LookupTypeListRepresentation.cs" />
+    <Compile Include="Resources\Lookup\LookupTypeRepresentation.cs" />
+    <Compile Include="Resources\OrganisationStructure\OrganisationStructureRepresentation.cs" />
+    <Compile Include="Serialiser\HalSerialiser.cs" />
+    <Compile Include="Serialiser\IHalSerialiser.cs" />
+    <Compile Include="Url\IUrlParameterSubstituter.cs" />
+    <Compile Include="Url\UrlParameterSubstituter.cs" />
+    <Compile Include="Validators\FindQueryValidator.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

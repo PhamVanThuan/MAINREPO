@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91FFF4FD-D4AB-4897-B8FA-4C8DB2EC8DA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.DomainProcessManager.DomainProcesses</RootNamespace>
+    <AssemblyName>SAHL.DomainProcessManager.DomainProcesses</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\AutoMapper\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Exchange.WebServices.1.2\lib\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Web.Infrastructure\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Data.Dapper">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Data.Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.CATS.Client">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.CATS.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.Client">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.FinanceDomain.Client">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.FinanceDomain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Services.X2.Client">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Config.Services.X2.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.DomainProcess">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.DomainProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Exchange">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Exchange.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainProcessManager.Models, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainProcessManager.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.AddressDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.AddressDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ApplicationDomain, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ApplicationDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.BankAccountDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.BankAccountDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.CATS">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.CATS.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ClientDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ClientDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Communications, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Communications.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DocumentManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DomainProcessManager">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DomainProcessManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinanceDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinanceDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinancialDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinancialDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.PropertyDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.PropertyDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.X2">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="Stateless">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Stateless.2.4.0\lib\Stateless.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.9.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Tpl.Dataflow\lib\portable-net45+win8\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\System.Spatial\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Cors\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.WebHost\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Cors\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddAffordabilityCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddApplicantCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddApplicationEmploymentTypeCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddApplicationHouseholdIncomeCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddClientAssetCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddComCorpPropertyDetails.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddAddressCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\ApplicationCreationProcess.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\ApplicationCreationCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\ApplicationMailingAddressCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\BankAccountDetailsCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\Common.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\CreateWorkflowCaseCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddDeclarationsCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleComcorpPropertyAddedPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleApplicantMadeIncomeContributorPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleInActiveApplicantUpdatedPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleAddApplicationEmploymentTypePartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleAddApplicationHouseholdIncomePartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleAffordabilityPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleApplicantAddedPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleApplicationDebitOrderPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleApplicationMailingAddressPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleBankDetailsPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleAddressPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleDeclarationsPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleClientPendingDomiciliumAddressPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleDomiciliumAddressPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleEmployerPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleExternalVendorPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleActiveApplicantUpdatedPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleMarketingOptionsAddedToClientEvent.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleNaturalPersonClientAddedPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleFundingPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandlePricingPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleRefinancePartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleUnconfirmedUnemployedEmploymentPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleUnconfirmedSalaryDeductionEmploymentPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleUnconfirmedSalariedEmploymentPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\AddClientEmployerCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleNewPurchasePartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleSwitchPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\HandleAddAssetToClientPartial.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\PriceNewBusinessApplicationCommon.cs" />
+    <Compile Include="DomainProcess\ApplicationCreationProcess\LinkAddressAsPendingDomicilum.cs" />
+    <Compile Include="DomainProcess\DomainProcessServiceRequestMetadata.cs" />
+    <Compile Include="DomainProcess\NewPurchaseApplicationDomainProcess.cs" />
+    <Compile Include="DomainProcess\Rules\ApplicantsMustHaveUniqueIdentityNumbersRule.cs" />
+    <Compile Include="DomainProcess\Rules\ApplicationMustHaveAtLeastOneMainApplicantRule.cs" />
+    <Compile Include="DomainProcess\Rules\OpenMortgageLoanForApplicantAndComcorpPropertyCannotExistRule.cs" />
+    <Compile Include="DomainProcess\Rules\OpenMortgageLoanForApplicantAndPropertyCannotExistRule.cs" />
+    <Compile Include="DomainProcess\Rules\VendorMustExistForVendorCodeRule.cs" />
+    <Compile Include="DomainProcess\StateManagement\Application\ApplicationStateMachineCorrelatedTriggers.cs" />
+    <Compile Include="DomainProcess\StateManagement\Application\IApplicationStateMachine.cs" />
+    <Compile Include="DomainProcess\StateManagement\SerialisationFriendlyStateMachine.cs" />
+    <Compile Include="DomainProcess\StateManagement\Application\ApplicationState.cs" />
+    <Compile Include="DomainProcess\StateManagement\ThirdPartyInvoice\AcceptThirdPartyInvoiceStateMachine.cs" />
+    <Compile Include="DomainProcess\StateManagement\ThirdPartyInvoice\PayThirdPartyInvoiceStateMachineCorrelatedTriggers.cs" />
+    <Compile Include="DomainProcess\StateManagement\ThirdPartyInvoice\PayThirdPartyInvoiceStateMachine .cs" />
+    <Compile Include="DomainProcess\StateManagement\ThirdPartyInvoice\InvoicePaymentStateTransitionTrigger.cs" />
+    <Compile Include="DomainProcess\StateManagement\ThirdPartyInvoice\IAcceptThirdPartyInvoiceStateMachine.cs" />
+    <Compile Include="DomainProcess\StateManagement\ThirdPartyInvoice\IPayThirdPartyInvoiceStateMachine.cs" />
+    <Compile Include="DomainProcess\StateManagement\ThirdPartyInvoice\InvoicePaymentProcessState.cs" />
+    <Compile Include="DomainProcess\StateManagement\Application\ApplicationStateTransitionTrigger.cs" />
+    <Compile Include="DomainProcess\RefinanceApplicationDomainProcess.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\ProcessEventHandlers\HandleCATSPaymentBatchRecipientsNotificationFailedPartial.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\ProcessEventHandlers\CreateCatsFilePartial.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\ProcessEventHandlers\HandleThirdPartyPaymentBatchProcessedPartial.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\ProcessEventHandlers\HandleThirdPartyInvoiceTransactionPostedPartial.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\ProcessEventHandlers\HandleThirdPartyInvoiceAddedToPaymentBatchPartial.cs" />
+    <Compile Include="DomainProcess\SwitchApplicationDomainProcess.cs" />
+    <Compile Include="DomainProcess\StateManagement\Application\ApplicationStateMachine.cs" />
+    <Compile Include="Managers\Application\Statements\DoesOpenAppExistForComcorpPropertyAndClientStatement.cs" />
+    <Compile Include="Managers\Application\Statements\DoesSuppliedVendorExistStatement.cs" />
+    <Compile Include="Managers\Application\ApplicationDataManager.cs" />
+    <Compile Include="Managers\Application\IApplicationDataManager.cs" />
+    <Compile Include="Managers\Application\Statements\RollbackApplicationStatement.cs" />
+    <Compile Include="Managers\Client\ClientDataManager.cs" />
+    <Compile Include="Managers\Client\IClientDataManager.cs" />
+    <Compile Include="Managers\Client\Statements\DoesEmployerExistStatement.cs" />
+    <Compile Include="Managers\Client\Statements\GetClientKeyForAddressStatement.cs" />
+    <Compile Include="Managers\Communication\CommunicationManagerSettings.cs" />
+    <Compile Include="Managers\Communication\ICommunicationManagerSettings.cs" />
+    <Compile Include="Managers\X2Workflow\IX2WorkflowManager.cs" />
+    <Compile Include="Managers\X2Workflow\X2WorkflowManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Managers\Communication\CommunicationManager.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\Rules\PayAttorneyInvoiceProcessShouldRunOnceADayRule.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\Rules\NoProfileCatsFileProcessingShouldBeInProgressRule.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\Rules\PreviousBatchFileShouldNotHaveFailedRule.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\ReceiveAttorneyInvoiceProcess.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\PayAttorneyInvoiceProcess.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\PayThirdPartyInvoiceDomainProcess.cs" />
+    <Compile Include="ThirdPartyInvoiceProcesses\ReceiveThirdPartyInvoiceDomainProcess.cs" />
+    <Compile Include="Utilities\DomainModelMapper.cs" />
+    <Compile Include="Managers\Communication\ICommunicationManager.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(ProjectDir)\..\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+﻿<p>
+    @Model.ClientName (ID Number: @Model.ClientIdNumber ) is already an active SA Home Loans client. Please take note of the following differences between the applicant
+    details supplied by Comcorp and what we currently have on record. 
+</p>
+
+<table>
+    @foreach (var record in Model.DifferingRecords)
+    {
+        <tr>
+            <td><strong>@record.Key :</strong></td>
+            <td>@record.Value</td>
+        </tr>
+    }
+</table>
+
+@if (Model.DateOfBirthSetToComcorpProvided)
+{
+    <p>Due to the client not having a date of birth on record, it has been set to the value provided by Comcorp.</p>
+}

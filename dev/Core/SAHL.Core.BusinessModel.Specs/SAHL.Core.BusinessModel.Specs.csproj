@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DBA2F97-7D8A-47F0-B6F2-4C4C19AF28EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.BusinessModel.Specs</RootNamespace>
+    <AssemblyName>SAHL.Core.BusinessModel.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_income_items_that_dont_require_description.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_expense_items_that_dont_require_description.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_expense_item_other.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_expense_item_other_debt_repayment.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_income_item_other_income_1.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_expense_item_other_instalments.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_income_item_other_income_2.cs" />
+    <Compile Include="ValidationUtilsSpecs\CheckIfAffordabilityRequiresDescription\when_checking_income_item_income_from_investments.cs" />
+    <Compile Include="ValidationUtilsSpecs\GetAgeFromDateOfBirthSpecs\when_birthday_has_been_celebrated.cs" />
+    <Compile Include="ValidationUtilsSpecs\GetAgeFromDateOfBirthSpecs\when_birthday_has_yet_to_be_celebrated.cs" />
+    <Compile Include="ValidationUtilsSpecs\GetAgeFromDateOfBirthSpecs\when_birthday_is_today.cs" />
+    <Compile Include="ValidationUtilsSpecs\MapComcorpToSAHLProvince\when_mapping_kwazulu_natal.cs" />
+    <Compile Include="ValidationUtilsSpecs\MapComcorpToSAHLProvince\when_mapping_northwest.cs" />
+    <Compile Include="ValidationUtilsSpecs\MapComcorpToSAHLProvince\when_the_province_does_not_require_mapping.cs" />
+    <Compile Include="ValidationUtilsSpecs\MapComcorpToSAHLProvince\when_the_province_to_be_mapped_is_empty_whitespace.cs" />
+    <Compile Include="ValidationUtilsSpecs\MapComcorpToSAHLProvince\when_the_province_to_be_mapped_is_empty.cs" />
+    <Compile Include="ValidationUtilsSpecs\MapComcorpToSAHLProvince\when_the_province_to_be_mapped_is_null.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_parsing_a_mixed_case_enum.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_parsing_a_valid_enum.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_contains_a_closing_bracket.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_contains_single_quotes.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_contains_a_plus_sign.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_contains_a_period.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_contains_a_dash.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_contains_a_comma.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_contains_a_forward_slash.cs" />
+    <Compile Include="ValidationUtilsSpecs\ParseEnum\when_the_string_starts_with_an_underscore.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidateIDNumberSpecs\when_id_number_is_more_than_13_digits.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidateIDNumberSpecs\when_the_idnumber_contains_alphabetic_characters.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidateIDNumberSpecs\when_the_id_number_is_an_empty_string.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidateIDNumberSpecs\when_validating_a_invalid_id_number.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidateIDNumberSpecs\when_validating_a_valid_id_number.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidatePassportNumber\when_the_passport_number_is_an_empty_string.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidatePassportNumber\when_validating_an_invalid_passport_number.cs" />
+    <Compile Include="ValidationUtilsSpecs\ValidatePassportNumber\when_validating_a_valid_passport_number.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.BusinessModel\SAHL.Core.BusinessModel.csproj">
+      <Project>{6d54e795-84d4-4282-83a7-ba2810521964}</Project>
+      <Name>SAHL.Core.BusinessModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

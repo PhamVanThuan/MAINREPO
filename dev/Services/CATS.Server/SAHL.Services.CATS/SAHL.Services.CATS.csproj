@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{90B01065-3D0B-47CC-8154-E5016E05D166}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.CATS</RootNamespace>
+    <AssemblyName>SAHL.Services.CATS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Moq\lib\net40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Config.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Config.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Events, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.CATS">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.CATS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Abstractions">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\System.IO.Abstractions\lib\net40\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Net.Http\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.9.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.Tpl.Dataflow\lib\portable-net45+win8\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Cors\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.OData\lib\net45\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Tracing\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.WebHost\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Mvc\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Web.Optimization\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Providers.Core\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Razor\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\MarkCATSPaymentBatchAsFailedCommandHandler.cs" />
+    <Compile Include="CommandHandlers\NotifyCATSPaymentBatchRecipientsCommandHandler.cs" />
+    <Compile Include="CommandHandlers\RemoveCATSPaymentBatchItemCommandHandler.cs" />
+    <Compile Include="CommandHandlers\Internal\SummarisePaymentsToRecipientCommandHandler.cs" />
+    <Compile Include="ConfigExtension\CatsAppConfigSettings.cs" />
+    <Compile Include="ConfigExtension\ICatsAppConfigSettings.cs" />
+    <Compile Include="Managers\CATSDataManager.cs" />
+    <Compile Include="CommandHandlers\AddCATSPaymentBatchItemCommandHandler.cs" />
+    <Compile Include="Managers\ICATSDataManager.cs" />
+    <Compile Include="Managers\Statements\GetBatchByKeyStatement.cs" />
+    <Compile Include="Managers\Statements\GetControlTableValueByControlNumberStatement.cs" />
+    <Compile Include="Managers\Statements\GetLastProcessedBatchQueryStatement.cs" />
+    <Compile Include="Managers\Statements\InsertCATSPaymentBatchItemStatement.cs" />
+    <Compile Include="Managers\Statements\RemoveCATSPaymentBatchItemStatement.cs" />
+    <Compile Include="Managers\Statements\SetCATSPaymentBatchAsFailedStatement.cs" />
+    <Compile Include="Managers\Statements\UpdateControlTableNumericValueStatement.cs" />
+    <Compile Include="Managers\Statements\UpdatePaymentBatchStatusStatement.cs" />
+    <Compile Include="Managers\Statements\GetPaymentBatchTypeByPaymentBatchKeyStatement.cs" />
+    <Compile Include="Managers\Statements\GetBankAccountDataModelByKeyStatement.cs" />
+    <Compile Include="Managers\Statements\GetPaymentBatchLineItemByBatchNumberStatement.cs" />
+    <Compile Include="Managers\Statements\GetNewThirdPartyPaymentReferenceStatement.cs" />
+    <Compile Include="Models\DetailedPayment.cs" />
+    <Compile Include="QueryHandlers\GetNewThirdPartyPaymentBatchReferenceQueryHandler.cs" />
+    <Compile Include="CommandHandlers\ProcessCATSPaymentBatchCommandHandler.cs" />
+    <Compile Include="QueryHandlers\IsThereACatsFileBeingProcessedForProfileQueryHandler.cs" />
+    <Compile Include="QueryHandlers\GetPreviousFileFailureQueryHandler.cs" />
+    <Compile Include="QueryStatements\DoesCatsPaymentBatchForTodayExistQueryStatement.cs" />
+    <Compile Include="QueryStatements\GetCatsPaymentBatchItemsByBatchReferenceQueryStatement.cs" />
+    <Compile Include="Rules\BatchShouldBeInProcessedStateRule.cs" />
+    <Compile Include="Rules\SourceBankAccountDetailsShouldFollowCatsFormatRule.cs" />
+    <Compile Include="Rules\APaymentBatchShouldHaveAtleastOnePaymentRule.cs" />
+    <Compile Include="Rules\TargetBankAccountDetailsShouldFollowCatsFormatRule.cs" />
+    <Compile Include="Utils\CatsControlType.cs" />
+    <Compile Include="Utils\CATsFileRecordType.cs" />
+    <Compile Include="CommandHandlers\GenerateCatsFileCommandHandler.cs" />
+    <Compile Include="FileWriter.cs" />
+    <Compile Include="IFileWriter.cs" />
+    <Compile Include="Managers\CATSFileGenerator.cs" />
+    <Compile Include="Managers\ICATSFileGenerator.cs" />
+    <Compile Include="Managers\ICATSFileRecordGenerator.cs" />
+    <Compile Include="Managers\CATSFileRecordGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Managers\CATSManager.cs" />
+    <Compile Include="Managers\ICATSManager.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

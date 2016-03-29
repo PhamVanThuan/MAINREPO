@@ -1,0 +1,291 @@
+/*
+ Orange : #f37021
+ Gray : #494949
+*/
+body, html
+{
+    background-color: White;
+    font-family: Calibri;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0;
+    color: #494949;
+    float: none;
+}
+
+td
+{
+    vertical-align: top;
+    text-align: left;
+}
+
+/*a:link
+{
+    color: #494949;
+}
+a:visited
+{
+    color: #494949;
+}
+a:hover
+{
+    color: #f37021;
+}
+a:active
+{
+    color: #f37021;
+}*/
+
+#wrapper
+{
+    padding: 0;
+    margin: 0;
+}
+
+#header
+{
+    border-bottom: solid 1px Black;
+    background-color: #f37021;
+    height: 42px;
+    color:White;
+}
+
+#notifications ul li
+{
+    list-style: none;
+}
+
+#login
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1, h2
+{
+    margin: 0;
+    padding: 0;
+    margin-left: 60px;
+}
+h1
+{
+    font-size: 2.1em;
+}
+h2
+{
+    font-size: 1.8em;
+}
+
+input[type="text"]
+{
+    width: 180px;
+    padding: 4px 8px;
+}
+
+input[type="input"], input[type="submit"], input[type="button"]
+{
+    background:#f37021;
+    color:White;
+    font-weight:bold;
+    width: 160px;
+    padding: 4px 8px;
+    border: 1px solid Black;
+}
+
+/*input[type="input"], input[type="submit"]:hover
+{
+    background:White;
+    color:Black;
+    font-weight:bold;
+    width: 180px;
+    padding: 4px 8px;
+    border: 1px solid Black;
+}*/
+
+input[type="password"]
+{
+    width: 180px;
+    padding: 4px 8px;
+}
+
+.orangetext
+{
+    color: #f37021;
+}
+.orangebackground
+{
+    background-color: #f37021;
+}
+
+.greytext
+{
+    color: #494949;
+}
+.greybackground
+{
+    background-color: #494949;
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/*Notification Styles*/
+.info, .success, .warning, .error, .validation
+{
+    border: 1px solid;
+    margin: 10px 0px;
+    padding: 8px 6px 8px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+.info
+{
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('/Content/images/info.png');
+}
+.success
+{
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('/Content/images/success.png');
+}
+.warning
+{
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('/Content/images/warning.png');
+}
+.error
+{
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('/Content/images/error.png');
+}
+
+/*Menu*/
+ul#menu
+{
+    height: 50px;
+    width: 100%;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+}
+
+ul#menu li
+{
+    display: inline;
+}
+
+ul#menu li a
+{
+    display: block;
+    float: left;
+    padding: 2px 15px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #f37021;
+    color: #FFFFFF;
+}
+
+ul#menu li a:hover
+{
+    background-color: #fff;
+    color: #000000;
+    text-decoration: none;
+}
+
+ul#menu li a:active
+{
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+    background-color: #fff;
+    color: #000;
+}
+
+ul#menu ul li a
+{
+    display: none;
+}
+
+ul#menu li:hover ul li a
+{
+    border-top: 1px solid Black;
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 40px;
+}
+
+fieldset
+{
+    border: 1px solid White;
+    font-size: 1.2em;
+}
+legend
+{
+    padding: 4px 8px;
+    border: 1px solid White;
+}
+
+/*List*/
+label
+{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.list
+{
+    display: inline;
+    list-style: none;
+}
+
+.header
+{
+    padding: 2px 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #000000;
+    text-indent: 20px;
+    background-color: #9f9f9f;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #000000;
+}
+
+.detail
+{
+    text-indent: 40px;
+}

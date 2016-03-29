@@ -1,0 +1,48 @@
+<br/>
+<div class="labels">
+	<div>Product:</div>
+	<div>Total Bond Amount:</div>
+	<div>Loan Agreement:</div>
+	<div>Current LTV:</div>
+	<div>Current PTI:</div>
+	<div>Current Balance:</div>
+	<div>Arrear Balance:</div>
+	<div ng-show="item.tileData.Product === 'New Variable Loan'">Effective Rate:</div>
+	<div ng-show="item.tileData.Product === 'VariFix Loan'">Variable Rate:</div>
+	<div ng-show="item.tileData.Product === 'VariFix Loan'">Fixed Rate:</div>
+	<div>Remaining Term:</div>
+	<div>Instalment:</div>	
+	<br/>
+	<div>Income Contributors' Income:</div>
+	<div>Household Total Income:</div>	
+	<div>Debit Order Day:</div>
+	<div>Payment Type:</div>	
+	<br/>
+	<div>Open Date:</div>
+	<div>Close Date:</div>
+	<div>Next Reset Date:</div>
+	<div>Current SPV:</div>
+</div>
+<div class="values">
+	<div>{{item.tileData.Product}}</div>
+	<div>{{item.tileData.TotalBondAmount | currencyFilter:0}}</div>
+	<div>{{item.tileData.LoanAgreement | currencyFilter:0}}</div>
+	<div>{{item.tileData.CurrentLTV | percentage:2}}</div>
+	<div>{{item.tileData.CurrentPTI | percentage:2}}</div>
+	<div>{{item.tileData.CurrentBalance | currencyFilter:0}}</div>
+	<div>{{item.tileData.ArrearBalance | currencyFilter:0}}</div>
+	<div >{{item.tileData.EffectiveRate | percentage:2}}</div>
+	<div ng-show="item.tileData.Product === 'VariFix Loan'">{{item.tileData.FixedRate | percentage:2}}</div>
+	<div>{{item.tileData.RemainingTerm}}</div>
+	<div>{{item.tileData.Instalment | currencyFilter:0}}</div>
+	<br/>
+	<div>{{item.tileData.OriginatingOfferIncomeContributorTotalConfirmedIncome | currencyFilter:0}}</div>
+	<div>{{item.tileData.HouseholdTotalConfirmedIncome | currencyFilter:0}}</div>
+	<div>{{item.tileData.DebitOrderDay}}</div>
+	<div>{{item.tileData.PaymentType}}</div>
+	<br/>
+	<div>{{item.tileData.OpenDate | dateViewFilter}}</div>
+	<div>{{item.tileData.CloseDate | dateViewFilter}}</div>
+	<div>{{item.tileData.NextResetDate | dateViewFilter}}</div>
+	<div>{{item.tileData.CurrentSPV}}</div>
+</div>

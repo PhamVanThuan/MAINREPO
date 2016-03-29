@@ -1,0 +1,93 @@
+﻿@import url(sahl-colors.less);
+@import url(sahl-sizes.less);
+@import url(sahl-mixins.less);
+@import url(sahl-fonts.less);
+@import url(sahl-menu.less);
+@import url(sahl-tiles.less);
+@import url(sahl-layout.less);
+@import url(sahl-scrollables.less);
+@import url(sahl-notifications.less);
+@import url(sahl-loading.less);
+
+#tile-area {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, html {
+	min-width: @application-minimum-width;
+	min-height: @application-minimum-height;
+	height: 100%;
+}
+
+.datepicker {
+	z-index: 1051;
+}
+
+.modal {
+	width: @modal-width;
+	height: @modal-height;
+	margin-left: (-@modal-width/2);
+
+	.btn-primary {
+		background: @halo-orange;
+	}
+}
+
+.modal-body {
+	max-height: none;
+}
+
+.popover-content {
+	.icon-error {
+		color: #b94a48;
+	}
+}
+
+#editorTitle {
+	text-align: left;
+}
+
+.form-horizontal {
+	.control-group {
+		margin-bottom: 10px;
+	}
+}
+
+div.loading .loading-bar{
+	display: block;
+	h4{
+		text-align:center;
+		font-weight: bold;
+	}
+}
+
+.badge.sahl-application {
+    background: #990099;
+}
+
+.badge.sahl-application-closed {
+    background: #000099;
+}
+
+.badge.sahl-closed {
+    background: #CC0000;
+}
+
+.badge.sahl-open {
+    background: #009900;
+}
+
+.badge-pale {
+    background: #bbb;
+}
+
+.StandOut{
+	opacity: 1;
+	z-index: 100;
+}
+
+.GreyOut{
+	opacity:.7 !important;
+}

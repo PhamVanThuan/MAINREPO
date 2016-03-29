@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="3246adc4-2072-45d6-90cb-000c3dc820c9" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Valuation" schema="dbo" table="Valuation">
+      <targets>
+        <manyToOneRelation Id="18f26dd6-28ca-45c7-8d63-d32c7f49e8a0" targetColumnKey="ValuationClassificationKey" targetTable="Valuation" targetPropertyName="Valuations" sourceColumn="ValuationClassificationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationClassification" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="ca9552e9-c0de-4208-b3cf-67b482e8c2d1" targetColumnKey="ValuationTypeKey" targetTable="Valuation" targetPropertyName="Valuations" sourceColumn="ValuationTypeKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="9ca24f14-157e-4bfd-850c-bc87743e5504" targetColumnKey="ValuatorKey" targetTable="Valuation" targetPropertyName="Valuations" sourceColumn="ValuatorKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/Valuator" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="094d0a2a-f704-424d-9140-2bdfcf02a626" name="ValuationDate" column="ValuationDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="fbbfd9b8-cf30-4454-bb09-cf0a12de1081" name="ValuationAmount" column="ValuationAmount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="b23bb41d-a26b-4c35-b8f5-d137557dff9a" name="ValuationHOCValue" column="ValuationHOCValue" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="269240c6-03f5-4bcb-82f7-77b38f2dd0fa" name="ValuationMunicipal" column="ValuationMunicipal" columnType="Double" length="0" />
+        <modelProperty Id="dc677825-852c-460e-a1f6-dfff829cb147" name="ValuationUserID" column="ValuationUserID" length="0" notNull="true" />
+        <modelProperty Id="19034a6c-f5e8-4305-a10b-07fb5a5eefac" name="PropertyKey" column="PropertyKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="8b40a855-9646-460f-a201-f2254b6acf7c" name="HOCThatchAmount" column="HOCThatchAmount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="8e80c0c9-1205-4e83-9765-1d50de07b443" name="HOCConventionalAmount" column="HOCConventionalAmount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="1f6f4347-68ed-4aac-ab04-b4eb4012aeec" name="HOCShingleAmount" column="HOCShingleAmount" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="109e3af0-ab77-4cea-9237-e51e792b10b6" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="00c69f47-60c2-42ed-ab97-5769b9f33a08" name="ValuationEscalationPercentage" column="ValuationEscalationPercentage" columnType="Double" length="0" />
+        <modelProperty Id="0545fdbf-7ea9-4b3d-8143-8f1e9383dcbd" name="ValuationKey" column="ValuationKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationType" schema="dbo" table="ValuationType">
+      <properties>
+        <modelProperty Id="8893f875-bb0c-4678-a7c8-b9dd31888154" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="42f609dc-85c9-4a6f-ac47-89355a1246fc" name="ValuationTypeKey" column="ValuationTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationClassification" schema="dbo" table="ValuationClassification">
+      <properties>
+        <modelProperty Id="037becfa-4d24-4021-a924-51afd9e81d34" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="35c1088d-596d-4067-a6d7-6cb0a710bbe4" name="ValuationClassificationKey" column="ValuationClassificationKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationCombinedThatch" schema="dbo" table="ValuationCombinedThatch">
+      <targets>
+        <manyToOneRelation Id="be437d4c-590c-4913-b689-2be5bcfb465e" targetColumnKey="ValuationKey" targetTable="ValuationCombinedThatch" targetPropertyName="ValuationCombinedThatches" sourceColumn="ValuationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/Valuation" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="9f20b930-1e4b-496c-b664-4020989ff165" name="Value" column="Value" columnType="Double" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationCottage" schema="dbo" table="ValuationCottage">
+      <targets>
+        <manyToOneRelation Id="b1694aa6-67fd-4fab-9885-22243f9abce7" targetColumnKey="ValuationKey" targetTable="ValuationCottage" targetPropertyName="ValuationCottages" sourceColumn="ValuationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/Valuation" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="5402000c-6c1f-4dd0-bdf5-7df28deefe22" targetColumnKey="ValuationRoofTypeKey" targetTable="ValuationCottage" targetPropertyName="ValuationCottages" sourceColumn="ValuationRoofTypeKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationRoofType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="22756e3d-33eb-4a51-832c-0e76b74cfe65" name="Extent" column="Extent" columnType="Double" length="0" />
+        <modelProperty Id="a37df4cc-ae8f-4e09-ab11-ee3232e27b74" name="Rate" column="Rate" columnType="Double" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationImprovement" schema="dbo" table="ValuationImprovement">
+      <targets>
+        <manyToOneRelation Id="da0b5748-9da0-4514-a73b-4eea7408dd68" targetColumnKey="ValuationKey" targetTable="ValuationImprovement" targetPropertyName="ValuationImprovements" sourceColumn="ValuationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/Valuation" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="d82211d8-f49d-4f9b-8017-884f19d1cdeb" targetColumnKey="ValuationImprovementTypeKey" targetTable="ValuationImprovement" targetPropertyName="ValuationImprovements" sourceColumn="ValuationImprovementTypeKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationImprovementType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="892d38e1-c6d6-4f4f-a14b-66bde3642d17" name="Extent" column="Extent" columnType="Double" length="0" />
+        <modelProperty Id="64f6e11f-2c94-4705-b1d5-3c5d5928b06c" name="Rate" column="Rate" columnType="Double" length="0" />
+        <modelProperty Id="eccdb22c-e4d9-4855-8ce3-05f543228874" name="ImprovementDate" column="ImprovementDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="ab78342b-b91d-41ad-b249-b426dd169627" name="ValuationImprovementKey" column="ValuationImprovementKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationImprovementType" schema="dbo" table="ValuationImprovementType">
+      <properties>
+        <modelProperty Id="57120afa-4bf8-4d48-ae21-a10fc220c733" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="fb99e80f-1ee3-4c56-8c44-c8e916e67f20" name="ValuationImprovementTypeKey" column="ValuationImprovementTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationMainBuilding" schema="dbo" table="ValuationMainBuilding">
+      <targets>
+        <manyToOneRelation Id="08641af1-6346-4c2b-96d9-5048b3cd99cb" targetColumnKey="ValuationKey" targetTable="ValuationMainBuilding" targetPropertyName="ValuationMainBuildings" sourceColumn="ValuationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/Valuation" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="a84a56c2-17bf-4d61-8662-71623af530e6" targetColumnKey="ValuationRoofTypeKey" targetTable="ValuationMainBuilding" targetPropertyName="ValuationMainBuildings" sourceColumn="ValuationRoofTypeKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationRoofType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="77e25efb-0241-4849-8a86-693704785e5d" name="Extent" column="Extent" columnType="Double" length="0" />
+        <modelProperty Id="ebd03b21-e08b-485d-9dfa-127c499ab763" name="Rate" column="Rate" columnType="Double" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationOutbuilding" schema="dbo" table="ValuationOutbuilding">
+      <targets>
+        <manyToOneRelation Id="41c8bb9d-b088-49cb-8a30-76fb59386f6a" targetColumnKey="ValuationKey" targetTable="ValuationOutbuilding" targetPropertyName="ValuationOutbuildings" sourceColumn="ValuationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/Valuation" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="feeb1cd7-bfa7-47b9-a76e-32a37db49e71" targetColumnKey="ValuationRoofTypeKey" targetTable="ValuationOutbuilding" targetPropertyName="ValuationOutbuildings" sourceColumn="ValuationRoofTypeKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationRoofType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="2c8a1caa-c640-4053-8fed-0517190a2819" name="Extent" column="Extent" columnType="Double" length="0" />
+        <modelProperty Id="21822ff5-2bc8-42a9-b14f-2565f7d96d56" name="Rate" column="Rate" columnType="Double" length="0" />
+        <modelProperty Id="d01494c0-71df-4323-8e73-33565c2cc574" name="ValuationOutbuildingKey" column="ValuationOutbuildingKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationRoofType" schema="dbo" table="ValuationRoofType">
+      <properties>
+        <modelProperty Id="aada6c03-8184-4018-9cbf-6251397094e3" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="78bb477f-94a0-43d4-aa8b-957e65be11ef" name="ValuationRoofTypeKey" column="ValuationRoofTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Valuator" schema="dbo" table="Valuator">
+      <properties>
+        <modelProperty Id="e3daf723-8c62-4864-80f8-ea71b4f50c38" name="ValuatorContact" column="ValuatorContact" length="0" />
+        <modelProperty Id="47e10f3a-53d2-4afe-b379-25029b2666c8" name="ValuatorPassword" column="ValuatorPassword" length="0" />
+        <modelProperty Id="d9df3faf-1aca-4952-8f27-50608b465a9f" name="LimitedUserGroup" column="LimitedUserGroup" columnType="Byte" length="0" />
+        <modelProperty Id="7ffb31ac-93ad-45d9-9cf5-abff705f47dd" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" />
+        <modelProperty Id="76aa67e2-2707-48fe-bda1-7e34e350b399" name="LegalEntityKey" column="LegalEntityKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="34d44208-5569-4ae6-8d92-47f2085321a3" name="ValuatorKey" column="ValuatorKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationLightStone" schema="dbo" table="ValuationLightStone">
+      <properties>
+        <modelProperty Id="2fd7c42c-4031-4300-951a-078cd8f1312e" name="ValuationKey" column="ValuationKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="0638eb24-7ab6-4bcf-b712-5b426eaf9c0f" name="PropId" column="Prop_ID" columnType="Int32" length="0" />
+        <modelProperty Id="d7d90e70-2a41-4270-84d8-ea772f389437" name="Township" column="Township" length="0" />
+        <modelProperty Id="b3c3f268-bd1f-4124-ab5c-20f598c0a515" name="Erf" column="Erf" columnType="Int32" length="0" />
+        <modelProperty Id="6291c4cd-079d-4b6a-823f-1af898ab229e" name="Portion" column="Portion" columnType="Int32" length="0" />
+        <modelProperty Id="3f3f7b40-974f-4698-a219-ff63ea38ee44" name="SectionalTitle" column="Sectional_Title" length="0" />
+        <modelProperty Id="c1c32f5e-56c5-4558-9c1f-2d2bd0b6e33d" name="Unit" column="Unit" columnType="Int32" length="0" />
+        <modelProperty Id="c98d40f5-2f76-467e-a53b-067c579fe99a" name="Size" column="Size" columnType="Int32" length="0" />
+        <modelProperty Id="1422ac63-41e5-440c-b597-f69f7cef576d" name="Registrar" column="Registrar" length="0" />
+        <modelProperty Id="fbd0c587-c35f-4c69-891f-6915e94a028e" name="SgCode" column="SG_Code" length="0" />
+        <modelProperty Id="6ff93a5e-b1e4-4b6a-8e01-fe1955c3c1e2" name="Suburb" column="Suburb" length="0" />
+        <modelProperty Id="4a5f8852-82bc-44b6-8f4f-ebf91c39a150" name="X" column="X" columnType="Double" length="0" />
+        <modelProperty Id="131d28b9-f41a-4274-bd73-f19371d17993" name="Y" column="Y" columnType="Double" length="0" />
+        <modelProperty Id="e18c4f8b-1f8c-4072-b7ee-8d3bd263e41e" name="StreetName" column="StreetName" length="0" />
+        <modelProperty Id="c35f39bd-d616-4c31-834c-1b4ad303832f" name="StreetType" column="StreetType" length="0" />
+        <modelProperty Id="543c4c0c-4a3f-4795-998b-e13a4fcabd51" name="StreetNumber" column="StreetNumber" length="0" />
+        <modelProperty Id="5821cbb9-c070-4e11-8b5f-23ff8808592e" name="PredictedPrice" column="PredictedPrice" columnType="Int32" length="0" />
+        <modelProperty Id="de5925cf-c596-469e-943e-a795ec0eda22" name="SafetyScore" column="SafetyScore" columnType="Int32" length="0" />
+        <modelProperty Id="df30b8db-213e-4ad0-aa2b-1ba6318bb24c" name="TrackingNumber" column="TrackingNumber" length="0" />
+        <modelProperty Id="415d3307-1bc3-44f9-a496-5be443c4b7bf" name="PreviousSalesPrice" column="PreviousSalesPrice" columnType="Int32" length="0" />
+        <modelProperty Id="52cabd76-88fd-4e96-91b1-03a012c7623d" name="PreviousSalesDate" column="PreviousSalesDate" columnType="Int32" length="0" />
+        <modelProperty Id="7b632934-49fd-4d2d-bca7-e1e5e6fca09b" name="AQG" column="AQG" columnType="Int32" length="0" />
+        <modelProperty Id="af046ab2-a22f-4e6e-8380-169278555b29" name="AE" column="AE" columnType="Int32" length="0" />
+        <modelProperty Id="66db782d-1f7c-4081-bc8a-e04db30fefe8" name="PredictedHigh" column="PredictedHigh" columnType="Int32" length="0" />
+        <modelProperty Id="a04b39b4-5557-4d7b-b963-56990c56df29" name="PredictedLow" column="PredictedLow" columnType="Int32" length="0" />
+        <modelProperty Id="26c821eb-fe41-49e8-84b7-c56db392f200" name="GMapX" column="GMapX" length="0" />
+        <modelProperty Id="d2424e78-3def-4a7f-a7b6-65d98c16c62e" name="MapX" column="MapX" length="0" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationLightStoneComparativeSale" schema="dbo" table="ValuationLightStoneComparativeSale">
+      <targets>
+        <manyToOneRelation Id="42fb2b6f-1294-4c7b-9df8-c798b2b5bff9" targetColumnKey="ValuationKey" targetTable="ValuationLightStoneComparativeSale" targetPropertyName="ValuationLightStoneComparativeSales" sourceColumn="ValuationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationLightStone" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="e10601f8-bd2e-411b-aa04-dc7e158a6111" name="PropId" column="Prop_ID" columnType="Int32" length="0" />
+        <modelProperty Id="f71bf59d-596f-40cf-98f5-e779a73710ec" name="Distance" column="Distance" columnType="Double" length="0" />
+        <modelProperty Id="33e24f29-1295-4517-8c6b-124355c164b7" name="PrevDate" column="Prev_Date" columnType="Int32" length="0" />
+        <modelProperty Id="b0ee7cdc-a0a8-4aa0-bd45-f92e6d653c81" name="LastPrice" column="LastPrice" columnType="Int32" length="0" />
+        <modelProperty Id="c6dd7396-75a9-44ab-a8cf-20f94aebe37b" name="ErfSize" column="Erf_Size" columnType="Int32" length="0" />
+        <modelProperty Id="0a4751ea-a0ca-4548-88f9-e4594cfa6afb" name="Suburb" column="Suburb" length="0" />
+        <modelProperty Id="ea5c00e0-0893-4a0a-b745-adbe8d384a38" name="SectionalTitle" column="Sectional_Title" length="0" />
+        <modelProperty Id="00a69797-05b1-4181-acd9-97c8cb740b4c" name="Unit" column="Unit" columnType="Int32" length="0" />
+        <modelProperty Id="eae62b06-738d-4c70-89a9-4d0745c504a6" name="X" column="X" columnType="Double" length="0" />
+        <modelProperty Id="3ef1f375-1308-4edc-a7ce-3a275775c3a2" name="Y" column="Y" columnType="Double" length="0" />
+        <modelProperty Id="235cf07a-af32-4234-8c6d-96012c54ad15" name="RegDate" column="Reg_Date" columnType="Int32" length="0" />
+        <modelProperty Id="749a9ac8-031e-4b04-a376-43802b4a987c" name="Township" column="Township" length="0" />
+        <modelProperty Id="9be50146-17d2-4cb9-b526-e49127985a11" name="Efr" column="Efr" columnType="Int32" length="0" />
+        <modelProperty Id="9e42f5e9-c6c5-47e4-96b6-9c69929a57a0" name="Portion" column="Portion" columnType="Int32" length="0" />
+        <modelProperty Id="7ac2e827-ed73-44c0-9145-9f39e5ec5d72" name="StreetNumber" column="Street_Number" length="0" />
+        <modelProperty Id="203e86c1-8109-4064-aa14-b34385f42cde" name="StreetName" column="Street_Name" length="0" />
+        <modelProperty Id="885d0602-22ee-42fb-afb8-c068e95d586d" name="StreetType" column="Street_Type" length="0" />
+        <modelProperty Id="8086232e-e85b-4b72-af23-1d21c1e5371f" name="ValuationLightStoneComparativeSaleKey" column="ValuationLightStoneComparativeSaleKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="ValuationLightStoneOwner" schema="dbo" table="ValuationLightStoneOwner">
+      <targets>
+        <manyToOneRelation Id="45ec6347-fe1b-4576-b9f6-b6b16be1b338" targetColumnKey="ValuationKey" targetTable="ValuationLightStoneOwner" targetPropertyName="ValuationLightStoneOwners" sourceColumn="ValuationKey">
+          <modelClassMoniker name="/3246adc4-2072-45d6-90cb-000c3dc820c9/ValuationLightStone" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="4db634df-7b20-49e9-a248-3febd0f6eb23" name="BuyerIdck" column="Buyer_IDCK" length="0" />
+        <modelProperty Id="fc315ecc-ccbb-4e26-a478-08e3e5347763" name="BuyerName" column="Buyer_Name" length="0" />
+        <modelProperty Id="afe1344a-8aa5-4009-a4ff-6edce0104932" name="PersonTypeId" column="Person_Type_ID" length="0" />
+        <modelProperty Id="2114d771-7877-4ec7-abbc-bf12354bf22b" name="ValuationLightStoneOwnerKey" column="ValuationLightStoneOwnerKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

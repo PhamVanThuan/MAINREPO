@@ -1,0 +1,1095 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProcessName Name="CAP2 Offers" ProductVersion="0.3" MapVersion="0.0.0.0" Retrieved="false" Legacy="true">
+  <WorkFlows>
+    <WorkFlow WorkFlowName="CAP2 Offers" LocationX="20" LocationY="70" GenericKeyTypeKey="17">
+      <CustomVariables>
+        <CustomVariable Name="CapBroker" Length="255" Type="string" />
+        <CustomVariable Name="CapOfferKey" Length="0" Type="integer" />
+        <CustomVariable Name="CapOfferDetailKey" Length="0" Type="integer" />
+        <CustomVariable Name="LegalEntityName" Length="255" Type="string" />
+        <CustomVariable Name="AccountKey" Length="0" Type="integer" />
+        <CustomVariable Name="CapNTUReasonKey" Length="0" Type="integer" />
+        <CustomVariable Name="Promotion" Length="0" Type="integer" />
+        <CustomVariable Name="CapExpireDate" Length="0" Type="date" />
+        <CustomVariable Name="CapCreditBroker" Length="255" Type="string" />
+        <CustomVariable Name="CapPaymentOptionKey" Length="0" Type="integer" />
+        <CustomVariable Name="CapStatusKey" Length="0" Type="integer" />
+        <CustomVariable Name="Last_State" Length="255" Type="string" />
+        <CustomVariable Name="GenericKey" Length="0" Type="integer" />
+      </CustomVariables>
+      <ExternalActivities />
+      <CustomForms>
+        <CustomForm Name="CAP2_Correspondence_PrintCapLetter" Description="Print CAP2 Letter" />
+        <CustomForm Name="CAP2AcceptOffer" Description="Accept CAP2 Offer" />
+        <CustomForm Name="CAP2AccountMemoAdd" Description="Account Memo - Add" />
+        <CustomForm Name="CAP2AccountMemoUpdate" Description="Account Memo - Update" />
+        <CustomForm Name="CAP2AccountMemoView" Description="Account Memo - View" />
+        <CustomForm Name="CAP2CashPaymentCheck" Description="Check Cash Payment" />
+        <CustomForm Name="CAP2CashPaymentMake" Description="Cash Payment" />
+        <CustomForm Name="CAP2CashPaymentVerified" Description="Cash Payment Verified" />
+        <CustomForm Name="CAP2ChangePaymentOption" Description="Change Payment Option" />
+        <CustomForm Name="CAP2CollateDocuments" Description="Collate CAP2 Documents" />
+        <CustomForm Name="CAP2ConfirmCancel" Description="Confirm Cancellation" />
+        <CustomForm Name="CAP2ContactClient" Description="Contact Client" />
+        <CustomForm Name="CAP2CreditApproval" Description="Credit Approval" />
+        <CustomForm Name="CAP2DeclineCapOffer" Description="Decline CAP2 Offer" />
+        <CustomForm Name="CAP2DeclinedOffer" Description="Declined CAP 2 Offer" />
+        <CustomForm Name="CAP2FormsSent" Description="Send CAP2 Forms" />
+        <CustomForm Name="CAP2GrantOffer" Description="Grant CAP2 Offer" />
+        <CustomForm Name="CAP2LASent" Description="LA Sent" />
+        <CustomForm Name="CAP2LoanSummary" Description="View Loan Summary" />
+        <CustomForm Name="CAP2NTUOffer" Description="NTU CAP2 Offer" />
+        <CustomForm Name="CAP2PrepForCredit" Description="Prep For Credit" />
+        <CustomForm Name="CAP2PromotionClient" Description="Promotion Client" />
+        <CustomForm Name="CAP2ReadvanceDone" Description="Readvance Done" />
+        <CustomForm Name="CAP2ReadvanceRequired" Description="CAP2ReadvanceRequired" />
+        <CustomForm Name="CAP2ReadyForReadvance" Description="Ready For Readvance" />
+        <CustomForm Name="CAP2RecalculateOffer" Description="Recalculate CAP2 Offer" />
+        <CustomForm Name="CAP2ReopenOffer" Description="Reopen CAP2 Offer" />
+        <CustomForm Name="CAP2ReverseOffer" Description="Reverse CAP2 Offer" />
+        <CustomForm Name="CAP2ReworkOffer" Description="Rework CAP2 Offer" />
+        <CustomForm Name="CAP2ViewOffer" Description="View CAP2 Offer" />
+        <CustomForm Name="CorrespondenceHistory" Description="Correspondence History" />
+        <CustomForm Name="WF_CreateFollowUp" Description="Create Callback" />
+        <CustomForm Name="WF_ReadytoFollowup" Description="Memo Summary" />
+        <CustomForm Name="WorkflowYesNo" Description="Continue" />
+      </CustomForms>
+      <InvisibleAnchorNode LocationX="108.263" LocationY="166.1822" />
+      <Clapperboard LocationX="35.26303" LocationY="162.1822" LimitAccessTo="" Subject="" KeyVariable="CapOfferKey" />
+      <States>
+        <State LocationX="393.0963" LocationY="155.0912" X2ID="6a90c73e-adac-4541-b27b-cad0bfd49129" Type="SAHL.X2Designer.Items.UserState" StateName="Open CAP2 Offer">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Open_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA;&#x9;cap2Client.UpdateCapOfferStatus((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey, (int)SAHL.Common.Globals.CapStatuses.Open);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Open_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;CAP2_Offers_Data.Last_State = &quot;Open CAP2 Offer&quot;;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="388.6901" LocationY="596.0912" X2ID="8106fd67-57d4-4f59-b9a5-73b379f801e4" Type="SAHL.X2Designer.Items.UserState" StateName="Readvance Required">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Readvance_Required(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Readvance_Required(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapManager" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="682.2629" LocationY="701.0909" X2ID="050c1942-f9f0-4ad8-99bc-3690504605b8" Type="SAHL.X2Designer.Items.UserState" StateName="NTU Offer">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_NTU_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_NTU_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="395.7343" LocationY="776.5089" X2ID="cb8b1814-5d56-482f-9ce1-dd46e22ee66a" Type="SAHL.X2Designer.Items.ArchiveState" StateName="CAP2 Expired" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_CAP2_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_CAP2_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_CAP2_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA; &#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+        <State LocationX="654.8281" LocationY="776.1642" X2ID="009664ae-50fa-4c45-a84e-c722ded57be0" Type="SAHL.X2Designer.Items.UserState" StateName="CAP2 Offer Declined">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_CAP2_Offer_Declined(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_CAP2_Offer_Declined(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2DeclinedOffer" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="884.3619" LocationY="776.0001" X2ID="d8ea9737-0e5b-4b09-bc41-87d3da6cb159" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Decline">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Decline(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Decline(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Open CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Readvance Required" />
+            <AppliesToCollection AppliesToCollectionItem="Check Cash Payment" />
+            <AppliesToCollection AppliesToCollectionItem="Prepare For Credit" />
+            <AppliesToCollection AppliesToCollectionItem="Credit Approval" />
+            <AppliesToCollection AppliesToCollectionItem="Granted CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Forms" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting LA" />
+          </AppliesTo>
+        </State>
+        <State LocationX="892.25" LocationY="699.0002" X2ID="7fa953a4-4acf-4b59-9a4a-2b42e182d2c6" Type="SAHL.X2Designer.Items.CommonState" StateName="Common NTU">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_NTU(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_NTU(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Open CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Readvance Required" />
+            <AppliesToCollection AppliesToCollectionItem="Check Cash Payment" />
+            <AppliesToCollection AppliesToCollectionItem="Prepare For Credit" />
+            <AppliesToCollection AppliesToCollectionItem="Credit Approval" />
+            <AppliesToCollection AppliesToCollectionItem="Granted CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Forms" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting LA" />
+          </AppliesTo>
+        </State>
+        <State LocationX="650.9506" LocationY="832.9999" X2ID="da5f3dab-5370-472b-a6f5-8db22d158072" Type="SAHL.X2Designer.Items.CommonState" StateName="Period Expired">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Period_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Period_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Open CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Readvance Required" />
+            <AppliesToCollection AppliesToCollectionItem="Check Cash Payment" />
+            <AppliesToCollection AppliesToCollectionItem="Prepare For Credit" />
+            <AppliesToCollection AppliesToCollectionItem="Credit Approval" />
+            <AppliesToCollection AppliesToCollectionItem="Granted CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Forms" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting LA" />
+          </AppliesTo>
+        </State>
+        <State LocationX="92.76033" LocationY="595.909" X2ID="1b8bc010-b38e-4fff-bc4e-a361a022a2dd" Type="SAHL.X2Designer.Items.UserState" StateName="Completed CAP2 Offer">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Completed_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Completed_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="740.0182" LocationY="154.9088" X2ID="d8ddab46-da33-4b7f-bca3-9c6e164ebb95" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Rework">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Rework(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Rework(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Readvance Required" />
+            <AppliesToCollection AppliesToCollectionItem="NTU Offer" />
+            <AppliesToCollection AppliesToCollectionItem="CAP2 Offer Declined" />
+            <AppliesToCollection AppliesToCollectionItem="Check Cash Payment" />
+            <AppliesToCollection AppliesToCollectionItem="Prepare For Credit" />
+            <AppliesToCollection AppliesToCollectionItem="Credit Approval" />
+            <AppliesToCollection AppliesToCollectionItem="Granted CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Forms" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting LA" />
+          </AppliesTo>
+        </State>
+        <State LocationX="95.70053" LocationY="302.9089" X2ID="7dc1f529-07bd-4d1b-8e8a-9bd715fc33bc" Type="SAHL.X2Designer.Items.UserState" StateName="Check Cash Payment">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Check_Cash_Payment(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Check_Cash_Payment(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="670.0834" LocationY="421.0001" X2ID="a951babe-7351-4733-b9ed-f6b3fc4cd1bb" Type="SAHL.X2Designer.Items.UserState" StateName="Prepare For Credit">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Prepare_For_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Prepare_For_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+            <WorkListCollection WorkListCollectionItem="CapAdmin" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="918.3932" LocationY="422.0001" X2ID="0061bd20-b041-46de-947e-a808f0bf1856" Type="SAHL.X2Designer.Items.UserState" StateName="Credit Approval">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Credit_Approval(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Credit_Approval(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapCreditBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="906.2578" LocationY="596.0001" X2ID="f54d37c7-15f8-4b54-b497-42a0b5969c7b" Type="SAHL.X2Designer.Items.UserState" StateName="Granted CAP2 Offer">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Granted_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Granted_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="403.401" LocationY="303.0001" X2ID="a4f70f1d-2360-401a-bdd0-85cee06a2735" Type="SAHL.X2Designer.Items.UserState" StateName="Awaiting Forms">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Awaiting_Forms(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA;&#x9;cap2Client.UpdateCapOfferStatus((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey, (int)SAHL.Common.Globals.CapStatuses.AwaitingDocuments);&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Awaiting_Forms(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;CAP2_Offers_Data.Last_State = &quot;Awaiting Forms&quot;;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="696.9869" LocationY="596.0002" X2ID="5aa69c35-6419-4673-99e5-378c69882d38" Type="SAHL.X2Designer.Items.UserState" StateName="Awaiting LA">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Awaiting_LA(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA; // bool Result = false;&#xD;&#xA; // This method is not achieving the correct result - the presenter is doing the work correctly in any case&#xD;&#xA; // Cap2.UpdateCapOfferStatus(paramsTran, CAP2_Offers_Data.CapOfferKey, (int)SAHL.Common.Globals.CapStatuses.AwaitingLA, out Result);&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Awaiting_LA(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;CAP2_Offers_Data.Last_State = &quot;Awaiting LA&quot;;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="95.74733" LocationY="777.0001" X2ID="58afaf6e-1766-4414-b46b-94691972d153" Type="SAHL.X2Designer.Items.UserState" StateName="Cancelled CAP2 Offer">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Cancelled_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Cancelled_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2ContactClient" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="CAP2AccountMemoView" />
+            <CustomFormCollection FormName="CAP2AccountMemoAdd" />
+            <CustomFormCollection FormName="CAP2AccountMemoUpdate" />
+            <CustomFormCollection FormName="CorrespondenceHistory" />
+          </CustomForms>
+        </State>
+        <State LocationX="114.789" LocationY="908.4999" X2ID="a0b1eb9b-0e89-44a7-ace3-e267bab5bdec" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Change Payment Option">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Change_Payment_Option(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Change_Payment_Option(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Readvance Required" />
+            <AppliesToCollection AppliesToCollectionItem="Prepare For Credit" />
+            <AppliesToCollection AppliesToCollectionItem="Granted CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting LA" />
+          </AppliesTo>
+        </State>
+        <State LocationX="381.9583" LocationY="458.4089" X2ID="4becc92a-942d-4d3c-985c-f5850d7f51ed" Type="SAHL.X2Designer.Items.SystemState" StateName="Readvance Credit Check" UseAutoForward="False">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Readvance_Credit_Check(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Readvance_Credit_Check(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+        </State>
+        <State LocationX="124.5807" LocationY="1020.409" X2ID="159219dc-e45a-4b4c-b7ca-402029df7126" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Callback">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Open CAP2 Offer" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Forms" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting LA" />
+          </AppliesTo>
+        </State>
+        <State LocationX="347.2161" LocationY="1020.409" X2ID="52fc3f8a-15ab-4a0b-ab85-a39a20314003" Type="SAHL.X2Designer.Items.UserState" StateName="Callback Hold">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Callback_Hold(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;cap2Client.UpdateCapOfferStatus((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey, (int)SAHL.Common.Globals.CapStatuses.CallbackHold);&#xD;&#xA;&#xD;&#xA; &#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Callback_Hold(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+            <WorkListCollection WorkListCollectionItem="CapManager" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="WF_ReadytoFollowup" />
+          </CustomForms>
+        </State>
+        <State LocationX="336.9349" LocationY="1217.409" X2ID="cc331ea4-ae85-42d5-bf61-150a2e332b7a" Type="SAHL.X2Designer.Items.UserState" StateName="Ready to Callback">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Ready_to_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;cap2Client.UpdateCapOfferStatus((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey, (int)SAHL.Common.Globals.CapStatuses.ReadytoCallback);&#xD;&#xA;&#xD;&#xA; &#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Ready_to_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CapBroker" />
+            <WorkListCollection WorkListCollectionItem="CapCreditBroker" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="CAP2ViewOffer" />
+            <CustomFormCollection FormName="CAP2LoanSummary" />
+            <CustomFormCollection FormName="WF_ReadytoFollowup" />
+          </CustomForms>
+        </State>
+        <State LocationX="476.1068" LocationY="1122.409" X2ID="f9a880b8-75fa-49f4-8afc-33f94e7019f6" Type="SAHL.X2Designer.Items.SystemState" StateName="Forward to last State" UseAutoForward="True">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Forward_to_last_State(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Forward_to_last_State(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="AutoForwardTo" Code="public string GetForwardStateName_Forward_to_last_State(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return CAP2_Offers_Data.Last_State;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+        </State>
+        <State LocationX="20" LocationY="436.5" X2ID="49a6c917-5553-434e-b70f-6a52bd172852" Type="SAHL.X2Designer.Items.ArchiveState" StateName="Cache Archive" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Cache_Archive(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Cache_Archive(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_Cache_Archive(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+      </States>
+      <Activities>
+        <Activity LocationX="184.7943" LocationY="160.0909" Type="SAHL.X2Designer.Items.UserActivity" Id="1" Name="Create CAP2 lead" X2ID="ce1f4e7e-dedc-4578-8f15-ad6ead45895b" Message="" StageTransitionMessage=" [CodeChanged]" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="" LinkedActivity="" UseLinkedActivity="False" FromNode="ClapperBoard" ToNode="Open CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="Everyone" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_CAP2_lead(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_CAP2_lead(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;if (CAP2_Offers_Data.LegalEntityName.Length &gt;= 128)&#xD;&#xA;&#x9;{&#xD;&#xA;  &#x9;&#x9;instance.Subject = CAP2_Offers_Data.LegalEntityName.Substring(0, 125) + &quot;...&quot;;&#xD;&#xA;&#x9;}&#xD;&#xA; &#x9;else&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;instance.Subject = CAP2_Offers_Data.LegalEntityName;&#xD;&#xA;&#x9;}&#xD;&#xA; &#x9;instance.Name = CAP2_Offers_Data.AccountKey.ToString();&#xD;&#xA;  &#xD;&#xA; &#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Create_CAP2_lead(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Create_CAP2_lead(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4160" DefinitionGroupDescription="CAP 2" DefinitionDescription="Create Case" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="486.9296" LocationY="85.09114" Type="SAHL.X2Designer.Items.UserActivity" Id="2" Name="Print Cap Letter" X2ID="6fe3cfa1-1424-4bd6-99ff-1f9812a3fe00" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2_Correspondence_PrintCapLetter" LinkedActivity="" UseLinkedActivity="False" FromNode="Open CAP2 Offer" ToNode="Open CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Print_Cap_Letter(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Print_Cap_Letter(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Print_Cap_Letter(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Print_Cap_Letter(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4161" DefinitionGroupDescription="CAP 2" DefinitionDescription="Print CAP Letter" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="314.4037" LocationY="86.09106" Type="SAHL.X2Designer.Items.UserActivity" Id="3" Name="Recalculate CAP2" X2ID="27ce1b71-f388-43aa-a23d-7e5b265133a3" Message="" StageTransitionMessage=" [CodeChanged]" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2RecalculateOffer" LinkedActivity="" UseLinkedActivity="False" FromNode="Open CAP2 Offer" ToNode="Open CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Recalculate_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Recalculate_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Recalculate_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Recalculate_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4162" DefinitionGroupDescription="CAP 2" DefinitionDescription="Recalculate Offer" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="780.4844" LocationY="781.0912" Type="SAHL.X2Designer.Items.UserActivity" Id="7" Name="Decline CAP2" X2ID="513a72db-01ea-45a8-a6ef-cdc27f4f8d31" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2DeclineCapOffer" LinkedActivity="" UseLinkedActivity="False" FromNode="Common Decline" ToNode="CAP2 Offer Declined">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+            <AccessCollection AccessCollectionItem="CapCreditBroker" />
+            <AccessCollection AccessCollectionItem="CapManager" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Decline_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Decline_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Decline_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Decline_CAP2(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4179" DefinitionGroupDescription="CAP 2" DefinitionDescription="Declined" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="564.4166" LocationY="705.9996" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="NTU Offer" X2ID="f876b149-087b-4ed4-ba82-cff3a6f9e519" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="NTU Offer" ToNode="CAP2 Expired">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_NTU_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_NTU_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;cap2Client.UpdateCapOfferStatus((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey,(int)SAHL.Common.Globals.CapStatuses.NotTakenUp);&#xD;&#xA; &#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_NTU_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime GetActivityTime_NTU_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA; &#x9;return CAP2_Offers_Data.CapExpireDate;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4182" DefinitionGroupDescription="CAP 2" DefinitionDescription="NTU Timeout" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="553.7629" LocationY="837.9999" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Offer Expired" X2ID="d63523b2-c5ef-4169-b815-738bafa63f70" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Period Expired" ToNode="CAP2 Expired">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Offer_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Offer_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;cap2Client.UpdateCapOfferStatus((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey, (int)SAHL.Common.Globals.CapStatuses.Expired);&#xD;&#xA; &#xD;&#xA; &#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Offer_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;  return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime GetActivityTime_Offer_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return CAP2_Offers_Data.CapExpireDate;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4180" DefinitionGroupDescription="CAP 2" DefinitionDescription="Offer Expired" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="788.8878" LocationY="704.1808" Type="SAHL.X2Designer.Items.UserActivity" Id="13" Name="NTU CAP2 Offer" X2ID="e6423439-7ebd-4c69-89c5-550dcfb13922" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2NTUOffer" LinkedActivity="" UseLinkedActivity="False" FromNode="Common NTU" ToNode="NTU Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+            <AccessCollection AccessCollectionItem="CapCreditBroker" />
+            <AccessCollection AccessCollectionItem="CapManager" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_NTU_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_NTU_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_NTU_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_NTU_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4178" DefinitionGroupDescription="CAP 2" DefinitionDescription="NTU" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="558.8334" LocationY="780.9088" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Declined" X2ID="4f0bd896-7169-43c7-bb49-bd4ed16b58d2" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="CAP2 Offer Declined" ToNode="CAP2 Expired">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Declined(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Declined(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;cap2Client.UpdateCapOfferStatus((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey,(int)SAHL.Common.Globals.CapStatuses.OfferDeclined);&#xD;&#xA; &#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Declined(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime GetActivityTime_Declined(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return CAP2_Offers_Data.CapExpireDate;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4181" DefinitionGroupDescription="CAP 2" DefinitionDescription="Decline Timeout" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="258.1015" LocationY="600.909" Type="SAHL.X2Designer.Items.UserActivity" Id="14" Name="Readvance Done" X2ID="1ca7348f-778b-4e3e-a3a1-8c642c9e95a5" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2ReadvanceDone" LinkedActivity="" UseLinkedActivity="False" FromNode="Readvance Required" ToNode="Completed CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapManager" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Readvance_Done(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Readvance_Done(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA;&#x9;bool ignoreWarnings = false;&#xD;&#xA; &#x9;bool result = cap2Client.CheckReadvanceDoneRules((IDomainMessageCollection)messages, ignoreWarnings, CAP2_Offers_Data.CapOfferKey);&#xD;&#xA;&#x9; &#xD;&#xA;&#x9;return result;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Readvance_Done(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Readvance_Done(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4174" DefinitionGroupDescription="CAP 2" DefinitionDescription="CAP Advance Completed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="240.2942" LocationY="696.9089" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Completed Expired" X2ID="3e4fc955-c19c-4c52-937f-b78d69a1c41c" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Completed CAP2 Offer" ToNode="CAP2 Expired">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Completed_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Completed_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Completed_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime GetActivityTime_Completed_Expired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return CAP2_Offers_Data.CapExpireDate;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4183" DefinitionGroupDescription="CAP 2" DefinitionDescription="Completed Expired" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="631.2993" LocationY="159.9088" Type="SAHL.X2Designer.Items.UserActivity" Id="12" Name="Rework Offer" X2ID="24b6ef89-5185-4025-8aed-9052c831a159" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2ReworkOffer" LinkedActivity="" UseLinkedActivity="False" FromNode="Common Rework" ToNode="Open CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Rework_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Rework_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Rework_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Rework_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4163" DefinitionGroupDescription="CAP 2" DefinitionDescription="Rework Offer" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="92.17183" LocationY="379.9089" Type="SAHL.X2Designer.Items.UserActivity" Id="14" Name="Cash Payment Verified" X2ID="bdf77816-fc04-44d8-ad05-556d0e02ab73" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2CashPaymentVerified" LinkedActivity="" UseLinkedActivity="False" FromNode="Check Cash Payment" ToNode="Completed CAP2 Offer">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Cash_Payment_Verified(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Cash_Payment_Verified(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Cash_Payment_Verified(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Cash_Payment_Verified(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4166" DefinitionGroupDescription="CAP 2" DefinitionDescription="Cash Payment Verified" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="794.8932" LocationY="427.0001" Type="SAHL.X2Designer.Items.UserActivity" Id="16" Name="Credit Approval" X2ID="2ba64258-a9a1-4545-9175-890177fef6d0" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2CreditApproval" LinkedActivity="" UseLinkedActivity="False" FromNode="Prepare For Credit" ToNode="Credit Approval">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+            <AccessCollection AccessCollectionItem="CapAdmin" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Credit_Approval(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Credit_Approval(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Credit_Approval(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Credit_Approval(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4169" DefinitionGroupDescription="CAP 2" DefinitionDescription="Refer to Credit" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="913.6902" LocationY="514.0001" Type="SAHL.X2Designer.Items.UserActivity" Id="17" Name="Grant CAP2 Offer" X2ID="34dfdea4-f63d-49de-91d8-9835126afbee" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2GrantOffer" LinkedActivity="" UseLinkedActivity="False" FromNode="Credit Approval" ToNode="Granted CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapCreditBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Grant_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Grant_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Grant_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Grant_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4170" DefinitionGroupDescription="CAP 2" DefinitionDescription="Approved" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="415.151" LocationY="230.9999" Type="SAHL.X2Designer.Items.UserActivity" Id="19" Name="Forms Sent" X2ID="390b7297-6105-4cc2-b735-abaadc2ebcdf" Message="" StageTransitionMessage="" Description="" Priority="3" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2FormsSent" LinkedActivity="" UseLinkedActivity="False" FromNode="Open CAP2 Offer" ToNode="Awaiting Forms">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Forms_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Forms_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Forms_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Forms_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4164" DefinitionGroupDescription="CAP 2" DefinitionDescription="Forms Sent" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="252.7343" LocationY="308.0001" Type="SAHL.X2Designer.Items.UserActivity" Id="19" Name="Cash Payment" X2ID="1a5caa91-4a16-4482-b393-159c8fba100e" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2CashPaymentMake" LinkedActivity="" UseLinkedActivity="False" FromNode="Awaiting Forms" ToNode="Check Cash Payment">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Cash_Payment(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Cash_Payment(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA; //int capStatusKey = Convert.ToInt32(SAHL.Common.Globals.CapStatuses.CheckCashPayment); // 10&#xD;&#xA;    //string Name = string.Empty;&#xD;&#xA; //Cap2.OnCompleteActivity_Promotion_Client(paramsTran, CAP2_Offers_Data.CapOfferKey, CAP2_Offers_Data.CapOfferDetailKey, CAP2_Offers_Data.Promotion, CAP2_Offers_Data.CapStatusKey, CAP2_Offers_Data.CapPaymentOptionKey, out Name);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Cash_Payment(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Cash_Payment(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4165" DefinitionGroupDescription="CAP 2" DefinitionDescription="Cash Payment Made" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="391.5755" LocationY="383.0001" Type="SAHL.X2Designer.Items.UserActivity" Id="19" Name="Readvance Required" X2ID="8beeafee-9802-4b16-a950-d567060a2117" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2AcceptOffer" LinkedActivity="" UseLinkedActivity="False" FromNode="Awaiting Forms" ToNode="Readvance Credit Check">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Readvance_Required(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Readvance_Required(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA; //int capStatusKey = Convert.ToInt32(SAHL.Common.Globals.CapStatuses.ReadvanceRequired); // 6&#xD;&#xA;    //string Name = string.Empty;&#xD;&#xA; //Cap2.OnCompleteActivity_Promotion_Client(paramsTran, CAP2_Offers_Data.CapOfferKey, CAP2_Offers_Data.CapOfferDetailKey, CAP2_Offers_Data.Promotion, CAP2_Offers_Data.CapStatusKey, CAP2_Offers_Data.CapPaymentOptionKey, out Name);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Readvance_Required(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Readvance_Required(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4185" DefinitionGroupDescription="CAP 2" DefinitionDescription="CAP Readvance Required" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="652.3541" LocationY="308.9999" Type="SAHL.X2Designer.Items.UserActivity" Id="19" Name="Further Advance Decision" X2ID="8811d8e9-7d3c-4077-8ec1-63b9ef501306" Message="" StageTransitionMessage="" Description="" Priority="4" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2PrepForCredit" LinkedActivity="" UseLinkedActivity="False" FromNode="Awaiting Forms" ToNode="Prepare For Credit">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Further_Advance_Decision(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Further_Advance_Decision(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Further_Advance_Decision(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Further_Advance_Decision(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4184" DefinitionGroupDescription="CAP 2" DefinitionDescription="CAP Further Advance Decision" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="829.6483" LocationY="601.0002" Type="SAHL.X2Designer.Items.UserActivity" Id="21" Name="LA Sent" X2ID="1ec26d9d-382d-4ccb-9905-9a7e238598f3" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2LASent" LinkedActivity="" UseLinkedActivity="False" FromNode="Granted CAP2 Offer" ToNode="Awaiting LA">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_LA_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_LA_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_LA_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_LA_Sent(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4172" DefinitionGroupDescription="CAP 2" DefinitionDescription="Loan Agreement Sent" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="536.4167" LocationY="601.0001" Type="SAHL.X2Designer.Items.UserActivity" Id="21" Name="Ready For Readvance" X2ID="ba8c0a15-2dc3-444b-865b-3545f437cc47" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2ReadyForReadvance" LinkedActivity="" UseLinkedActivity="False" FromNode="Awaiting LA" ToNode="Readvance Required">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Ready_For_Readvance(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Ready_For_Readvance(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Ready_For_Readvance(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Ready_For_Readvance(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4173" DefinitionGroupDescription="CAP 2" DefinitionDescription="Ready for CAP Advance" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="241.8936" LocationY="782.0001" Type="SAHL.X2Designer.Items.UserActivity" Id="22" Name="Confirm Cancellation" X2ID="ffce8228-1e56-4f17-89ea-b3455caab177" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2ConfirmCancel" LinkedActivity="" UseLinkedActivity="False" FromNode="Cancelled CAP2 Offer" ToNode="CAP2 Expired">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirm_Cancellation(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirm_Cancellation(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirm_Cancellation(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirm_Cancellation(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4177" DefinitionGroupDescription="CAP 2" DefinitionDescription="Cancellation Confirmed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="102.3958" LocationY="686.0002" Type="SAHL.X2Designer.Items.UserActivity" Id="22" Name="Cancel CAP2 Offer" X2ID="2187bed8-ccfd-4e7a-8b5b-174ddda9859f" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2ReverseOffer" LinkedActivity="" UseLinkedActivity="False" FromNode="Completed CAP2 Offer" ToNode="Cancelled CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Cancel_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Cancel_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Cancel_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Cancel_CAP2_Offer(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4176" DefinitionGroupDescription="CAP 2" DefinitionDescription="Offer Cancelled" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="253.1953" LocationY="524.0001" Type="SAHL.X2Designer.Items.UserActivity" Id="23" Name="Promotion Client" X2ID="157efd5b-304c-45d4-a74d-5c28adc9f853" Message="" StageTransitionMessage="" Description="" Priority="3" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2PromotionClient" LinkedActivity="" UseLinkedActivity="False" FromNode="Awaiting Forms" ToNode="Completed CAP2 Offer">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Promotion_Client(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Promotion_Client(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA; //int capStatusKey = Convert.ToInt32(SAHL.Common.Globals.CapStatuses.TakenUp); // 2&#xD;&#xA;    //string Name = string.Empty;&#xD;&#xA; //Cap2.OnCompleteActivity_Promotion_Client(paramsTran, CAP2_Offers_Data.CapOfferKey, CAP2_Offers_Data.CapOfferDetailKey, CAP2_Offers_Data.Promotion, CAP2_Offers_Data.CapStatusKey, CAP2_Offers_Data.CapPaymentOptionKey, out Name);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Promotion_Client(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Promotion_Client(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4171" DefinitionGroupDescription="CAP 2" DefinitionDescription="Promotion Client" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="289.3411" LocationY="897.5" Type="SAHL.X2Designer.Items.UserActivity" Id="24" Name="Change Payment Option" X2ID="3cc81c3d-2912-4483-aa69-4054eb507529" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="CAP2ChangePaymentOption" LinkedActivity="" UseLinkedActivity="False" FromNode="Common Change Payment Option" ToNode="Common Change Payment Option">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+            <AccessCollection AccessCollectionItem="CapAdmin" />
+            <AccessCollection AccessCollectionItem="CapManager" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Change_Payment_Option(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Change_Payment_Option(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Change_Payment_Option(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Change_Payment_Option(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4186" DefinitionGroupDescription="CAP 2" DefinitionDescription="Payment Option Changed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="394.9713" LocationY="527.5001" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="25" Name="Dont Send to Credit" X2ID="7d5938d7-bddd-44f2-ab14-ec4102a08eaa" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Readvance Credit Check" ToNode="Readvance Required">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Dont_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;bool isCreditCheckRequired = cap2Client.IsCreditCheckRequired((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey);&#xD;&#xA;&#x9;return isCreditCheckRequired;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Dont_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Dont_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Dont_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4168" DefinitionGroupDescription="CAP 2" DefinitionDescription="Readvance LTV below 80%" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="545.6537" LocationY="426.5001" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="26" Name="Send to Credit" X2ID="32b47ff2-3330-47a8-84d4-86defeb37a8e" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Readvance Credit Check" ToNode="Prepare For Credit">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;bool isCheckRequired = cap2Client.IsCreditCheckRequired((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey);&#xD;&#xA; &#x9;return !isCheckRequired;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Send_to_Credit(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4167" DefinitionGroupDescription="CAP 2" DefinitionDescription="Readvance LTV above 80%" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="669.0364" LocationY="521.5001" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="27" Name="LAnotRequired" X2ID="acc6db5c-b518-49fe-8820-a5c00d05efe8" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Granted CAP2 Offer" ToNode="Readvance Required">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_LAnotRequired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICap2 cap2Client = DomainServiceLoader.Instance.Get&lt;ICap2&gt;();&#xD;&#xA; &#x9;bool isLANotRequired = cap2Client.IsLANotRequired((IDomainMessageCollection)messages, CAP2_Offers_Data.CapOfferKey);&#xD;&#xA; &#x9;return isLANotRequired;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_LAnotRequired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_LAnotRequired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_LAnotRequired(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4175" DefinitionGroupDescription="CAP 2" DefinitionDescription="Loan Agreement Not Required" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="236.7083" LocationY="1025.409" Type="SAHL.X2Designer.Items.UserActivity" Id="28" Name="Create Callback" X2ID="97f599fc-9e0a-4ad7-ad25-47823488feb8" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="WF_CreateFollowUp" LinkedActivity="" UseLinkedActivity="False" FromNode="Common Callback" ToNode="Callback Hold">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+            <AccessCollection AccessCollectionItem="CapManager" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Create_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Create_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4356" DefinitionGroupDescription="CAP 2" DefinitionDescription="Create Callback" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="339.3776" LocationY="1111.409" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Wait for Callback" X2ID="52daea31-2d29-45b9-a324-55fead0c8742" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Callback Hold" ToNode="Ready to Callback">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Wait_for_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Wait_for_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Wait_for_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime GetActivityTime_Wait_for_Callback(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ICommon commonClient = DomainServiceLoader.Instance.Get&lt;ICommon&gt;();&#xD;&#xA; &#x9;DateTime followUpTime = commonClient.GetFollowupTime((IDomainMessageCollection)messages, CAP2_Offers_Data.GenericKey);&#xD;&#xA; &#x9;return followUpTime;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4355" DefinitionGroupDescription="CAP 2" DefinitionDescription="Callback Expired" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="491.1458" LocationY="1024.409" Type="SAHL.X2Designer.Items.UserActivity" Id="30" Name="Continue Sale" X2ID="39ffcc23-c0ed-47f1-9e83-36106091ecd5" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="WorkflowYesNo" LinkedActivity="" UseLinkedActivity="False" FromNode="Callback Hold" ToNode="Forward to last State">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+            <AccessCollection AccessCollectionItem="CapManager" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Continue_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Continue_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Continue_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Continue_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4357" DefinitionGroupDescription="CAP 2" DefinitionDescription="Continue Sale" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="480.2136" LocationY="1223.409" Type="SAHL.X2Designer.Items.UserActivity" Id="31" Name="Continue with Sale" X2ID="ad36042f-0bcf-40ac-affc-b83a6b468c2d" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="WorkflowYesNo" LinkedActivity="" UseLinkedActivity="False" FromNode="Ready to Callback" ToNode="Forward to last State">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CapBroker" />
+            <AccessCollection AccessCollectionItem="CapManager" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Continue_with_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Continue_with_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Continue_with_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Continue_with_Sale(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4358" DefinitionGroupDescription="CAP 2" DefinitionDescription="Continue with Sale" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="24.53906" LocationY="256.5" Type="SAHL.X2Designer.Items.UserActivity" Id="32" Name="Clear Cache" X2ID="c31cac1f-1d6b-4db8-ae54-9c77e71010ce" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="" LinkedActivity="" UseLinkedActivity="False" FromNode="ClapperBoard" ToNode="Cache Archive">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Clear_Cache(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Clear_Cache(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;ICommon client = DomainServiceLoader.Instance.Get&lt;ICommon&gt;();&#xD;&#xA; &#x9;client.ClearCache((IDomainMessageCollection)messages, param.Data);&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Clear_Cache(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="82.69271" LocationY="230.5" Type="SAHL.X2Designer.Items.UserActivity" Id="33" Name="ClearRuleCache" X2ID="e7f020de-21da-46db-beec-54250c432652" Message="" StageTransitionMessage="" Description="" Priority="3" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="" LinkedActivity="" UseLinkedActivity="False" FromNode="ClapperBoard" ToNode="Cache Archive">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_ClearRuleCache(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_ClearRuleCache(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;&#x9;&#x9;ICommon client = DomainServiceLoader.Instance.Get&lt;ICommon&gt;();&#xD;&#xA; &#x9;client.ClearRuleCache((IDomainMessageCollection)messages);&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_ClearRuleCache(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+      </Activities>
+      <Comments />
+    </WorkFlow>
+  </WorkFlows>
+  <Roles>
+    <Role Role="CapBroker" Description="CapBroker assigned to the case" IsDynamic="True" RoleType="WorkFlow" WorkFlow="CAP2 Offers">
+      <CodeSections>
+        <CodeSection Name="OnGetRole" Code="public string OnGetRole_CAP2_Offers_CapBroker(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , string RoleName, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;if (string.IsNullOrEmpty( CAP2_Offers_Data.CapBroker))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;return string.Empty;&#xD;&#xA;&#x9;}&#xD;&#xA;  &#xD;&#xA;&#x9;return CAP2_Offers_Data.CapBroker;&#xD;&#xA;}&#xD;&#xA;" />
+      </CodeSections>
+    </Role>
+    <Role Role="CapAdmin" Description="Cap Administrators" IsDynamic="False" RoleType="Global" />
+    <Role Role="CapCreditBroker" Description="Credit Broker responsible for the case" IsDynamic="True" RoleType="WorkFlow" WorkFlow="CAP2 Offers">
+      <CodeSections>
+        <CodeSection Name="OnGetRole" Code="public string OnGetRole_CAP2_Offers_CapCreditBroker(InstanceDataModel instance, IX2CAP2_Offers_Data CAP2_Offers_Data , string RoleName, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;if (string.IsNullOrEmpty( CAP2_Offers_Data.CapCreditBroker))&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;return string.Empty;&#xD;&#xA;&#x9;}&#xD;&#xA;&#xD;&#xA;&#x9;return CAP2_Offers_Data.CapCreditBroker;&#xD;&#xA;}&#xD;&#xA;" />
+      </CodeSections>
+    </Role>
+    <Role Role="CapManager" Description="Cap Managers" IsDynamic="False" RoleType="Global" />
+  </Roles>
+  <UsingStatements>
+    <UsingStatement Statement="System" />
+    <UsingStatement Statement="System.Data" />
+    <UsingStatement Statement="System.Xml" />
+    <UsingStatement Statement="System.Linq" />
+    <UsingStatement Statement="SAHL.Core" />
+    <UsingStatement Statement="SAHL.Core.Data" />
+    <UsingStatement Statement="SAHL.Core.Data.Context.Configuration" />
+    <UsingStatement Statement="SAHL.Core.Data.Models.X2" />
+    <UsingStatement Statement="SAHL.Core.Logging" />
+    <UsingStatement Statement="SAHL.Core.SystemMessages" />
+    <UsingStatement Statement="SAHL.Core.X2" />
+    <UsingStatement Statement="SAHL.Core.X2.Providers" />
+    <UsingStatement Statement="SAHL.Core.Attributes" />
+    <UsingStatement Statement="Newtonsoft.Json" />
+    <UsingStatement Statement="DomainService2.IOC" />
+    <UsingStatement Statement="X2DomainService.Interface.Common" />
+    <UsingStatement Statement="X2DomainService.Interface.Cap2" />
+    <UsingStatement Statement="X2DomainService.Interface.WorkflowAssignment" />
+    <UsingStatement Statement="SAHL.Common.Collections.Interfaces" />
+    <UsingStatement Statement="SAHL.Common.Exceptions" />
+    <UsingStatement Statement="SAHL.X2.Framework" />
+  </UsingStatements>
+  <NugetPackages>
+    <NugetPackage PackageName="SAHL.Config.Legacy.X2.Maps" Version="0.0.0.0" />
+    <NugetPackage PackageName="SAHL.DomainService.Binaries" Version="0.0.0.0" />
+  </NugetPackages>
+  <References>
+    <Reference FullName="ActiproSoftware.Shared.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.Shared.Net20.dll" Name="ActiproSoftware.Shared.Net20.dll" Version="1.0.104.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Addons.Web.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.WinUICore.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.WinUICore.Net20.dll" Name="ActiproSoftware.WinUICore.Net20.dll" Version="1.0.104.0" />
+    <Reference FullName="AdcheckObjectLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\AdcheckObjectLibrary.dll" Name="AdcheckObjectLibrary.dll" Version="1.0.0.0" />
+    <Reference FullName="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" Path="SAHL.External.Binaries.0.0.0.0\lib\AjaxControlToolkit.dll" Name="AjaxControlToolkit.dll" Version="3.5.40412.0" />
+    <Reference FullName="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7" Path="SAHL.External.Binaries.0.0.0.0\lib\Antlr3.Runtime.dll" Name="Antlr3.Runtime.dll" Version="3.1.3.42154" />
+    <Reference FullName="BdsSoft.DirectoryServices.Linq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c382851731f5762e" Path="SAHL.External.Binaries.0.0.0.0\lib\BdsSoft.DirectoryServices.Linq.dll" Name="BdsSoft.DirectoryServices.Linq.dll" Version="1.0.0.0" />
+    <Reference FullName="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.dll" Name="Castle.ActiveRecord.dll" Version="3.0.0.0" />
+    <Reference FullName="Castle.ActiveRecord.Linq, Version=1.9.101.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.Linq.dll" Name="Castle.ActiveRecord.Linq.dll" Version="1.9.101.0" />
+    <Reference FullName="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.Web.dll" Name="Castle.ActiveRecord.Web.dll" Version="0.0.0.0" />
+    <Reference FullName="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.Components.Validator.dll" Name="Castle.Components.Validator.dll" Version="2.5.0.0" />
+    <Reference FullName="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.Core.dll" Name="Castle.Core.dll" Version="2.5.1.0" />
+    <Reference FullName="CommandLine, Version=1.8.0.7, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\CommandLine.dll" Name="CommandLine.dll" Version="1.8.0.7" />
+    <Reference FullName="Dapper, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Dapper.dll" Name="Dapper.dll" Version="1.12.0.0" />
+    <Reference FullName="DevExpress.Charts.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Charts.v10.2.Core.dll" Name="DevExpress.Charts.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Data.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Data.v10.2.dll" Name="DevExpress.Data.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.PivotGrid.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.PivotGrid.v10.2.Core.dll" Name="DevExpress.PivotGrid.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.SpellChecker.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.SpellChecker.v10.2.Core.dll" Name="DevExpress.SpellChecker.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Utils.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Utils.v10.2.dll" Name="DevExpress.Utils.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxEditors.v10.2.dll" Name="DevExpress.Web.ASPxEditors.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxGridView.v10.2.dll" Name="DevExpress.Web.ASPxGridView.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxHtmlEditor.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxHtmlEditor.v10.2.dll" Name="DevExpress.Web.ASPxHtmlEditor.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxPivotGrid.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxPivotGrid.v10.2.dll" Name="DevExpress.Web.ASPxPivotGrid.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxSpellChecker.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxSpellChecker.v10.2.dll" Name="DevExpress.Web.ASPxSpellChecker.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxThemes.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxThemes.v10.2.dll" Name="DevExpress.Web.ASPxThemes.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxTreeList.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxTreeList.v10.2.dll" Name="DevExpress.Web.ASPxTreeList.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.Mvc.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.Mvc.v10.2.dll" Name="DevExpress.Web.Mvc.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.v10.2.dll" Name="DevExpress.Web.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.dll" Name="DevExpress.XtraCharts.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2.UI, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.UI.dll" Name="DevExpress.XtraCharts.v10.2.UI.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2.Web, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.Web.dll" Name="DevExpress.XtraCharts.v10.2.Web.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraEditors.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraEditors.v10.2.dll" Name="DevExpress.XtraEditors.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DomainService2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.dll" Name="DomainService2.dll" Version="0.0.0.0" />
+    <Reference FullName="DomainService2.IOC, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.IOC.dll" Name="DomainService2.IOC.dll" Version="0.0.0.0" />
+    <Reference FullName="DomainService2.V3.Client, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.V3.Client.dll" Name="DomainService2.V3.Client.dll" Version="0.0.0.0" />
+    <Reference FullName="EasyNetQ, Version=0.50.1.392, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\EasyNetQ.dll" Name="EasyNetQ.dll" Version="0.50.1.392" />
+    <Reference FullName="EWorkConnector, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\EWorkConnector.dll" Name="EWorkConnector.dll" Version="0.0.0.0" />
+    <Reference FullName="ICSharpCode.SharpZipLib, Version=0.85.2.329, Culture=neutral, PublicKeyToken=1b03e6acf1164f73" Path="SAHL.External.Binaries.0.0.0.0\lib\ICSharpCode.SharpZipLib.dll" Name="ICSharpCode.SharpZipLib.dll" Version="0.85.2.329" />
+    <Reference FullName="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\Iesi.Collections.dll" Name="Iesi.Collections.dll" Version="1.0.1.0" />
+    <Reference FullName="Interop.ActiveDs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Interop.ActiveDs.dll" Name="Interop.ActiveDs.dll" Version="1.0.0.0" />
+    <Reference FullName="itextsharp, Version=5.3.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Path="SAHL.External.Binaries.0.0.0.0\lib\itextsharp.dll" Name="itextsharp.dll" Version="5.3.3.0" />
+    <Reference FullName="Lucene.Net, Version=2.9.2.2, Culture=neutral, PublicKeyToken=f5940d1699e37ff1" Path="SAHL.External.Binaries.0.0.0.0\lib\Lucene.Net.dll" Name="Lucene.Net.dll" Version="2.9.2.2" />
+    <Reference FullName="Machine.Fakes, Version=0.3.5.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Fakes.dll" Name="Machine.Fakes.dll" Version="0.3.5.0" />
+    <Reference FullName="Machine.Fakes.Adapters.Rhinomocks, Version=0.3.5.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Fakes.Adapters.RhinoMocks.dll" Name="Machine.Fakes.Adapters.Rhinomocks.dll" Version="0.3.5.0" />
+    <Reference FullName="Machine.Specifications, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.dll" Name="Machine.Specifications.dll" Version="0.5.6.0" />
+    <Reference FullName="Machine.Specifications.Clr4, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.Clr4.dll" Name="Machine.Specifications.Clr4.dll" Version="0.5.6.0" />
+    <Reference FullName="Machine.Specifications.TDNetRunner, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.TDNetRunner.dll" Name="Machine.Specifications.TDNetRunner.dll" Version="0.5.6.0" />
+    <Reference FullName="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ApplicationBlocks.Data.dll" Name="Microsoft.ApplicationBlocks.Data.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.ApplicationBlocks.UIProcess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ApplicationBlocks.UIProcess.dll" Name="Microsoft.ApplicationBlocks.UIProcess.dll" Version="1.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" Name="Microsoft.Practices.EnterpriseLibrary.Common.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" Name="Microsoft.Practices.EnterpriseLibrary.Data.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Name="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" Name="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll" Name="Microsoft.Practices.EnterpriseLibrary.Logging.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.ObjectBuilder.dll" Name="Microsoft.Practices.ObjectBuilder.dll" Version="1.0.51205.0" />
+    <Reference FullName="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.Common.dll" Name="Microsoft.ReportViewer.Common.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.DataVisualization.DLL" Name="Microsoft.ReportViewer.DataVisualization.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.Design.DLL" Name="Microsoft.ReportViewer.Design.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll" Name="Microsoft.ReportViewer.ProcessingObjectModel.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WebDesign.DLL" Name="Microsoft.ReportViewer.WebDesign.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WebForms.dll" Name="Microsoft.ReportViewer.WebForms.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WinForms.dll" Name="Microsoft.ReportViewer.WinForms.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.ConnectionInfo.dll" Name="Microsoft.SqlServer.ConnectionInfo.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.DtsMsg, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.DtsMsg.dll" Name="Microsoft.SqlServer.DtsMsg.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.DTSPipelineWrap, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.DTSPipelineWrap.dll" Name="Microsoft.SqlServer.DTSPipelineWrap.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.DTSRuntimeWrap, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.DTSRuntimeWrap.dll" Name="Microsoft.SqlServer.DTSRuntimeWrap.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.ManagedDTS, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.ManagedDTS.dll" Name="Microsoft.SqlServer.ManagedDTS.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll" Name="Microsoft.SqlServer.Management.Sdk.Sfc.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.msxml6_interop, Version=6.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.msxml6_interop.dll" Name="Microsoft.SqlServer.msxml6_interop.dll" Version="6.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.PipelineHost, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.PipelineHost.dll" Name="Microsoft.SqlServer.PipelineHost.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.Smo.dll" Name="Microsoft.SqlServer.Smo.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.SqlClrProvider, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.SqlClrProvider.dll" Name="Microsoft.SqlServer.SqlClrProvider.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.SqlEnum, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.SqlEnum.dll" Name="Microsoft.SqlServer.SqlEnum.dll" Version="11.0.0.0" />
+    <Reference FullName="NCover.Framework, Version=1.5.8.0, Culture=neutral, PublicKeyToken=f4018786f4b01bc6" Path="SAHL.External.Binaries.0.0.0.0\lib\NCover.Framework.dll" Name="NCover.Framework.dll" Version="1.5.8.0" />
+    <Reference FullName="NDbUnit.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\NDbUnit.Core.dll" Name="NDbUnit.Core.dll" Version="1.1.0.0" />
+    <Reference FullName="NDbUnit.Test, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\NDbUnit.Test.dll" Name="NDbUnit.Test.dll" Version="1.1.0.0" />
+    <Reference FullName="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Version="6.0.0.0" />
+    <Reference FullName="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.dll" Name="NHibernate.dll" Version="3.1.0.4000" />
+    <Reference FullName="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.ByteCode.Castle.dll" Name="NHibernate.ByteCode.Castle.dll" Version="3.1.0.4000" />
+    <Reference FullName="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.Search.dll" Name="NHibernate.Search.dll" Version="0.0.0.0" />
+    <Reference FullName="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7" Path="SAHL.External.Binaries.0.0.0.0\lib\Ninject.dll" Name="Ninject.dll" Version="3.0.0.0" />
+    <Reference FullName="Northwoods.Go, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.dll" Name="Northwoods.Go.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Draw, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Draw.dll" Name="Northwoods.Go.Draw.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Instruments, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Instruments.dll" Name="Northwoods.Go.Instruments.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Layout, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Layout.dll" Name="Northwoods.Go.Layout.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Svg, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Svg.dll" Name="Northwoods.Go.Svg.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Xml, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Xml.dll" Name="Northwoods.Go.Xml.dll" Version="4.1.0.4" />
+    <Reference FullName="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" Path="SAHL.External.Binaries.0.0.0.0\lib\nunit.framework.dll" Name="nunit.framework.dll" Version="2.6.0.12051" />
+    <Reference FullName="Omu.ValueInjecter, Version=2.3.3.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Omu.ValueInjecter.dll" Name="Omu.ValueInjecter.dll" Version="2.3.3.0" />
+    <Reference FullName="PDFDocumentWriter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\PDFDocumentWriter.dll" Name="PDFDocumentWriter.dll" Version="0.0.0.0" />
+    <Reference FullName="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7" Path="SAHL.External.Binaries.0.0.0.0\lib\PostSharp.dll" Name="PostSharp.dll" Version="2.1.0.0" />
+    <Reference FullName="RabbitMQ.Client, Version=3.5.3.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\RabbitMQ.Client.dll" Name="RabbitMQ.Client.dll" Version="3.5.3.0" />
+    <Reference FullName="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea" Path="SAHL.External.Binaries.0.0.0.0\lib\Remotion.Data.Linq.dll" Name="Remotion.Data.Linq.dll" Version="1.13.41.2" />
+    <Reference FullName="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f" Path="SAHL.External.Binaries.0.0.0.0\lib\Rhino.Mocks.dll" Name="Rhino.Mocks.dll" Version="3.6.0.0" />
+    <Reference FullName="SAHL.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.dll" Name="SAHL.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.dll" Name="SAHL.Common.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel.DAO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.DAO.dll" Name="SAHL.Common.BusinessModel.DAO.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.Interfaces.dll" Name="SAHL.Common.BusinessModel.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Logging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Logging.dll" Name="SAHL.Common.Logging.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Service, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Service.dll" Name="SAHL.Common.Service.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Service.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Service.Interfaces.dll" Name="SAHL.Common.Service.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.UI.dll" Name="SAHL.Common.UI.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Web.dll" Name="SAHL.Common.Web.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Web.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Web.UI.dll" Name="SAHL.Common.Web.UI.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.WebServices, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.WebServices.dll" Name="SAHL.Common.WebServices.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.dll" Name="SAHL.Common.X2.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel.DAO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.DAO.dll" Name="SAHL.Common.X2.BusinessModel.DAO.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.Interfaces.dll" Name="SAHL.Common.X2.BusinessModel.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Communication, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Communication.dll" Name="SAHL.Communication.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Config.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Config.Core.dll" Name="SAHL.Config.Core.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Config.Legacy, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Config.Legacy.dll" Name="SAHL.Config.Legacy.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.dll" Name="SAHL.Core.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.BusinessModel.dll" Name="SAHL.Core.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.dll" Name="SAHL.Core.Data.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Dapper, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Dapper.dll" Name="SAHL.Core.Data.Dapper.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.2AM.dll" Name="SAHL.Core.Data.Models.2AM.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.Capitec, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.Capitec.dll" Name="SAHL.Core.Data.Models.Capitec.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.Cuttlefish.dll" Name="SAHL.Core.Data.Models.Cuttlefish.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.DecisionTree, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.DecisionTree.dll" Name="SAHL.Core.Data.Models.DecisionTree.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.X2.dll" Name="SAHL.Core.Data.Models.X2.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Events, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Events.dll" Name="SAHL.Core.Events.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Logging.Loggers.Database, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Logging.Loggers.Database.dll" Name="SAHL.Core.Logging.Loggers.Database.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.dll" Name="SAHL.Core.Messaging.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging.EasyNetQ, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.EasyNetQ.dll" Name="SAHL.Core.Messaging.EasyNetQ.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.Shared.dll" Name="SAHL.Core.Messaging.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Metrics.dll" Name="SAHL.Core.Metrics.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.X2.dll" Name="SAHL.Core.X2.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.X2.Shared.dll" Name="SAHL.Core.X2.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Services.Capitec.Models.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Services.Capitec.Models.Shared.dll" Name="SAHL.Services.Capitec.Models.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Shared.dll" Name="SAHL.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Test, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Test.dll" Name="SAHL.Test.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.X2.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.X2.Common.dll" Name="SAHL.X2.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.X2.Framework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.X2.Framework.dll" Name="SAHL.X2.Framework.dll" Version="0.0.0.0" />
+    <Reference FullName="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\StructureMap.dll" Name="StructureMap.dll" Version="2.6.4.0" />
+    <Reference FullName="System.Threading.Tasks.Dataflow, Version=4.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\System.Threading.Tasks.Dataflow.dll" Name="System.Threading.Tasks.Dataflow.dll" Version="4.5.11.0" />
+    <Reference FullName="X2DomainService.Interface.Cap2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Cap2.dll" Name="X2DomainService.Interface.Cap2.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Common.dll" Name="X2DomainService.Interface.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.DebtCounselling, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.DebtCounselling.dll" Name="X2DomainService.Interface.DebtCounselling.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.HelpDesk, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.HelpDesk.dll" Name="X2DomainService.Interface.HelpDesk.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Life, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Life.dll" Name="X2DomainService.Interface.Life.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.LoanAdjustments, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.LoanAdjustments.dll" Name="X2DomainService.Interface.LoanAdjustments.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Origination, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Origination.dll" Name="X2DomainService.Interface.Origination.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.PersonalLoan, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.PersonalLoan.dll" Name="X2DomainService.Interface.PersonalLoan.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.ScenarioMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.ScenarioMaps.dll" Name="X2DomainService.Interface.ScenarioMaps.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.WorkflowAssignment, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.WorkflowAssignment.dll" Name="X2DomainService.Interface.WorkflowAssignment.dll" Version="0.0.0.0" />
+  </References>
+</ProcessName>

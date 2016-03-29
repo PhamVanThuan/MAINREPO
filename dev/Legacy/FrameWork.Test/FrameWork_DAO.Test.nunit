@@ -1,0 +1,11 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="SAHL.Common.BusinessModel.DAO.Test\bin\Debug\SAHL.Common.BusinessModel.DAO.Test.dll" />
+    <assembly path="SAHL.Common.X2.BusinessModel.DAO.Test\bin\Debug\SAHL.Common.BusinessModel.X2.Test.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="SAHL.Common.BusinessModel.DAO.Test\bin\Release\SAHL.Common.BusinessModel.DAO.Test.dll" />
+    <assembly path="SAHL.Common.X2.BusinessModel.DAO.Test\bin\Release\SAHL.Common.BusinessModel.X2.Test.dll" />
+  </Config>  
+</NUnitProject>

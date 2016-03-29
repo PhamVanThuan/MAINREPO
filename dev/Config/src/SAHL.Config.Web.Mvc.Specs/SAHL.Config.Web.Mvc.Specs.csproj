@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8701F12-71A6-4A7E-B6F4-A9F1949D488F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Config.Web.Mvc.Specs</RootNamespace>
+    <AssemblyName>SAHL.Config.Web.Mvc.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Client\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebApi.Core\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.Mvc\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Microsoft.AspNet.WebPages\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MediaTypeFormatting\CustomMediaTypeFormatterSpecs\when_adding_null_custom_media_type_formatters_for_registration.cs" />
+    <Compile Include="MediaTypeFormatting\CustomMediaTypeFormatterSpecs\when_adding_empty_custom_media_type_formatters_for_registration.cs" />
+    <Compile Include="MediaTypeFormatting\CustomMediaTypeFormatterSpecs\when_adding_custom_media_type_formatters_for_registration.cs" />
+    <Compile Include="Routing\Fakes\CustomRouteForTesting.cs" />
+    <Compile Include="Routing\MvcRouteConfigSpecs\when_adding_custom_routes_to_mvc_route_config.cs" />
+    <Compile Include="Routing\MvcRouteConfigSpecs\when_adding_empty_routes_to_mvc_route_config.cs" />
+    <Compile Include="Routing\MvcRouteConfigSpecs\when_adding_null_routes_to_mvc_route_config.cs" />
+    <Compile Include="Routing\ApiRouteConfigSpecs\when_adding_custom_routes_to_api_route_config.cs" />
+    <Compile Include="Routing\ApiRouteConfigSpecs\when_adding_empty_routes_to_api_route_config.cs" />
+    <Compile Include="Routing\ApiRouteConfigSpecs\when_adding_null_routes_to_api_route_config.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Routing\RouteOrdererSpecs\when_retrieving_routes_with_root_and_first_children_filter.cs" />
+    <Compile Include="Routing\RouteOrdererSpecs\when_retrieving_routes_with_longest_non_parameterised_first_ordering.cs" />
+    <Compile Include="Routing\RouteRegistrationSpecs\when_adding_custom_routes_for_route_registration_with_null_routes.cs" />
+    <Compile Include="Routing\RouteRegistrationSpecs\when_adding_custom_routes_for_route_registration.cs" />
+    <Compile Include="Routing\RouteRetrieverSpecs\when_retrieving_an_instance_of_IRouteRetriever.cs" />
+    <Compile Include="Routing\when_inheriting_from_a_custom_route_with_partial_duplicate_id_values_in_url.cs" />
+    <Compile Include="Routing\when_inheriting_from_a_custom_route_with_duplicate_id_values_in_url.cs" />
+    <Compile Include="Routing\when_inheriting_from_a_custom_route.cs" />
+    <Compile Include="when_performing_registrations_on_a_custom_http_configuration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Config.Core\SAHL.Config.Core.csproj">
+      <Project>{f3f90a08-46c8-455f-aac0-bb88d59e0acb}</Project>
+      <Name>SAHL.Config.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Config.Services\SAHL.Config.Services.csproj">
+      <Project>{97495C46-E733-4AFC-B40F-4CF2C9505D81}</Project>
+      <Name>SAHL.Config.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Config.Web.Mvc\SAHL.Config.Web.Mvc.csproj">
+      <Project>{0F5A11B3-43FE-4F95-A848-E26225A7D190}</Project>
+      <Name>SAHL.Config.Web.Mvc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

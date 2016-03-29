@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45484F4F-984F-4A62-A0B4-7334BAFA20F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.DomainProcessManager.Models</RootNamespace>
+    <AssemblyName>SAHL.DomainProcessManager.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressModel.cs" />
+    <Compile Include="ApplicantAffordabilityModel.cs" />
+    <Compile Include="ApplicantAssetLiabilityModel.cs" />
+    <Compile Include="ApplicantDeclarationsModel.cs" />
+    <Compile Include="ApplicantFixedLongTermLiabilityModel.cs" />
+    <Compile Include="ApplicantFixedPropertyAssetModel.cs" />
+    <Compile Include="ApplicantLiabilityLoanModel.cs" />
+    <Compile Include="ApplicantLiabilitySuretyModel.cs" />
+    <Compile Include="ApplicantLifeAssuranceAssetModel.cs" />
+    <Compile Include="ApplicantListedInvestmentAssetModel.cs" />
+    <Compile Include="ApplicantMarketingOptionModel.cs" />
+    <Compile Include="ApplicantModel.cs" />
+    <Compile Include="ApplicantOtherAssetModel.cs" />
+    <Compile Include="ApplicantUnListedInvestmentAssetModel.cs" />
+    <Compile Include="ApplicationCreationModel.cs" />
+    <Compile Include="ApplicationCreationReturnDataModel.cs" />
+    <Compile Include="ApplicationDebitOrderModel.cs" />
+    <Compile Include="ApplicationMailingAddressModel.cs" />
+    <Compile Include="BankAccountModel.cs" />
+    <Compile Include="ComcorpApplicationPropertyDetailsModel.cs" />
+    <Compile Include="EmployeeDeductionModel.cs" />
+    <Compile Include="EmployerModel.cs" />
+    <Compile Include="EmploymentModel.cs" />
+    <Compile Include="FreeTextAddressModel.cs" />
+    <Compile Include="NewPurchaseApplicationCreationModel.cs" />
+    <Compile Include="PayAttorneyInvoiceProcessModel.cs" />
+    <Compile Include="PayThirdPartyInvoiceProcessModel.cs" />
+    <Compile Include="PostalAddressBoxModel.cs" />
+    <Compile Include="PostalAddressClusterBoxModel.cs" />
+    <Compile Include="PostalAddressModel.cs" />
+    <Compile Include="PostalAddressPostnetSuiteModel.cs" />
+    <Compile Include="PostalAddressPrivateBagModel.cs" />
+    <Compile Include="PostalAddressStreetModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyAddressModel.cs" />
+    <Compile Include="PropertyModel.cs" />
+    <Compile Include="RefinanceApplicationCreationModel.cs" />
+    <Compile Include="ResidentialAddressModel.cs" />
+    <Compile Include="SalariedEmploymentModel.cs" />
+    <Compile Include="ReceiveAttorneyInvoiceProcessModel.cs" />
+    <Compile Include="PayThirdPartyInvoiceModel.cs" />
+    <Compile Include="ReceiveThirdPartyInvoiceProcessModel.cs" />
+    <Compile Include="UnemployedEmploymentModel.cs" />
+    <Compile Include="SalaryDeductionEmploymentModel.cs" />
+    <Compile Include="SwitchApplicationCreationModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(ProjectDir)\..\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

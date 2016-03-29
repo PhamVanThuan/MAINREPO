@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6734FBCF-4157-4E0E-B723-85C9443E3B1D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Automation.DataModels</RootNamespace>
+    <AssemblyName>Automation.DataModels</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Services.Capitec.Models.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Capitec.Models.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountKeyWithIndicator.cs" />
+    <Compile Include="Address.cs" />
+    <Compile Include="ADUser.cs" />
+    <Compile Include="AffordabilityAssessment.cs" />
+    <Compile Include="DisabilityClaim.cs" />
+    <Compile Include="DisabilityPayment.cs" />
+    <Compile Include="DOTransaction.cs" />
+    <Compile Include="QualifyingAccount.cs" />
+    <Compile Include="ApplicationDeclaration.cs" />
+    <Compile Include="AssetLiabilityType.cs" />
+    <Compile Include="Attorney.cs" />
+    <Compile Include="AttorneyContact.cs" />
+    <Compile Include="AttorneyInvoice.cs" />
+    <Compile Include="AuditLegalEntity.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="BankAccount.cs" />
+    <Compile Include="Bond.cs" />
+    <Compile Include="Branch.cs" />
+    <Compile Include="CapitecApplicationAssertion.cs" />
+    <Compile Include="CapOffer.cs" />
+    <Compile Include="ContextMenu.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="GenericCuttlefishMessage.cs" />
+    <Compile Include="IDataModel.cs" />
+    <Compile Include="ExternalLife.cs" />
+    <Compile Include="LegalEntityContactDetails.cs" />
+    <Compile Include="LegalEntityReturningDiscountQualifyingData.cs" />
+    <Compile Include="LifeOfferAssignment.cs" />
+    <Compile Include="OfferAccountRelationship.cs" />
+    <Compile Include="OfferRoleAttribute.cs" />
+    <Compile Include="ReservedApplication.cs" />
+    <Compile Include="Record.cs" />
+    <Compile Include="X2Request.cs" />
+    <Compile Include="XmlHistory.cs" />
+    <Compile Include="Correspondence.cs" />
+    <Compile Include="CorrespondenceTemplate.cs" />
+    <Compile Include="CourtDetails.cs" />
+    <Compile Include="DebtCounselling.cs" />
+    <Compile Include="DeedsOffice.cs" />
+    <Compile Include="DetailClass.cs" />
+    <Compile Include="DetailType.cs" />
+    <Compile Include="Disbursement.cs" />
+    <Compile Include="DisbursementFinancialTransaction.cs" />
+    <Compile Include="DisbursementStatus.cs" />
+    <Compile Include="DisbursementTransactionType.cs" />
+    <Compile Include="Employer.cs" />
+    <Compile Include="Employment.cs" />
+    <Compile Include="EworkCase.cs" />
+    <Compile Include="ExternalRole.cs" />
+    <Compile Include="EzValTest.cs" />
+    <Compile Include="FinancialService.cs" />
+    <Compile Include="FinancialServiceBankAccount.cs" />
+    <Compile Include="FutureDatedChange.cs" />
+    <Compile Include="FutureDatedChangeDetail.cs" />
+    <Compile Include="HearingDetails.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="HOCAccount.cs" />
+    <Compile Include="ITC.cs" />
+    <Compile Include="LeadTestCase.cs" />
+    <Compile Include="LegalEntity.cs" />
+    <Compile Include="LegalEntityAddress.cs" />
+    <Compile Include="LegalEntityAssetLiabilities.cs" />
+    <Compile Include="LegalEntityBankAccount.cs" />
+    <Compile Include="LegalEntityDomicilium.cs" />
+    <Compile Include="LegalEntityEmployment.cs" />
+    <Compile Include="LegalEntityLogin.cs" />
+    <Compile Include="LegalEntityOrganisationStructure.cs" />
+    <Compile Include="LegalEntityRole.cs" />
+    <Compile Include="LifeAccount.cs" />
+    <Compile Include="LifeLead.cs" />
+    <Compile Include="LifePolicyClaim.cs" />
+    <Compile Include="LinkRates.cs" />
+    <Compile Include="LoanDetail.cs" />
+    <Compile Include="LoanTransaction.cs" />
+    <Compile Include="ManualDebitOrder.cs" />
+    <Compile Include="MarketingSource.cs" />
+    <Compile Include="Offer.cs" />
+    <Compile Include="OfferAttribute.cs" />
+    <Compile Include="OfferAttributeType.cs" />
+    <Compile Include="OfferDebitOrder.cs" />
+    <Compile Include="OfferExpense.cs" />
+    <Compile Include="OfferExpenseType.cs" />
+    <Compile Include="OfferMailingAddress.cs" />
+    <Compile Include="OfferRole.cs" />
+    <Compile Include="OrganisationStructure.cs" />
+    <Compile Include="OriginationTestCase.cs" />
+    <Compile Include="PersonalLoanApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs" />
+    <Compile Include="PropertyAccessDetail.cs" />
+    <Compile Include="Proposal.cs" />
+    <Compile Include="ProposalItem.cs" />
+    <Compile Include="ReasonDefinition.cs" />
+    <Compile Include="RecoveriesProposal.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="SnapShotAccount.cs" />
+    <Compile Include="SnapshotFinancialService.cs" />
+    <Compile Include="SnapshotRateOverride.cs" />
+    <Compile Include="SPV.cs" />
+    <Compile Include="StageTransition.cs" />
+    <Compile Include="SubsidyProvider.cs" />
+    <Compile Include="TestCase.cs" />
+    <Compile Include="TokenAssignment.cs" />
+    <Compile Include="TransactionType.cs" />
+    <Compile Include="Valuation.cs" />
+    <Compile Include="ValuationCombinedThatch.cs" />
+    <Compile Include="ValuationCottage.cs" />
+    <Compile Include="ValuationImprovement.cs" />
+    <Compile Include="ValuationMainBuilding.cs" />
+    <Compile Include="ValuationOutbuilding.cs" />
+    <Compile Include="Valuer.cs" />
+    <Compile Include="X2Activity.cs" />
+    <Compile Include="X2Instance.cs" />
+    <Compile Include="X2ScheduledActivity.cs" />
+    <Compile Include="X2State.cs" />
+    <Compile Include="X2Workflow.cs" />
+    <Compile Include="X2WorkflowHistory.cs" />
+    <Compile Include="X2WorkflowList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Automation.Common.csproj">
+      <Project>{e66ca3c2-3b4b-4630-b7c7-03cb7aa54a9b}</Project>
+      <Name>Automation.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

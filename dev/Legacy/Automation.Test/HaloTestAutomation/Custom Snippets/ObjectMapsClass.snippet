@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Create ObjectMaps Class</Title>
+			<Description>Code snippet for creating a ObjectMaps class</Description>
+			<Author>AndrewK</Author>
+			<Shortcut>objectmaps</Shortcut>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+				<SnippetType>SurroundsWith</SnippetType>
+			</SnippetTypes>
+        </Header>
+        <Snippet>
+			<Declarations>
+				<Literal>
+					<ID>classname</ID>
+					<Default>Controls</Default>
+				</Literal>
+			</Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+using WatiN.Core;
+
+namespace ObjectMaps
+{
+    public class $classname$
+    {
+		Browser _window;
+		Frame _frame;
+		
+		public $classname$(Browser window)
+        {
+            _window = window;
+            _frame = _window.Frame(Find.ByIndex(0));
+        }
+		
+		$selected$ $end$
+	}
+}
+			]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

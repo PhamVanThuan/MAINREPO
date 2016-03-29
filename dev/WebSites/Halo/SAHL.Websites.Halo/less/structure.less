@@ -1,0 +1,379 @@
+﻿@import url("sahl.ui.core/sahl.ui.core.less");
+@import url("assets.img.less");
+@import url("colors.less");
+@import url("sizing.less");
+@import url("structure/search.less");
+@import url("structure/settings.less");
+@import url("structure/myTasks.less");
+@import url("structure/tasks.less");
+@import url("structure/myTags.less");
+@import url("structure/pnotify.less");
+@import url("structure/entityPage.less");
+@import url("structure/tiles.less");
+@import url("structure/myHalo.less");
+
+@import url("structure/commonEntity.less");
+
+html, body {
+    .pageDefaults();
+    .resetBoxProperties();
+    background: @background;
+    height: 100%;
+    min-height: @minPageWidth;
+    min-width: @minPageHeight;
+    color: @grey-darkest;
+}
+/* portal nav */
+
+@portalNavContainerHeight: @menu-height;
+/* portal Page */
+
+.hide {
+    display: none;
+}
+
+.full-height {
+    height: @fullHeight;
+}
+
+.full-size {
+    height: 100%;
+    width: 100%;
+}
+
+.bodyContent, #application, #portalPage, #portalContent, #userContent {
+    height: @fullHeight;
+}
+
+#portalContent {
+    padding-top: @menu-height;
+}
+
+#portalPage {
+    padding-top: @portalNavContainerHeight;
+    height: @fullHeight;
+}
+
+#userContent {
+    margin-top: -@menu-height;
+    padding-top: @menu-height;
+}
+
+.close-button {
+    cursor: pointer;
+
+    &:hover {
+        color: @orange-light;
+    }
+}
+
+.gridMouseOverRow {
+     cursor: pointer;
+
+    &:hover {
+        color: @orange-light;
+    }
+}
+
+.ui-grid-row:nth-child(odd):hover .ui-grid-cell{background: @grey-light; cursor: pointer;}
+.ui-grid-row:nth-child(even):hover .ui-grid-cell{background: @grey-light;  cursor: pointer;}
+
+.right-align-text{
+    text-align: right;
+}
+
+@charmPadding: 12px;
+@charmIconWidth: 28px;
+@charmWidth: (@charmPadding*2)+@charmIconWidth;
+
+#splash-image {
+    background: url(../assets/img/halosplash.png) no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+
+    #splash-spinner {
+        margin-top: -40px;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: -300px;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+    }
+}
+
+#charm {
+    height: @fullHeight;
+    float: right;
+    width: @charmWidth;
+    z-index: 10;
+
+    .charm-container {
+        height: @fullHeight;
+        width: @charmWidth;
+        background: @grey-lightest;
+
+        .charmItem {
+            padding: @charmPadding;
+            position: relative;
+
+            img {
+                width: @charmIconWidth;
+            }
+
+            .charmContent {
+                position: absolute;
+                background: @orange-charm;
+                display: none;
+                padding: 5px;
+                right: @charmWidth;
+                top: -0px;
+                min-width: 500px;
+
+                .charmInclude {
+                    background: @background;
+                    padding: @charmPadding;
+                }
+            }
+
+            &:hover {
+                background: @orange-charm;
+
+                .charmContent {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    & + #grid {
+        margin-right: @charmWidth;
+    }
+}
+
+#appsContent {
+    height: 100%;
+    margin-top: -30px;
+    padding-top: 30px;
+}
+
+.zeroBarHeight {
+    height: 0;
+}
+
+#tabs {
+    overflow-y: hidden;
+    height: 30px !important; 
+
+    li:last-child {
+      margin-right: 0px;
+    }    
+}
+
+#dropdownTab {
+    position: relative;
+    z-index: 999;
+
+    > li.button-dropdown {
+        position: fixed;
+        top: 30px;
+        right: 10px;
+        
+        &:hover {
+            background: transparent;
+        }
+    }
+
+    ul#collapsed {
+        position: fixed;
+        margin-top: 6px;
+    }
+}
+
+.app-nav {
+    #apps {
+        .resetBoxProperties();
+        margin: 10px;
+
+        li {
+            display: inline-block;
+            vertical-align: top;
+            width: 295px;
+            padding: 5px 5px 5px 5px;
+            cursor: pointer;
+
+            &:hover {
+                background: @orange-charm;
+            }
+
+            div {
+                &.left {
+                    width: 95px;
+                    height: 95px;
+                    float: left;
+                }
+
+                &.right {
+                    width: 185px;
+                    height: 95px;
+                    float: right;
+                    padding-left: 5px;
+                }
+            }
+        }
+    }
+
+    .vertical-menu {
+        &.domain-menu {
+            width: 250px;
+
+            li {
+                a {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+.iframe-container {
+    padding-left: 250px;
+    width: 100%;
+    height: 99.5%;
+
+    iframe {
+        width: 100%;
+        height: 99.9%;
+        .resetBoxProperties();
+    }
+}
+
+.mydropdown:after {
+    bottom: 0;
+    font-family: metroSysIcons;
+    font-size: .7em;
+    content: '\e001';
+}
+
+.icon-logo {
+    background: @img-sahl-logo no-repeat left;
+    width: 18px;
+    height: 18px;
+}
+
+.full-height-view-with-menu {
+    height: 100%;
+    margin-top: -@menu-height;
+    padding-top: @menu-height;
+}
+
+.full-height-view {
+    height: 100%;
+}
+
+.scrollable {
+    overflow-y: auto;
+}
+
+::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
+.actionBar {
+    width: 100%;
+    height: 50px;
+    background-color: @orange-hilight;
+}
+
+.rootTiles {
+    width: 35%;
+    float: left;
+    overflow: hidden;
+}
+
+.childTiles {
+    overflow: hidden;
+}
+
+.tileWidget {
+    overflow: hidden;
+}
+
+.panel-w(@index) when (@index > 1) { 
+	&.panel-w@{index} {
+        width:(@ColumnSize * @index);
+	} .panel-w(@index - 1); 
+}
+.panel-w(1);
+
+.panel-h(@index) when (@index > 1) { 
+	&.panel-h@{index} {
+        height:(@RowSize * @index);
+	} .panel-h(@index - 1); 
+}
+.panel-h(1);
+
+.position-column(@index) when (@index >= 0) { 
+	&.position-column@{index} {
+        left:(@RowSize * @index);
+	} .position-column(@index - 1); 
+}
+.position-column(0);
+
+.position-row(@index) when (@index >= 0) { 
+	&.position-row@{index} {
+        top:(@RowSize * @index);
+	} .position-row(@index - 1); 
+}
+.position-row(0);
+
+@Columns: 12;
+@Rows: 12;
+@ColumnSize: 100% /@Columns;
+@RowSize: 100% / @Rows;
+.portalGrid{
+    .grid {
+        overflow:hidden;
+        height:100%;
+        width:100%;
+        display:table;
+        position:relative;
+        .panel {
+            position:absolute;
+            border-right:0px;
+            border-top:0px;
+            &.panel-w {
+                width: @RowSize;
+            }
+
+            &.panel-h {
+                height: @ColumnSize;
+            }
+        
+            .panel-w(@Columns);
+
+            .panel-h(@Rows);
+
+            .position-column(@Columns - 1);
+
+            .position-row(@Rows - 1);
+        }
+    }
+}
+
+.legend{
+    text-align:center;
+    .resetBoxProperties();
+    li{
+        .resetBoxProperties();
+        padding-right:10px;
+        list-style:none;
+        display:inline-block;
+
+    }
+}
+
+.full-width{}

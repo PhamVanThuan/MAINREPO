@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ControlConstants" targetNamespace="http://tempuri.org/ControlConstants.xsd" xmlns:mstns="http://tempuri.org/ControlConstants.xsd" xmlns="http://tempuri.org/ControlConstants.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+	</Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ControlConstants" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ControlConstants" msprop:Generator_DataSetName="ControlConstants">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Control" msprop:Generator_UserTableName="Control" msprop:Generator_RowDeletedName="ControlRowDeleted" msprop:Generator_RowChangedName="ControlRowChanged" msprop:Generator_RowClassName="ControlRow" msprop:Generator_RowChangingName="ControlRowChanging" msprop:Generator_RowEvArgName="ControlRowChangeEvent" msprop:Generator_RowEvHandlerName="ControlRowChangeEventHandler" msprop:Generator_TableClassName="ControlDataTable" msprop:Generator_TableVarName="tableControl" msprop:Generator_RowDeletingName="ControlRowDeleting" msprop:Generator_TablePropName="Control">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ControlKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ControlKey" msprop:Generator_ColumnVarNameInTable="columnControlKey" msprop:Generator_ColumnPropNameInRow="ControlKey" msprop:Generator_ColumnPropNameInTable="ControlKeyColumn" type="xs:int" />
+              <xs:element name="ControlDescription" msprop:Generator_UserColumnName="ControlDescription" msprop:Generator_ColumnVarNameInTable="columnControlDescription" msprop:Generator_ColumnPropNameInRow="ControlDescription" msprop:Generator_ColumnPropNameInTable="ControlDescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ControlNumeric" msprop:Generator_UserColumnName="ControlNumeric" msprop:Generator_ColumnVarNameInTable="columnControlNumeric" msprop:Generator_ColumnPropNameInRow="ControlNumeric" msprop:Generator_ColumnPropNameInTable="ControlNumericColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ControlText" msprop:Generator_UserColumnName="ControlText" msprop:Generator_ColumnVarNameInTable="columnControlText" msprop:Generator_ColumnPropNameInRow="ControlText" msprop:Generator_ColumnPropNameInTable="ControlTextColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Control" />
+      <xs:field xpath="mstns:ControlKey" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

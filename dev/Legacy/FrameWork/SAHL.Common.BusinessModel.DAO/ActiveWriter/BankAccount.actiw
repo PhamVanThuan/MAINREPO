@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="849634b4-307c-4efd-b45f-16aa81cc93c7" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="BankAccount" schema="dbo" table="BankAccount">
+      <properties>
+        <modelProperty Id="8ee8766c-e5be-4973-93f3-16c60ff61fa2" name="ACBBranchCode" column="ACBBranchCode" length="0" notNull="true" />
+        <modelProperty Id="f9b48395-0141-4453-9c3a-3fcb1e1fe406" name="AccountNumber" column="AccountNumber" length="0" notNull="true" />
+        <modelProperty Id="3d87476d-1cbd-4201-9870-3a9e2dde5842" name="ACBTypeNumber" column="ACBTypeNumber" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="36014c30-6bec-4e91-9b59-c796397b4968" name="AccountName" column="AccountName" length="0" />
+        <modelProperty Id="2f9bef2f-ab28-419b-a6ef-db96885f4a58" name="UserID" column="UserID" length="0" notNull="true" />
+        <modelProperty Id="988154e5-ac0c-4ff2-882b-a323c598affa" name="ChangeDate" column="ChangeDate" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="7fcdf1e3-d98c-46b6-bb00-c81eea0c05dc" name="BankAccountKey" column="BankAccountKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

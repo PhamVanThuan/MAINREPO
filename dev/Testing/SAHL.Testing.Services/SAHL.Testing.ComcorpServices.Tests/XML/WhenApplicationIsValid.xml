@@ -1,0 +1,234 @@
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+  <s:Header>
+    <To xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none" s:mustUnderstand="1">http://comcorp.sahomeloans.com:8800/ComcorpConnectorService/SAHLIntegrationService.svc/integration</To>
+    <Action xmlns="http://schemas.microsoft.com/ws/2005/05/addressing/none" s:mustUnderstand="1">http://tempuri.org/ISAHLIntegrationService/Submit</Action>
+  </s:Header>
+  <s:Body>
+    <SAHLRequest xmlns="http://tempuri.org/">
+      <Application xmlns:a="http://schemas.datacontract.org/2004/07/SAHL.WCFServices.ComcorpConnector.Objects" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <a:ApplicationCode>5001963258</a:ApplicationCode>
+        <a:CapitaliseFees>false</a:CapitaliseFees>
+        <a:CashOutAmt>0</a:CashOutAmt>
+        <a:CashOutReason />
+        <a:CoApplicants />
+        <a:ConsultantFirstName>Chandre</a:ConsultantFirstName>
+        <a:ConsultantSurname>Kuhn*</a:ConsultantSurname>
+        <a:DepositCash>0</a:DepositCash>
+        <a:DepositOther />
+        <a:DepositSource>false</a:DepositSource>
+        <a:DeveloperName />
+        <a:DevelopmentName />
+        <a:EstCostFees>0</a:EstCostFees>
+        <a:HigherBond>0</a:HigherBond>
+        <a:InstalmentMethod>Debit Order</a:InstalmentMethod>
+        <a:IsForADevelopment>true</a:IsForADevelopment>
+        <a:LoanAmountRequired>496623</a:LoanAmountRequired>
+        <a:MainApplicant>
+          <a:AddressCityWork>JOHANNESBURG</a:AddressCityWork>
+          <a:AddressLine1Work>KWENA MOLAPO SEC</a:AddressLine1Work>
+          <a:AddressSuburbWork>JOHANNESBURG</a:AddressSuburbWork>
+          <a:AdminRescinded>0001-01-01T00:00:00</a:AdminRescinded>
+          <a:AssetItems />
+          <a:BankAccounts>
+            <a:BankAccount>
+              <a:AccountBranch>CAPITEC BANK CPC</a:AccountBranch>
+              <a:AccountInstitution>CAPITEC BANK</a:AccountInstitution>
+              <a:AccountName>MAFEREKA ME</a:AccountName>
+              <a:AccountNumber>1145413259</a:AccountNumber>
+              <a:AccountType>Savings</a:AccountType>
+              <a:IsBusinessAccount>false</a:IsBusinessAccount>
+              <a:STDAccountBranchCode>470010</a:STDAccountBranchCode>
+              <a:isMainAccount>true</a:isMainAccount>
+            </a:BankAccount>
+          </a:BankAccounts>
+          <a:BusinessMember>false</a:BusinessMember>
+          <a:Cellphone>0720667584</a:Cellphone>
+          <a:CorrespondenceLanguage>ENGLISH</a:CorrespondenceLanguage>
+          <a:CurrentEmploymentType>SALARIED</a:CurrentEmploymentType>
+          <a:DateJoinedEmployer>2014-05-05T00:00:00</a:DateJoinedEmployer>
+          <a:DateOfBirth>1984-01-01T00:00:00</a:DateOfBirth>
+          <a:DateRehabilitated>0001-01-01T00:00:00</a:DateRehabilitated>
+          <a:DateSalaryPaid>1</a:DateSalaryPaid>
+          <a:DebtRearrangement>false</a:DebtRearrangement>
+          <a:DeclaredInsolvent>false</a:DeclaredInsolvent>
+          <a:EmailAddress />
+          <a:EmployeeMedicalAid>0</a:EmployeeMedicalAid>
+          <a:EmployeeNo />
+          <a:EmployeePAYE>2102</a:EmployeePAYE>
+          <a:EmployeePension>1243</a:EmployeePension>
+          <a:EmployeeUIF>0</a:EmployeeUIF>
+          <a:EmployerBusinessType>UNKNOWN</a:EmployerBusinessType>
+          <a:EmployerEmail />
+          <a:EmployerGrossMonthlySalary>16574</a:EmployerGrossMonthlySalary>
+          <a:EmployerName>KWENA MOLAPO SEC</a:EmployerName>
+          <a:EmployerRemunerationType>SALARIED</a:EmployerRemunerationType>
+          <a:EmploymentSector>OTHER</a:EmploymentSector>
+          <a:EthnicGroup>AFRICAN</a:EthnicGroup>
+          <a:ExpenditureItems>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>150</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Rates and taxes</a:ExpenditureDesc>
+              <a:ExpenditureType>2</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>150</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Water, lights, refuse removal</a:ExpenditureDesc>
+              <a:ExpenditureType>3</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>400</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Transport/petrol costs</a:ExpenditureDesc>
+              <a:ExpenditureType>6</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>1250</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Food and groceries</a:ExpenditureDesc>
+              <a:ExpenditureType>11</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>0</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Other Debt Repayment</a:ExpenditureDesc>
+              <a:ExpenditureType>54</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription>CELL</a:CapturedDescription>
+              <a:ExpenditureAmount>100</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Other Instalments</a:ExpenditureDesc>
+              <a:ExpenditureType>50</a:ExpenditureType>
+            </a:ExpenditureItem>
+            <a:ExpenditureItem>
+              <a:CapturedDescription />
+              <a:ExpenditureAmount>3345</a:ExpenditureAmount>
+              <a:ExpenditureDesc>Salary Deductions</a:ExpenditureDesc>
+              <a:ExpenditureType>55</a:ExpenditureType>
+            </a:ExpenditureItem>
+          </a:ExpenditureItems>
+          <a:FaxCode>011</a:FaxCode>
+          <a:FaxNo>6598389</a:FaxNo>
+          <a:FirstName>MAMANTSHO ELISA</a:FirstName>
+          <a:Gender>FEMALE</a:Gender>
+          <a:HomeLanguage>SESOTHO</a:HomeLanguage>
+          <a:HomePhone>5000001</a:HomePhone>
+          <a:HomePhoneCode>011</a:HomePhoneCode>
+          <a:IdentificationNo>8401011470087</a:IdentificationNo>
+          <a:IncomeContributor>true</a:IncomeContributor>
+          <a:IncomeItems>
+            <a:IncomeItem>
+              <a:CapturedDescription />
+              <a:IncomeAmount>16574</a:IncomeAmount>
+              <a:IncomeDesc>Basic Salary</a:IncomeDesc>
+              <a:IncomeType>22</a:IncomeType>
+            </a:IncomeItem>
+            <a:IncomeItem>
+              <a:CapturedDescription />
+              <a:IncomeAmount>0</a:IncomeAmount>
+              <a:IncomeDesc>Income from Investments</a:IncomeDesc>
+              <a:IncomeType>53</a:IncomeType>
+            </a:IncomeItem>
+            <a:IncomeItem>
+              <a:CapturedDescription />
+              <a:IncomeAmount>0</a:IncomeAmount>
+              <a:IncomeDesc>Commission and Overtime</a:IncomeDesc>
+              <a:IncomeType>6</a:IncomeType>
+            </a:IncomeItem>
+          </a:IncomeItems>
+          <a:IsUnderAdminOrder>false</a:IsUnderAdminOrder>
+          <a:IsUnderDebtReview>false</a:IsUnderDebtReview>
+          <a:JudgementIndicator>false</a:JudgementIndicator>
+          <a:JudgementValue />
+          <a:LiabilityItems />
+          <a:MaritalStatus>Single</a:MaritalStatus>
+          <a:MarketingConsumerLists>false</a:MarketingConsumerLists>
+          <a:MarketingEmail>false</a:MarketingEmail>
+          <a:MarketingFlyer>false</a:MarketingFlyer>
+          <a:MarketingMagazine>false</a:MarketingMagazine>
+          <a:MarketingMarketing>false</a:MarketingMarketing>
+          <a:MarketingNewspaper>false</a:MarketingNewspaper>
+          <a:MarketingOnline>false</a:MarketingOnline>
+          <a:MarketingOther>false</a:MarketingOther>
+          <a:MarketingRadio>false</a:MarketingRadio>
+          <a:MarketingReferral>true</a:MarketingReferral>
+          <a:MarketingSMS>true</a:MarketingSMS>
+          <a:MarketingTV>false</a:MarketingTV>
+          <a:MarketingTelemarketing>false</a:MarketingTelemarketing>
+          <a:MarriedStatus>NONE</a:MarriedStatus>
+          <a:MayDoCreditBureauEnquiry>true</a:MayDoCreditBureauEnquiry>
+          <a:MemberCompanyName />
+          <a:MemberCompanyNumber />
+          <a:NetAssets />
+          <a:Occupation>EDUCATION</a:Occupation>
+          <a:PassportNo />
+          <a:PermanentResident>true</a:PermanentResident>
+          <a:PhysicalAddressCity>NORTH RIDING</a:PhysicalAddressCity>
+          <a:PhysicalAddressCode>2169</a:PhysicalAddressCode>
+          <a:PhysicalAddressLine1>295 NEW YORK</a:PhysicalAddressLine1>
+          <a:PhysicalAddressLine2 />
+          <a:PhysicalAddressSuburb>ZANDSPRUIT</a:PhysicalAddressSuburb>
+          <a:PhysicalCountry />
+          <a:PhysicalProvince>GAUTENG</a:PhysicalProvince>
+          <a:PostalAddressCity>NORTH RIDING</a:PostalAddressCity>
+          <a:PostalAddressCode>2169</a:PostalAddressCode>
+          <a:PostalAddressLine1>295 NEW YORK</a:PostalAddressLine1>
+          <a:PostalAddressLine2 />
+          <a:PostalAddressSuburb>ZANDSPRUIT</a:PostalAddressSuburb>
+          <a:PostalCodeWork>2169</a:PostalCodeWork>
+          <a:PostalCountry />
+          <a:PostalProvince>GAUTENG</a:PostalProvince>
+          <a:PreferredContactDelivery>TELEPHONE</a:PreferredContactDelivery>
+          <a:PreferredName />
+          <a:PreviousEmployerName>KWENA MOLAPO SEC</a:PreviousEmployerName>
+          <a:PreviousEmployerPeriod>1</a:PreviousEmployerPeriod>
+          <a:RelationshipType />
+          <a:SACitizen>true</a:SACitizen>
+          <a:SAHLDeclaration>false</a:SAHLDeclaration>
+          <a:SAHLHighestQualification>MATRIC</a:SAHLHighestQualification>
+          <a:SAHLIsSurety>false</a:SAHLIsSurety>
+          <a:SAHLSACitizenType>SA CITIZEN</a:SAHLSACitizenType>
+          <a:Surname>MAFEREKA</a:Surname>
+          <a:Title>MISS</a:Title>
+          <a:WorkPhone>6598389</a:WorkPhone>
+          <a:WorkPhoneCode>011</a:WorkPhoneCode>
+          <a:Spouse i:nil="true" />
+        </a:MainApplicant>
+        <a:NamePropertyRegistered>Mafereka ME</a:NamePropertyRegistered>
+        <a:OffPlanIndicator>false</a:OffPlanIndicator>
+        <a:OutstandingLoan>0</a:OutstandingLoan>
+        <a:ProductSelection>New Variable Loan</a:ProductSelection>
+        <a:Property>
+          <a:AddressCity>NORTH RIDING</a:AddressCity>
+          <a:AddressSuburb>ZANDSPRUIT</a:AddressSuburb>
+          <a:ComplexName />
+          <a:ContactCellphone>0825536600</a:ContactCellphone>
+          <a:ContactName>TSHEPHAN</a:ContactName>
+          <a:PortionNo>67</a:PortionNo>
+          <a:PostalCode>2169</a:PostalCode>
+          <a:Province>GAUTENG</a:Province>
+          <a:SellerIDNo>8401011470087</a:SellerIDNo>
+          <a:StandErfNo>615</a:StandErfNo>
+          <a:StreetName>ZANDSPRUIT EX 4</a:StreetName>
+          <a:StreetNo>615</a:StreetNo>
+          <a:UsePropertyAddressAsDomiciliumAddress>false</a:UsePropertyAddressAsDomiciliumAddress>
+          <a:UsePropertyAddressAsLoanMailingAddress>true</a:UsePropertyAddressAsLoanMailingAddress>
+        </a:Property>
+        <a:PropertyMarketValue>0</a:PropertyMarketValue>
+        <a:PropertyPurchasePrice>496623</a:PropertyPurchasePrice>
+        <a:QuickCashIndicator>false</a:QuickCashIndicator>
+        <a:SAHLBondAccountNo>0</a:SAHLBondAccountNo>
+        <a:SAHLOccupancyType>Owner Occupied</a:SAHLOccupancyType>
+        <a:SAHLPropertyType>House</a:SAHLPropertyType>
+        <a:SAHLTitleType>Freehold</a:SAHLTitleType>
+        <a:SAHLVendorCode>SAHL32</a:SAHLVendorCode>
+        <a:SahlLoanPurpose>New Purchase Loan</a:SahlLoanPurpose>
+        <a:SahlTransferAtt>DU PLOOY INC</a:SahlTransferAtt>
+        <a:SectionalTitleUnitNo />
+        <a:TermOfLoan>20</a:TermOfLoan>
+        <a:TotalEstLoan>0</a:TotalEstLoan>
+      </Application>
+    </SAHLRequest>
+  </s:Body>
+</s:Envelope>

@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Release" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="DomainService2.Tests\bin\Debug\DomainService2.Tests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="DomainService2.Tests\bin\Release\DomainService2.Tests.dll" />
+  </Config>
+</NUnitProject>

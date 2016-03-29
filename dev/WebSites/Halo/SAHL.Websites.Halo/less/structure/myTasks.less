@@ -1,0 +1,330 @@
+﻿@import url("../sahl.ui.core/sahl.ui.core.less");
+
+@level1Indent: 20px;
+@spaceBetweenRowsOnTable: 9px;
+@spaceAfterHeaderInTable: 5px;
+
+.mytasks-menu {
+    height: 100%;
+
+    ul {
+        text-align: left;
+    }
+
+    li {
+        background-color: @grey-dark;
+
+        a {
+            color: @background !important;
+            cursor: pointer;
+        }
+
+        &:hover {
+            a {
+                color: @grey-darkest !important;
+                font-weight: 900 !important;
+            }
+        }
+
+        &.active {
+            background-color: @orange-sahl !important;
+        }
+    }
+
+    hr {
+        height: 2px;
+        color: @grey-darkest;
+        background-color: @grey-darkest;
+        border: none;
+    }
+}
+
+.mytasks-table {
+    padding-left: @level1Indent;
+    table-layout: fixed;
+
+    tr {
+        th {
+            text-align: left;
+            padding-bottom: @spaceAfterHeaderInTable;
+        }
+
+        td {
+            padding: 1px !important;
+            /*padding-top: @spaceBetweenRowsOnTable !important;*/
+            font-size: 8pt !important;
+            /*text-wrap: none;*/
+            /*text-align: left;*/
+        }
+    }
+}
+
+.mytasks-processHeader {
+    font-size: 1.1em !important;
+    margin: 3px 5px 6px 5px;
+    text-decoration: none;
+}
+
+.mytasks-state-div {
+    /*margin-bottom: 30px;*/
+    margin-right: 50px;
+    overflow: auto;
+}
+
+.dragOrange {
+    border-color: @carrot !important;
+    color: @carrot !important;
+}
+
+#tagBin {
+    float: right;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: lightgray;
+    width: 20%;
+    //height: 40px;
+    color: darkgray;
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+.ui-grid-row-selected .ng-isolate-scope .ui-grid-cell {
+   background-color: #FFDCC5 !important;
+}
+
+
+
+.workflowHolder {
+    height: 100%; 
+    line-height: 1.2rem;
+}
+
+.dropdown-toggle:after {
+    position: absolute;
+    margin-left: .45em;
+    bottom: 0;
+    font-family: metroSysIcons;
+    font-size: .7em;
+    content: '' !important;
+}
+
+button.dropdown-toggle {
+    background-color: transparent;
+    margin: 6px 0px 0px 3px !important;
+    padding: 0px !important;    
+}
+
+div.ui-grid-cell input.ng-valid {
+    border: none;
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+button.tagAddButton {
+    background-color: transparent;
+}
+
+.gridTag.icon-tag.dropdown-toggle {
+    float: left;
+    margin: 3px;
+    padding: 5px;
+
+    &:hover {
+        background-color: @silver !important;
+    }
+}
+
+i.icon-plus {
+    margin-top: 9px;
+    margin-left: 2px;
+}
+
+.workflowRepeater {
+    height: 100%;
+}
+
+#taskGrid {
+    height: 500px !important;
+}
+
+#portalGrid {
+    height: 100% !important;
+}
+
+#taskGridUtils {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.task-wrapper {
+  margin: 50px auto;
+  background: white;
+  position: relative;
+}
+
+.triangle-topright {
+    width: 0;
+    height: 0;
+    border-top: 15px solid;
+    border-left: 15px solid transparent;
+}
+
+.corner-wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+
+.task-footer {
+    height: @search-footer-height;
+    padding-left: @search-left-padding;
+    padding-top: 15px;
+}
+
+#taskGridControls {
+    height: 95%;    
+}
+
+#tagButtonSet {
+    float: left;
+}
+
+#taskGrid > div.ui-grid-render-container.ng-isolate-scope.ui-grid-render-container-body {
+    height: 100%;
+    width:  100%;
+}
+
+.mytasks-workflow-name {
+    text-align: left;
+    text-size: 14px;
+
+    a {
+        line-height: 1.2rem;
+    }
+}
+
+a.mytasks-processHeader.workflowLine.ng-binding {
+    line-height: 1.2rem;
+}
+
+.mytasks-state-name {
+    text-align: left;
+    margin-left: @level1Indent;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.mytasks-state-count {
+    color: @orange-sahl !important;
+}
+
+.attachedTag {
+
+
+    i {
+        display: none;
+    }
+
+    div {
+        display: none;
+    }
+
+    @scaleIncreaseTag: 1.8;
+
+    &:hover {
+        /*padding: 2px 4px 2px 4px;*/
+        -webkit-transform: scale(@scaleIncreaseTag);
+        -ms-transform: scale(@scaleIncreaseTag);
+        -o-transform: scale(@scaleIncreaseTag);
+        -moz-transform: scale(@scaleIncreaseTag);
+        transform: scale(@scaleIncreaseTag);
+        margin: 0 0 0 0;
+        //z-index : 2;
+        i {
+            display: block;
+        }
+
+        div {
+            display: block;
+            position: relative;
+            font-size: 10pt;
+            white-space: nowrap;
+            float: right;
+            max-height: 30px;
+            width: auto;
+            margin-top: -40px;
+            color: @grey-darkest;
+        }
+    }
+}
+
+
+    .tagHolder {
+        width: 150px;
+        position: relative;
+        ul {
+        margin : auto;
+            li {
+                list-style: none;
+                background: @background;
+            }
+        }
+    }
+
+.addTag {
+
+    .tagAddingDiv {
+        display: none;
+
+        &.isVisible {
+            float: right;
+            display: block;
+            position: absolute;
+            border: 1px solid;
+            right: 0;
+            background: @background;
+            z-index: 2;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+    }
+
+    .tagList {
+    }
+}
+
+.activeTag {
+    /*border: 2px solid;*/
+    border-radius: 10px;
+    padding: 2px;
+    text-align: center;
+    /*overflow: hidden;*/
+    float: left;
+}
+
+
+.dotstyle-scaleup li a {
+    -webkit-transition: -webkit-transform 0.3s ease, background-color 0.3s ease;
+    -moz-transition: -moz-transform 0.3s ease, background-color 0.3s ease;
+    -o-transition: -o-transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+
+.viewScreen {
+    overflow: hidden;
+    height: 100%;
+
+    .noItems {
+        font-size: 25pt;
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+    }
+}

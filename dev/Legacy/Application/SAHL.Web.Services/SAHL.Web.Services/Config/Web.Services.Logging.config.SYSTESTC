@@ -1,0 +1,36 @@
+<loggingConfiguration name="Logging Application Block" tracingEnabled="true" defaultCategory="General" logWarningsWhenNoCategoriesMatch="true">
+	<listeners>
+		<add toAddress="WebServices_General_Exception_SYSTEST_C@sahomeloans.com" fromAddress="WebServices_General_Exception_SYSTEST_C@sahomeloans.com" subjectLineStarter="" subjectLineEnder="" smtpServer="192.168.11.28" smtpPort="25" formatter="Text Formatter" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.EmailTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" traceOutputOptions="None" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.EmailTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" name="Emailer" />
+		<add source="Enterprise Library Logging" formatter="Text Formatter" log="Application" machineName="" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FormattedEventLogTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" traceOutputOptions="None" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedEventLogTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" name="Formatted EventLog TraceListener" />
+		<add toAddress="WebServices_General_Exception_SYSTEST_C@sahomeloans.com" fromAddress="WebServices_General_Exception_SYSTEST_C@sahomeloans.com" subjectLineStarter="" subjectLineEnder="" smtpServer="192.168.11.28" smtpPort="25" formatter="Text Formatter" listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.EmailTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" traceOutputOptions="None" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.EmailTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" name="Security Emailer" />
+	</listeners>
+	<formatters>
+		<add template="Timestamp: {timestamp}&#xA;Message: {message}&#xA;Category: {category}&#xA;Priority: {priority}&#xA;EventId: {eventid}&#xA;Severity: {severity}&#xA;Title:{title}&#xA;Machine: {machine}&#xA;Application Domain: {appDomain}&#xA;Process Id: {processId}&#xA;Process Name: {processName}&#xA;Win32 Thread Id: {win32ThreadId}&#xA;Thread Name: {threadName}&#xA;Extended Properties: {dictionary({key} - {value}&#xA;)}" type="Microsoft.Practices.EnterpriseLibrary.Logging.Formatters.TextFormatter, Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" name="Text Formatter" />
+	</formatters>
+	<categorySources>
+		<add switchValue="All" name="Application">
+			<listeners>
+				<add name="Emailer" />
+			</listeners>
+		</add>
+		<add switchValue="All" name="General">
+			<listeners>
+				<add name="Emailer" />
+			</listeners>
+		</add>
+		<add switchValue="All" name="Security">
+			<listeners>
+				<add name="Security Emailer" />
+			</listeners>
+		</add>
+	</categorySources>
+	<specialSources>
+		<allEvents switchValue="All" name="All Events" />
+		<notProcessed switchValue="All" name="Unprocessed Category" />
+		<errors switchValue="All" name="Logging Errors &amp; Warnings">
+			<listeners>
+				<add name="Emailer" />
+			</listeners>
+		</errors>
+	</specialSources>
+</loggingConfiguration>

@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{67E90604-2DF8-4D68-B5A0-F3E4C752CBCF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ObjectMaps</RootNamespace>
+    <AssemblyName>ObjectMaps</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ObjectMaps.XML</DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <NoWarn>1591</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\External Binaries\NuGet\WatiN.2.1.0\lib\net40\Interop.SHDocVw.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+      <HintPath>..\..\..\External Binaries\NuGet\WatiN.2.1.0\lib\net40\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WatiN.Core, Version=2.1.0.1196, Culture=neutral, PublicKeyToken=db7cfd3acb5ad44e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\WatiN.2.1.0\lib\net40\WatiN.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CBO\ContextMenu\AdministrationControls.cs" />
+    <Compile Include="CBO\ContextMenu\CalculatorsControls.cs" />
+    <Compile Include="CBO\ContextMenu\LegalEntityControls.cs" />
+    <Compile Include="CommonIEDialogHandler.cs" />
+    <Compile Include="ElementTimers.cs" />
+    <Compile Include="FloBO\AffordabilityAssessmentNodeControls.cs" />
+    <Compile Include="FloBO\ApplicantsFloBo.cs" />
+    <Compile Include="FloBO\ApplicationMemoFloBo.cs" />
+    <Compile Include="FloBO\ApplicationOverviewFloBo.cs" />
+    <Compile Include="FloBO\AttorneyFloBo.cs" />
+    <Compile Include="FloBO\ConsultantAssignmentFloBo.cs" />
+    <Compile Include="FloBO\DebtCounsellingFloBo.cs" />
+    <Compile Include="FloBO\DisabilityClaimNodeControls.cs" />
+    <Compile Include="FloBO\LifeNodeControls.cs" />
+    <Compile Include="FloBO\NotesNodeFloBo.cs" />
+    <Compile Include="FloBO\ExternalRolesFloBo.cs" />
+    <Compile Include="FloBO\CorrespondenceFloBo.cs" />
+    <Compile Include="FloBO\DocumentCheckListFloBo.cs" />
+    <Compile Include="FloBO\LegalEntityFloBo.cs" />
+    <Compile Include="FloBO\LoanDetailsFloBo.cs" />
+    <Compile Include="FloBO\PersonalLoanNodeControls.cs" />
+    <Compile Include="FloBO\PropertiesFloBo.cs" />
+    <Compile Include="FloBO\ProposalsNode.cs" />
+    <Compile Include="FloBO\SellersFloBo.cs" />
+    <Compile Include="Navigation\Base\BaseNavigation.cs" />
+    <Compile Include="Navigation\InternetComponents\WebisteCalculatorControls.cs" />
+    <Compile Include="Presenters\Admin\AdminFlushCacheControls.cs" />
+    <Compile Include="Presenters\Admin\AdminUserStatusMaintenanceControls.cs" />
+    <Compile Include="Presenters\Admin\AttorneyContactControls.cs" />
+    <Compile Include="Presenters\Admin\AttorneyDetailControls.cs" />
+    <Compile Include="Presenters\Admin\AttorneyInvoiceControls.cs" />
+    <Compile Include="Presenters\Admin\EmployerDetailsControls.cs" />
+    <Compile Include="Presenters\Admin\MarketingSourceAddControls.cs" />
+    <Compile Include="Presenters\Admin\MarketRatesViewControls.cs" />
+    <Compile Include="Presenters\Admin\MyProfileDetailsControls.cs" />
+    <Compile Include="Presenters\Admin\SubsidyProviderDetailsControls.cs" />
+    <Compile Include="Presenters\Admin\UpdateMyProfileDetailsControls.cs" />
+    <Compile Include="Presenters\DebitOrderDetails\DebitOrderDetailsBaseControls.cs" />
+    <Compile Include="Presenters\DisabilityClaims\TerminateDisabilityClaimControls.cs" />
+    <Compile Include="Presenters\DisabilityClaims\RepudiateDisabilityClaimControls.cs" />
+    <Compile Include="Presenters\DisabilityClaims\ApproveDisabilityClaimControls.cs" />
+    <Compile Include="Presenters\DisabilityClaims\DisabilityClaimCreateControls.cs" />
+    <Compile Include="Presenters\DisabilityClaims\DisabilityClaimDetailsCaptureControls.cs" />
+    <Compile Include="Presenters\DisabilityClaims\SendDisabilityClaimLetterControls.cs" />
+    <Compile Include="Presenters\InternetComponents\Calculators\NewPurchaseApplicationFormControls.cs" />
+    <Compile Include="Presenters\InternetComponents\ClientSecureWebsite\ClientSecureWebsiteControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityDomiciliumAddressControls.cs" />
+    <Compile Include="Presenters\Life\LifePolicyAdminControls.cs" />
+    <Compile Include="Presenters\LoanServicing\AccountMailingAddressUpdateControls.cs" />
+    <Compile Include="Presenters\LoanServicing\CapCancelControls.cs" />
+    <Compile Include="Presenters\LoanServicing\ChangeInstalmentControls.cs" />
+    <Compile Include="Presenters\LoanServicing\ConvertStaffLoanControls.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_CancellationLetterAcknowledge.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_BondCancellationLetter.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_ClaimAffidavit.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_IncomeTaxStatement.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_PowerOfAttorney.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_StatementOfAccount.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_SuperLoIntroductionLetter.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_CapLetter.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_Form27.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_LegalInstructionForeclosure.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_LegalInstructionLetterOfDemand.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_LoanStatement.cs" />
+    <Compile Include="Presenters\Correspondence\Correspondence_MS65.cs" />
+    <Compile Include="Presenters\DebitOrder\ManualDebitOrderAddControls.cs" />
+    <Compile Include="Presenters\DebitOrder\ManualDebitOrderBaseControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\PreDebtCounsellingAccountDetailControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\Maintenance\MaintenanceLegalEntityControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\Maintenance\MaintenanceViewControls.cs" />
+    <Compile Include="Presenters\FixedDebitOrders\FixedDebitOrderBaseControls.cs" />
+    <Compile Include="Presenters\FixedDebitOrders\FixedDebitOrderDeleteControls.cs" />
+    <Compile Include="Presenters\FixedDebitOrders\FixedDebitOrderUpdateControls.cs" />
+    <Compile Include="Presenters\InternetComponents\Calculators\AffordabilityCalculatorControls.cs" />
+    <Compile Include="Presenters\InternetComponents\Calculators\BaseCalculatorControls.cs" />
+    <Compile Include="Presenters\InternetComponents\Calculators\CalculatorApplicationFormControls.cs" />
+    <Compile Include="Presenters\InternetComponents\Calculators\NewPurchaseCalculatorControls.cs" />
+    <Compile Include="Presenters\InternetComponents\Calculators\SwitchCalculatorControls.cs" />
+    <Compile Include="Presenters\InternetComponents\ClientSurveyControls.cs" />
+    <Compile Include="Presenters\LoanDetail\LoanDetailBaseControls.cs" />
+    <Compile Include="Presenters\LoanDetail\LoanDetailUpdateControls.cs" />
+    <Compile Include="Presenters\LoanServicing\BankingDetailsSearchLegalEntityControls.cs" />
+    <Compile Include="Presenters\LoanServicing\CATSDisbursementBaseControls.cs" />
+    <Compile Include="Presenters\LoanServicing\CATSDisbursementBaseRollbackControls.cs" />
+    <Compile Include="Presenters\LoanServicing\CATSDisbursementBaseDeleteControls.cs" />
+    <Compile Include="Presenters\LoanServicing\AccountMailingAddressControls.cs" />
+    <Compile Include="Presenters\LoanServicing\HOCFSSummaryUpdateControls.cs" />
+    <Compile Include="Presenters\LoanServicing\LoanSummaryControls.cs" />
+    <Compile Include="Presenters\LoanServicing\MarkNonPerformingControls.cs" />
+    <Compile Include="Presenters\LoanServicing\RateChangeControls.cs" />
+    <Compile Include="Presenters\LoanServicing\RelatedLegalEntitySuretorRemoveControls.cs" />
+    <Compile Include="Presenters\LoanServicing\TransactionRollbackConfirmControls.cs" />
+    <Compile Include="Presenters\LoanServicing\TransactionRollBackControls.cs" />
+    <Compile Include="Presenters\Origination\AffordabilityDetailsControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicantsRemoveControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationAttributesUpdateControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationDeclarationsControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationLoanDetailsApproveControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationLoanDetailsDisplayControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationLoanDetailsUpdateControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationMailingAddressUpdateControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationSummaryBaseControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationSummaryFurtherLendingControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationWizardApplicantsControls.cs" />
+    <Compile Include="Presenters\Origination\ApplicationWizardSummaryControls.cs" />
+    <Compile Include="Presenters\Origination\App_AssignEstateAgentControls.cs" />
+    <Compile Include="Presenters\Origination\App_PropertyCaptureControls_pg1.cs" />
+    <Compile Include="Presenters\Origination\App_PropertyCaptureControls_pg2.cs" />
+    <Compile Include="Presenters\Origination\App_PropertyCaptureControls_pg3.cs" />
+    <Compile Include="Presenters\Origination\AssignAdminControls.cs" />
+    <Compile Include="Presenters\Origination\AssignEstateAgentControls.cs" />
+    <Compile Include="Presenters\Origination\AssignInitialConsultantControls.cs" />
+    <Compile Include="Presenters\AttorneyAccess\AttorneyAccessControls.cs" />
+    <Compile Include="Presenters\LoanServicing\BankingDetailsAddControls.cs" />
+    <Compile Include="Presenters\LoanServicing\BankingDetailsDisplayControls.cs" />
+    <Compile Include="Presenters\Base\BasePageControls.cs" />
+    <Compile Include="Presenters\LoanServicing\BondLoanAgreementControls.cs" />
+    <Compile Include="Presenters\CAP 2\CAP2OfferSummaryControls.cs" />
+    <Compile Include="Presenters\CAP 2\CAPCreateSearchControls.cs" />
+    <Compile Include="Presenters\LoanServicing\CATSDisbursementAddControls.cs" />
+    <Compile Include="Presenters\ClientSuperSearchControls.cs" />
+    <Compile Include="Presenters\CommonReasonCommonDeclineControls.cs" />
+    <Compile Include="Presenters\Origination\CaptureAffordabilityAssessmentControls.cs" />
+    <Compile Include="Presenters\Origination\ClientWithContactControls.cs" />
+    <Compile Include="Presenters\Origination\ConditionsAddSetControls.cs" />
+    <Compile Include="Presenters\CorrespondenceProcessingControls.cs" />
+    <Compile Include="Presenters\DebitOrderDetailsAppUpdateControls.cs" />
+    <Compile Include="Presenters\DebitOrder\ManualDebitOrderAddRecurringControls.cs" />
+    <Compile Include="Presenters\DebitOrder\ManualDebitOrderDeleteControls.cs" />
+    <Compile Include="Presenters\DebitOrder\ManualDebitOrderUpdateControls.cs" />
+    <Compile Include="Presenters\DebtCounsellingCreateCaseControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\AdminPaymentDistributionAgentLegalEntityAddControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\AdminPaymentDistributionAgentLegalEntityRemoveControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\AdminPaymentDistributionAgentLegalEntityUpdateControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\AdminPaymentDistributionAgentLegalEntityViewControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\AdminPaymentDistributionAgentViewControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\AttorneyUpdateControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\ChangeOfCircumstanceControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\ClientCommunication\ClientCommunicationDebtCounsellingBaseControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\ClientCommunication\ClientCommunicationDebtCounsellingEmailControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\ClientCommunication\ClientCommunicationDebtCounsellingSmsControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\ConsultantDeclineControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\CorrespondenceProcessingMultipleWorkflowDebtCounsellorControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\CounterProposalDetailsMaintenanceWorkflowControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\CourtDetailsAddControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellingAssignSupervisorControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellingCancelledControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellingMaintainLegalEntitiesControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellingProposalSummaryWorkflowControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellingSummaryReviewControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellorMaintenance\AdminDebtCounsellorLegalEntityControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellorMaintenance\AdminDebtCounsellorViewControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellorSelectControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\DebtCounsellorViewControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\InitiateCaseControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\LegalEntitySequestrationDeathNotifyControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\PaymentDistributionAgentUpdateControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\PaymentReviewUpdateControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\ProposalDetailsMaintenanceWorkflowControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\RecoveriesProposalCaptureControls.cs" />
+    <Compile Include="Presenters\DebtCounselling\TermReviewUpdateControls.cs" />
+    <Compile Include="Presenters\LoanServicing\DisbursementRollbackControls.cs" />
+    <Compile Include="Presenters\Origination\DocumentChecklistUpdateControls.cs" />
+    <Compile Include="Presenters\Origination\FurtherLendingApplicationApproveControls.cs" />
+    <Compile Include="Presenters\Origination\FurtherLendingCalculatorControls.cs" />
+    <Compile Include="Presenters\Origination\FurtherLendingPreCheckControls.cs" />
+    <Compile Include="Presenters\Origination\FurtherLendingQuickCashControls.cs" />
+    <Compile Include="Presenters\GenericMemoControls.cs" />
+    <Compile Include="Presenters\Origination\HOCFSSummaryAddApplicationControls.cs" />
+    <Compile Include="Presenters\Origination\ITCApplicationControls.cs" />
+    <Compile Include="Presenters\LegalEntity\EnableLegalEntityUpdateControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityAddressControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityAssetLiabilityControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityDetailControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityDetailsLeadApplicantAddControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityDetailsSellerAddControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityDetailsUpdateApplicantControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityEmploymentAddControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityEmploymentExtendedAddControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityEmploymentExtendedUpdateControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityEmploymentUpdateControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityRelationshipsAddControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntityRelationshipsRelateControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntitySubsidyDetailsAddControls.cs" />
+    <Compile Include="Presenters\LegalEntity\LegalEntitySuretorAddExistingControls.cs" />
+    <Compile Include="Presenters\Life\LifeBenefitsControls.cs" />
+    <Compile Include="Presenters\Life\LifeCallbackControls.cs" />
+    <Compile Include="Presenters\Life\LifeCancelPolicyControls.cs" />
+    <Compile Include="Presenters\Life\LifeClientSuperSearchAddWorkFlowControls.cs" />
+    <Compile Include="Presenters\Life\LifeContactControls.cs" />
+    <Compile Include="Presenters\Life\LifeCorrespondenceLetterOfAcceptanceControls.cs" />
+    <Compile Include="Presenters\Life\LifeDeclarationControls.cs" />
+    <Compile Include="Presenters\Life\LifeExclusionsControls.cs" />
+    <Compile Include="Presenters\Life\LifeFAISControls.cs" />
+    <Compile Include="Presenters\Life\LifeLeadCreateControls.cs" />
+    <Compile Include="Presenters\Life\LifeLegalEntityAddExistingWorkFlowControls.cs" />
+    <Compile Include="Presenters\Life\LifeLOAControls.cs" />
+    <Compile Include="Presenters\Life\LifeNTUControls.cs" />
+    <Compile Include="Presenters\Life\LifePolicyWorkFlowControls.cs" />
+    <Compile Include="Presenters\Life\LifeProductSwitchControls.cs" />
+    <Compile Include="Presenters\Life\LifeRPARControls.cs" />
+    <Compile Include="Presenters\Origination\LegalEntityRelationshipsAffordabilityAssessmentControls.cs" />
+    <Compile Include="Presenters\Origination\LoanCalculatorLeadControls.cs" />
+    <Compile Include="Presenters\LoanDetail\LoanDetailAddControls.cs" />
+    <Compile Include="Presenters\LoanDetail\LoanDetailRemoveControls.cs" />
+    <Compile Include="Presenters\Origination\ConfirmApplicationEmploymentControls.cs" />
+    <Compile Include="Presenters\Origination\NCRAffordabilityDetailControls.cs" />
+    <Compile Include="Presenters\Origination\UpdateAffordabilityAssessmentControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\AssignCreditExceptionsManagerControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\ClientCommunication\ClientCommunicationPersonalLoansBaseControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\ClientCommunication\ClientCommunicationPersonalLoansEmailControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\ClientCommunication\ClientCommunicationPersonalLoansSmsControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\CreditProtectionSummaryControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanCampaignExtractControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanAlteredApprovalControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanExternalLifePolicySummaryControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanLeadControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanMaintainExternalLifePolicyControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\UnsecuredLoanSummaryControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\LifePolicyClaimControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanApplicationDeclarationsControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanCalculatorControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanChangeInstalmentControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanChangeTermControls.cs" />
+    <Compile Include="Presenters\PersonalLoans\PersonalLoanDisbursementControls.cs" />
+    <Compile Include="Presenters\Property\PropertyDetailsControls.cs" />
+    <Compile Include="Presenters\Valuations\ValuationScheduleLightstoneValuationControls.cs" />
+    <Compile Include="Presenters\Valuations\ManualValuationsMainDwellingDetailsAddControls.cs" />
+    <Compile Include="Presenters\Valuations\ManualValuationsMainDwellingDetailsControls.cs" />
+    <Compile Include="Presenters\Valuations\ManualValuationsMainDwellingExtendedDetailsAddControls.cs" />
+    <Compile Include="Presenters\Origination\MemoFollowUpAddControls.cs" />
+    <Compile Include="Presenters\NoteMaintenanceControls.cs" />
+    <Compile Include="Presenters\Origination\OptOutSuperLoControls.cs" />
+    <Compile Include="Presenters\Origination\Orig_QAQueryControls.cs" />
+    <Compile Include="Presenters\Origination\Orig_SelectAttorneyControls.cs" />
+    <Compile Include="Presenters\LoanServicing\PostTransactionControls.cs" />
+    <Compile Include="Presenters\PropertyDetailsUpdateDeedsNoExclusionsControls.cs" />
+    <Compile Include="Presenters\LoanServicing\RateChangeTermControls.cs" />
+    <Compile Include="Presenters\Origination\ReassignOriginatingBranchConsultantControls.cs" />
+    <Compile Include="Presenters\Origination\ResendInstructionControls.cs" />
+    <Compile Include="Presenters\LoanServicing\SurveyCaptureControls.cs" />
+    <Compile Include="Presenters\LoanServicing\UpdateFinancialAdjustmentControls.cs" />
+    <Compile Include="Presenters\Valuations\ValuationDetailsAdd.cs" />
+    <Compile Include="Presenters\Origination\WF_ReAssignControls.cs" />
+    <Compile Include="Presenters\Origination\WF_ReAssignSeniorCreditAnalystControls.cs" />
+    <Compile Include="Presenters\WorkflowBatchReassignControls.cs" />
+    <Compile Include="Presenters\WorkflowSuperSearchControls.cs" />
+    <Compile Include="Presenters\WorkflowYesNoControls.cs" />
+    <Compile Include="Presenters\X2WorklistControls.cs" />
+    <Compile Include="CBO\CboControls.cs" />
+    <Compile Include="FloBO\FloboControls.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteAffordabilityCalculator.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteApplicantDetails.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteApplicationSummary.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteCalculatorControls.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteCalculators.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteClientSurveyControls.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteMain.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteNewPurchaseCalculator.cs" />
+    <Compile Include="SAHLWebsite\SAHLWebsiteSwitchCalculator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Automation.Common.csproj">
+      <Project>{E66CA3C2-3B4B-4630-B7C7-03CB7AA54A9B}</Project>
+      <Name>Automation.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

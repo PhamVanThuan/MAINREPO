@@ -1,0 +1,47 @@
+<br/>
+<div class="labels">
+	<div>Account Status:</div>
+	<div>Loan Amount:</div>
+	<div>Remaining Term:</div>
+	<div>Month To Date Interest:</div>
+	<div>Arrear Balance:</div>
+	<div>Current Balance:</div>
+	<br/>
+
+	<div>Monthly Installment:</div>
+	<div>Monthly Service Fee:</div>
+	<div>Interest Rate:</div>
+	<div>Credit Life Premium:</div>
+	<div>Total Instalment:</div>
+	<br />
+
+	<div>Total Confirmed Income:</div>
+	<div>Debit Order Day:</div>
+	<br/>
+
+	<div>Open Date:</div>
+	<div>Close Date:</div>
+</div>
+<div class="values">
+	<div>{{item.tileData.AccountStatus}}</div>
+	<div>{{item.tileData.LoanAmount | currencyFilter:0}}</div>
+	<div>{{item.tileData.RemainingTerm}}</div>
+	<div>{{item.tileData.MonthToDateInterest | percentage:2}}</div>
+	<div>{{item.tileData.ArrearBalance | currencyFilter:0}}</div>
+	<div>{{item.tileData.CurrentBalance | currencyFilter:0}}</div>
+	<br />
+
+	<div>{{item.tileData.MonthlyInstalment | currencyFilter:0}}</div>
+	<div>{{item.tileData.MonthlyServiceFee | currencyFilter:0}}</div>
+	<div>{{item.tileData.InterestRate | percentage:2}}</div>
+	<div>{{item.tileData.CreditLifePremium | currencyFilter:0}}</div>
+	<div>{{item.tileData.TotalInstalment | currencyFilter:0}}</div>
+	<br/>
+
+	<div>{{item.tileData.TotalConfirmedIncome | currencyFilter:0}}</div>
+	<div>{{item.tileData.DebitOrderDay}}</div>
+
+	<br />
+	<div>{{item.tileData.OpenDate | dateViewFilter}}</div>
+	<div>{{item.tileData.CloseDate | dateViewFilter}}</div>
+</div>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{131F8F5B-D005-46EF-8BA4-7B6EF1B3C9DE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Tools.DecisionTree.Coverage.Specs</RootNamespace>
+    <AssemblyName>SAHL.Tools.DecisionTree.Coverage.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestFakes\BirchTree.cs" />
+    <Compile Include="TestFakes\FakeTreeExecutionManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestFakes\ITestFakeTree.cs" />
+    <Compile Include="TestFakes\MapleTree.cs" />
+    <Compile Include="TestFakes\PineTree.cs" />
+    <Compile Include="when_a_single_tree_is_processed_twice.cs" />
+    <Compile Include="when_two_links_lead_to_the_same_node.cs" />
+    <Compile Include="when_two_trees_are_processed.cs" />
+    <Compile Include="when_a_tree_is_processed.cs" />
+    <Compile Include="when_the_debug_location_of_a_tree_changes.cs" />
+    <Compile Include="when_tree_execution_starts.cs" />
+    <Compile Include="when_writing_coverage_results.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Tools.DecisionTree.Coverage.Lib\SAHL.Tools.DecisionTree.Coverage.Lib.csproj">
+      <Project>{54f772a8-b317-4984-9625-58bd883bd001}</Project>
+      <Name>SAHL.Tools.DecisionTree.Coverage.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Tools.DecisionTree.TestRunner.Interfaces\SAHL.Tools.DecisionTree.TestRunner.Interfaces.csproj">
+      <Project>{c3166139-ec8d-418b-97a3-d4edfc52728c}</Project>
+      <Name>SAHL.Tools.DecisionTree.TestRunner.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Tools.DecisionTree.TestRunner.Lib\SAHL.Tools.DecisionTree.TestRunner.Lib.csproj">
+      <Project>{fabfa099-d85a-4735-b728-3b9672e52327}</Project>
+      <Name>SAHL.Tools.DecisionTree.TestRunner.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

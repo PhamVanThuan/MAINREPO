@@ -1,0 +1,1 @@
+angular.module('sahl.js.workflow.workflowManager', []);

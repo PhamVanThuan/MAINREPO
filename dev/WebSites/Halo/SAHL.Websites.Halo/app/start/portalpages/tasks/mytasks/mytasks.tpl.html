@@ -1,0 +1,80 @@
+<div id="myTasks" ng-controller="MyTasksCtrl" >
+
+    <nav class="horizontal-menu compact mytasks-menu" id="Process-Nav">
+        <ul>
+            <li ng-repeat="process in BusinessProcesses.$values" ng-class="{active : tabIndex == $index}" class="bg-active-orange">
+                <div class="processHolder">
+                    <a ng-click="selectProcess($index)" class="mytasks-processHeader">{{process.Name}}</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <hr ng-if="BusinessProcess.$values &&  BusinessProcess.$values.length !== 0" />
+
+    <div class="viewScreen" spin-loader="loadingTasks">
+
+        <nav class="horizontal-menu compact mytasks-menu" id="Workflow-Nav">
+            <ul>
+                <li ng-repeat="workflow in BusinessProcesses.$values[tabIndex].WorkFlows.$values">                    
+                    <div class="workflowHolder">
+                        <div class="mytasks-workflow-name">
+                            <a class="mytasks-processHeader workflowLine">{{workflow.Name}}</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <table id="subProcessContainerTable">
+            <tr>
+                <td>
+                    <div class="subProcessLabel">
+                        <strong>States</strong>
+                    </div>
+                </td>
+                <td>
+                    <div class="subProcessLabel"></div>
+                </td>
+            </tr>
+            <tr>
+                <td id="stateContainerCell">
+                    <div id="stateButtonGroup" class="subProcessContainer button-set">
+                        <button ng-repeat="state in currentWorkflow.States.$values" ng-click="stateFilterSelected(state,$event)" class="{{state.isActive}}">{{state.Name}}</button>
+                    </div>
+                </td>
+                <td id="tagContainerCell">
+                    <tag-filter-container></tag-filter-container>                    
+                </td>
+            </tr>
+        </table>
+
+        <div id="taskGridControls">            
+            <div ui-grid="gridOptions" ui-grid-pagination ui-grid-selection id="taskGrid"></div>
+
+            <div id="taskGridUtils">
+                <div class="pagination">
+                    <ul>
+                        <li class="prev" 
+                            ng-class="{disabled: taskFilterResult.pages.isPrevPageEnabled === false}" 
+                            ng-click="seekPage(currentPage - 1)" 
+                            ng-show="taskFilterResult.pages.pages.length > 0">
+                            <a><i class="icon-previous"></i></a>
+                        </li>
+                        <li ng-repeat="page in taskFilterResult.pages.pages" 
+                            ng-click="seekPage(page.pageNum)" 
+                            ng-class="{active: page.isSelected === true }">
+                            <a>{{page.pageNum}}</a>
+                        </li>
+                        <li class="next" 
+                            ng-class="{disabled: taskFilterResult.pages.isNextPageEnabled === false}" 
+                            ng-click="seekPage(currentPage + 1)" 
+                            ng-show="taskFilterResult.pages.pages.length > 0">
+                            <a><i class="icon-next"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+     
+        </div>       
+    </div>
+</div>

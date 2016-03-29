@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29806E92-C2CB-4C2E-97CF-19D8B7C24F42}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.DomainServiceCheck.Specs</RootNamespace>
+    <AssemblyName>SAHL.DomainServiceCheck.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\tools\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net40\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing.Fakes">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\structuremap\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckHandlers\RequiresAccount\when_an_account_does_not_exist_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresAccount\when_an_account_does_exist_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresActiveClientRole\when_an_active_client_role_does_exist_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresActiveClientRole\when_an_active_client_role_does_not_exist_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresArchivedAffordabilityAssessment\when_archived_assessment_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresArchivedAffordabilityAssessment\when_archived_assessment_exists.cs" />
+    <Compile Include="CheckHandlers\RequiresCapability\when_capability_exists.cs" />
+    <Compile Include="CheckHandlers\RequiresCapability\when_capability_does_not_exists_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresClient\when_client_does_not_exists_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresClient\when_client_exists_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresConfirmedAffordabilityAssessment\when_confirmed_assessment_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresConfirmedAffordabilityAssessment\when_confirmed_assessment_exists.cs" />
+    <Compile Include="CheckHandlers\RequiresOpenLatestApplicationInformation\when_latest_application_information_is_not_open.cs" />
+    <Compile Include="CheckHandlers\RequiresOpenLatestApplicationInformation\when_latest_application_information_is_open.cs" />
+    <Compile Include="CheckHandlers\RequiresPendingDisabilityClaim\when_a_pending_disability_claim_does_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresPendingDisabilityClaim\when_a_pending_disability_claim_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresProperty\when_property_is_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresProperty\when_property_is_not_in_our_system.cs" />
+    <Compile Include="CheckHandlers\RequiresOpenApplication\when_open_application_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresOpenApplication\when_open_application_exists.cs" />
+    <Compile Include="CheckHandlers\RequiresUnconfirmedAffordabilityAssessment\when_unconfirmed_assessment_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresUnconfirmedAffordabilityAssessment\when_unconfirmed_assessment_exists.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdPartyInvoice\CommandToCheck.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdPartyInvoice\when_the_third_party_invoice_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdPartyInvoice\when_the_third_party_invoice_exists.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdPartyPaymentBatch\when_the_third_party_payment_batch_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdPartyPaymentBatch\when_the_third_party_payment_batch_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdParty\ThirdPartyCommand.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdParty\when_the_third_party_does_not_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresThirdParty\when_the_third_party_exists.cs" />
+    <Compile Include="CheckHandlers\RequiresX2Instance\RequiresX2InstanceCommand.cs" />
+    <Compile Include="CheckHandlers\RequiresX2Instance\when_the_x2_instance_exist.cs" />
+    <Compile Include="CheckHandlers\RequiresX2Instance\when_the_x2_instance_does_not_exist.cs" />
+    <Compile Include="Managers\WorkflowAssignmentDataManagerSpecs\when_checking_for_an_existing_capability.cs" />
+    <Compile Include="Managers\WorkflowAssignmentDataManagerSpecs\when_checking_for_a_non_capability.cs" />
+    <Compile Include="Managers\X2DataManagerSpecs\when_checking_for_an_existing_instance.cs" />
+    <Compile Include="Managers\X2DataManagerSpecs\when_checking_for_a_non_instance.cs" />
+    <Compile Include="Managers\Account\when_checking_for_a_non_existing_account.cs" />
+    <Compile Include="Managers\Account\when_checking_for_an_existing_account.cs" />
+    <Compile Include="Managers\Address\when_checking_for_an_existing_address.cs" />
+    <Compile Include="Managers\Address\when_checking_for_a_non_existing_address.cs" />
+    <Compile Include="Managers\AffordabilityAssessment\when_getting_an_affordability_assessment.cs" />
+    <Compile Include="Managers\Application\when_active_client_role_does_not_exist.cs" />
+    <Compile Include="Managers\Application\when_active_client_role_exists.cs" />
+    <Compile Include="Managers\Application\when_latest_application_information_is_not_open.cs" />
+    <Compile Include="Managers\Application\when_latest_application_information_is_open.cs" />
+    <Compile Include="Managers\Application\when_open_application_does_not_exist.cs" />
+    <Compile Include="Managers\Application\when_open_application_exists.cs" />
+    <Compile Include="Managers\cats\when_getting_a_third_party_payment_batch_that_does_not_existH.cs" />
+    <Compile Include="Managers\Client\when_checking_for_a_client_is_not_a_natural_person.cs" />
+    <Compile Include="Managers\Client\when_checking_for_a_client_that_is_in_our_system.cs" />
+    <Compile Include="Managers\Client\when_checking_for_a_client_that_is_not_in_our_system.cs" />
+    <Compile Include="Managers\Client\when_checking_for_a_client_is_a_natural_person.cs" />
+    <Compile Include="Managers\Life\when_getting_a_disability_claim.cs" />
+    <Compile Include="Managers\Property\when_checking_for_a_property_that_is_in_our_system.cs" />
+    <Compile Include="Managers\Property\when_checking_for_a_property_that_is_not_in_our_system.cs" />
+    <Compile Include="Managers\cats\when_getting_a_third_party_payment_batch_that_does_exist.cs" />
+    <Compile Include="Managers\ThirdPartyInvoice\when_getting_a_third_party_invoice_and_none_exist.cs" />
+    <Compile Include="Managers\ThirdPartyInvoice\when_getting_a_third_party_invoice_and_one_exists.cs" />
+    <Compile Include="Managers\ThirdPartyInvoice\when_getting_a_third_party_that_does_exist.cs" />
+    <Compile Include="Managers\ThirdPartyInvoice\when_getting_a_third_party_that_does_not_exist.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.DomainServiceChecks\SAHL.DomainServiceChecks.csproj">
+      <Project>{1b10b504-24db-46fa-8542-5d367820adf2}</Project>
+      <Name>SAHL.DomainServiceChecks</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

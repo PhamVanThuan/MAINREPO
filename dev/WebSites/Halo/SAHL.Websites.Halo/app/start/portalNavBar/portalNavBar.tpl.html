@@ -1,0 +1,42 @@
+﻿<div id="navContainer" class="navigation-bar orange fixed-top compact" ng-controller="MenuCtrl">
+    <nav class="navigation-bar-content">
+        <div class="element no-hover">
+            <a class="icon-logo"></a>
+        </div>
+        <span class="element no-left-padding no-hover">Halo</span>
+
+        <div class="element place-right">
+            <a class="dropdown-toggle" href="#">
+                <i class="icon-cog"></i>
+            </a>
+            <ul class="dropdown-menu place-right" style="min-width:250px" data-role="dropdown">
+                <li class="menu-title">Default Landing Page</li>
+                <li>
+                    <a href="#" ng-click="userOptions.setDefaultLandingPage()">Set Default Landing Page</a>
+                </li>
+                <li class="menu-title">General Settings</li>
+                <li>
+                    <a href="#" ui-sref="start.portalPages.settings({previousState:currentState})">My Settings</a>
+                </li>
+            </ul>
+        </div>
+
+        <span class="element-divider place-right"></span>
+        <div class="element place-right user-role">
+            <a class="dropdown-toggle" href="#">{{user.displayName}}</a>
+
+            <ul class="dropdown-menu place-right" data-role="dropdown">
+                <li ng-repeat="userRole in user.orgRoles">
+                    <a href="" ng-click="changeUserOrgRole(userRole)">{{userRole.RoleName}} <i class="selected icon-checkmark fg-orange" ng-show="userRole.UserOrganisationStructureKey == user.currentOrgRole.UserOrganisationStructureKey"></i></a> 
+                </li>
+            </ul>
+        </div>
+        <div class="element place-right user-img-role">
+            <img src="{{getUserProfile(30)}}">
+        </div>
+
+        <a class="element place-right" ui-sref-active="active" ui-sref="start.portalPages.tasks">Tasks</a>
+        <a class="element place-right" ui-sref-active="active" ui-sref="start.portalPages.search">Search</a>
+        <a class="element place-right" ui-sref-active="active" ui-sref="start.portalPages.myhalo({modulename: 'Home'})">My Halo</a>
+    </nav>
+</div>

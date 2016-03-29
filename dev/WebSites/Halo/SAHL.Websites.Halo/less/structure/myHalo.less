@@ -1,0 +1,56 @@
+﻿@import url("../sahl.ui.core/sahl.ui.core.less");
+
+.myHalo{
+    .full-width{
+        width:100%;
+    }
+    .full-height{
+        height:100% !important;
+    }
+    .red{
+        color:@alizarin;
+    }
+}
+
+.myHaloTile{
+    .hi-lo {
+        span {
+            font-size: 60px;
+        }
+
+        sup {
+            font-size: 25px;
+            top: -25px;
+            color: @emerald;
+        }
+
+        sub {
+            bottom: 0;
+            left: -40px;
+            font-size: 25px;
+            color: @pomegranate;
+        }
+    }
+    @font-size:18px;
+    @line-height:@font-size+5;
+    
+    .labels {
+        float: left;
+        margin-right: 12px;
+        div {
+            font-size:@font-size;
+            font-weight: bold;
+            height: @line-height;
+            line-height: @line-height;
+            color: @grey-darker;
+        }
+    }
+    .values {
+        div {
+            font-size:@font-size;
+            height:@line-height;
+            line-height:@line-height;
+            color: @grey-dark;
+        }
+    }
+}

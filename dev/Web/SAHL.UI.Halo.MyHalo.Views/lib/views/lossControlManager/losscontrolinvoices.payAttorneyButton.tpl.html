@@ -1,0 +1,4 @@
+<a ng-hide="attorney.hasAllInvoicesInPaidInvoices" style="margin-right: 5px;margin-left:5px; position: absolute; right: 0" 
+	ng-click='addAllAttorneyInvoicesToPay(attorney, $event)'>Pay All</a>
+<a  ng-show="attorney.hasAllInvoicesInPaidInvoices" style="margin-right: 5px;margin-left:5px; position: absolute; right: 0" 
+	ng-click='removeAllAttorneyInvoicesToPay(attorney, $event)'>Remove All</a>

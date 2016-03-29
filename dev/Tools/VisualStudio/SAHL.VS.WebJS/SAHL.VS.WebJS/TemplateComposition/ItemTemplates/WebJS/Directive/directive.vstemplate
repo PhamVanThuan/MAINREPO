@@ -1,0 +1,15 @@
+﻿<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>directive.js</DefaultName>
+    <Name>AngularJS Directive</Name>
+    <Description>AngularJS Directive File and Spec.</Description>
+    <ProjectType>WebJS</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>directive.ico</Icon>
+    <NumberOfParentCategoriesToRollUp>0</NumberOfParentCategoriesToRollUp>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem TargetFileName="$fileinputname$.js" ReplaceParameters="true" SubType="Compile">directive.js</ProjectItem>
+    <ProjectItem TargetFileName="$fileinputname$.js/$fileinputname$.spec.js" ReplaceParameters="true" SubType="">directive.spec.js</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

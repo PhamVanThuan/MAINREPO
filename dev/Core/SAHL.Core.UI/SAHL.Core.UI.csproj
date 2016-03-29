@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2778BC9E-9E41-4698-BCE5-155714C86244}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.UI</RootNamespace>
+    <AssemblyName>SAHL.Core.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation">
+      <HintPath>..\..\Binaries\ExternalBinaries\FluentValidation\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationState\Managers\ApplicationStateManager.cs" />
+    <Compile Include="ApplicationState\Managers\EditorConfigurationManager.cs" />
+    <Compile Include="ApplicationState\Managers\IApplicationStateManager.cs" />
+    <Compile Include="ApplicationState\Managers\IEditorConfigurationManager.cs" />
+    <Compile Include="ApplicationState\Managers\ITileConfigurationManager.cs" />
+    <Compile Include="ApplicationState\Managers\SecurityManager.cs" />
+    <Compile Include="ApplicationState\Managers\TileConfigurationManager.cs" />
+    <Compile Include="ApplicationState\Models\ApplicationConfiguration.cs" />
+    <Compile Include="Caching\ApplicationStateCacheKeyConfigurationFactory.cs" />
+    <Compile Include="Caching\PrincipalEditorBusinessContextGeneratorFactor.cs" />
+    <Compile Include="Caching\PrincipalTileBusinessContextCacheGeneratorFactory.cs" />
+    <Compile Include="Configuration\Editors\AbstractEditorPageSelectorConfiguration.cs" />
+    <Compile Include="Configuration\Editors\EditorConfiguration.cs" />
+    <Compile Include="Configuration\Editors\EditorPageConfiguration.cs" />
+    <Compile Include="Configuration\Editors\EditorOrderedPageConfiguration.cs" />
+    <Compile Include="Configuration\Editors\OrderedEditorPageSelectorConfiguration.cs" />
+    <Compile Include="Configuration\IActionTileConfiguration.cs" />
+    <Compile Include="Configuration\IChildTileConfiguration.cs" />
+    <Compile Include="Configuration\IDrillDownTileConfiguration.cs" />
+    <Compile Include="Configuration\IEditorConfiguration.cs" />
+    <Compile Include="Configuration\IEditorPageConfiguration.cs" />
+    <Compile Include="Configuration\IEditorPageOrderedConfiguration.cs" />
+    <Compile Include="Configuration\IEditorPageSelectorConfiguration.cs" />
+    <Compile Include="Configuration\IMajorTileConfiguration.cs" />
+    <Compile Include="Configuration\IOrderedEditorPageSelectorConfiguration.cs" />
+    <Compile Include="Configuration\IParentedActionTileConfiguration.cs" />
+    <Compile Include="Configuration\IParentedEditorConfiguration.cs" />
+    <Compile Include="Configuration\IParentedEditorPageConfiguration.cs" />
+    <Compile Include="Configuration\IRequiredFeatureAccess.cs" />
+    <Compile Include="Configuration\Menus\AbstractMenuItemConfiguration.cs" />
+    <Compile Include="Configuration\Tiles\AbstractTileConfiguration.cs" />
+    <Compile Include="Configuration\Tiles\ActionTileConfiguration.cs" />
+    <Compile Include="Configuration\UrlNames.cs" />
+    <Compile Include="Configuration\IBusinessElementConfiguration.cs" />
+    <Compile Include="Configuration\IElementConfiguration.cs" />
+    <Compile Include="Configuration\IElementWithUrlConfiguration.cs" />
+    <Compile Include="Configuration\IElementWthOrderConfiguration.cs" />
+    <Compile Include="Configuration\IMenuItemConfiguration.cs" />
+    <Compile Include="Configuration\IParentedTileConfiguration.cs" />
+    <Compile Include="Configuration\IRibbonItemConfiguration.cs" />
+    <Compile Include="Configuration\IRootTileConfiguration.cs" />
+    <Compile Include="Configuration\ITileConfiguration.cs" />
+    <Compile Include="Configuration\Menus\StaticTextMenuItemConfiguration.cs" />
+    <Compile Include="Configuration\Menus\StaticSearchRibbonMenuItemConfiguration.cs" />
+    <Compile Include="Configuration\Tiles\MajorTileConfiguration.cs" />
+    <Compile Include="Configuration\Tiles\MiniTileConfiguration.cs" />
+    <Compile Include="Configuration\Tiles\MinorTileConfiguration.cs" />
+    <Compile Include="Configuration\UrlConfiguration.cs" />
+    <Compile Include="Context\EditorBusinessContext.cs" />
+    <Compile Include="Context\PrincipalEditorBusinessContext.cs" />
+    <Compile Include="Context\PrincipalTileBusinessContext.cs" />
+    <Compile Include="Context\TileBusinessContext.cs" />
+    <Compile Include="Elements\Areas\ActionTileArea.cs" />
+    <Compile Include="Elements\Areas\ApplicationElementArea.cs" />
+    <Compile Include="Elements\Areas\ChildTileElementArea.cs" />
+    <Compile Include="Elements\Areas\MajorTileElementArea.cs" />
+    <Compile Include="Elements\Areas\MenuElementArea.cs" />
+    <Compile Include="Elements\Areas\SummaryElementArea.cs" />
+    <Compile Include="Elements\Areas\TiledApplicationElementArea.cs" />
+    <Compile Include="Elements\Areas\TileElementArea.cs" />
+    <Compile Include="Elements\Editors\EditorElement.cs" />
+    <Compile Include="Elements\Element.cs" />
+    <Compile Include="Elements\ElementArea.cs" />
+    <Compile Include="Elements\ElementBusinessContext.cs" />
+    <Compile Include="Elements\IElement.cs" />
+    <Compile Include="Elements\IElementArea.cs" />
+    <Compile Include="Elements\ISelectable.cs" />
+    <Compile Include="Elements\ISelectionContext.cs" />
+    <Compile Include="Elements\IUrlElement.cs" />
+    <Compile Include="Elements\IVisualElement.cs" />
+    <Compile Include="Elements\Menus\AbstractContextMenuItemElement.cs" />
+    <Compile Include="Elements\Menus\TileDynamicContextMenuItemElement.cs" />
+    <Compile Include="Elements\Menus\DynamicContextMenuItemElement.cs" />
+    <Compile Include="Elements\Menus\DynamicRibbonMenuItemElement.cs" />
+    <Compile Include="Elements\ElementNames.cs" />
+    <Compile Include="Elements\Menus\MenuBarContextElement.cs" />
+    <Compile Include="Elements\Menus\MenuBarMenuElement.cs" />
+    <Compile Include="Elements\Menus\MenuBarRibbonElement.cs" />
+    <Compile Include="Elements\Menus\AbstractMenuItemElement.cs" />
+    <Compile Include="Elements\Menus\AbstractRibbonMenuItemElement.cs" />
+    <Compile Include="Elements\Menus\StaticMenuItemElement.cs" />
+    <Compile Include="Elements\Menus\StaticRibbonMenuItemElement.cs" />
+    <Compile Include="Elements\Part.cs" />
+    <Compile Include="Elements\Parts\CloseButtonPart.cs" />
+    <Compile Include="Elements\Parts\DynamicTextPart.cs" />
+    <Compile Include="Elements\Parts\IconPart.cs" />
+    <Compile Include="Elements\Parts\PinButtonPart.cs" />
+    <Compile Include="Elements\Parts\StaticTextPart.cs" />
+    <Compile Include="Elements\Parts\TileContentPart.cs" />
+    <Compile Include="Elements\Parts\TileTitlePart.cs" />
+    <Compile Include="Elements\Tiles\ActionMiniTileElement.cs" />
+    <Compile Include="Elements\Tiles\ChildTileElement.cs" />
+    <Compile Include="Elements\Tiles\MajorTileElement.cs" />
+    <Compile Include="Elements\Tiles\MiniTileElement.cs" />
+    <Compile Include="Elements\Tiles\MinorTileElement.cs" />
+    <Compile Include="Elements\Tiles\AbstractTileElement.cs" />
+    <Compile Include="Elements\VisualElement.cs" />
+    <Compile Include="Enums\EditorAction.cs" />
+    <Compile Include="Enums\TileSize.cs" />
+    <Compile Include="Enums\UrlAction.cs" />
+    <Compile Include="Enums\ValidationSeverityLevel.cs" />
+    <Compile Include="Models\AbstractEditorPageModelValidator.cs" />
+    <Compile Include="Models\IEditor.cs" />
+    <Compile Include="Models\IEditorPageModel.cs" />
+    <Compile Include="Models\IEditorPageModelSelector.cs" />
+    <Compile Include="Models\IEditorPageModelValidator.cs" />
+    <Compile Include="Models\IOrderedEditorPageModelSelector.cs" />
+    <Compile Include="Models\IDrillPreviewTileModel.cs" />
+    <Compile Include="Models\IUIEditorPageModel.cs" />
+    <Compile Include="Models\IUIValidationResult.cs" />
+    <Compile Include="Models\OrderedEditorPageModelSelector.cs" />
+    <Compile Include="Models\UIEditorPageModel.cs" />
+    <Compile Include="Models\UIEditorPageTypeModel.cs" />
+    <Compile Include="Models\UIValidationResult.cs" />
+    <Compile Include="Modules\ApplicationModule.cs" />
+    <Compile Include="Modules\IApplicationModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\AbstractActionTileModel.cs" />
+    <Compile Include="Providers\AbstractSqlStatementDataProvider.cs" />
+    <Compile Include="Providers\AbstractUIStatementDataProvider.cs" />
+    <Compile Include="Providers\ISqlDataProvider.cs" />
+    <Compile Include="Providers\ISqlStatementDataProvider.cs" />
+    <Compile Include="Providers\ISqlUIStatementDataProvider.cs" />
+    <Compile Include="Providers\Tiles\AbstractSqlTileContentProvider.cs" />
+    <Compile Include="Providers\Tiles\AbstractSqlTileDataProvider.cs" />
+    <Compile Include="Models\IActionTileModel.cs" />
+    <Compile Include="Models\IAlternateTileModel.cs" />
+    <Compile Include="Providers\Tiles\ITileContentProvider.cs" />
+    <Compile Include="Providers\Tiles\ITileDataProvider.cs" />
+    <Compile Include="Models\ITileModel.cs" />
+    <Compile Include="Models\TileDataModel.cs" />
+    <Compile Include="Providers\Tiles\TileProviders.cs" />
+    <Compile Include="UserState\Managers\EditorManager.cs" />
+    <Compile Include="UserState\Managers\IEditorManager.cs" />
+    <Compile Include="UserState\Managers\IMenuManager.cs" />
+    <Compile Include="UserState\Managers\ITileManager.cs" />
+    <Compile Include="UserState\Managers\IUserStateManager.cs" />
+    <Compile Include="UserState\Managers\MenuManager.cs" />
+    <Compile Include="UserState\Managers\TileManager.cs" />
+    <Compile Include="UserState\Managers\UserStateManager.cs" />
+    <Compile Include="UserState\Models\EditorState.cs" />
+    <Compile Include="UserState\Models\IUserDetails.cs" />
+    <Compile Include="UserState\Models\IUserPrincipal.cs" />
+    <Compile Include="UserState\Models\UserDetails.cs" />
+    <Compile Include="UserState\Models\UserRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core.BusinessModel\SAHL.Core.BusinessModel.csproj">
+      <Project>{6d54e795-84d4-4282-83a7-ba2810521964}</Project>
+      <Name>SAHL.Core.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.Data\SAHL.Core.Data.csproj">
+      <Project>{22934349-928f-4e97-9ea4-4aa749b6e40e}</Project>
+      <Name>SAHL.Core.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core.UI.Data.Models\SAHL.Core.UI.Data.Models.csproj">
+      <Project>{9bd89667-8243-42e4-b2cf-6a6df0174e34}</Project>
+      <Name>SAHL.Core.UI.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Validation\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\" Condition="Exists('$(SolutionDir)\.nuget\')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

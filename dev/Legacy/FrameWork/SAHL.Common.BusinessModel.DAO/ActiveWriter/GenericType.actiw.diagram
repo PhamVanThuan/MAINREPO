@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="GenericType">
+  <modelMoniker Id="1f74cd00-cbd6-4963-bfc5-591c846a6468" />
+  <nestedChildShapes>
+    <classShape Id="20cd15a4-ba84-4f24-bc35-c199e2ab0437" absoluteBounds="0.5, 1.375, 1.5, 1.3748478190104168">
+      <modelClassMoniker name="/1f74cd00-cbd6-4963-bfc5-591c846a6468/GenericType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fdd4667-e7cb-4509-8266-1a38d4f472d3" absoluteBounds="0.515, 1.7850000000000001, 1.4700000000000002, 0.86484781901041663" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</activeRecordMapping>

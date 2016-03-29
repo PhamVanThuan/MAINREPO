@@ -1,0 +1,1357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProcessName Name="Life" ProductVersion="0.3" MapVersion="0.0.0.0" Retrieved="false">
+  <WorkFlows>
+    <WorkFlow WorkFlowName="LifeOrigination" LocationX="20" LocationY="70" GenericKeyTypeKey="2">
+      <CustomVariables>
+        <CustomVariable Name="LastState" Length="255" Type="string" />
+        <CustomVariable Name="OfferKey" Length="0" Type="integer" />
+        <CustomVariable Name="BenefitsDone" Length="0" Type="integer" />
+        <CustomVariable Name="ExclusionsDone" Length="0" Type="integer" />
+        <CustomVariable Name="RPARDone" Length="0" Type="integer" />
+        <CustomVariable Name="DeclarationDone" Length="0" Type="integer" />
+        <CustomVariable Name="FAISDone" Length="0" Type="integer" />
+        <CustomVariable Name="RPARInsurer" Length="255" Type="string" />
+        <CustomVariable Name="LastNTUState" Length="255" Type="string" />
+        <CustomVariable Name="ConfirmationRequired" Length="0" Type="bool" />
+        <CustomVariable Name="ExclusionsConfirmationDone" Length="0" Type="integer" />
+        <CustomVariable Name="DeclarationConfirmationDone" Length="0" Type="integer" />
+        <CustomVariable Name="FAISConfirmationDone" Length="0" Type="integer" />
+        <CustomVariable Name="ContactNumber" Length="255" Type="string" />
+        <CustomVariable Name="LoanNumber" Length="0" Type="integer" />
+        <CustomVariable Name="AssignTo" Length="255" Type="string" />
+        <CustomVariable Name="PolicyFinancialServiceKey" Length="0" Type="integer" />
+        <CustomVariable Name="PolicyTypeKey" Length="0" Type="integer" />
+        <CustomVariable Name="BenefitsConfirmProceed" Length="0" Type="bool" />
+        <CustomVariable Name="BenefitsConfirmRefused" Length="0" Type="bool" />
+        <CustomVariable Name="GenericKey" Length="0" Type="integer" />
+      </CustomVariables>
+      <ExternalActivities>
+        <ExternalActivity Name="Create Instance" Description="" />
+        <ExternalActivity Name="ReAssign" Description="" />
+        <ExternalActivity Name="Close Child Instance" Description="" />
+        <ExternalActivity Name="Close Instance" Description="" />
+      </ExternalActivities>
+      <CustomForms>
+        <CustomForm Name="Life_Account" Description="Loan Summary" />
+        <CustomForm Name="Life_AccountMemoSummary" Description="Loan Account Memo" />
+        <CustomForm Name="Life_Activation" Description="Activation" />
+        <CustomForm Name="Life_Assign_Leads" Description="Assign Leads" />
+        <CustomForm Name="Life_Benefits" Description="Benefits" />
+        <CustomForm Name="Life_Callback" Description="Callback" />
+        <CustomForm Name="Life_CallbackHold" Description="Callback Hold" />
+        <CustomForm Name="Life_Contact" Description="Contact" />
+        <CustomForm Name="Life_Correspondence_LetterOfAcceptance" Description="Send Policy Document" />
+        <CustomForm Name="Life_Correspondence_Quote" Description="Send Quote" />
+        <CustomForm Name="Life_CorrespondenceHistoryOrigination" Description="Correspondence History" />
+        <CustomForm Name="Life_Declaration" Description="Declaration" />
+        <CustomForm Name="Life_DeclarationConfirm" Description="Declaration Confirm" />
+        <CustomForm Name="Life_Exclusions" Description="Exclusions" />
+        <CustomForm Name="Life_ExclusionsConfirm" Description="Exclusions Confirm" />
+        <CustomForm Name="Life_FAIS" Description="FAIS" />
+        <CustomForm Name="Life_FAISConfirm" Description="FAIS Confirm" />
+        <CustomForm Name="Life_LOA" Description="LOA" />
+        <CustomForm Name="Life_LoanDetailDisplay" Description="Loan Detail Summary" />
+        <CustomForm Name="Life_NTU" Description="NTU" />
+        <CustomForm Name="Life_PolicyConfirm" Description="Policy Confirm" />
+        <CustomForm Name="Life_PolicyWorkFlow" Description="Policy" />
+        <CustomForm Name="Life_PremiumHistoryWorkFlow" Description="Premium History" />
+        <CustomForm Name="Life_ProductSwitch" Description="Switch Product" />
+        <CustomForm Name="Life_RPAR" Description="RPAR" />
+        <CustomForm Name="Life_StageTransitionHistoryOrigination" Description="Business Event History" />
+        <CustomForm Name="Life_TransactionsLoan" Description="Loan Transactions" />
+        <CustomForm Name="Life_WorkflowSubmit" Description="" />
+      </CustomForms>
+      <Clapperboard LocationX="33.26302" LocationY="93.50003" LimitAccessTo="Everyone" Subject="" KeyVariable="OfferKey" />
+      <States>
+        <State LocationX="186.7683" LocationY="227.5453" X2ID="27e4d972-1754-4fbd-bf11-a7a8214b3689" Type="SAHL.X2Designer.Items.UserState" StateName="Contact Client">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Contact_Client(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;/* Set X2 PolicyTypeKey=LifePolicyType.Standard Cover as initial default */&#xD;&#xA;&#x9;LifeOrigination_Data.PolicyTypeKey = (int)SAHL.Common.Globals.LifePolicyTypes.StandardCover;&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Contact_Client(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="421.7632" LocationY="225.5453" X2ID="27fba814-7334-4011-8dd5-300981fa0121" Type="SAHL.X2Designer.Items.UserState" StateName="LOA">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_LOA(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_LOA(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="635.7632" LocationY="225.5455" X2ID="e6218e64-f799-448e-9e0e-c36cf28bf630" Type="SAHL.X2Designer.Items.UserState" StateName="Benefits">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Benefits(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Benefits(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="636.7632" LocationY="400.5457" X2ID="e5a3b54f-939f-4c8b-bffa-8508cd5d425d" Type="SAHL.X2Designer.Items.UserState" StateName="Quote">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="635.7632" LocationY="560.5458" X2ID="c57f4cf3-7ff4-4f69-9b04-fb545d0d144c" Type="SAHL.X2Designer.Items.UserState" StateName="Exclusions">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="866.7632" LocationY="560.5454" X2ID="a6cacb81-5bd2-461e-911f-2db0037471bf" Type="SAHL.X2Designer.Items.UserState" StateName="RPAR">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_RPAR(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_RPAR(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="1077.763" LocationY="561.5454" X2ID="ee05d79b-9f48-4220-b872-c3a9696d4c61" Type="SAHL.X2Designer.Items.UserState" StateName="Declaration">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="1299.763" LocationY="561.5454" X2ID="dc8928de-b222-459e-8b3b-a2bec9f1673b" Type="SAHL.X2Designer.Items.UserState" StateName="FAIS">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="831.589" LocationY="769.5455" X2ID="997d2de8-e06b-4f1c-97c4-de28e01b5bfb" Type="SAHL.X2Designer.Items.ArchiveState" StateName="Policy Activated" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Policy_Activated(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Policy_Activated(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_Policy_Activated(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+        <State LocationX="1393.081" LocationY="179.5456" X2ID="98e91250-5c77-4f29-8f7b-aa492aad4a95" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Callback">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Contact Client" />
+            <AppliesToCollection AppliesToCollectionItem="LOA" />
+            <AppliesToCollection AppliesToCollectionItem="Benefits" />
+            <AppliesToCollection AppliesToCollectionItem="Quote" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions" />
+            <AppliesToCollection AppliesToCollectionItem="RPAR" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS" />
+            <AppliesToCollection AppliesToCollectionItem="Callback Hold" />
+            <AppliesToCollection AppliesToCollectionItem="Ready to Callback" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS Confirmation" />
+          </AppliesTo>
+        </State>
+        <State LocationX="329.6357" LocationY="584.5458" X2ID="f6488bd0-42ff-4bc1-a417-c4a2469c3a2c" Type="SAHL.X2Designer.Items.CommonState" StateName="Common NTU">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_NTU(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_NTU(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Contact Client" />
+            <AppliesToCollection AppliesToCollectionItem="LOA" />
+            <AppliesToCollection AppliesToCollectionItem="Benefits" />
+            <AppliesToCollection AppliesToCollectionItem="Quote" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions" />
+            <AppliesToCollection AppliesToCollectionItem="RPAR" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS" />
+            <AppliesToCollection AppliesToCollectionItem="Callback Hold" />
+            <AppliesToCollection AppliesToCollectionItem="Ready to Callback" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS Confirmation" />
+          </AppliesTo>
+        </State>
+        <State LocationX="1641.716" LocationY="180.5456" X2ID="dfb90c30-7a0e-4c90-87f1-dfa0e3ad0917" Type="SAHL.X2Designer.Items.UserState" StateName="Callback Hold">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Callback_Hold(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Callback_Hold(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_CallbackHold" />
+            <CustomFormCollection FormName="Life_LOA" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_Benefits" />
+            <CustomFormCollection FormName="Life_PolicyWorkFlow" />
+            <CustomFormCollection FormName="Life_Exclusions" />
+            <CustomFormCollection FormName="Life_RPAR" />
+            <CustomFormCollection FormName="Life_Declaration" />
+            <CustomFormCollection FormName="Life_FAIS" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="336.4662" LocationY="400.064" X2ID="de45358f-4e77-4411-b916-bf0b0c2e6d4b" Type="SAHL.X2Designer.Items.UserState" StateName="NTU Hold">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_NTU_Hold(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_NTU_Hold(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="112.0157" LocationY="400.5457" X2ID="c81df534-62c8-483e-9a17-2dcfb2d34301" Type="SAHL.X2Designer.Items.ArchiveState" StateName="Policy NTUd" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Policy_NTUd(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.PolicyNTUd((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Policy_NTUd(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_Policy_NTUd(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+        <State LocationX="175.8283" LocationY="313.5454" X2ID="7ee06d51-cc72-46db-a761-4ce452c550b3" Type="SAHL.X2Designer.Items.SystemState" StateName="NTU Reactivated" UseAutoForward="True">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_NTU_Reactivated(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_NTU_Reactivated(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="AutoForwardTo" Code="public string GetForwardStateName_NTU_Reactivated(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return LifeOrigination_Data.LastNTUState;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+        </State>
+        <State LocationX="1631.188" LocationY="363.5457" X2ID="851e542a-0364-4cbf-9984-9e9b090bd221" Type="SAHL.X2Designer.Items.UserState" StateName="Ready to Callback">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Ready_to_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#x9;// This code will complete the callback and email the consultant to let them know the client is ready to callback&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.ReadyToCallback((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey, instance.ID);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Ready_to_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="1762.36" LocationY="267.5456" X2ID="2a8705b4-471e-42ba-b3c5-3c450b41d580" Type="SAHL.X2Designer.Items.SystemState" StateName="Forward to last State" UseAutoForward="True">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Forward_to_last_State(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Forward_to_last_State(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="AutoForwardTo" Code="public string GetForwardStateName_Forward_to_last_State(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return LifeOrigination_Data.LastState;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+        </State>
+        <State LocationX="1027.248" LocationY="670.5458" X2ID="c0fca2f6-e413-414a-8601-c7aeaecc2fef" Type="SAHL.X2Designer.Items.UserState" StateName="Ready to Send">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Ready_to_Send(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Ready_to_Send(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_Correspondence_LetterOfAcceptance" />
+          </CustomForms>
+        </State>
+        <State LocationX="682.6147" LocationY="85.54564" X2ID="5c0b8e0f-a9d9-4cdf-ba10-1994331d5fb7" Type="SAHL.X2Designer.Items.ArchiveState" StateName="Older than 45 Days" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Older_than_45_Days(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#x9;// Complete any outstanding callbacks and send the email &#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.OlderThan45Days((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey, instance.ID);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Older_than_45_Days(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_Older_than_45_Days(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+        <State LocationX="438.4662" LocationY="85.09114" X2ID="f8dfa53a-0599-4705-8566-6f0cc567c450" Type="SAHL.X2Designer.Items.SystemState" StateName="Awaiting Timeout" UseAutoForward="False">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Awaiting_Timeout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Awaiting_Timeout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+        </State>
+        <State LocationX="1132.05" LocationY="398.6367" X2ID="feaa4e4d-6fad-465e-9bd0-427462394032" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Close Child">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Close_Child(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Close_Child(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Contact Client" />
+            <AppliesToCollection AppliesToCollectionItem="LOA" />
+            <AppliesToCollection AppliesToCollectionItem="Benefits" />
+            <AppliesToCollection AppliesToCollectionItem="Quote" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions" />
+            <AppliesToCollection AppliesToCollectionItem="RPAR" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS" />
+            <AppliesToCollection AppliesToCollectionItem="Callback Hold" />
+            <AppliesToCollection AppliesToCollectionItem="NTU Hold" />
+            <AppliesToCollection AppliesToCollectionItem="NTU Reactivated" />
+            <AppliesToCollection AppliesToCollectionItem="Ready to Callback" />
+            <AppliesToCollection AppliesToCollectionItem="Ready to Send" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Timeout" />
+          </AppliesTo>
+        </State>
+        <State LocationX="1123.105" LocationY="332.1824" X2ID="9880c51e-8080-4111-8ff2-fff8adceb653" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Close Instance">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Close_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Close_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Contact Client" />
+            <AppliesToCollection AppliesToCollectionItem="LOA" />
+            <AppliesToCollection AppliesToCollectionItem="Benefits" />
+            <AppliesToCollection AppliesToCollectionItem="Quote" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions" />
+            <AppliesToCollection AppliesToCollectionItem="RPAR" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS" />
+            <AppliesToCollection AppliesToCollectionItem="Callback Hold" />
+            <AppliesToCollection AppliesToCollectionItem="NTU Hold" />
+            <AppliesToCollection AppliesToCollectionItem="NTU Reactivated" />
+            <AppliesToCollection AppliesToCollectionItem="Ready to Callback" />
+            <AppliesToCollection AppliesToCollectionItem="Ready to Send" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Timeout" />
+          </AppliesTo>
+        </State>
+        <State LocationX="1392.136" LocationY="400.1823" X2ID="b81cac43-2f81-4200-a6ae-7ec73a6780ac" Type="SAHL.X2Designer.Items.ArchiveState" StateName="Child Closed" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Child_Closed(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Child_Closed(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_Child_Closed(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+        <State LocationX="1388.638" LocationY="331.7277" X2ID="a0de0027-d5fa-44e2-8f66-f90aab05cc06" Type="SAHL.X2Designer.Items.ArchiveState" StateName="Parent Closed" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Parent_Closed(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Parent_Closed(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_Parent_Closed(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+        <State LocationX="1382.736" LocationY="111.6368" X2ID="b5dc349f-c273-48b0-9350-edf4c578e188" Type="SAHL.X2Designer.Items.CommonState" StateName="Common Send Quote">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Common_Send_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Common_Send_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Quote" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions" />
+            <AppliesToCollection AppliesToCollectionItem="RPAR" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS" />
+            <AppliesToCollection AppliesToCollectionItem="Benefits" />
+            <AppliesToCollection AppliesToCollectionItem="LOA" />
+            <AppliesToCollection AppliesToCollectionItem="Callback Hold" />
+          </AppliesTo>
+        </State>
+        <State LocationX="1768.416" LocationY="562.6372" X2ID="f28762b6-3f43-4002-b1a4-9bed6fc0b88f" Type="SAHL.X2Designer.Items.UserState" StateName="Awaiting Confirmation">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Awaiting_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Awaiting_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_PolicyConfirm" />
+            <CustomFormCollection FormName="Life_ExclusionsConfirm" />
+            <CustomFormCollection FormName="Life_DeclarationConfirm" />
+            <CustomFormCollection FormName="Life_FAISConfirm" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="1615.75" LocationY="839.637" X2ID="f746fa07-ae4c-4139-8577-42e2f6ce6ab2" Type="SAHL.X2Designer.Items.UserState" StateName="Exclusions Confirmation">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Exclusions_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Exclusions_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_ExclusionsConfirm" />
+            <CustomFormCollection FormName="Life_DeclarationConfirm" />
+            <CustomFormCollection FormName="Life_FAISConfirm" />
+            <CustomFormCollection FormName="Life_PolicyConfirm" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="1304.782" LocationY="839.637" X2ID="5e594285-284e-4f51-9f10-d0f4f9e1f68d" Type="SAHL.X2Designer.Items.UserState" StateName="Declaration Confirmation">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Declaration_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Declaration_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_DeclarationConfirm" />
+            <CustomFormCollection FormName="Life_FAISConfirm" />
+            <CustomFormCollection FormName="Life_ExclusionsConfirm" />
+            <CustomFormCollection FormName="Life_PolicyConfirm" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="1018.152" LocationY="840.6366" X2ID="82317dbb-b4bd-4794-bc4b-dced5cbc3463" Type="SAHL.X2Designer.Items.UserState" StateName="FAIS Confirmation">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_FAIS_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_FAIS_Confirmation(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList>
+            <WorkListCollection WorkListCollectionItem="CurrentConsultant" />
+          </WorkList>
+          <TrackList />
+          <CustomForms>
+            <CustomFormCollection FormName="Life_FAISConfirm" />
+            <CustomFormCollection FormName="Life_ExclusionsConfirm" />
+            <CustomFormCollection FormName="Life_DeclarationConfirm" />
+            <CustomFormCollection FormName="Life_PolicyConfirm" />
+            <CustomFormCollection FormName="Life_Contact" />
+            <CustomFormCollection FormName="Life_StageTransitionHistoryOrigination" />
+            <CustomFormCollection FormName="Life_CorrespondenceHistoryOrigination" />
+            <CustomFormCollection FormName="Life_PremiumHistoryWorkFlow" />
+            <CustomFormCollection FormName="Life_Account" />
+            <CustomFormCollection FormName="Life_TransactionsLoan" />
+            <CustomFormCollection FormName="Life_LoanDetailDisplay" />
+            <CustomFormCollection FormName="Life_AccountMemoSummary" />
+          </CustomForms>
+        </State>
+        <State LocationX="1486.084" LocationY="561.6366" X2ID="6a9a3bfe-863a-4e54-aaca-ef25f71aee9a" Type="SAHL.X2Designer.Items.SystemState" StateName="FAIS Confirmation Check" UseAutoForward="False">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_FAIS_Confirmation_Check(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_FAIS_Confirmation_Check(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+        </State>
+        <State LocationX="949.8495" LocationY="227.5406" X2ID="b197f043-0c51-4155-aa0f-ba6c0d801808" Type="SAHL.X2Designer.Items.CommonState" StateName="Change Policy Type">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Change_Policy_Type(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Change_Policy_Type(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <AppliesTo>
+            <AppliesToCollection AppliesToCollectionItem="Quote" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions" />
+            <AppliesToCollection AppliesToCollectionItem="RPAR" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS" />
+            <AppliesToCollection AppliesToCollectionItem="Awaiting Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="Exclusions Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="Declaration Confirmation" />
+            <AppliesToCollection AppliesToCollectionItem="FAIS Confirmation" />
+          </AppliesTo>
+        </State>
+        <State LocationX="796.1379" LocationY="399.4089" X2ID="d9ec4898-8c31-4a06-a885-56b9445416bf" Type="SAHL.X2Designer.Items.SystemState" StateName="Forward to correct State" UseAutoForward="False">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Forward_to_correct_State(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;/* Retrive and set X2 variable PolicyTypeKey */&#xD;&#xA;&#x9;LifeOrigination_Data.PolicyTypeKey = lifeClient.GetPolicyTypeKeyForOfferLife((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Forward_to_correct_State(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <WorkList />
+          <TrackList />
+        </State>
+        <State LocationX="20" LocationY="325.5" X2ID="c2ce0291-3e68-4c65-aec1-697638ad7b9f" Type="SAHL.X2Designer.Items.ArchiveState" StateName="Cache Archive" ReturnActivity="" ReturnWorkflow="">
+          <CodeSections>
+            <CodeSection Name="OnEnter" Code="public bool OnEnter_Cache_Archive(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnExit" Code="public bool OnExit_Cache_Archive(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnReturn" Code="public bool OnReturn_Cache_Archive(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+        </State>
+      </States>
+      <Activities>
+        <Activity LocationX="86.34902" LocationY="150.7277" Type="SAHL.X2Designer.Items.UserActivity" Id="1" Name="Create Instance" X2ID="8ce94164-860d-433e-9e97-54998e8fca60" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_Contact" LinkedActivity="" UseLinkedActivity="False" FromNode="ClapperBoard" ToNode="Contact Client">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;string Name = &quot;&quot;;&#xD;&#xA;&#x9;string Subject = &quot;&quot;;&#xD;&#xA;&#x9;int Priority = 0;&#xD;&#xA;&#x9;int AppKey=-1;&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.CreateInstance((IDomainMessageCollection)messages, LifeOrigination_Data.LoanNumber, instance.ID, LifeOrigination_Data.AssignTo, out AppKey, out Name, out Subject, out Priority);&#xD;&#xA;&#xD;&#xA;&#x9;if (AppKey &gt; 0) &#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;LifeOrigination_Data.OfferKey = AppKey;&#xD;&#xA;&#x9;&#x9;instance.Name = Name;&#xD;&#xA;&#x9;&#x9;instance.Subject = Subject;&#xD;&#xA;&#x9;&#x9;instance.Priority = Priority;&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Create_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return (&quot;New manual Lead created from loan &quot; + LifeOrigination_Data.LoanNumber);&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Create_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="45" DefinitionGroupDescription="Life Origination" DefinitionDescription="Create Application" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="299.4533" LocationY="230.7277" Type="SAHL.X2Designer.Items.UserActivity" Id="2" Name="Confirm Details" X2ID="dccc069c-c922-49bd-99e5-c94ba7083921" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_Contact" LinkedActivity="" UseLinkedActivity="False" FromNode="Contact Client" ToNode="LOA">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirm_Details(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirm_Details(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirm_Details(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirm_Details(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="25" DefinitionGroupDescription="Life Origination" DefinitionDescription="Client Details Confirmed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="520.1459" LocationY="230.728" Type="SAHL.X2Designer.Items.UserActivity" Id="3" Name="Confirm LOA" X2ID="cc11e8f4-1e91-4377-aadd-34d0c97e97e9" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_LOA" LinkedActivity="" UseLinkedActivity="False" FromNode="LOA" ToNode="Benefits">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirm_LOA(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirm_LOA(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirm_LOA(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirm_LOA(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="26" DefinitionGroupDescription="Life Origination" DefinitionDescription="LOA Completed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="625.9114" LocationY="306.7278" Type="SAHL.X2Designer.Items.UserActivity" Id="4" Name="Accept Benefits" X2ID="1c5a721f-6e8e-4ab5-94e2-6a0cd0b03f7c" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_Benefits" LinkedActivity="" UseLinkedActivity="False" FromNode="Benefits" ToNode="Quote">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Accept_Benefits(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Accept_Benefits(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.AcceptBenefits((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#xD;&#xA;&#x9;// Write back to the x2.x2Data.LifeOrigination table to mark that this activity has been done&#xD;&#xA;&#x9;LifeOrigination_Data.BenefitsDone = 1;&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Accept_Benefits(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Accept_Benefits(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="27" DefinitionGroupDescription="Life Origination" DefinitionDescription="Benefits Completed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="631.6849" LocationY="480.728" Type="SAHL.X2Designer.Items.UserActivity" Id="5" Name="Accept Quote" X2ID="733db046-0a0f-4938-8c01-5d3aab0db3ed" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_WorkflowSubmit" LinkedActivity="" UseLinkedActivity="False" FromNode="Quote" ToNode="Exclusions">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Accept_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Accept_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Accept_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Accept_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="28" DefinitionGroupDescription="Life Origination" DefinitionDescription="Quote Accepted" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="735.6589" LocationY="565.7279" Type="SAHL.X2Designer.Items.UserActivity" Id="6" Name="Accept Exclusions" X2ID="d5bdcda5-ce1d-49ae-9798-7d9b8b4b3556" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_Exclusions" LinkedActivity="" UseLinkedActivity="False" FromNode="Exclusions" ToNode="RPAR">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Accept_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Accept_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;LifeOrigination_Data.ExclusionsDone = 1;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Accept_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Accept_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="29" DefinitionGroupDescription="Life Origination" DefinitionDescription="Exclusions Completed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="958.3959" LocationY="566.7279" Type="SAHL.X2Designer.Items.UserActivity" Id="7" Name="Accept RPAR" X2ID="abbeb48e-6a56-4b9c-b1ae-4f524b1fe5fd" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_RPAR" LinkedActivity="" UseLinkedActivity="False" FromNode="RPAR" ToNode="Declaration">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Accept_RPAR(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Accept_RPAR(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;// Only update the RPAR Done if a policy is to be replaced&#xD;&#xA;&#x9;if (!String.IsNullOrEmpty(LifeOrigination_Data.RPARInsurer))&#xD;&#xA;&#x9;&#x9;LifeOrigination_Data.RPARDone = 1;&#xD;&#xA; &#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Accept_RPAR(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="1170.175" LocationY="566.7279" Type="SAHL.X2Designer.Items.UserActivity" Id="8" Name="Accept Declaration" X2ID="007c204c-f4de-4760-9896-5fcdc55fd27d" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_Declaration" LinkedActivity="" UseLinkedActivity="False" FromNode="Declaration" ToNode="FAIS">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Accept_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Accept_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;// Write back to the x2.x2Data.LifeOrigination table to mark that this activity has been done&#xD;&#xA;&#x9;LifeOrigination_Data.DeclarationDone = 1;&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Accept_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Accept_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="31" DefinitionGroupDescription="Life Origination" DefinitionDescription="Declaration Completed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1385.36" LocationY="566.7274" Type="SAHL.X2Designer.Items.UserActivity" Id="9" Name="Accept FAIS" X2ID="a64917cb-7bd1-4523-92e5-99a2445a9d98" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_FAIS" LinkedActivity="" UseLinkedActivity="False" FromNode="FAIS" ToNode="FAIS Confirmation Check">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Accept_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Accept_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Accept_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Accept_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="32" DefinitionGroupDescription="Life Origination" DefinitionDescription="FAIS Completed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="337.2345" LocationY="496.728" Type="SAHL.X2Designer.Items.UserActivity" Id="14" Name="NTU Policy" X2ID="b8387690-e66d-4ab4-adf4-90d7e664ffda" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_NTU" LinkedActivity="" UseLinkedActivity="False" FromNode="Common NTU" ToNode="NTU Hold">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="Life Management" />
+            <AccessCollection AccessCollectionItem="Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_NTU_Policy(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_NTU_Policy(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.NTUPolicy((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#xD;&#xA;&#x9;// Write back to last ntu state to the x2.x2Data.LifeOrigination &#xD;&#xA;&#x9;LifeOrigination_Data.LastNTUState = param.StateName;&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_NTU_Policy(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="224.7085" LocationY="405.728" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Archive NTU" X2ID="d07203a1-1940-48bb-93f2-6b8ef9e8e2e2" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="Close Child Instance" SplitWorkFlow="False" FromNode="NTU Hold" ToNode="Policy NTUd">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Archive_NTU(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Archive_NTU(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime  GetActivityTime_Archive_NTU(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return DateTime.Now.AddDays(45);&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="307.6226" LocationY="318.728" Type="SAHL.X2Designer.Items.UserActivity" Id="17" Name="Reactivate NTUd Policy" X2ID="914d17bc-f2bd-413d-a42f-68804fc25e14" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_WorkflowSubmit" LinkedActivity="" UseLinkedActivity="False" FromNode="NTU Hold" ToNode="NTU Reactivated">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="Life Management" />
+            <AccessCollection AccessCollectionItem="Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Reactivate_NTUd_Policy(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Reactivate_NTUd_Policy(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;lifeClient.ReactivatePolicy((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Reactivate_NTUd_Policy(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Reactivate_NTUd_Policy(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="47" DefinitionGroupDescription="Life Origination" DefinitionDescription="Application Reinstated" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1635.63" LocationY="269.7278" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Wait for Callback" X2ID="076b2e37-3e1e-4487-8495-7a4f48b32007" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Callback Hold" ToNode="Ready to Callback">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Wait_for_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Wait_for_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime  GetActivityTime_Wait_for_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;return lifeClient.GetActivityTimeWaitForCallback((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="1768.466" LocationY="369.7278" Type="SAHL.X2Designer.Items.UserActivity" Id="17" Name="Continue with Sale" X2ID="a8042fbc-aff5-4927-b467-a6228bfed68b" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_WorkflowSubmit" LinkedActivity="" UseLinkedActivity="False" FromNode="Ready to Callback" ToNode="Forward to last State">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Continue_with_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Continue_with_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Continue_with_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Continue_with_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="52" DefinitionGroupDescription="Life Origination" DefinitionDescription="Continue Sale" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1522.5" LocationY="116.7278" Type="SAHL.X2Designer.Items.UserActivity" Id="19" Name="Send Quote" X2ID="ec956c2a-c626-4c64-a8f5-181f1dc99b41" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_Correspondence_Quote" LinkedActivity="" UseLinkedActivity="False" FromNode="Common Send Quote" ToNode="Callback Hold">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Send_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Send_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;if(param.StateName.ToLower() != &quot;callback hold&quot; &amp;&amp; param.StateName.ToLower() != &quot;ready to callback&quot;)&#xD;&#xA;&#x9;&#x9;LifeOrigination_Data.LastState = param.StateName;&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Send_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Send_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="50" DefinitionGroupDescription="Life Origination" DefinitionDescription="Send Quote" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="486.1069" LocationY="404.728" Type="SAHL.X2Designer.Items.UserActivity" Id="20" Name="Decline Quote" X2ID="a019e0e0-3907-4074-a64f-0440aa8a58b2" Message="" StageTransitionMessage="" Description="" Priority="3" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_NTU" LinkedActivity="" UseLinkedActivity="False" FromNode="Quote" ToNode="NTU Hold">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Decline_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Decline_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.DeclineQuote((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#xD;&#xA;&#x9;// Write back to last ntu state to the x2.x2Data.LifeOrigination &#xD;&#xA;&#x9;LifeOrigination_Data.LastNTUState = param.StateName;&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Decline_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="1515.961" LocationY="185.7277" Type="SAHL.X2Designer.Items.UserActivity" Id="20" Name="Create Callback" X2ID="5b5c6c5d-de70-464a-aa70-92381b1a676b" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_Callback" LinkedActivity="" UseLinkedActivity="False" FromNode="Common Callback" ToNode="Callback Hold">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;if(param.StateName.ToLower() != &quot;callback hold&quot; &amp;&amp; param.StateName.ToLower() != &quot;ready to callback&quot;)&#xD;&#xA;&#x9;&#x9;LifeOrigination_Data.LastState = param.StateName;&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Create_Callback(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="813.0162" LocationY="674.7279" Type="SAHL.X2Designer.Items.UserActivity" Id="21" Name="Send Policy Document" X2ID="4fb9c5bf-797a-47b6-8a0e-d4491c4e8a14" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="Close Child Instance" SplitWorkFlow="False" CustomForm="Life_Correspondence_LetterOfAcceptance" LinkedActivity="" UseLinkedActivity="False" FromNode="Ready to Send" ToNode="Policy Activated">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Send_Policy_Document(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Send_Policy_Document(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.ActivateLifePolicy((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Send_Policy_Document(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Send_Policy_Document(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="33" DefinitionGroupDescription="Life Origination" DefinitionDescription="Policy Accepted" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="173.1928" LocationY="90.72784" Type="SAHL.X2Designer.Items.ExternalActivity" Id="22" Name="Create Instance Ext" X2ID="9cefcc21-88bf-4717-82bf-bc5a9ff4bda3" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" ExternalActivityRaiseFolder="Any Instance" InvokedBy="Create Instance" FromNode="ClapperBoard" ToNode="Contact Client">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_Instance_Ext(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_Instance_Ext(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;string Name = &quot;&quot;;&#xD;&#xA;&#x9;string Subject = &quot;&quot;;&#xD;&#xA;&#x9;int Priority = 0;&#xD;&#xA;&#x9;int AppKey=-1;&#xD;&#xA;&#xD;&#xA;&#x9;lifeClient.CreateInstance((IDomainMessageCollection)messages, LifeOrigination_Data.LoanNumber, instance.ID, LifeOrigination_Data.AssignTo, out AppKey, out Name, out Subject, out Priority);&#xD;&#xA;&#xD;&#xA;&#x9;if (AppKey &gt; 0) &#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;LifeOrigination_Data.OfferKey = AppKey;&#xD;&#xA;&#x9;&#x9;instance.Name = Name;&#xD;&#xA;&#x9;&#x9;instance.Subject = Subject;&#xD;&#xA;&#x9;&#x9;instance.Priority = Priority;&#x9;&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Create_Instance_Ext(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return (&quot;New automatic Lead created from loan &quot; + LifeOrigination_Data.LoanNumber);&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Create_Instance_Ext(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="45" DefinitionGroupDescription="Life Origination" DefinitionDescription="Create Application" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="326.5106" LocationY="90.72784" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Create Clone" X2ID="72a1b9df-8eb6-4c8f-b8da-eec62d76c6f7" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="True" FromNode="Contact Client" ToNode="Awaiting Timeout">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Create_Clone(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Create_Clone(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime  GetActivityTime_Create_Clone(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return DateTime.Now;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="564.3542" LocationY="90.72784" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="45 Day Timeout" X2ID="3e095a1a-bb19-4ade-aa02-5c1b9d55f91c" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="Close Instance" SplitWorkFlow="False" FromNode="Awaiting Timeout" ToNode="Older than 45 Days">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_45_Day_Timeout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_45_Day_Timeout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime  GetActivityTime_45_Day_Timeout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return DateTime.Now.AddDays(45);&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="1257.024" LocationY="403.7278" Type="SAHL.X2Designer.Items.ExternalActivity" Id="26" Name="Close Child Instance" X2ID="bdf84890-9be4-473a-9e87-046cf5893d51" Message="" StageTransitionMessage="" Description="" Priority="0" RaiseExternalActivity="" SplitWorkFlow="False" ExternalActivityRaiseFolder="Parent Instance" InvokedBy="Close Child Instance" FromNode="Common Close Child" ToNode="Child Closed">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Close_Child_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Close_Child_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Close_Child_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="1269.657" LocationY="336.7278" Type="SAHL.X2Designer.Items.ExternalActivity" Id="27" Name="Close Instance" X2ID="4f1af3e0-5671-4c8f-826c-32820e7fb252" Message="" StageTransitionMessage="" Description="" Priority="0" RaiseExternalActivity="Close Child Instance" SplitWorkFlow="False" ExternalActivityRaiseFolder="Child Instance" InvokedBy="Close Instance" FromNode="Common Close Instance" ToNode="Parent Closed">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Close_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Close_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Close_Instance(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="1777.589" LocationY="184.8639" Type="SAHL.X2Designer.Items.UserActivity" Id="27" Name="Continue Sale" X2ID="68123564-9f55-41b5-85af-3a95ce75ba82" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_WorkflowSubmit" LinkedActivity="" UseLinkedActivity="False" FromNode="Callback Hold" ToNode="Forward to last State">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Continue_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Continue_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#xD;&#xA;&#x9;return lifeClient.ContinueSale((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Continue_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Continue_Sale(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="52" DefinitionGroupDescription="Life Origination" DefinitionDescription="Continue Sale" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1785.995" LocationY="845.637" Type="SAHL.X2Designer.Items.UserActivity" Id="28" Name="Confirm Quote" X2ID="eae5f022-7431-4d69-846b-b0ecced74a0e" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_WorkflowSubmit" LinkedActivity="" UseLinkedActivity="False" FromNode="Awaiting Confirmation" ToNode="Exclusions Confirmation">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirm_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirm_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirm_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirm_Quote(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="57" DefinitionGroupDescription="Life Origination" DefinitionDescription="Quote Confirmed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1484.943" LocationY="844.637" Type="SAHL.X2Designer.Items.UserActivity" Id="29" Name="Confirm Exclusions" X2ID="f2385df7-d9b4-486f-9bd0-2c814fb0f689" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_ExclusionsConfirm" LinkedActivity="" UseLinkedActivity="False" FromNode="Exclusions Confirmation" ToNode="Declaration Confirmation">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirm_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirm_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;// Write back to the x2.x2Data.LifeOrigination table to mark that this activity has been done&#xD;&#xA;&#x9;LifeOrigination_Data.ExclusionsConfirmationDone = 1;&#xD;&#xA; &#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirm_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirm_Exclusions(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="58" DefinitionGroupDescription="Life Origination" DefinitionDescription="Exclusions Confirmed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1175.974" LocationY="845.637" Type="SAHL.X2Designer.Items.UserActivity" Id="30" Name="Confirm Declaration" X2ID="0cf8cbd7-8cd4-4190-b9ae-6a8055ecdb21" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_DeclarationConfirm" LinkedActivity="" UseLinkedActivity="False" FromNode="Declaration Confirmation" ToNode="FAIS Confirmation">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirm_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirm_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;// Write back to the x2.x2Data.LifeOrigination table to mark that this activity has been done&#xD;&#xA;&#x9;LifeOrigination_Data.DeclarationConfirmationDone = 1;&#xD;&#xA; &#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirm_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirm_Declaration(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="59" DefinitionGroupDescription="Life Origination" DefinitionDescription="Declaration Confirmed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1029.344" LocationY="764.6367" Type="SAHL.X2Designer.Items.UserActivity" Id="31" Name="Confirm FAIS" X2ID="b50a0f5d-ffc3-45fa-802a-7741f4646f74" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_FAISConfirm" LinkedActivity="" UseLinkedActivity="False" FromNode="FAIS Confirmation" ToNode="Ready to Send">
+          <Access>
+            <AccessCollection AccessCollectionItem="WorkList" />
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirm_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirm_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;// Write back to the x2.x2Data.LifeOrigination table to mark that this activity has been done&#xD;&#xA;&#x9;LifeOrigination_Data.FAISConfirmationDone = 1;&#xD;&#xA;&#xD;&#xA; &#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirm_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirm_FAIS(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="60" DefinitionGroupDescription="Life Origination" DefinitionDescription="FAIS Confirmed" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1671.922" LocationY="465.6368" Type="SAHL.X2Designer.Items.TimedActivity" Id="" Name="Awaiting Confirmation Timout" X2ID="cdc2f310-82e9-4b05-8134-3350443020d8" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Awaiting Confirmation" ToNode="Ready to Callback">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Awaiting_Confirmation_Timout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Awaiting_Confirmation_Timout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;if(param.StateName.ToLower() != &quot;callback hold&quot; &amp;&amp; param.StateName.ToLower() != &quot;ready to callback&quot;)&#xD;&#xA;&#x9;{&#xD;&#xA;&#x9;&#x9;LifeOrigination_Data.LastState = param.StateName;&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;ILife lifeClient = DomainServiceLoader.Instance.Get&lt;ILife&gt;();&#xD;&#xA;&#x9;&#x9;lifeClient.AwaitingConfirmationTimeout((IDomainMessageCollection)messages, LifeOrigination_Data.OfferKey);&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;return false;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="OnTimedActivity" Code="public DateTime  GetActivityTime_Awaiting_Confirmation_Timout(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return DateTime.Now.AddDays(1);&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="1637.51" LocationY="567.6366" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="33" Name="Confirmation Required" X2ID="aefc5daf-d780-4a5d-bf6f-9798e599eb2e" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="FAIS Confirmation Check" ToNode="Awaiting Confirmation">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirmation_Required(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return LifeOrigination_Data.ConfirmationRequired;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirmation_Required(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_Confirmation_Required(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirmation_Required(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="56" DefinitionGroupDescription="Life Origination" DefinitionDescription="Awaiting Spouse Confirmation" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="1483.078" LocationY="675.6366" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="34" Name="Confirmation Not Required" X2ID="32d8684c-b5b7-4574-a487-75d014f8ed94" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="FAIS Confirmation Check" ToNode="Ready to Send">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Confirmation_Not_Required(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return !LifeOrigination_Data.ConfirmationRequired;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Confirmation_Not_Required(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;// Write back to the x2.x2Data.LifeOrigination table to mark that this activity has been done&#xD;&#xA;&#x9;LifeOrigination_Data.FAISDone = 1;&#xD;&#xA; &#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Confirmation_Not_Required(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="949.9869" LocationY="405.4089" Type="SAHL.X2Designer.Items.UserActivity" Id="32" Name="Change Policy Type" X2ID="a819ea81-35ee-45dc-80bc-1bf28f8502bf" Message="" StageTransitionMessage="" Description="Switch Product" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="Life_ProductSwitch" LinkedActivity="" UseLinkedActivity="False" FromNode="Change Policy Type" ToNode="Forward to correct State">
+          <Access>
+            <AccessCollection AccessCollectionItem="CurrentConsultant" />
+            <AccessCollection AccessCollectionItem="CCC Life Management" />
+            <AccessCollection AccessCollectionItem="CCC Life Admin" />
+            <AccessCollection AccessCollectionItem="CCC Life Sales" />
+          </Access>
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Change_Policy_Type(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Change_Policy_Type(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Change_Policy_Type(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="709.8932" LocationY="404.4089" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="33" Name="isStandardCover" X2ID="6749d8fe-b645-43d9-816e-88972707a8e4" Message="" StageTransitionMessage="" Description="" Priority="1" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Forward to correct State" ToNode="Quote">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_isStandardCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;/* Return TRUE for this system activity IF X2 PolicyTypeKey=LifePolicyType.Standard Cover */&#xD;&#xA;&#x9;if (LifeOrigination_Data.PolicyTypeKey == (int)SAHL.Common.Globals.LifePolicyTypes.StandardCover)&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_isStandardCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_isStandardCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_isStandardCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4361" DefinitionGroupDescription="Life Origination" DefinitionDescription="Is Standard Life Cover" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="810.8698" LocationY="231.4089" Type="SAHL.X2Designer.Items.ConditionalActivity" Id="34" Name="isAccidentalCover" X2ID="6e7b766d-10f3-49af-9f1c-82ee57144081" Message="" StageTransitionMessage="" Description="" Priority="2" RaiseExternalActivity="" SplitWorkFlow="False" FromNode="Forward to correct State" ToNode="Benefits">
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_isAccidentalCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;/* Return TRUE for this system activity IF X2 PolicyTypeKey=LifePolicyType.Accident Only Cover */&#xD;&#xA;&#x9;if (LifeOrigination_Data.PolicyTypeKey == (int)SAHL.Common.Globals.LifePolicyTypes.AccidentOnlyCover)&#xD;&#xA;&#x9;&#x9;return true;&#xD;&#xA;&#x9;else&#xD;&#xA;&#x9;&#x9;return false;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_isAccidentalCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string Message)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="public string GetStageTransition_isAccidentalCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_isAccidentalCover(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions>
+            <BusinessStageTransition StageDefinitionKey="4360" DefinitionGroupDescription="Life Origination" DefinitionDescription="Is Accidental Life Cover" />
+          </BusinessStageTransitions>
+        </Activity>
+        <Activity LocationX="23.53906" LocationY="213.5" Type="SAHL.X2Designer.Items.UserActivity" Id="35" Name="Clear Cache" X2ID="741152e7-ca3f-4b55-bf81-a8aef7fca90a" Message="" StageTransitionMessage="" Description="" Priority="3" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="" LinkedActivity="" UseLinkedActivity="False" FromNode="ClapperBoard" ToNode="Cache Archive">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_Clear_Cache(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_Clear_Cache(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;ICommon client = DomainServiceLoader.Instance.Get&lt;ICommon&gt;();&#xD;&#xA; &#x9;client.ClearCache((IDomainMessageCollection)messages, param.Data);&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_Clear_Cache(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+        <Activity LocationX="82.69271" LocationY="279.5" Type="SAHL.X2Designer.Items.UserActivity" Id="36" Name="ClearRuleCache" X2ID="d2744d13-764f-44b1-bc80-aa8fb77b3da1" Message="" StageTransitionMessage="" Description="" Priority="4" RaiseExternalActivity="" SplitWorkFlow="False" CustomForm="" LinkedActivity="" UseLinkedActivity="False" FromNode="ClapperBoard" ToNode="Cache Archive">
+          <Access />
+          <CodeSections>
+            <CodeSection Name="OnStart" Code="public bool OnStartActivity_ClearRuleCache(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnComplete" Code="public bool OnCompleteActivity_ClearRuleCache(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages, ref string alertMessage)&#xD;&#xA;{&#xD;&#xA;&#x9;&#x9;&#x9;ICommon client = DomainServiceLoader.Instance.Get&lt;ICommon&gt;();&#xD;&#xA; &#x9;client.ClearRuleCache((IDomainMessageCollection)messages);&#xD;&#xA;&#x9;return true;&#xD;&#xA;}&#xD;&#xA;" />
+            <CodeSection Name="OnStageActivity" Code="// You must select and business stage transition to provide code behind." />
+            <CodeSection Name="GetActivityMessage" Code="public string GetActivityMessage_ClearRuleCache(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA;&#x9;return string.Empty;&#xD;&#xA;}&#xD;&#xA;" />
+          </CodeSections>
+          <BusinessStageTransitions />
+        </Activity>
+      </Activities>
+      <Comments />
+    </WorkFlow>
+  </WorkFlows>
+  <Roles>
+    <Role Role="CurrentConsultant" Description="Dynamic role to get currently assigned consultant" IsDynamic="True" RoleType="WorkFlow" WorkFlow="LifeOrigination">
+      <CodeSections>
+        <CodeSection Name="OnGetRole" Code="public string OnGetRole_LifeOrigination_CurrentConsultant(InstanceDataModel instance, IX2LifeOrigination_Data LifeOrigination_Data, string RoleName, SAHL.Core.X2.IX2Params param, ISystemMessageCollection messages)&#xD;&#xA;{&#xD;&#xA; &#x9;X2DomainService.Interface.WorkflowAssignment.IWorkflowAssignment workflowAssignment = DomainServiceLoader.Instance.Get&lt;X2DomainService.Interface.WorkflowAssignment.IWorkflowAssignment&gt;();&#xD;&#xA; &#x9;return workflowAssignment.GetConsultantForInstanceAndRole((IDomainMessageCollection)messages, instance.ID, &quot;Consultant&quot;);&#xD;&#xA;}&#xD;&#xA;" />
+      </CodeSections>
+    </Role>
+    <Role Role="Life Management" Description="SAHL Life company managers" IsDynamic="False" RoleType="Global" />
+    <Role Role="Life Admin" Description="SAHL Life company admin" IsDynamic="False" RoleType="Global" />
+    <Role Role="CCC Life Management" Description="" IsDynamic="False" RoleType="Global" />
+    <Role Role="CCC Life Admin" Description="" IsDynamic="False" RoleType="Global" />
+    <Role Role="CCC Life Sales" Description="" IsDynamic="False" RoleType="Global" />
+    <Role Role="LifeOrigination" Description="Access to Life Origination System" IsDynamic="False" RoleType="Global" />
+  </Roles>
+  <UsingStatements>
+    <UsingStatement Statement="System" />
+    <UsingStatement Statement="System.Data" />
+    <UsingStatement Statement="System.Xml" />
+    <UsingStatement Statement="System.Linq" />
+    <UsingStatement Statement="SAHL.Core" />
+    <UsingStatement Statement="SAHL.Core.Data" />
+    <UsingStatement Statement="SAHL.Core.Data.Context.Configuration" />
+    <UsingStatement Statement="SAHL.Core.Data.Models.X2" />
+    <UsingStatement Statement="SAHL.Core.Logging" />
+    <UsingStatement Statement="SAHL.Core.SystemMessages" />
+    <UsingStatement Statement="SAHL.Core.X2" />
+    <UsingStatement Statement="SAHL.Core.X2.Providers" />
+    <UsingStatement Statement="Newtonsoft.Json" />
+    <UsingStatement Statement="DomainService2.IOC" />
+    <UsingStatement Statement="X2DomainService.Interface.Common" />
+    <UsingStatement Statement="X2DomainService.Interface.Life" />
+    <UsingStatement Statement="X2DomainService.Interface.WorkflowAssignment" />
+    <UsingStatement Statement="SAHL.Common.Collections.Interfaces" />
+    <UsingStatement Statement="SAHL.Core.Attributes" />
+    <UsingStatement Statement="SAHL.Common.Exceptions" />
+    <UsingStatement Statement="SAHL.X2.Framework" />
+  </UsingStatements>
+  <NugetPackages>
+    <NugetPackage PackageName="SAHL.Config.Legacy.X2.Maps" Version="0.0.0.0" DependsOn="Nothing" DependsOnVersion="Nothing" />
+    <NugetPackage PackageName="SAHL.DomainService.Binaries" Version="0.0.0.0" DependsOn="Nothing" DependsOnVersion="Nothing" />
+  </NugetPackages>
+  <References>
+    <Reference FullName="ActiproSoftware.Shared.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=36ff2196ab5654b9" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.Shared.Net20.dll" Name="ActiproSoftware.Shared.Net20.dll" Version="1.0.104.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Addons.DotNet.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Addons.Web.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Addons.Web.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.SyntaxEditor.Net20, Version=4.0.289.0, Culture=neutral, PublicKeyToken=21a821480e210563" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.SyntaxEditor.Net20.dll" Name="ActiproSoftware.SyntaxEditor.Net20.dll" Version="4.0.289.0" />
+    <Reference FullName="ActiproSoftware.WinUICore.Net20, Version=1.0.104.0, Culture=neutral, PublicKeyToken=1eba893a2bc55de5" Path="SAHL.External.Binaries.0.0.0.0\lib\ActiproSoftware.WinUICore.Net20.dll" Name="ActiproSoftware.WinUICore.Net20.dll" Version="1.0.104.0" />
+    <Reference FullName="AdcheckObjectLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\AdcheckObjectLibrary.dll" Name="AdcheckObjectLibrary.dll" Version="1.0.0.0" />
+    <Reference FullName="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" Path="SAHL.External.Binaries.0.0.0.0\lib\AjaxControlToolkit.dll" Name="AjaxControlToolkit.dll" Version="3.5.40412.0" />
+    <Reference FullName="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7" Path="SAHL.External.Binaries.0.0.0.0\lib\Antlr3.Runtime.dll" Name="Antlr3.Runtime.dll" Version="3.1.3.42154" />
+    <Reference FullName="BdsSoft.DirectoryServices.Linq, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c382851731f5762e" Path="SAHL.External.Binaries.0.0.0.0\lib\BdsSoft.DirectoryServices.Linq.dll" Name="BdsSoft.DirectoryServices.Linq.dll" Version="1.0.0.0" />
+    <Reference FullName="Castle.ActiveRecord, Version=3.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.dll" Name="Castle.ActiveRecord.dll" Version="3.0.0.0" />
+    <Reference FullName="Castle.ActiveRecord.Linq, Version=1.9.101.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.Linq.dll" Name="Castle.ActiveRecord.Linq.dll" Version="1.9.101.0" />
+    <Reference FullName="Castle.ActiveRecord.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.ActiveRecord.Web.dll" Name="Castle.ActiveRecord.Web.dll" Version="0.0.0.0" />
+    <Reference FullName="Castle.Components.Validator, Version=2.5.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.Components.Validator.dll" Name="Castle.Components.Validator.dll" Version="2.5.0.0" />
+    <Reference FullName="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\Castle.Core.dll" Name="Castle.Core.dll" Version="2.5.1.0" />
+    <Reference FullName="CommandLine, Version=1.8.0.7, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\CommandLine.dll" Name="CommandLine.dll" Version="1.8.0.7" />
+    <Reference FullName="Dapper, Version=1.12.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Dapper.dll" Name="Dapper.dll" Version="1.12.0.0" />
+    <Reference FullName="DevExpress.Charts.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Charts.v10.2.Core.dll" Name="DevExpress.Charts.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Data.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Data.v10.2.dll" Name="DevExpress.Data.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.PivotGrid.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.PivotGrid.v10.2.Core.dll" Name="DevExpress.PivotGrid.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.SpellChecker.v10.2.Core, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.SpellChecker.v10.2.Core.dll" Name="DevExpress.SpellChecker.v10.2.Core.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Utils.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Utils.v10.2.dll" Name="DevExpress.Utils.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxEditors.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxEditors.v10.2.dll" Name="DevExpress.Web.ASPxEditors.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxGridView.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxGridView.v10.2.dll" Name="DevExpress.Web.ASPxGridView.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxHtmlEditor.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxHtmlEditor.v10.2.dll" Name="DevExpress.Web.ASPxHtmlEditor.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxPivotGrid.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxPivotGrid.v10.2.dll" Name="DevExpress.Web.ASPxPivotGrid.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxSpellChecker.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxSpellChecker.v10.2.dll" Name="DevExpress.Web.ASPxSpellChecker.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxThemes.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxThemes.v10.2.dll" Name="DevExpress.Web.ASPxThemes.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.ASPxTreeList.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.ASPxTreeList.v10.2.dll" Name="DevExpress.Web.ASPxTreeList.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.Mvc.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.Mvc.v10.2.dll" Name="DevExpress.Web.Mvc.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.Web.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.Web.v10.2.dll" Name="DevExpress.Web.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.dll" Name="DevExpress.XtraCharts.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2.UI, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.UI.dll" Name="DevExpress.XtraCharts.v10.2.UI.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraCharts.v10.2.Web, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraCharts.v10.2.Web.dll" Name="DevExpress.XtraCharts.v10.2.Web.dll" Version="10.2.8.0" />
+    <Reference FullName="DevExpress.XtraEditors.v10.2, Version=10.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Path="SAHL.External.Binaries.0.0.0.0\lib\DevExpress.XtraEditors.v10.2.dll" Name="DevExpress.XtraEditors.v10.2.dll" Version="10.2.8.0" />
+    <Reference FullName="DomainService2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.dll" Name="DomainService2.dll" Version="0.0.0.0" />
+    <Reference FullName="DomainService2.IOC, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.IOC.dll" Name="DomainService2.IOC.dll" Version="0.0.0.0" />
+    <Reference FullName="DomainService2.V3.Client, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\DomainService2.V3.Client.dll" Name="DomainService2.V3.Client.dll" Version="0.0.0.0" />
+    <Reference FullName="EasyNetQ, Version=0.50.1.392, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\EasyNetQ.dll" Name="EasyNetQ.dll" Version="0.50.1.392" />
+    <Reference FullName="EWorkConnector, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\EWorkConnector.dll" Name="EWorkConnector.dll" Version="0.0.0.0" />
+    <Reference FullName="ICSharpCode.SharpZipLib, Version=0.85.2.329, Culture=neutral, PublicKeyToken=1b03e6acf1164f73" Path="SAHL.External.Binaries.0.0.0.0\lib\ICSharpCode.SharpZipLib.dll" Name="ICSharpCode.SharpZipLib.dll" Version="0.85.2.329" />
+    <Reference FullName="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\Iesi.Collections.dll" Name="Iesi.Collections.dll" Version="1.0.1.0" />
+    <Reference FullName="Interop.ActiveDs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Interop.ActiveDs.dll" Name="Interop.ActiveDs.dll" Version="1.0.0.0" />
+    <Reference FullName="itextsharp, Version=5.3.3.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" Path="SAHL.External.Binaries.0.0.0.0\lib\itextsharp.dll" Name="itextsharp.dll" Version="5.3.3.0" />
+    <Reference FullName="Lucene.Net, Version=2.9.2.2, Culture=neutral, PublicKeyToken=f5940d1699e37ff1" Path="SAHL.External.Binaries.0.0.0.0\lib\Lucene.Net.dll" Name="Lucene.Net.dll" Version="2.9.2.2" />
+    <Reference FullName="Machine.Fakes, Version=0.3.5.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Fakes.dll" Name="Machine.Fakes.dll" Version="0.3.5.0" />
+    <Reference FullName="Machine.Fakes.Adapters.Rhinomocks, Version=0.3.5.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Fakes.Adapters.RhinoMocks.dll" Name="Machine.Fakes.Adapters.Rhinomocks.dll" Version="0.3.5.0" />
+    <Reference FullName="Machine.Specifications, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.dll" Name="Machine.Specifications.dll" Version="0.5.6.0" />
+    <Reference FullName="Machine.Specifications.Clr4, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.Clr4.dll" Name="Machine.Specifications.Clr4.dll" Version="0.5.6.0" />
+    <Reference FullName="Machine.Specifications.TDNetRunner, Version=0.5.6.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Machine.Specifications.TDNetRunner.dll" Name="Machine.Specifications.TDNetRunner.dll" Version="0.5.6.0" />
+    <Reference FullName="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ApplicationBlocks.Data.dll" Name="Microsoft.ApplicationBlocks.Data.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.ApplicationBlocks.UIProcess, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ApplicationBlocks.UIProcess.dll" Name="Microsoft.ApplicationBlocks.UIProcess.dll" Version="1.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" Name="Microsoft.Practices.EnterpriseLibrary.Common.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" Name="Microsoft.Practices.EnterpriseLibrary.Data.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" Name="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Name="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" Name="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.EnterpriseLibrary.Logging, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.EnterpriseLibrary.Logging.dll" Name="Microsoft.Practices.EnterpriseLibrary.Logging.dll" Version="2.0.0.0" />
+    <Reference FullName="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.Practices.ObjectBuilder.dll" Name="Microsoft.Practices.ObjectBuilder.dll" Version="1.0.51205.0" />
+    <Reference FullName="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.Common.dll" Name="Microsoft.ReportViewer.Common.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.DataVisualization.DLL" Name="Microsoft.ReportViewer.DataVisualization.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.Design.DLL" Name="Microsoft.ReportViewer.Design.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll" Name="Microsoft.ReportViewer.ProcessingObjectModel.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WebDesign.DLL" Name="Microsoft.ReportViewer.WebDesign.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WebForms.dll" Name="Microsoft.ReportViewer.WebForms.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.ReportViewer.WinForms.dll" Name="Microsoft.ReportViewer.WinForms.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.ConnectionInfo.dll" Name="Microsoft.SqlServer.ConnectionInfo.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.DtsMsg, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.DtsMsg.dll" Name="Microsoft.SqlServer.DtsMsg.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.DTSPipelineWrap, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.DTSPipelineWrap.dll" Name="Microsoft.SqlServer.DTSPipelineWrap.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.DTSRuntimeWrap, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.DTSRuntimeWrap.dll" Name="Microsoft.SqlServer.DTSRuntimeWrap.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.ManagedDTS, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.ManagedDTS.dll" Name="Microsoft.SqlServer.ManagedDTS.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll" Name="Microsoft.SqlServer.Management.Sdk.Sfc.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.msxml6_interop, Version=6.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SQLServer.msxml6_interop.dll" Name="Microsoft.SqlServer.msxml6_interop.dll" Version="6.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.PipelineHost, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.PipelineHost.dll" Name="Microsoft.SqlServer.PipelineHost.dll" Version="9.0.242.0" />
+    <Reference FullName="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.Smo.dll" Name="Microsoft.SqlServer.Smo.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.SqlClrProvider, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.SqlClrProvider.dll" Name="Microsoft.SqlServer.SqlClrProvider.dll" Version="11.0.0.0" />
+    <Reference FullName="Microsoft.SqlServer.SqlEnum, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Path="SAHL.External.Binaries.0.0.0.0\lib\Microsoft.SqlServer.SqlEnum.dll" Name="Microsoft.SqlServer.SqlEnum.dll" Version="11.0.0.0" />
+    <Reference FullName="NCover.Framework, Version=1.5.8.0, Culture=neutral, PublicKeyToken=f4018786f4b01bc6" Path="SAHL.External.Binaries.0.0.0.0\lib\NCover.Framework.dll" Name="NCover.Framework.dll" Version="1.5.8.0" />
+    <Reference FullName="NDbUnit.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\NDbUnit.Core.dll" Name="NDbUnit.Core.dll" Version="1.1.0.0" />
+    <Reference FullName="NDbUnit.Test, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.External.Binaries.0.0.0.0\lib\NDbUnit.Test.dll" Name="NDbUnit.Test.dll" Version="1.1.0.0" />
+    <Reference FullName="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Version="6.0.0.0" />
+    <Reference FullName="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.dll" Name="NHibernate.dll" Version="3.1.0.4000" />
+    <Reference FullName="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.ByteCode.Castle.dll" Name="NHibernate.ByteCode.Castle.dll" Version="3.1.0.4000" />
+    <Reference FullName="NHibernate.Search, Version=0.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc" Path="SAHL.External.Binaries.0.0.0.0\lib\NHibernate.Search.dll" Name="NHibernate.Search.dll" Version="0.0.0.0" />
+    <Reference FullName="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7" Path="SAHL.External.Binaries.0.0.0.0\lib\Ninject.dll" Name="Ninject.dll" Version="3.0.0.0" />
+    <Reference FullName="Northwoods.Go, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.dll" Name="Northwoods.Go.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Draw, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Draw.dll" Name="Northwoods.Go.Draw.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Instruments, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Instruments.dll" Name="Northwoods.Go.Instruments.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Layout, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Layout.dll" Name="Northwoods.Go.Layout.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Svg, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Svg.dll" Name="Northwoods.Go.Svg.dll" Version="4.1.0.4" />
+    <Reference FullName="Northwoods.Go.Xml, Version=4.1.0.4, Culture=neutral, PublicKeyToken=a4e3b7b70161cfe8" Path="SAHL.External.Binaries.0.0.0.0\lib\Northwoods.Go.Xml.dll" Name="Northwoods.Go.Xml.dll" Version="4.1.0.4" />
+    <Reference FullName="nunit.framework, Version=2.6.0.12051, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" Path="SAHL.External.Binaries.0.0.0.0\lib\nunit.framework.dll" Name="nunit.framework.dll" Version="2.6.0.12051" />
+    <Reference FullName="Omu.ValueInjecter, Version=2.3.3.0, Culture=neutral, PublicKeyToken=c7694541b0ac80e4" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\Omu.ValueInjecter.dll" Name="Omu.ValueInjecter.dll" Version="2.3.3.0" />
+    <Reference FullName="PDFDocumentWriter, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\PDFDocumentWriter.dll" Name="PDFDocumentWriter.dll" Version="0.0.0.0" />
+    <Reference FullName="PostSharp, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7" Path="SAHL.External.Binaries.0.0.0.0\lib\PostSharp.dll" Name="PostSharp.dll" Version="2.1.0.0" />
+    <Reference FullName="RabbitMQ.Client, Version=3.5.3.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\RabbitMQ.Client.dll" Name="RabbitMQ.Client.dll" Version="3.5.3.0" />
+    <Reference FullName="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea" Path="SAHL.External.Binaries.0.0.0.0\lib\Remotion.Data.Linq.dll" Name="Remotion.Data.Linq.dll" Version="1.13.41.2" />
+    <Reference FullName="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f" Path="SAHL.External.Binaries.0.0.0.0\lib\Rhino.Mocks.dll" Name="Rhino.Mocks.dll" Version="3.6.0.0" />
+    <Reference FullName="SAHL.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.dll" Name="SAHL.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.dll" Name="SAHL.Common.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel.DAO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.DAO.dll" Name="SAHL.Common.BusinessModel.DAO.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.BusinessModel.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.BusinessModel.Interfaces.dll" Name="SAHL.Common.BusinessModel.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Logging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Logging.dll" Name="SAHL.Common.Logging.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Service, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Service.dll" Name="SAHL.Common.Service.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Service.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Service.Interfaces.dll" Name="SAHL.Common.Service.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.UI.dll" Name="SAHL.Common.UI.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Web, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Web.dll" Name="SAHL.Common.Web.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.Web.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.Web.UI.dll" Name="SAHL.Common.Web.UI.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.WebServices, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.WebServices.dll" Name="SAHL.Common.WebServices.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.dll" Name="SAHL.Common.X2.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel.DAO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.DAO.dll" Name="SAHL.Common.X2.BusinessModel.DAO.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Common.X2.BusinessModel.Interfaces, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Common.X2.BusinessModel.Interfaces.dll" Name="SAHL.Common.X2.BusinessModel.Interfaces.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Communication, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Communication.dll" Name="SAHL.Communication.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Config.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Config.Core.dll" Name="SAHL.Config.Core.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Config.Legacy, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Config.Legacy.dll" Name="SAHL.Config.Legacy.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.dll" Name="SAHL.Core.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.BusinessModel.dll" Name="SAHL.Core.BusinessModel.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.dll" Name="SAHL.Core.Data.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Dapper, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Dapper.dll" Name="SAHL.Core.Data.Dapper.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.2AM.dll" Name="SAHL.Core.Data.Models.2AM.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.Capitec, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.Capitec.dll" Name="SAHL.Core.Data.Models.Capitec.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.Cuttlefish.dll" Name="SAHL.Core.Data.Models.Cuttlefish.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.DecisionTree, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.DecisionTree.dll" Name="SAHL.Core.Data.Models.DecisionTree.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Data.Models.X2.dll" Name="SAHL.Core.Data.Models.X2.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Events, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Events.dll" Name="SAHL.Core.Events.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Logging.Loggers.Database, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Logging.Loggers.Database.dll" Name="SAHL.Core.Logging.Loggers.Database.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.dll" Name="SAHL.Core.Messaging.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging.EasyNetQ, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.EasyNetQ.dll" Name="SAHL.Core.Messaging.EasyNetQ.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Messaging.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Messaging.Shared.dll" Name="SAHL.Core.Messaging.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.Metrics.dll" Name="SAHL.Core.Metrics.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.X2.dll" Name="SAHL.Core.X2.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\SAHL.Core.X2.Shared.dll" Name="SAHL.Core.X2.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Services.Capitec.Models.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Services.Capitec.Models.Shared.dll" Name="SAHL.Services.Capitec.Models.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Shared.dll" Name="SAHL.Shared.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.Test, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.Test.dll" Name="SAHL.Test.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.X2.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.X2.Common.dll" Name="SAHL.X2.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="SAHL.X2.Framework, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.Internal.Binaries.0.0.0.0\lib\SAHL.X2.Framework.dll" Name="SAHL.X2.Framework.dll" Version="0.0.0.0" />
+    <Reference FullName="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\StructureMap.dll" Name="StructureMap.dll" Version="2.6.4.0" />
+    <Reference FullName="System.Threading.Tasks.Dataflow, Version=4.5.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" Path="SAHL.Config.Legacy.X2.Maps.0.0.0.0\lib\net45\System.Threading.Tasks.Dataflow.dll" Name="System.Threading.Tasks.Dataflow.dll" Version="4.5.11.0" />
+    <Reference FullName="X2DomainService.Interface.Cap2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Cap2.dll" Name="X2DomainService.Interface.Cap2.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Common.dll" Name="X2DomainService.Interface.Common.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.DebtCounselling, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.DebtCounselling.dll" Name="X2DomainService.Interface.DebtCounselling.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.HelpDesk, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.HelpDesk.dll" Name="X2DomainService.Interface.HelpDesk.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Life, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Life.dll" Name="X2DomainService.Interface.Life.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.LoanAdjustments, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.LoanAdjustments.dll" Name="X2DomainService.Interface.LoanAdjustments.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.Origination, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.Origination.dll" Name="X2DomainService.Interface.Origination.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.PersonalLoan, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.PersonalLoan.dll" Name="X2DomainService.Interface.PersonalLoan.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.ScenarioMaps, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.ScenarioMaps.dll" Name="X2DomainService.Interface.ScenarioMaps.dll" Version="0.0.0.0" />
+    <Reference FullName="X2DomainService.Interface.WorkflowAssignment, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" Path="SAHL.DomainService.Binaries.0.0.0.0\lib\X2DomainService.Interface.WorkflowAssignment.dll" Name="X2DomainService.Interface.WorkflowAssignment.dll" Version="0.0.0.0" />
+  </References>
+</ProcessName>

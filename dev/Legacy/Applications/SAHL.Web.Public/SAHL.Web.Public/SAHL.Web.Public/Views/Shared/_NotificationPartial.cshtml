@@ -1,0 +1,38 @@
+﻿<script type="text/javascript" language="javascript">
+    $(document).ready(function () {
+           @if (Session[SAHL.Web.Public.Controllers.SessionConstants.Messages] != null)
+           {
+               foreach (SAHL.Web.Public.Controllers.Message message in (List<SAHL.Web.Public.Controllers.Message>)Session[SAHL.Web.Public.Controllers.SessionConstants.Messages])
+               {
+                   switch (message.MessageType)
+                   {
+                       case SAHL.Web.Public.Controllers.MessageType.Info:
+                        @: $("#info").append("<p>@message.Details</p>");
+                        @: $("#info").show();
+                        break;
+                       case SAHL.Web.Public.Controllers.MessageType.Warning:
+                        @: $("#warning").append("<p>@message.Details</p>");
+                        @: $("#warning").show();
+                        break;
+                       case SAHL.Web.Public.Controllers.MessageType.Error:
+                        @: $("#error").append("<p>@message.Details</p>");
+                        @: $("#error").show();
+                        break;
+                       case SAHL.Web.Public.Controllers.MessageType.Success:
+                        @: $("#success").append("<p>@message.Details</p>");
+                        @: $("#success").show();
+                        break;
+                   }
+               }
+               Session["Messages"] = null;
+           }
+    });
+</script>
+<div id="info" class="info" style="display:none">
+</div>
+<div id="success" class="success" style="display:none">
+</div>
+<div id="warning" class="warning" style="display:none">
+</div>
+<div id="error" class="error" style="display:none">
+</div>

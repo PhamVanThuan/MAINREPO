@@ -1,0 +1,86 @@
+﻿@model SAHL.Web.Public.Models.SearchViewModel
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Search</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@*Search for the Debt Counselling Case*@
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Criteria</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CaseNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CaseNumber)
+            @Html.ValidationMessageFor(model => model.CaseNumber)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDNumber)
+            @Html.ValidationMessageFor(model => model.IDNumber)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LegalEntityName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LegalEntityName)
+            @Html.ValidationMessageFor(model => model.LegalEntityName)
+        </div>
+        <p>
+            <input type="submit" value="Search" />
+        </p>
+    </fieldset>
+}
+@*Ensure that the model is not null, we are using the same model for the search and the search results*@
+@if (Model != null && Model.SearchResults != null)
+{
+    <fieldset>
+        <legend>Search Results</legend>
+        @if (Model.SearchResults.Count <= 0)
+        {
+            @: <b>No Cases found that match the Search Criteria</b>
+        }
+        else
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                        </th>
+                        <th>
+                            Account Number
+                        </th>
+                        <th>
+                            Legal Entities on Case
+                        </th>
+                    </tr>
+                </thead>
+                @foreach (var searchResult in Model.SearchResults)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Load", "Detail", "Case", new { debtCounsellingKey = searchResult.DebtCounsellingKey, accountKey = searchResult.AccountKey }, new { })
+                        </td>
+                        <td>
+                            @searchResult.AccountKey
+                        </td>
+                        <td>
+                            @foreach (var legalEntity in searchResult.LegalEntitiesOnAccount)
+                            {
+                                <b>@legalEntity.DisplayName</b> @:(@legalEntity.IDNumber)<br />
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </fieldset>
+}

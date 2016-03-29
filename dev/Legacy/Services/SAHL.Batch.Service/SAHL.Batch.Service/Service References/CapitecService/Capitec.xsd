@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/SAHL.Web.Services.Internal/Capitec.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SAHL.Services.Capitec.Models.Shared" />
+  <xs:element name="CreateCapitecNewPurchaseApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SAHL.Services.Capitec.Models.Shared" minOccurs="0" name="application" nillable="true" type="q1:NewPurchaseApplication" />
+        <xs:element minOccurs="0" name="messageId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCapitecNewPurchaseApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateCapitecNewPurchaseApplicationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCapitecSwitchLoanApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SAHL.Services.Capitec.Models.Shared" minOccurs="0" name="application" nillable="true" type="q2:SwitchLoanApplication" />
+        <xs:element minOccurs="0" name="messageId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateCapitecSwitchLoanApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateCapitecSwitchLoanApplicationResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

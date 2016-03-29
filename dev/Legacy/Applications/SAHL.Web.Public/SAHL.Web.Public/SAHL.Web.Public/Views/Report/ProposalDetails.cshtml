@@ -1,0 +1,14 @@
+﻿@model SAHL.Web.Public.Models.ProposalDetailViewModel
+@{
+    ViewBag.Title = "ProposalDetails";
+    Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+
+<h2>ProposalDetails</h2>
+
+div 
+<div>
+<object data=@Model.Content type="application/pdf" width="500" height="500">
+alt : <a href="loanstatement.pdf">test.pdf</a>
+</object>
+</div>

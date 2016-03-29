@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B87BF46-E909-46A6-9633-C252EBEE7651}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.DomainProcessManager.DomainProcesses.Specs</RootNamespace>
+    <AssemblyName>SAHL.DomainProcessManager.DomainProcesses.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\AutoMapper\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Exchange.WebServices, Version=15.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Microsoft.Exchange.WebServices.1.2\lib\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\RhinoMocks\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.DomainProcess">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.DomainProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Exchange">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Exchange.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing.Fakes">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Web">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainProcessManager.Models">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainProcessManager.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.DomainServiceChecks, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.DomainServiceChecks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.AddressDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.AddressDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ApplicationDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ApplicationDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.BankAccountDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.BankAccountDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.CATS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.CATS.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.ClientDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.ClientDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.Communications">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.Communications.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DocumentManager, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinanceDomain, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinanceDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinancialDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinancialDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.FinancialDomain.Tests">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.FinancialDomain.Tests.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.PropertyDomain">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.PropertyDomain.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.X2">
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="Stateless">
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Stateless.2.4.0\lib\Stateless.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainProcess\AppCreation\ApplicationValidation\when_validating_data_model.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddApplicantEventHandler\when_not_all_applicants_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddApplicantEventHandler\when_applicant_is_not_income_contributer.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddApplicantEventHandler\when_all_applicants_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_linking_free_text_residential_throws_an_exception.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_linking_free_text_postal_throws_an_exception.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_free_text_is_linked_as_postal_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_free_text_is_linked_as_residential_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_linking_property_addr_as_applicant_residential.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_linking_property_addr_as_lead_applicant_residential.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_linking_property_addr_as_mailing_addr_set.cs" />
+    <Compile Include="DomainProcess\AppCreation\AddressEventHandler\when_linking_property_addr_as_mailing_addr_not_set.cs" />
+    <Compile Include="DomainProcess\AppCreation\AffordabilityHandler\when_adding_affordabilities_throws_error.cs" />
+    <Compile Include="DomainProcess\AppCreation\AffordabilityHandler\when_adding_affordabilities.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationEmploymentTypeHandler\when_income_and_employment_has_been_determined.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationMailingAddressHandler\when_adding_mailing_address_fails.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationMailingAddressHandler\when_adding_application_mailing_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\GetClientFreeTexTAddressQueryResult.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_details_captured_and_has_liability_surety.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_details_captured_and_has_liability_loan.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_adding_client_assets_throws_exception.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_has_postal_fixedProperty_with_linked_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_has_street_fixedProperty_with_no_linked_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_liability_loan_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_liability_surety_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\BankDetailsHandler\when_debit_order_bank_account_added_with_exception.cs" />
+    <Compile Include="DomainProcess\AppCreation\ClientPendingDomiciliumAddress\when_handling_event_with_model_exception.cs" />
+    <Compile Include="DomainProcess\AppCreation\ClientPendingDomiciliumAddress\when_handling_exception.cs" />
+    <Compile Include="DomainProcess\AppCreation\ComcorpPropertyDetailsHandler\when_adding_comcorp_property_fails.cs" />
+    <Compile Include="DomainProcess\AppCreation\CreateX2WorkflowCase\when_creating_x2_case_returns_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\CreateX2WorkflowCase\when_creating_x2_case_with_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\CreateX2WorkflowCase\when_creating_x2_case_fails.cs" />
+    <Compile Include="DomainProcess\AppCreation\CreateX2WorkflowCase\when_creating_workflow_case.cs" />
+    <Compile Include="DomainProcess\AppCreation\DeclarationsHandler\when_adding_declarations_throws_error.cs" />
+    <Compile Include="DomainProcess\AppCreation\DeclarationsHandler\when_adding_declarations_with_debt_arrangement.cs" />
+    <Compile Include="DomainProcess\AppCreation\EmployerAddedHandler\when_adding_unemployed_employment.cs" />
+    <Compile Include="DomainProcess\AppCreation\NewBusinessMortgageLoanApplication\when_adding_employment_and_employer_exists.cs" />
+    <Compile Include="DomainProcess\AppCreation\NewBusinessMortgageLoanApplication\when_adding_employment_and_no_employer_exists.cs" />
+    <Compile Include="DomainProcess\AppCreation\NewBusinessMortgageLoanApplication\when_handling _event.cs" />
+    <Compile Include="DomainProcess\AppCreation\EmployerAddedHandler\when_adding_salary_employment.cs" />
+    <Compile Include="DomainProcess\AppCreation\EmployerAddedHandler\when_adding_salary_with_deduction_employment.cs" />
+    <Compile Include="DomainProcess\AppCreation\NewPurchaseHandler\when_client_date_of_birth_not_set.cs" />
+    <Compile Include="DomainProcess\AppCreation\NewPurchaseHandler\when_client_exists_with_offer.cs" />
+    <Compile Include="DomainProcess\AppCreation\NewPurchaseHandler\when_client_exists_with_id_number.cs" />
+    <Compile Include="DomainProcess\AppCreation\NewPurchaseHandler\when_client_does_not_exist.cs" />
+    <Compile Include="DomainProcess\AppCreation\PriceFundingEventHandler\when_handling_new_business_app_funded.cs" />
+    <Compile Include="DomainProcess\AppCreation\PriceFundingEventHandler\when_handling_new_business_app_priced.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryDeductionEmploymentHandler\when_all_employments_have_been_captured.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryDeductionEmploymentHandler\when_all_employments_have_not_been_captured.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryDeductionEmploymentHandler\when_determining_app_employment_has_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryDeductionEmploymentHandler\when_determining_household_income_has_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\UnemployedEmploymentHandler\when_all_employents_have_been_captured.cs" />
+    <Compile Include="DomainProcess\AppCreation\UnemployedEmploymentHandler\when_all_employments_have_not_been_captured.cs" />
+    <Compile Include="DomainProcess\AppCreation\UnemployedEmploymentHandler\when_determining_app_employment_and_service_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\UnemployedEmploymentHandler\when_determining_household_income_and_service_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryEmploymentHandler\when_all_employents_have_been_captured.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryEmploymentHandler\when_determining_app_employment_and_service_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryEmploymentHandler\when_determining_household_income_and_service_errors.cs" />
+    <Compile Include="DomainProcess\AppCreation\SalaryEmploymentHandler\when_all_employments_have_not_been_captured.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationDebitOrderHandler\when_handling_event.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationHHIncomeHandler\when_only_household_income_has_been_determined.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationHHIncomeHandler\when_income_and_employment_has_been_determined.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationEmploymentTypeHandler\when_application_employment_type_set.cs" />
+    <Compile Include="DomainProcess\AppCreation\ApplicationMailingAddressHandler\when_handling_event.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_details_captured_and_has_unlisted_investment.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_details_captured_and_has_listed_investment.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_details_captured_and_has_other_asset.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_details_captured_and_has_life_assurance_asset.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_details_captured_and_has_fixed_inv_liability.cs" />
+    <Compile Include="DomainProcess\AppCreation\BankDetailsHandler\when_adding_the_application_debit_order_returns_messages.cs" />
+    <Compile Include="DomainProcess\AppCreation\BankDetailsHandler\when_debit_order_bank_account_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\ClientPendingDomiciliumAddress\when_handling_event.cs" />
+    <Compile Include="DomainProcess\AppCreation\ComcorpPropertyDetailsHandler\when_adding_comcorp_property_details.cs" />
+    <Compile Include="DomainProcess\AppCreation\DeclarationsHandler\when_adding_applicant_declarations.cs" />
+    <Compile Include="DomainProcess\AppCreation\ClientPendingDomiciliumAddress\when_linking_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\DomicilumAddressHandler\when_handling_event.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_has_postal_fixedProperty_with_no_linked_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_client_has_street_fixedProperty_with_linked_address.cs" />
+    <Compile Include="DomainProcess\AppCreation\ExternalVendorEventHandler\when_handling_event.cs" />
+    <Compile Include="DomainProcess\AppCreation\PriceFundingEventHandler\when_postal_address_is_provided.cs" />
+    <Compile Include="DomainProcess\AppCreation\AffordabilityHandler\when_handling_applicant_affordability_event.cs" />
+    <Compile Include="DomainProcess\AppCreation\DeclarationsHandler\when_handling_applicant_declarations_event.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_investment_asset_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_life_assurance_asset_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_fixed_property_asset_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_fixed_long_term_inv_added.cs" />
+    <Compile Include="DomainProcess\AppCreation\AssetsEventHandler\when_other_asset_added_to_client.cs" />
+    <Compile Include="DomainProcess\AppCreation\when_application_processing_is_competed.cs" />
+    <Compile Include="DomainProcess\Behaviors\DomainProcessThatHasAddedAllAssetLiabilities.cs" />
+    <Compile Include="DomainProcess\Behaviors\DomainProcessThatHasAddedAllAddresses.cs" />
+    <Compile Include="DomainProcess\Behaviors\DomainProcessThatHasAddedANewApplicant.cs" />
+    <Compile Include="DomainProcess\Behaviors\DomainProcessThatHasAddedApplicationDetails.cs" />
+    <Compile Include="DomainProcess\Behaviors\DomainProcessThatHasAddedBankAccounts.cs" />
+    <Compile Include="DomainProcess\Behaviors\DomainProcessThatHasCompletedNonCriticalSteps.cs" />
+    <Compile Include="DomainProcess\States\when_in_address_captured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_affordability_detail_captured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_application_mailing_address_captured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_asset_liability_detail_captured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_completed_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_declarations_captured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_domicilium_address_captured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_client_pending_domicilium_captured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_non_critical_error_occured_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_x2_case_created_state.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_address_captured_trigger_on_last_address.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_address_capture_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_affordability_detail_capture_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_all_addresses_captured.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_application_employment_determined.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_application_mailing_address_capture_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_asset_liability_detail_captured_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_client_pending_domicilium_capture_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_completion_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_declarations_capture_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_domicilium_address_capture_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_non_critical_error_reported.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_x2_case_created_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_application_funding_confirmed.cs" />
+    <Compile Include="DomainProcess\States\when_in_application_employment_determined_state.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_applicant_addition_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_basic_application_created.cs" />
+    <Compile Include="DomainProcess\States\when_in_application_funded_state.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_Bank_account_captured.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_application_debit_order_capture_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_all_bank_accounts_captured.cs" />
+    <Compile Include="DomainProcess\States\when_in_application_priced_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_employment_added_state.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_employment_addition.cs" />
+    <Compile Include="DomainProcess\when_creating_application_state_machine.cs" />
+    <Compile Include="DomainProcess\Mocks\DomainProcessTestHelper.cs" />
+    <Compile Include="DomainProcess\Mocks\WithDomainServiceMocks.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_all_address_substates_events_have_not_been_received.cs" />
+    <Compile Include="DomainProcess\when_adding_an_sa_home_loans_originated_application.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_and_bank_account_fails.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_and_all_addresses_fail.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_throws_error_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_and_property_address_fails.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_containing_assets.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_and_non_critical_path_all_fail.cs" />
+    <Compile Include="DomainProcess\when_adding_a_refinance_application_and_validate_fails.cs" />
+    <Compile Include="DomainProcess\when_adding_a_refinance_throws_error_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_adding_a_switch_application_and_validate_fails.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_and_validate_fails.cs" />
+    <Compile Include="DomainProcess\when_adding_a_switch_throws_error_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_firing_basic_application_creation_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_application_pricing_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_appl_employment_determination_confirmed.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_app_employment_determined.cs" />
+    <Compile Include="DomainProcess\Triggers\when_firing_critical_error_reported.cs" />
+    <Compile Include="DomainProcess\States\when_in_basic_application_created_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_applicant_added_state.cs" />
+    <Compile Include="DomainProcess\States\when_in_household_income_determined_state_for_non_priceable_app.cs" />
+    <Compile Include="DomainProcess\States\when_in_household_income_determined_state_for_priceable_app.cs" />
+    <Compile Include="DomainProcess\Mocks\WithNewPurchaseDomainProcess.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_adding_employments_and_all_have_been_added.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_adding_employments_and_not_all_have_been_added.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_all_bank_acc_substates_events_have_been_received.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_application_employment_and_income_has_been_determined.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_application_employment_has_been_determined.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_application_income_has_been_determined.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_all_address_substates_events_have_been_received.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_critical_path_completed_and_not_waiting_for_events.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_critical_path_completed_and_waiting_for_events.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_critical_path_incomplete_and_not_waiting_for_events.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_event_received_in_non_critical_error_state.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_non_critical_path_error_occurs.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_basic_application_event_is_recieved.cs" />
+    <Compile Include="DomainProcess\StateManagement\when_creating_for_the_first_time.cs" />
+    <Compile Include="DomainProcess\when_adding_a_refinance_all_rules_are_registered_and_executed.cs" />
+    <Compile Include="DomainProcess\when_adding_a_switch_all_rules_are_registered_and_executed.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_all_rules_are_registered_and_executed.cs" />
+    <Compile Include="DomainProcess\when_adding_a_refinance_with_domain_failure_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_adding_a_refinance_with_no_failure_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_with_no_failure_and_full_detail.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_with_no_failure_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_adding_a_new_purchase_with_domain_failure_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_adding_a_switch_with_domain_failure_on_critical_path.cs" />
+    <Compile Include="DomainProcess\when_adding_a_switch_with_no_failure_on_critical_path.cs" />
+    <Compile Include="Managers\Application\when_checking_for_non_existing_vendor.cs" />
+    <Compile Include="Managers\Application\when_checking_if_comcorp_app_exists_and_it_does_not.cs" />
+    <Compile Include="Managers\Application\when_checking_if_comcorp_app_exists_and_it_does.cs" />
+    <Compile Include="Managers\Application\when_checking_for_existing_vendor.cs" />
+    <Compile Include="Managers\Application\when_compensating_events_on_failied_application.cs" />
+    <Compile Include="Managers\Client\when_checking_if_employer_exists_and_it_does_not.cs" />
+    <Compile Include="Managers\Client\when_checking_if_employer_exists_and_it_does.cs" />
+    <Compile Include="Managers\Communication\when_sending_proceesing_failed_email_to_loss_control.cs" />
+    <Compile Include="Managers\Communication\when_sending_accept_invoice_error_email.cs" />
+    <Compile Include="Managers\Communication\when_sending_third_party_invoice_rejected_email.cs" />
+    <Compile Include="Managers\Communication\when_sending_third_party_invoice_accepted_email.cs" />
+    <Compile Include="Managers\Communication\when_sending_third_party_manual_archive_email.cs" />
+    <Compile Include="Managers\Communication\when_sending_x2_support_email.cs" />
+    <Compile Include="Managers\Communication\when_sending_non_critical_errors_email.cs" />
+    <Compile Include="Managers\Communication\when_sending_client_detail_comparison_email.cs" />
+    <Compile Include="Managers\X2Workflow\when_successfully_creating_workflow_task.cs" />
+    <Compile Include="Managers\X2Workflow\when_creating_workflow_task_response_in_error.cs" />
+    <Compile Include="Managers\X2Workflow\when_successfully_archiving_invoice.cs" />
+    <Compile Include="Managers\X2Workflow\when_successfully_reversing_invoice_payment.cs" />
+    <Compile Include="Managers\X2Workflow\when_successfully_paying_invoice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DomainProcess\Mocks\CommonTriggers.cs" />
+    <Compile Include="Rules\ApplicantsMustHaveUniqueIdentityNumbersSpecs\when_applicants_are_empty.cs" />
+    <Compile Include="Rules\ApplicantsMustHaveUniqueIdentityNumbersSpecs\when_all_identity_numbers_are_unique.cs" />
+    <Compile Include="Rules\ApplicantsMustHaveUniqueIdentityNumbersSpecs\when_there_is_only_one_applicant.cs" />
+    <Compile Include="Rules\ApplicantsMustHaveUniqueIdentityNumbersSpecs\when_there_are_multiple_identical_identity_numbers.cs" />
+    <Compile Include="Rules\ApplicationMustHaveAtLeastOneMainApplicantSpecs\when_there_are_no_main_applicants.cs" />
+    <Compile Include="Rules\ApplicationMustHaveAtLeastOneMainApplicantSpecs\when_there_is_a_main_applicant.cs" />
+    <Compile Include="Rules\ApplicationMustHaveAtLeastOneMainApplicantSpecs\when_the_applicant_collection_is_empty.cs" />
+    <Compile Include="Rules\OpenMortgageLoanForApplicantAndComcorpPropertyCannotExistSpecs\when_there_is_no_existing_application.cs" />
+    <Compile Include="Rules\OpenMortgageLoanForApplicantAndComcorpPropertyCannotExistSpecs\when_an_existing_application_exists.cs" />
+    <Compile Include="Rules\OpenMortgageLoanForApplicantAndComcorpPropertyCannotExistSpecs\when_there_are_multiple_applicants.cs" />
+    <Compile Include="Rules\OpenMortgageLoanForApplicantAndPropertyCannotExistSpecs\when_an_open_application_exists.cs" />
+    <Compile Include="Rules\OpenMortgageLoanForApplicantAndPropertyCannotExistSpecs\when_no_open_application_exists.cs" />
+    <Compile Include="Rules\OpenMortgageLoanForApplicantAndPropertyCannotExistSpecs\when_no_property_can_be_found.cs" />
+    <Compile Include="Rules\VendorMustExistForVendorCodeSpecs\when_the_vendor_does_not_exist.cs" />
+    <Compile Include="Rules\VendorMustExistForVendorCodeSpecs\when_the_vendor_exists.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\Compensation\when_there_are_error_message.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\Compensation\when_failing_to_add_to_payment_batch.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\Compensation\when_failing_to_post_transaction_on_invoices.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_adding_all_invoices_to_payment_batch_fails.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_creating_third_party_invoice_process.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_processing_transactions_returns_errors.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_payment_batch_processed_event_archiving_fails.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_registered_rules_fail.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_adding_some_invoices_to_payment_batch_fails.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_getting_batch_reference_fails.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_event_and_there_are_no_outstanding_requests.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_event_and_there_are_outstanding_requests.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_invoice_added_to_payments_event.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_invoice_added_to_payments_event_and_invoice_gets_stuck.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_last_transaction_posted_event.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_last_transaction_posted_event_and_invoices_get_stuck.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_payment_recipients_notification_event.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_some_invoice_workflow_cases_fail_to_move_to_ready_for_processing.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_starting_an_invoice_batch_payment_successfully.cs" />
+    <Compile Include="ThirdPartyInvoices\ReceiveInvoice\when_accepting_invoice_fails.cs" />
+    <Compile Include="ThirdPartyInvoices\ReceiveInvoice\when_starting_attorney_invoice_process_with_invalid_account.cs" />
+    <Compile Include="ThirdPartyInvoices\ReceiveInvoice\when_starting_attorney_invoice_process_with_valid_email.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\PayThirdPartyInvoiceProcessSpec.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\Compensation\when_failing_to_process_payment_batch.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\Compensation\when_failing_to_archive_invoices.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_payment_batch_processed_event.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_transaction_posted_event.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_processing_payment_batch_end_in_some_stuck_invoices.cs" />
+    <Compile Include="ThirdPartyInvoices\Rules\when_file_for_profile_is_being_processed.cs" />
+    <Compile Include="ThirdPartyInvoices\Rules\when_rule_passes.cs" />
+    <Compile Include="ThirdPartyInvoices\Rules\when_rule_fails.cs" />
+    <Compile Include="ThirdPartyInvoices\Rules\when_prev_file_passed.cs" />
+    <Compile Include="ThirdPartyInvoices\Rules\when_prev_file_failed.cs" />
+    <Compile Include="ThirdPartyInvoices\PayInvoice\when_handling_event_exception.cs" />
+    <Compile Include="Utilities\Fakes\FakeDifferingModels.cs" />
+    <Compile Include="Utilities\Fakes\FakeModels.cs" />
+    <Compile Include="Utilities\when_mapping_a_natural_person_client.cs" />
+    <Compile Include="Utilities\when_mapping_a_new_purchase_application_model.cs" />
+    <Compile Include="Utilities\when_mapping_differing_fake_models.cs" />
+    <Compile Include="Utilities\when_mapping_fake_models.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DomainProcessManager.Shared\SAHL.Services.Interfaces.DomainProcessManager.Tests\SAHL.Services.Interfaces.DomainProcessManager.Tests.csproj">
+      <Project>{e72be341-b032-464f-8045-636b85ef963d}</Project>
+      <Name>SAHL.Services.Interfaces.DomainProcessManager.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DomainProcessManager.Shared\SAHL.Services.Interfaces.DomainProcessManager\SAHL.Services.Interfaces.DomainProcessManager.csproj">
+      <Project>{050aa1cf-8b68-46b8-83b6-f5214474964a}</Project>
+      <Name>SAHL.Services.Interfaces.DomainProcessManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SAHL.DomainProcessManager.DomainProcesses\SAHL.DomainProcessManager.DomainProcesses.csproj">
+      <Project>{91fff4fd-d4ab-4897-b8fa-4c8db2ec8da4}</Project>
+      <Name>SAHL.DomainProcessManager.DomainProcesses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(ProjectDir)\..\..\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

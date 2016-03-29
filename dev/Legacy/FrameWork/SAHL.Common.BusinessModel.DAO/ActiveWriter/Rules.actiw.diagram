@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="Rules">
+  <modelMoniker Id="e4f90939-cd09-4056-9796-039d5ebfee71" />
+  <nestedChildShapes>
+    <classShape Id="ea5b1f20-657f-4323-83db-0449a6946b2a" absoluteBounds="0.5, 2.25, 1.5, 1.0461531575520833">
+      <modelClassMoniker name="/e4f90939-cd09-4056-9796-039d5ebfee71/WorkflowRuleSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9913d994-bc0e-4e48-8359-c52c8983eff5" absoluteBounds="0.515, 2.66, 1.4700000000000002, 0.53615315755208326" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c6ad8ad2-a7a9-4b07-b261-7df3106ccab1" absoluteBounds="2, 0.875, 1.5, 1.0461531575520833">
+      <modelClassMoniker name="/e4f90939-cd09-4056-9796-039d5ebfee71/WorkflowRuleSetItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7587b8c3-436e-4c5a-892d-985d71c4981a" absoluteBounds="2.015, 1.2850000000000001, 1.4700000000000002, 0.53615315755208326" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(2.78125 : 1.92115315755208); (2.78125 : 2.77307657877604); (2 : 2.77307657877604)]" manuallyRouted="false" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="e8a1e51f-bde6-49f8-a463-a5252200a0ea" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="c6ad8ad2-a7a9-4b07-b261-7df3106ccab1" />
+        <classShapeMoniker Id="ea5b1f20-657f-4323-83db-0449a6946b2a" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

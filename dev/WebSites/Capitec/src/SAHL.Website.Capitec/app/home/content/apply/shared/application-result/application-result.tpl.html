@@ -1,0 +1,44 @@
+﻿<div ui-view>
+    <form id="applicationResultForm" class="twoColumn" ng-cloak>
+        <div ng-if="applicationSuccessful===true">
+            <p id="appQualifiesMessage">
+                The application provisionally qualifies and has been submitted to SA Home Loans for a full credit assessment. </br>
+                An SA Home Loans consultant will contact the main contact person within 1 business day to complete the process.
+                No further Capitec Credit can be offered at this stage, since it might affect the pending Home Loan application.
+            </p>
+        </div>
+
+        <div ng-if="applicationSuccessful != null">
+            <label>Application Number</label> <br />
+            <label class="emphasise">{{ applicationNumber }}</label>
+        </div>
+        <div ng-repeat="applicant in applicants">
+            <div class="divPadded" ng-show="applicant.messages.length > 0">
+                <p><b>Credit Bureau  <span ng-if="!applicant.passed">Decline Reasons</span> <span ng-if="applicant.passed">Warnings</span> for {{applicant.name}}</b></p>
+                <ul>
+                    <li ng-show="!applicant.passed">
+                        Credit Bureau Check Failed
+                    </li>
+                    <li ng-repeat="message in applicant.messages">
+                        {{message.Message}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="divPadded" ng-show="applicationResult.messages.length > 0">
+            <p><b>Decline Reasons</b></p>
+            <ul>
+                <li ng-repeat="message in applicationResult.messages">
+                    {{message.Message}}
+                </li>
+            </ul>
+        </div>
+        <div id="appDeclinedMessage" class="divPadded" ng-if="applicationSuccessful===false">
+            The client might still qualify for a Capitec Credit product. Please discuss the opportunity and use the Capitec Banking System for a Credit Application.
+        </div>
+        <div>
+            <img src="~/../assets/img/SAHLLogo.png" class="pull-right" />
+        </div>
+    </form>
+</div>

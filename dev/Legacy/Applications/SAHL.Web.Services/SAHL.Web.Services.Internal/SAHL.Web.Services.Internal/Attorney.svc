@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SAHL.Web.Services.Internal.Attorney" CodeBehind="Attorney.svc.cs" %>

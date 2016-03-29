@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="X2SecurityGroup">
+  <modelMoniker Id="6b379110-14a7-44b5-a9b7-905e5f2b943e" />
+  <nestedChildShapes>
+    <classShape Id="af6b6f22-0885-4b7b-9d48-67cd2fcb6489" absoluteBounds="0.5, 0.5, 1.5, 1.7978417968750002">
+      <modelClassMoniker name="/6b379110-14a7-44b5-a9b7-905e5f2b943e/SecurityGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="65497a4a-56e4-4ff9-98ab-a9169b9d8c36" absoluteBounds="0.515, 0.91000000000000014, 1.4700000000000002, 1.287841796875" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</activeRecordMapping>

@@ -1,0 +1,82 @@
+/* START Button Classes */
+.SAHLButton
+{
+    color:                  #FFFFFF;
+    cursor:                 pointer;
+    background-repeat:      no-repeat;
+    border-style:           none;
+    background-position:    center center;
+    height:                 20px;
+    background-color:       transparent;
+}
+.SAHLButton1 
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button1.gif") %>');
+    width:                  25px;
+}
+.SAHLButton2 
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button2.gif") %>');
+    width:                  56px;
+}
+.SAHLButton3
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button3.gif") %>');
+    width:                  79px;
+}
+.SAHLButton4
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button4.gif") %>');
+    width:                  102px;
+}
+.SAHLButton5
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button5.gif") %>');
+    width:                  125px;
+}
+.SAHLButton6
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button6.gif") %>');
+    width:                  148px;
+}
+
+.SAHLButtonDis
+{
+    color:                  #FFFFFF;
+    cursor:                 default;
+    background-repeat:      no-repeat;
+    border-style:           none;
+    background-position:    center center;
+    height:                 20px;
+    background-color:       transparent;
+}
+.SAHLButton1Dis
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button1dis.gif") %>');
+    width:                  25px;
+}
+.SAHLButton2Dis
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button2dis.gif") %>');
+    width:                  56px;
+}
+.SAHLButton3Dis
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button3dis.gif") %>');
+    width:                  79px;
+}
+.SAHLButton4Dis
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button4dis.gif") %>');
+    width:                  102px;
+}
+.SAHLButton5Dis
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button5dis.gif") %>');
+    width:                  125px;
+}
+.SAHLButton6Dis
+{
+    background-image:       url('<%= WebResource("SAHL.Common.Web.UI.Controls.Resources.button6dis.gif") %>');
+    width:                  148px;
+}

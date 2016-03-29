@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4B3B5E85-EBA1-41E8-8B08-438C75FFED5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Core.Metrics</RootNamespace>
+    <AssemblyName>SAHL.Core.Metrics</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AtomicLong.cs" />
+    <Compile Include="CounterMetric.cs" />
+    <Compile Include="EWMA.cs" />
+    <Compile Include="ExponentiallyDecayingSample.cs" />
+    <Compile Include="GaugeMetric.cs" />
+    <Compile Include="HistogramMetric.cs" />
+    <Compile Include="ICounterMetric.cs" />
+    <Compile Include="IGaugeMetric.cs" />
+    <Compile Include="IHistogramMetric.cs" />
+    <Compile Include="IMeterMetric.cs" />
+    <Compile Include="IMetric.cs" />
+    <Compile Include="IMetricKey.cs" />
+    <Compile Include="IMetricName.cs" />
+    <Compile Include="IMetricsCollector.cs" />
+    <Compile Include="IMetricSetName.cs" />
+    <Compile Include="IResetCounter.cs" />
+    <Compile Include="ISample.cs" />
+    <Compile Include="ITimerMetric.cs" />
+    <Compile Include="ITypedOwnedMetricName.cs" />
+    <Compile Include="ITypedMetricName.cs" />
+    <Compile Include="IUpTime.cs" />
+    <Compile Include="MeterMetric.cs" />
+    <Compile Include="MetricKey.cs" />
+    <Compile Include="MetricsCollector.cs" />
+    <Compile Include="MetricSetName.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Random.cs" />
+    <Compile Include="ResetCounter.cs" />
+    <Compile Include="SampleType.cs" />
+    <Compile Include="SampleTypeExtension.cs" />
+    <Compile Include="TimerMetric.cs" />
+    <Compile Include="TimeUnitExtensions.cs" />
+    <Compile Include="TimeUnitName.cs" />
+    <Compile Include="TimeValue.cs" />
+    <Compile Include="TypeOwnedMetricName.cs" />
+    <Compile Include="UniformSample.cs" />
+    <Compile Include="UpTime.cs" />
+    <Compile Include="VolatileDouble.cs" />
+    <Compile Include="VolatileLong.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Core\SAHL.Core.csproj">
+      <Project>{c15539b0-e88f-4889-9146-7c9360054d2b}</Project>
+      <Name>SAHL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

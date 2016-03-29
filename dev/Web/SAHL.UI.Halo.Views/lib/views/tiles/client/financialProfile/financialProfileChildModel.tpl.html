@@ -1,0 +1,19 @@
+<br/>
+<div class="tile-data-bottom">
+	<div class="labels">
+		<div>Age of data:</div>
+		<div>Confirmed Income:</div>
+		<div>Expenses:</div>
+		<div>Payments:</div>
+		<div>Balance:</div>
+		<div>Arrears:</div>
+	</div>
+	<div class="values">
+		<div>{{item.tileData.AgeOfOldestConfirmationOfIncome}}</div>
+		<div>{{item.tileData.TotalConfirmedIncome | currencyFilter:0}}</div>
+		<div>{{item.tileData.CurrentTotalExpensesProvidedOnMostRecentSAHLLoanApplication | currencyFilter:0}}</div>
+		<div>{{item.tileData.CurrentTotalMonthlyPaymentExposureToSAHL | currencyFilter:0}}</div>
+		<div>{{item.tileData.CurrentTotalOutstandingBalanceLoanExposureToSAHL | currencyFilter:0}}</div>
+		<div>{{item.tileData.CurrentTotalArrearBalanceExposureToSAHL | currencyFilter:0}}</div>
+	</div>
+</div>

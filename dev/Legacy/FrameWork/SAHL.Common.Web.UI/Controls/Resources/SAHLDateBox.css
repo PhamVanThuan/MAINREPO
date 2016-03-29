@@ -1,0 +1,6 @@
+.ajax__calendar_container td
+{ 
+	padding: 0px;
+	font-weight: normal;
+	vertical-align: middle;
+}

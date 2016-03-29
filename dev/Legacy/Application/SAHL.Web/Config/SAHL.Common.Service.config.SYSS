@@ -1,0 +1,92 @@
+<SAHL.Common.Service.Properties.Settings>
+  <setting name="SAHL_Common_WebServices_ITC_Service" serializeAs="String">
+    <value>https://secure.transunion.co.za/TUBureau111Test/consumer.asmx</value>
+  </setting>
+	<setting name="ClientReference" serializeAs="String">
+		<value>Home Loan Enquiry</value>
+	</setting>
+	<setting name="ContactNumber" serializeAs="String">
+		<value>031 560 5300</value>
+	</setting>
+	<setting name="ProxyUsername" serializeAs="String">
+		<value>Sqlservice2</value>
+	</setting>
+	<setting name="ProxyPassword" serializeAs="String">
+		<value>W0rdpass</value>
+	</setting>
+	<setting name="BypassProxy" serializeAs="String">
+		<value>True</value>
+	</setting>
+	<setting name="SubscriberCode" serializeAs="String">
+		<value>00151</value>
+	</setting>
+	<setting name="Destination" serializeAs="String">
+		<value>Test</value>
+	</setting>
+	<setting name="SecurityCode" serializeAs="String">
+		<value>SAH51</value>
+	</setting>
+	<setting name="ContactName" serializeAs="String">
+		<value>SA Home Loans</value>
+	</setting>
+	<setting name="PluginPath" serializeAs="String">
+		<value></value>
+	</setting>
+
+	<!-- the following is a list of strings that will prevent an Internal Test Environment Email from being sent-->
+	<setting name="InternalTestEmailFilterPhrases" serializeAs="Xml">
+		<value>
+			<ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+				<string>This is a reminder that case</string>
+			</ArrayOfString>
+		</value>
+	</setting>
+	
+	<setting name="ServiceUser" serializeAs="String">
+		<value>sqlservice2</value>
+	</setting>
+	<setting name="ServicePassword" serializeAs="String">
+		<value>W0rdpass</value>
+	</setting>
+	<setting name="ServiceDomain" serializeAs="String">
+		<value>SAHL</value>
+	</setting>
+	<setting name="ITCProxyDomain" serializeAs="String">
+		<value>SAHL</value>
+	</setting>
+	<setting name="ITCProxyIP" serializeAs="String">
+		<value>192.168.11.27</value>
+	</setting>
+	<setting name="ITCProxyPort" serializeAs="String">
+		<value>8080</value>
+	</setting>
+
+
+	<setting name="WebServices_Lightstone_UserID" serializeAs="String">
+		<value>f5f18b0b-2f28-4081-ad96-c9507abab5f0</value>
+	</setting>
+	<setting name="WebServices_Lightstone_ProxyIP" serializeAs="String">
+		<value>192.168.11.27</value>
+	</setting>
+	<setting name="WebServices_Lightstone_ProxyPort" serializeAs="String">
+		<value>8080</value>
+	</setting>	
+	<setting name="WebServices_Lightstone_UseProxy" serializeAs="String">
+		<value>False</value>
+	</setting>	
+	<setting name="WebServices_Lightstone_ProxyUser" serializeAs="String">
+		<value>Sqlservice2</value>
+	</setting>	
+	<setting name="WebServices_Lightstone_ProxyPass" serializeAs="String">
+		<value>W0rdpass</value>
+	</setting>
+	<setting name="WebServices_Lightstone_ProxyDomain" serializeAs="String">
+		<value>SAHL</value>
+	</setting>
+    <setting name="WebServices_Lightstone_UseTestService" serializeAs="String">
+	    <value>True</value>
+    </setting>	
+	<!-- *************************************************************************-->	
+	
+</SAHL.Common.Service.Properties.Settings>

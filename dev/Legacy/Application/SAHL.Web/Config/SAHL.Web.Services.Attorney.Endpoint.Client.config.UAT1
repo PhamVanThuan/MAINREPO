@@ -1,0 +1,5 @@
+		<client>
+			<endpoint address="http://SAHL-WS01:81/Attorney.svc"
+			  binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAttorney"
+			  contract="AttorneyService.IAttorney" name="BasicHttpBinding_IAttorney" />
+		</client>

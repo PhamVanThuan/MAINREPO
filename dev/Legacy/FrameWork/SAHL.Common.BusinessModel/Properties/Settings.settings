@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SAHL.Common.BusinessModel.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ReportServerUser" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">SAHL\SQLReportUser</Value>
+    </Setting>
+    <Setting Name="ReportServerUserNotPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ssapdr0W</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

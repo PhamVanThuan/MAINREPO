@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <AssemblyName>SAHL.Halo.Charm.Mail</AssemblyName>
+    <Name>SAHL.Halo.Charm.Mail</Name>
+    <RootNamespace>sahl.halo.charm.mail</RootNamespace>
+    <SAHLSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="assets" />
+    <Folder Include="app" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\mailCharm.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="app\mailCharm.spec.js">
+      <SubType>Content</SubType>
+      <DependentUpon>app\mailCharm.js</DependentUpon>
+    </Content>
+    <Content Include="assets\mail.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="package.json">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\SAHomeloans\SAHL.VS.WebJS.targets" />
+</Project>

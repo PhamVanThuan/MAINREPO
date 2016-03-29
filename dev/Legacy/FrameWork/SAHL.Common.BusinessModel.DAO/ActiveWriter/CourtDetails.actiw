@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ac0fe61f-be34-452b-a10a-55b209881523" manyToManyCollectionIDColumnType="AnsiChar" manyToManyCollectionIDGenerator="None" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1DYXN0bGUuQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjIwMTAuMC4xLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTYwMzA0NTg1MTgzMWVkNWMEAQAAAJ4BU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydCwgQ2FzdGxlLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4yMDEwLjAuMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj02MDMwNDU4NTE4MzFlZDVjXV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAABxDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABBpDYXN0bGUuQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="DebtCounselling" schema="debtcounselling" table="DebtCounselling">
+      <targets>
+        <manyToOneRelation Id="76601dac-ece4-4eec-8158-83b5bbf2aa58" targetColumnKey="GeneralStatusKey" targetTable="DebtCounselling" targetPropertyName="DebtCounsellings" sourceColumn="GeneralStatusKey">
+          <modelClassMoniker name="/ac0fe61f-be34-452b-a10a-55b209881523/GeneralStatus" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="b9aa89b5-bfeb-4219-9d61-043517316931" name="DebtCounsellingKey" column="DebtCounsellingKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="4176d582-0dbe-4369-8bcb-29dd66004cb8" name="AccountKey" column="AccountKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="8e6efb80-9429-4e27-b15b-f3869238cc15" name="DebtCounsellingGroupKey" column="DebtCounsellingGroupKey" columnType="Int32" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CourtType" schema="debtcounselling" table="CourtType">
+      <properties>
+        <modelProperty Id="7c883784-bf6f-400b-bd88-c6589d9295e7" name="CourtTypeKey" column="CourtTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="46c66cc7-ec8c-417a-a827-14cb44c2a5a2" name="Description" column="Description" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CourtDetails" schema="debtcounselling" table="CourtDetails">
+      <targets>
+        <manyToOneRelation Id="943b7303-6f93-4a43-bb21-936b41b0da27" targetColumnKey="DebtCounsellingKey" targetTable="CourtDetails" targetPropertyName="CourtDetails" sourceColumn="DebtCounsellingKey">
+          <modelClassMoniker name="/ac0fe61f-be34-452b-a10a-55b209881523/DebtCounselling" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="858b8748-4f42-430f-ba13-f56536dcdfd1" targetColumnKey="CourtTypeKey" targetTable="CourtDetails" targetPropertyName="CourtDetails" sourceColumn="CourtTypeKey">
+          <modelClassMoniker name="/ac0fe61f-be34-452b-a10a-55b209881523/CourtType" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="57fd099d-b135-4685-89d0-a896259d7d6d" targetColumnKey="GeneralStatusKey" targetTable="CourtDetails" targetPropertyName="CourtDetails" sourceColumn="GeneralStatusKey">
+          <modelClassMoniker name="/ac0fe61f-be34-452b-a10a-55b209881523/GeneralStatus" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="331e140e-361f-488f-93b8-4360295aa4c2" targetColumnKey="CourtKey" targetTable="CourtDetails" targetPropertyName="CourtDetails" sourceColumn="CourtKey">
+          <modelClassMoniker name="/ac0fe61f-be34-452b-a10a-55b209881523/Court" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="79504011-8320-45d9-a92d-1b02746bb421" targetColumnKey="CourtAppearanceTypeKey" targetTable="CourtDetails" targetPropertyName="CourtDetails" sourceColumn="CourtAppearanceTypeKey">
+          <modelClassMoniker name="/ac0fe61f-be34-452b-a10a-55b209881523/CourtAppearanceType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="a2d952e1-e8de-43e4-aeff-6e7c766dd3e6" name="CourtDetailsKey" column="CourtDetailsKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="10634012-a8bb-4c34-a5a1-4ffbbf66555f" name="CaseNumber" column="CaseNumber" length="0" notNull="true" />
+        <modelProperty Id="e49866b3-fefb-4336-b658-2e9cba6405ea" name="CourtDate" column="CourtDate" columnType="Timestamp" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="CourtAppearanceType" schema="debtcounselling" table="CourtAppearanceType">
+      <properties>
+        <modelProperty Id="c18a406d-2685-4deb-8fcc-861147c92e25" name="CourtAppearanceTypeKey" column="CourtAppearanceTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="fc3bbfdf-eb96-430a-808b-29b63717fc38" name="Description" column="Description" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="Court" schema="debtcounselling" table="Court">
+      <properties>
+        <modelProperty Id="4e55d3f4-7c42-4f44-9f17-c27988294d6d" name="CourtKey" column="CourtKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="f969b2d3-237e-43b5-9908-e28d8161b54a" name="Name" column="Name" length="0" notNull="true" />
+      </properties>
+    </modelClass>
+    <modelClass name="GeneralStatus" schema="dbo" table="GeneralStatus">
+      <properties>
+        <modelProperty Id="664fc02f-88c0-4023-a05b-569522a441be" name="GeneralStatusKey" column="GeneralStatusKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+        <modelProperty Id="dfb8a038-9d0c-46ae-b5c9-cdbfcd02728b" name="Description" column="Description" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

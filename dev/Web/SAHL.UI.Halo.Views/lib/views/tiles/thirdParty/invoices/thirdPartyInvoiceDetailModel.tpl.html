@@ -1,0 +1,16 @@
+<div class="labels">
+	<div>Client:</div>
+	<div>Invoice Number:</div>
+	<div>Reference:</div>
+	<div>Invoice Date:</div>
+	<div>Received From:</div>
+	<div>Loss Control Stage:</div>
+</div>
+<div class="values">
+	<div tool-tip="item.tileData.ClientName.trim() | emptyStringDecorator">{{item.tileData.ClientName | emptyStringDecorator | characters:24 }}</div>
+	<div tool-tip="item.tileData.InvoiceNumber.trim() | emptyStringDecorator">{{item.tileData.InvoiceNumber | emptyStringDecorator | characters:19 }}</div>
+	<div>{{item.tileData.Reference}}</div>
+	<div>{{item.tileData.InvoiceDate|dateViewFilter}}</div>
+	<div tool-tip="item.tileData.ReceivedFromEmailAddress.trim() | emptyStringDecorator">{{item.tileData.ReceivedFromEmailAddress | emptyStringDecorator | characters:24 }}</div>
+	<div tool-tip="item.tileData.LossControlStage.trim() | emptyStringDecorator">{{item.tileData.LossControlStage | emptyStringDecorator | characters:24 }}</div>
+</div>

@@ -1,0 +1,1076 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://webservices.sahomeloans.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://webservices.sahomeloans.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.sahomeloans.com/">
+      <s:element name="CurrencyFormat">
+        <s:complexType />
+      </s:element>
+      <s:element name="CurrencyFormatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyFormatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CurrencyFormatNoCents">
+        <s:complexType />
+      </s:element>
+      <s:element name="CurrencyFormatNoCentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CurrencyFormatNoCentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RateFormat">
+        <s:complexType />
+      </s:element>
+      <s:element name="RateFormatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RateFormatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Salaried">
+        <s:complexType />
+      </s:element>
+      <s:element name="SalariedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SalariedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelfEmployed">
+        <s:complexType />
+      </s:element>
+      <s:element name="SelfEmployedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SelfEmployedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Subsidised">
+        <s:complexType />
+      </s:element>
+      <s:element name="SubsidisedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubsidisedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Unemployed">
+        <s:complexType />
+      </s:element>
+      <s:element name="UnemployedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnemployedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Unknown">
+        <s:complexType />
+      </s:element>
+      <s:element name="UnknownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnknownResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VariableLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="VariableLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VariableLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VariFixLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="VariFixLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VariFixLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsSwitchLoanNewVariableLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsSwitchLoanNewVariableLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsSwitchLoanNewVariableLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsSwitchLoanVariFixLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsSwitchLoanVariFixLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsSwitchLoanVariFixLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsSwitchLoanSuperLo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsSwitchLoanSuperLoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsSwitchLoanSuperLoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsNewPurchaseNewVariableLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsNewPurchaseNewVariableLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsNewPurchaseNewVariableLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsNewPurchaseVariFixLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsNewPurchaseVariFixLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsNewPurchaseVariFixLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsNewPurchaseSuperLo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsNewPurchaseSuperLoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsNewPurchaseSuperLoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsRefinanceNewVariableLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsRefinanceNewVariableLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsRefinanceNewVariableLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsRefinanceVariFixLoan">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsRefinanceVariFixLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsRefinanceVariFixLoanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProductsRefinanceSuperLo">
+        <s:complexType />
+      </s:element>
+      <s:element name="ProductsRefinanceSuperLoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProductsRefinanceSuperLoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MortgageLoanPurposesSwitchloan">
+        <s:complexType />
+      </s:element>
+      <s:element name="MortgageLoanPurposesSwitchloanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MortgageLoanPurposesSwitchloanResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MortgageLoanPurposesNewpurchase">
+        <s:complexType />
+      </s:element>
+      <s:element name="MortgageLoanPurposesNewpurchaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MortgageLoanPurposesNewpurchaseResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MortgageLoanPurposesRefinance">
+        <s:complexType />
+      </s:element>
+      <s:element name="MortgageLoanPurposesRefinanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MortgageLoanPurposesRefinanceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OriginationSourcesSAHomeLoans">
+        <s:complexType />
+      </s:element>
+      <s:element name="OriginationSourcesSAHomeLoansResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OriginationSourcesSAHomeLoansResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategory1">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategory1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCategory1Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategory2">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategory2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCategory2Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategory3">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategory3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCategory3Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCategory4">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategory4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCategory4Result" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CurrencyFormatSoapIn">
+    <wsdl:part name="parameters" element="tns:CurrencyFormat" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyFormatSoapOut">
+    <wsdl:part name="parameters" element="tns:CurrencyFormatResponse" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyFormatNoCentsSoapIn">
+    <wsdl:part name="parameters" element="tns:CurrencyFormatNoCents" />
+  </wsdl:message>
+  <wsdl:message name="CurrencyFormatNoCentsSoapOut">
+    <wsdl:part name="parameters" element="tns:CurrencyFormatNoCentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RateFormatSoapIn">
+    <wsdl:part name="parameters" element="tns:RateFormat" />
+  </wsdl:message>
+  <wsdl:message name="RateFormatSoapOut">
+    <wsdl:part name="parameters" element="tns:RateFormatResponse" />
+  </wsdl:message>
+  <wsdl:message name="SalariedSoapIn">
+    <wsdl:part name="parameters" element="tns:Salaried" />
+  </wsdl:message>
+  <wsdl:message name="SalariedSoapOut">
+    <wsdl:part name="parameters" element="tns:SalariedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelfEmployedSoapIn">
+    <wsdl:part name="parameters" element="tns:SelfEmployed" />
+  </wsdl:message>
+  <wsdl:message name="SelfEmployedSoapOut">
+    <wsdl:part name="parameters" element="tns:SelfEmployedResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubsidisedSoapIn">
+    <wsdl:part name="parameters" element="tns:Subsidised" />
+  </wsdl:message>
+  <wsdl:message name="SubsidisedSoapOut">
+    <wsdl:part name="parameters" element="tns:SubsidisedResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnemployedSoapIn">
+    <wsdl:part name="parameters" element="tns:Unemployed" />
+  </wsdl:message>
+  <wsdl:message name="UnemployedSoapOut">
+    <wsdl:part name="parameters" element="tns:UnemployedResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnknownSoapIn">
+    <wsdl:part name="parameters" element="tns:Unknown" />
+  </wsdl:message>
+  <wsdl:message name="UnknownSoapOut">
+    <wsdl:part name="parameters" element="tns:UnknownResponse" />
+  </wsdl:message>
+  <wsdl:message name="VariableLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:VariableLoan" />
+  </wsdl:message>
+  <wsdl:message name="VariableLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:VariableLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="VariFixLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:VariFixLoan" />
+  </wsdl:message>
+  <wsdl:message name="VariFixLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:VariFixLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsSwitchLoanNewVariableLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsSwitchLoanNewVariableLoan" />
+  </wsdl:message>
+  <wsdl:message name="ProductsSwitchLoanNewVariableLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsSwitchLoanNewVariableLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsSwitchLoanVariFixLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsSwitchLoanVariFixLoan" />
+  </wsdl:message>
+  <wsdl:message name="ProductsSwitchLoanVariFixLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsSwitchLoanVariFixLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsSwitchLoanSuperLoSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsSwitchLoanSuperLo" />
+  </wsdl:message>
+  <wsdl:message name="ProductsSwitchLoanSuperLoSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsSwitchLoanSuperLoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsNewPurchaseNewVariableLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsNewPurchaseNewVariableLoan" />
+  </wsdl:message>
+  <wsdl:message name="ProductsNewPurchaseNewVariableLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsNewPurchaseNewVariableLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsNewPurchaseVariFixLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsNewPurchaseVariFixLoan" />
+  </wsdl:message>
+  <wsdl:message name="ProductsNewPurchaseVariFixLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsNewPurchaseVariFixLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsNewPurchaseSuperLoSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsNewPurchaseSuperLo" />
+  </wsdl:message>
+  <wsdl:message name="ProductsNewPurchaseSuperLoSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsNewPurchaseSuperLoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsRefinanceNewVariableLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsRefinanceNewVariableLoan" />
+  </wsdl:message>
+  <wsdl:message name="ProductsRefinanceNewVariableLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsRefinanceNewVariableLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsRefinanceVariFixLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsRefinanceVariFixLoan" />
+  </wsdl:message>
+  <wsdl:message name="ProductsRefinanceVariFixLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsRefinanceVariFixLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProductsRefinanceSuperLoSoapIn">
+    <wsdl:part name="parameters" element="tns:ProductsRefinanceSuperLo" />
+  </wsdl:message>
+  <wsdl:message name="ProductsRefinanceSuperLoSoapOut">
+    <wsdl:part name="parameters" element="tns:ProductsRefinanceSuperLoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MortgageLoanPurposesSwitchloanSoapIn">
+    <wsdl:part name="parameters" element="tns:MortgageLoanPurposesSwitchloan" />
+  </wsdl:message>
+  <wsdl:message name="MortgageLoanPurposesSwitchloanSoapOut">
+    <wsdl:part name="parameters" element="tns:MortgageLoanPurposesSwitchloanResponse" />
+  </wsdl:message>
+  <wsdl:message name="MortgageLoanPurposesNewpurchaseSoapIn">
+    <wsdl:part name="parameters" element="tns:MortgageLoanPurposesNewpurchase" />
+  </wsdl:message>
+  <wsdl:message name="MortgageLoanPurposesNewpurchaseSoapOut">
+    <wsdl:part name="parameters" element="tns:MortgageLoanPurposesNewpurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="MortgageLoanPurposesRefinanceSoapIn">
+    <wsdl:part name="parameters" element="tns:MortgageLoanPurposesRefinance" />
+  </wsdl:message>
+  <wsdl:message name="MortgageLoanPurposesRefinanceSoapOut">
+    <wsdl:part name="parameters" element="tns:MortgageLoanPurposesRefinanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="OriginationSourcesSAHomeLoansSoapIn">
+    <wsdl:part name="parameters" element="tns:OriginationSourcesSAHomeLoans" />
+  </wsdl:message>
+  <wsdl:message name="OriginationSourcesSAHomeLoansSoapOut">
+    <wsdl:part name="parameters" element="tns:OriginationSourcesSAHomeLoansResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategory1" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategory1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory2SoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategory2" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory2SoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategory2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory3SoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategory3" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory3SoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategory3Response" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory4SoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategory4" />
+  </wsdl:message>
+  <wsdl:message name="GetCategory4SoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategory4Response" />
+  </wsdl:message>
+  <wsdl:portType name="GlobalsSoap">
+    <wsdl:operation name="CurrencyFormat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Standard Currency format</wsdl:documentation>
+      <wsdl:input message="tns:CurrencyFormatSoapIn" />
+      <wsdl:output message="tns:CurrencyFormatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyFormatNoCents">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Standard Currency format withour cents</wsdl:documentation>
+      <wsdl:input message="tns:CurrencyFormatNoCentsSoapIn" />
+      <wsdl:output message="tns:CurrencyFormatNoCentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RateFormat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns The Rate Format</wsdl:documentation>
+      <wsdl:input message="tns:RateFormatSoapIn" />
+      <wsdl:output message="tns:RateFormatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Salaried">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns EmploymentType Salaried</wsdl:documentation>
+      <wsdl:input message="tns:SalariedSoapIn" />
+      <wsdl:output message="tns:SalariedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelfEmployed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns EmploymentType SelfEmployed</wsdl:documentation>
+      <wsdl:input message="tns:SelfEmployedSoapIn" />
+      <wsdl:output message="tns:SelfEmployedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Subsidised">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns EmploymentType Subsidised</wsdl:documentation>
+      <wsdl:input message="tns:SubsidisedSoapIn" />
+      <wsdl:output message="tns:SubsidisedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Unemployed">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns EmploymentType Unemployed</wsdl:documentation>
+      <wsdl:input message="tns:UnemployedSoapIn" />
+      <wsdl:output message="tns:UnemployedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Unknown">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns EmploymentType Unknown</wsdl:documentation>
+      <wsdl:input message="tns:UnknownSoapIn" />
+      <wsdl:output message="tns:UnknownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VariableLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ReturnsProduct Type Variable Loan</wsdl:documentation>
+      <wsdl:input message="tns:VariableLoanSoapIn" />
+      <wsdl:output message="tns:VariableLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VariFixLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ReturnsProduct Type VariFixLoan Loan</wsdl:documentation>
+      <wsdl:input message="tns:VariFixLoanSoapIn" />
+      <wsdl:output message="tns:VariFixLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanNewVariableLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsSwitchLoan.NewVariableLoan</wsdl:documentation>
+      <wsdl:input message="tns:ProductsSwitchLoanNewVariableLoanSoapIn" />
+      <wsdl:output message="tns:ProductsSwitchLoanNewVariableLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanVariFixLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsSwitchLoan.VariFixLoan</wsdl:documentation>
+      <wsdl:input message="tns:ProductsSwitchLoanVariFixLoanSoapIn" />
+      <wsdl:output message="tns:ProductsSwitchLoanVariFixLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanSuperLo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsSwitchLoan.SuperLo</wsdl:documentation>
+      <wsdl:input message="tns:ProductsSwitchLoanSuperLoSoapIn" />
+      <wsdl:output message="tns:ProductsSwitchLoanSuperLoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseNewVariableLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsNewPurchase.NewVariableLoan</wsdl:documentation>
+      <wsdl:input message="tns:ProductsNewPurchaseNewVariableLoanSoapIn" />
+      <wsdl:output message="tns:ProductsNewPurchaseNewVariableLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseVariFixLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsNewPurchase.VariFixLoan</wsdl:documentation>
+      <wsdl:input message="tns:ProductsNewPurchaseVariFixLoanSoapIn" />
+      <wsdl:output message="tns:ProductsNewPurchaseVariFixLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseSuperLo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsNewPurchase.SuperLo</wsdl:documentation>
+      <wsdl:input message="tns:ProductsNewPurchaseSuperLoSoapIn" />
+      <wsdl:output message="tns:ProductsNewPurchaseSuperLoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceNewVariableLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsRefinance.NewVariableLoan</wsdl:documentation>
+      <wsdl:input message="tns:ProductsRefinanceNewVariableLoanSoapIn" />
+      <wsdl:output message="tns:ProductsRefinanceNewVariableLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceVariFixLoan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsRefinance.VariFixLoan</wsdl:documentation>
+      <wsdl:input message="tns:ProductsRefinanceVariFixLoanSoapIn" />
+      <wsdl:output message="tns:ProductsRefinanceVariFixLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceSuperLo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns ProductsRefinance.SuperLo</wsdl:documentation>
+      <wsdl:input message="tns:ProductsRefinanceSuperLoSoapIn" />
+      <wsdl:output message="tns:ProductsRefinanceSuperLoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesSwitchloan">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns MortgageLoanPurposes.Switchloan</wsdl:documentation>
+      <wsdl:input message="tns:MortgageLoanPurposesSwitchloanSoapIn" />
+      <wsdl:output message="tns:MortgageLoanPurposesSwitchloanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesNewpurchase">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns MortgageLoanPurposes.Newpurchase</wsdl:documentation>
+      <wsdl:input message="tns:MortgageLoanPurposesNewpurchaseSoapIn" />
+      <wsdl:output message="tns:MortgageLoanPurposesNewpurchaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesRefinance">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns MortgageLoanPurposes.Refinance</wsdl:documentation>
+      <wsdl:input message="tns:MortgageLoanPurposesRefinanceSoapIn" />
+      <wsdl:output message="tns:MortgageLoanPurposesRefinanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OriginationSourcesSAHomeLoans">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Origination Source for SA Home Loans</wsdl:documentation>
+      <wsdl:input message="tns:OriginationSourcesSAHomeLoansSoapIn" />
+      <wsdl:output message="tns:OriginationSourcesSAHomeLoansSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Category 1 Key Value</wsdl:documentation>
+      <wsdl:input message="tns:GetCategory1SoapIn" />
+      <wsdl:output message="tns:GetCategory1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Category 2 Key Value</wsdl:documentation>
+      <wsdl:input message="tns:GetCategory2SoapIn" />
+      <wsdl:output message="tns:GetCategory2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory3">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Category 3 Key Value</wsdl:documentation>
+      <wsdl:input message="tns:GetCategory3SoapIn" />
+      <wsdl:output message="tns:GetCategory3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory4">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the Category 4 Key Value</wsdl:documentation>
+      <wsdl:input message="tns:GetCategory4SoapIn" />
+      <wsdl:output message="tns:GetCategory4SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GlobalsSoap" type="tns:GlobalsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CurrencyFormat">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CurrencyFormat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyFormatNoCents">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/CurrencyFormatNoCents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateFormat">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/RateFormat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salaried">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/Salaried" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelfEmployed">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/SelfEmployed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subsidised">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/Subsidised" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unemployed">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/Unemployed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unknown">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/Unknown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariableLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/VariableLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariFixLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/VariFixLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanNewVariableLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsSwitchLoanNewVariableLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanVariFixLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsSwitchLoanVariFixLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanSuperLo">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsSwitchLoanSuperLo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseNewVariableLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsNewPurchaseNewVariableLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseVariFixLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsNewPurchaseVariFixLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseSuperLo">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsNewPurchaseSuperLo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceNewVariableLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsRefinanceNewVariableLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceVariFixLoan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsRefinanceVariFixLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceSuperLo">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/ProductsRefinanceSuperLo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesSwitchloan">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/MortgageLoanPurposesSwitchloan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesNewpurchase">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/MortgageLoanPurposesNewpurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesRefinance">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/MortgageLoanPurposesRefinance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OriginationSourcesSAHomeLoans">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/OriginationSourcesSAHomeLoans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory1">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetCategory1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory2">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetCategory2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory3">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetCategory3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory4">
+      <soap:operation soapAction="http://webservices.sahomeloans.com/GetCategory4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GlobalsSoap12" type="tns:GlobalsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CurrencyFormat">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CurrencyFormat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CurrencyFormatNoCents">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/CurrencyFormatNoCents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RateFormat">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/RateFormat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salaried">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/Salaried" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelfEmployed">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/SelfEmployed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subsidised">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/Subsidised" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unemployed">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/Unemployed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Unknown">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/Unknown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariableLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/VariableLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VariFixLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/VariFixLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanNewVariableLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsSwitchLoanNewVariableLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanVariFixLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsSwitchLoanVariFixLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsSwitchLoanSuperLo">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsSwitchLoanSuperLo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseNewVariableLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsNewPurchaseNewVariableLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseVariFixLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsNewPurchaseVariFixLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsNewPurchaseSuperLo">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsNewPurchaseSuperLo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceNewVariableLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsRefinanceNewVariableLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceVariFixLoan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsRefinanceVariFixLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProductsRefinanceSuperLo">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/ProductsRefinanceSuperLo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesSwitchloan">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/MortgageLoanPurposesSwitchloan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesNewpurchase">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/MortgageLoanPurposesNewpurchase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MortgageLoanPurposesRefinance">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/MortgageLoanPurposesRefinance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OriginationSourcesSAHomeLoans">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/OriginationSourcesSAHomeLoans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory1">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetCategory1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory2">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetCategory2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory3">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetCategory3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory4">
+      <soap12:operation soapAction="http://webservices.sahomeloans.com/GetCategory4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Globals">
+    <wsdl:port name="GlobalsSoap" binding="tns:GlobalsSoap">
+      <soap:address location="http://localhost/SAHL.Web.Services/Common/Globals.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GlobalsSoap12" binding="tns:GlobalsSoap12">
+      <soap12:address location="http://localhost/SAHL.Web.Services/Common/Globals.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

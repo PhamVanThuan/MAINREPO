@@ -1,0 +1,440 @@
+<SAHomeloans_Redirects>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>notfound.htm</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>AboutSAHomeLoans.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/AboutUs/AboutSAHomeLoans.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>History.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/AboutUs/History.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>CompanyInformation.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/AboutUs/CompanyInformation.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>SomersetWest.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/NCAInformation.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>NCAInformation.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/SomersetWest.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>TheKeyToUnlockingEquity.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/TheKeyToUnlockingEquity.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>SwitchandSaveMortgage.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/SwitchandSaveMortgage.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Calculators.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Calculators.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>NewHomePurchaseCalculator.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Calculators/NewHomePurchaseCalculator.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FindoutmoreaboutSAHomeLoans.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/FindoutmoreaboutSAHomeLoans.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>SwitchtoSAHomeLoansSave.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/SwitchtoSAHomeLoansSave.aspx</REDIRECT>
+  </FILENAMES>  
+   <FILENAMES xmlns="Redirect">
+    <REQUEST>FinancingyourhomethroughSAHomeLoans.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/FinancingyourhomethroughSAHomeLoans.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>YourHomeLoan.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/YourHomeLoan.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Productstosuityourneeds.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Productstosuityourneeds.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>VarifixFixedRateHomeLoan.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/VarifixFixedRateHomeLoan.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FixYourRate.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Productstosuityourneeds/FixYourRate.aspx</REDIRECT>
+  </FILENAMES> 
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>HomeLoans.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/HomeLoans.aspx</REDIRECT>
+  </FILENAMES> 
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>RiskManagement.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/RiskManagement.aspx</REDIRECT>
+  </FILENAMES> 
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FurtherLending.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/WelcometoSAHomeLoans/FurtherLending.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>ManagingyourHomeLoan.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/WelcometoSAHomeLoans/ManagingyourHomeLoan.aspx</REDIRECT>
+  </FILENAMES>   
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Careers.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/Careers.aspx</REDIRECT>
+  </FILENAMES>     
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Authorisedfinancialservicescreditprovider.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/Authorisedfinancialservicescreditprovider.aspx</REDIRECT>
+  </FILENAMES>     
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>StepbyStepGettingaHomeLoan.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/StepbyStepGettingaHomeLoan.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>BranchLocator.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FAQs.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/FAQs.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>OurHomeLoanProducts.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>BuyingaHome.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/NewPurchase/BuyingaHome.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>SwitchandSavewithSAHomeLoans.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/HomeRefinance/SwitchandSavewithSAHomeLoans.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>AffordabilityCalculator.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Calculators/AffordabilityCalculator.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>ApplyNow.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Application/ApplyNow.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FirstTimeBuyersGuidetoHomeOwnership.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/FirstTimeBuyersGuidetoHomeOwnership.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>SwitchyourHomeLoanCalculator.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Calculators/SwitchyourHomeLoanCalculator.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>YourHomeLoanNeeds.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/YourHomeLoanNeeds.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>InterestOnly.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/HomeLoans/InterestOnly.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Varifix.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/HomeLoans/Varifix.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>EquityAccess.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/EquityAccess.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>HomeOwnersCover.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/RiskManagement/HomeOwnersCover.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>BondProtection.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/RiskManagement/BondProtection.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>IndividualisedAmazingService.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Whatmakesusdifferent/IndividualisedAmazingService.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>Whatmakesusdifferent.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Whatmakesusdifferent.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>WhatdoesSwitchingmean.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/WhatdoesSwitchingmean.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>TheBenefitsofBuyingthroughus.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/TheBenefitsofBuyingthroughus.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>WelcometoSAHomeLoans.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/WelcometoSAHomeLoans.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>InformationforInvestors.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/InformationforInvestors.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>PromotionofInformationAct.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/PromotionofInformationAct.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>NationalCreditAct.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/NationalCreditAct.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FSBLicense.pdf</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Documentation/Downloads/FSBLicense.pdf</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Sitemap.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/Sitemap.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>TermsofUse.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/TermsofUse.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>PrivacyStatement.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/PrivacyStatement.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>DocumentationRequired.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/DocumentationRequired.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>RoughGuidetoDebtConsolidation.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/RoughGuidetoDebtConsolidation.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Vredenburg.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/CapeTown.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>CapeTown.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/CapeTown.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Stellenbosch.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/CapeTown.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>George.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/George.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>PortElizabeth.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/PortElizabeth.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>EastLondon.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/EastLondon.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Bloemfontein.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/Bloemfontein.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Kimberley.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/Kimberley.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>KwaZuluNatal.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/KwaZuluNatal.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Rustenburg.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/Rustenburg.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Gauteng.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/Gauteng.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>Witbank.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/Witbank.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Nelspruit.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/National/Nelspruit.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>GlossaryofHomeLoanTerms.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/GlossaryofHomeLoanTerms.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>StepbyStepSwitchingyourBond.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/StepbyStepSwitchingyourBond.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Variable.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/HomeLoans/Variable.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>SuperLo.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/HomeLoans/SuperLo.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>CapRate.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/RiskManagement/CapRate.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>GoldMasterCard.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/OurHomeLoanProducts/GoldMasterCard.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>HomeLoanAdviceforFirstTimeBuyersArticle.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/HomeLoanAdviceforFirstTimeBuyersArticle.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FactorsInfluencingHomeLoanArticle.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/FactorsInfluencingHomeLoanArticle.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>10BiggestMistakesMadeArticle.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/10BiggestMistakesMadeArticle.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FirstTimeHomeLoansArticle.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/FirstTimeHomeLoansArticle.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>FirstTimeUnbeatableOfferArticle.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/FirstTimeUnbeatableOfferArticle.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>10SavingsonVariableRateArticle.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Articles/10SavingsonVariableRateArticle.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Default.aspx?TabID=166</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Calculators/AffordabilityCalculator.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Default.aspx?TabID=127</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Calculators/AffordabilityCalculator.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>BuyingandMovingChecklists.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/BuyingandMovingChecklists.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>OwnershipFacts.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/OwnershipFacts.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>StepbyStepBondRegistrationProcess.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/UsefulInfo/StepbyStepBondRegistrationProcess.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Default.aspx?TabID=168</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Calculators/SwitchyourHomeLoanCalculator.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>CashflowMaximiser.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/YourHomeLoanNeeds/CashflowMaximiser.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>RiskReducer.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/YourHomeLoanNeeds/RiskReducer.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>PaymentAccelerator.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/YourHomeLoanNeeds/PaymentAccelerator.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>LifestyleEnhancer.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Products/YourHomeLoanNeeds/LifestyleEnhancer.aspx</REDIRECT>
+  </FILENAMES>  
+<FILENAMES xmlns="Redirect">
+    <REQUEST>FlexibilityofProducts.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Whatmakesusdifferent/FlexibilityofProducts.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Whatarethebenefits.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/WhatdoesSwitchingmean/Whatarethebenefits.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Default.aspx?TabID=181</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/GeneralInformation/InformationforInvestors.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>PAIAManual.pdf</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Documentation/Downloads/PAIAManual.pdf</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>ShelleyBeach.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/KwaZuluNatal/ShelleyBeach.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Durban.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/KwaZuluNatal/Durban.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Pietermaritzburg.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/KwaZuluNatal/Pietermaritzburg.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>RichardsBay.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/KwaZuluNatal/RichardsBay.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Vryheid.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/KwaZuluNatal/Vryheid.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Newcastle.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/KwaZuluNatal/Newcastle.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Roodepoort.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/Gauteng/Roodepoort.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Johannesburg.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/Gauteng/Johannesburg.aspx</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Pretoria.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/Gauteng/Pretoria.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Boksburg.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/Gauteng/Boksburg.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>VanderbijlPark.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/BranchLocator/Gauteng/VanderbijlPark.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>FundingModel.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/AboutUs/FundingModel.aspx</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>BuyersChecklist.pdf</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Documentation/Downloads/BuyersChecklist.pdf</REDIRECT>
+  </FILENAMES>
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>MovingChecklist.pdf</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Documentation/Downloads/MovingChecklist.pdf</REDIRECT>
+  </FILENAMES>  
+  <FILENAMES xmlns="Redirect">
+    <REQUEST>Whatcanwedoforyou.aspx</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Whatmakesusdifferent/Whatcanwedoforyou.aspx</REDIRECT>
+  </FILENAMES>
+  
+  <FILEPATH xmlns="Redirect">
+    <REQUEST>/UnknownPath/haha.htm</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Whatmakesusdifferent/Whatcanwedoforyou.aspx</REDIRECT>
+  </FILEPATH>
+    <FILEPATH xmlns="Redirect">
+    <REQUEST>/unknownpath/index.ASPX</REQUEST>
+    <REDIRECT>http://www.sahomeloans.com/Whatmakesusdifferent/Whatcanwedoforyou.aspx</REDIRECT>
+  </FILEPATH>
+  
+</SAHomeloans_Redirects>

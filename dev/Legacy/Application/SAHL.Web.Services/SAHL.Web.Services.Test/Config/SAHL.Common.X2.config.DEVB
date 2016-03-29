@@ -1,0 +1,5 @@
+<SAHL.X2.Framework.Properties.Settings>
+	<setting name="X2URL" serializeAs="String">
+		<value>tcp://192.168.108.84:8089/X2Engine</value>
+	</setting>
+</SAHL.X2.Framework.Properties.Settings>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5361688A-15AD-4146-ADA0-54D219174F67}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.DecisionTree.TreeTests</RootNamespace>
+    <AssemblyName>SAHL.DecisionTree.TreeTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SAHL.Tools.DecisionTree.TestRunner.Interfaces">
+      <HintPath>..\..\..\Binaries\Tools\DecisionTree\SAHL.Tools.DecisionTree.TestRunner.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\OutputMessage.cs" />
+    <Compile Include="Models\Scenario.cs" />
+    <Compile Include="Models\SubtreeExpectation.cs" />
+    <Compile Include="Models\TestCase.cs" />
+    <Compile Include="Models\TestInput.cs" />
+    <Compile Include="Models\TestOutput.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeTests\CapitecAffordabilityInterestRate_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecAlphaCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecApplicationCreditPolicy_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecClientCreditBureauAssessment_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecOriginationCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecOriginationPricingforRisk_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecOriginationPricingforRisk_2TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecSalariedCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecSalariedwithDeductionCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\CapitecSelfEmployedCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\MortgageLoanFundingEligibilityRevised_1TestSuite.cs" />
+    <Compile Include="TreeTests\MortgageLoanOriginationFundingEligibility_1TestSuite.cs" />
+    <Compile Include="TreeTests\MortgageLoanOriginationTransactionEligibility_1TestSuite.cs" />
+    <Compile Include="TreeTests\NCRAffordabilityAssessment_1TestSuite.cs" />
+    <Compile Include="TreeTests\NewPricingModel_1TestSuite.cs" />
+    <Compile Include="TreeTests\OriginationNewBusinessSPVDetermination_1TestSuite.cs" />
+    <Compile Include="TreeTests\PricingProductEligibility_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLAlphaCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLApplicationCreditPolicy_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLClientCreditBureauAssessment_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLOriginationCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLOriginationPricingforRisk_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLSalariedCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLSalariedwithDeductionCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHLSelfEmployedCreditPricing_1TestSuite.cs" />
+    <Compile Include="TreeTests\SAHomeLoansBCCScorecard_1TestSuite.cs" />
+    <Compile Include="TreeTests\ThirtyYearMortgageLoanEligibility_1TestSuite.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\$(OutDir)\$(ProjectName).*" /f "$(SolutionDir)\..\..\Binaries\InternalBinaries\" /d /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="X2Form">
+  <modelMoniker Id="4ec712df-2ab0-451c-b8a5-35437d0c5534" />
+  <nestedChildShapes>
+    <classShape Id="92c8db3b-469f-4216-8f7c-c396bf9b3488" absoluteBounds="0.5, 0.5, 1.5, 1.4440006510416668">
+      <modelClassMoniker name="/4ec712df-2ab0-451c-b8a5-35437d0c5534/Form" />
+      <nestedChildShapes>
+        <elementListCompartment Id="11c318bd-2ac0-4a7e-9de4-dd8eecbfd76b" absoluteBounds="0.515, 0.91000000000000014, 1.4700000000000002, 0.93400065104166663" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</activeRecordMapping>

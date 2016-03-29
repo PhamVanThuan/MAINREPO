@@ -1,0 +1,3 @@
+<a ng-hide="row.entity['Paid']" style="margin-right: 5px;margin-left:5px;" ng-click='grid.appScope.addToInvoicesToPay(row.entity)'>Pay</a> 
+<a ng-hide="true" style="margin-right: 5px;margin-left:5px;" ng-click='grid.appScope.queryInvoice(row.entity)'>Query</a> 
+<a ng-show="row.entity['Paid']" style="margin-right: 5px;margin-left:5px;" ng-click='grid.appScope.removeFromInvoicesToPay(row.entity, grid)'>Remove</a>

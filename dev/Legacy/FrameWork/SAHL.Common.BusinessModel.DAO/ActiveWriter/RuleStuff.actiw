@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="b37cde97-7ce4-4098-adb5-97dc71846e10" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="RuleItem" lazy="true" schema="dbo" table="RuleItem">
+      <properties>
+        <modelProperty Id="146bf562-eef9-4dbe-97c5-1ab7c5ce2050" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="4ccd2d44-e92f-409e-a5c1-48a9da12da62" name="Description" column="Description" length="0" />
+        <modelProperty Id="2b82016d-ce79-4336-9363-6dd0f94a1558" name="RuleItemKey" column="RuleItemKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="RuleSetRule" lazy="true" schema="dbo" table="RuleSetRule">
+      <targets>
+        <manyToOneRelation Id="40e7bf86-2a30-4cdc-9882-19d92671b7b2" targetColumnKey="RuleItemKey" targetTable="RuleSetRule" targetPropertyName="RuleSetRules" sourceColumn="RuleItemKey">
+          <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleItem" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="5db58b55-c065-4270-bd2f-03bdec0641d1" targetColumnKey="RuleSetKey" targetTable="RuleSetRule" targetPropertyName="RuleSetRules" sourceColumn="RuleSetKey">
+          <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleSet" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="b7721a6c-ecbf-4300-890f-efca6ffd2c6a" name="EnForceRule" column="EnForceRule" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="7a8273f5-76d6-469c-85b3-e6e2a98fceca" name="RuleSetRuleKey" column="RuleSetRuleKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="RuleParameter" lazy="true" schema="dbo" table="RuleParameter">
+      <targets>
+        <manyToOneRelation Id="08c08f6f-d5bb-4e65-b23b-4bcf5a055ef1" targetColumnKey="RuleItemKey" targetTable="RuleParameter" targetPropertyName="RuleParameters" sourceColumn="RuleItemKey">
+          <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleItem" />
+        </manyToOneRelation>
+        <manyToOneRelation Id="aa607439-9137-48b3-a134-d6e9e29f3d32" targetColumnKey="RuleParameterTypeKey" targetTable="RuleParameter" targetPropertyName="RuleParameters" sourceColumn="RuleParameterTypeKey">
+          <modelClassMoniker name="/b37cde97-7ce4-4098-adb5-97dc71846e10/RuleParameterType" />
+        </manyToOneRelation>
+      </targets>
+      <properties>
+        <modelProperty Id="c91d4a0e-8e5d-4572-8e09-0e54dfd8b4f3" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="b3eed119-9054-455d-9f5a-a63481de9c9e" name="Value" column="Value" length="0" />
+        <modelProperty Id="2724c5b8-860f-4170-81f4-7e5a99484fd5" name="RuleParameterKey" column="RuleParameterKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="RuleParameterType" lazy="true" schema="dbo" table="RuleParameterType">
+      <properties>
+        <modelProperty Id="f8d11c74-5e5a-4ea7-ba47-4d032def6bf5" name="Description" column="Description" length="0" notNull="true" />
+        <modelProperty Id="97f2f0c1-eb46-4085-90b4-33c624c917a0" name="RuleParameterTypeKey" column="RuleParameterTypeKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="RuleSet" lazy="true" schema="dbo" table="RuleSet">
+      <properties>
+        <modelProperty Id="b39174bf-ac06-4b70-85a9-5fd45da93b52" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="97f98193-7418-4358-9655-3ca659bf9e9a" name="Description" column="Description" length="0" />
+        <modelProperty Id="4d1c3fa3-e2de-4696-a0df-06b6f38ba5e7" name="RuleSetKey" column="RuleSetKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

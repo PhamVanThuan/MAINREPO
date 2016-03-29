@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="ca5d443e-e7cc-4611-a94e-cf28e593348e" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="Audits" schema="dbo" table="Audits">
+      <properties>
+        <modelProperty Id="d87e31e1-8dcc-4c28-9377-be9810539032" name="AuditDate" column="AuditDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="fe08e4cb-fd0c-44ed-8dca-cb1c4b5cf88a" name="ApplicationName" column="ApplicationName" length="0" />
+        <modelProperty Id="ec881191-b221-4add-9355-344569b0e5a0" name="HostName" column="HostName" length="0" />
+        <modelProperty Id="b6d717c8-0ea4-4994-89b7-f15a6faa8c65" name="WorkStationID" column="WorkStationID" length="0" />
+        <modelProperty Id="eaafe59e-c120-443b-9c8b-2aa0a5e1fbed" name="WindowsLogon" column="WindowsLogon" length="0" />
+        <modelProperty Id="5e036d6c-b074-47b0-98ce-0394e50fee82" name="FormName" column="FormName" length="0" />
+        <modelProperty Id="8a45a487-c7f7-4328-9d3c-898f7f971175" name="TableName" column="TableName" length="0" />
+        <modelProperty Id="394680d9-cfc2-49ae-ab61-d7361f783b76" name="PrimaryKeyName" column="PrimaryKeyName" length="0" />
+        <modelProperty Id="ea89407e-1d75-458f-9bbb-decc4080cee2" name="PrimaryKeyValue" column="PrimaryKeyValue" length="0" />
+        <modelProperty Id="72e3263f-1bc5-4f3a-bb4d-c2455dfadcc0" name="AuditData" column="AuditData" columnType="StringClob" length="0" />
+        <modelProperty Id="2cd6135c-34e5-4893-b837-9167fe382e6d" name="AuditKey" column="AuditKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+    <modelClass name="Metrics" schema="dbo" table="Metrics">
+      <properties>
+        <modelProperty Id="2c6e5e07-8f27-400b-9dbc-66c348d5fda3" name="MetricDate" column="MetricDate" columnType="Timestamp" length="0" />
+        <modelProperty Id="08ee3fb7-83ea-46c6-b91d-09d94757add3" name="ApplicationName" column="ApplicationName" length="0" />
+        <modelProperty Id="911b0579-a56e-4eec-b789-f2db64115e8f" name="HostName" column="HostName" length="0" />
+        <modelProperty Id="813ea74c-c421-46b0-ad88-2039bc332c4e" name="WorkStationID" column="WorkStationID" length="0" />
+        <modelProperty Id="5db3f07d-0fe8-4f33-8c4e-e6037011820d" name="WindowsLogon" column="WindowsLogon" length="0" />
+        <modelProperty Id="5b229a93-fb35-420c-ac93-a1ca97607d2b" name="FormName" column="FormName" length="0" />
+        <modelProperty Id="c7f70cae-1945-4b0b-bcbf-8a57bafa53fc" name="MetricFrom" column="MetricFrom" length="0" />
+        <modelProperty Id="489cad3a-c281-4534-ad2d-29cca0cc0ff5" name="MetricTo" column="MetricTo" length="0" />
+        <modelProperty Id="62a9354a-8970-4c27-a3f7-8a247c7558ee" name="MetricAction" column="MetricAction" length="0" />
+        <modelProperty Id="c5dc904d-1e65-434d-85b5-c8bff59e79f2" name="MetricInformation" column="MetricInformation" length="0" />
+        <modelProperty Id="1898ef08-c93b-4d54-a9b7-22246c7b2331" name="MetricKey" column="MetricKey" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

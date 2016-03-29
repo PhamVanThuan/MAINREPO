@@ -1,0 +1,252 @@
+{
+  "name": "thirdpartyinvoice",
+  "plural": "thirdpartyinvoice",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "relations": {
+      "lineitems": {
+        "type": "hasMany",
+        "model": "invoicelineitem",
+        "foreignKey": "thirdpartyinvoicekey"
+      }
+    }
+  },
+  "mssql": {
+    "schema": "dbo",
+    "table": "ThirdPartyInvoice"
+  },
+  "properties": {
+    "thirdpartyinvoicekey": {
+      "type": "Number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "ThirdPartyInvoiceKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "sahlreference": {
+      "type": "String",
+      "required": true,
+      "length": 200,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "SahlReference",
+        "dataType": "varchar",
+        "dataLength": 200,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "thirdpartyid": {
+      "type": "String",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "ThirdPartyId",
+        "dataType": "uniqueidentifier",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "invoicenumber": {
+      "type": "String",
+      "required": false,
+      "length": 50,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "InvoiceNumber",
+        "dataType": "varchar",
+        "dataLength": 50,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "invoicedate": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "InvoiceDate",
+        "dataType": "datetime",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "receivedfromemailaddress": {
+      "type": "String",
+      "required": false,
+      "length": 100,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "ReceivedFromEmailAddress",
+        "dataType": "varchar",
+        "dataLength": 100,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "accountkey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "AccountKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "invoicestatuskey": {
+      "type": "Number",
+      "id": false,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "InvoiceStatusKey",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"
+      },
+      "_selectable": false
+    },
+    "receiveddate": {
+      "type": "Date",
+      "required": false,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "ReceivedDate",
+        "dataType": "datetime",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "capitaliseinvoice": {
+      "type": "Boolean",
+      "required": true,
+      "length": null,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "CapitaliseInvoice",
+        "dataType": "bit",
+        "dataLength": null,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": false
+    },
+    "amountexcludingvat": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 22,
+      "scale": 10,
+      "mssql": {
+        "columnName": "AmountExcludingVAT",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 22,
+        "dataScale": 10,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "vatamount": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 22,
+      "scale": 10,
+      "mssql": {
+        "columnName": "VATAmount",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 22,
+        "dataScale": 10,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "totalamountincludingvat": {
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 22,
+      "scale": 10,
+      "mssql": {
+        "columnName": "TotalAmountIncludingVAT",
+        "dataType": "decimal",
+        "dataLength": null,
+        "dataPrecision": 22,
+        "dataScale": 10,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    },
+    "paymentreference": {
+      "type": "String",
+      "required": false,
+      "length": 100,
+      "precision": null,
+      "scale": null,
+      "mssql": {
+        "columnName": "PaymentReference",
+        "dataType": "varchar",
+        "dataLength": 100,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "YES"
+      },
+      "_selectable": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

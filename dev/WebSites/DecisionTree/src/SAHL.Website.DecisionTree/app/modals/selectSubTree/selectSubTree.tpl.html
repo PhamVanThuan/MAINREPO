@@ -1,0 +1,12 @@
+<form class="twoColumn">
+    <label>Select the decision tree for this node</label>
+    <div class="input-control select">
+        <select ng-model="selectedSubTree" ng-options="formatSubtree(subtree.name, subtree.version) for subtree in availableSubTrees"></select>
+    </div>
+    <div class="button-set">
+        <div class="place-right">
+            <button ng-click="closeDialog()">OK</button>
+            <button ng-click="cancelDialog()">Cancel</button>
+        </div>
+    </div>
+</form>

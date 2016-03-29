@@ -1,0 +1,17 @@
+{
+  "type": "",
+  "id": false,
+  "required": false,
+  "length": null,
+  "precision": 10,
+  "scale": 0,
+  "mssql": {
+    "columnName": "",
+    "dataType": "",
+    "dataLength": null,
+    "dataPrecision": 10,
+    "dataScale": 0,
+    "nullable": "NO"
+  },
+  "_selectable": false
+}

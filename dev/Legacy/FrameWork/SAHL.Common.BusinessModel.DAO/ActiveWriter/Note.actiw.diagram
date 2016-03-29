@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Note">
+  <modelMoniker Id="8e8686d6-e631-4e27-b827-6368af5d1030" />
+  <nestedChildShapes>
+    <classShape Id="e6cbbcac-b54f-4719-9cd7-3f49ff962c62" absoluteBounds="3, 1.375, 1.5, 1.3362939453125002">
+      <modelClassMoniker name="/8e8686d6-e631-4e27-b827-6368af5d1030/Note" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03becaba-df81-4ae5-9fd2-e86e7d502e32" absoluteBounds="3.015, 1.7850000000000001, 1.4700000000000002, 0.82629394531250011" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1daf0db5-b26a-491e-b321-ed5907560692" absoluteBounds="5.875, 1.5, 1.5, 2.1054996744791659">
+      <modelClassMoniker name="/8e8686d6-e631-4e27-b827-6368af5d1030/NoteDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7eb6b7e0-35c6-4ca7-97f8-d1815da0c734" absoluteBounds="5.8900000000000006, 1.9100000000000001, 1.4700000000000002, 1.5954996744791665" name="Properties" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <manyToOneConnector edgePoints="[(5.875 : 2.10564697265625); (4.5 : 2.10564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <manyToOneRelationMoniker Id="1fe8afb8-3992-4050-9f9d-ce0639608367" />
+      <relativeChildShapes />
+      <nodes>
+        <classShapeMoniker Id="1daf0db5-b26a-491e-b321-ed5907560692" />
+        <classShapeMoniker Id="e6cbbcac-b54f-4719-9cd7-3f49ff962c62" />
+      </nodes>
+    </manyToOneConnector>
+  </nestedChildShapes>
+</activeRecordMapping>

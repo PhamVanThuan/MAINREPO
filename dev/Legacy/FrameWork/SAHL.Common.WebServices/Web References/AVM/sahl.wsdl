@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ReturnProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDCK" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Legal_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Firstname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Secondname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Suburb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StreetName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StreetType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StreetNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnPropertiesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmProperty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="User_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Prop_ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmPropertyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmPropertyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnValuation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReqProp_ID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PurchasePrice" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="LoanAmount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="switch" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnValuationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnValuationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnTransferData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReqProp_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReturnTransferDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReturnTransferDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newPhysicalInstruction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml_criteria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newPhysicalInstructionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newPhysicalInstructionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newPhysicalInstruction_Unvalidated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml_criteria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="newPhysicalInstruction_UnvalidatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newPhysicalInstruction_UnvalidatedResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelPhysicalInstruction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xml_criteria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cancelPhysicalInstructionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cancelPhysicalInstructionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReturnPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnProperties" />
+  </wsdl:message>
+  <wsdl:message name="ReturnPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmPropertySoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmProperty" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmPropertySoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmPropertyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnValuationSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnValuation" />
+  </wsdl:message>
+  <wsdl:message name="ReturnValuationSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnValuationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTransferDataSoapIn">
+    <wsdl:part name="parameters" element="tns:ReturnTransferData" />
+  </wsdl:message>
+  <wsdl:message name="ReturnTransferDataSoapOut">
+    <wsdl:part name="parameters" element="tns:ReturnTransferDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="newPhysicalInstructionSoapIn">
+    <wsdl:part name="parameters" element="tns:newPhysicalInstruction" />
+  </wsdl:message>
+  <wsdl:message name="newPhysicalInstructionSoapOut">
+    <wsdl:part name="parameters" element="tns:newPhysicalInstructionResponse" />
+  </wsdl:message>
+  <wsdl:message name="newPhysicalInstruction_UnvalidatedSoapIn">
+    <wsdl:part name="parameters" element="tns:newPhysicalInstruction_Unvalidated" />
+  </wsdl:message>
+  <wsdl:message name="newPhysicalInstruction_UnvalidatedSoapOut">
+    <wsdl:part name="parameters" element="tns:newPhysicalInstruction_UnvalidatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelPhysicalInstructionSoapIn">
+    <wsdl:part name="parameters" element="tns:cancelPhysicalInstruction" />
+  </wsdl:message>
+  <wsdl:message name="cancelPhysicalInstructionSoapOut">
+    <wsdl:part name="parameters" element="tns:cancelPhysicalInstructionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SAHLSoap">
+    <wsdl:operation name="ReturnProperties">
+      <wsdl:input message="tns:ReturnPropertiesSoapIn" />
+      <wsdl:output message="tns:ReturnPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmProperty">
+      <wsdl:input message="tns:ConfirmPropertySoapIn" />
+      <wsdl:output message="tns:ConfirmPropertySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnValuation">
+      <wsdl:input message="tns:ReturnValuationSoapIn" />
+      <wsdl:output message="tns:ReturnValuationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTransferData">
+      <wsdl:input message="tns:ReturnTransferDataSoapIn" />
+      <wsdl:output message="tns:ReturnTransferDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newPhysicalInstruction">
+      <wsdl:input message="tns:newPhysicalInstructionSoapIn" />
+      <wsdl:output message="tns:newPhysicalInstructionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="newPhysicalInstruction_Unvalidated">
+      <wsdl:input message="tns:newPhysicalInstruction_UnvalidatedSoapIn" />
+      <wsdl:output message="tns:newPhysicalInstruction_UnvalidatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelPhysicalInstruction">
+      <wsdl:input message="tns:cancelPhysicalInstructionSoapIn" />
+      <wsdl:output message="tns:cancelPhysicalInstructionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SAHLSoap" type="tns:SAHLSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReturnProperties">
+      <soap:operation soapAction="http://tempuri.org/ReturnProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmProperty">
+      <soap:operation soapAction="http://tempuri.org/ConfirmProperty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnValuation">
+      <soap:operation soapAction="http://tempuri.org/ReturnValuation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTransferData">
+      <soap:operation soapAction="http://tempuri.org/ReturnTransferData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newPhysicalInstruction">
+      <soap:operation soapAction="http://tempuri.org/newPhysicalInstruction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newPhysicalInstruction_Unvalidated">
+      <soap:operation soapAction="http://tempuri.org/newPhysicalInstruction_Unvalidated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelPhysicalInstruction">
+      <soap:operation soapAction="http://tempuri.org/cancelPhysicalInstruction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SAHLSoap12" type="tns:SAHLSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReturnProperties">
+      <soap12:operation soapAction="http://tempuri.org/ReturnProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmProperty">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmProperty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnValuation">
+      <soap12:operation soapAction="http://tempuri.org/ReturnValuation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnTransferData">
+      <soap12:operation soapAction="http://tempuri.org/ReturnTransferData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newPhysicalInstruction">
+      <soap12:operation soapAction="http://tempuri.org/newPhysicalInstruction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="newPhysicalInstruction_Unvalidated">
+      <soap12:operation soapAction="http://tempuri.org/newPhysicalInstruction_Unvalidated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelPhysicalInstruction">
+      <soap12:operation soapAction="http://tempuri.org/cancelPhysicalInstruction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SAHL">
+    <wsdl:port name="SAHLSoap" binding="tns:SAHLSoap">
+      <soap:address location="http://test.lightstone.co.za/avm/webservices/sahl.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SAHLSoap12" binding="tns:SAHLSoap12">
+      <soap12:address location="http://test.lightstone.co.za/avm/webservices/sahl.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

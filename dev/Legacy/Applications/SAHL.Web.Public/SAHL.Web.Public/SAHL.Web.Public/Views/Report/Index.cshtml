@@ -1,0 +1,13 @@
+﻿@model SAHL.Web.Public.Models.ReportListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CaseLayout.cshtml";
+}
+<h2>
+    Index</h2>
+@foreach (var report in Model.Reports)
+{
+    <p>
+        @Html.ActionLink(string.Format("Report - {0}", report.ReportName), "ReportParameters", new { reportkey = report.ReportName })
+    </p>
+}

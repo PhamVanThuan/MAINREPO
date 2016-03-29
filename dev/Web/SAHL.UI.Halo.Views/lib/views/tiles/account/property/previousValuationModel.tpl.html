@@ -1,0 +1,19 @@
+<br/>
+<div class="labels">
+	<div>Valuation Date:</div>
+	<div>Valuer:</div><br>
+	<div>Property Value:</div>
+	<div>Municipal Value:</div>
+	<div>HOC Value:</div>
+	<div>HOC Roof Type:</div>
+	<div>Data Provider:</div>
+</div>
+<div class="values">
+	<div>{{item.tileData.ValuationDate | dateViewFilter}}</div>
+	<div tool-tip="item.tileData.Valuer.trim()">{{item.tileData.Valuer}}</div><br>
+	<div>{{item.tileData.ValuationAmount | currency:"R":0 }}</div>
+	<div>{{item.tileData.ValuationMunicipal | currency:"R":0 }}</div>
+	<div>{{item.tileData.ValuationHOCValue | currency:"R":0}}</div>
+	<div>{{item.tileData.HOCRoofType}}</div>
+	<div>{{item.tileData.ValuationProvider}}</div>
+</div>

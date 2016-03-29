@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Task.PreDeploy.StopSqlServer</id>
+    <version>$version$</version>
+    <authors>SA Home Loans</authors>
+    <owners>SA Home Loans</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Pre Deploy Task for stopping the SqlServere</description>
+    <copyright>Copyright 2012</copyright>
+  </metadata>
+</package>

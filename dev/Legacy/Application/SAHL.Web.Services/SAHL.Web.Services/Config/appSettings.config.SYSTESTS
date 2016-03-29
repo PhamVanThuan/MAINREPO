@@ -1,0 +1,14 @@
+<appSettings>
+	<!-- SAHL Settings -->
+	<add key="Domain" value="SAHL"/>
+	<add key="DomainUser" value="WebLeads_Dev"/>
+	<add key="DomainPassword" value="Natal1"/>
+	<add key="InProduction" value="false"/>
+	<add key="ConnectionString" value="server=sahls203S\UAT;Trusted_Connection=false;database=SAHLDB;User ID=ServiceArchitect;Password=Service1Architect"/>
+	<add key="ApplicationLogPath" value="C:\\"/>
+	<add key="DoAudit" value="false"/>
+	<add key="SmtpHost" value="sahls01.sahl.com"/>
+	<add key="SmtpPort" value="25"/>
+	<add key="ExceptionsSender" value="robinh@sahomeloans.com"/>
+	<add key="ExceptionsRecipient" value="robinh@sahomeloans.com"/>
+</appSettings>

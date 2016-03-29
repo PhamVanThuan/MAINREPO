@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A73AC388-79B4-4D16-B638-750EA383DC31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAHL.Services.DocumentManager.Specs</RootNamespace>
+    <AssemblyName>SAHL.Services.DocumentManager.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Dapper\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes\lib\net40\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Fakes.NSubstitute\lib\net40\Machine.Fakes.Adapters.NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications.Should\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.TDNetRunner">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\Machine.Specifications\lib\net45\Machine.Specifications.TDNetRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+      <HintPath>..\..\..\Binaries\ExternalBinaries\NSubstitute\lib\NET45\NSubstitute.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Messaging.Shared">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Messaging.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Testing.Fakes">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Core.Testing.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Services.Interfaces.DocumentManager">
+      <HintPath>..\..\..\Binaries\InternalBinaries\SAHL.Services.Interfaces.DocumentManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Abstractions, Version=2.0.0.113, Culture=neutral, PublicKeyToken=d480b5b72fb413da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Binaries\ExternalBinaries\System.IO.Abstractions\lib\net40\System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandHandlers\StoreClientFileDocumentsSpecs\when_storing_a_tiff_client_file.cs" />
+    <Compile Include="CommandHandlers\RemoveAttorneyInvoice\when_removing_an_attorney_invoice_data.cs" />
+    <Compile Include="CommandHandlers\StoreAttorneyInvoicesSpecs\when_storing_an_attorney_invoice_file.cs" />
+    <Compile Include="CommandHandlers\StoreAttorneyInvoicesSpecs\when_storing_an_attorney_invoice_file_fails.cs" />
+    <Compile Include="CommandHandlers\StoreClientFileDocumentsSpecs\when_storing_two_client_files.cs" />
+    <Compile Include="CommandHandlers\StoreClientFileDocumentsSpecs\when_storing_a_pdf_client_file.cs" />
+    <Compile Include="CommandHandlers\StoreClientFileDocumentsSpecs\when_writing_client_documents_fails.cs" />
+    <Compile Include="Managers\DocumentFile\ReadFileFromFolder\when_file_does_not_exist.cs" />
+    <Compile Include="Managers\DocumentFile\ReadFileFromFolder\when_file_exists.cs" />
+    <Compile Include="Managers\Document\when_getting_the_document_store.cs" />
+    <Compile Include="Managers\Document\when_removing_an_attorney_invoice.cs" />
+    <Compile Include="Managers\Document\when_retrieving_the_document_info_by_store_and_guid.cs" />
+    <Compile Include="Managers\Document\when_saving_an_attorney_invoice.cs" />
+    <Compile Include="QueryHandlers\GetDocumentByGuidAndStore\when_document_and_store_exist.cs" />
+    <Compile Include="QueryHandlers\GetDocumentByGuidAndStore\when_document_does_not_exist.cs" />
+    <Compile Include="QueryHandlers\GetDocumentByGuidAndStore\when_store_does_not_exist.cs" />
+    <Compile Include="Utils\DataStore\when_generating_the_data_store_guid.cs" />
+    <Compile Include="Utils\DataStore\when_getting_a_client_files_document_name.cs" />
+    <Compile Include="Managers\DocumentFile\WriteFileToFolder\when_folder_does_exist.cs" />
+    <Compile Include="Managers\DocumentFile\WriteFileToFolder\when_base_folder_does_not_exist.cs" />
+    <Compile Include="Managers\Document\when_saving_a_client_file_document.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Reader\when_reading_a_file.cs" />
+    <Compile Include="Utils\Writer\when_checking_for_a_non_existent_file.cs" />
+    <Compile Include="Utils\Writer\when_checking_for_a_non_existent_folder.cs" />
+    <Compile Include="Utils\Writer\when_checking_for_existing_folder.cs" />
+    <Compile Include="Utils\Writer\when_checking_for_existing_file.cs" />
+    <Compile Include="Utils\Writer\when_creating_directory_for_a_file.cs" />
+    <Compile Include="Utils\Writer\when_granting_permissions_to_file.cs" />
+    <Compile Include="Utils\Writer\when_writing_file_to_disk.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAHL.Services.DocumentManager\SAHL.Services.DocumentManager.csproj">
+      <Project>{b2bbc8d3-2b42-4ef0-a847-9d7b49f489e2}</Project>
+      <Name>SAHL.Services.DocumentManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

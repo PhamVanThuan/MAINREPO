@@ -1,0 +1,1 @@
+copy Database.Tests.config.LOCAL ..\Database.Tests.config

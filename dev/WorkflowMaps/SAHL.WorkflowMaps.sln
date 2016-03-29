@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.WorkflowMaps.Specs.Common", "SAHL.WorkflowMaps.Specs.Common\SAHL.WorkflowMaps.Specs.Common.csproj", "{D9859384-0B48-4902-B241-4FA95390AC10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.WorkflowMaps.LifeClaims.Specs", "LifeClaims\SAHL.WorkflowMaps.LifeClaims.Specs\SAHL.WorkflowMaps.LifeClaims.Specs.csproj", "{58DECCCB-7B1F-4AAA-9AB0-DE126CFE6D39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAHL.WorkflowMaps.ThirdPartyInvoices.Specs", "Third Party Invoices\SAHL.WorkflowMaps.ThirdPartyInvoices.Specs\SAHL.WorkflowMaps.ThirdPartyInvoices.Specs.csproj", "{BF36754F-5C11-4823-975F-FBF6C0113742}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9859384-0B48-4902-B241-4FA95390AC10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9859384-0B48-4902-B241-4FA95390AC10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9859384-0B48-4902-B241-4FA95390AC10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9859384-0B48-4902-B241-4FA95390AC10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58DECCCB-7B1F-4AAA-9AB0-DE126CFE6D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58DECCCB-7B1F-4AAA-9AB0-DE126CFE6D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58DECCCB-7B1F-4AAA-9AB0-DE126CFE6D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58DECCCB-7B1F-4AAA-9AB0-DE126CFE6D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF36754F-5C11-4823-975F-FBF6C0113742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF36754F-5C11-4823-975F-FBF6C0113742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF36754F-5C11-4823-975F-FBF6C0113742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF36754F-5C11-4823-975F-FBF6C0113742}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

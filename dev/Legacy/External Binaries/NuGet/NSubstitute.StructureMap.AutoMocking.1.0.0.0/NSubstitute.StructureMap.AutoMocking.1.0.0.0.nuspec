@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>NSubstitute.StructureMap.AutoMocking</id>
+    <version>1.0.0.0</version>
+    <title>StructureMap NSubstitute AutoMocking implementation</title>
+    <authors>Pieter Germishuys</authors>
+    <owners>Pieter Germishuys</owners>
+    <projectUrl>https://github.com/pgermishuys/StructureMap.AutoMocking.NSubstitute</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>StructureMap AutoMocking implementation for NSubstitute</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>StructureMap AutoMocking NSubstitute</tags>
+    <dependencies>
+      <dependency id="StructureMap.AutoMocking" version="2.6.4.1" />
+      <dependency id="NSubstitute" version="1.6.0.0" />
+    </dependencies>
+    <references>
+      <reference file="StructureMap.AutoMocking.NSubstitute.dll" />
+    </references>
+  </metadata>
+</package>

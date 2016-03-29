@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activeRecordMapping dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" isCompleteView="false" name="X2ScheduledActivity">
+  <modelMoniker Id="ee8621d9-9de2-484b-941f-4cd389d7c402" />
+  <nestedChildShapes>
+    <classShape Id="95ebf33f-1f7c-4b49-a97e-832dd15fdc3c" absoluteBounds="0.5, 0.5, 1.5, 1.6209212239583333">
+      <modelClassMoniker name="/ee8621d9-9de2-484b-941f-4cd389d7c402/ScheduledActivity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c0554479-0054-4b30-afe6-1c84c4c5ad1f" absoluteBounds="0.515, 0.91000000000000014, 1.4700000000000002, 1.110921223958333" name="Properties" title="Properties" titleFillColor="LightGray" compartmentFillColor="White" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</activeRecordMapping>

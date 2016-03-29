@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CreditMatrix" targetNamespace="http://tempuri.org/CreditMatrix.xsd" xmlns:mstns="http://tempuri.org/CreditMatrix.xsd" xmlns="http://tempuri.org/CreditMatrix.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CreditMatrix" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="CreditMatrix" msprop:Generator_DataSetName="CreditMatrix">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RateOverrideTypeGroupLink" msprop:Generator_UserTableName="RateOverrideTypeGroupLink" msprop:Generator_RowDeletedName="RateOverrideTypeGroupLinkRowDeleted" msprop:Generator_TableClassName="RateOverrideTypeGroupLinkDataTable" msprop:Generator_RowChangedName="RateOverrideTypeGroupLinkRowChanged" msprop:Generator_RowClassName="RateOverrideTypeGroupLinkRow" msprop:Generator_RowChangingName="RateOverrideTypeGroupLinkRowChanging" msprop:Generator_RowEvArgName="RateOverrideTypeGroupLinkRowChangeEvent" msprop:Generator_RowEvHandlerName="RateOverrideTypeGroupLinkRowChangeEventHandler" msprop:Generator_TablePropName="RateOverrideTypeGroupLink" msprop:Generator_TableVarName="tableRateOverrideTypeGroupLink" msprop:Generator_RowDeletingName="RateOverrideTypeGroupLinkRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RateOverrideTypeGroupLinkKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="RateOverrideTypeGroupLinkKey" msprop:Generator_ColumnPropNameInRow="RateOverrideTypeGroupLinkKey" msprop:Generator_ColumnVarNameInTable="columnRateOverrideTypeGroupLinkKey" msprop:Generator_ColumnPropNameInTable="RateOverrideTypeGroupLinkKeyColumn" type="xs:int" />
+              <xs:element name="RateOverrideTypeGroupKey" msprop:Generator_UserColumnName="RateOverrideTypeGroupKey" msprop:Generator_ColumnPropNameInRow="RateOverrideTypeGroupKey" msprop:Generator_ColumnVarNameInTable="columnRateOverrideTypeGroupKey" msprop:Generator_ColumnPropNameInTable="RateOverrideTypeGroupKeyColumn" type="xs:int" />
+              <xs:element name="RateOverrideTypeKey" msprop:Generator_UserColumnName="RateOverrideTypeKey" msprop:Generator_ColumnPropNameInRow="RateOverrideTypeKey" msprop:Generator_ColumnVarNameInTable="columnRateOverrideTypeKey" msprop:Generator_ColumnPropNameInTable="RateOverrideTypeKeyColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CreditMatrixRateOverrideGroup" msprop:Generator_UserTableName="CreditMatrixRateOverrideGroup" msprop:Generator_RowDeletedName="CreditMatrixRateOverrideGroupRowDeleted" msprop:Generator_TableClassName="CreditMatrixRateOverrideGroupDataTable" msprop:Generator_RowChangedName="CreditMatrixRateOverrideGroupRowChanged" msprop:Generator_RowClassName="CreditMatrixRateOverrideGroupRow" msprop:Generator_RowChangingName="CreditMatrixRateOverrideGroupRowChanging" msprop:Generator_RowEvArgName="CreditMatrixRateOverrideGroupRowChangeEvent" msprop:Generator_RowEvHandlerName="CreditMatrixRateOverrideGroupRowChangeEventHandler" msprop:Generator_TablePropName="CreditMatrixRateOverrideGroup" msprop:Generator_TableVarName="tableCreditMatrixRateOverrideGroup" msprop:Generator_RowDeletingName="CreditMatrixRateOverrideGroupRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CreditMatrixRateOverrideGroupKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CreditMatrixRateOverrideGroupKey" msprop:Generator_ColumnPropNameInRow="CreditMatrixRateOverrideGroupKey" msprop:Generator_ColumnVarNameInTable="columnCreditMatrixRateOverrideGroupKey" msprop:Generator_ColumnPropNameInTable="CreditMatrixRateOverrideGroupKeyColumn" type="xs:int" />
+              <xs:element name="RateOverrideTypeGroupKey" msprop:Generator_UserColumnName="RateOverrideTypeGroupKey" msprop:Generator_ColumnPropNameInRow="RateOverrideTypeGroupKey" msprop:Generator_ColumnVarNameInTable="columnRateOverrideTypeGroupKey" msprop:Generator_ColumnPropNameInTable="RateOverrideTypeGroupKeyColumn" type="xs:int" />
+              <xs:element name="CreditMatrixKey" msprop:Generator_UserColumnName="CreditMatrixKey" msprop:Generator_ColumnPropNameInRow="CreditMatrixKey" msprop:Generator_ColumnVarNameInTable="columnCreditMatrixKey" msprop:Generator_ColumnPropNameInTable="CreditMatrixKeyColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CreditMatrix" msprop:Generator_UserTableName="CreditMatrix" msprop:Generator_RowDeletedName="CreditMatrixRowDeleted" msprop:Generator_TableClassName="CreditMatrixDataTable" msprop:Generator_RowChangedName="CreditMatrixRowChanged" msprop:Generator_RowClassName="CreditMatrixRow" msprop:Generator_RowChangingName="CreditMatrixRowChanging" msprop:Generator_RowEvArgName="CreditMatrixRowChangeEvent" msprop:Generator_RowEvHandlerName="CreditMatrixRowChangeEventHandler" msprop:Generator_TablePropName="_CreditMatrix" msprop:Generator_TableVarName="tableCreditMatrix" msprop:Generator_RowDeletingName="CreditMatrixRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CreditMatrixKey" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CreditMatrixKey" msprop:Generator_ColumnPropNameInRow="CreditMatrixKey" msprop:Generator_ColumnVarNameInTable="columnCreditMatrixKey" msprop:Generator_ColumnPropNameInTable="CreditMatrixKeyColumn" type="xs:int" />
+              <xs:element name="NewBusinessIndicator" msprop:Generator_UserColumnName="NewBusinessIndicator" msprop:Generator_ColumnPropNameInRow="NewBusinessIndicator" msprop:Generator_ColumnVarNameInTable="columnNewBusinessIndicator" msprop:Generator_ColumnPropNameInTable="NewBusinessIndicatorColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ImplementationDate" msprop:Generator_UserColumnName="ImplementationDate" msprop:Generator_ColumnPropNameInRow="ImplementationDate" msprop:Generator_ColumnVarNameInTable="columnImplementationDate" msprop:Generator_ColumnPropNameInTable="ImplementationDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CreditCriteria" msprop:Generator_UserTableName="CreditCriteria" msprop:Generator_RowDeletedName="CreditCriteriaRowDeleted" msprop:Generator_TableClassName="CreditCriteriaDataTable" msprop:Generator_RowChangedName="CreditCriteriaRowChanged" msprop:Generator_RowClassName="CreditCriteriaRow" msprop:Generator_RowChangingName="CreditCriteriaRowChanging" msprop:Generator_RowEvArgName="CreditCriteriaRowChangeEvent" msprop:Generator_RowEvHandlerName="CreditCriteriaRowChangeEventHandler" msprop:Generator_TablePropName="CreditCriteria" msprop:Generator_TableVarName="tableCreditCriteria" msprop:Generator_RowDeletingName="CreditCriteriaRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CreditCriteriaKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="CreditCriteriaKey" msprop:Generator_ColumnPropNameInRow="CreditCriteriaKey" msprop:Generator_ColumnVarNameInTable="columnCreditCriteriaKey" msprop:Generator_ColumnPropNameInTable="CreditCriteriaKeyColumn" type="xs:int" />
+              <xs:element name="CreditMatrixKey" msprop:Generator_UserColumnName="CreditMatrixKey" msprop:Generator_ColumnPropNameInRow="CreditMatrixKey" msprop:Generator_ColumnVarNameInTable="columnCreditMatrixKey" msprop:Generator_ColumnPropNameInTable="CreditMatrixKeyColumn" type="xs:int" />
+              <xs:element name="MarginKey" msprop:Generator_UserColumnName="MarginKey" msprop:Generator_ColumnPropNameInRow="MarginKey" msprop:Generator_ColumnVarNameInTable="columnMarginKey" msprop:Generator_ColumnPropNameInTable="MarginKeyColumn" type="xs:int" />
+              <xs:element name="CategoryKey" msprop:Generator_UserColumnName="CategoryKey" msprop:Generator_ColumnPropNameInRow="CategoryKey" msprop:Generator_ColumnVarNameInTable="columnCategoryKey" msprop:Generator_ColumnPropNameInTable="CategoryKeyColumn" type="xs:int" />
+              <xs:element name="EmploymentTypeKey" msprop:Generator_UserColumnName="EmploymentTypeKey" msprop:Generator_ColumnPropNameInRow="EmploymentTypeKey" msprop:Generator_ColumnVarNameInTable="columnEmploymentTypeKey" msprop:Generator_ColumnPropNameInTable="EmploymentTypeKeyColumn" type="xs:int" />
+              <xs:element name="MortgageLoanPurposeKey" msprop:Generator_UserColumnName="MortgageLoanPurposeKey" msprop:Generator_ColumnPropNameInRow="MortgageLoanPurposeKey" msprop:Generator_ColumnVarNameInTable="columnMortgageLoanPurposeKey" msprop:Generator_ColumnPropNameInTable="MortgageLoanPurposeKeyColumn" type="xs:int" />
+              <xs:element name="MinLoanAmount" msprop:Generator_UserColumnName="MinLoanAmount" msprop:Generator_ColumnPropNameInRow="MinLoanAmount" msprop:Generator_ColumnVarNameInTable="columnMinLoanAmount" msprop:Generator_ColumnPropNameInTable="MinLoanAmountColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MaxLoanAmount" msprop:Generator_UserColumnName="MaxLoanAmount" msprop:Generator_ColumnPropNameInRow="MaxLoanAmount" msprop:Generator_ColumnVarNameInTable="columnMaxLoanAmount" msprop:Generator_ColumnPropNameInTable="MaxLoanAmountColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MinPropertyValue" msprop:Generator_UserColumnName="MinPropertyValue" msprop:Generator_ColumnPropNameInRow="MinPropertyValue" msprop:Generator_ColumnVarNameInTable="columnMinPropertyValue" msprop:Generator_ColumnPropNameInTable="MinPropertyValueColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MaxPropertyValue" msprop:Generator_UserColumnName="MaxPropertyValue" msprop:Generator_ColumnPropNameInRow="MaxPropertyValue" msprop:Generator_ColumnVarNameInTable="columnMaxPropertyValue" msprop:Generator_ColumnPropNameInTable="MaxPropertyValueColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="LTV" msprop:Generator_UserColumnName="LTV" msprop:Generator_ColumnPropNameInRow="LTV" msprop:Generator_ColumnVarNameInTable="columnLTV" msprop:Generator_ColumnPropNameInTable="LTVColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="PTI" msprop:Generator_UserColumnName="PTI" msprop:Generator_ColumnPropNameInRow="PTI" msprop:Generator_ColumnVarNameInTable="columnPTI" msprop:Generator_ColumnPropNameInTable="PTIColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="MinIncomeAmount" msprop:Generator_UserColumnName="MinIncomeAmount" msprop:Generator_ColumnPropNameInRow="MinIncomeAmount" msprop:Generator_ColumnVarNameInTable="columnMinIncomeAmount" msprop:Generator_ColumnPropNameInTable="MinIncomeAmountColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="ExceptionCriteria" msprop:Generator_UserColumnName="ExceptionCriteria" msprop:Generator_ColumnPropNameInRow="ExceptionCriteria" msprop:Generator_ColumnVarNameInTable="columnExceptionCriteria" msprop:Generator_ColumnPropNameInTable="ExceptionCriteriaColumn" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OriginationSourceProductCreditMatrix" msprop:Generator_UserTableName="OriginationSourceProductCreditMatrix" msprop:Generator_RowDeletedName="OriginationSourceProductCreditMatrixRowDeleted" msprop:Generator_TableClassName="OriginationSourceProductCreditMatrixDataTable" msprop:Generator_RowChangedName="OriginationSourceProductCreditMatrixRowChanged" msprop:Generator_RowClassName="OriginationSourceProductCreditMatrixRow" msprop:Generator_RowChangingName="OriginationSourceProductCreditMatrixRowChanging" msprop:Generator_RowEvArgName="OriginationSourceProductCreditMatrixRowChangeEvent" msprop:Generator_RowEvHandlerName="OriginationSourceProductCreditMatrixRowChangeEventHandler" msprop:Generator_TablePropName="OriginationSourceProductCreditMatrix" msprop:Generator_TableVarName="tableOriginationSourceProductCreditMatrix" msprop:Generator_RowDeletingName="OriginationSourceProductCreditMatrixRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OriginationSourceProductCreditMatrixKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="OriginationSourceProductCreditMatrixKey" msprop:Generator_ColumnPropNameInRow="OriginationSourceProductCreditMatrixKey" msprop:Generator_ColumnVarNameInTable="columnOriginationSourceProductCreditMatrixKey" msprop:Generator_ColumnPropNameInTable="OriginationSourceProductCreditMatrixKeyColumn" type="xs:int" />
+              <xs:element name="CreditMatrixKey" msprop:Generator_UserColumnName="CreditMatrixKey" msprop:Generator_ColumnPropNameInRow="CreditMatrixKey" msprop:Generator_ColumnVarNameInTable="columnCreditMatrixKey" msprop:Generator_ColumnPropNameInTable="CreditMatrixKeyColumn" type="xs:int" />
+              <xs:element name="OriginationSourceProductKey" msprop:Generator_UserColumnName="OriginationSourceProductKey" msprop:Generator_ColumnPropNameInRow="OriginationSourceProductKey" msprop:Generator_ColumnVarNameInTable="columnOriginationSourceProductKey" msprop:Generator_ColumnPropNameInTable="OriginationSourceProductKeyColumn" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RateOverrideTypeGroup" msprop:Generator_UserTableName="RateOverrideTypeGroup" msprop:Generator_RowDeletedName="RateOverrideTypeGroupRowDeleted" msprop:Generator_TableClassName="RateOverrideTypeGroupDataTable" msprop:Generator_RowChangedName="RateOverrideTypeGroupRowChanged" msprop:Generator_RowClassName="RateOverrideTypeGroupRow" msprop:Generator_RowChangingName="RateOverrideTypeGroupRowChanging" msprop:Generator_RowEvArgName="RateOverrideTypeGroupRowChangeEvent" msprop:Generator_RowEvHandlerName="RateOverrideTypeGroupRowChangeEventHandler" msprop:Generator_TablePropName="RateOverrideTypeGroup" msprop:Generator_TableVarName="tableRateOverrideTypeGroup" msprop:Generator_RowDeletingName="RateOverrideTypeGroupRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RateOverrideTypeGroupKey" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="RateOverrideTypeGroupKey" msprop:Generator_ColumnPropNameInRow="RateOverrideTypeGroupKey" msprop:Generator_ColumnVarNameInTable="columnRateOverrideTypeGroupKey" msprop:Generator_ColumnPropNameInTable="RateOverrideTypeGroupKeyColumn" type="xs:int" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Margin" msprop:Generator_UserTableName="Margin" msprop:Generator_RowDeletedName="MarginRowDeleted" msprop:Generator_TableClassName="MarginDataTable" msprop:Generator_RowChangedName="MarginRowChanged" msprop:Generator_RowClassName="MarginRow" msprop:Generator_RowChangingName="MarginRowChanging" msprop:Generator_RowEvArgName="MarginRowChangeEvent" msprop:Generator_RowEvHandlerName="MarginRowChangeEventHandler" msprop:Generator_TablePropName="Margin" msprop:Generator_TableVarName="tableMargin" msprop:Generator_RowDeletingName="MarginRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MarginKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="MarginKey" msprop:Generator_ColumnPropNameInRow="MarginKey" msprop:Generator_ColumnVarNameInTable="columnMarginKey" msprop:Generator_ColumnPropNameInTable="MarginKeyColumn" type="xs:int" />
+              <xs:element name="Value" msprop:Generator_UserColumnName="Value" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInTable="ValueColumn" type="xs:double" />
+              <xs:element name="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInTable="DescriptionColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RateOverrideTypeGroupLink" />
+      <xs:field xpath="mstns:RateOverrideTypeGroupLinkKey" />
+    </xs:unique>
+    <xs:unique name="CreditMatrixRateOverrideGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CreditMatrixRateOverrideGroup" />
+      <xs:field xpath="mstns:CreditMatrixRateOverrideGroupKey" />
+    </xs:unique>
+    <xs:unique name="CreditMatrix_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CreditMatrix" />
+      <xs:field xpath="mstns:CreditMatrixKey" />
+    </xs:unique>
+    <xs:unique name="CreditCriteria_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CreditCriteria" />
+      <xs:field xpath="mstns:CreditCriteriaKey" />
+    </xs:unique>
+    <xs:unique name="OriginationSourceProductCreditMatrix_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OriginationSourceProductCreditMatrix" />
+      <xs:field xpath="mstns:OriginationSourceProductCreditMatrixKey" />
+    </xs:unique>
+    <xs:unique name="RateOverrideTypeGroup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RateOverrideTypeGroup" />
+      <xs:field xpath="mstns:RateOverrideTypeGroupKey" />
+    </xs:unique>
+    <xs:unique name="Margin_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Margin" />
+      <xs:field xpath="mstns:MarginKey" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_CreditMatrixRateOverrideGroup_CreditMatrix" msdata:parent="CreditMatrix" msdata:child="CreditMatrixRateOverrideGroup" msdata:parentkey="CreditMatrixKey" msdata:childkey="CreditMatrixKey" msprop:Generator_UserRelationName="FK_CreditMatrixRateOverrideGroup_CreditMatrix" msprop:Generator_RelationVarName="relationFK_CreditMatrixRateOverrideGroup_CreditMatrix" msprop:Generator_UserChildTable="CreditMatrixRateOverrideGroup" msprop:Generator_UserParentTable="CreditMatrix" msprop:Generator_ParentPropName="CreditMatrixRow" msprop:Generator_ChildPropName="GetCreditMatrixRateOverrideGroupRows" />
+      <msdata:Relationship name="FK_CreditCriteria_CreditMatrix" msdata:parent="CreditMatrix" msdata:child="CreditCriteria" msdata:parentkey="CreditMatrixKey" msdata:childkey="CreditMatrixKey" msprop:Generator_UserRelationName="FK_CreditCriteria_CreditMatrix" msprop:Generator_RelationVarName="relationFK_CreditCriteria_CreditMatrix" msprop:Generator_UserChildTable="CreditCriteria" msprop:Generator_UserParentTable="CreditMatrix" msprop:Generator_ParentPropName="CreditMatrixRow" msprop:Generator_ChildPropName="GetCreditCriteriaRows" />
+      <msdata:Relationship name="FK_OriginationSourceProductCreditMatrix_CreditMatrix" msdata:parent="CreditMatrix" msdata:child="OriginationSourceProductCreditMatrix" msdata:parentkey="CreditMatrixKey" msdata:childkey="CreditMatrixKey" msprop:Generator_UserRelationName="FK_OriginationSourceProductCreditMatrix_CreditMatrix" msprop:Generator_RelationVarName="relationFK_OriginationSourceProductCreditMatrix_CreditMatrix" msprop:Generator_UserChildTable="OriginationSourceProductCreditMatrix" msprop:Generator_UserParentTable="CreditMatrix" msprop:Generator_ParentPropName="CreditMatrixRow" msprop:Generator_ChildPropName="GetOriginationSourceProductCreditMatrixRows" />
+      <msdata:Relationship name="FK_CreditMatrixRateOverrideGroup_RateOverrideTypeGroup" msdata:parent="RateOverrideTypeGroup" msdata:child="CreditMatrixRateOverrideGroup" msdata:parentkey="RateOverrideTypeGroupKey" msdata:childkey="RateOverrideTypeGroupKey" msprop:Generator_UserRelationName="FK_CreditMatrixRateOverrideGroup_RateOverrideTypeGroup" msprop:Generator_RelationVarName="relationFK_CreditMatrixRateOverrideGroup_RateOverrideTypeGroup" msprop:Generator_UserChildTable="CreditMatrixRateOverrideGroup" msprop:Generator_UserParentTable="RateOverrideTypeGroup" msprop:Generator_ParentPropName="RateOverrideTypeGroupRow" msprop:Generator_ChildPropName="GetCreditMatrixRateOverrideGroupRows" />
+      <msdata:Relationship name="FK_RateOverrideTypeGroupLink_RateOverrideTypeGroup" msdata:parent="RateOverrideTypeGroup" msdata:child="RateOverrideTypeGroupLink" msdata:parentkey="RateOverrideTypeGroupKey" msdata:childkey="RateOverrideTypeGroupKey" msprop:Generator_UserRelationName="FK_RateOverrideTypeGroupLink_RateOverrideTypeGroup" msprop:Generator_RelationVarName="relationFK_RateOverrideTypeGroupLink_RateOverrideTypeGroup" msprop:Generator_UserChildTable="RateOverrideTypeGroupLink" msprop:Generator_UserParentTable="RateOverrideTypeGroup" msprop:Generator_ParentPropName="RateOverrideTypeGroupRow" msprop:Generator_ChildPropName="GetRateOverrideTypeGroupLinkRows" />
+      <msdata:Relationship name="Margin_CreditCriteria" msdata:parent="Margin" msdata:child="CreditCriteria" msdata:parentkey="MarginKey" msdata:childkey="MarginKey" msprop:Generator_UserRelationName="Margin_CreditCriteria" msprop:Generator_RelationVarName="relationMargin_CreditCriteria" msprop:Generator_UserChildTable="CreditCriteria" msprop:Generator_UserParentTable="Margin" msprop:Generator_ParentPropName="MarginRow" msprop:Generator_ChildPropName="GetCreditCriteriaRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

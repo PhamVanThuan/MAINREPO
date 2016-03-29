@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="6e7733d5-b7cc-4cce-8d46-32a51bccead8" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="OfferInformationLife" schema="dbo" table="OfferInformationLife">
+      <properties>
+        <modelProperty Id="9c7eec6b-e60a-4590-98fb-0878f81f2b35" name="OfferInformationKey" column="OfferInformationKey" columnType="Int32" length="0" notNull="true" />
+        <modelProperty Id="23eac992-f96e-4389-90b2-022cc633805b" name="DeathBenefit" column="DeathBenefit" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="dc6d4f3b-1e21-447a-9849-eb8714c82244" name="InstallmentProtectionBenefit" column="InstallmentProtectionBenefit" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="0be15d98-fac6-471b-b6f7-ea5ad95adc5d" name="DeathBenefitPremium" column="DeathBenefitPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="828c862e-8e56-4faa-aad4-73b1b27a385f" name="InstallmentProtectionPremium" column="InstallmentProtectionPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="48b2817a-5a6f-4845-b9c2-5bb90932c94e" name="DateOfExpiry" column="DateOfExpiry" columnType="Timestamp" length="0" notNull="true" />
+        <modelProperty Id="bd7c614b-3c8a-4839-819a-5a7c89d5726a" name="UpliftFactor" column="UpliftFactor" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="61179b09-1465-4d31-bd6a-29b07e5b7bbe" name="JointDiscountFactor" column="JointDiscountFactor" columnType="Decimal" length="0" notNull="true" />
+        <modelProperty Id="0e0e9ab4-9a34-446d-8083-e1c2029bc4ff" name="MonthlyPremium" column="MonthlyPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="fd8e2fe7-1706-49bb-9753-4da1069902c9" name="YearlyPremium" column="YearlyPremium" columnType="Double" length="0" notNull="true" />
+        <modelProperty Id="a47f4324-3e6a-486d-8cde-6418e5f34f6f" name="SumAssured" column="SumAssured" columnType="Double" length="0" />
+        <modelProperty Id="a8795f33-ff5e-481c-b6dc-9e0ead5a6c26" name="DateLastUpdated" column="DateLastUpdated" columnType="Timestamp" length="0" />
+        <modelProperty Id="278860cc-b101-44e9-88be-04509c503dff" name="Consultant" column="Consultant" length="0" />
+        <modelProperty Id="9f6f3a8b-1bd5-422e-921c-7eea26c800f0" name="CurrentSumAssured" column="CurrentSumAssured" columnType="Double" length="0" />
+        <modelProperty Id="9beb5abd-b1d7-4b12-9979-c9a95f55a65c" name="PremiumShortfall" column="PremiumShortfall" columnType="Double" length="0" />
+        <modelProperty Id="6ccc713f-1056-44ed-8955-b2682242a464" name="InsurerKey" column="InsurerKey" columnType="Int32" length="0" />
+        <modelProperty Id="ef68e14d-9b7c-46ba-9571-4e457a959a62" name="ExternalPolicyNumber" column="ExternalPolicyNumber" length="0" />
+        <modelProperty Id="12c61c1f-2b62-4815-9296-803f934219b7" name="DateCeded" column="DateCeded" columnType="Timestamp" length="0" />
+        <modelProperty Id="394b156a-c56a-478f-bcc2-507f8f4ba002" name="PriorityKey" column="PriorityKey" columnType="Int32" length="0" />
+        <modelProperty Id="3c443ae4-62ae-400d-9325-fabf759aaca5" name="PolicyHolderLEKey" column="PolicyHolderLEKey" columnType="Int32" length="0" />
+        <modelProperty Id="d0d16a7f-8749-4efc-8616-c755ce78ca64" name="RPARInsurer" column="RPARInsurer" length="0" />
+        <modelProperty Id="3100eec3-01d5-43f8-81af-fc709adc7f9e" name="RPARPolicyNumber" column="RPARPolicyNumber" length="0" />
+        <modelProperty Id="e6bb7706-e376-4644-9946-63a011e755b7" name="BrokerKey" column="BrokerKey" columnType="Int32" length="0" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

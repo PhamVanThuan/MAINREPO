@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<model dslVersion="1.0.0.0" Id="6b379110-14a7-44b5-a9b7-905e5f2b943e" xmlns="http://schemas.microsoft.com/dsltools/ActiveWriter">
+  <additionalImports>AAEAAAD/////AQAAAAAAAAAMAgAAAF1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkRzbCwgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTkwNTE0MTM5NmRkYjA3OTkEAQAAAKEBU3lzdGVtLkNvbGxlY3Rpb25zLkdlbmVyaWMuTGlzdGAxW1tBbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydCwgQWx0aW5vcmVuLkFjdGl2ZVdyaXRlci5Ec2wsIFZlcnNpb249MS4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05MDUxNDEzOTZkZGIwNzk5XV0DAAAABl9pdGVtcwVfc2l6ZQhfdmVyc2lvbgQAAB9BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydFtdAgAAAAgICQMAAAAAAAAAAAAAAAcDAAAAAAEAAAAAAAAABB1BbHRpbm9yZW4uQWN0aXZlV3JpdGVyLkltcG9ydAIAAAAL</additionalImports>
+  <classes>
+    <modelClass name="SecurityGroup" schema="X2" table="SecurityGroup">
+      <properties>
+        <modelProperty Id="6ff48624-1223-4c60-956c-de218a2b6d11" name="IsDynamic" column="IsDynamic" columnType="Boolean" length="0" notNull="true" />
+        <modelProperty Id="2049f6cb-cf37-4127-a866-385e2cd8f796" name="Name" column="Name" length="0" notNull="true" />
+        <modelProperty Id="a91e522b-7045-4a9f-a6d1-93c8261015bd" name="Description" column="Description" length="0" />
+        <modelProperty Id="ad0c4185-0b11-4a22-8f36-c4df32be2ec3" name="ProcessID" column="ProcessID" columnType="Int32" length="0" />
+        <modelProperty Id="f8a3be75-57ae-47b3-ac33-444cd79290ca" name="WorkFlowID" column="WorkFlowID" columnType="Int32" length="0" />
+        <modelProperty Id="b276396f-c59a-4358-bd67-3cddd6221ba0" name="ID" column="ID" columnType="Int32" length="0" notNull="true" keyType="PrimaryKey" />
+      </properties>
+    </modelClass>
+  </classes>
+</model>

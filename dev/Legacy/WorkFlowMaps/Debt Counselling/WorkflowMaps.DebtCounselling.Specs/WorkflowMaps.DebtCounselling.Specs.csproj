@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{54AEAE87-646A-4549-AAE5-AE36578A3572}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkflowMaps.DebtCounselling.Specs</RootNamespace>
+    <AssemblyName>WorkflowMaps.DebtCounselling.Specs</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SkipPostSharp</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DebtCounselling">
+      <HintPath>..\Binaries\DebtCounselling.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.dll</HintPath>
+    </Reference>
+    <Reference Include="DomainService2.IOC">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\DomainService2.IOC.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.0.3.5\lib\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks, Version=0.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Fakes.RhinoMocks.0.3.5\lib\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.5.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\..\..\External Binaries\NuGet\Machine.Specifications.0.5.6.0\lib\net40\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\ExternalBinaries\Newtonsoft.Json\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\External Binaries\NuGet\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.BusinessModel.Interfaces">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.BusinessModel.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Common.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.BusinessModel, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.2AM, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.2AM.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.Cuttlefish, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.Cuttlefish.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Data.Models.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Data.Models.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Metrics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Metrics.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.Services, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Core.X2.Shared, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.Core.X2.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.Shared">
+      <HintPath>..\..\..\Internal Binaries\SAHL.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2.Framework, Version=1.0.8.107, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Internal Binaries\SAHL.X2.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="SAHL.X2Engine2.Factories, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Binaries\InternalBinaries\SAHL.X2Engine2.Factories.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\..\External Binaries\NuGet\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="X2DomainService.Interface.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.Common.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.DebtCounselling, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.DebtCounselling.dll</HintPath>
+    </Reference>
+    <Reference Include="X2DomainService.Interface.WorkflowAssignment">
+      <HintPath>..\..\..\DomainService\DomainServiceBinaries\X2DomainService.Interface.WorkflowAssignment.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\10 days\OnComplete\when_10_days.cs" />
+    <Compile Include="Activities\10 days\OnGetActivityTime\when_10_days.cs" />
+    <Compile Include="Activities\10 days\OnStart\when_10_days_and_rules_fail.cs" />
+    <Compile Include="Activities\10 days\OnStart\when_10_days_and_rules_pass.cs" />
+    <Compile Include="Activities\45 day reminder sent\OnComplete\when_45_day_reminder_sent.cs" />
+    <Compile Include="Activities\45 day reminder sent\OnGetActivityMessage\when_45_day_reminder_sent.cs" />
+    <Compile Include="Activities\45 day reminder sent\OnGetStageTransition\when_45_day_reminder_sent.cs" />
+    <Compile Include="Activities\45 day reminder sent\OnStart\when_45_day_reminder_sent.cs" />
+    <Compile Include="Activities\45 Days Bypass\OnComplete\when_45_days_bypass.cs" />
+    <Compile Include="Activities\45 Days Bypass\OnGetStageTransition\when_45_days_bypass.cs" />
+    <Compile Include="Activities\45 Days Cancel\OnComplete\when_45_days_cancel.cs" />
+    <Compile Include="Activities\45 Days Cancel\OnStart\when_45_days_cancel.cs" />
+    <Compile Include="Activities\45 Days Cancel\OnStart\when_45_days_cancel_and_45_days_lapsed_activity_previously_performed.cs" />
+    <Compile Include="Activities\45 Days Cancel\OnStart\when_45_days_cancel_and_court_dates_exist.cs" />
+    <Compile Include="Activities\45 Days Lapsed\OnComplete\when_45_days_lapsed.cs" />
+    <Compile Include="Activities\45 Days Lapsed\OnGetStageTransition\when_45_days_lapsed.cs" />
+    <Compile Include="Activities\45 Days Lapsed\OnStart\when_45_days_lapsed.cs" />
+    <Compile Include="Activities\45 Days\OnComplete\when_45_days.cs" />
+    <Compile Include="Activities\45 Days\OnGetActivityTime\when_45_days.cs" />
+    <Compile Include="Activities\45 Days\OnStart\when_45_days_and_timer_has_not_previously_fired.cs" />
+    <Compile Include="Activities\45 Days\OnStart\when_45_days_and_timer_has_previously_fired.cs" />
+    <Compile Include="Activities\5days\OnComplete\when_5_days_and_assignment_fails.cs" />
+    <Compile Include="Activities\5days\OnComplete\when_5_days_and_assignment_passes.cs" />
+    <Compile Include="Activities\5days\OnGetActivityTime\when_5_days.cs" />
+    <Compile Include="Activities\5days\OnGetStageTransition\when_5days.cs" />
+    <Compile Include="Activities\5days\OnStart\when_5_days.cs" />
+    <Compile Include="Activities\60 days\OnComplete\when_60_days.cs" />
+    <Compile Include="Activities\60 days\OnGetActivityTime\when_60_days.cs" />
+    <Compile Include="Activities\60 days\OnGetStageTransition\when_60_days.cs" />
+    <Compile Include="Activities\60 days\OnStart\when_60_days.cs" />
+    <Compile Include="Activities\60DayCloneCreate\OnComplete\when_60dayclonecreate.cs" />
+    <Compile Include="Activities\60DayCloneCreate\OnStart\when_60_day_clone_create_and_clone_does_not_exist.cs" />
+    <Compile Include="Activities\60DayCloneCreate\OnStart\when_60_day_clone_create_and_clone_exists.cs" />
+    <Compile Include="Activities\Accept\OnComplete\when_accept_and_assignment_fails.cs" />
+    <Compile Include="Activities\Accept\OnComplete\when_accept_and_assignment_passes.cs" />
+    <Compile Include="Activities\Accept\OnGetActivityMessage\when_accept.cs" />
+    <Compile Include="Activities\Accept\OnGetStageTransition\when_accept.cs" />
+    <Compile Include="Activities\Accept\OnStart\when_accept_and_rules_fail.cs" />
+    <Compile Include="Activities\Accept\OnStart\when_accept_and_rules_pass.cs" />
+    <Compile Include="Activities\Approve Shortfall\OnComplete\when_approve_shortfall_and_assignment_fails.cs" />
+    <Compile Include="Activities\Approve Shortfall\OnComplete\when_approve_shortfall_and_assignment_passes.cs" />
+    <Compile Include="Activities\Approve Shortfall\OnGetActivityMessage\when_approve_shortfall.cs" />
+    <Compile Include="Activities\Approve Shortfall\OnGetStageTransition\when_approve_shortfall.cs" />
+    <Compile Include="Activities\Approve Shortfall\OnStart\when_approve_shortfall.cs" />
+    <Compile Include="Activities\Attorney to Oppose\OnComplete\when_attorney_to_oppose_and_assignment_fails.cs" />
+    <Compile Include="Activities\Attorney to Oppose\OnComplete\when_attorney_to_oppose_and_assignment_passes.cs" />
+    <Compile Include="Activities\Attorney to Oppose\OnGetActivityMessage\when_attorney_to_oppose.cs" />
+    <Compile Include="Activities\Attorney to Oppose\OnGetStageTransition\when_attorney_to_oppose.cs" />
+    <Compile Include="Activities\Attorney to Oppose\OnStart\when_attorney_to_oppose_and_rules_fail.cs" />
+    <Compile Include="Activities\Attorney to Oppose\OnStart\when_attorney_to_oppose_and_rules_pass.cs" />
+    <Compile Include="Activities\Bypass 10 Day Timer\OnComplete\when_bypass_10_day_timer.cs" />
+    <Compile Include="Activities\Bypass 10 Day Timer\OnGetActivityMessage\when_bypass_10_day_timer.cs" />
+    <Compile Include="Activities\Bypass 10 Day Timer\OnStart\when_bypass_10_day_timer.cs" />
+    <Compile Include="Activities\Cancel Debt Counselling\OnComplete\when_cancel_debt_counselling.cs" />
+    <Compile Include="Activities\Cancel Debt Counselling\OnComplete\When_cancel_debt_counselling_rcs.cs" />
+    <Compile Include="Activities\Cancel Debt Counselling\OnGetActivityMessage\when_cancel_debt_counselling.cs" />
+    <Compile Include="Activities\Cancel Debt Counselling\OnGetStageTransition\when_cancel_debt_counselling.cs" />
+    <Compile Include="Activities\Cancel Debt Counselling\OnStart\when_cancel_debt_counselling.cs" />
+    <Compile Include="Activities\Cancel PL Debt Counselling\OnComplete\when_cancel_pl_debt_counselling.cs" />
+    <Compile Include="Activities\Cancel PL Debt Counselling\OnGetActivityMessage\when_cancel_pl_debt_counselling.cs" />
+    <Compile Include="Activities\Cancel PL Debt Counselling\OnStart\when_cancel_pl_debt_counselling_and_rule_fail.cs" />
+    <Compile Include="Activities\Cancel PL Debt Counselling\OnStart\when_cancel_pl_debt_counselling_and_rule_pass.cs" />
+    <Compile Include="Activities\Capture Recoveries Proposal\OnComplete\when_capture_recoveries_proposal.cs" />
+    <Compile Include="Activities\Capture Recoveries Proposal\OnGetActivityMessage\when_capture_recoveries_proposal.cs" />
+    <Compile Include="Activities\Capture Recoveries Proposal\OnGetStageTransition\when_capture_recoveries_proposal.cs" />
+    <Compile Include="Activities\Capture Recoveries Proposal\OnStart\when_capture_recoveries_proposal.cs" />
+    <Compile Include="Activities\Change in Circumstance\OnComplete\when_change_in_circumstance.cs" />
+    <Compile Include="Activities\Change in Circumstance\OnGetActivityMessage\when_change_in_circumstance.cs" />
+    <Compile Include="Activities\Change in Circumstance\OnGetStageTransition\when_change_in_circumstance.cs" />
+    <Compile Include="Activities\Change in Circumstance\OnStart\when_change_in_circumstance.cs" />
+    <Compile Include="Activities\Clear Cache\OnComplete\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnGetActivityMessage\when_clear_cache.cs" />
+    <Compile Include="Activities\Clear Cache\OnStart\when_clear_cache.cs" />
+    <Compile Include="Activities\Consultant Decline\OnComplete\when_consultant_decline.cs" />
+    <Compile Include="Activities\Consultant Decline\OnGetActivityMessage\when_consultant_decline.cs" />
+    <Compile Include="Activities\Consultant Decline\OnGetStageTransition\when_consultant_decline.cs" />
+    <Compile Include="Activities\Consultant Decline\OnStart\when_consultant_decline.cs" />
+    <Compile Include="Activities\Continue another term\OnComplete\when_continue_another_term.cs" />
+    <Compile Include="Activities\Continue another term\OnGetActivityMessage\when_continue_another_term.cs" />
+    <Compile Include="Activities\Continue another term\OnGetStageTransition\when_continue_another_term.cs" />
+    <Compile Include="Activities\Continue another term\OnStart\when_continue_another_term.cs" />
+    <Compile Include="Activities\Continue Debt Counselling\OnComplete\when_continue_debt_counselling.cs" />
+    <Compile Include="Activities\Continue Debt Counselling\OnGetActivityMessage\when_continue_debt_counselling.cs" />
+    <Compile Include="Activities\Continue Debt Counselling\OnStart\when_continue_debt_counselling.cs" />
+    <Compile Include="Activities\Continue Debt Review\OnComplete\when_efolderid_is_empty_and_assignment_fails.cs" />
+    <Compile Include="Activities\Continue Debt Review\OnComplete\when_efolderid_is_empty_and_assignment_passes.cs" />
+    <Compile Include="Activities\Continue Debt Review\OnComplete\when_efolder_exists_and_ework_action_is_not_performed.cs" />
+    <Compile Include="Activities\Continue Debt Review\OnComplete\when_efolder_exists_and_ework_action_is_performed.cs" />
+    <Compile Include="Activities\Continue Debt Review\OnGetActivityMessage\when_continue_debt_review.cs" />
+    <Compile Include="Activities\Continue Debt Review\OnGetStageTransition\when_continue_debt_review.cs" />
+    <Compile Include="Activities\Continue Debt Review\OnStart\when_continue_debt_review.cs" />
+    <Compile Include="Activities\Continue Litigation\OnComplete\when_reminder_email_sent.cs" />
+    <Compile Include="Activities\Continue Litigation\OnGetActivityMessage\when_continue_litigation.cs" />
+    <Compile Include="Activities\Continue Litigation\OnGetStageTransition\when_continue_litigation.cs" />
+    <Compile Include="Activities\Continue Litigation\OnStart\when_continue_litigation.cs" />
+    <Compile Include="Activities\Court Application Withdrawn\OnComplete\when_court_application_and_assignment_fails.cs" />
+    <Compile Include="Activities\Court Application Withdrawn\OnComplete\when_court_application_and_assignment_passes.cs" />
+    <Compile Include="Activities\Court Application Withdrawn\OnGetActivityMessage\when_court_application_withdrawn.cs" />
+    <Compile Include="Activities\Court Application Withdrawn\OnGetStageTransition\when_court_application_withdrawn.cs" />
+    <Compile Include="Activities\Court Application Withdrawn\OnComplete\when_court_application_and_update_hearing_detail_status_fail.cs" />
+    <Compile Include="Activities\Court Application Withdrawn\OnComplete\when_court_application_and_update_hearing_detail_status_pass.cs" />
+    <Compile Include="Activities\Court Application Withdrawn\OnStart\when_court_application_withdrawn.cs" />
+    <Compile Include="Activities\Court Date or Deposit\OnComplete\when_court_date_or_deposit.cs" />
+    <Compile Include="Activities\Court Date or Deposit\OnGetStageTransition\when_court_date_or_deposit.cs" />
+    <Compile Include="Activities\Court Date or Deposit\OnStart\when_court_date_or_deposit.cs" />
+    <Compile Include="Activities\Court Details\OnComplete\when_consent_order_is_not_granted.cs" />
+    <Compile Include="Activities\Court Details\OnComplete\when_consent_order_granted.cs" />
+    <Compile Include="Activities\Court Details\OnComplete\when_case_does_not_get_assigned.cs" />
+    <Compile Include="Activities\Court Details\OnComplete\when_case_gets_assigned.cs" />
+    <Compile Include="Activities\Court Details\OnGetActivityMessage\when_court_details.cs" />
+    <Compile Include="Activities\Court Details\OnStart\when_court_details.cs" />
+    <Compile Include="Activities\Court Order Granted\OnComplete\when_court_order_granted_and_assignment_fails.cs" />
+    <Compile Include="Activities\Court Order Granted\OnComplete\when_court_order_granted_and_assignment_passes.cs" />
+    <Compile Include="Activities\Court Order Granted\OnGetActivityMessage\when_court_order_granted.cs" />
+    <Compile Include="Activities\Court Order Granted\OnGetStageTransition\when_court_order_granted.cs" />
+    <Compile Include="Activities\Court Order Granted\OnStart\when_court_order_granted.cs" />
+    <Compile Include="Activities\Create Debt Counselling Case\OnComplete\when_create_debt_counselling_case.cs" />
+    <Compile Include="Activities\Create Debt Counselling Case\OnGetStageTransition\when_create_debt_counselling_case.cs" />
+    <Compile Include="Activities\Create Debt Counselling Case\OnStart\when_create_debt_counselling_case.cs" />
+    <Compile Include="Activities\Decline Shortfall\OnComplete\when_decline_shortfall_and_assignment_fails.cs" />
+    <Compile Include="Activities\Decline Shortfall\OnComplete\when_decline_shortfall_and_assignment_passes.cs" />
+    <Compile Include="Activities\Decline Shortfall\OnGetActivityMessage\when_decline_shortfall.cs" />
+    <Compile Include="Activities\Decline Shortfall\OnGetStageTransition\when_decline_shortfall.cs" />
+    <Compile Include="Activities\Decline Shortfall\OnStart\when_decline_shortfall.cs" />
+    <Compile Include="Activities\Decline\OnComplete\when_update_active_accepted_proposal_fails.cs" />
+    <Compile Include="Activities\Decline\OnComplete\when_update_active_accepted_proposal_passes_and_assignment_fails.cs" />
+    <Compile Include="Activities\Decline\OnComplete\when_update_active_accepted_proposal_passes_and_assignment_passes.cs" />
+    <Compile Include="Activities\Decline\OnGetActivityMessage\when_decline.cs" />
+    <Compile Include="Activities\Decline\OnGetStageTransition\when_decline.cs" />
+    <Compile Include="Activities\Decline\OnStart\when_decline.cs" />
+    <Compile Include="Activities\Escalate Recoveries Proposal\OnComplete\when_escalate_recoveries_proposal.cs" />
+    <Compile Include="Activities\Escalate Recoveries Proposal\OnGetActivityMessage\when__escalate_recoveries_proposal.cs" />
+    <Compile Include="Activities\Escalate Recoveries Proposal\OnGetStageTransition\when__escalate_recoveries_proposal.cs" />
+    <Compile Include="Activities\Escalate Recoveries Proposal\OnStart\when__escalate_recoveries_proposal.cs" />
+    <Compile Include="Activities\Exclude Bond\OnComplete\when_excluding_bond_and_assignment_fails.cs" />
+    <Compile Include="Activities\Exclude Bond\OnComplete\when_excluding_bond_and_assignment_passes.cs" />
+    <Compile Include="Activities\Exclude Bond\OnGetActivityMessage\when_exclude_bond.cs" />
+    <Compile Include="Activities\Exclude Bond\OnGetStageTransition\when_exclude_bond.cs" />
+    <Compile Include="Activities\Exclude Bond\OnStart\when_exclude_bond.cs" />
+    <Compile Include="Activities\EXT Cancellation Registered\OnComplete\when_flag_is_raised_and_case_cancelled_successfully.cs" />
+    <Compile Include="Activities\EXT Cancellation Registered\OnComplete\when_flag_is_raised_and_case_not_cancelled_successfully.cs" />
+    <Compile Include="Activities\EXT Cancellation Registered\OnGetStageTransition\when_ext_cancellation_registered.cs" />
+    <Compile Include="Activities\EXT Cancellation Registered\OnStart\when_ext_cancellation_registered.cs" />
+    <Compile Include="Activities\EXT Into Arrears\OnComplete\when_flag_is_raised_and_assignment_fails.cs" />
+    <Compile Include="Activities\EXT Into Arrears\OnComplete\when_flag_is_raised_and_assignment_passes.cs" />
+    <Compile Include="Activities\EXT Into Arrears\OnGetStageTransition\when_ext_into_arrears.cs" />
+    <Compile Include="Activities\EXT Into Arrears\OnStart\when_ext_into_arrears.cs" />
+    <Compile Include="Activities\Ext Into Bond Excl Arrears\OnComplete\when_flag_is_raised_and_assignment_fails.cs" />
+    <Compile Include="Activities\Ext Into Bond Excl Arrears\OnComplete\when_flag_is_raised_and_assignment_passes.cs" />
+    <Compile Include="Activities\Ext Into Bond Excl Arrears\OnGetStageTransition\when_ext_into_bond_excl_arrears.cs" />
+    <Compile Include="Activities\Ext Into Bond Excl Arrears\OnStart\when_ext_into_bond_excl_arrears.cs" />
+    <Compile Include="Activities\Ext Out Bond Excl Arrears\OnComplete\when_flag_is_raised_and_assignment_fails.cs" />
+    <Compile Include="Activities\Ext Out Bond Excl Arrears\OnComplete\when_flag_is_raised_and_assignment_passes.cs" />
+    <Compile Include="Activities\Ext Out Bond Excl Arrears\OnGetStageTransition\when_ext_out_bond_excl_arrears.cs" />
+    <Compile Include="Activities\Ext Out Bond Excl Arrears\OnStart\when_ext_out_bond_excl_arrears.cs" />
+    <Compile Include="Activities\EXT Out of Arrears\OnComplete\when_ext_out_of_arrears.cs" />
+    <Compile Include="Activities\EXT Out of Arrears\OnGetStageTransition\when_ext_out_of_arrears.cs" />
+    <Compile Include="Activities\EXT Out of Arrears\OnStart\when_ext_out_of_arrears.cs" />
+    <Compile Include="Activities\EXT Under Cancellation\OnComplete\when_flag_is_raised_and_assignment_fails.cs" />
+    <Compile Include="Activities\EXT Under Cancellation\OnComplete\when_flag_is_raised_and_assignment_passes.cs" />
+    <Compile Include="Activities\EXT Under Cancellation\OnGetStageTransition\when_ext_under_cancellation.cs" />
+    <Compile Include="Activities\EXT Under Cancellation\OnStart\when_ext_under_cancellation.cs" />
+    <Compile Include="Activities\EXT_60daynodateorpay\OnComplete\when_ext_60daynodateorpay.cs" />
+    <Compile Include="Activities\EXT_60daynodateorpay\OnStart\when_flag_is_raised.cs" />
+    <Compile Include="Activities\Failed To Opt Out\OnComplete\when_failed_to_opt_out.cs" />
+    <Compile Include="Activities\Failed To Opt Out\OnStart\when_failed_to_opt_out.cs" />
+    <Compile Include="Activities\Inadequate Payment\OnComplete\when_payment_is_inadequate_and_assignment_fails.cs" />
+    <Compile Include="Activities\Inadequate Payment\OnComplete\when_payment_is_inadequate_and_assignment_passes.cs" />
+    <Compile Include="Activities\Inadequate Payment\OnGetActivityMessage\when_inadequate_payment.cs" />
+    <Compile Include="Activities\Inadequate Payment\OnGetStageTransition\when_inadequate_payment.cs" />
+    <Compile Include="Activities\Inadequate Payment\OnStart\when_inadequate_payment.cs" />
+    <Compile Include="Activities\Negotiate Proposal\OnComplete\when_negotiate_proposal.cs" />
+    <Compile Include="Activities\Negotiate Proposal\OnGetActivityMessage\when_negotiate_proposal.cs" />
+    <Compile Include="Activities\Negotiate Proposal\OnGetStageTransition\when_negotiate_proposal.cs" />
+    <Compile Include="Activities\Negotiate Proposal\OnStart\when_negotiate_proposal.cs" />
+    <Compile Include="Activities\No Court Date or Deposit\OnComplete\when_no_court_date_or_deposit.cs" />
+    <Compile Include="Activities\No Court Date or Deposit\OnGetStageTransition\when_no_court_date_or_deposit.cs" />
+    <Compile Include="Activities\No Court Date or Deposit\OnStart\when_court_date_or_deposit.cs" />
+    <Compile Include="Activities\No Court Date or Deposit\OnStart\when_no_court_or_deposit.cs" />
+    <Compile Include="Activities\Notification of Decision\OnComplete\when_notification_of_decision.cs" />
+    <Compile Include="Activities\Notification of Decision\OnGetActivityMessage\when_notification_of_decision.cs" />
+    <Compile Include="Activities\Notification of Decision\OnGetStageTransition\when_notification_of_decision.cs" />
+    <Compile Include="Activities\Notification of Decision\OnStart\when_notification_of_decision.cs" />
+    <Compile Include="Activities\Notified of Death\OnComplete\when_notified_of_death.cs" />
+    <Compile Include="Activities\Notified of Death\OnGetActivityMessage\when_notified_of_death.cs" />
+    <Compile Include="Activities\Notified of Death\OnGetStageTransition\when_notified_of_death.cs" />
+    <Compile Include="Activities\Notified of Death\OnStart\when_notified_of_death.cs" />
+    <Compile Include="Activities\Notified of Sequestration\OnComplete\when_notified_of_sequestration.cs" />
+    <Compile Include="Activities\Notified of Sequestration\OnGetActivityMessage\when_notified_of_sequestration.cs" />
+    <Compile Include="Activities\Notified of Sequestration\OnGetStageTransition\when_notified_of_sequestration.cs" />
+    <Compile Include="Activities\Notified of Sequestration\OnStart\when_notified_of_sequestration.cs" />
+    <Compile Include="Activities\Opt Out Not Required\OnComplete\when_opt_out_not_required.cs" />
+    <Compile Include="Activities\Opt Out Not Required\OnGetStageTransition\when_opt_out_not_required.cs" />
+    <Compile Include="Activities\Opt Out Not Required\OnStart\when_opt_out_not_required_and_loan_converted.cs" />
+    <Compile Include="Activities\Opt Out Not Required\OnStart\when_opt_out_not_required_and_loan_not_converted.cs" />
+    <Compile Include="Activities\Opt Out Not Required\OnStart\when_opt_out_required.cs" />
+    <Compile Include="Activities\Opt Out Required\OnComplete\when_opt_out_for_debt_counselling_is_successful.cs" />
+    <Compile Include="Activities\Opt Out Required\OnComplete\when_opt_out_for_debt_counselling_is_unsuccessful.cs" />
+    <Compile Include="Activities\Opt Out Required\OnGetStageTransition\when_opt_out_required.cs" />
+    <Compile Include="Activities\Opt Out Required\OnStart\when_opt_out_required.cs" />
+    <Compile Include="Activities\Opt Out\OnComplete\when_opt_out.cs" />
+    <Compile Include="Activities\Opt Out\OnGetActivityMessage\when_opt_out.cs" />
+    <Compile Include="Activities\Opt Out\OnStart\when_opt_out.cs" />
+    <Compile Include="Activities\Payment in Order\OnComplete\when_cannot_update_debt_review_arrangement.cs" />
+    <Compile Include="Activities\Payment in Order\OnComplete\when_can_update_debt_review_arrangement_and_cannot_assign_case.cs" />
+    <Compile Include="Activities\Payment in Order\OnComplete\when_can_update_debt_review_arrangement_and_can_assign_case.cs" />
+    <Compile Include="Activities\Payment in Order\OnGetActivityMessage\when_payment_in_order.cs" />
+    <Compile Include="Activities\Payment in Order\OnGetStageTransition\when_payment_in_order.cs" />
+    <Compile Include="Activities\Payment in Order\OnStart\when_payment_in_order.cs" />
+    <Compile Include="Activities\Payment Received\OnComplete\when_can_assign.cs" />
+    <Compile Include="Activities\Payment Received\OnComplete\when_cannot_assign.cs" />
+    <Compile Include="Activities\Payment Received\OnGetActivityMessage\when_payment_received.cs" />
+    <Compile Include="Activities\Payment Received\OnGetStageTransition\when_payment_received.cs" />
+    <Compile Include="Activities\Payment Received\OnStart\when_payment_has_been_received.cs" />
+    <Compile Include="Activities\Payment Received\OnStart\when_payment_has_not_been_received.cs" />
+    <Compile Include="Activities\Reallocate User\OnComplete\when_assign_aduser_data_property_is_null.cs" />
+    <Compile Include="Activities\Reallocate User\OnComplete\when_assign_workflow_role_type_data_property_is_zero.cs" />
+    <Compile Include="Activities\Reallocate User\OnComplete\when_can_reallocate_user.cs" />
+    <Compile Include="Activities\Reallocate User\OnGetActivityMessage\when_reallocate_user.cs" />
+    <Compile Include="Activities\Reallocate User\OnGetStageTransition\when_reallocate_user.cs" />
+    <Compile Include="Activities\Reallocate User\OnStart\when_reallocate_user.cs" />
+    <Compile Include="Activities\Respond to Debt Counsellor\OnComplete\when_cannot_load_balance_assign_case.cs" />
+    <Compile Include="Activities\Respond to Debt Counsellor\OnComplete\when_can_assign_and_efolderID_is_empty.cs" />
+    <Compile Include="Activities\Respond to Debt Counsellor\OnComplete\when_can_assign_and_not_previously_sent_to_litigation.cs" />
+    <Compile Include="Activities\Respond to Debt Counsellor\OnComplete\when_can_assign_and_previously_sent_to_litigation.cs" />
+    <Compile Include="Activities\Respond to Debt Counsellor\OnGetActivityMessage\when_respond_to_debt_counsellor.cs" />
+    <Compile Include="Activities\Respond to Debt Counsellor\OnGetStageTransition\when_respond_to_debt_counsellor.cs" />
+    <Compile Include="Activities\Respond to Debt Counsellor\OnStart\when_respond_to_debt_counsellor.cs" />
+    <Compile Include="Activities\Send Counter Proposal\OnComplete\when_send_counter_proposal.cs" />
+    <Compile Include="Activities\Send Counter Proposal\OnGetActivityMessage\when_send_counter_proposal.cs" />
+    <Compile Include="Activities\Send Counter Proposal\OnGetStageTransition\when_send_counter_proposal.cs" />
+    <Compile Include="Activities\Send Counter Proposal\OnStart\when_cannot_send_counter_proposal.cs" />
+    <Compile Include="Activities\Send Counter Proposal\OnStart\when_can_send_counter_proposal.cs" />
+    <Compile Include="Activities\Send Decline Letter\OnComplete\when_send_decline_letter.cs" />
+    <Compile Include="Activities\Send Decline Letter\OnGetActivityMessage\when_send_decline_letter.cs" />
+    <Compile Include="Activities\Send Decline Letter\OnGetStageTransition\when_send_decline_letter.cs" />
+    <Compile Include="Activities\Send Decline Letter\OnStart\when_cannot_send_decline_letter.cs" />
+    <Compile Include="Activities\Send Decline Letter\OnStart\when_can_send_decline_letter.cs" />
+    <Compile Include="Activities\Send Documents\OnComplete\when_send_documents.cs" />
+    <Compile Include="Activities\Send Documents\OnGetActivityMessage\when_send_documents.cs" />
+    <Compile Include="Activities\Send Documents\OnGetStageTransition\when_send_documents.cs" />
+    <Compile Include="Activities\Send Documents\OnStart\when_send_documents.cs" />
+    <Compile Include="Activities\Send Intent to Terminate\OnComplete\when_send_intent_to_terminate.cs" />
+    <Compile Include="Activities\Send Intent to Terminate\OnGetActivityMessage\when_send_intent_to_terminate.cs" />
+    <Compile Include="Activities\Send Intent to Terminate\OnGetStageTransition\when_send_intent_to_terminate.cs" />
+    <Compile Include="Activities\Send Intent to Terminate\OnStart\when_send_intent_to_terminate.cs" />
+    <Compile Include="Activities\Send Proposal for Approval\OnComplete\when_assign_aduser_data_property_is_null.cs" />
+    <Compile Include="Activities\Send Proposal for Approval\OnComplete\when_assign_workflow_role_type_data_property_is_zero.cs" />
+    <Compile Include="Activities\Send Proposal for Approval\OnComplete\when_can_send_proposal_for_approval.cs" />
+    <Compile Include="Activities\Send Proposal for Approval\OnGetActivityMessage\when_send_proposal_for_approval.cs" />
+    <Compile Include="Activities\Send Proposal for Approval\OnGetStageTransition\when_send_proposal_for_approval.cs" />
+    <Compile Include="Activities\Send Proposal for Approval\OnStart\when_cannot_send_proposal_for_approval.cs" />
+    <Compile Include="Activities\Send Proposal for Approval\OnStart\when_can_send_proposal_for_approval.cs" />
+    <Compile Include="Activities\Send Termination Letter\OnComplete\when_send_termination_letter.cs" />
+    <Compile Include="Activities\Send Termination Letter\OnGetActivityMessage\when_send_termination_letter.cs" />
+    <Compile Include="Activities\Send Termination Letter\OnGetStageTransition\when_send_termination_letter.cs" />
+    <Compile Include="Activities\Send Termination Letter\OnStart\when_cannot_send_termination_letter.cs" />
+    <Compile Include="Activities\Send Termination Letter\OnStart\when_can_send_termination_letter.cs" />
+    <Compile Include="Activities\Send to Litigation\OnComplete\when_cannot_send _to_litigation.cs" />
+    <Compile Include="Activities\Send to Litigation\OnComplete\when_can_send_to_litigation_and_user_in_correct_role.cs" />
+    <Compile Include="Activities\Send to Litigation\OnComplete\when_can_send_to_litigation_and_user_is_not_foreclosure_consultant.cs" />
+    <Compile Include="Activities\Send to Litigation\OnGetActivityMessage\when_send_to_litigation.cs" />
+    <Compile Include="Activities\Send to Litigation\OnGetStageTransition\when_send_to_litigation.cs" />
+    <Compile Include="Activities\Send to Litigation\OnStart\when_send_to_litigation.cs" />
+    <Compile Include="Activities\Signed Documents Received\OnComplete\when_signed_documents_received.cs" />
+    <Compile Include="Activities\Signed Documents Received\OnGetActivityMessage\when_signed_documents_received.cs" />
+    <Compile Include="Activities\Signed Documents Received\OnGetStageTransition\when_signed_documents_received.cs" />
+    <Compile Include="Activities\Signed Documents Received\OnStart\when_signed_documents_received.cs" />
+    <Compile Include="Activities\Term expired\OnComplete\when_term_expired.cs" />
+    <Compile Include="Activities\Term expired\OnGetActivityTime\when_getting_activity_time.cs" />
+    <Compile Include="Activities\Term expired\OnGetStageTransition\when_term_expired.cs" />
+    <Compile Include="Activities\Term expired\OnStart\when_term_expired.cs" />
+    <Compile Include="Activities\Terminate Application\OnComplete\when_terminating_application.cs" />
+    <Compile Include="Activities\Terminate Application\OnGetActivityMessage\when_terminate_application.cs" />
+    <Compile Include="Activities\Terminate Application\OnGetStageTransition\when_terminate_application.cs" />
+    <Compile Include="Activities\Terminate Application\OnStart\when_terminate_application.cs" />
+    <Compile Include="Activities\Under Cancellation Removed\OnComplete\when_under_cancellation_removed.cs" />
+    <Compile Include="Activities\Under Cancellation Removed\OnGetStageTransition\when_under_cancellation_removed.cs" />
+    <Compile Include="Activities\Under Cancellation Removed\OnStart\when_under_cancellation_removed.cs" />
+    <Compile Include="Activities\Update Case Details\OnComplete\when_update_case_details.cs" />
+    <Compile Include="Activities\Update Case Details\OnGetActivityMessage\when_update_case_details.cs" />
+    <Compile Include="Activities\Update Case Details\OnStart\when_update_case_details.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Roles\Debt Counselling Admin D\OnGetRole\when_debt_counselling_admin_d.cs" />
+    <Compile Include="Roles\Debt Counselling Consultant D\OnGetRole\when_debt_counselling_consultant_d.cs" />
+    <Compile Include="Roles\Debt Counselling Court Consultant D\OnGetRole\when_debt_counselling_court_consultant.cs" />
+    <Compile Include="Roles\Debt Counselling Supervisor D\OnGetRole\when_debt_counselling_supervisor_d.cs" />
+    <Compile Include="Roles\Foreclosure Consultant D\OnGetRole\when_foreclosure_consultant_d.cs" />
+    <Compile Include="Roles\Loss Control Director D\OnGetRole\when_loss_control_director_d.cs" />
+    <Compile Include="Roles\Recoveries Manager D\OnGetRole\when_recoveries_manager_d.cs" />
+    <Compile Include="States\45 Day Reminder\OnEnter\when_45_day_reminder.cs" />
+    <Compile Include="States\45 Day Reminder\OnExit\when_45_day_reminder.cs" />
+    <Compile Include="States\45 Days Check\OnEnter\when_45_days_check.cs" />
+    <Compile Include="States\45 Days Check\OnExit\when_45_days_check.cs" />
+    <Compile Include="States\60 Days Review\OnEnter\when_60_days_review.cs" />
+    <Compile Include="States\60 Days Review\OnExit\when_60_days_review.cs" />
+    <Compile Include="States\60DayTimerHold\OnEnter\when_60daytimerhold.cs" />
+    <Compile Include="States\60DayTimerHold\OnExit\when_60daytimerhold.cs" />
+    <Compile Include="States\Accepted Proposal\OnEnter\when_accepted_proposal.cs" />
+    <Compile Include="States\Accepted Proposal\OnExit\when_accepted_proposal.cs" />
+    <Compile Include="States\Archive 60days\OnEnter\when_archive_60days.cs" />
+    <Compile Include="States\Archive 60days\OnExit\when_archive_60days.cs" />
+    <Compile Include="States\Archive 60days\OnReturn\when_archive_60days.cs" />
+    <Compile Include="States\Archive Debt Counselling\OnEnter\when_archive_debt_counselling.cs" />
+    <Compile Include="States\Archive Debt Counselling\OnExit\when_archive_debt_counselling.cs" />
+    <Compile Include="States\Archive Debt Counselling\OnReturn\when_archive_debt_counselling.cs" />
+    <Compile Include="States\Archive Litigation\OnEnter\when_archive_litigation.cs" />
+    <Compile Include="States\Archive Litigation\OnExit\when_archive_litigation.cs" />
+    <Compile Include="States\Archive Litigation\OnReturn\when_archive_litigation.cs" />
+    <Compile Include="States\Bond Exclusions Arrears\OnEnter\when_bond_exclusions_arrears.cs" />
+    <Compile Include="States\Bond Exclusions Arrears\OnExit\when_bond_exclusions_arrears.cs" />
+    <Compile Include="States\Bond Exclusions\OnEnter\when_bond_exclusions.cs" />
+    <Compile Include="States\Bond Exclusions\OnExit\when_bond_exclusions.cs" />
+    <Compile Include="States\Cache Archive\OnEnter\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnExit\when_cache_archive.cs" />
+    <Compile Include="States\Cache Archive\OnReturn\when_cache_archive.cs" />
+    <Compile Include="States\Check No Date No Pay\OnEnter\when_check_no_date_no_pay.cs" />
+    <Compile Include="States\Check No Date No Pay\OnExit\when_check_no_date_no_pay.cs" />
+    <Compile Include="States\Common 60 Day\OnEnter\when_common_60_day.cs" />
+    <Compile Include="States\Common 60 Day\OnExit\when_common_60_day.cs" />
+    <Compile Include="States\Common Cancel\OnEnter\when_common_cancel.cs" />
+    <Compile Include="States\Common Cancel\OnExit\when_common_cancel.cs" />
+    <Compile Include="States\Common Circumstance\OnEnter\when_common_circumstance.cs" />
+    <Compile Include="States\Common Circumstance\OnExit\when_common_circumstance.cs" />
+    <Compile Include="States\Common Counter Proposal\OnEnter\when_common_counter_proposal.cs" />
+    <Compile Include="States\Common Counter Proposal\OnExit\when_common_counter_proposal.cs" />
+    <Compile Include="States\Common Court Application Withdrawn\OnEnter\when_common_court_application_withdrawn.cs" />
+    <Compile Include="States\Common Court Application Withdrawn\OnExit\when_common_court_application_withdrawn.cs" />
+    <Compile Include="States\Common Court Date\OnEnter\when_common_court_date.cs" />
+    <Compile Include="States\Common Court Date\OnExit\when_common_court_date.cs" />
+    <Compile Include="States\Common Court\OnEnter\when_common_court.cs" />
+    <Compile Include="States\Common Court\OnExit\when_common_court.cs" />
+    <Compile Include="States\Common Exclude Bond\OnEnter\when_common_exclude_bond.cs" />
+    <Compile Include="States\Common Exclude Bond\OnExit\when_common_exclude_bond.cs" />
+    <Compile Include="States\Common Litigation\OnEnter\when_common_litigation.cs" />
+    <Compile Include="States\Common Litigation\OnExit\when_common_litigation.cs" />
+    <Compile Include="States\Common ML Cancel\OnEnter\when_common_ml_cancel.cs" />
+    <Compile Include="States\Common ML Cancel\OnExit\when_common_ml_cancel.cs" />
+    <Compile Include="States\Common Negotiate Proposal\OnEnter\when_common_negotiate_proposal.cs" />
+    <Compile Include="States\Common Negotiate Proposal\OnExit\when_common_negotiate_proposal.cs" />
+    <Compile Include="States\Common PL Cancel\OnEnter\when_common_pl_cancel.cs" />
+    <Compile Include="States\Common PL Cancel\OnExit\when_common_pl_cancel.cs" />
+    <Compile Include="States\Common Reallocate\OnEnter\when_common_reallocate.cs" />
+    <Compile Include="States\Common Reallocate\OnExit\when_common_reallocate.cs" />
+    <Compile Include="States\Common Shortfall\OnEnter\when_common_shortfall.cs" />
+    <Compile Include="States\Common Shortfall\OnExit\when_common_shortfall.cs" />
+    <Compile Include="States\Common Terminate\OnEnter\when_common_terminate.cs" />
+    <Compile Include="States\Common Terminate\OnExit\when_common_terminate.cs" />
+    <Compile Include="States\Common Update Case Details\OnEnter\when_common_update_case_details.cs" />
+    <Compile Include="States\Common Update Case Details\OnExit\when_common_update_case_details.cs" />
+    <Compile Include="States\Debt Review Approved\OnEnter\when_debt_review_approved.cs" />
+    <Compile Include="States\Debt Review Approved\OnExit\when_debt_review_approved.cs" />
+    <Compile Include="States\Decision on Proposal\OnEnter\when_decision_on_proposal.cs" />
+    <Compile Include="States\Decision on Proposal\OnExit\when_decision_on_proposal.cs" />
+    <Compile Include="States\Default in Payment\OnEnter\when_default_in_payment.cs" />
+    <Compile Include="States\Default in Payment\OnExit\when_default_in_payment.cs" />
+    <Compile Include="States\Estates and Sequestration\OnEnter\when_estates_and_sequestration.cs" />
+    <Compile Include="States\Estates and Sequestration\OnExit\when_estates_and_sequestration.cs" />
+    <Compile Include="States\Intent to Terminate\OnEnter\when_intent_to_terminate.cs" />
+    <Compile Include="States\Intent to Terminate\OnExit\when_intent_to_terminate.cs" />
+    <Compile Include="States\Litigation\OnEnter\when_litigation.cs" />
+    <Compile Include="States\Litigation\OnExit\when_litigation.cs" />
+    <Compile Include="States\Manage Proposal\OnEnter\when_manage_proposal.cs" />
+    <Compile Include="States\Manage Proposal\OnExit\when_manage_proposal.cs" />
+    <Compile Include="States\Opt Out Check\OnEnter\when_opt_out_check.cs" />
+    <Compile Include="States\Opt Out Check\OnExit\when_opt_out_check.cs" />
+    <Compile Include="States\Opt Out Failed\OnEnter\when_opt_out_failed.cs" />
+    <Compile Include="States\Opt Out Failed\OnExit\when_opt_out_failed.cs" />
+    <Compile Include="States\Payment Review\OnEnter\when_payment_review.cs" />
+    <Compile Include="States\Payment Review\OnExit\when_payment_review.cs" />
+    <Compile Include="States\Pend Cancellation\OnEnter\when_pend_cancellation.cs" />
+    <Compile Include="States\Pend Cancellation\OnExit\when_pend_cancellation.cs" />
+    <Compile Include="States\Pend Court Decision\OnEnter\when_pend_court_decision.cs" />
+    <Compile Include="States\Pend Court Decision\OnExit\when_pend_court_decision.cs" />
+    <Compile Include="States\Pend Payment\OnEnter\when_pend_payment.cs" />
+    <Compile Include="States\Pend Payment\OnExit\when_pend_payment.cs" />
+    <Compile Include="States\Pend Proposal\OnEnter\when_pend_proposal.cs" />
+    <Compile Include="States\Pend Proposal\OnExit\when_pend_proposal.cs" />
+    <Compile Include="States\Personal Loan Pend Proposal\OnEnter\when_personal_loan_pend_proposal.cs" />
+    <Compile Include="States\Personal Loan Pend Proposal\OnExit\when_personal_loan_pend_proposal.cs" />
+    <Compile Include="States\Product Check\OnEnter\when_product_check.cs" />
+    <Compile Include="States\Product Check\OnExit\when_product_check.cs" />
+    <Compile Include="States\Recoveries Proposal Decision\OnEnter\when_recoveries_proposal_decision.cs" />
+    <Compile Include="States\Recoveries Proposal Decision\OnExit\when_recoveries_proposal_decision.cs" />
+    <Compile Include="States\Recoveries Proposal\OnEnter\when_recoveries_proposal.cs" />
+    <Compile Include="States\Recoveries Proposal\OnExit\when_recoveries_proposal.cs" />
+    <Compile Include="States\Return To Previous State\OnAutoForward\when_return_to_previous_state.cs" />
+    <Compile Include="States\Return To Previous State\OnEnter\when_return_to_previous_state.cs" />
+    <Compile Include="States\Return To Previous State\OnExit\when_return_to_previous_state.cs" />
+    <Compile Include="States\Return to State\OnAutoForward\when_return_to_state.cs" />
+    <Compile Include="States\Return to State\OnEnter\when_return_to_state.cs" />
+    <Compile Include="States\Return to State\OnExit\when_return_to_state.cs" />
+    <Compile Include="States\Review Notification\OnEnter\when_review_notification.cs" />
+    <Compile Include="States\Review Notification\OnExit\when_review_notification.cs" />
+    <Compile Include="States\Send Decline\OnEnter\when_send_decline.cs" />
+    <Compile Include="States\Send Decline\OnExit\when_send_decline.cs" />
+    <Compile Include="States\Send Loan Agreements\OnEnter\when_send_loan_agreements.cs" />
+    <Compile Include="States\Send Loan Agreements\OnExit\when_send_loan_agreements.cs" />
+    <Compile Include="States\Term Review\OnEnter\when_term_review.cs" />
+    <Compile Include="States\Term Review\OnExit\when_term_review.cs" />
+    <Compile Include="States\Termination Archive\OnEnter\when_terminate_debt_counselling_passes_with_an_eworks_case_fails.cs" />
+    <Compile Include="States\Termination Archive\OnEnter\when_terminate_debt_counselling_fails.cs" />
+    <Compile Include="States\Termination Archive\OnEnter\when_terminate_debt_counselling_passes_with_an_eworks_case.cs" />
+    <Compile Include="States\Termination Archive\OnEnter\when_terminate_debt_counselling_passes_with_no_eworks_case.cs" />
+    <Compile Include="States\Termination Archive\OnExit\when_termination_is_archived.cs" />
+    <Compile Include="States\Termination Archive\OnReturn\when_termination_is_archived.cs" />
+    <Compile Include="States\Termination Letter Sent\OnEnter\when_termination_letter_sent.cs" />
+    <Compile Include="States\Termination Letter Sent\OnExit\when_termination_letter_sent.cs" />
+    <Compile Include="States\Termination\OnEnter\when_termination_.cs" />
+    <Compile Include="States\Termination\OnExit\when_termination_.cs" />
+    <Compile Include="WorkflowSpecDebtCounselling.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WorkflowMaps.Specs.Common\WorkflowMaps.Specs.Common.csproj">
+      <Project>{AE22CAB1-D3AB-43EC-A840-B23B4050F880}</Project>
+      <Name>WorkflowMaps.Specs.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Activities\10 days\OnGetStageTransition\" />
+    <Folder Include="Activities\45 Days Bypass\OnStart\" />
+    <Folder Include="Activities\45 Days Cancel\OnGetStageTransition\" />
+    <Folder Include="Activities\45 Days\OnGetStageTransition\" />
+    <Folder Include="Activities\60DayCloneCreate\OnGetStageTransition\" />
+    <Folder Include="Activities\Bypass 10 Day Timer\OnGetStageTransition\" />
+    <Folder Include="Activities\Cancel PL Debt Counselling\OnGetStageTransition\" />
+    <Folder Include="Activities\Clear Cache\OnGetStageTransition\" />
+    <Folder Include="Activities\Continue Debt Counselling\OnGetStageTransition\" />
+    <Folder Include="Activities\Court Details\OnGetStageTransition\" />
+    <Folder Include="Activities\EXT_60daynodateorpay\OnGetStageTransition\" />
+    <Folder Include="Activities\Failed To Opt Out\OnGetStageTransition\" />
+    <Folder Include="Activities\Opt Out\OnGetStageTransition\" />
+    <Folder Include="Activities\Update Case Details\OnGetStageTransition\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
