@@ -1,0 +1,12 @@
+
+We created user stories in target process
+
+We set up our PCs with dev software (VS2013 apache codova, postgreSQL)
+
+we created the DB structure
+
+Challenges:
+Finding a starting point and coming up with a plan
+
+Lessons learnt:
+Proper planning is essential
