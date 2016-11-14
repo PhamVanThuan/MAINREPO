@@ -1,3 +1,0 @@
-﻿@model SAHL.Core.UI.Elements.Menus.StaticMenuItemElement
-@{var selectedClass = @Model.Selected ? "active" : String.Empty;}
-<li id="@Model.Id" @DataAttributes.attributes(Model) class="@selectedClass menu-item scrollable-item"><a href="@Model.Url">@Html.DisplayForModel(x => x.Parts)</a></li>

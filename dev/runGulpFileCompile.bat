@@ -1,1 +1,0 @@
-gulp --gulpfile .\Build\NodeJS\gulpfile.js post_web_publish --webPath "C:\\inetpub\\wwwroot\\HaloV3"

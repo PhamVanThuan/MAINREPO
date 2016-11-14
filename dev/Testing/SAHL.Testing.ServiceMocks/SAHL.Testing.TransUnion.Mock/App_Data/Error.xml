@@ -1,9 +1,0 @@
-﻿<BureauResponse xmlns="https://secure.transunion.co.za/TUBureau">
-  <RawData/>
-  <ResponseStatus>Success</ResponseStatus>
-  <ErrorCode>R0034</ErrorCode>
-  <ErrorMessage>INVALID SURNAME                                                               SURNAME CONTAINS ILLEGAL WORDS, OBSCENE WORDS, WORDS FROM THE COMPANY NAME    TABLE, OR IT CONTAINS NO VOWELS.                                              AMENDAND RE-SUBMIT.</ErrorMessage>
-  <ProcessingStartDate>2014-07-08T14:06:45.306388+02:00</ProcessingStartDate>
-  <ProcessingTimeSecs>0.4992064</ProcessingTimeSecs>
-  <UniqueRefGuid>166dd2ec-9020-4e83-83ef-053cd310d71b</UniqueRefGuid>
-</BureauResponse>

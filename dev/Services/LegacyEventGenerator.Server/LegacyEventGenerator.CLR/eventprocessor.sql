@@ -1,1 +1,0 @@
-﻿CREATE SCHEMA [eventprocessor] AUTHORIZATION [dbo]

@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<BatchParameters>
-  <File ReportName="AffordabilityAssessment.rdl" ReportServerFolder="Origination/Registration" />
-  <File ReportName="ApplicationDetails.rdl" ReportServerFolder="Origination/Registration" />
-</BatchParameters>

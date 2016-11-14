@@ -1,4 +1,0 @@
-﻿{
-    "Framework": "jasmine",
-     "CodeCoverageIncludes": ["halo*.js"]  
-}

@@ -1,7 +1,0 @@
-﻿<div id="application" ng-if="application.state !== 'Starting'">
-    <div id="portalNavBar" ng-include="'app/start/portalNavBar/portalNavBar.tpl.html'"></div>
-    <div id="portalContent" ui-view spin-loader="default"></div>
-</div>
-<div id="splash-image" ng-if="application.state === 'Starting'">
-    <div id="splash-spinner" spin-loader="Starting"></div>
-</div>

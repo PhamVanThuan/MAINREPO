@@ -1,8 +1,0 @@
-﻿<div ng-controller="UserCharmsCtrl">
-    <div ng-repeat="charm in charms" class="charmItem">
-        <a href=""><img ng-src="charms/{{charm.module}}/assets/{{charm.icon}}" /></a>
-        <div class="charmContent" ng-if="charm.action == 'view'">
-            <div class="charmInclude" ng-include="'charms/'+charm.module + '/'+charm.verb"></div>
-        </div>
-    </div>
-</div>

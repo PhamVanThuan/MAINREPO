@@ -1,6 +1,0 @@
-﻿<#@ template language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ import namespace="System.Linq" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#= this.Model.FoundTypes.Select(x => this.TemplateManager.GetTemplate(x).Process(x)).Aggregate((current, next) => current + ",\n\t\t\t" + next) #>

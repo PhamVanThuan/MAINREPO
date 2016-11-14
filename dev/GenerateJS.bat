@@ -1,1 +1,0 @@
-powershell.exe -Command "& %~dp0\Build\Build.ps1 'buildTasks' 'GenerateJSFiles' @{ 'searchWildCard' = '*'; }"  -Verb RunAs

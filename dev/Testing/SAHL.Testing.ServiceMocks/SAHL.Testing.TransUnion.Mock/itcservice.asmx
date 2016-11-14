@@ -1,1 +1,0 @@
-﻿<%@ WebService Language="C#" CodeBehind="itcservice.asmx.cs" Class="SAHL.Testing.TransUnion.Mock.itcservice" %>

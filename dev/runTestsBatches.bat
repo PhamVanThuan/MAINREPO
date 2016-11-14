@@ -1,1 +1,0 @@
-powershell.exe -Command "& %~dp0\Build\Build.ps1 'CodeTestsTasks' 'NunitTestsBatches' @{ 'ParentFolder' = '' ; 'buildOutputDir'='buildoutput'; 'configuration'= 'Release'; 'reportCoverage'=$true; 'coverageFilters'='+[SAHL.*]SAHL.*  -[*]*.Specs* -[*]*.Tests* -[JetBrains*]* -[*]*.Console*'; 'coverageOutputDir'='Coverage'; 'reportOutputDir' = 'Coverage'}"  -Verb RunAs
